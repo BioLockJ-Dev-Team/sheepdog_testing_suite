@@ -5,7 +5,7 @@ Wherever you have this repository stored, saved that file path to your bash prof
 For example, you might cd to this folder and run:
 echo "export SHEP=$(pwd)" >> ~/.bash_profile
 
-**input**
+__input__
 Data files representing the various types of input that can be used with a BioLockJ pipeline.
 
 **test**
