@@ -1,4 +1,4 @@
-# README
+# sheepdog_testing_suite
 
 ## What's here
 
