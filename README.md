@@ -28,7 +28,7 @@ Wherever you have this repository stored, save that file path to your bash profi
 
 For example, you might cd to this folder and run:
 ```
-echo "export SHEP_TOP=$(pwd)" >> ~/.bash_profile
+echo "export SHEP=$(pwd)" >> ~/.bash_profile
 echo "export SHEP_DATA=$(pwd)" >> ~/.bash_profile
 ```
 
