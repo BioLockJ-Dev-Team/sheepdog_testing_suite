@@ -1,5 +1,7 @@
 # sheepdog_testing_suite
 
+The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ) developers test pipelines (including the input data, configuration file, meta data file, etc) to verify the functionality of BioLockJ throughout the development cycle.
+
 ## What's here
 
 **big**<br>
