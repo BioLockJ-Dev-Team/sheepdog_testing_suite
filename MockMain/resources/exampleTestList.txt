@@ -2,3 +2,10 @@ ConfigFile	ExpectedOutcome	Notes
 /Users/ieclabau/git/Validator/testUtil/part1_noExp/trimPrimers_validation.properties	BioLockJ_Complete	part1
 /Users/ieclabau/git/Validator/testUtil/part2_withExp/trimPrimers_validation.properties	BioLockJ_Complete	part2
 /Users/ieclabau/git/Validator/testUtil/part3_badFormatExp/trimPrimers_validation.properties	ExpectationFileFormatException	part3_badFormatExp
+/Users/ieclabau/git/Validator/testUtil/part4_missingExp/trimPrimers_validation.properties	ConfigPathException	part4_missingExp
+/Users/ieclabau/git/Validator/testUtil/part5_validationExcept_passModule/trimPrimers_validation.properties	ValidationException	part5_validationExcept_passModule
+/Users/ieclabau/git/Validator/testUtil/part6_limitComparOn/trimPrimers_validation.properties	BioLockJ_Complete	part6_limitComparOn
+/Users/ieclabau/git/Validator/testUtil/part7_limitReportOn_compareOn/trimPrimers_validation.properties	BioLockJ_Complete	part7_limitReportOn_compareOn
+/Users/ieclabau/git/Validator/testUtil/part8_badAttribute/trimPrimers_validation.properties	ConfigViolationException	part8_badAttribute
+/Users/ieclabau/git/Validator/testUtil/part9_UseSepValFile/trimPrimers_validation.properties	ValidationException	part9_UseSepValFile
+/Users/ieclabau/git/Validator/testUtil/part10_softValidation/trimPrimers_validation.properties	ValidationException	part10_softValidation Check the pass/fail status of individual files to make sure soft validation is working as expected.  See original validaiotn files for notes on what should pass or not.
