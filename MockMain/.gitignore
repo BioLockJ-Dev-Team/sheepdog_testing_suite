@@ -1,0 +1,6 @@
+.classpath
+/bin/
+/dist/
+/pipelines/
+resources/exampleOutputFile.txt
+
