@@ -1,0 +1,4 @@
+ConfigFile	ExpectedOutcome	Notes
+/Users/ieclabau/git/Validator/testUtil/part1_noExp/trimPrimers_validation.properties	BioLockJ_Complete	part1
+/Users/ieclabau/git/Validator/testUtil/part2_withExp/trimPrimers_validation.properties	BioLockJ_Complete	part2
+/Users/ieclabau/git/Validator/testUtil/part3_badFormatExp/trimPrimers_validation.properties	ExpectationFileFormatException	part3_badFormatExp
