@@ -67,9 +67,9 @@ public class RunMock
 		}
 	}
 
-	protected static ArrayList<String> outputHeader = (ArrayList<String>) Arrays.asList( 
-			new String[] { CONFIG_FILE_COL, PIPELINE_COL, NUM_COMPLETE_MODS_COL, 
-					EXPECTED_OUTCOME_COL, OUTCOME_SEEN_COL, PASS_FAIL, NOTES_COL } );
+	protected static ArrayList<String> outputHeader = new ArrayList<String>( Arrays.asList(
+			CONFIG_FILE_COL, PIPELINE_COL, NUM_COMPLETE_MODS_COL,
+			EXPECTED_OUTCOME_COL, OUTCOME_SEEN_COL, PASS_FAIL, NOTES_COL) );
 	
 	private static HashMap<Integer, TestInfoRow> tests = new HashMap<Integer, TestInfoRow>();
 	
