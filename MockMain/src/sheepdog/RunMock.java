@@ -16,38 +16,82 @@ import biolockj.util.BioLockJUtil;
 
 public class RunMock
 {
-	private static String CONFIG_FILE_COL = "ConfigFile";
-	private static String PIPELINE_COL = "PipelineDirectory";
-	private static String NUM_COMPLETE_MODS_COL = "NumberCompletedModules";
-	private static String EXPECTED_OUTCOME_COL = "ExpectedOutcome";
-	private static String OUTCOME_SEEN_COL = "Observed";
-	private static String PASS_FAIL = "Pass/Fail";
-	private static String NOTES_COL = "Notes";
-	private static String HACKERS_PIPELINE_KEY = "Set Config property [ internal.pipelineDir ] = ";
+	private static final String CONFIG_FILE_COL = "ConfigFile";
+	private static final String PIPELINE_COL = "PipelineDirectory";
+	private static final String NUM_COMPLETE_MODS_COL = "NumberCompletedModules";
+	private static final String EXPECTED_OUTCOME_COL = "ExpectedOutcome";
+	private static final String OUTCOME_SEEN_COL = "Observed";
+	private static final String PASS_FAIL = "Pass/Fail";
+	private static final String NOTES_COL = "Notes";
+	private static final String HACKERS_PIPELINE_KEY = "Set Config property [ internal.pipelineDir ] = ";
 	
-	private static HashMap<Integer, File> configs = new HashMap<Integer, File>();
-	private static HashMap<Integer, String> out_exp = new HashMap<Integer, String>();
-	private static HashMap<Integer, String> notes = new HashMap<Integer, String>();
-	private static HashMap<Integer, String> results = new HashMap<Integer, String>();
-	private static HashMap<Integer, String> pipelines = new HashMap<Integer, String>();
+	private static class TestInfoRow {
+		File config;
+		String pipeline;
+		int completedModules;
+		String out_exp;
+		boolean passes;
+		String result;
+		String notes;
+		
+		String getField(String colName){
+			switch (colName) {
+				case CONFIG_FILE_COL:
+					return( config.getAbsolutePath() );
+				case PIPELINE_COL:
+					return( pipeline );
+				case NUM_COMPLETE_MODS_COL:
+					return( Integer.toString(completedModules) );
+				case EXPECTED_OUTCOME_COL:
+					return( out_exp );
+				case OUTCOME_SEEN_COL:
+					return( result );
+				case PASS_FAIL:
+					return( passes ? "PASS" : "FAIL" );
+				case NOTES_COL:
+					return( notes );
+			}
+			return null;
+		}
+		
+		public String toString(){
+			ArrayList<String> row = new ArrayList<String>();
+			for (String s: outputHeader) {
+				row.add( getField(s) );
+			}
+			return( String.join( Constants.TAB_DELIM, row ) + Constants.RETURN );
+		}
+	}
+
+	protected static ArrayList<String> outputHeader = (ArrayList<String>) Arrays.asList( 
+			new String[] { CONFIG_FILE_COL, PIPELINE_COL, NUM_COMPLETE_MODS_COL, 
+					EXPECTED_OUTCOME_COL, OUTCOME_SEEN_COL, PASS_FAIL, NOTES_COL } );
 	
+	private static HashMap<Integer, TestInfoRow> tests = new HashMap<Integer, TestInfoRow>();
 	
 	public static void main( String args[] ){
 		int surprises = 0;
+		String outFileName = args.length > 1 ? args[ 1 ] : createOutFileName( args[ 0 ] );
 		try{
 			readTestList( args[ 0 ] );
 			
-			System.err.println( "Test results will be written to: " + args[ 1 ] );
-			final BufferedWriter writer = new BufferedWriter( new FileWriter( new File( args[ 1 ] ) ) );
-			writeHeader( writer );
+			System.err.println( "Test results will be written to: " + outFileName );
+			final BufferedWriter writer = new BufferedWriter( new FileWriter( new File( outFileName ) ) );
+			writer.write( String.join( Constants.TAB_DELIM, outputHeader ) + Constants.RETURN );
 			
-			for( Integer id = 1; id < configs.size(); id++ ){
+			for( Integer id = 1; id < tests.size(); id++ ){
 				runMockBljMain( id );
-				if( !results.get( id ).equals( out_exp.get( id ) ) ){
+				System.err.println( "This pipeline completed " + getCompletedModuleCount( id ) + " modules.");
+				if( tests.get( id ).out_exp.equals( tests.get( id ).result ) ){
+					tests.get( id ).passes = true;
+				}else {
+					tests.get( id ).passes = false;
 					surprises++;
-					System.err.println( "HEY! This didn't give me what I expected: " + configs.get( id ).getName() );
+					System.err.println( "HEY! This didn't give me what I expected: " + tests.get( id ).config.getName() );
 				}
-				writeResult( writer, id );
+				
+				writer.write( tests.get( id  ).toString() );
+				System.err.println("Added " + id + "th row to output.");
 			}
 			
 			writer.close();
@@ -59,8 +103,14 @@ public class RunMock
 		}
 		System.err.println( "DONE!" );
 		System.err.println( "We had: " + surprises + " surprises." );
-		System.err.println( "Test results written to: " + args[ 1 ] );
+		System.err.println( "Test results written to: " + outFileName );
 		System.exit( 0 );
+	}
+	
+	protected static String createOutFileName(String inFile) {
+		File inF = new File(inFile);
+		String name = "NOT_IN_GIT_" + inF.getName().replaceAll( "[.].{3}$", "" ) + "_results.txt";
+		return (new File(inF.getParentFile(), name)).getAbsolutePath();
 	}
 	
 	protected static void readTestList( String filePath ) throws FileNotFoundException, IOException
@@ -87,9 +137,11 @@ public class RunMock
 					iNotes = row.indexOf( NOTES_COL );
 				}
 
-				configs.put( key, new File(Config.replaceEnvVar(row.get( iConfig ))) );
-				out_exp.put( key, row.get( iExpected ) );
-				notes.put( key, row.get( iNotes ) );
+				TestInfoRow oneTest = new TestInfoRow();
+				oneTest.config = new File(Config.replaceEnvVar(row.get( iConfig )));
+				oneTest.out_exp = row.get( iExpected );
+				oneTest.notes = row.get( iNotes );
+				tests.put( key, oneTest );
 
 				key = key + 1;
 			}
@@ -98,15 +150,14 @@ public class RunMock
 		{
 			reader.close();
 		}
-		System.err.println("Read in list of " + (configs.size() - 1)  + " tests");
+		System.err.println("Read in list of " + (tests.size())  + " tests");
 	}
 	
 	protected static void runMockBljMain (Integer id) throws Exception {
-		File configF = configs.get( id );
 		String localPath = Config.replaceEnvVar( "${SHEP}/MockMain/dist/MockMain.jar:${BLJ}/dist/BioLockJ.jar" );
 		String localPipes = Config.replaceEnvVar( "${SHEP}/MockMain/pipelines" );
 		String cmd = "java -cp " + localPath + " sheepdog.MockMain "
-				+ "-b " + localPipes + " -u ~ -c " + configF.getAbsolutePath();
+				+ "-b " + localPipes + " -u ~ -c " + tests.get( id ).config.getAbsolutePath();
 		System.err.println(cmd);
 		String result = "";
 		String pipeline = "NA";
@@ -136,39 +187,21 @@ public class RunMock
 			System.err.println( "Problem occurred running command: " + cmd);
 			ex.printStackTrace();
 		}
-		results.put(id, result);
-		pipelines.put(id, pipeline);
-		System.err.println( "Finished running: " + configF.getName() );
+		tests.get( id ).result = result ;
+		tests.get( id ).pipeline = pipeline ;
+		System.err.println( "Finished running: " + tests.get(id).config.getName() );
 	}
 	
 	protected static void writeHeader( BufferedWriter writer ) throws IOException{
-		ArrayList<String> row = new ArrayList<String>();
-		row.add( CONFIG_FILE_COL );
-		row.add( PIPELINE_COL );
-		row.add( NUM_COMPLETE_MODS_COL );
-		row.add( EXPECTED_OUTCOME_COL );
-		row.add( OUTCOME_SEEN_COL );
-		row.add( PASS_FAIL );
-		row.add( NOTES_COL );
 		
-		writer.write( String.join( Constants.TAB_DELIM, row ) + Constants.RETURN );
 	}
 	
 	protected static void writeResult( BufferedWriter writer, Integer key ) throws IOException{
-		ArrayList<String> row = new ArrayList<String>();
-		row.add( configs.get( key ).getAbsolutePath() );
-		row.add( pipelines.get( key ) );
-		row.add( getCompletedModuleCount( pipelines.get( key ) ) );
-		row.add( out_exp.get( key ) );
-		row.add( results.get( key ) );
-		row.add( results.get( key ).equals( out_exp.get( key ) ) ? "PASS" : "FAIL" );
-		row.add( notes.get( key ) );
-		writer.write( String.join( Constants.TAB_DELIM, row ) + Constants.RETURN );
-		System.err.println("Added " + key + "th row to output.");
+		
 	}
 	
-	private static String getCompletedModuleCount( String pipeline ) {
-		File top = new File(pipeline);
+	private static String getCompletedModuleCount( Integer id ) {
+		File top = new File(tests.get( id ).pipeline);
 		if (top.exists() && top.isDirectory()) {
 			File[] subdirs = top.listFiles(File::isDirectory);
 			int completed = 0;
@@ -180,9 +213,10 @@ public class RunMock
 					}
 				}
 			}
+			tests.get( id ).completedModules = completed;
 			return(Integer.toString( completed ));
 		}else {
-			return("NA");
+			return( "NA" );
 		}
 	}
 		
