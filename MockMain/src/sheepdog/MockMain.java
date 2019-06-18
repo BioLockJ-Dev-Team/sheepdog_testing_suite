@@ -4,9 +4,6 @@ import biolockj.Config;
 import biolockj.Constants;
 import biolockj.exception.FatalExceptionHandler;
 import biolockj.util.DockerUtil;
-import biolockj.util.MasterConfigUtil;
-import biolockj.util.NextflowUtil;
-import biolockj.util.SummaryUtil;
 
 public class MockMain extends biolockj.BioLockJ
 {
@@ -29,26 +26,6 @@ public class MockMain extends biolockj.BioLockJ
 			System.out.println( RESULT_KEY + result );
 			if( !DockerUtil.isDirectMode() ) pipelineShutDown();
 		}
-	}
-	
-	protected static void pipelineShutDown() {
-
-		setPipelineSecurity();
-
-		if( DockerUtil.inAwsEnv() ) {
-			NextflowUtil.saveNextflowLog();
-			NextflowUtil.stopNextflow();
-		}
-
-		if( isPipelineComplete() ) {
-			MasterConfigUtil.sanitizeMasterConfig();
-			if( DockerUtil.inAwsEnv() ) NextflowUtil.saveNextflowSuccessFlag();
-		}
-
-		System.err.println( "Log Pipeline Summary..." + Constants.RETURN + SummaryUtil.getSummary() + SummaryUtil.displayAsciiArt() );
-		if( isPipelineComplete() ) System.exit( 0 );
-
-		System.exit( 1 );
 	}
 	
 }
