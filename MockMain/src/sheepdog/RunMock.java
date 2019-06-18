@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import org.apache.commons.io.FileUtils;
 import biolockj.Config;
 import biolockj.Constants;
 import biolockj.util.BioLockJUtil;
@@ -24,6 +25,9 @@ public class RunMock
 	private static final String PASS_FAIL = "Pass/Fail";
 	private static final String NOTES_COL = "Notes";
 	private static final String HACKERS_PIPELINE_KEY = "Set Config property [ internal.pipelineDir ] = ";
+	private static final String BLJ_JAR="${BLJ}/dist/BioLockJ.jar";
+	private static final String MOCK_JAR="${SHEP}/MockMain/dist/MockMain.jar";
+	private static final String TMP_PROJ="${SHEP}/MockMain/pipelines";
 	
 	private static class TestInfoRow {
 		File config;
@@ -77,6 +81,7 @@ public class RunMock
 			
 			System.err.println( "Test results will be written to: " + outFileName );
 			final BufferedWriter writer = new BufferedWriter( new FileWriter( new File( outFileName ) ) );
+			writeComments(writer);
 			writer.write( String.join( Constants.TAB_DELIM, outputHeader ) + Constants.RETURN );
 			
 			for( Integer id = 1; id < tests.size(); id++ ){
@@ -154,10 +159,9 @@ public class RunMock
 	}
 	
 	protected static void runMockBljMain (Integer id) throws Exception {
-		String localPath = Config.replaceEnvVar( "${SHEP}/MockMain/dist/MockMain.jar:${BLJ}/dist/BioLockJ.jar" );
-		String localPipes = Config.replaceEnvVar( "${SHEP}/MockMain/pipelines" );
-		String cmd = "java -cp " + localPath + " sheepdog.MockMain "
-				+ "-b " + localPipes + " -u ~ -c " + tests.get( id ).config.getAbsolutePath();
+		String cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
+		+ " sheepdog.MockMain " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
+		+ " -u ~ -c " + tests.get( id ).config.getAbsolutePath();
 		System.err.println(cmd);
 		String result = "";
 		String pipeline = "NA";
@@ -218,6 +222,22 @@ public class RunMock
 		}else {
 			return( "NA" );
 		}
+	}
+	
+	protected static void writeComments(BufferedWriter writer) throws IOException {
+		writer.write( "# BioLockJ jar file: " + Config.replaceEnvVar(BLJ_JAR) );
+		writer.write( "# SHEP_DATA: " + Config.replaceEnvVar("${SHEP_DATA}").replaceAll( (".*" + File.pathSeparator ), "" ) );
+	}
+	
+	protected static void clearPipelines() throws IOException {
+		File pipesDir = new File(Config.replaceEnvVar(TMP_PROJ));
+		File[] oldPipelines = pipesDir.listFiles(File::isDirectory);
+		int count = 0;
+		for (File oldDir : oldPipelines) {
+			FileUtils.deleteDirectory(oldDir);
+			count++;
+		}
+		System.err.println("Deleted " + count + " directories from $SHEP/pipelines.");
 	}
 		
 	
