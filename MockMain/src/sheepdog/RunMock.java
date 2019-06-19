@@ -231,11 +231,16 @@ public class RunMock
 	
 	protected static void clearPipelines() throws IOException {
 		File pipesDir = new File(Config.replaceEnvVar(TMP_PROJ));
-		File[] oldPipelines = pipesDir.listFiles(File::isDirectory);
+		File[] oldPipelines = pipesDir.listFiles();
 		int count = 0;
-		for (File oldDir : oldPipelines) {
-			FileUtils.deleteDirectory(oldDir);
-			count++;
+		for (File oldFile : oldPipelines) {
+			if (oldFile.isDirectory()) {
+				FileUtils.deleteDirectory(oldFile);
+				count++;
+			}else if (oldFile.getName().startsWith( "README" )) {
+			}else {
+				oldFile.delete();
+			}
 		}
 		System.err.println("Deleted " + count + " directories from $SHEP/pipelines.");
 	}
