@@ -1,0 +1,4 @@
+ConfigFile	ExpectedOutcome	Notes
+${SHEP}/test/module/validationUtil/part1_noExpectation/rarifySeqs.properties	BioLockJ_Complete	part1
+${SHEP}/test/module/validationUtil/part2_goodExp/rarifySeqs.properties	BioLockJ_Complete	part2
+${SHEP}/test/module/validationUtil/part3_badFormatExp/rarifySeqs.properties	ExpectationFileFormatException	part3_badFormatExp
