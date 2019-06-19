@@ -5,7 +5,7 @@ All test pipelines require that you have BioLockJ installed.
 Some pipelines reqire additional stuff.
 
 ### Software
-Many biolockj modules are wrappers for external software.  See https://github.com/IvoryC/BioLockJ/wiki/Dependencies for a complete list of dependencies you may need and download links.
+Many biolockj modules are wrappers for external software.  See https://github.com/msioda/BioLockJ/wiki/Dependencies for a complete list of dependencies you may need and download links.
 
 ### properties files
 For configurations that are specific to a single user (such as email, or local machine file paths) the individual tests use this:
