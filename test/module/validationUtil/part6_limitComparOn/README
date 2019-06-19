@@ -1,0 +1,5 @@
+README 
+
+This uses the validation folder from part 5, where md5 is messed up for the output of the TrimPrimers and SeqFileValidator modules.
+
+Validation should only compare on sizeMB and sizeGB, the mis-match for md5 should not matter.

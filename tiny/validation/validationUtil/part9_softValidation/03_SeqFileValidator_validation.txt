@@ -1,0 +1,8 @@
+name	size	md5	MATCHED_EXPECTATION
+ERR1456806_1.fastq.fastq	3420	0dc2d4b4ca807e7fcedd71a37d828c3d	PASS - Real value is -0.994152046783626% different from expectation size.
+ERR1456807_1.fastq.fastq	3553	e24f5a2488f9f9af6238324be348c34d	PASS - Real value is -4.75654376583169% different from expectation size.
+ERR1456808_1.fastq.fastq	3385	296fa2f54aadc0319767d89bdd47f379	FAIL - Real value is -20% different from expectation size.
+ERR1456826_1.fastq.fastq	2010	a7697ca90fb8b589550ae1f6c1528d55	PASS - Real value is 0.995024875621891% different from expectation size.
+ERR1456827_1.fastq.fastq	2573	c27ec84f2375fdf9a3b4f01e91b7f6a5	PASS - Real value is 5.24679362611737% different from expectation size.
+ERR1456828_1.fastq.fastq	1523	21bb1db1a41a40c57541c3a78504420d	FAIL - Real value is 33.2895600787919% different from expectation size.
+rarifySeqs_2019Jun17_metadata.tsv	205	ab5c90fd8883f76acf7c50856fef856f	PASS - Real value is 0% different from expectation size.

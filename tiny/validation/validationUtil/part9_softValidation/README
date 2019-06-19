@@ -1,0 +1,5 @@
+README 
+
+Modified the sizes of the files in the validation folder, see MATCHED_EXPECTATION for notes on how they were modified and which files should PASS or FAIL given the soft validation specified in the properties file.
+
+In 02 and 03 the sizes have been modified.  
