@@ -1,0 +1,2 @@
+ConfigFile	ExpectedOutcome	Notes
+${SHEP}/test/module/rdp/justRdp.properties	BioLockJ_Complete	basic defaults
