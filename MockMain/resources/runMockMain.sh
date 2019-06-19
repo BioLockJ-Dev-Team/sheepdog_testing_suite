@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # use:
-# runMockMain exampleTestList.txt
+# runMockMain.sh exampleTestList.txt
 
 TESTER_JAR=${SHEP}/MockMain/dist/MockMain.jar
 BLJ_JAR=${BLJ}/dist/BioLockJ.jar
