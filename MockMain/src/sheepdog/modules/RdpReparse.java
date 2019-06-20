@@ -14,7 +14,7 @@ public class RdpReparse extends BioModuleImpl
 	{
 		Log.info( getClass(), "IN stub for checkDependencies()");
 		
-			
+		Log.info(getClass(), "HA!");
 	}
 	
 
