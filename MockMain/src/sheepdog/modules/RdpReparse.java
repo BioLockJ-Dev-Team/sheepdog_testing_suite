@@ -13,14 +13,13 @@ public class RdpReparse extends BioModuleImpl
 	@Override
 	public void checkDependencies() throws Exception
 	{
-		Log.info( getClass(), "IN stub for checkDependencies()");
+		//Log.info( getClass(), "IN stub for checkDependencies()");
 	}
 	
-
 	@Override
 	public void executeTask() throws Exception
 	{
-		Log.info( getClass(), "IN stub for execute task");
+		Log.info( getClass(), "IN stub for " + getClass().getName());
 	
 		List<File> biolockJSummaryFiles= getInputFiles();
 		
@@ -42,8 +41,37 @@ public class RdpReparse extends BioModuleImpl
 		if( rdpOutput.size() != biolockJSummaryFiles.size())
 			throw new Exception("Unequal numbers of files " + biolockJSummaryFiles.size()+ " " + rdpOutput.size());
 		
-		Log.info( getClass(), "Exiting stub for execute task");
-
+		for(File rdpFile : rdpOutput)
+		{
+			File biolockJSummary = findMatchingSummaryFile(rdpFile, biolockJSummaryFiles);
+			Log.info(getClass(), "Getting ready to parse " + biolockJSummary.getAbsolutePath());
+		}
+		
+		Log.info( getClass(), "Exiting RdpReparse module");
+		
+	}
+	
+	private static File findMatchingSummaryFile( File rdpOutputFile,  List<File> biolockJSummaryFiles) throws Exception
+	{
+		String sampleID = rdpOutputFile.getName().replace("_reported.tsv", "");
+		
+		File returnFile = null;
+		
+		for(File f : biolockJSummaryFiles)
+		{
+			if( f.getName().indexOf(sampleID) != - 1 )
+			{
+				if( returnFile != null)
+					throw new Exception("Duplicate for " + sampleID);
+				
+				returnFile = f;
+			}
+		}
+		
+		if( returnFile == null)
+			throw new Exception("Could not find " + sampleID );
+		
+		return returnFile;
 		
 	}
 	
