@@ -5,6 +5,7 @@ import java.util.List;
 
 import biolockj.Log;
 import biolockj.module.BioModuleImpl;
+import biolockj.util.ModuleUtil;
 
 public class RdpReparse extends BioModuleImpl
 {
@@ -13,8 +14,6 @@ public class RdpReparse extends BioModuleImpl
 	public void checkDependencies() throws Exception
 	{
 		Log.info( getClass(), "IN stub for checkDependencies()");
-		
-		Log.info(getClass(), "HA!");
 	}
 	
 
@@ -23,13 +22,20 @@ public class RdpReparse extends BioModuleImpl
 	{
 		Log.info( getClass(), "IN stub for execute task");
 	
-		List<File> aList = getInputFiles();
+		List<File> rdpClassifierOutput= getInputFiles();
 		
-		for( File aFile : aList)
-			Log.info( getClass(), "GOT " + aFile.getAbsolutePath()  );
+		for( File aFile : rdpClassifierOutput)
+			Log.info( getClass(), "GOT " + aFile.getAbsolutePath()  + " as output file" );
+
+		List<File> rdpClassifierInput = 
+				ModuleUtil.getPreviousModule(this).getInputFiles();
+		
+		for( File aFile : rdpClassifierInput)
+			Log.info(getClass(), "GOT " + aFile.getAbsolutePath() + " as input file");
 		
 		Log.info( getClass(), "Exiting stub for execute task");
 
+		
 	}
 	
 }
