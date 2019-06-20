@@ -5,9 +5,13 @@ All test pipelines require that you have BioLockJ installed.
 Some pipelines reqire additional stuff.
 
 ### Software
+
 Many biolockj modules are wrappers for external software.  See https://github.com/msioda/BioLockJ/wiki/Dependencies for a complete list of dependencies you may need and download links.
 
+In addition to the software required by BioLockJ, if you want to download the full size data (to use the `big` directory), you will need the sra toolkit.
+
 ### properties files
+
 For configurations that are specific to a single user (such as email, or local machine file paths) the individual tests use this:
 `pipeline.defaultProps=NOT_IN_GIT_user.properties`
 

@@ -1,0 +1,4 @@
+name	size	MATCHED_EXPECTATION
+justRdp_2019Jun20_metadata.tsv	84	FAIL
+justRdp_2019Jun20_otuCount_ERR1456827.tsv	45660	FAIL
+justRdp_2019Jun20_otuCount_ERR1456828.tsv	35155	FAIL

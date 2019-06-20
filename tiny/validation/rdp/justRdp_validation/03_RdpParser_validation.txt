@@ -1,8 +1,3 @@
 name	size	MATCHED_EXPECTATION
-justRdp_3_2019Jun19_metadata.tsv	126	REPORT
-justRdp_3_2019Jun19_otuCount_ERR1456806.tsv	367	REPORT
-justRdp_3_2019Jun19_otuCount_ERR1456807.tsv	437	REPORT
-justRdp_3_2019Jun19_otuCount_ERR1456808.tsv	582	REPORT
-justRdp_3_2019Jun19_otuCount_ERR1456826.tsv	432	REPORT
-justRdp_3_2019Jun19_otuCount_ERR1456827.tsv	444	REPORT
-justRdp_3_2019Jun19_otuCount_ERR1456828.tsv	147	REPORT
+justRdp_2019Jun20_metadata.tsv	51	FAIL
+justRdp_2019Jun20_otuCount_ERR1456827.tsv	293	FAIL

@@ -38,12 +38,15 @@ runtime=$((end-start))
 minutes=$((runtime/60))
 echo "This download took $minutes minutes."
 
-echo "Move some files to subdir..."
+echo "Move some files to subdirs..."
 mv ./R1/ERR1456806* ./R1/rhizo_R1_subdir/.
 mv ./R1/ERR1456807* ./R1/rhizo_R1_subdir/.
 mv ./R1/ERR1456808* ./R1/rhizo_R1_subdir/.
 mv ./R1/ERR1456826* ./R1/rhizo_R1_subdir/.
 mv ./R1/ERR1456827* ./R1/rhizo_R1_subdir/.
 mv ./R1/ERR1456828* ./R1/rhizo_R1_subdir/.
+
+mv ./R2/ERR1456822* ./R2/rhizo_R2_subdir_2files/.
+mv ./R2/ERR1456828* ./R2/rhizo_R2_subdir_2files/.
 
 echo "Done!"
