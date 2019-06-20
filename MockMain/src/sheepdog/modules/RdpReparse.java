@@ -22,16 +22,25 @@ public class RdpReparse extends BioModuleImpl
 	{
 		Log.info( getClass(), "IN stub for execute task");
 	
-		List<File> rdpClassifierOutput= getInputFiles();
+		List<File> biolockJSummaryFiles= getInputFiles();
 		
-		for( File aFile : rdpClassifierOutput)
-			Log.info( getClass(), "GOT " + aFile.getAbsolutePath()  + " as output file" );
+		for( File aFile : biolockJSummaryFiles)
+			Log.info( getClass(), "GOT " + aFile.getAbsolutePath()  + " as biolockJ summary of RDP output" );
+		
+		if( biolockJSummaryFiles.size() ==0  )
+			throw new Exception("No summary files");
 
-		List<File> rdpClassifierInput = 
+		List<File> rdpOutput = 
 				ModuleUtil.getPreviousModule(this).getInputFiles();
 		
-		for( File aFile : rdpClassifierInput)
-			Log.info(getClass(), "GOT " + aFile.getAbsolutePath() + " as input file");
+		for( File aFile : rdpOutput)
+			Log.info(getClass(), "GOT " + aFile.getAbsolutePath() + " as RDP output file");
+		
+		if( rdpOutput.size() == 0 )
+			throw new Exception("No RDP output");
+		
+		if( rdpOutput.size() != biolockJSummaryFiles.size())
+			throw new Exception("Unequal numbers of files " + biolockJSummaryFiles.size()+ " " + rdpOutput.size());
 		
 		Log.info( getClass(), "Exiting stub for execute task");
 
