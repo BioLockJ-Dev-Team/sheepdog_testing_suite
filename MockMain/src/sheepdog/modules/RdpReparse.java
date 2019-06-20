@@ -91,7 +91,7 @@ public class RdpReparse extends BioModuleImpl
 				Long thisVal = Long.parseLong(sToken.nextToken());
 				
 				if( ! thisVal.equals(parsedVal))
-					throw new Exception("Mismatched for " + name + " " + parsedVal + " " + thisVal);
+					throw new Exception("Mismatched for " + name + " " + parsedVal + " " + thisVal + " " + inFile.getAbsolutePath());
 				
 				checked++;
 				
@@ -141,7 +141,7 @@ public class RdpReparse extends BioModuleImpl
 			
 			NewRDPNode aNode = aLine.getTaxaMap().get(level);
 			
-			if( aNode != null && aNode.getScore() > RDP_THRESHOLD )
+			if( aNode != null && aNode.getScore() >= RDP_THRESHOLD )
 			{
 				String taxaName = aNode.getTaxaName();
 				
