@@ -230,19 +230,23 @@ public class RunMock
 	}
 	
 	protected static void clearPipelines() throws IOException {
+		String prevPipesDirName = "previousPipelineSet";
 		File pipesDir = new File(Config.replaceEnvVar(TMP_PROJ));
+		File prevPipesDir = new File(pipesDir, prevPipesDirName);
+		if (prevPipesDir.exists() && prevPipesDir.isDirectory() ) FileUtils.deleteDirectory(prevPipesDir);
+		prevPipesDir.mkdir();
 		File[] oldPipelines = pipesDir.listFiles();
 		int count = 0;
 		for (File oldFile : oldPipelines) {
 			if (oldFile.isDirectory()) {
-				FileUtils.deleteDirectory(oldFile);
+				oldFile.renameTo( new File(prevPipesDir, oldFile.getName()) );
 				count++;
 			}else if (oldFile.getName().startsWith( "README" )) {
 			}else {
 				oldFile.delete();
 			}
 		}
-		System.err.println("Deleted " + count + " directories from $SHEP/pipelines.");
+		System.err.println("Moved " + count + " directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.");
 	}
 		
 	
