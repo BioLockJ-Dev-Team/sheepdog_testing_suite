@@ -1,0 +1,26 @@
+<project name="MockMain" default="jar">
+	
+	<path id="lib.path">
+		<fileset dir="../../BioLockJ/dist"/>
+	</path>
+
+    <target name="clean">
+        <delete dir="dist"/>
+        <delete dir="bin"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin" classpathref="lib.path"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="dist"/>
+        <jar destfile="dist/MockMain.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="sheepdog.RunMock"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>
