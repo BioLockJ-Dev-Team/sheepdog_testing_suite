@@ -60,6 +60,14 @@ Other variables that test might use are:<br>
 `BLJ_PROJ` - The local destination for pipelines to be stored in.
 <br>These are set by running the BioLockJ `install` script.  You can override the defaults by setting the varibles in your profile _after_ the line that calls the blj_config script.
 
+## Automated testing
+
+The MockMain project is a java program that takes a list of tests as input, runs BioLockJ for each test, and reports the output.  See MockMain [the MockMain Users Guide](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/MockMain/README.md#mockmain-user-guide) for more details on using the program.  In very very short: most folders of tests have a testList.txt table and a `runThisTestSet.sh` script.  Calling the script will run all the tests listed in the test list, and create a new table ( testList_results.txt ) giving the results of each test.  
+
+When you make changes to BioLockJ (weather fixing a bug, refactoring the framwork or adding new features), you should run a testList.  Pick a comprehensive testList that runs full pipelines, or make a custom one to include more extensive testing of the componenents that might affected by your work.  Run the testList before you start working using the current master version of BioLockJ.  Run it periodically as you work.  Most importantly, run after you have finalized your changes, but before you submit the pull request to merge your work into the master branch.
+
+If you create a new feature, make tests that prove your feature is working and add them to this repository so any future changes that break your feature are discovered quickly.
+
 ## Using Eclipse
 
 Some folders come with eclipse launch files as a convenience.  For these files to work, you will need to have "BioLockJ" open as a project in Eclipse and you will need to set the [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in Eclipse.  <br>
@@ -73,7 +81,3 @@ Browse > _Select the folder containing the launch files_<br>
 <br>**To Run or Debug using the Launch Files:**<br>
 Run > Run Configurations ...
 Java Application > _select the launch configuration_ > Run
-
-## Automated testing
-
-The MockMain project is a java program that takes a list of tests as input, runs BioLockJ for each test, and reports the output.  See MockMain README for more details on using the program.  In very very short: most folders of tests have a testList.txt table and a `runThisTestSet.sh` script.  Calling the script will run all the tests listed in the test list, and create a new table ( testList_results.txt ) giving the results of each test.  
