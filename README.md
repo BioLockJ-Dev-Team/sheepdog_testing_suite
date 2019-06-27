@@ -37,10 +37,16 @@ Pipeline resources like metadata, primers, barcodes etc are either the 'real' fi
 
 Wherever you have this repository stored, save that file path to your bash profile using the variables `$SHEP` and `$SHEP_DATA`.
 
-For example, you might cd to this folder and run:
+For example, you might cd to this folder and run:<br>
+(macOS)
 ```
 echo "export SHEP=$(pwd)" >> ~/.bash_profile
 echo "export SHEP_DATA=$(pwd)" >> ~/.bash_profile
+```
+(Ubuntu)
+```
+echo "export SHEP=$(pwd)" >> ~/.bashrc
+echo "export SHEP_DATA=$(pwd)" >> ~/.bashrc
 ```
 
 `SHEP` always points to this top directory.
@@ -51,7 +57,8 @@ To allow for this dynamic referencing, input files and validation files are refe
 
 Other variables that test might use are:<br>
 `BLJ` - The local copy of the BioLockJ repository                    
-`BLJ_PROJ` - The local destination for pipelines to be stored in
+`BLJ_PROJ` - The local destination for pipelines to be stored in.
+<br>These are set by running the BioLockJ `install` script.  You can override the defaults by setting the varibles in your profile _after_ the line that calls the blj_config script.
 
 ## Using Eclipse
 
