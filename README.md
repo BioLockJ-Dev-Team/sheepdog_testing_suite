@@ -55,7 +55,7 @@ Other variables that test might use are:<br>
 
 ## Using Eclipse
 
-Some folders come with eclipse launch files as a convenience.  For these files to work, you will need to have "BioLockJ" open as a project in Eclipse and you will need to set the variables (see above) in Eclipse.  <br>
+Some folders come with eclipse launch files as a convenience.  For these files to work, you will need to have "BioLockJ" open as a project in Eclipse and you will need to set the [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in Eclipse.  <br>
 <br>**To set the variables in Eclipes:**<br>
 Eclipse > Preferences ...<br>
 Run/Debug > String Substitution > New...<br>
