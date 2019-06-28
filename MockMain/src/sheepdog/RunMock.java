@@ -6,8 +6,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import org.apache.commons.io.FileUtils;
 import biolockj.Config;
 import biolockj.Constants;
@@ -111,6 +114,8 @@ public class RunMock
 	public static void main( String args[] ){
 		long startTime = System.currentTimeMillis();
 		int surprises = 0;
+		int testsRun = 0;
+		ArrayList<String> summary = new ArrayList<String>();
 		String outFileName = args.length > 1 ? args[ 1 ] : createOutFileName( args[ 0 ] );
 		try{
 			readTestList( args[ 0 ] );
@@ -125,6 +130,7 @@ public class RunMock
 			for( TestInfoRow test : tests ){
 				System.err.println("=====");
 				runMockBljMain( test );
+				testsRun ++;
 				System.err.println( "This pipeline completed " + getCompletedModuleCount( test ) + " modules.");
 				if( test.out_exp.equals( test.result ) ){
 					test.passes = true;
@@ -136,17 +142,23 @@ public class RunMock
 				
 				writer.write( test.toString() );
 			}
-			
+
 			writer.close();
+			
+			summary.add( "Number of tests that failed:   " + surprises );
+			summary.add( "Number of tests that were run: " + testsRun );
+			summary.add( "Total test runtime: " + SummaryUtil.getRunTime( System.currentTimeMillis() - startTime ) );
+			
+			System.err.println( System.lineSeparator() + "DONE!" + System.lineSeparator() );
+
+			addSummaryAtTop(outFileName, summary);
 		}
 		catch( Exception e ){
 			System.err.println( "There was a problem..." );
 			e.printStackTrace();
 			System.exit( 1 );
 		}
-		System.err.println( System.lineSeparator() + "DONE!" + System.lineSeparator() );
-		System.err.println( "We had: " + surprises + " surprises." );
-		System.err.println( "Total test runtime: " + SummaryUtil.getRunTime( System.currentTimeMillis() - startTime ) );
+		
 		System.exit( 0 );
 	}
 	
@@ -203,16 +215,21 @@ public class RunMock
 		String cmd;
 		if (test.environment.equals( DOCKER ))
 		{
-			cmd = "docker run --rm "
-					+ "-v /var/run/docker.sock:/var/run/docker.sock "
-					+ "-v " + Config.replaceEnvVar("~") + ":/home/ec2-user "
-					+ "-v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated "
-					+ "-v " + test.inputDir + ":/mnt/efs/input:ro "
-					+ "-v " + test.config.getParent() + ":/mnt/efs/config:ro "
-					+ "-v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
-					+ "-v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar "
-					+ "biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar "
-					+ "sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
+			cmd = "docker run --rm"
+//					+ " -v " + Config.replaceEnvVar("${SHEP}") + ":/shep"
+//					+ " -v " + Config.replaceEnvVar("${SHEP_DATA}") + ":/shep_data"
+//					+ " -e SHEP=/shep"
+//					+ " -e SHEP_DATA=/shep_data"
+					+ " -v /var/run/docker.sock:/var/run/docker.sock"
+					+ " -v " + Config.replaceEnvVar("~") + ":/home/ec2-user"
+					+ " -v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated"
+					+ " -v " + test.inputDir + ":/mnt/efs/input:ro"
+					+ " -v " + test.config.getParent() + ":/mnt/efs/config:ro"
+					+ " -v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
+					+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
+					+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
+					+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
+					+ " sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
 					+ " -i " + test.inputDir + " -c " + test.config ;
 			String msg = String.valueOf( cmd );
 			// The msg printed to the console can be copy/pasted to run the command
@@ -317,5 +334,21 @@ public class RunMock
 		System.err.println("Moved " + count + " directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.");
 	}
 		
+	protected static void addSummaryAtTop(String outFileName, Collection<String> summary) throws IOException {
+		String tmpFile = outFileName + "~";
+		final BufferedReader reader = BioLockJUtil.getFileReader( new File(outFileName) );
+		final BufferedWriter writer = new BufferedWriter( new FileWriter( new File( tmpFile ) ) );
+		for (String line : summary) {
+			System.err.println( line );
+			writer.write( "# " + line + System.lineSeparator() );
+		}
+		for( String line = reader.readLine(); line != null; line = reader.readLine() )
+		{
+			writer.write( line + System.lineSeparator() );
+		}
+		writer.close();
+		Files.delete( Paths.get( outFileName ) );
+		Files.move( Paths.get( tmpFile ), Paths.get(outFileName) );
+	}
 	
 }

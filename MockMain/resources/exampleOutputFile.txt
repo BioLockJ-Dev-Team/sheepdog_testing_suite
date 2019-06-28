@@ -1,3 +1,6 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 10
+# Total test runtime: 00 hours : 00 minutes : 10 seconds
 # BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
 # SHEP_DATA: sheepdog_testing_suite
 ConfigFile	Flags	Environment	PipelineDirectory	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
