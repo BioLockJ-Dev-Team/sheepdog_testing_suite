@@ -1,0 +1,3 @@
+ConfigFile	Environment	ExpectedOutcome	Notes
+${SHEP}/test/module/kraken2/justKraken2.properties		BioLockJ_Complete	just the parser
+${SHEP}/test/module/kraken2/justKraken2.properties	docker	BioLockJ_Complete	just the parser
