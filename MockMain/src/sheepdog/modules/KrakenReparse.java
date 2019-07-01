@@ -43,17 +43,43 @@ public class KrakenReparse extends BioModuleImpl
 		if( krakenOutput.size() != biolockJSummaryFiles.size())
 			throw new Exception("Unequal numbers of files " + biolockJSummaryFiles.size()+ " " + krakenOutput.size());
 		
-		/*
-		for(File rdpFile : krakenOutput)
+		for(File krakenFile : krakenOutput)
 		{
-			File biolockJSummary = findMatchingSummaryFile(rdpFile, biolockJSummaryFiles);
-			Log.info(getClass(), "Getting ready to parse " + rdpFile.getAbsolutePath());
-			HashMap<String, Long> expectationMap = getCountsForALevel(rdpFile, GENUS_LEVEL);
-			assertEqual(biolockJSummary, expectationMap, GENUS_LEVEL);
+			File biolockJSummary = findMatchingSummaryFile(krakenFile, biolockJSummaryFiles);
+			Log.info(getClass(), "Getting ready to parse " + krakenFile.getAbsolutePath());
+			//HashMap<String, Long> expectationMap = getCountsForALevel(rdpFile, GENUS_LEVEL);
+			//assertEqual(biolockJSummary, expectationMap, GENUS_LEVEL);
 		}
-		*/
 		
 		Log.info( getClass(),	 "Exiting RdpReparse module");
+		
+	}
+	
+
+	private static File findMatchingSummaryFile( File rdpOutputFile,  List<File> biolockJSummaryFiles) throws Exception
+	{
+		
+		String sampleID = rdpOutputFile.getName();
+		sampleID = sampleID.substring(sampleID.lastIndexOf("_") +1 , sampleID.length());
+		sampleID = sampleID.replace(".tsv", "");
+		
+		File returnFile = null;
+		
+		for(File f : biolockJSummaryFiles)
+		{
+			if( f.getName().indexOf(sampleID) != - 1 )
+			{
+				if( returnFile != null)
+					throw new Exception("Duplicate for " + sampleID);
+				
+				returnFile = f;
+			}
+		}
+		
+		if( returnFile == null)
+			throw new Exception("Could not find " + sampleID );
+		
+		return returnFile;
 		
 	}
 	
@@ -101,29 +127,6 @@ public class KrakenReparse extends BioModuleImpl
 			System.out.println("COULD NOT FIND  " + innerMap);
 	}
 	
-	private static File findMatchingSummaryFile( File rdpOutputFile,  List<File> biolockJSummaryFiles) throws Exception
-	{
-		String sampleID = rdpOutputFile.getName().replace("_reported.tsv", "");
-		
-		File returnFile = null;
-		
-		for(File f : biolockJSummaryFiles)
-		{
-			if( f.getName().indexOf(sampleID) != - 1 )
-			{
-				if( returnFile != null)
-					throw new Exception("Duplicate for " + sampleID);
-				
-				returnFile = f;
-			}
-		}
-		
-		if( returnFile == null)
-			throw new Exception("Could not find " + sampleID );
-		
-		return returnFile;
-		
-	}
 	
 	private static HashMap<String, Long> getCountsForALevel( File aFile , String level) throws Exception
 	{
