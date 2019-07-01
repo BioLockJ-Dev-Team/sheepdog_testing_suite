@@ -3,7 +3,7 @@ package sheepdog;
 import biolockj.Config;
 import biolockj.Constants;
 import biolockj.exception.FatalExceptionHandler;
-import biolockj.util.DockerUtil;
+import biolockj.util.BioLockJUtil;
 
 public class MockMain extends biolockj.BioLockJ
 {
@@ -24,7 +24,7 @@ public class MockMain extends biolockj.BioLockJ
 			FatalExceptionHandler.logFatalError( args, ex );
 		} finally {
 			System.out.println( RESULT_KEY + result );
-			if( !DockerUtil.isDirectMode() ) pipelineShutDown();
+			if( !BioLockJUtil.isDirectMode() ) pipelineShutDown();
 		}
 	}
 	
