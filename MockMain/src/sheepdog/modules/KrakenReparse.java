@@ -1,75 +1,162 @@
 package sheepdog.modules;
 
 import java.io.File;
-import java.util.Collection;
 import java.util.List;
 
 import biolockj.Log;
 import biolockj.module.BioModuleImpl;
-import biolockj.util.BioLockJUtil;
-import sheepdog.modules.util.KrakenExpectedUnclassified;
+import biolockj.util.ModuleUtil;
 
 public class KrakenReparse extends BioModuleImpl
 {
+	//todo : Get these from the property file
+	//private static final String GENUS_LEVEL = "genus";
 
 	@Override
 	public void checkDependencies() throws Exception
 	{
-		Log.info( getClass(), "IN stub for checkDependencies()");
+		//Log.info( getClass(), "IN stub for checkDependencies()");
 	}
 	
 	@Override
 	public void executeTask() throws Exception
 	{
+		Log.info( getClass(), "IN stub for " + getClass().getName());
+	
+		List<File> biolockJSummaryFiles= getInputFiles();
 		
-		Log.info( getClass(), "IN stub for executeTask()");
+		for( File aFile : biolockJSummaryFiles)
+			Log.info( getClass(), "GOT " + aFile.getAbsolutePath()  + " as biolockJ summary of Kraken output" );
 		
+		if( biolockJSummaryFiles.size() ==0  )
+			throw new Exception("No summary files");
+
+		List<File> krakenOutput = 
+				ModuleUtil.getPreviousModule(this).getInputFiles();
 		
-		Collection<File> pipelineInput = BioLockJUtil.getPipelineInputFiles();
+		for( File aFile : krakenOutput)
+			Log.info(getClass(), "GOT " + aFile.getAbsolutePath() + " as Kraken output file");
 		
+		if( krakenOutput.size() == 0 )
+			throw new Exception("No Kraken output");
 		
-		List<File> inputFiles = getInputFiles();
+		if( krakenOutput.size() != biolockJSummaryFiles.size())
+			throw new Exception("Unequal numbers of files " + biolockJSummaryFiles.size()+ " " + krakenOutput.size());
 		
-		for(File f : pipelineInput)
+		/*
+		for(File rdpFile : krakenOutput)
 		{
-			File matching = findMatching(f, inputFiles);
-			Log.info( getClass(), "Compare " + f.getAbsolutePath() + " " + matching.getAbsolutePath());
-			
-			KrakenExpectedUnclassified.assertEquals(f, matching);
-		
-			Log.info( getClass(), "Pass " + f.getAbsolutePath() + " " + matching.getAbsolutePath());
-			
+			File biolockJSummary = findMatchingSummaryFile(rdpFile, biolockJSummaryFiles);
+			Log.info(getClass(), "Getting ready to parse " + rdpFile.getAbsolutePath());
+			HashMap<String, Long> expectationMap = getCountsForALevel(rdpFile, GENUS_LEVEL);
+			assertEqual(biolockJSummary, expectationMap, GENUS_LEVEL);
 		}
+		*/
 		
-		Log.info( getClass(), "Exit stub for executeTask() with global pass");
+		Log.info( getClass(),	 "Exiting RdpReparse module");
 		
 	}
 	
-	
-	private static File findMatching(File pipelineFile, List<File> inputFiles) throws Exception
+	/*
+	private static void assertEqual( File inFile, HashMap<String,Long> innerMap, String level ) throws Exception
 	{
-		String sampleId = pipelineFile.getName();
-		sampleId = sampleId.substring(sampleId.lastIndexOf("/")+1, sampleId.length());
-		sampleId = sampleId.replace("_reported.tsv", "");
+		System.out.println("check " + inFile.getAbsolutePath());
+		BufferedReader reader = new BufferedReader(new FileReader(inFile));
+		
+		int checked =0;
+		
+		for(String s= reader.readLine(); s!= null; s= reader.readLine() )
+		{
+			StringTokenizer sToken = new StringTokenizer(s, "\t");
+			
+			if( sToken.countTokens() != 2)
+				throw new Exception("Expecting two tokens");
+			
+			String name = sToken.nextToken();
+			
+			if( name.toLowerCase().indexOf("unclassified") == -1)
+			{
+				name = name.substring(name.indexOf(level + "__"), name.length());
+				name = name.replace(level + "__", "");
+				
+				Long parsedVal = innerMap.get(name);
+				
+				if( parsedVal == null)
+					throw new Exception("Could not find " + name);
+				
+				Long thisVal = Long.parseLong(sToken.nextToken());
+				
+				if( ! thisVal.equals(parsedVal))
+					throw new Exception("Mismatched for " + name + " " + parsedVal + " " + thisVal + " " + inFile.getAbsolutePath());
+				
+				checked++;
+				
+				innerMap.remove(name);
+			}
+		}
+		
+		System.out.println("Ok checked " + checked);
+		
+		if( innerMap.size() != 0)
+			System.out.println("COULD NOT FIND  " + innerMap);
+	}
+	
+	private static File findMatchingSummaryFile( File rdpOutputFile,  List<File> biolockJSummaryFiles) throws Exception
+	{
+		String sampleID = rdpOutputFile.getName().replace("_reported.tsv", "");
 		
 		File returnFile = null;
 		
-		for( File f : inputFiles)
+		for(File f : biolockJSummaryFiles)
 		{
-			if( f.getName().indexOf(sampleId) != -1 )
+			if( f.getName().indexOf(sampleID) != - 1 )
 			{
 				if( returnFile != null)
-					throw new Exception("Duplicate for " + sampleId);
+					throw new Exception("Duplicate for " + sampleID);
 				
 				returnFile = f;
 			}
 		}
 		
 		if( returnFile == null)
-			throw new Exception("Could not find match for " + pipelineFile.getAbsolutePath());
+			throw new Exception("Could not find " + sampleID );
 		
 		return returnFile;
-	}
 		
+	}
+	
+	private static HashMap<String, Long> getCountsForALevel( File aFile , String level) throws Exception
+	{
+		HashMap<String, Long> returnMap = new HashMap<>();
+		
+		HashMap<String, NewRDPParserFileLine> map = NewRDPParserFileLine.getAsMapFromSingleThread(aFile);
+		
+		for(String s : map.keySet())
+		{
+			NewRDPParserFileLine aLine = map.get(s);
+			
+			NewRDPNode aNode = aLine.getTaxaMap().get(level);
+			
+			if( aNode != null && aNode.getScore() >= RDP_THRESHOLD )
+			{
+				String taxaName = aNode.getTaxaName();
+				
+				Long aLong = returnMap.get(taxaName);
+				
+				if( aLong == null)
+					aLong = 0l;
+				
+				aLong = aLong + 1;
+				
+				returnMap.put(taxaName, aLong);
+			
+			}
+			
+		}
+		
+		return returnMap;
+		
+	}
+	*/
 	
 }
