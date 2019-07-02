@@ -1,5 +1,2 @@
 ConfigFile	ExpectedOutcome	Notes
-${SHEP}/test/module/kraken2Parser/justKraken2Parser.properties	BioLockJ_Complete	just the parser
-${SHEP}/test/module/kraken2Parser/reparseKraken2Parser.properties	BioLockJ_Complete	the parser with test module to reparse and verify the output
-${SHEP}/test/module/kraken2Parser/reparseKraken2Parser_limitTaxaLevels.properties	BioLockJ_Complete	the parser with reparsing module and limited taxanomic levels to report
-${SHEP}/test/module/kraken2Parser/tablesFromKraken2Parser.properties	BioLockJ_Complete	get taxa tables from the parser output
+${SHEP}/test/module/kraken2Parser/justKraken2Parser.properties	BioLockJ_Complete	parser plus test case for reparsing
