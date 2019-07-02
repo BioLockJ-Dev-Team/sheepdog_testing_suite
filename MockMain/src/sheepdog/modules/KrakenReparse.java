@@ -12,7 +12,6 @@ import biolockj.util.BioLockJUtil;
 
 public class KrakenReparse extends BioModuleImpl
 {
-	//todo : Get these from the property file
 	//private static final String GENUS_LEVEL = "genus";
 
 	@Override
