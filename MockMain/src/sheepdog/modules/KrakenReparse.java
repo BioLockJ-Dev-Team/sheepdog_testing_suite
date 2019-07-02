@@ -24,6 +24,8 @@ public class KrakenReparse extends BioModuleImpl
 	@Override
 	public void executeTask() throws Exception
 	{
+		//todo: remove this comment
+		
 		Log.info( getClass(), "IN stub for executeTask()");
 		
 		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("/mnt/c/temp/blah.txt")));
