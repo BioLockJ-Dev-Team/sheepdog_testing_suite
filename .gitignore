@@ -3,5 +3,6 @@
 */Icon*
 README.html
 MockMain/pipelines/
+MockMain/dist/
 *NOT_IN_GIT*
 **/pipelines/**
