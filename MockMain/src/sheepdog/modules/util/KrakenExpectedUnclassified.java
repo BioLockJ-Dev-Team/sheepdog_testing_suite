@@ -58,7 +58,19 @@ public class KrakenExpectedUnclassified
 		
 		removeRedundant(map);
 		
-		return map;
+		HashMap<String, Long> returnMap = new HashMap<>();
+		
+		for(String s : map.keySet())
+		{
+			String newKey = getExpectedString(s, endLevel);
+			
+			if( returnMap.containsKey(newKey))
+				throw new Exception("Renaming collision error");
+			
+			returnMap.put(newKey, map.get(s));
+		}
+		
+		return returnMap;
 	}
 	
 	private static void removeRedundant(HashMap<String, Long> map)
@@ -172,13 +184,13 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{
-		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454587_reported.tsv");
+		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		HashMap<String, Long> map = getUnclassifiedMap(inFile, "p",  "g");
 		
 		for(String s : map.keySet())
 		{
-			System.out.println(s + "\n" + getExpectedString(s, "g") + "\n" +   map.get(s) + "\n");
+			System.out.println(s + " " +  map.get(s) + "\n");
 		}
 	}
 }

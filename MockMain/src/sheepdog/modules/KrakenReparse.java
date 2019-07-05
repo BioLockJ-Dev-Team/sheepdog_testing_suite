@@ -14,10 +14,12 @@ import java.util.StringTokenizer;
 import biolockj.Log;
 import biolockj.module.BioModuleImpl;
 import biolockj.util.BioLockJUtil;
+import sheepdog.modules.util.KrakenExpectedUnclassified;
 
 public class KrakenReparse extends BioModuleImpl
 {
 	private static final String GENUS_LEVEL = "genus";
+	private static final String PHYLA_LEVEL = "phylum";
 
 	@Override
 	public void checkDependencies() throws Exception
@@ -32,21 +34,11 @@ public class KrakenReparse extends BioModuleImpl
 		
 		Log.info( getClass(), "IN stub for executeTask()");
 		
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("/mnt/c/temp/blah.txt")));
-		
 		
 		Collection<File> pipelineInput = BioLockJUtil.getPipelineInputFiles();
 		
-		for(File f : pipelineInput)
-			writer.write("pipeline : " + f.getAbsolutePath() + "\n");
-		
 		
 		List<File> inputFiles = getInputFiles();
-		
-		for( File f : inputFiles)
-			writer.write("input " +  f.getAbsolutePath() + "\n");
-		
-		writer.flush();  writer.close();
 		
 		for(File f : pipelineInput)
 		{
@@ -61,22 +53,36 @@ public class KrakenReparse extends BioModuleImpl
 	
 	private void assertEquals( File pipelineFile, File parserFile ) throws Exception
 	{
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("/mnt/c/temp/blah.txt")));
+		
+		
 		Log.info( getClass(),"CHECKING " + pipelineFile.getAbsolutePath() + " " + parserFile.getAbsolutePath() );
 		HashMap<String, Long> countMap =getExpectedAtLevel(pipelineFile, "" + GENUS_LEVEL.charAt(0));
+		HashMap<String, Long> unclassifiedMap = KrakenExpectedUnclassified.getUnclassifiedMap(pipelineFile, 
+				"" + PHYLA_LEVEL.charAt(0), "" + GENUS_LEVEL.charAt(0));
+		
+		if( unclassifiedMap.size() ==0 )
+			writer.write("EMPTY MAP " + pipelineFile.getAbsolutePath());
+		
+		for(String s : unclassifiedMap.keySet())
+			writer.write("GOT " + s + " "+  unclassifiedMap.get(s) + "\n");
+		
+		writer.flush(); writer.close();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(parserFile));
 		
 		for(String s = reader.readLine(); s != null; s= reader.readLine())
 		{
+			StringTokenizer sToken = new StringTokenizer(s,"\t");
+			
+			if( sToken.countTokens() != 2)
+				throw new Exception("Expecting 2 tabbed tokens " + sToken.countTokens() + " " +   s);
+			
+			String taxaString = sToken.nextToken();
+			
 			if( s.toLowerCase().indexOf("unclassified") == -1 )
 			{
-				StringTokenizer sToken = new StringTokenizer(s,"\t");
-				
-				if( sToken.countTokens() != 2)
-					throw new Exception("Expecting 2 tabbed tokens " + sToken.countTokens() + " " +   s);
-				
-				String taxaString = sToken.nextToken();
-				
 				int index = taxaString.indexOf(GENUS_LEVEL + "__");
 				
 				if( index != -1 )
@@ -99,11 +105,31 @@ public class KrakenReparse extends BioModuleImpl
 					countMap.remove(taxa);
 				}
 			}
+			else
+			{
+				Long expectedVal = unclassifiedMap.get(taxaString);
+				
+				if(expectedVal == null)
+					throw new Exception("Could not find " + taxaString + " "+  parserFile.getAbsolutePath() );
+				
+				Long parsedCount = Long.parseLong(sToken.nextToken());
+				
+				if( ! parsedCount.equals(expectedVal))
+					throw new Exception("Mismatch " + expectedVal + " " + parsedCount + " " + taxaString);
+				
+				Log.info( getClass(),"Match unclassified" + expectedVal + " " + parsedCount + " " + taxaString);
+				
+				unclassifiedMap.remove(taxaString);
+				
+			}
 			
 		}
 		
 		if( countMap.size() != 0 )
 			throw new Exception("Expecting empty map " + countMap);
+		
+		if( unclassifiedMap.size() != 0 )
+			throw new Exception("Expecting empty unclassified map " + unclassifiedMap);
 		
 		Log.info( getClass(),"Map is empty" );
 		
