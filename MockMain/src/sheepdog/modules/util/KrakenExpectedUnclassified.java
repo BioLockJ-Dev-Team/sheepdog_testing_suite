@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public class KrakenExpectedUnclassified
@@ -15,18 +17,49 @@ public class KrakenExpectedUnclassified
 	 * 
 	 * 
 	 */
-	public static HashMap<String, Long> getUnclassifiedMap( File inFile ) throws Exception
+	public static HashMap<String, Long> getUnclassifiedMap( File inFile , String startLevel, String endLevel ) throws Exception
 	{
 		HashMap<String, Long> map = new HashMap<>();
 		List<Holder> fileLines = getFileLines(inFile);
 		
 		for( int x=0; x < fileLines.size(); x++)
 		{
+			Holder h = fileLines.get(x);
+			
+			if( h.taxaLine.indexOf(startLevel + "__") != - 1)
+			{
+				HashSet<String> matching= new LinkedHashSet<>();
+				
+				for( int y=x+1; y < fileLines.size(); y++)
+				{
+					String candidateLine = fileLines.get(y).taxaLine;
+					
+					if( endAtLevel(candidateLine, endLevel) )
+						System.out.println(candidateLine);
+				}
+			}
+			
+			
 		}
 		
 		
 		
 		return map;
+	}
+	
+	private static  boolean endAtLevel(String s, String level)
+	{
+		int lastIndex =s.lastIndexOf(level + "__");
+		
+		if( lastIndex == -1)
+			return false;
+		
+		s = s.substring(lastIndex, s.length());
+		
+		if( s.indexOf("|") == -1 )
+			return true;
+		
+		return false;
 	}
 	
 	private static class Holder
@@ -57,7 +90,6 @@ public class KrakenExpectedUnclassified
 		return list;
 	}
 	
-	
 	/*
 	 * 
 	 * Hard-coded file path for the development cycle here.
@@ -67,7 +99,7 @@ public class KrakenExpectedUnclassified
 	{
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454587_reported.tsv");
 		
-		HashMap<String, Long> map = getUnclassifiedMap(inFile);
+		HashMap<String, Long> map = getUnclassifiedMap(inFile, "p",  "g");
 		
 		for(String s : map.keySet())
 		{
