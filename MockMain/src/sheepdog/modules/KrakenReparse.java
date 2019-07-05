@@ -95,10 +95,18 @@ public class KrakenReparse extends BioModuleImpl
 						throw new Exception("Mismatch " + expectedVal + " " + parsedCount + " " + taxa);
 					
 					Log.info( getClass(),"Match " + expectedVal + " " + parsedCount + " " + taxa);
+					
+					countMap.remove(taxa);
 				}
 			}
 			
 		}
+		
+		if( countMap.size() != 0 )
+			throw new Exception("Expecting empty map " + countMap);
+		
+		Log.info( getClass(),"Map is empty" );
+		
 		
 		Log.info( getClass(),"PASS " + pipelineFile.getAbsolutePath() + " " + parserFile.getAbsolutePath() );
 		
