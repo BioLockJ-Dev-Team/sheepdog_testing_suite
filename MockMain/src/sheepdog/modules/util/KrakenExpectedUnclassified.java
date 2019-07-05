@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class KrakenExpectedUnclassified
@@ -17,14 +19,16 @@ public class KrakenExpectedUnclassified
 	 */
 	public static HashMap<String, Long> getUnclassifiedMap( File inFile , String startLevel, String endLevel ) throws Exception
 	{
-		HashMap<String, Long> map = new HashMap<>();
+		HashMap<String, Long> map = new LinkedHashMap<>();
 		List<Holder> fileLines = getFileLines(inFile);
 		
 		for( int x=0; x < fileLines.size(); x++)
 		{
 			Holder h = fileLines.get(x);
 			
-			if( h.taxaLine.indexOf(startLevel + "__") != - 1 && ! endsBelowLevel(h.taxaLine,endLevel))
+			if( h.taxaLine.indexOf(startLevel + "__") != - 1 
+					&& ! endAtLevel(h.taxaLine, endLevel)
+					&& ! endsBelowLevel(h.taxaLine,endLevel))
 			{
 				long matchingSum =0;
 				  
@@ -47,9 +51,26 @@ public class KrakenExpectedUnclassified
 
 		}
 		
-		
+		removeRedundant(map);
 		
 		return map;
+	}
+	
+	private static void removeRedundant(HashMap<String, Long> map)
+	{
+		HashSet<String> toRemove =new HashSet<>();
+		
+		for(String s : map.keySet())
+		{
+			for(String s2 : map.keySet())
+			{
+				if( ! s.equals(s2) && s2.indexOf(s) != -1 )
+					toRemove.add(s);
+			}
+		}
+		
+		for(String s : toRemove)
+			map.remove(s);
 	}
 	
 	private static  boolean endAtLevel(String s, String level)
