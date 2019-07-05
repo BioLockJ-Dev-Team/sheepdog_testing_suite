@@ -92,6 +92,8 @@ public class KrakenExpectedUnclassified
 	
 	private static String getExpectedString(String inString, String endLevel)
 	{
+
+		System.out.println(inString);
 		inString = inString.substring(inString.indexOf("|")+1, inString.length());
 		
 		for( int x=0 ; x< TAXA_LEVELS.length; x++)
@@ -99,7 +101,12 @@ public class KrakenExpectedUnclassified
 			inString = inString.replace(FIRST_CHARS[x] + "__", TAXA_LEVELS[x] + "__");	
 		}
 		
-		String lastTaxa= inString.substring(inString.lastIndexOf("|"), inString.length());
+		int startPos = inString.lastIndexOf("|");
+		
+		if( startPos == -1 )
+			startPos = 0;
+		
+		String lastTaxa= inString.substring(startPos, inString.length());
 		lastTaxa = lastTaxa.substring(lastTaxa.lastIndexOf("__") + 2, lastTaxa.length());
 		
 		String lastlevel = null;

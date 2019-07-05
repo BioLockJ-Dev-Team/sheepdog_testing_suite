@@ -1,10 +1,8 @@
 package sheepdog.modules;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -54,22 +52,12 @@ public class KrakenReparse extends BioModuleImpl
 	private void assertEquals( File pipelineFile, File parserFile ) throws Exception
 	{
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("/mnt/c/temp/blah.txt")));
-		
 		
 		Log.info( getClass(),"CHECKING " + pipelineFile.getAbsolutePath() + " " + parserFile.getAbsolutePath() );
 		HashMap<String, Long> countMap =getExpectedAtLevel(pipelineFile, "" + GENUS_LEVEL.charAt(0));
 		HashMap<String, Long> unclassifiedMap = KrakenExpectedUnclassified.getUnclassifiedMap(pipelineFile, 
 				"" + PHYLA_LEVEL.charAt(0), "" + GENUS_LEVEL.charAt(0));
-		
-		if( unclassifiedMap.size() ==0 )
-			writer.write("EMPTY MAP " + pipelineFile.getAbsolutePath());
-		
-		for(String s : unclassifiedMap.keySet())
-			writer.write("GOT " + s + " "+  unclassifiedMap.get(s) + "\n");
-		
-		writer.flush(); writer.close();
-		
+			
 		BufferedReader reader = new BufferedReader(new FileReader(parserFile));
 		
 		for(String s = reader.readLine(); s != null; s= reader.readLine())
