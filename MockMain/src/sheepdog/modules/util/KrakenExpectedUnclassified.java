@@ -86,12 +86,12 @@ public class KrakenExpectedUnclassified
 		}
 		
 		String lastTaxa= inString.substring(inString.lastIndexOf("|"), inString.length());
-		lastTaxa = lastTaxa.substring(lastTaxa.lastIndexOf("__") + 1, lastTaxa.length());
+		lastTaxa = lastTaxa.substring(lastTaxa.lastIndexOf("__") + 2, lastTaxa.length());
 			
-		for( int x = TAXA_LEVELS.length-1; x >=0; x--)
+		for( int x = 0 ; x < TAXA_LEVELS.length; x++)
 		{
 			if( inString.indexOf(TAXA_LEVELS[x]) == - 1 )
-				inString = inString + "|" + TAXA_LEVELS[x] + "__" + lastTaxa;
+				inString = inString + "|" + TAXA_LEVELS[x] + "__Unclassified " + lastTaxa;
 		}
 		
 		return inString;
