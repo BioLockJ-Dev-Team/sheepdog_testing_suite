@@ -12,6 +12,8 @@ import java.util.List;
 public class KrakenExpectedUnclassified
 {
 	private static String[] TAXA_LEVELS = { "phylum" , "class" , "order" , "family" , "genus" } ;
+
+	private static String[] TAXA_LEVELS_FIRST_UPPER = { "Phylum" , "Class" , "Order" , "Family" , "Genus" } ;
 	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" };
 	
 	/*
@@ -87,11 +89,19 @@ public class KrakenExpectedUnclassified
 		
 		String lastTaxa= inString.substring(inString.lastIndexOf("|"), inString.length());
 		lastTaxa = lastTaxa.substring(lastTaxa.lastIndexOf("__") + 2, lastTaxa.length());
+		
+		String lastlevel = null;
+		
+		for( int x=0; x < TAXA_LEVELS.length; x++)
+			if(  inString.indexOf(TAXA_LEVELS[x]+ "__") != -1 ) 
+				lastlevel = TAXA_LEVELS_FIRST_UPPER[x];
+		
+		
 			
 		for( int x = 0 ; x < TAXA_LEVELS.length; x++)
 		{
 			if( inString.indexOf(TAXA_LEVELS[x]) == - 1 )
-				inString = inString + "|" + TAXA_LEVELS[x] + "__Unclassified " + lastTaxa;
+				inString = inString + "|" + TAXA_LEVELS[x] + "__Unclassified " + lastTaxa + " " + lastlevel;
 		}
 		
 		return inString;
