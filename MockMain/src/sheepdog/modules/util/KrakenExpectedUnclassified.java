@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+import org.apache.commons.io.filefilter.FileFileFilter;
+
 public class KrakenExpectedUnclassified
 {
 	/*
@@ -28,18 +30,25 @@ public class KrakenExpectedUnclassified
 			
 			if( h.taxaLine.indexOf(startLevel + "__") != - 1)
 			{
-				HashSet<String> matching= new LinkedHashSet<>();
+				long matchingSum =0;
 				
 				for( int y=x+1; y < fileLines.size(); y++)
 				{
 					String candidateLine = fileLines.get(y).taxaLine;
 					
-					if( endAtLevel(candidateLine, endLevel) )
-						System.out.println(candidateLine);
+					if( endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
+					{
+						matchingSum += fileLines.get(y).taxaCount;
+					}
 				}
+				
+				if( matchingSum > h.taxaCount)
+					throw new Exception("Parsing error");
+				
+				if( matchingSum < h.taxaCount)
+					map.put(h.taxaLine, h.taxaCount - matchingSum);
 			}
-			
-			
+
 		}
 		
 		
