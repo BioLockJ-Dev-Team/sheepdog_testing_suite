@@ -26,8 +26,8 @@ public class KrakenExpectedUnclassified
 		{
 			Holder h = fileLines.get(x);
 			
-			if( h.taxaLine.indexOf(startLevel + "__") != - 1 
-					&& ! endAtLevel(h.taxaLine, endLevel)
+			if( /* h.taxaLine.indexOf(startLevel + "__") != - 1 && */  // include kingdom level?
+					 ! endAtLevel(h.taxaLine, endLevel)
 					&& ! endsBelowLevel(h.taxaLine,endLevel))
 			{
 				long matchingSum =0;
