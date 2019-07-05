@@ -102,7 +102,7 @@ public class RdpReparse extends BioModuleImpl
 		System.out.println("Ok checked " + checked);
 		
 		if( innerMap.size() != 0)
-			System.out.println("COULD NOT FIND  " + innerMap);
+			throw new Exception("COULD NOT FIND  " + innerMap);
 	}
 	
 	private static File findMatchingSummaryFile( File rdpOutputFile,  List<File> biolockJSummaryFiles) throws Exception
