@@ -15,8 +15,10 @@ import org.apache.commons.io.FileUtils;
 import biolockj.Config;
 import biolockj.Constants;
 import biolockj.Properties;
+import biolockj.module.BioModuleImpl;
 import biolockj.util.BioLockJUtil;
 import biolockj.util.SummaryUtil;
+import biolockj.util.ValidationUtil;
 
 public class RunMock
 {
@@ -215,37 +217,9 @@ public class RunMock
 		String cmd;
 		if (test.environment.equals( DOCKER ))
 		{
-			cmd = "docker run --rm"
-//					+ " -v " + Config.replaceEnvVar("${SHEP}") + ":/shep"
-//					+ " -v " + Config.replaceEnvVar("${SHEP_DATA}") + ":/shep_data"
-//					+ " -e SHEP=/shep"
-//					+ " -e SHEP_DATA=/shep_data"
-					+ " -v /var/run/docker.sock:/var/run/docker.sock"
-					+ " -v " + Config.replaceEnvVar("~") + ":/home/ec2-user"
-					+ " -v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated"
-					+ " -v " + test.inputDir + ":/mnt/efs/input:ro"
-					+ " -v " + test.config.getParent() + ":/mnt/efs/config:ro"
-					+ " -v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
-					+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
-					+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
-					+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
-					+ " sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
-					+ " -i " + test.inputDir + " -c " + test.config ;
-			String msg = String.valueOf( cmd );
-			// The msg printed to the console can be copy/pasted to run the command
-			// AND it has logical line breaks to make it more human readable.
-			msg = msg.replaceAll( "run --rm",  "holdThisDash"); 
-			msg = msg.replaceAll( "ec2-user",  "holdUser" );
-			msg = msg.replaceAll( "-",  " \\\\" + System.lineSeparator() + "-");
-			msg = msg.replaceAll( "biolockj/biolockj_controller",  " \\\\" + System.lineSeparator() + "biolockj/biolockj_controller");
-			msg = msg.replaceAll( "holdThisDash",  "run --rm");
-			msg = msg.replaceAll( "holdUser",  "ec2-user");
-			System.err.println(msg);
+			cmd = generateDockerCmd(test);
 		}else {
-			cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
-			+ " sheepdog.MockMain " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
-			+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.flags ;
-			System.err.println(cmd);
+			cmd = generateJavaCmd(test);
 		}
 
 		String result = "";
@@ -279,6 +253,45 @@ public class RunMock
 		}
 		test.result = result ;
 		test.setPipeline(pipeline) ;
+	}
+	
+	private static String generateDockerCmd(TestInfoRow test) {
+		String cmd = "docker run --rm"
+//						+ " -v " + Config.replaceEnvVar("${SHEP}") + ":/shep"
+//						+ " -v " + Config.replaceEnvVar("${SHEP_DATA}") + ":/shep_data"
+//						+ " -e SHEP=/shep"
+//						+ " -e SHEP_DATA=/shep_data"
+						+ " -v /var/run/docker.sock:/var/run/docker.sock"
+						+ " -v " + Config.replaceEnvVar("~") + ":/home/ec2-user"
+						+ " -v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated"
+						+ " -v " + test.inputDir + ":/mnt/efs/input:ro"
+						+ " -v " + test.config.getParent() + ":/mnt/efs/config:ro"
+						+ " -v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
+						+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
+						+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
+						+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
+						+ " sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
+						+ " -i " + test.inputDir + " -c " + test.config ;
+				String msg = String.valueOf( cmd );
+				// The msg printed to the console can be copy/pasted to run the command
+				// AND it has logical line breaks to make it more human readable.
+				msg = msg.replaceAll( "run --rm",  "holdThisDash"); 
+				msg = msg.replaceAll( "ec2-user",  "holdUser" );
+				msg = msg.replaceAll( "-",  " \\\\" + System.lineSeparator() + "-");
+				msg = msg.replaceAll( "biolockj/biolockj_controller",  " \\\\" + System.lineSeparator() + "biolockj/biolockj_controller");
+				msg = msg.replaceAll( "holdThisDash",  "run --rm");
+				msg = msg.replaceAll( "holdUser",  "ec2-user");
+				System.err.println(msg);
+				return( cmd );
+	}
+	
+	private static String generateJavaCmd(TestInfoRow test) {
+		String cmd;
+		cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
+		+ " sheepdog.MockMain " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
+		+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.flags ;
+		System.err.println(cmd);
+		return( cmd );
 	}
 
 	protected static void writeHeader( BufferedWriter writer ) throws IOException{
