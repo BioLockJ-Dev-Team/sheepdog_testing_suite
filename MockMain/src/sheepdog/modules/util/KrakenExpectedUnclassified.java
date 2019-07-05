@@ -5,11 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
-
-import org.apache.commons.io.filefilter.FileFileFilter;
 
 public class KrakenExpectedUnclassified
 {
@@ -28,10 +24,10 @@ public class KrakenExpectedUnclassified
 		{
 			Holder h = fileLines.get(x);
 			
-			if( h.taxaLine.indexOf(startLevel + "__") != - 1)
+			if( h.taxaLine.indexOf(startLevel + "__") != - 1 && ! endsBelowLevel(h.taxaLine,endLevel))
 			{
 				long matchingSum =0;
-				
+				  
 				for( int y=x+1; y < fileLines.size(); y++)
 				{
 					String candidateLine = fileLines.get(y).taxaLine;
@@ -69,6 +65,21 @@ public class KrakenExpectedUnclassified
 			return true;
 		
 		return false;
+	}
+	
+	private static boolean endsBelowLevel( String s, String level)
+	{
+		int lastIndex =s.lastIndexOf(level + "__");
+		
+		if( lastIndex == -1)
+			return false;
+		
+		s = s.substring(lastIndex, s.length());
+		
+		if( s.indexOf("|") == -1 )
+			return false;
+		
+		return true;
 	}
 	
 	private static class Holder
