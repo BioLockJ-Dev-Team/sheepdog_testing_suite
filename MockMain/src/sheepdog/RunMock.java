@@ -15,10 +15,8 @@ import org.apache.commons.io.FileUtils;
 import biolockj.Config;
 import biolockj.Constants;
 import biolockj.Properties;
-import biolockj.module.BioModuleImpl;
 import biolockj.util.BioLockJUtil;
 import biolockj.util.SummaryUtil;
-import biolockj.util.ValidationUtil;
 
 public class RunMock
 {
@@ -26,6 +24,7 @@ public class RunMock
 	private static final String FLAGS_COL = "Flags";
 	private static final String ENV_COL = "Environment";
 	private static final String PIPELINE_COL = "PipelineDirectory";
+	private static final String VAL_ENABLED_COL = "ValidationEnabled";
 	private static final String NUM_COMPLETE_MODS_COL = "NumberCompletedModules";
 	private static final String EXPECTED_OUTCOME_COL = "ExpectedOutcome";
 	private static final String OUTCOME_SEEN_COL = "Observed";
@@ -45,6 +44,7 @@ public class RunMock
 		String environment;
 		String pipeline;
 		int completedModules;
+		boolean validationEnabled=false;
 		String out_exp;
 		String result;
 		boolean passes;
@@ -63,6 +63,8 @@ public class RunMock
 					return( "" );
 				case PIPELINE_COL:
 					return( pipeline );
+				case VAL_ENABLED_COL:
+					return( validationEnabled ? "YES" : "NO" );
 				case NUM_COMPLETE_MODS_COL:
 					return( Integer.toString(completedModules) );
 				case EXPECTED_OUTCOME_COL:
@@ -108,7 +110,7 @@ public class RunMock
 	}
 
 	protected static ArrayList<String> outputHeader = new ArrayList<String>( Arrays.asList(
-			CONFIG_FILE_COL, FLAGS_COL, ENV_COL, PIPELINE_COL, NUM_COMPLETE_MODS_COL,
+			CONFIG_FILE_COL, FLAGS_COL, ENV_COL, PIPELINE_COL, VAL_ENABLED_COL, NUM_COMPLETE_MODS_COL,
 			EXPECTED_OUTCOME_COL, OUTCOME_SEEN_COL, PASS_FAIL, NOTES_COL) );
 	
 	private static ArrayList<TestInfoRow> tests = new ArrayList<TestInfoRow>();
@@ -243,6 +245,9 @@ public class RunMock
 				if( s.startsWith( MockMain.PIPELINE_KEY ) )
 				{
 					pipeline = s.replace( MockMain.PIPELINE_KEY, "" ).trim();
+				}
+				if( s.contentEquals( MockMain.VALIDATION_ENABLED )) {
+					test.validationEnabled=true;
 				}
 			}
 			p.waitFor();
