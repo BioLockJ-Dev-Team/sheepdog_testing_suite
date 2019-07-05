@@ -11,6 +11,9 @@ import java.util.List;
 
 public class KrakenExpectedUnclassified
 {
+	private static String[] TAXA_LEVELS = { "phylum" , "class" , "order" , "family" , "genus" } ;
+	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" };
+	
 	/*
 	 * the key will be a full string such as 
 	 * phylum__Bacteroidetes|class__Bacteroidia|order__Bacteroidales|family__Unclassified Bacteroidales Order|genus__Unclassified Bacteroidales
@@ -71,6 +74,27 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : toRemove)
 			map.remove(s);
+	}
+	
+	private static String getExpectedString(String inString, String endLevel)
+	{
+		inString = inString.substring(inString.indexOf("|")+1, inString.length());
+		
+		for( int x=0 ; x< TAXA_LEVELS.length; x++)
+		{
+			inString = inString.replace(FIRST_CHARS[x] + "__", TAXA_LEVELS[x] + "__");	
+		}
+		
+		String lastTaxa= inString.substring(inString.lastIndexOf("|"), inString.length());
+		lastTaxa = lastTaxa.substring(lastTaxa.lastIndexOf("__") + 1, lastTaxa.length());
+			
+		for( int x = TAXA_LEVELS.length-1; x >=0; x--)
+		{
+			if( inString.indexOf(TAXA_LEVELS[x]) == - 1 )
+				inString = inString + "|" + TAXA_LEVELS[x] + "__" + lastTaxa;
+		}
+		
+		return inString;
 	}
 	
 	private static  boolean endAtLevel(String s, String level)
@@ -144,7 +168,7 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : map.keySet())
 		{
-			System.out.println(s + " " + map.get(s));
+			System.out.println(s + "\n" + getExpectedString(s, "g") + "\n" +   map.get(s) + "\n");
 		}
 	}
 }
