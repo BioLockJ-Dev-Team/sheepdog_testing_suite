@@ -1,0 +1,2 @@
+name	size	md5	MATCHED_EXPECTATION
+rarifySeqs_2019Jul03.fastq.gz	5364	cf29b3165caa7c1f9b86632f998d14ca	REPORT

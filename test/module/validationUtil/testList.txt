@@ -7,7 +7,6 @@ ${SHEP}/test/module/validationUtil/part5_validationExcept_passModule/rarifySeqs.
 ${SHEP}/test/module/validationUtil/part6_limitComparOn/rarifySeqs.properties	5	BioLockJ_Complete	"part6 - compareOn name only; RarefySeqs output should have name, size, md5; SeqFileValidator should have name and md5 (no size); Multiplexer should only report name; all report MATCHED"
 ${SHEP}/test/module/validationUtil/part7_limitReportOn_compareOn/rarifySeqs.properties	5	BioLockJ_Complete	part7 - use separate validation file for module 2; check logs to see that module 3 comparison does not include size; module 4 comparison does not include md5.
 ${SHEP}/test/module/validationUtil/part8_badAttribute/rarifySeqs.properties	0	ConfigViolationException	part8 - badAttribute
-${SHEP}/test/module/validationUtil/part9_softValidation/rarifySeqs.properties	4	ValidationException	"part9 - soft validation; fail in module 04; check that the individual files in 02, 03, and 04 pass/fail as expected; see expectation file"
-${SHEP}/test/module/validationUtil/part10_fileNotListed/rarifySeqs.properties	3	ValidationException	part 10 - fail in 03
-${SHEP}/test/module/validationUtil/part11_extraFileListed/rarifySeqs.properties	4	ValidationException	part 11 - fail in 04
+${SHEP}/test/module/validationUtil/part9_softValidation/rarifySeqs.properties	5	ValidationException	"part9 - soft validation; fail in module 05; check that the individual files in 02, 03, and 04 pass/fail as expected; see expectation file"
+${SHEP}/test/module/validationUtil/part10_fileNotListed/rarifySeqs.properties	4	ValidationException	part 10 - fails when an expected file is not produced
 ${SHEP}/test/module/validationUtil/part9b_badSizes/rarifySeqs.properties	4	ValidationException	part9b - verify that all messed up files fail when soft validation is not permitted;  stop in module 04;
