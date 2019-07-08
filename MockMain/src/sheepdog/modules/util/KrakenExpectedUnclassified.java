@@ -175,10 +175,14 @@ public class KrakenExpectedUnclassified
 			if( splits.length != 2)
 				throw new Exception("Expecting two tokens " + inFile.getAbsolutePath() +  " "+  s);
 			
+			
 			Holder h= new Holder();
 			h.taxaLine= splits[0];
 			h.taxaCount = Long.parseLong(splits[1]);
-			list.add(h);
+			
+			// hack that will break for last levels other than genus; if it includes species don't include it in the list
+			if( h.taxaLine.indexOf("s__") == -1 )
+				list.add(h);
 		}
 		
 		return list;
@@ -197,7 +201,12 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : map.keySet())
 		{
-			System.out.println(s + " " +  map.get(s) + "\n");
+			if( s.indexOf("Acidobacteriaceae") != -1)
+				System.out.println(s + " " +  map.get(s) );
 		}
+		
+		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul08\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul08_otuCount_SRR4454586.tsv");
+		
+		RdpExpectedUnclassified.assertUnclassifiedEquals(biolockJFile, map);
 	}
 }
