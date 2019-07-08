@@ -99,6 +99,12 @@ public class RdpExpectedUnclassified
 		return buff.toString();
 	}
 	
+	private static String getLastPipeSubstring(String s)
+	{
+		s = s.substring(s.lastIndexOf("|") + 1, s.length());
+		return s;
+	}
+	
 	public static void assertUnclassifiedEquals(File biolockJFile, HashMap<String, Long> map) throws Exception
 	{
 		BufferedReader reader = new BufferedReader(new FileReader(biolockJFile));
@@ -113,7 +119,7 @@ public class RdpExpectedUnclassified
 			String taxa =sToken.nextToken();
 			Long count = Long.parseLong(sToken.nextToken());
 			
-			if( taxa.toLowerCase().indexOf("unclassified")!=-1)
+			if( getLastPipeSubstring(taxa).toLowerCase().indexOf("unclassified")!=-1)
 			{
 
 				Long anotherCount = map.get(taxa);
@@ -123,6 +129,8 @@ public class RdpExpectedUnclassified
 				
 				if( ! count.equals(anotherCount))
 					throw new Exception("Taxa mismatch " + taxa +  " " + count + " " + anotherCount);
+				
+				System.out.println("match " + taxa + " " + count);
 			}
 			
 		}
