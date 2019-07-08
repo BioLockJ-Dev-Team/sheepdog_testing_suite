@@ -1,0 +1,2 @@
+name	size	md5	MATCHED_EXPECTATION
+02_RarefySeqs_validation.txt	485	1452c47af23fc93b4f0cdefe94353b0e	FAIL

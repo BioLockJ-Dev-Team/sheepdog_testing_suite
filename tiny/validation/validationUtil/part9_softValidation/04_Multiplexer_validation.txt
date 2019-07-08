@@ -1,2 +1,0 @@
-name	size	md5	MATCHED_EXPECTATION
-rarifySeqs_2019Jun17.fastq.gz	5494	f324b776ef85f560446da43529be2b85	FAIL - Real value is -1.96578085183837% different from expectation size.

@@ -1,2 +1,2 @@
 name	size	md5	MATCHED_EXPECTATION
-rarifySeqs_2019Jun17_metadata.tsv	146	54ce35e613c371a347b2a7a9a8462bdc	REPORT
+rarifySeqs_2019Jul03_metadata.tsv	110	adcfbf2d1ea1e7aceb0775def638e5fa	REPORT

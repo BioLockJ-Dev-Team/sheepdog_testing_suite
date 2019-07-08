@@ -1,4 +1,4 @@
 README 
 
 Messed up md5 values for RarefySeqs and SeqFileValidator.
-Validation should skip TrimPrimers (TrimPrimers.alwaysPass=Y) but it should fail on SeqFileValidator.
+Validation should skip RarefySeqs but it should fail on SeqFileValidator.

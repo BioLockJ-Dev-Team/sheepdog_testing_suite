@@ -24,6 +24,8 @@ public class RunMock
 	private static final String FLAGS_COL = "Flags";
 	private static final String ENV_COL = "Environment";
 	private static final String PIPELINE_COL = "PipelineDirectory";
+	private static final String VAL_ENABLED_COL = "ValidationEnabled";
+	private static final String EXP_COMPLETE_MODS_COL = "NumberShouldComplete";
 	private static final String NUM_COMPLETE_MODS_COL = "NumberCompletedModules";
 	private static final String EXPECTED_OUTCOME_COL = "ExpectedOutcome";
 	private static final String OUTCOME_SEEN_COL = "Observed";
@@ -42,7 +44,9 @@ public class RunMock
 		String flags;
 		String environment;
 		String pipeline;
+		int expCompleteModules = -1;
 		int completedModules;
+		boolean validationEnabled=false;
 		String out_exp;
 		String result;
 		boolean passes;
@@ -61,6 +65,11 @@ public class RunMock
 					return( "" );
 				case PIPELINE_COL:
 					return( pipeline );
+				case VAL_ENABLED_COL:
+					return( validationEnabled ? "YES" : "NO" );
+				case EXP_COMPLETE_MODS_COL:
+					if (expCompleteModules == -1) return("NA");
+					return( Integer.toString( expCompleteModules ) );
 				case NUM_COMPLETE_MODS_COL:
 					return( Integer.toString(completedModules) );
 				case EXPECTED_OUTCOME_COL:
@@ -106,7 +115,8 @@ public class RunMock
 	}
 
 	protected static ArrayList<String> outputHeader = new ArrayList<String>( Arrays.asList(
-			CONFIG_FILE_COL, FLAGS_COL, ENV_COL, PIPELINE_COL, NUM_COMPLETE_MODS_COL,
+			CONFIG_FILE_COL, FLAGS_COL, ENV_COL, PIPELINE_COL, VAL_ENABLED_COL, 
+			EXP_COMPLETE_MODS_COL, NUM_COMPLETE_MODS_COL,
 			EXPECTED_OUTCOME_COL, OUTCOME_SEEN_COL, PASS_FAIL, NOTES_COL) );
 	
 	private static ArrayList<TestInfoRow> tests = new ArrayList<TestInfoRow>();
@@ -132,7 +142,7 @@ public class RunMock
 				runMockBljMain( test );
 				testsRun ++;
 				System.err.println( "This pipeline completed " + getCompletedModuleCount( test ) + " modules.");
-				if( test.out_exp.equals( test.result ) ){
+				if( test.out_exp.equals( test.result ) && (test.expCompleteModules==test.completedModules || test.expCompleteModules== -1) ){
 					test.passes = true;
 				}else {
 					test.passes = false;
@@ -175,6 +185,7 @@ public class RunMock
 		int iConfig = 0;
 		int iFlags = 0;
 		int iEnv = 0;
+		int iCompModsExp = 0;
 		int iExpected = 0;
 		int iNotes = 0;
 		BufferedReader reader = BioLockJUtil.getFileReader( inFile );
@@ -190,6 +201,7 @@ public class RunMock
 					iConfig = row.indexOf( CONFIG_FILE_COL );
 					iFlags = row.indexOf( FLAGS_COL );
 					iEnv = row.indexOf( ENV_COL );
+					iCompModsExp = row.indexOf( EXP_COMPLETE_MODS_COL );
 					iExpected = row.indexOf( EXPECTED_OUTCOME_COL );
 					iNotes = row.indexOf( NOTES_COL );
 				}else {
@@ -197,6 +209,7 @@ public class RunMock
 					oneTest.config = new File( Config.replaceEnvVar( row.get( iConfig ) ) );
 					if (iFlags > 0 ) oneTest.flags = row.get( iFlags ); else oneTest.flags = "";
 					if (iEnv > 0 ) oneTest.environment = row.get( iEnv ); else oneTest.environment = "";
+					if (iCompModsExp > 0 ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
 					oneTest.out_exp = row.get( iExpected );
 					if (iNotes > 0 ) oneTest.notes = row.get( iNotes ); else oneTest.notes = "";
 					if (oneTest.environment.equals( DOCKER )) oneTest.extractInputDir();
@@ -215,37 +228,9 @@ public class RunMock
 		String cmd;
 		if (test.environment.equals( DOCKER ))
 		{
-			cmd = "docker run --rm"
-//					+ " -v " + Config.replaceEnvVar("${SHEP}") + ":/shep"
-//					+ " -v " + Config.replaceEnvVar("${SHEP_DATA}") + ":/shep_data"
-//					+ " -e SHEP=/shep"
-//					+ " -e SHEP_DATA=/shep_data"
-					+ " -v /var/run/docker.sock:/var/run/docker.sock"
-					+ " -v " + Config.replaceEnvVar("~") + ":/home/ec2-user"
-					+ " -v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated"
-					+ " -v " + test.inputDir + ":/mnt/efs/input:ro"
-					+ " -v " + test.config.getParent() + ":/mnt/efs/config:ro"
-					+ " -v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
-					+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
-					+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
-					+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
-					+ " sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
-					+ " -i " + test.inputDir + " -c " + test.config ;
-			String msg = String.valueOf( cmd );
-			// The msg printed to the console can be copy/pasted to run the command
-			// AND it has logical line breaks to make it more human readable.
-			msg = msg.replaceAll( "run --rm",  "holdThisDash"); 
-			msg = msg.replaceAll( "ec2-user",  "holdUser" );
-			msg = msg.replaceAll( "-",  " \\\\" + System.lineSeparator() + "-");
-			msg = msg.replaceAll( "biolockj/biolockj_controller",  " \\\\" + System.lineSeparator() + "biolockj/biolockj_controller");
-			msg = msg.replaceAll( "holdThisDash",  "run --rm");
-			msg = msg.replaceAll( "holdUser",  "ec2-user");
-			System.err.println(msg);
+			cmd = generateDockerCmd(test);
 		}else {
-			cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
-			+ " sheepdog.MockMain " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
-			+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.flags ;
-			System.err.println(cmd);
+			cmd = generateJavaCmd(test);
 		}
 
 		String result = "";
@@ -270,6 +255,9 @@ public class RunMock
 				{
 					pipeline = s.replace( MockMain.PIPELINE_KEY, "" ).trim();
 				}
+				if( s.contentEquals( MockMain.VALIDATION_ENABLED )) {
+					test.validationEnabled=true;
+				}
 			}
 			p.waitFor();
 			p.destroy();
@@ -279,6 +267,45 @@ public class RunMock
 		}
 		test.result = result ;
 		test.setPipeline(pipeline) ;
+	}
+	
+	private static String generateDockerCmd(TestInfoRow test) {
+		String cmd = "docker run --rm"
+//						+ " -v " + Config.replaceEnvVar("${SHEP}") + ":/shep"
+//						+ " -v " + Config.replaceEnvVar("${SHEP_DATA}") + ":/shep_data"
+//						+ " -e SHEP=/shep"
+//						+ " -e SHEP_DATA=/shep_data"
+						+ " -v /var/run/docker.sock:/var/run/docker.sock"
+						+ " -v " + Config.replaceEnvVar("~") + ":/home/ec2-user"
+						+ " -v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated"
+						+ " -v " + test.inputDir + ":/mnt/efs/input:ro"
+						+ " -v " + test.config.getParent() + ":/mnt/efs/config:ro"
+						+ " -v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
+						+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
+						+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
+						+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
+						+ " sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
+						+ " -i " + test.inputDir + " -c " + test.config ;
+				String msg = String.valueOf( cmd );
+				// The msg printed to the console can be copy/pasted to run the command
+				// AND it has logical line breaks to make it more human readable.
+				msg = msg.replaceAll( "run --rm",  "holdThisDash"); 
+				msg = msg.replaceAll( "ec2-user",  "holdUser" );
+				msg = msg.replaceAll( "-",  " \\\\" + System.lineSeparator() + "-");
+				msg = msg.replaceAll( "biolockj/biolockj_controller",  " \\\\" + System.lineSeparator() + "biolockj/biolockj_controller");
+				msg = msg.replaceAll( "holdThisDash",  "run --rm");
+				msg = msg.replaceAll( "holdUser",  "ec2-user");
+				System.err.println(msg);
+				return( cmd );
+	}
+	
+	private static String generateJavaCmd(TestInfoRow test) {
+		String cmd;
+		cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
+		+ " sheepdog.MockMain " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
+		+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.flags ;
+		System.err.println(cmd);
+		return( cmd );
 	}
 
 	protected static void writeHeader( BufferedWriter writer ) throws IOException{

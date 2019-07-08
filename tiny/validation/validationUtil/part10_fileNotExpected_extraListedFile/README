@@ -1,0 +1,7 @@
+README 
+
+In 02, a file was removed from the expectations.  The validation util fails that output file, but the pipeline is rigged to not stop.  
+
+In 03, check files module validates that the correct pass/fail assignments happened in 02.
+
+In 04, there is a made-up expected file. The pipeline should fail when that the validator says that file is missing.
