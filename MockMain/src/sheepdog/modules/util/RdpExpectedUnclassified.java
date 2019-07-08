@@ -1,10 +1,13 @@
 package sheepdog.modules.util;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import parsers.NewRDPNode;
 import parsers.NewRDPParserFileLine;
@@ -95,7 +98,36 @@ public class RdpExpectedUnclassified
 		
 		return buff.toString();
 	}
+	
+	public static void assertUnclassifiedEquals(File biolockJFile, HashMap<String, Long> map) throws Exception
+	{
+		BufferedReader reader = new BufferedReader(new FileReader(biolockJFile));
 		
+		for(String s= reader.readLine(); s != null; s= reader.readLine())
+		{
+			StringTokenizer sToken = new StringTokenizer(s, "\t");
+			
+			if( sToken.countTokens() != 2)
+				throw new Exception("Expecting two tokens " );
+			
+			String taxa =sToken.nextToken();
+			Long count = Long.parseLong(sToken.nextToken());
+			
+			if( taxa.toLowerCase().indexOf("unclassified")!=-1)
+			{
+
+				Long anotherCount = map.get(taxa);
+				
+				if( anotherCount == null)
+					throw new Exception("Could not find " + taxa + " " + count);
+				
+				if( ! count.equals(anotherCount))
+					throw new Exception("Taxa mismatch " + taxa +  " " + count + " " + anotherCount);
+			}
+			
+		}
+	}
+	
 	/*
 	 * 
 	 * Hard-coded file path for the development cycle here.
@@ -109,7 +141,12 @@ public class RdpExpectedUnclassified
 		
 		for(String s : map.keySet())
 		{
-			System.out.println(s + " " +  map.get(s) + "\n");
+			if( s.indexOf("Gp1") != -1 )
+				System.out.println(s + " " +  map.get(s) );
 		}
+		
+		File matchingFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\verifyRDPParser_2019Jul08\\03_RdpParser\\output\\verifyRDPParser_2019Jul08_otuCount_ERR1456828.tsv");
+		
+		assertUnclassifiedEquals(matchingFile,map);
 	}
 }
