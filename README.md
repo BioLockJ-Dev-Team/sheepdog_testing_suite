@@ -37,7 +37,7 @@ Pipeline resources like metadata, primers, barcodes etc are either the 'real' fi
 
 Wherever you have this repository stored, save that file path to your bash profile using the variables `$SHEP` and `$SHEP_DATA`.
 
-For example, you might cd to this folder and run:<br>
+For example, you might **cd to this folder** and run:<br>
 (macOS)
 ```
 echo "export SHEP=$(pwd)" >> ~/.bash_profile
@@ -53,7 +53,7 @@ echo "export SHEP_DATA=$(pwd)" >> ~/.bashrc
 
 `SHEP_DATA` is used dynamicly.  It can point to this top directory (`SHEP_DATA=$SHEP`), OR it could point to the _big_ folder (`SHEP_DATA=$SHEP/big`).  This means that tests can be written for toy data sets, but developers can also set `SHEP_DATA=$SHEP/big` to say _"What if I had run this exact test on the full dataset?"_.  
 
-To allow for this dynamic referencing, input files and validation files are referenced using `SHEP_DATA`, while other resources for a pipeline (ie metadata, barcodes, primers) are referenced using `SHEP`.
+To allow for this dynamic referencing, input files and validation files are referenced using `SHEP_DATA`, while other resources for a pipeline (ie metadata, barcodes, primers) are referenced using `SHEP`.  Any test that is not meant to be dynamic can use the static `SHEP` variable for everything.
 
 Other variables that test might use are:<br>
 `BLJ` - The local copy of the BioLockJ repository                    
@@ -70,14 +70,26 @@ If you create a new feature, make tests that prove your feature is working and a
 
 ## Using Eclipse
 
-Some folders come with eclipse launch files as a convenience.  For these files to work, you will need to have "BioLockJ" open as a project in Eclipse and you will need to set the [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in Eclipse.  <br>
+Some folders come with eclipse launch files as a convenience.  For these files to work, you will need to have "BioLockJ" open as a project in Eclipse and you will need to set the [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in Eclipse.  The values for these variables must be entered in the Preferences for Eclipse on your machine with the values for your machine.  Additionally, launch files must be set up to look for those values.  Creating and storing new launch files is encouraged; please follow this system of using variables so that the launch files are usable by other developers.
+<br>
 <br>**To set the variables in Eclipes:**<br>
 Eclipse > Preferences ...<br>
 Run/Debug > String Substitution > New...<br>
+_Enter the values for SHEP, SHEP_DATA, BLJ and BLJ_PROJ for your computer_<br>
 <br>**To import the launch files into Eclipse:**<br>
 File > Import ...<br>
 Run/Debug > Launch Configurations > Next...<br>
 Browse > _Select the folder containing the launch files_<br>
+<br>_Any launch files stored in this repository should be set up to reference those variables,<br>
+if you are making a new launch file, here is how you accomplish that:_
+<br>**To make launch files that use variables:**<br>
+Run > Run Configurations ...<br>
+Java Application > _create or select the launch configuration_<br>
+Environment > New ...<br>
+Name: SHEP<br>
+Value: ${SHEP}<br>
+_Likewise for the other varibles_<br>
+_Under the_ (x)=Arguments _tab, use variables in their fully dress form:_ ${SHEP}<br>
 <br>**To Run or Debug using the Launch Files:**<br>
 Run > Run Configurations ...
 Java Application > _select the launch configuration_ > Run
