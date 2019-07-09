@@ -4,7 +4,7 @@ All test pipelines require that you have BioLockJ installed.
 
 All test pipelines require a unix-like environment.
 
-Some pipelines reqire additional stuff.
+Some pipelines require additional stuff.
 
 ## Software
 
