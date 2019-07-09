@@ -16,6 +16,38 @@ public class KrakenExpectedUnclassified
 	private static String[] TAXA_LEVELS_FIRST_UPPER = { "Phylum" , "Class" , "Order" , "Family" , "Genus" } ;
 	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" };
 	
+	private static String addMissing(String s) throws Exception
+	{
+
+		List<Integer> missing = getMissingIndex(s);
+		
+		if( missing.size() == 0 )
+			return s;
+		
+		return null;
+	}
+	
+	private static List<Integer> getMissingIndex(String s )
+	{
+		String[] splits = s.split("|");
+			
+		int[] indexes = new int[splits.length];
+		
+		for( int x=0; x < indexes.length; x++)
+			indexes[x] = getIndex(splits[x]);
+		
+		return null;
+	}
+	
+	private static int getIndex(String aSplit)
+	{
+		for( int x=0; x < FIRST_CHARS.length; x++)
+			if( aSplit.startsWith(FIRST_CHARS[x]))
+				return x;
+		
+		return -1;
+	}
+	
 	/*
 	 * the key will be a full string such as 
 	 * phylum__Bacteroidetes|class__Bacteroidia|order__Bacteroidales|family__Unclassified Bacteroidales Order|genus__Unclassified Bacteroidales
@@ -195,18 +227,29 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{
+		/*
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		HashMap<String, Long> map = getUnclassifiedMap(inFile, "p",  "g");
 		
 		for(String s : map.keySet())
 		{
-			if( s.indexOf("Acidobacteriaceae") != -1)
+			if( s.indexOf("Corynebacteriales") != -1)
 				System.out.println(s + " " +  map.get(s) );
 		}
 		
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul08\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul08_otuCount_SRR4454586.tsv");
 		
 		RdpExpectedUnclassified.assertUnclassifiedEquals(biolockJFile, map);
+		*/
+		
+		String testString = "d__Bacteria|p__Actinobacteria|c__Actinobacteria|o__Corynebacteriales|g__Lawsonella|s__Lawsonella clevelandensis";
+		
+		String[] splits = testString.split("\\|");
+		
+		for( int x=0; x < splits.length; x++)
+			System.out.println(splits[x] + " " + getIndex(splits[x]));
 	}
+	
+	
 }
