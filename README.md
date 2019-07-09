@@ -25,9 +25,6 @@ Contains an input folder with the same file structure as the top level input fol
 **validation**<br>
 The output of the validation utility, this can be referenced by the properties files to ensure that the new output matches some previously established expectation.
 
-**verification_tests**<br>
-Tests designed to independently test that the output of one or more modules is *correct*. 
-
 _Why no metadata folder?_<br>
 Pipeline resources like metadata, primers, barcodes etc are either the 'real' files for a given dataset or they are custom-made variants for a particular test.  If they are real, they live with the data that they accurately describe; test pipelines that use those folders may have to ignore them as input files.  If they are made for a particular test, they live next to that test and they have a name that makes it obvious which test.properties file(s) they are there for.  
 
@@ -91,5 +88,5 @@ Value: ${SHEP}<br>
 _Likewise for the other varibles_<br>
 _Under the_ (x)=Arguments _tab, use variables in their fully dress form:_ ${SHEP}<br>
 <br>**To Run or Debug using the Launch Files:**<br>
-Run > Run Configurations ...
+Run > Run Configurations ...<br>
 Java Application > _select the launch configuration_ > Run
