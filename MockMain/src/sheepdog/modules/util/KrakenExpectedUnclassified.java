@@ -16,27 +16,34 @@ public class KrakenExpectedUnclassified
 	private static String[] TAXA_LEVELS_FIRST_UPPER = { "Phylum" , "Class" , "Order" , "Family" , "Genus" } ;
 	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" };
 	
-	private static String addMissing(String s) throws Exception
+	private static String removeJumps(String s )
 	{
-
-		List<Integer> missing = getMissingIndex(s);
 		
-		if( missing.size() == 0 )
-			return s;
+		String[] splits = s.split("\\|");
 		
-		return null;
-	}
-	
-	private static List<Integer> getMissingIndex(String s )
-	{
-		String[] splits = s.split("|");
+		StringBuffer buff = new StringBuffer();
+		
+		buff.append(splits[0] + "|");
+		
+		boolean keepGoing = true;
+		for( int x=1; x < splits.length-1 && keepGoing; x++)
+		{
+			buff.append(splits[x] + "|");
 			
-		int[] indexes = new int[splits.length];
+			int thisOne = getIndex(splits[x]);
+			int nextOne = getIndex(splits[x]+1);
+			
+			if( nextOne > thisOne + 1)
+			{
+				keepGoing = false;	
+			}
+		}
 		
-		for( int x=0; x < indexes.length; x++)
-			indexes[x] = getIndex(splits[x]);
+		if( keepGoing)
+			buff.append(splits[splits.length-1]);	
 		
-		return null;
+		return buff.toString();
+		
 	}
 	
 	private static int getIndex(String aSplit)
@@ -72,6 +79,7 @@ public class KrakenExpectedUnclassified
 				for( int y=x+1; y < fileLines.size(); y++)
 				{
 					String candidateLine = fileLines.get(y).taxaLine;
+					candidateLine = removeJumps(candidateLine);
 					
 					if( endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
 					{
@@ -125,7 +133,7 @@ public class KrakenExpectedUnclassified
 	private static String getExpectedString(String inString, String endLevel)
 	{
 
-		System.out.println(inString);
+		//System.out.println(inString);
 		inString = inString.substring(inString.indexOf("|")+1, inString.length());
 		
 		for( int x=0 ; x< TAXA_LEVELS.length; x++)
@@ -227,21 +235,21 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{
-		/*
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		HashMap<String, Long> map = getUnclassifiedMap(inFile, "p",  "g");
 		
 		for(String s : map.keySet())
 		{
-			if( s.indexOf("Corynebacteriales") != -1)
+			if( s.indexOf("Acidobacteriaceae") != -1)
 				System.out.println(s + " " +  map.get(s) );
 		}
 		
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul08\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul08_otuCount_SRR4454586.tsv");
 		
 		RdpExpectedUnclassified.assertUnclassifiedEquals(biolockJFile, map);
-		*/
+		
+		/*
 		
 		String testString = "d__Bacteria|p__Actinobacteria|c__Actinobacteria|o__Corynebacteriales|g__Lawsonella|s__Lawsonella clevelandensis";
 		
@@ -249,6 +257,7 @@ public class KrakenExpectedUnclassified
 		
 		for( int x=0; x < splits.length; x++)
 			System.out.println(splits[x] + " " + getIndex(splits[x]));
+			*/
 	}
 	
 	
