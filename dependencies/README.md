@@ -10,7 +10,7 @@ Some pipelines require additional stuff.
 
 Many biolockj modules are wrappers for external software.  See [the Dependensies page in the BioLockJ wiki](https://github.com/msioda/BioLockJ/wiki/Dependencies) for a complete list of dependencies you may need and download links.
 
-In most cases, the path to the executable will need to configured in your [properties file](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).
+In most cases, the path to the executable will need to be configured in your [properties file](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).
 
 ### sra toolkit
 If you want to download the full size data (to use the `big` directory), you will need the sra toolkit.
