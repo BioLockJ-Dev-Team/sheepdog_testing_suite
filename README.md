@@ -30,6 +30,11 @@ Pipeline resources like metadata, primers, barcodes etc are either the 'real' fi
 
 # How to use this test suite
 
+1. (required) Clone or download this repository.
+1. (required) Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
+1. (probably required) Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files). (Not all tests use this file)
+1. (optional) Set up launch files in [Eclipse](https://github.com/IvoryC/sheepdog_testing_suite#using-eclipse). 
+
 ## Variables
 
 Wherever you have this repository stored, save that file path to your bash profile using the variables `$SHEP` and `$SHEP_DATA`.
@@ -48,11 +53,11 @@ echo "export SHEP_DATA=$(pwd)" >> ~/.bashrc
 
 `SHEP` always points to this top directory.
 
-`SHEP_DATA` is used dynamicly.  It can point to this top directory (`SHEP_DATA=$SHEP`), OR it could point to the _big_ folder (`SHEP_DATA=$SHEP/big`).  This means that tests can be written for toy data sets, but developers can also set `SHEP_DATA=$SHEP/big` to say _"What if I had run this exact test on the full dataset?"_.  
+`SHEP_DATA` is used dynamicly.  It can point to this top directory (`SHEP_DATA=$SHEP`), OR it could point to the _big_ folder (`SHEP_DATA=$SHEP/big`) or the _tiny_ folder (`SHEP_DATA=$SHEP/tiny`).  This means that tests can be written for toy data sets, but developers can also set `SHEP_DATA=$SHEP/big` to say _"What if I had run this exact test on the full size files?"_; or set `SHEP_DATA=$SHEP/tiny` to say _"I just want to check the plumbing really fast."_ 
 
 To allow for this dynamic referencing, input files and validation files are referenced using `SHEP_DATA`, while other resources for a pipeline (ie metadata, barcodes, primers) are referenced using `SHEP`.  Any test that is not meant to be dynamic can use the static `SHEP` variable for everything.
 
-Other variables that test might use are:<br>
+Other variables that might be referenced in this repository:<br>
 `BLJ` - The local copy of the BioLockJ repository                    
 `BLJ_PROJ` - The local destination for pipelines to be stored in.
 <br>These are set by running the BioLockJ `install` script.  You can override the defaults by setting the varibles in your profile _after_ the line that calls the blj_config script.
