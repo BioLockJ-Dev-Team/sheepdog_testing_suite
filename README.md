@@ -7,7 +7,6 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. (required) Clone or download this repository.
 1. (required) Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
 1. (probably required) Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).<br>Not all tests use this file. Depending on the test you want to run, you may need to set up other [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies) as well, so go ahead and skim that whole page.
-1. (optional) Set up launch files in [Eclipse](https://github.com/IvoryC/sheepdog_testing_suite#using-eclipse). 
 
 ## What's here
 
@@ -70,28 +69,3 @@ When you make changes to BioLockJ (weather fixing a bug, refactoring the framwor
 
 If you create a new feature, make tests that prove your feature is working and add them to this repository so any future changes that break your feature are discovered quickly.
 
-## Using Eclipse
-
-Some folders come with eclipse launch files as a convenience.  For these files to work, you will need to have "BioLockJ" open as a project in Eclipse and you will need to set the [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in Eclipse.  The values for these variables must be entered in the Preferences for Eclipse on your machine with the values for your machine.  Additionally, launch files must be set up to look for those values.  Creating and storing new launch files is encouraged; please follow this system of using variables so that the launch files are usable by other developers.
-<br>
-<br>**To set the variables in Eclipes:**<br>
-Eclipse > Preferences ...<br>
-Run/Debug > String Substitution > New...<br>
-_Enter the values for SHEP, SHEP_DATA, BLJ and BLJ_PROJ for your computer_<br>
-<br>**To import the launch files into Eclipse:**<br>
-File > Import ...<br>
-Run/Debug > Launch Configurations > Next...<br>
-Browse > _Select the folder containing the launch files_<br>
-<br>_Any launch files stored in this repository should be set up to reference those variables,<br>
-if you are making a new launch file, here is how you accomplish that:_
-<br>**To make launch files that use variables:**<br>
-Run > Run Configurations ...<br>
-Java Application > _create or select the launch configuration_<br>
-Environment > New ...<br>
-Name: SHEP<br>
-Value: ${SHEP}<br>
-_Likewise for the other varibles_<br>
-_Under the_ (x)=Arguments _tab, use variables in their fully dress form:_ ${SHEP}<br>
-<br>**To Run or Debug using the Launch Files:**<br>
-Run > Run Configurations ...<br>
-Java Application > _select the launch configuration_ > Run
