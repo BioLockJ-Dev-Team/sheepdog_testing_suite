@@ -2,6 +2,13 @@
 
 The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ) developers test pipelines (including the input data, configuration file, meta data file, etc) to verify the functionality of BioLockJ throughout the development cycle.
 
+# How to use this test suite
+
+1. (required) Clone or download this repository.
+1. (required) Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
+1. (probably required) Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).<br>Not all tests use this file. Depending on the test you want to run, you may need to set up other [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies) as well, so go ahead and skim that whole page.
+1. (optional) Set up launch files in [Eclipse](https://github.com/IvoryC/sheepdog_testing_suite#using-eclipse). 
+
 ## What's here
 
 **big**<br>
@@ -27,13 +34,6 @@ The output of the validation utility, this can be referenced by the properties f
 
 _Why no metadata folder?_<br>
 Pipeline resources like metadata, primers, barcodes etc are either the 'real' files for a given dataset or they are custom-made variants for a particular test.  If they are real, they live with the data that they accurately describe; test pipelines that use those folders may have to ignore them as input files.  If they are made for a particular test, they live next to that test and they have a name that makes it obvious which test.properties file(s) they are there for.  
-
-# How to use this test suite
-
-1. (required) Clone or download this repository.
-1. (required) Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
-1. (probably required) Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files). (Not all tests use this file)
-1. (optional) Set up launch files in [Eclipse](https://github.com/IvoryC/sheepdog_testing_suite#using-eclipse). 
 
 ## Variables
 
@@ -66,7 +66,7 @@ Other variables that might be referenced in this repository:<br>
 
 The MockMain project is a java program that takes a list of tests as input, runs BioLockJ for each test, and reports the output.  See MockMain [the MockMain Users Guide](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/MockMain/README.md#mockmain-user-guide) for more details on using the program.  In very very short: most folders of tests have a testList.txt table and a `runThisTestSet.sh` script.  Calling the script will run all the tests listed in the test list, and create a new table ( testList_results.txt ) giving the results of each test.  
 
-When you make changes to BioLockJ (weather fixing a bug, refactoring the framwork or adding new features), you should run a testList.  Pick a comprehensive testList that runs full pipelines, or make a custom one to include more extensive testing of the componenents that might affected by your work.  Run the testList before you start working using the current master version of BioLockJ.  Run it periodically as you work.  Most importantly, run after you have finalized your changes, but before you submit the pull request to merge your work into the master branch.
+When you make changes to BioLockJ (weather fixing a bug, refactoring the framwork or adding new features), you should run a testList.  Pick a comprehensive testList that runs full pipelines, or make a custom one to include more extensive testing of the componenents that might be affected by your work.  Run the testList before you start working using the current master version of BioLockJ.  Run it periodically as you work.  Most importantly, run after you have finalized your changes, but before you submit the pull request to merge your work into the master branch.
 
 If you create a new feature, make tests that prove your feature is working and add them to this repository so any future changes that break your feature are discovered quickly.
 
