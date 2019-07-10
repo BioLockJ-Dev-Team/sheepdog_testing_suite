@@ -209,7 +209,7 @@ public class RunMock
 					oneTest.config = new File( Config.replaceEnvVar( row.get( iConfig ) ) );
 					if (iFlags > 0 ) oneTest.flags = row.get( iFlags ); else oneTest.flags = "";
 					if (iEnv > 0 ) oneTest.environment = row.get( iEnv ); else oneTest.environment = "";
-					if (iCompModsExp > 0 ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
+					if (iCompModsExp > 0 && !row.get( iCompModsExp ).isEmpty() ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
 					oneTest.out_exp = row.get( iExpected );
 					if (iNotes > 0 ) oneTest.notes = row.get( iNotes ); else oneTest.notes = "";
 					if (oneTest.environment.equals( DOCKER )) oneTest.extractInputDir();
