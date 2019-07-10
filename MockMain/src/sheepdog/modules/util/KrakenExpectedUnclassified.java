@@ -11,15 +11,18 @@ import java.util.List;
 
 public class KrakenExpectedUnclassified
 {
-	private static String[] TAXA_LEVELS = { "phylum" , "class" , "order" , "family" , "genus" } ;
+	private static String[] TAXA_LEVELS = { "phylum" , "class" , "order" , "family" , "genus" , "species"} ;
 
-	private static String[] TAXA_LEVELS_FIRST_UPPER = { "Phylum" , "Class" , "Order" , "Family" , "Genus" } ;
-	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" };
+	private static String[] TAXA_LEVELS_FIRST_UPPER = { "Phylum" , "Class" , "Order" , "Family" , "Genus", "Species" } ;
+	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" , "s"};
 	
 	private static String removeJumps(String s )
 	{
 		
 		String[] splits = s.split("\\|");
+		
+		if( splits.length == 1)
+			return s;
 		
 		StringBuffer buff = new StringBuffer();
 		
@@ -31,12 +34,14 @@ public class KrakenExpectedUnclassified
 			buff.append(splits[x] + "|");
 			
 			int thisOne = getIndex(splits[x]);
-			int nextOne = getIndex(splits[x]+1);
+			int nextOne = getIndex(splits[x+1]);
 			
 			if( nextOne > thisOne + 1)
 			{
 				keepGoing = false;	
 			}
+			
+			//System.out.println(x + " " + thisOne + " "+ nextOne);
 		}
 		
 		if( keepGoing)
@@ -220,9 +225,7 @@ public class KrakenExpectedUnclassified
 			h.taxaLine= splits[0];
 			h.taxaCount = Long.parseLong(splits[1]);
 			
-			// hack that will break for last levels other than genus; if it includes species don't include it in the list
-			if( h.taxaLine.indexOf("s__") == -1 )
-				list.add(h);
+			list.add(h);
 		}
 		
 		return list;
@@ -237,15 +240,31 @@ public class KrakenExpectedUnclassified
 	{
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
+		List<Holder> fileLines = getFileLines(inFile);
+		
+		for(Holder h : fileLines)
+		{
+			String removeJumps = removeJumps(h.taxaLine);
+			
+			if( ! removeJumps.equals(h.taxaLine))
+				System.out.println(h.taxaLine);
+		}
+		
+	//	String s= 
+		//"d__Archaea|p__Crenarchaeota|c__Thermoprotei|o__Sulfolobales|f__Sulfolobaceae|g__Saccharolobus|s__Saccharolobus solfataricus";
+		
+		//System.out.println(removeJumps(s));
+		
+		/*
 		HashMap<String, Long> map = getUnclassifiedMap(inFile, "p",  "g");
 		
 		for(String s : map.keySet())
 		{
-			if( s.indexOf("Acidobacteriaceae") != -1)
+			if( s.indexOf("Verrucomicrobia") != -1)
 				System.out.println(s + " " +  map.get(s) );
 		}
 		
-		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul08\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul08_otuCount_SRR4454586.tsv");
+		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
 		
 		RdpExpectedUnclassified.assertUnclassifiedEquals(biolockJFile, map);
 		
