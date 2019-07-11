@@ -6,6 +6,24 @@ All test pipelines require a unix-like environment.
 
 Some pipelines require additional stuff.
 
+## BioLockJ installation for developers
+
+1. Fork the [BioLockJ](https://github.com/msioda/BioLockJ) repository.
+1. Clone your fork to your local machine: `git clone https://github.com/<username>/BioLockJ`
+1. Build the jar file: `cd resources; ant`
+1. Run the install script: `cd BioLockJ; ./install`
+
+Start a new terminal session and make sure that the variales and executables are on your `PATH`:<br>
+`echo $BLJ`<br>
+`echo $BLJ_PROJ`<br>
+`biolockj --help`<br>
+
+The MockMain project in the test suite automates the process of running a set of test pipelines.  It uses the jar file.  You can check to see the most recent git commit when the jar file was built:<br>
+`java -jar $BLJ/dist/BioLockJ.jar --version`<br>
+returns: `BioLockJ v1.1 Build: v1.0-10-g4590ed3`<br>
+The Build uses this format: <most recent tag>-<commits since that tag>-<commit hash><br>
+This version and build number is recorded at the top of the results of the MockMain program. This allows you to verify that the changes you are testing are included in the build you are using for tests.
+
 ## Software
 
 Many biolockj modules are wrappers for external software.  See [the Dependensies page in the BioLockJ wiki](https://github.com/msioda/BioLockJ/wiki/Dependencies) for a complete list of dependencies you may need and download links.
@@ -15,11 +33,23 @@ In most cases, the path to the executable will need to be configured in your [pr
 ### sra toolkit
 If you want to download the full size data (to use the `big` directory), you will need the sra toolkit.
 
-### Docker
-You can avoid installing any of BioLockJ's dependencies by using the docker containers,<br>
-...but to do that you have to install docker.
+### ant
+As a BioLockJ developer, you need to be able to build both BioLockJ and the MockMain testing program.  Both use ant.
+<br>
+(Bash)<br>
+`cd /Applications` # wherever you want to install ant<br>
+`ANT_DIST=apache-ant-1.9.14`<br>
+`curl -O http://apache.mirrors.lucidnetworks.net//ant/binaries/$ANT_DIST-bin.tar.bz2`<br>
+`tar xfj $ANT_DIST-bin.tar.bz2`<br>
+`cd $ANT_DIST`<br>
+`echo export ANT_HOME=$(pwd) >> ~/.bash_profile`<br>
+`echo export PATH=\$PATH:\$ANT_HOME/bin >> ~/.bash_profile`<br>
+`. ~/.bash_profile`<br>
+<br>
+(Ubuntu)<br>
+`apt-get update`<br>
+`apt-get install ant`<br>
 
-TODO
 
 ## properties files
 
@@ -59,9 +89,15 @@ Run > Run Configurations ...<br>
 Java Application > _select the launch configuration_ > Run
 
 
-## AWS
+## Using AWS
 
 aws account
 aws cli tools (command line interface)
 
-TODO
+TODO - put primary documentation in the BioLockJ wiki, reference it here but don't duplicate it.
+
+### Using Docker
+You can avoid installing any of BioLockJ's dependencies by using the docker containers,<br>
+...but to do that you have to install docker.
+
+TODO - put primary documentation in the BioLockJ wiki, reference it here but don't duplicate it.
