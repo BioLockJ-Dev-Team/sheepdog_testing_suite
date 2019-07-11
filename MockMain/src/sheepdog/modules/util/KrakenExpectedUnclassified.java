@@ -225,8 +225,8 @@ public class KrakenExpectedUnclassified
 			{
 				if( ! countVal.equals(aVal))
 					System.out.println("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
-				else
-					System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+				//else
+					//System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 			}
 			else
 			{
