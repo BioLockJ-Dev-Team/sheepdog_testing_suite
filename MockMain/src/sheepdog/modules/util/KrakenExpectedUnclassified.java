@@ -312,10 +312,17 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : unclassifiedMap.keySet())
 		{
-			List<String> aList=  getExpectedString(s, startLevel, endLevel,true);
-			s = aList.get(aList.size()-1);
+
+			if( s.indexOf("Acidobacteriaceae") != -1 )
+				System.out.println("FOUND ahead of call" + s);
 			
-			map.put(s, unclassifiedMap.get(s));
+			List<String> aList=  getExpectedString(s, startLevel, endLevel,true);
+			String s2 = aList.get(aList.size()-1);
+			
+			if( s2.indexOf("Acidobacteriaceae") != -1 )
+				System.out.println("FOUND " + s2);
+			
+			map.put(s2, unclassifiedMap.get(s));
 		}
 		
 		return map;
@@ -365,30 +372,58 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{
+		//String blah= "phylum__Acidobacteria|class__Acidobacteriia|order__Acidobacteriales|family__Acidobacteriaceae";
+		//List<String> list = getExpectedString(blah, "phylum", "genus", true);
+		
+		//for(String s2 : list)
+			//System.out.println("LIST " + s2);
+		
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
+		/*
 		for(Holder h : fileLines)
 		{
-			if( h.taxaLine != null &&  h.taxaLine.indexOf("Vicinamibacteraceae") != -1 )
+			if( h.taxaLine != null &&  h.taxaLine.indexOf("Acidobacteriaceae") != -1 )
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount);
 			}
-		}
+		}*/
 		
-		HashMap<String,Long> expectationMap = getUnclassifiedMap(fileLines, "phylum", "genus");
+		HashMap<String, Long> unclassifiedMap = getUnclassifiedMap(fileLines, "phylum", "genus");
 		
-		for(String s : expectationMap.keySet())
+		//if( ! unclassifiedMap.containsKey("phylum__Acidobacteria|class__Acidobacteriia|order__Acidobacteriales|family__Acidobacteriaceae|genus__Unclassified Acidobacteriaceae Family"))
+			//throw new Exception("Could not find " );
+			
+		for(String s : unclassifiedMap.keySet())
 		{
-			if( s.indexOf("Vicinamibacteraceae") != -1 )
+			if( s.indexOf("Acidobacteriaceae") != -1 )
 			{
-				System.out.println("Ex " + s + " " + getExpectedString(s, "phylum", "genus", true) + " " +  expectationMap.get(s));
+				System.out.println("UNC " + s + " " +   unclassifiedMap.get(s));
 			}
 		}
 		
-		expectationMap = buildExpectationMap(fileLines, "phylum", "genus");
+		/*
+		String aVal = 
+				getExpectedString("phylum__Acidobacteria|class__Acidobacteriia|order__Acidobacteriales|family__Acidobacteriaceae", "phylum", "genus", true).get(0);
 		
+		System.out.println("LIST SIZE = " + getExpectedString("phylum__Acidobacteria|class__Acidobacteriia|order__Acidobacteriales|family__Acidobacteriaceae", "phylum", "genus", true).size());
+		
+		if( ! aVal.equals("phylum__Acidobacteria|class__Acidobacteriia|order__Acidobacteriales|family__Acidobacteriaceae|genus__Unclassified Acidobacteriaceae Family"))
+			throw new Exception("No");
+		*/
+		
+		HashMap<String,Long> expectationMap = buildExpectationMap(fileLines, "phylum", "genus");
+		
+		for(String s : expectationMap.keySet())
+		{
+			if( s.indexOf("Acidobacteriaceae") != -1 )
+			{
+				System.out.println("Ex " + s + " " +   expectationMap.get(s));
+			}
+		}
+	
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
 	//	
 		assertEquals(expectationMap, biolockJFile);
