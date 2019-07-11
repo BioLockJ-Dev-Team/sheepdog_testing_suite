@@ -321,6 +321,29 @@ public class KrakenExpectedUnclassified
 		return newList;
 	}
 	
+	private static void addUnclassifiedTaxaForALevel( HashMap<String, Long> map, String levelToAdd, String endLevel, File inFile )
+		throws Exception
+	{
+		BufferedReader reader = new BufferedReader(new FileReader(inFile));
+		
+		for(String s= reader.readLine(); s != null; s= reader.readLine())
+		{
+			String[] splits =s.split("\t");
+			String taxaLine = splits[0];
+			
+			for( int x=0 ; x< TAXA_LEVELS.length; x++)
+			{
+				taxaLine= taxaLine.replace("|" + FIRST_CHARS[x] + "__", "|" +  TAXA_LEVELS[x] + "__");	
+			}
+
+			Long count = Long.parseLong(splits[1]);
+			if( getLastLevel(taxaLine).equals(levelToAdd))
+			{
+				System.out.println(taxaLine + " " + count);
+			}
+		}
+	}
+	
 	/*
 	 * 
 	 * Hard-coded file path for the development cycle here.
@@ -345,7 +368,9 @@ public class KrakenExpectedUnclassified
 		HashMap<String, Long> map = buildExpectationMap(fileLines, "genus", "phylum");
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
-		assertEquals(map, biolockJFile);
+		addUnclassifiedTaxaForALevel(map, "family", "genus", inFile);
+		
+		//assertEquals(map, biolockJFile);
 		
 		
 		/*
