@@ -196,8 +196,8 @@ public class KrakenExpectedUnclassified
 				{
 					if( ! countVal.equals(aVal))
 						throw new Exception("Mismatch :" + taxaString+ " reparse:" +   aVal + " blj:" + countVal);
-				//	else
-					//	System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+					else
+						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 				}
 				else
 				{
@@ -337,12 +337,10 @@ public class KrakenExpectedUnclassified
 			
 			taxaLine = taxaLine.substring(taxaLine.indexOf("|") +1 , taxaLine.length());
 			
-			/*
-			List<String> someList = getExpectedString(taxaLine, startLevel, levelToAdd, true);
+			List<String> someList = getExpectedString(taxaLine, startLevel, endLevel,false);
 			
 			if( someList.size() != 0 )
 				taxaLine = someList.get(someList.size()-1);
-				*/
 			
 			Long count = Long.parseLong(splits[1]);
 			if( getLastLevel(taxaLine).equals(levelToAdd))
