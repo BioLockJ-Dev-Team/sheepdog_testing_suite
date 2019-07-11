@@ -10,7 +10,13 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. Clone or download this repository.
 1. Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
 1. Build the MockMain project: `cd MockMain; ant`
-1. Run the example test set: `${SHEP}/MockMain/resources/runExample.sh`<br>See the [MockMain user guide](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/MockMain#mockmain-user-guide) to learn more about what you see in the example and how to expand from it.
+1. Run the example test set: `${SHEP}/MockMain/resources/runExample.sh`
+<br>This should print some output to the screen that starts with something like:
+<br>`Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/resources/exampleTestList.txt`
+<br>and ends with something like:
+<br>`Total test runtime: 00 hours : 00 minutes : 05 seconds`
+
+<br>See the [MockMain user guide](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/MockMain#mockmain-user-guide) to learn more about what you see in the example and how to expand from it.
 
 **Build up your reference pipelines**
 
@@ -21,6 +27,7 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. Select another testList and repeat.
 
 **be an issue tracking master**
+
 Along the way there will surely be times when BioLockJ fails because you did not set up something it needed. In those times, did BioLockJ give you an appropriate error message?  Did that info lead you to the solution?  If you encountered challenges, users will too! Be familiar with our [issue tracking](https://github.com/IvoryC/sheepdog_testing_suite/issues), and make sure these frustrations are in our issue collection.  Take a moment to review the tags, read a few issues, get familiar with the interface.  Look at newly created issues on a regular basis.
 
 
