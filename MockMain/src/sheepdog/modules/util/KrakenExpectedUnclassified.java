@@ -351,10 +351,20 @@ public class KrakenExpectedUnclassified
 				{
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
-					//System.out.println("ADD " +  newTaxa + " " + count);
+					System.out.println("ADD " +  newTaxa + " " + count);
 					toAdd.put(newTaxa, count);
 				}
 					
+			}
+			
+			for(String s2 : toAdd.keySet())
+			{
+				Long oldVal = map.get(s2);
+				
+				if(oldVal == null)
+					oldVal = 0L;
+				
+				map.put(s, toAdd.get(s2) + oldVal);
 			}
 		}
 	}
@@ -384,8 +394,11 @@ public class KrakenExpectedUnclassified
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
-		
-		//assertEquals(map, biolockJFile);
+//		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
+	//	 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
+		// addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
+			
+		assertEquals(map, biolockJFile);
 		
 		
 		/*
