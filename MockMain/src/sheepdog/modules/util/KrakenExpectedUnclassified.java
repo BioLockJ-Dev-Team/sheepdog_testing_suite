@@ -249,7 +249,7 @@ public class KrakenExpectedUnclassified
 					if( ! countVal.equals(aVal))
 						throw new Exception("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
 					//else
-						//System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 				}
 				else
 				{
@@ -321,7 +321,7 @@ public class KrakenExpectedUnclassified
 			String s2 = aList.get(aList.size()-1);
 			
 			if(map.containsKey(s2))
-				if( s2.indexOf("Acidobacteriaceae") != -1)
+				if( s2.indexOf("Corynebacteriales") != -1)
 				System.out.println("WARNING MAP CONTAINS " + s2 + " "+ map.get(s2));
 			
 			Long aVal = map.get(s2);
@@ -386,7 +386,7 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : uMap.keySet())
 		{
-			if( s.indexOf("Acidobacteriaceae") != -1 )
+			if( s.indexOf("Corynebacteriales") != -1 )
 			{
 				System.out.println("uMap " + s + " " +   uMap.get(s));
 				System.out.println("uMapE " + s + " " +  getExpectedString(s, "phylum", "genus",true).get(0));
@@ -397,7 +397,7 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : map.keySet())
 		{
-			if( s.indexOf("Acidobacteriaceae") != -1 )
+			if( s.indexOf("Corynebacteriales") != -1 )
 			{
 				System.out.println("map " + s + " " +   map.get(s));
 			}
