@@ -379,15 +379,8 @@ public class KrakenExpectedUnclassified
 		}
 	}
 	
-	/*
-	 * 
-	 * Hard-coded file path for the development cycle here.
-	 * Obviously, this main method will not be part of the automated test suite
-	 */
-	public static void main(String[] args) throws Exception
-	{	
-		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
-		
+	public static void assertEquals(File inFile, File biolockJFile) throws Exception
+	{
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
 		for(Holder h : fileLines)
@@ -399,7 +392,6 @@ public class KrakenExpectedUnclassified
 		}
 		
 		HashMap<String, Long> map = buildExpectationMap(fileLines, "genus", "phylum");
-		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
 			 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
@@ -408,7 +400,20 @@ public class KrakenExpectedUnclassified
 		 
 		assertEquals(map, biolockJFile);
 		
+	}
+	
+	/*
+	 * 
+	 * Hard-coded file path for the development cycle here.
+	 * Obviously, this main method will not be part of the automated test suite
+	 */
+	public static void main(String[] args) throws Exception
+	{	
+		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
+		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
+		assertEquals(inFile, biolockJFile);
 		System.out.println("Pass");
+	
 	}
 	
 	
