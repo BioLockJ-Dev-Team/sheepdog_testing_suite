@@ -119,8 +119,9 @@ public class KrakenExpectedUnclassified
 		return x;
 	}
 	
-	private static String getExpectedString(String inString, String firstLevel, String lastLevel, boolean forceToEnd) throws Exception
+	private static List<String> getExpectedString(String inString, String firstLevel, String lastLevel, boolean forceToEnd) throws Exception
 	{
+		List<String> list = new ArrayList<>();
 		//if( inString.indexOf("Crenarchaeota") != -1)
 		//System.out.println("In " + inString);
 		
@@ -130,7 +131,7 @@ public class KrakenExpectedUnclassified
 			//System.out.println(taxaMap);
 		
 		if( taxaMap.size() == 0 )
-			return null;
+			return list;
 		
 		StringBuffer buff =new StringBuffer();
 		
@@ -153,10 +154,12 @@ public class KrakenExpectedUnclassified
 		for( int x=startLevel; x <= endLevel; x++)
 		{
 			String taxa = taxaMap.get(TAXA_LEVELS[x]);
+			boolean addToList = false;
 			
 			if(taxa == null)
 			{
 				taxa = "Unclassified " + last + " " + lastTaxaString;
+				addToList =true;
 			}
 			else
 			{
@@ -168,12 +171,19 @@ public class KrakenExpectedUnclassified
 				buff.append("|");
 			
 			buff.append( TAXA_LEVELS[x] + "__" +  taxa);
+			
+			if(addToList)
+				list.add(buff.toString());
 		}
 		
 		//if( inString.indexOf("Crenarchaeota") != -1)
 		//	System.out.println("Out " + buff.toString());
+		String s= buff.toString();
 		
-		return buff.toString();
+		if( ! list.contains(s))
+			list.add(s);
+		
+		return list;
 	}
 	
 	private static  boolean endAtLevel(String s, String level)
@@ -228,17 +238,21 @@ public class KrakenExpectedUnclassified
 			
 			Long aVal = expectationMap.get(taxaString);
 			
-			if( aVal != null)
+			//if( taxaString.indexOf("Unclassified") == -1 )
 			{
-				if( ! countVal.equals(aVal))
-					System.out.println("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
+				if( aVal != null)
+				{
+					if( ! countVal.equals(aVal))
+						throw new Exception("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
+					else
+						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+				}
 				else
-					System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+				{
+					throw new Exception("MISSED " + taxaString);
+				}
 			}
-			else
-			{
-				throw new Exception("MISSED " + taxaString);
-			}						
+									
 		}
 	}
 
@@ -266,7 +280,8 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : unclassifiedMap.keySet())
 		{
-			s = getExpectedString(s, startLevel, endLevel,true);
+			List<String> aList=  getExpectedString(s, startLevel, endLevel,true);
+			s = aList.get(aList.size()-1);
 			
 			if( map.containsKey(s))
 				throw new Exception("Duplicate " + s);
@@ -290,8 +305,6 @@ public class KrakenExpectedUnclassified
 			if( splits.length != 2)
 				throw new Exception("Expecting two tokens " + inFile.getAbsolutePath() +  " "+  s);
 			
-			Holder h= new Holder();
-			
 			String aTaxa = splits[0];
 			
 
@@ -300,11 +313,16 @@ public class KrakenExpectedUnclassified
 				aTaxa= aTaxa.replace("|" + FIRST_CHARS[x] + "__", "|" +  TAXA_LEVELS[x] + "__");	
 			}
 			
+			List<String> expecetdList = getExpectedString(aTaxa,startLevel,endLevel,false);
+			long aVal = Long.parseLong(splits[1]);
 			
-			h.taxaLine=  getExpectedString(aTaxa,startLevel,endLevel,false);
-			h.taxaCount = Long.parseLong(splits[1]);
-			
-			list.add(h);
+			for( String s2 : expecetdList)
+			{
+				Holder h= new Holder();
+				h.taxaLine=  s2;
+				h.taxaCount = aVal;
+				list.add(h);
+			}
 		}
 		
 		return list;
@@ -321,7 +339,6 @@ public class KrakenExpectedUnclassified
 		
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
-		/*
 		for(Holder h : fileLines)
 		{
 			if( h.taxaLine != null &&  h.taxaLine.indexOf("Euryarchaeota") != -1 )
@@ -336,15 +353,14 @@ public class KrakenExpectedUnclassified
 		{
 			if( s.indexOf("Euryarchaeota") != -1 )
 			{
-				System.out.println("Ex " + s + " " + expectationMap.get(s));
+				System.out.println("Ex " + s + " " + getExpectedString(s, "phylum", "genus", true) + " " +  expectationMap.get(s));
 			}
 		}
-		*/
 		
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
-		
-		HashMap<String, Long> expectationMap = buildExpectationMap(fileLines, "phylum", "genus");
-		assertEquals(expectationMap, biolockJFile);
+	//	
+	//	HashMap<String, Long> expectationMap = buildExpectationMap(fileLines, "phylum", "genus");
+	//	assertEquals(expectationMap, biolockJFile);
 		
 	//	for( Holder h : fileLines)
 		//	System.out.println(h.taxaLine);
