@@ -33,54 +33,45 @@ public class KrakenExpectedUnclassified
 	 * 
 	 * 
 	 */
-	public static HashMap<String, Long> getUnclassifiedMap( File inFile , String startLevel, String endLevel ) throws Exception
+	public static HashMap<String, Long> getUnclassifiedMap( List<Holder> fileLines , String endLevel ) throws Exception
 	{
 		HashMap<String, Long> map = new LinkedHashMap<>();
-		List<Holder> fileLines = getFileLines(inFile, startLevel, endLevel);
 		
 		for( int x=0; x < fileLines.size(); x++)
 		{
 			Holder h = fileLines.get(x);
 			
-			
-			if( /* h.taxaLine.indexOf(startLevel + "__") != - 1 && */  // include kingdom level?
-					 ! endAtLevel(h.taxaLine, endLevel)
-					&& ! endsBelowLevel(h.taxaLine,endLevel))
+			if( h.taxaLine != null)
 			{
-				long matchingSum =0;
-				  
-				for( int y=x+1; y < fileLines.size(); y++)
+
+				if( /* h.taxaLine.indexOf(startLevel + "__") != - 1 && */  // include kingdom level?
+						 ! endAtLevel(h.taxaLine, endLevel)
+						&& ! endsBelowLevel(h.taxaLine,endLevel))
 				{
-					String candidateLine = fileLines.get(y).taxaLine;
-					
-					if( endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
+					long matchingSum =0;
+					  
+					for( int y=x+1; y < fileLines.size(); y++)
 					{
-						matchingSum += fileLines.get(y).taxaCount;
+						String candidateLine = fileLines.get(y).taxaLine;
+						
+						if( endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
+						{
+							matchingSum += fileLines.get(y).taxaCount;
+						}
 					}
+					
+					if( matchingSum > h.taxaCount)
+						throw new Exception("Parsing error");
+					
+					if( matchingSum < h.taxaCount)
+						map.put(h.taxaLine, h.taxaCount - matchingSum);
 				}
-				
-				if( matchingSum > h.taxaCount)
-					throw new Exception("Parsing error");
-				
-				if( matchingSum < h.taxaCount)
-					map.put(h.taxaLine, h.taxaCount - matchingSum);
+			
 			}
 
 		}
 		
-		HashMap<String, Long> returnMap = new HashMap<>();
-		
-		for(String s : map.keySet())
-		{
-			String newKey = getExpectedString(s,startLevel,endLevel);
-			
-			if( returnMap.containsKey(newKey))
-				throw new Exception("Renaming collision error");
-			
-			returnMap.put(newKey, map.get(s));
-		}
-		
-		return returnMap;
+		return map;	
 	}
 	
 	private static String getATaxa(String in, String level) throws Exception
@@ -230,22 +221,21 @@ public class KrakenExpectedUnclassified
 			
 			Long aVal = expectationMap.get(taxaString);
 			
-			if( taxaString.indexOf("Unclassified") == -1 )
+			if( aVal != null)
 			{
-				if( aVal != null)
-				{
-					if( ! countVal.equals(aVal))
-						throw new Exception("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
-					else
-						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
-				}
+				if( ! countVal.equals(aVal))
+					System.out.println("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
 				else
-					System.out.println("MISSED " + taxaString);
-			}			
+					System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+			}
+			else
+			{
+				throw new Exception("MISSED " + taxaString);
+			}						
 		}
-
 	}
-	
+
+
 	private static HashMap<String,Long> buildExpectationMap( List<Holder> fileLines, String endLevel ) throws Exception
 	{
 		HashMap<String,Long> map = new LinkedHashMap<>();
@@ -263,6 +253,16 @@ public class KrakenExpectedUnclassified
 				map.put(h.taxaLine, Math.max(oldVal, h.taxaCount));
 			}
 			
+		}
+		
+		HashMap<String, Long> unclassifiedMap= getUnclassifiedMap(fileLines, endLevel);
+		
+		for(String s : unclassifiedMap.keySet())
+		{
+			if( map.containsKey(s))
+				throw new Exception("Duplicate " + s);
+			
+			map.put(s, unclassifiedMap.get(s));
 		}
 		
 		return map;
