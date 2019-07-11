@@ -4,7 +4,7 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 
 # How to use this test suite
 
-## Quick Start
+**Quick Start**
 
 1. Get [BioLockJ](https://github.com/msioda/BioLockJ).  See [BioLockJ installation for developers](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies/README.md#biolockj-installation-for-developers).
 1. Clone or download this repository.
@@ -13,6 +13,7 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. Run the example test set: `${SHEP}/MockMain/resources/runExample.sh`<br>See the [MockMain user guide](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/MockMain#mockmain-user-guide) to learn more about what you see in the example and how to expand from it.
 
 **Build up your reference pipelines**
+
 1. (probably required) Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).<br>Not all tests use this file. Depending on the test you want to run, you may need to set up other [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies) as well, so go ahead and skim that whole page.
 1. Find another existing testList.  There is probably a script to run that test set.  Review the config files listed in that testList, and make sure you have the dependencies that the tests require. Run the test set.
 1. Create a folder called `pipelines` next to the testList file.  This folder will be ignored by git. Its just for you.
