@@ -1,0 +1,456 @@
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: Launching BioLockJ v1.1 ~ Distributed by UNCC Fodor Lab @2019
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: This code is free software; you can redistribute and/or modify it
+2019-07-11 15:41:56 INFO Log: under the terms of the GNU General Public License as published by
+2019-07-11 15:41:56 INFO Log: the Free Software Foundation; either version 2 of the License, or
+2019-07-11 15:41:56 INFO Log: any later version, provided proper credit is given to the authors.
+2019-07-11 15:41:56 INFO Log: This program is distributed in the hope that it will be useful,
+2019-07-11 15:41:56 INFO Log: but WITHOUT ANY WARRANTY; without even the implied warranty of
+2019-07-11 15:41:56 INFO Log: MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+2019-07-11 15:41:56 INFO Log: GNU General Public License for more details at http://www.gnu.org
+2019-07-11 15:41:56 INFO Log: 
+========================================================================
+2019-07-11 15:41:56 INFO Log: Application runtime args:
+2019-07-11 15:41:56 INFO Log:  ---> arg[0] = -b
+2019-07-11 15:41:56 INFO Log:  ---> arg[1] = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines
+2019-07-11 15:41:56 INFO Log:  ---> arg[2] = -u
+2019-07-11 15:41:56 INFO Log:  ---> arg[3] = ~
+2019-07-11 15:41:56 INFO Log:  ---> arg[4] = -c
+2019-07-11 15:41:56 INFO Log:  ---> arg[5] = /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${HOME}) ]: STARTING
+2019-07-11 15:41:56 INFO Log: [ Detect-profile ]: STARTING CMD --> get_default_profile 
+2019-07-11 15:41:56 ERROR Log: Failed to find user shell profile 
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${HOME}) ]: CMD --> /Users/ieclabau/git/BioLockJ/script/get_env_var ${HOME} 
+2019-07-11 15:41:56 INFO Log: [ Detect-profile ]: STARTING CMD --> get_default_profile 
+2019-07-11 15:41:56 ERROR Log: Failed to find user shell profile 
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${HOME}) ]: COMPLETE
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "~" ======> "/Users/ieclabau"
+2019-07-11 15:41:56 INFO Log: Initialize Config: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+2019-07-11 15:41:56 INFO Log: Import All Config Properties for --> Top Level Pipeline Properties File: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${BLJ}/resources/config/default/standard.properties" ======> "/Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties"
+2019-07-11 15:41:56 INFO Log: LOAD CONFIG [ #0 ]: ---> /Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${SHEP}) ]: STARTING
+2019-07-11 15:41:56 INFO Log: [ Detect-profile ]: STARTING CMD --> get_default_profile 
+2019-07-11 15:41:56 ERROR Log: Failed to find user shell profile 
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${SHEP}) ]: CMD --> /Users/ieclabau/git/BioLockJ/script/get_env_var ${SHEP} 
+2019-07-11 15:41:56 INFO Log: [ Detect-profile ]: STARTING CMD --> get_default_profile 
+2019-07-11 15:41:56 ERROR Log: Failed to find user shell profile 
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${SHEP}) ]: COMPLETE
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${SHEP}/dependencies/NOT_IN_GIT_user.properties" ======> "/Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties"
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${SHEP}/dependencies/NOT_IN_GIT_user.properties" ======> "/Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties"
+2019-07-11 15:41:56 INFO Log: LOAD CONFIG [ #1 ]: ---> /Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties
+2019-07-11 15:41:56 INFO Log: LOAD CONFIG [ #2 ]: ---> /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+2019-07-11 15:41:56 INFO Log: Configured BioModule: biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${HOME}/.bash_profile" ======> "/Users/ieclabau/.bash_profile"
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${SHEP}/tiny/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data" ======> "/Users/ieclabau/git/sheepdog_testing_suite/tiny/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data"
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${SHEP}/dependencies/NOT_IN_GIT_user.properties" ======> "/Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties"
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${SHEP_DATA}) ]: STARTING
+2019-07-11 15:41:56 INFO Log: [ Detect-profile ]: STARTING CMD --> get_default_profile 
+2019-07-11 15:41:56 ERROR Log: Failed to find user shell profile 
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${SHEP_DATA}) ]: CMD --> /Users/ieclabau/git/BioLockJ/script/get_env_var ${SHEP_DATA} 
+2019-07-11 15:41:56 INFO Log: [ Detect-profile ]: STARTING CMD --> get_default_profile 
+2019-07-11 15:41:56 ERROR Log: Failed to find user shell profile 
+2019-07-11 15:41:56 INFO Log: [ Get Bash Var (${SHEP_DATA}) ]: COMPLETE
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${SHEP_DATA}/validation/rdp/justRdp_validation" ======> "/Users/ieclabau/git/sheepdog_testing_suite/big/validation/rdp/justRdp_validation"
+2019-07-11 15:41:56 INFO Log: --------> Bash Var Converted "${SHEP_DATA}/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files " ======> "/Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files"
+2019-07-11 15:41:56 INFO Log: Set Config property [ internal.pipelineDir ] = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11
+2019-07-11 15:41:56 INFO Log: Assign NEW pipeline root directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11
+2019-07-11 15:41:56 INFO Log: Total # initial properties: 79
+2019-07-11 15:41:56 INFO Log: Set Config property [ report.taxonomyLevels ] = phylum, class, order, family, genus
+2019-07-11 15:41:56 INFO Log: Initialize metadata property [ metadata.nullValue ] = NA
+2019-07-11 15:41:56 INFO Log: Set LOG_FILE = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/justRDP_2019Jul11.log
+2019-07-11 15:41:56 INFO Log: Set pipeline.logLevel = INFO
+2019-07-11 15:41:56 INFO Log: Set LOG_APPEND = true
+2019-07-11 15:41:56 INFO Log: Set LOG_FORMAT = %m%n
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: Pipeline Project Config File: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+2019-07-11 15:41:56 INFO Log: Pipeline Default Config Files: [/Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties, /Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties]
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: ===> List All Configured Properties:
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: RdpClassifier.compareOn = name,size
+2019-07-11 15:41:56 INFO Log: RdpParser.compareOn = name,size
+2019-07-11 15:41:56 INFO Log: demultiplexer.barcodeCutoff = 0.05
+2019-07-11 15:41:56 INFO Log: exe.bowtie2Params = no-unal, k 60
+2019-07-11 15:41:56 INFO Log: exe.krakenParams = --only-classified-output, --preload
+2019-07-11 15:41:56 INFO Log: input.dirPaths = /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files
+2019-07-11 15:41:56 INFO Log: input.requireCompletePairs = Y
+2019-07-11 15:41:56 INFO Log: input.suffixFw = _R1
+2019-07-11 15:41:56 INFO Log: input.suffixRv = _R2
+2019-07-11 15:41:56 INFO Log: input.trimSuffix = _2
+2019-07-11 15:41:56 INFO Log: internal.configModules = biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:41:56 INFO Log: internal.defaultConfig = /Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties, /Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties
+2019-07-11 15:41:56 INFO Log: internal.pipelineDir = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11
+2019-07-11 15:41:56 INFO Log: kraken2.db = /Users/ieclabau/Documents/ResourcesForBioLockJ/miniKraken2_20181027
+2019-07-11 15:41:56 INFO Log: mail.encryptedPassword = SlrotqvCPGsFhWkKxtpwkQ==
+2019-07-11 15:41:56 INFO Log: mail.from = biolockj@gmail.com
+2019-07-11 15:41:56 INFO Log: mail.smtp.auth = Y
+2019-07-11 15:41:56 INFO Log: mail.smtp.host = smtp.gmail.com
+2019-07-11 15:41:56 INFO Log: mail.smtp.port = 25
+2019-07-11 15:41:56 INFO Log: mail.smtp.starttls.enable = Y
+2019-07-11 15:41:56 INFO Log: mail.to = ieclabau@uncc.edu
+2019-07-11 15:41:56 INFO Log: metadata.barcodeColumn = BarcodeSequence
+2019-07-11 15:41:56 INFO Log: metadata.columnDelim = \t
+2019-07-11 15:41:56 INFO Log: metadata.commentChar = 
+2019-07-11 15:41:56 INFO Log: metadata.fileNameColumn = InputFileName
+2019-07-11 15:41:56 INFO Log: metadata.nullValue = NA
+2019-07-11 15:41:56 INFO Log: metadata.required = Y
+2019-07-11 15:41:56 INFO Log: multiplexer.gzip = Y
+2019-07-11 15:41:56 INFO Log: pipeline.defaultDemultiplexer = biolockj.module.implicit.Demultiplexer
+2019-07-11 15:41:56 INFO Log: pipeline.defaultFastaConverter = biolockj.module.seq.AwkFastaConverter
+2019-07-11 15:41:56 INFO Log: pipeline.defaultProps = /Users/ieclabau/git/sheepdog_testing_suite/dependencies/NOT_IN_GIT_user.properties
+2019-07-11 15:41:56 INFO Log: pipeline.defaultSeqMerger = biolockj.module.seq.PearMergeReads
+2019-07-11 15:41:56 INFO Log: pipeline.downloadDir = $HOME/projects/downloads
+2019-07-11 15:41:56 INFO Log: pipeline.env = local
+2019-07-11 15:41:56 INFO Log: pipeline.logLevel = INFO
+2019-07-11 15:41:56 INFO Log: pipeline.permissions = 770
+2019-07-11 15:41:56 INFO Log: pipeline.userProfile = /Users/ieclabau/.bash_profile
+2019-07-11 15:41:56 INFO Log: qiime.alphaMetrics = shannon
+2019-07-11 15:41:56 INFO Log: qiime.plotAlphaMetrics = Y
+2019-07-11 15:41:56 INFO Log: qiime.removeChimeras = Y
+2019-07-11 15:41:56 INFO Log: r.colorBase = black
+2019-07-11 15:41:56 INFO Log: r.colorHighlight = red
+2019-07-11 15:41:56 INFO Log: r.colorPoint = black
+2019-07-11 15:41:56 INFO Log: r.debug = Y
+2019-07-11 15:41:56 INFO Log: r.pValFormat = %1.2g
+2019-07-11 15:41:56 INFO Log: r.pch = 21
+2019-07-11 15:41:56 INFO Log: r.pvalCutoff = 0.05
+2019-07-11 15:41:56 INFO Log: r.rareOtuThreshold = 0.25
+2019-07-11 15:41:56 INFO Log: r.timeout = 10
+2019-07-11 15:41:56 INFO Log: r_CalculateStats.pAdjustMethod = BH
+2019-07-11 15:41:56 INFO Log: r_CalculateStats.pAdjustScope = LOCAL
+2019-07-11 15:41:56 INFO Log: r_PlotEffectSize.disableFoldChange = Y
+2019-07-11 15:41:56 INFO Log: r_PlotEffectSize.excludePvalAbove = 1
+2019-07-11 15:41:56 INFO Log: r_PlotEffectSize.maxNumTaxa = 40
+2019-07-11 15:41:56 INFO Log: r_PlotMds.distance = bray
+2019-07-11 15:41:56 INFO Log: r_PlotMds.numAxis = 3
+2019-07-11 15:41:56 INFO Log: rarefyOtuCounts.iterations = 10
+2019-07-11 15:41:56 INFO Log: rarefyOtuCounts.lowAbundantCutoff = 0.01
+2019-07-11 15:41:56 INFO Log: rarefyOtuCounts.quantile = 0.5
+2019-07-11 15:41:56 INFO Log: rdp.jar = /Users/ieclabau/Iinstalled/rdp_classifier_2.12/dist/classifier.jar
+2019-07-11 15:41:56 INFO Log: rdp.minThresholdScore = 80
+2019-07-11 15:41:56 INFO Log: rdp.params = -f fixrank
+2019-07-11 15:41:56 INFO Log: report.logBase = 10
+2019-07-11 15:41:56 INFO Log: report.minCount = 2
+2019-07-11 15:41:56 INFO Log: report.numHits = Y
+2019-07-11 15:41:56 INFO Log: report.numReads = Y
+2019-07-11 15:41:56 INFO Log: report.scarceCountCutoff = 0.25
+2019-07-11 15:41:56 INFO Log: report.scarceSampleCutoff = 0.25
+2019-07-11 15:41:56 INFO Log: report.taxonomyLevels = phylum, class, order, family, genus
+2019-07-11 15:41:56 INFO Log: report.unclassifiedTaxa = Y
+2019-07-11 15:41:56 INFO Log: rhizoData = /Users/ieclabau/git/sheepdog_testing_suite/tiny/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data
+2019-07-11 15:41:56 INFO Log: script.defaultHeader = #!/bin/bash
+2019-07-11 15:41:56 INFO Log: script.numThreads = 8
+2019-07-11 15:41:56 INFO Log: script.numWorkers = 1
+2019-07-11 15:41:56 INFO Log: script.permissions = 770
+2019-07-11 15:41:56 INFO Log: seqFileValidator.requireEqualNumPairs = Y
+2019-07-11 15:41:56 INFO Log: trimPrimers.requirePrimer = Y
+2019-07-11 15:41:56 INFO Log: validation.expectationFile = /Users/ieclabau/git/sheepdog_testing_suite/big/validation/rdp/justRdp_validation
+2019-07-11 15:41:56 INFO Log: validation.sizeWithinPercent = 5
+2019-07-11 15:41:56 INFO Log: validation.stopPipeline = N
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO Log: Java Logger initialized
+2019-07-11 15:41:56 INFO Log: ========================================================================
+2019-07-11 15:41:56 INFO BioLockJUtil: Found pipeline input dir /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files
+2019-07-11 15:41:56 INFO BioLockJUtil: # Initial input files found: 2
+2019-07-11 15:41:56 INFO BioLockJUtil: # Initial input files after removing empty/ignored files: 2
+2019-07-11 15:41:56 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456827_2.fastq.gz
+2019-07-11 15:41:56 INFO SeqUtil: header: @ERR1456827.1 1 length=300
+2019-07-11 15:41:56 INFO SeqUtil: seq: GGACTACTGGGGTATCTAATCCTGTTTGCTACCCACGCTTTCGTGTCTCAGCGTCAGCTATGGTCCAGAAAGCCGTCTACACCCCAGGTGTTCCTCCTGATATCTACGCATTTCCCCGCTCTACCCAGAATTCCGCTGTCACATCCCACGCTCAAGCAACCCACTTTCCGTCCCCACCNNCCTGGTNAGCCAGACGTTTCCACCCNCACCTTCTCGTCCCCTCTACACACACTTTCAGCGCATCACTCCCTCACACATCACNCGACACACCTCTCTCCCCCTCTCCCGAACAGTCACCGT
+2019-07-11 15:41:56 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456828_2.fastq.gz
+2019-07-11 15:41:56 INFO SeqUtil: header: @ERR1456828.1 1 length=300
+2019-07-11 15:41:56 INFO SeqUtil: seq: GACTACCGGGGTATCTAATCCTGTTTGCTACCCACGCTTTCGCTCCTCAGCGTCAGTATCGGCCCAGAGATCCGCCTTCGCCACCGGTGTTCCTCCTGATATATGCGCATTTCACCGCTACACCAGGAATTCCAGTCTCCCCTGCCGAAACCAAGTACGTCACACACGACTGACGACCNCGTCTTTAGCTACGGTATTTCACACCNCACCTCACGTACCTCCGACGGACTCCATCCCACCAATCATTTCGGTCAACCCATCCTCGCACACAACTCACACCACAGCCTGTCACTAGTCAAC
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.pipelineInputTypes ] = seq
+2019-07-11 15:41:56 INFO Config: Set Config property [ pipeline.copyInput ] = N
+2019-07-11 15:41:56 INFO SeqUtil: /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456827_2.fastq.gz --> #lines/read: 2
+2019-07-11 15:41:56 INFO SeqUtil: /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456828_2.fastq.gz --> #lines/read: 2
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.seqHeaderChar ] = @
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.seqType ] = fastq
+2019-07-11 15:41:56 INFO SeqUtil: Register Demux Status for: 2 input files.
+2019-07-11 15:41:56 INFO SeqUtil: Checking 2 input files for paired read suffix values: [_R2, _R1]
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.multiplexed ] = N
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.pairedReads ] = N
+2019-07-11 15:41:56 INFO SeqUtil: Set internal.pairedReads=N
+2019-07-11 15:41:56 INFO Config: Set Config property [ metadata.fileNameColumn ] = 
+2019-07-11 15:41:56 INFO Pipeline: Initialize pipeline
+2019-07-11 15:41:56 INFO Config: Set Config property [ pipeline.disableAddImplicitModules ] = N
+2019-07-11 15:41:56 INFO BioModuleFactory: Set required 1st module (for all pipelines): biolockj.module.implicit.ImportMetadata
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.isMultiLineSeq ] = N
+2019-07-11 15:41:56 INFO Config: Set Config property [ pipeline.disableAddPreReqModules ] = N
+2019-07-11 15:41:56 INFO BioModuleFactory: Config property [ report.numReads=Y ] & [ internal.seqType=fastq ] --> Adding module: biolockj.module.seq.SeqFileValidator
+2019-07-11 15:41:56 INFO ImportMetadata: Construct module [ 00 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/00_ImportMetadata
+2019-07-11 15:41:56 INFO SeqFileValidator: Construct module [ 01 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator
+2019-07-11 15:41:56 INFO RdpClassifier: Construct module [ 02 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier
+2019-07-11 15:41:56 INFO RdpParser: Construct module [ 03 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser
+2019-07-11 15:41:56 INFO Config: Set Config property [ internal.allModules ] = biolockj.module.implicit.ImportMetadata, biolockj.module.seq.SeqFileValidator, biolockj.module.classifier.r16s.RdpClassifier, biolockj.module.implicit.parser.r16s.RdpParser
+2019-07-11 15:41:56 INFO Pipeline: Check dependencies for: biolockj.module.implicit.ImportMetadata
+2019-07-11 15:41:56 INFO Config: Set Config property [ validation.disableValidation ] = N
+2019-07-11 15:41:56 INFO ValidationUtil: The ImportMetadata module is expected to produce 1 output files.
+2019-07-11 15:41:56 WARN ValidationUtil: Output file sizes can deveate from the expected value by up to 5.0% and will still pass validation.
+2019-07-11 15:41:56 INFO ValidationUtil: The pipeline will continue even if module outputs from [0_ImportMetadata] do no match the expectation file.
+2019-07-11 15:41:56 INFO Pipeline: Check dependencies for: biolockj.module.seq.SeqFileValidator
+2019-07-11 15:41:56 INFO ValidationUtil: The SeqFileValidator module is expected to produce 3 output files.
+2019-07-11 15:41:56 WARN ValidationUtil: Output file sizes can deveate from the expected value by up to 5.0% and will still pass validation.
+2019-07-11 15:41:56 INFO ValidationUtil: The pipeline will continue even if module outputs from [1_SeqFileValidator] do no match the expectation file.
+2019-07-11 15:41:56 INFO Pipeline: Check dependencies for: biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:41:56 INFO ValidationUtil: The RdpClassifier module is expected to produce 2 output files.
+2019-07-11 15:41:56 WARN ValidationUtil: Output file sizes can deveate from the expected value by up to 5.0% and will still pass validation.
+2019-07-11 15:41:56 INFO ValidationUtil: The pipeline will continue even if module outputs from [2_RdpClassifier] do no match the expectation file.
+2019-07-11 15:41:56 INFO Pipeline: Check dependencies for: biolockj.module.implicit.parser.r16s.RdpParser
+2019-07-11 15:41:56 INFO ValidationUtil: The RdpParser module is expected to produce 3 output files.
+2019-07-11 15:41:56 WARN ValidationUtil: Output file sizes can deveate from the expected value by up to 5.0% and will still pass validation.
+2019-07-11 15:41:56 INFO ValidationUtil: The pipeline will continue even if module outputs from [3_RdpParser] do no match the expectation file.
+2019-07-11 15:41:56 INFO ModuleUtil: ========================================================================
+2019-07-11 15:41:56 INFO ModuleUtil: STARTING [ 00 ] biolockj.module.implicit.ImportMetadata
+2019-07-11 15:41:56 INFO ModuleUtil: ========================================================================
+2019-07-11 15:41:56 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/00_ImportMetadata/output
+2019-07-11 15:41:56 INFO ImportMetadata: List seqFiles sorted for equal batch sizes 
+/Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456828_2.fastq.gz
+/Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456827_2.fastq.gz
+
+2019-07-11 15:41:56 INFO Config: Set Config property [ pipeline.detachJavaModules ] = N
+2019-07-11 15:41:56 INFO ImportMetadata: Clean up: biolockj.module.implicit.ImportMetadata
+2019-07-11 15:41:56 INFO Config: Set Config property [ input.ignoreFiles ] = justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:41:56 INFO MetaUtil: Update metadata cache: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/00_ImportMetadata/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:41:56 INFO MetaUtil: ************************************************************************
+2019-07-11 15:41:56 INFO MetaUtil: ===> New Metadata file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/00_ImportMetadata/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:41:56 INFO MetaUtil: ===> Sample IDs: [ERR1456827, ERR1456828]
+2019-07-11 15:41:56 INFO MetaUtil: ===> Metadata fields: []
+2019-07-11 15:41:56 INFO MetaUtil: ===> 1st Record: [ERR1456827]: []
+2019-07-11 15:41:56 INFO MetaUtil: ************************************************************************
+2019-07-11 15:41:56 INFO ValidationUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/validation
+2019-07-11 15:41:56 INFO SummaryUtil: Update BioModule summary [ biolockj.module.implicit.ImportMetadata ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/summary.txt
+2019-07-11 15:41:56 INFO SummaryUtil: Building module summary for: ImportMetadata
+2019-07-11 15:41:56 INFO SummaryUtil: Summary updated
+2019-07-11 15:41:56 INFO ModuleUtil: ========================================================================
+2019-07-11 15:41:56 INFO ModuleUtil: FINISHED [ 00 ] biolockj.module.implicit.ImportMetadata
+2019-07-11 15:41:56 INFO ModuleUtil: ========================================================================
+2019-07-11 15:41:56 INFO ModuleUtil: ========================================================================
+2019-07-11 15:41:56 INFO ModuleUtil: STARTING [ 01 ] biolockj.module.seq.SeqFileValidator
+2019-07-11 15:41:56 INFO ModuleUtil: ========================================================================
+2019-07-11 15:41:56 INFO SeqFileValidator: List seqFiles sorted for equal batch sizes 
+/Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456828_2.fastq.gz
+/Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456827_2.fastq.gz
+
+2019-07-11 15:41:56 INFO SeqFileValidator: Validate File [0]: /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456828_2.fastq.gz
+2019-07-11 15:41:56 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output
+2019-07-11 15:41:58 INFO BioLockJUtil: Output file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/ERR1456828_2.fastq
+2019-07-11 15:41:58 INFO SeqFileValidator: Validate File [1]: /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files/ERR1456827_2.fastq.gz
+2019-07-11 15:42:00 INFO BioLockJUtil: Output file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/ERR1456827_2.fastq
+2019-07-11 15:42:00 INFO MetaUtil: Adding new field [Num_Valid_Reads] to metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:42:00 INFO MetaUtil: Update metadata cache: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:42:00 INFO MetaUtil: ************************************************************************
+2019-07-11 15:42:00 INFO MetaUtil: ===> New Metadata file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:42:00 INFO MetaUtil: ===> Sample IDs: [ERR1456827, ERR1456828]
+2019-07-11 15:42:00 INFO MetaUtil: ===> Metadata fields: [Num_Valid_Reads]
+2019-07-11 15:42:00 INFO MetaUtil: ===> 1st Record: [ERR1456827]: [228832]
+2019-07-11 15:42:00 INFO MetaUtil: ************************************************************************
+2019-07-11 15:42:00 INFO SeqFileValidator: Clean up: biolockj.module.seq.SeqFileValidator
+2019-07-11 15:42:01 INFO SummaryUtil: Update BioModule summary [ biolockj.module.seq.SeqFileValidator ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/summary.txt
+2019-07-11 15:42:01 INFO SummaryUtil: Building module summary for: SeqFileValidator
+2019-07-11 15:42:01 INFO SummaryUtil: Summary updated
+2019-07-11 15:42:01 INFO ModuleUtil: ========================================================================
+2019-07-11 15:42:01 INFO ModuleUtil: FINISHED [ 01 ] biolockj.module.seq.SeqFileValidator
+2019-07-11 15:42:01 INFO ModuleUtil: ========================================================================
+2019-07-11 15:42:01 INFO ModuleUtil: ========================================================================
+2019-07-11 15:42:01 INFO ModuleUtil: STARTING [ 02 ] biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:42:01 INFO ModuleUtil: ========================================================================
+2019-07-11 15:42:01 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/ERR1456827_2.fastq
+2019-07-11 15:42:01 INFO SeqUtil: header: @ERR1456827.1 1 length=300
+2019-07-11 15:42:01 INFO SeqUtil: seq: GGACTACTGGGGTATCTAATCCTGTTTGCTACCCACGCTTTCGTGTCTCAGCGTCAGCTATGGTCCAGAAAGCCGTCTACACCCCAGGTGTTCCTCCTGATATCTACGCATTTCCCCGCTCTACCCAGAATTCCGCTGTCACATCCCACGCTCAAGCAACCCACTTTCCGTCCCCACCNNCCTGGTNAGCCAGACGTTTCCACCCNCACCTTCTCGTCCCCTCTACACACACTTTCAGCGCATCACTCCCTCACACATCACNCGACACACCTCTCTCCCCCTCTCCCGAACAGTCACCGT
+2019-07-11 15:42:01 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/ERR1456828_2.fastq
+2019-07-11 15:42:01 INFO SeqUtil: header: @ERR1456828.1 1 length=300
+2019-07-11 15:42:01 INFO SeqUtil: seq: GACTACCGGGGTATCTAATCCTGTTTGCTACCCACGCTTTCGCTCCTCAGCGTCAGTATCGGCCCAGAGATCCGCCTTCGCCACCGGTGTTCCTCCTGATATATGCGCATTTCACCGCTACACCAGGAATTCCAGTCTCCCCTGCCGAAACCAAGTACGTCACACACGACTGACGACCNCGTCTTTAGCTACGGTATTTCACACCNCACCTCACGTACCTCCGACGGACTCCATCCCACCAATCATTTCGGTCAACCCATCCTCGCACACAACTCACACCACAGCCTGTCACTAGTCAAC
+2019-07-11 15:42:01 INFO RdpClassifier: List seqFiles sorted for equal batch sizes 
+/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/ERR1456828_2.fastq
+/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/ERR1456827_2.fastq
+
+2019-07-11 15:42:01 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/output
+2019-07-11 15:42:01 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script
+2019-07-11 15:42:01 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script/02.0_RdpClassifier.sh
+2019-07-11 15:42:01 INFO BashScriptBuilder: ========================================================================
+2019-07-11 15:42:01 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:42:01 INFO BashScriptBuilder: ========================================================================
+2019-07-11 15:42:01 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script/MAIN_02_RdpClassifier.sh
+2019-07-11 15:42:01 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script 
+2019-07-11 15:42:01 INFO Processor: [ Set File Privs ]: COMPLETE
+2019-07-11 15:42:01 INFO Processor: [ RdpClassifier ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script/MAIN_02_RdpClassifier.sh 
+2019-07-11 15:58:35 INFO Processor: [ RdpClassifier ]: COMPLETE
+2019-07-11 15:58:35 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2019-07-11 15:58:35 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script
+2019-07-11 15:58:35 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2019-07-11 15:58:35 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2019-07-11 15:58:35 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2019-07-11 15:58:35 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2019-07-11 15:58:35 INFO Pipeline: RdpClassifier Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2019-07-11 15:58:35 INFO RdpClassifier: Clean up: biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:58:35 INFO RdpClassifier: Output file [ERR1456827_reported.tsv] is 3.7294181801826624E-5% bigger than the expected value.
+2019-07-11 15:58:35 INFO ValidationUtil$FileSummary: File [ERR1456827_reported.tsv] passes soft size validation: 40220766 is within 5.0% of the expected value: 40220751 .
+2019-07-11 15:58:35 INFO RdpClassifier: Output file [ERR1456828_reported.tsv] is 1.8033777867070954E-4% bigger than the expected value.
+2019-07-11 15:58:35 INFO ValidationUtil$FileSummary: File [ERR1456828_reported.tsv] passes soft size validation: 29943863 is within 5.0% of the expected value: 29943809 .
+2019-07-11 15:58:35 INFO SummaryUtil: Update BioModule summary [ biolockj.module.classifier.r16s.RdpClassifier ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/summary.txt
+2019-07-11 15:58:35 INFO SummaryUtil: Building module summary for: RdpClassifier
+2019-07-11 15:58:35 INFO SummaryUtil: Summary updated
+2019-07-11 15:58:35 INFO ModuleUtil: ========================================================================
+2019-07-11 15:58:35 INFO ModuleUtil: FINISHED [ 02 ] biolockj.module.classifier.r16s.RdpClassifier
+2019-07-11 15:58:35 INFO ModuleUtil: ========================================================================
+2019-07-11 15:58:35 INFO ModuleUtil: ========================================================================
+2019-07-11 15:58:35 INFO ModuleUtil: STARTING [ 03 ] biolockj.module.implicit.parser.r16s.RdpParser
+2019-07-11 15:58:35 INFO ModuleUtil: ========================================================================
+2019-07-11 15:58:35 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/output/ERR1456827_reported.tsv
+2019-07-11 15:58:35 INFO SeqUtil: header: ERR1456827.1	-	Bacteria	domain	0.99	"Acidobacteria"	phylum	0.64	Acidobacteria_Gp3	class	0.63	Candidatus Solibacter	order	0.57	Candidatus Solibacter	family	0.57	Candidatus Solibacter	genus	0.57
+2019-07-11 15:58:35 INFO SeqUtil: seq: ERR1456827.2	-	Bacteria	domain	0.96	"Actinobacteria"	phylum	0.73	Actinobacteria	class	0.67	Solirubrobacterales	order	0.5	Conexibacteraceae	family	0.46	Conexibacter	genus	0.46
+2019-07-11 15:58:35 INFO SeqUtil: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/output/ERR1456827_reported.tsv is not a sequence file! 
+Line 1: [ ERR1456827.1	-	Bacteria	domain	0.99	"Acidobacteria"	phylum	0.64	Acidobacteria_Gp3	class	0.63	Candidatus Solibacter	order	0.57	Candidatus Solibacter	family	0.57	Candidatus Solibacter	genus	0.57 ]
+Line 2= [ ERR1456827.2	-	Bacteria	domain	0.96	"Actinobacteria"	phylum	0.73	Actinobacteria	class	0.67	Solirubrobacterales	order	0.5	Conexibacteraceae	family	0.46	Conexibacter	genus	0.46 ]
+2019-07-11 15:58:35 INFO RdpParser: # Input Files: 2
+2019-07-11 15:58:35 INFO RdpParser: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/output/ERR1456827_reported.tsv
+2019-07-11 15:58:35 INFO RdpParser: Input File [1]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/output/ERR1456828_reported.tsv
+2019-07-11 15:58:39 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output
+2019-07-11 15:58:39 INFO RdpParser: Build output sample: ERR1456828 | #OTUs=258--> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_otuCount_ERR1456828.tsv
+2019-07-11 15:58:39 INFO RdpParser: Build output sample: ERR1456827 | #OTUs=343--> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_otuCount_ERR1456827.tsv
+2019-07-11 15:58:39 INFO MetaUtil: Adding new field [OTU_COUNT] to metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:58:39 INFO MetaUtil: Update metadata cache: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:58:39 INFO MetaUtil: ************************************************************************
+2019-07-11 15:58:39 INFO MetaUtil: ===> New Metadata file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+2019-07-11 15:58:39 INFO MetaUtil: ===> Sample IDs: [ERR1456827, ERR1456828]
+2019-07-11 15:58:39 INFO MetaUtil: ===> Metadata fields: [Num_Valid_Reads, OTU_COUNT]
+2019-07-11 15:58:39 INFO MetaUtil: ===> 1st Record: [ERR1456827]: [228832, 76381]
+2019-07-11 15:58:39 INFO MetaUtil: ************************************************************************
+2019-07-11 15:58:39 INFO RdpParser: Clean up: biolockj.module.implicit.parser.r16s.RdpParser
+2019-07-11 15:58:39 INFO RdpParser: Output file [justRDP_2019Jul11_otuCount_ERR1456827.tsv] is -0.013543712331550077% smaller than the expected value.
+2019-07-11 15:58:39 INFO ValidationUtil$FileSummary: File [justRDP_2019Jul11_otuCount_ERR1456827.tsv] passes soft size validation: 44295 is within 5.0% of the expected value: 44301 .
+2019-07-11 15:58:39 INFO RdpParser: Output file [justRDP_2019Jul11_otuCount_ERR1456828.tsv] is 0.3510825043885313% bigger than the expected value.
+2019-07-11 15:58:39 INFO ValidationUtil$FileSummary: File [justRDP_2019Jul11_otuCount_ERR1456828.tsv] passes soft size validation: 34300 is within 5.0% of the expected value: 34180 .
+2019-07-11 15:58:39 INFO SummaryUtil: Update BioModule summary [ biolockj.module.implicit.parser.r16s.RdpParser ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/summary.txt
+2019-07-11 15:58:39 INFO SummaryUtil: Building module summary for: RdpParser
+2019-07-11 15:58:39 INFO SummaryUtil: Summary updated
+2019-07-11 15:58:39 INFO ModuleUtil: ========================================================================
+2019-07-11 15:58:39 INFO ModuleUtil: FINISHED [ 03 ] biolockj.module.implicit.parser.r16s.RdpParser
+2019-07-11 15:58:39 INFO ModuleUtil: ========================================================================
+2019-07-11 15:58:39 INFO Processor: [ Query Host ]: STARTING CMD --> hostname 
+2019-07-11 15:58:39 INFO Processor: [ Query Host ]: CCI0PHJGH5AWS
+2019-07-11 15:58:39 INFO Processor: [ Query Host ]: COMPLETE
+2019-07-11 15:58:39 INFO DownloadUtil: DownloadUtil found there are no downloadable modules
+2019-07-11 15:58:39 INFO SummaryUtil: Summary updated
+2019-07-11 15:58:39 INFO Config: Set Config property [ pipeline.deleteTempFiles ] = N
+2019-07-11 15:58:39 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11 
+2019-07-11 15:58:39 INFO Processor: [ Set File Privs ]: COMPLETE
+2019-07-11 15:58:39 INFO MasterConfigUtil: Sanitizing MASTER Config file so only properties accessed during pipeline execution are retained.
+2019-07-11 15:58:39 INFO MasterConfigUtil: To view the list of removed Config properties before MASTER config is sanitized in future runs, enable: pipeline.logLevel=Y
+2019-07-11 15:58:39 INFO MasterConfigUtil: To add DEBUG statements for only this utility class, add the property (this is a list property so multiple class names could be provided - in this example, wee add a single class): pipeline.limitDebugClasses=biolockj.util.MasterConfigUtil
+2019-07-11 15:58:39 INFO MasterConfigUtil: The original version of project Config contained: 79 properties
+2019-07-11 15:58:39 INFO MasterConfigUtil: The final version of MASTER Config contains: 33 properties
+2019-07-11 15:58:39 INFO BioLockJ: Log Pipeline Summary...
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Name:    justRDP_2019Jul11
+Pipeline Config:  /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+# Modules:        4
+# Attempts:       1
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[0]:  biolockj.module.implicit.ImportMetadata
+Runtime:    00 hours : 00 minutes : 01 seconds
+---------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  32 bytes
+New metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/00_ImportMetadata/output/justRDP_2019Jul11_metadata.tsv
+# Samples: 2
+# Fields:  0
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[1]:  biolockj.module.seq.SeqFileValidator
+Runtime:    00 hours : 00 minutes : 05 seconds
+------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  128 MB
+New metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/justRDP_2019Jul11_metadata.tsv
+Valid SEQ Len Range --> min( 1 ) - max( UNLIMITED )
+# Samples:                2
+# Valid Reads (min):      170265
+# Valid Reads (median):   199548
+# Valid Reads (mean):     199548
+# Valid Reads (max):      228832
+# Valid Reads (total):    399097
+IDs w/ min Valid Reads:   [ERR1456828]
+IDs w/ max Valid Reads:   [ERR1456827]
+Mean valid read len:      300
+Min valid read len:       35
+Max valid read len:       301
+SEQ files pass all validations - no sequences were modified or removed.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[2]:  biolockj.module.classifier.r16s.RdpClassifier
+Runtime:    00 hours : 16 minutes : 34 seconds
+---------------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  33 MB
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script/MAIN_02_RdpClassifier.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: 16 minutes
+# Input files: 2
+Mean Input File Size: 128 MB
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[3]:  biolockj.module.implicit.parser.r16s.RdpParser
+Runtime:    00 hours : 00 minutes : 04 seconds
+----------------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  38 KB
+New metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+# Samples:         2
+# OTUs (min):      38029
+# OTUs (median):   57205
+# OTUs (mean):     57205
+# OTUs (max):      76381
+# OTUs (total):    114410
+IDs w/ min OTUs:   [ERR1456828]
+IDs w/ max OTUs:   [ERR1456827]
+# Unique OTUs: 366
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Name:      justRDP_2019Jul11
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Runtime Env:         Localhost [ ieclabau@CCI0PHJGH5AWS ]
+Pipeline Status:     SUCCESS
+Pipeline Runtime:    00 hours : 16 minutes : 42 seconds
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Config:     /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+Pipeline Input:      /Users/ieclabau/git/sheepdog_testing_suite/big/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files
+Pipeline Metadata:  N/A
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Output:     /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11
+Master Config:       /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/MASTER_justRDP_2019Jul11.properties
+Final Metadata:      /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    _-^-_
+                                                _','    \'~.
+                                             -'  ,'      `. `-_
+                                            !`-_.;________:.':::
+                                            !   /\        /\::::
+                                            |  /  \      /..\:::
+                                            ! /    \    /....\::
+                                            !/      \  /......\:
+                                            :--.___..\/_.__.--;;
+                                             -_      `!;;;;;;;'
+                                               `-_    !;;;;''
+                                                  `-. !;'
+                                                     <+>
+  _______      ___      ________      ___            (=)   ________      ________      ___ ____            __
+|\   __  \    |\  \    |\   __  \    |\  \           (=)  |\   __  \    |\   ____\    |\  \|\  \         |\  \
+\ \  \|\ /_   \ \  \   \ \  \|\  \   \ \  \          (=)  \ \  \|\  \   \ \  \___|    \ \  \/  /|_       \ \  \
+ \ \   __  \   \ \  \   \ \  \\\  \   \ \  \         (=)   \ \  \\\  \   \ \  \        \ \   ___  \    __ \ \  \
+  \ \  \|\  \   \ \  \   \ \  \\\  \   \ \  \____    (=)    \ \  \\\  \   \ \  \____    \ \  \\ \  \  |\  \\_\  \
+   \ \_______\   \ \__\   \ \_______\   \ \_______\  (=)     \ \_______\   \ \_______\   \ \__\\ \__\ \ \________\
+    \|_______|    \|__|    \|_______|    \|_______|  (=)      \|_______|    \|_______|    \|__| \|__|  \|________|
+                                                     (=)
+                                                     <+>
+                                                   .'/V\`.
+                                                 .' /   \  `.
+                                               .'  /     \   `.
+                                             .'   /       \    `.
+                                            \    |         |    /
+                                             \   |         |   /
+                                              \  |         |  /
+
+                C          O          M          P          L          E          T          E          
+
+

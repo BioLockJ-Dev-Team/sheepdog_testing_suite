@@ -1,0 +1,77 @@
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Name:    justRDP_2019Jul11
+Pipeline Config:  /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+# Modules:        4
+# Attempts:       1
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[0]:  biolockj.module.implicit.ImportMetadata
+Runtime:    00 hours : 00 minutes : 01 seconds
+---------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  32 bytes
+New metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/00_ImportMetadata/output/justRDP_2019Jul11_metadata.tsv
+# Samples: 2
+# Fields:  0
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[1]:  biolockj.module.seq.SeqFileValidator
+Runtime:    00 hours : 00 minutes : 01 seconds
+------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  1 MB
+New metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/01_SeqFileValidator/output/justRDP_2019Jul11_metadata.tsv
+Valid SEQ Len Range --> min( 1 ) - max( UNLIMITED )
+# Samples:                2
+# Valid Reads (min):      1702
+# Valid Reads (median):   1995
+# Valid Reads (mean):     1995
+# Valid Reads (max):      2288
+# Valid Reads (total):    3990
+IDs w/ min Valid Reads:   [ERR1456828]
+IDs w/ max Valid Reads:   [ERR1456827]
+Mean valid read len:      300
+Min valid read len:       35
+Max valid read len:       301
+SEQ files pass all validations - no sequences were modified or removed.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[2]:  biolockj.module.classifier.r16s.RdpClassifier
+Runtime:    00 hours : 00 minutes : 17 seconds
+---------------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  342 KB
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/02_RdpClassifier/script/MAIN_02_RdpClassifier.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+# Input files: 2
+Mean Input File Size: 1 MB
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module[3]:  biolockj.module.implicit.parser.r16s.RdpParser
+Runtime:    00 hours : 00 minutes : 01 seconds
+----------------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  9 KB
+New metadata: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+# Samples:         2
+# OTUs (min):      360
+# OTUs (median):   556
+# OTUs (mean):     556
+# OTUs (max):      752
+# OTUs (total):    1112
+IDs w/ min OTUs:   [ERR1456828]
+IDs w/ max OTUs:   [ERR1456827]
+# Unique OTUs: 98
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Name:      justRDP_2019Jul11
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Runtime Env:         Localhost [ ieclabau@CCI0PHJGH5AWS ]
+Pipeline Status:     SUCCESS
+Pipeline Runtime:    00 hours : 00 minutes : 17 seconds
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Config:     /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+Pipeline Input:      /Users/ieclabau/git/sheepdog_testing_suite/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R2/rhizo_R2_subdir_2files
+Pipeline Metadata:  N/A
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Output:     /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11
+Master Config:       /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/MASTER_justRDP_2019Jul11.properties
+Final Metadata:      /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Jul11/03_RdpParser/output/justRDP_2019Jul11_metadata.tsv
+----------------------------------------------------------------------------------------------------------------------------------------------------------
