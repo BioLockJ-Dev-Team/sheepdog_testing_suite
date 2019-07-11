@@ -67,8 +67,6 @@ public class KrakenExpectedUnclassified
 
 		}
 		
-		removeRedundant(map);
-		
 		HashMap<String, Long> returnMap = new HashMap<>();
 		
 		for(String s : map.keySet())
@@ -82,23 +80,6 @@ public class KrakenExpectedUnclassified
 		}
 		
 		return returnMap;
-	}
-	
-	private static void removeRedundant(HashMap<String, Long> map)
-	{
-		HashSet<String> toRemove =new HashSet<>();
-		
-		for(String s : map.keySet())
-		{
-			for(String s2 : map.keySet())
-			{
-				if( ! s.equals(s2) && s2.indexOf(s) != -1 )
-					toRemove.add(s);
-			}
-		}
-		
-		for(String s : toRemove)
-			map.remove(s);
 	}
 	
 	private static String getATaxa(String in, String level) throws Exception
@@ -232,6 +213,31 @@ public class KrakenExpectedUnclassified
 		long taxaCount;
 	}
 	
+	private static void assertEquals( HashMap<String,Long> expectationMap, File biolockJOuputFile ) throws Exception
+	{
+		
+	}
+	
+	private static HashMap<String,Long> buildExpectationMap( List<Holder> fileLines, String endLevel ) throws Exception
+	{
+		HashMap<String,Long> map = new HashMap<>();
+		
+		for(Holder h : fileLines)
+		{
+			if( h.taxaLine != null && ! endsBelowLevel(h.taxaLine, endLevel))
+			{
+
+				if( map.containsKey(h.taxaLine))
+					throw new Exception("Duplciate " + h.taxaLine);
+				
+				map.put(h.taxaLine, h.taxaCount);
+			}
+			
+		}
+		
+		return map;
+	}
+	
 	private static List<Holder> getFileLines( File inFile, String startLevel, String endLevel ) throws Exception
 	{
 		List<Holder> list = new ArrayList<>();
@@ -265,6 +271,8 @@ public class KrakenExpectedUnclassified
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
+		
+		HashMap<String,Long> expectationMap = buildExpectationMap(fileLines, "genus");
 		
 	//	for( Holder h : fileLines)
 		//	System.out.println(h.taxaLine);
