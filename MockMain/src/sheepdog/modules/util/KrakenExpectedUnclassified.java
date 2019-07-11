@@ -196,8 +196,8 @@ public class KrakenExpectedUnclassified
 				{
 					if( ! countVal.equals(aVal))
 						throw new Exception("Mismatch :" + taxaString+ " reparse:" +   aVal + " blj:" + countVal);
-					else
-						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+					//else
+						//System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 				}
 				else
 				{
@@ -309,6 +309,17 @@ public class KrakenExpectedUnclassified
 			}
 		}
 		
+
+		for( Holder h : list)
+		{
+			if( h.isTerminal && ! endAtLevel(h.taxaLine, endLevel) && ! endsBelowLevel(h.taxaLine, endLevel))
+			{
+				List<String> someList = getExpectedString(h.taxaLine, startLevel, endLevel, true);
+				System.out.println("Replace " + h.taxaLine + " with " + someList.get(someList.size()-1));
+				h.taxaLine = someList.get(someList.size()-1);
+			}
+		}
+		
 		List<Holder> newList = new ArrayList<>();
 		
 		for( Holder h : list)
@@ -346,16 +357,16 @@ public class KrakenExpectedUnclassified
 			if( getLastLevel(taxaLine).equals(levelToAdd))
 			{		
 
-				if( levelToAdd.equals("family") &&  taxaLine.indexOf("Rhodothermaceae") != - 1)
-				{
-					System.out.println("START " + taxaLine + " " + count);
-				}
+				//if( levelToAdd.equals("family") &&  taxaLine.indexOf("Rhodothermaceae") != - 1)
+				//{
+					//System.out.println("START " + taxaLine + " " + count);
+			//	}
 				
 				for(String s2 : map.keySet())
 					if( s2.contains(taxaLine) )
 					{
-						if( levelToAdd.equals("family") &&  s2.indexOf("Rhodothermaceae") != -1 ) 
-							System.out.println("CONTAINS " + s2 + " " + map.get(s2));
+				//		if( levelToAdd.equals("family") &&  s2.indexOf("Rhodothermaceae") != -1 ) 
+					//		System.out.println("CONTAINS " + s2 + " " + map.get(s2));
 						
 						count = count - map.get(s2);
 					}
@@ -365,6 +376,7 @@ public class KrakenExpectedUnclassified
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
 					
+					/*
 					if(levelToAdd.equals("family") &&   newTaxa.indexOf("Rhodothermaceae") != - 1)
 					{
 						for( int x=0; x < list.size(); x++)
@@ -372,7 +384,7 @@ public class KrakenExpectedUnclassified
 						
 						System.out.println("ADD " +  newTaxa + " " + count + " " + levelToAdd);
 
-					}
+					}*/
 					
 					Long oldCount = toAdd.get(newTaxa);
 					
@@ -391,8 +403,8 @@ public class KrakenExpectedUnclassified
 			if(oldVal == null)
 				oldVal = 0L;
 			
-			if (levelToAdd.equals("family") &&  oldVal > 0 && s.indexOf("Rhodothermaceae") != -1)
-				System.out.println("MERGE " + s + " " + oldVal + " " + toAdd.get(s));
+			//if (levelToAdd.equals("family") &&  oldVal > 0 && s.indexOf("Rhodothermaceae") != -1)
+				//System.out.println("MERGE " + s + " " + oldVal + " " + toAdd.get(s));
 			
 			map.put(s, toAdd.get(s) + oldVal);
 		}
@@ -405,6 +417,9 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{	
+		String s5 = "phylum__Chlamydiae|class__Chlamydiia|order__Parachlamydiales|family__Parachlamydiaceae";
+		System.out.println("EX " + getExpectedString(s5, "phylum", "genus", false));
+		
 		//System.out.println(getLastLevel("phylum__Actinobacteria|class__Actinobacteria|order__Actinomycetales|family__Actinomycetaceae|genus__Unclassified Actinomycetaceae"));
 
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
@@ -413,7 +428,7 @@ public class KrakenExpectedUnclassified
 		
 		for(Holder h : fileLines)
 		{
-			if( h.taxaLine.indexOf("Rhodothermaceae") != -1)
+			if( h.taxaLine.indexOf("Parachlamydiales") != -1)
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
 			}
@@ -423,21 +438,19 @@ public class KrakenExpectedUnclassified
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
-		 
-		for(String s : map.keySet())
-		{
-			if( s.indexOf("Rhodothermaceae") != -1)
-			{
-				System.out.println("POST " + s+ " " + map.get(s));
-			}
-		}
-	
-	
-			 
-		 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
+			 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
-			
+		
+
+			for(String s : map.keySet())
+			{
+				if( s.indexOf("Parachlamydiales") != -1)
+				{
+					System.out.println("POST " + s+ " " + map.get(s));
+				}
+			}
+		
 		
 		 
 		assertEquals(map, biolockJFile);
