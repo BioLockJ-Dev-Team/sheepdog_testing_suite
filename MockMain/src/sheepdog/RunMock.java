@@ -338,7 +338,31 @@ public class RunMock
 	
 	protected static void writeComments(BufferedWriter writer) throws IOException {
 		writer.write( "# BioLockJ jar file: " + Config.replaceEnvVar(BLJ_JAR) + System.lineSeparator() );
+		writer.write( "# BioLockJ version: " + getJarVersion() + System.lineSeparator() );
 		writer.write( "# SHEP_DATA: " + (new File(Config.replaceEnvVar("${SHEP_DATA}"))).getName() + System.lineSeparator());
+	}
+	
+	protected static String getJarVersion() {
+		String version = "";
+		String cmd = "java -jar " + Config.replaceEnvVar(BLJ_JAR) + " --version";
+		try {
+			final Process p = Runtime.getRuntime().exec( cmd );
+			final BufferedReader br = new BufferedReader( new InputStreamReader( p.getInputStream() ) );
+			String s;
+			while( ( s = br.readLine() ) != null )
+			{
+				version = String.valueOf( s );
+			}
+			p.waitFor();
+			p.destroy();
+		}catch(Exception ex) {
+			System.err.println("There was an error while getting the jar file version.");
+			System.err.println(cmd);
+		}
+		if (version == null || version.isEmpty()) {
+			System.err.println(cmd);
+		}
+		return( version );
 	}
 	
 	protected static void clearPipelines() throws IOException {
