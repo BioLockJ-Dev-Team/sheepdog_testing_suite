@@ -291,14 +291,13 @@ public class KrakenExpectedUnclassified
 	}
 
 	private static HashMap<String,Long> buildExpectationMap( List<Holder> fileLines, String startLevel, String endLevel ) throws Exception
-	{
+	{		
 		HashMap<String,Long> map = new LinkedHashMap<>();
 		
 		for(Holder h : fileLines)
 		{
 			if( h.taxaLine != null && ! endsBelowLevel(h.taxaLine, endLevel))
 			{
-
 				Long oldVal = map.get(h.taxaLine);
 				
 				if(oldVal == null)
@@ -315,9 +314,6 @@ public class KrakenExpectedUnclassified
 		{
 			List<String> aList=  getExpectedString(s, startLevel, endLevel,true);
 			s = aList.get(aList.size()-1);
-			
-			if( map.containsKey(s))
-				throw new Exception("Duplicate " + s);
 			
 			map.put(s, unclassifiedMap.get(s));
 		}
@@ -375,7 +371,7 @@ public class KrakenExpectedUnclassified
 		
 		for(Holder h : fileLines)
 		{
-			if( h.taxaLine != null &&  h.taxaLine.indexOf("Enterobacterales") != -1 )
+			if( h.taxaLine != null &&  h.taxaLine.indexOf("Vicinamibacteraceae") != -1 )
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount);
 			}
@@ -385,11 +381,13 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : expectationMap.keySet())
 		{
-			if( s.indexOf("Euryarchaeota") != -1 )
+			if( s.indexOf("Vicinamibacteraceae") != -1 )
 			{
 				System.out.println("Ex " + s + " " + getExpectedString(s, "phylum", "genus", true) + " " +  expectationMap.get(s));
 			}
 		}
+		
+		expectationMap = buildExpectationMap(fileLines, "phylum", "genus");
 		
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
 	//	
