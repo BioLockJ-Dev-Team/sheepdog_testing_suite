@@ -16,49 +16,15 @@ public class KrakenExpectedUnclassified
 	private static String[] TAXA_LEVELS_FIRST_UPPER = { "Phylum" , "Class" , "Order" , "Family" , "Genus", "Species" } ;
 	private static String[] FIRST_CHARS = { "p" , "c", "o", "f", "g" , "s"};
 	
-	private static String removeJumps(String s )
+	private static int getIndex(String s) throws Exception
 	{
-		
-		String[] splits = s.split("\\|");
-		
-		if( splits.length == 1)
-			return s;
-		
-		StringBuffer buff = new StringBuffer();
-		
-		buff.append(splits[0] + "|");
-		
-		boolean keepGoing = true;
-		for( int x=1; x < splits.length-1 && keepGoing; x++)
-		{
-			buff.append(splits[x] + "|");
-			
-			int thisOne = getIndex(splits[x]);
-			int nextOne = getIndex(splits[x+1]);
-			
-			if( nextOne > thisOne + 1)
-			{
-				keepGoing = false;	
-			}
-			
-			//System.out.println(x + " " + thisOne + " "+ nextOne);
-		}
-		
-		if( keepGoing)
-			buff.append(splits[splits.length-1]);	
-		
-		return buff.toString();
-		
-	}
-	
-	private static int getIndex(String aSplit)
-	{
-		for( int x=0; x < FIRST_CHARS.length; x++)
-			if( aSplit.startsWith(FIRST_CHARS[x]))
+		for(int x=0; x < TAXA_LEVELS.length; x++)
+			if( s.startsWith(TAXA_LEVELS[x] + "__"))
 				return x;
 		
 		return -1;
 	}
+	
 	
 	/*
 	 * the key will be a full string such as 
@@ -69,11 +35,12 @@ public class KrakenExpectedUnclassified
 	public static HashMap<String, Long> getUnclassifiedMap( File inFile , String startLevel, String endLevel ) throws Exception
 	{
 		HashMap<String, Long> map = new LinkedHashMap<>();
-		List<Holder> fileLines = getFileLines(inFile);
+		List<Holder> fileLines = getFileLines(inFile, startLevel, endLevel);
 		
 		for( int x=0; x < fileLines.size(); x++)
 		{
 			Holder h = fileLines.get(x);
+			
 			
 			if( /* h.taxaLine.indexOf(startLevel + "__") != - 1 && */  // include kingdom level?
 					 ! endAtLevel(h.taxaLine, endLevel)
@@ -84,7 +51,6 @@ public class KrakenExpectedUnclassified
 				for( int y=x+1; y < fileLines.size(); y++)
 				{
 					String candidateLine = fileLines.get(y).taxaLine;
-					candidateLine = removeJumps(candidateLine);
 					
 					if( endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
 					{
@@ -107,7 +73,7 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : map.keySet())
 		{
-			String newKey = getExpectedString(s, endLevel);
+			String newKey = getExpectedString(s,startLevel,endLevel);
 			
 			if( returnMap.containsKey(newKey))
 				throw new Exception("Renaming collision error");
@@ -135,40 +101,99 @@ public class KrakenExpectedUnclassified
 			map.remove(s);
 	}
 	
-	private static String getExpectedString(String inString, String endLevel)
+	private static String getATaxa(String in, String level) throws Exception
 	{
-
-		//System.out.println(inString);
-		inString = inString.substring(inString.indexOf("|")+1, inString.length());
+		String[] splits = in.split("\\|");
+		
+		for(String s : splits)
+			if( s.startsWith(level+ "__"))
+				return s.replace(level + "__", "");
+		
+		return null;
+	}
+	
+	private static HashMap<String, String> getAsTaxaMap(String in) throws Exception
+	{
+		HashMap<String, String> map = new LinkedHashMap<>();
+		
+		for( int x=0; x < TAXA_LEVELS.length; x++)
+		{
+			String aTaxa = getATaxa(in, TAXA_LEVELS[x]);
+			
+			if( aTaxa != null)
+				map.put(TAXA_LEVELS[x], aTaxa);
+		}
+			
+		return map;
+	}
+	
+	private static int getLevelIndex(String s) throws Exception
+	{
+		for( int x=0; x < TAXA_LEVELS.length; x++)
+			if( TAXA_LEVELS[x].equals(s))
+				return x;
+		
+		throw new Exception("Could not find " +  s);
+	}
+	
+	private static String getExpectedString(String inString, String firstLevel, String lastLevel) throws Exception
+	{
+		System.out.println("In " + inString);
 		
 		for( int x=0 ; x< TAXA_LEVELS.length; x++)
 		{
-			inString = inString.replace(FIRST_CHARS[x] + "__", TAXA_LEVELS[x] + "__");	
+			inString = inString.replace("|" + FIRST_CHARS[x] + "__", "|" +  TAXA_LEVELS[x] + "__");	
 		}
 		
-		int startPos = inString.lastIndexOf("|");
+		HashMap<String, String> taxaMap = getAsTaxaMap(inString);
 		
-		if( startPos == -1 )
-			startPos = 0;
+		if( taxaMap.size() == 0 )
+			return null;
 		
-		String lastTaxa= inString.substring(startPos, inString.length());
-		lastTaxa = lastTaxa.substring(lastTaxa.lastIndexOf("__") + 2, lastTaxa.length());
+		StringBuffer buff =new StringBuffer();
 		
-		String lastlevel = null;
+		int startLevel = getLevelIndex(firstLevel);
 		
-		for( int x=0; x < TAXA_LEVELS.length; x++)
-			if(  inString.indexOf(TAXA_LEVELS[x]+ "__") != -1 ) 
-				lastlevel = TAXA_LEVELS_FIRST_UPPER[x];
+		int endLevel = getLevelIndex(lastLevel);
 		
-		
-			
-		for( int x = 0 ; x < TAXA_LEVELS.length; x++)
+		// walk down to find the end of the input string
+		if( endLevel == -1 )
 		{
-			if( inString.indexOf(TAXA_LEVELS[x]) == - 1 )
-				inString = inString + "|" + TAXA_LEVELS[x] + "__Unclassified " + lastTaxa + " " + lastlevel;
+			for( int x= startLevel; x <= endLevel -1; x++  )
+			{
+				int aLevel = getIndex(TAXA_LEVELS[x]);
+				
+				if( aLevel != -1)
+					endLevel = aLevel;
+			}
 		}
 		
-		return inString;
+		
+		String last = "";
+		String lastTaxaString= "";
+		
+		for( int x=startLevel; x <= endLevel; x++)
+		{
+			String taxa = taxaMap.get(TAXA_LEVELS[x]);
+			
+			if(taxa == null)
+			{
+				taxa = "Unclassified " + last + " " + lastTaxaString;
+			}
+			else
+			{
+				last = taxa;
+				lastTaxaString = TAXA_LEVELS_FIRST_UPPER[x];
+			}
+				
+			if( x > startLevel)
+				buff.append("|");
+			
+			buff.append( TAXA_LEVELS[x] + "__" +  taxa);
+		}
+		
+		System.out.println("Out " + buff.toString());
+		return buff.toString();
 	}
 	
 	private static  boolean endAtLevel(String s, String level)
@@ -207,7 +232,7 @@ public class KrakenExpectedUnclassified
 		long taxaCount;
 	}
 	
-	private static List<Holder> getFileLines( File inFile ) throws Exception
+	private static List<Holder> getFileLines( File inFile, String startLevel, String endLevel ) throws Exception
 	{
 		List<Holder> list = new ArrayList<>();
 		
@@ -220,9 +245,8 @@ public class KrakenExpectedUnclassified
 			if( splits.length != 2)
 				throw new Exception("Expecting two tokens " + inFile.getAbsolutePath() +  " "+  s);
 			
-			
 			Holder h= new Holder();
-			h.taxaLine= splits[0];
+			h.taxaLine=  getExpectedString(splits[0],startLevel,endLevel);
 			h.taxaCount = Long.parseLong(splits[1]);
 			
 			list.add(h);
@@ -240,15 +264,10 @@ public class KrakenExpectedUnclassified
 	{
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
-		List<Holder> fileLines = getFileLines(inFile);
+		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
-		for(Holder h : fileLines)
-		{
-			String removeJumps = removeJumps(h.taxaLine);
-			
-			if( ! removeJumps.equals(h.taxaLine))
-				System.out.println(h.taxaLine);
-		}
+	//	for( Holder h : fileLines)
+		//	System.out.println(h.taxaLine);
 		
 	//	String s= 
 		//"d__Archaea|p__Crenarchaeota|c__Thermoprotei|o__Sulfolobales|f__Sulfolobaceae|g__Saccharolobus|s__Saccharolobus solfataricus";
