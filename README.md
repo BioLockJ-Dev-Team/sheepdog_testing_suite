@@ -4,9 +4,24 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 
 # How to use this test suite
 
-1. (required) Clone or download this repository.
-1. (required) Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
+## Quick Start
+
+1. Get [BioLockJ](https://github.com/msioda/BioLockJ).  See [BioLockJ installation for developers](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies/README.md#biolockj-installation-for-developers).
+1. Clone or download this repository.
+1. Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables).
+1. Build the MockMain project, using the MockMain/build.xml file: `cd MockMain; ant`
+1. Run the example test pipeline: `${SHEP}/MockMain/resources/runExample.sh`<br>See the MockMain documentation to learn more about what you see in the example and how to expand from it.
+
+**Build up your reference pipelines**
 1. (probably required) Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).<br>Not all tests use this file. Depending on the test you want to run, you may need to set up other [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies) as well, so go ahead and skim that whole page.
+1. Find another existing testList.  There is probably a script to run that test set.  Review the config files listed in that testList, and make sure you have the dependencies that the tests require. Run the test set.
+1. Create a folder called `pipelines` next to the testList file.  This folder will be ignored by git. Its just for you.
+1. Once the tests are done (and passing), move the pipelines you just generated from `$SHEP/MockMain/pipelines` to your new `pipelines` folder.  Assuming all tests passed, you now have a reference of pipelines that pass that test set.  
+1. Select another testList and repeat.
+
+**be an issue tracking master**
+Along the way there will surely be times when BioLockJ fails because you did not set up something it needed. In those times, did BioLockJ give you an appropriate error message?  Did that info lead you to the solution?  If you encountered challenges, users will too! Be familiar with our [issue tracking](https://github.com/IvoryC/sheepdog_testing_suite/issues), and make sure these frustrations are in our issue collection.  Take a moment to review the tags, read a few issues, get familiar with the interface.  Look at newly created issues on a regular basis.
+
 
 ## What's here
 
