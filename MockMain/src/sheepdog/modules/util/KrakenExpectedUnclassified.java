@@ -351,21 +351,26 @@ public class KrakenExpectedUnclassified
 				{
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
+					
+					if( newTaxa.indexOf("Acidobacteriaceae") != - 1)
 					System.out.println("ADD " +  newTaxa + " " + count);
+					
 					toAdd.put(newTaxa, count);
 				}
 					
 			}
 			
-			for(String s2 : toAdd.keySet())
-			{
-				Long oldVal = map.get(s2);
-				
-				if(oldVal == null)
-					oldVal = 0L;
-				
-				map.put(s, toAdd.get(s2) + oldVal);
-			}
+			
+		}
+		
+		for(String s : toAdd.keySet())
+		{
+			Long oldVal = map.get(s);
+			
+			if(oldVal == null)
+				oldVal = 0L;
+			
+			map.put(s, toAdd.get(s) + oldVal);
 		}
 	}
 	
@@ -394,10 +399,20 @@ public class KrakenExpectedUnclassified
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
-//		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
-	//	 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
-		// addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
+		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
+		 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
+		 addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
+	
+			for(Holder h : fileLines)
+			{
+				if( h.taxaLine.indexOf("Acidobacteriaceae") != -1)
+				{
+					System.out.println("POST " + h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
+				}
+			}
 			
+		
+		 
 		assertEquals(map, biolockJFile);
 		
 		
