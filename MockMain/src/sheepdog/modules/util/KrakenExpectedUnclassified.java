@@ -171,9 +171,6 @@ public class KrakenExpectedUnclassified
 	{
 		int index= s.lastIndexOf("|");
 		
-		if( index == -1)
-			return "";
-		
 		return s.substring(index+1, s.lastIndexOf("__"));
 	}
 	
@@ -342,7 +339,7 @@ public class KrakenExpectedUnclassified
 
 			Long count = Long.parseLong(splits[1]);
 			if( getLastLevel(taxaLine).equals(levelToAdd))
-			{
+			{		
 				for(String s2 : map.keySet())
 					if( s2.indexOf(taxaLine) != -1 )
 						count = count - map.get(s2);
@@ -352,7 +349,7 @@ public class KrakenExpectedUnclassified
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
 					
-					if( newTaxa.indexOf("Acidobacteriaceae") != - 1)
+					if( levelToAdd.equals("phylum") && newTaxa.indexOf("Actinobacteria") != - 1)
 					System.out.println("ADD " +  newTaxa + " " + count);
 					
 					toAdd.put(newTaxa, count);
@@ -399,8 +396,8 @@ public class KrakenExpectedUnclassified
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
-		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
+		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
 	
 			for(Holder h : fileLines)
