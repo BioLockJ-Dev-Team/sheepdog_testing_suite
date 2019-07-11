@@ -27,12 +27,6 @@ public class KrakenExpectedUnclassified
 	}
 	
 	
-	/*
-	 * the key will be a full string such as 
-	 * phylum__Bacteroidetes|class__Bacteroidia|order__Bacteroidales|family__Unclassified Bacteroidales Order|genus__Unclassified Bacteroidales
-	 * 
-	 * 
-	 */
 	public static HashMap<String, Long> getUnclassifiedMap( List<Holder> fileLines , String startLevel, String endLevel ) throws Exception
 	{
 		HashMap<String, Long> map = new LinkedHashMap<>();
@@ -72,10 +66,63 @@ public class KrakenExpectedUnclassified
 				}
 			
 			}
+			
+			List<String> keys = new ArrayList<>( map.keySet());
+			for(int i=0; i < keys.size()-1; i++)
+			{
+				String iKey = keys.get(i);
+				long aVal = map.get(iKey);
+				
+				for(int j=i+1; j < keys.size(); j++)
+				{
+					String jKey = keys.get(j);
+					String jKeyNoUnclass = removeUnclassified(jKey);
+					
+					//if(  iKey.indexOf("Corynebacteriales") != -1 && jKey.indexOf("Corynebacteriales") != -1)
+						//System.out.println("COMPARE " + iKey + " " + jKey);
+					
+					if(  iKey.indexOf(jKeyNoUnclass) != -1)
+					{
+						System.out.println("Subtract " + jKeyNoUnclass+ " from " + iKey);
+						aVal = aVal - map.get(keys.get(j));
+					}
+						
+				}
+				
+				map.replace(keys.get(i),aVal);
+			}
 
 		}
 		
 		return map;	
+	}
+	
+	private static String removeUnclassified(String s) 
+	{
+		String[] splits =s.split("\\|");
+		
+		StringBuffer buff = new StringBuffer();
+		
+		boolean first = true;
+		for( int x=0; x< splits.length; x++)
+		{
+			if(splits[x].indexOf("Unclassified") == -1 )
+			{
+				if( first)
+				{
+					first = false;
+				}
+				else
+				{
+					buff.append("|");
+				}
+				
+				buff.append(splits[x]);
+			}
+				
+		}
+		
+		return buff.toString();
 	}
 	
 	private static String getATaxa(String in, String level) throws Exception
@@ -378,7 +425,9 @@ public class KrakenExpectedUnclassified
 	 * Obviously, this main method will not be part of the automated test suite
 	 */
 	public static void main(String[] args) throws Exception
-	{	File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
+	{	
+
+		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
