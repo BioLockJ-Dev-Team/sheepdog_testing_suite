@@ -335,6 +335,8 @@ public class KrakenExpectedUnclassified
 			{
 				taxaLine= taxaLine.replace("|" + FIRST_CHARS[x] + "__", "|" +  TAXA_LEVELS[x] + "__");	
 			}
+			
+			taxaLine = taxaLine.substring(taxaLine.indexOf("|") +1 , taxaLine.length());
 
 			Long count = Long.parseLong(splits[1]);
 			if( getLastLevel(taxaLine).equals(levelToAdd))
