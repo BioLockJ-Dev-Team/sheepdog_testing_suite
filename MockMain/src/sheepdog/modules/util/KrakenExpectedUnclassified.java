@@ -50,18 +50,18 @@ public class KrakenExpectedUnclassified
 				{
 					long matchingSum =0;
 					  
-					for( int y=x+1; y < fileLines.size(); y++)
+					for( int y=0; y < fileLines.size(); y++)
 					{
 						String candidateLine = fileLines.get(y).taxaLine;
 						
-						if( candidateLine != null &&  endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
+						if( y != x &&  endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
 						{
 							matchingSum += fileLines.get(y).taxaCount;
 						}
 					}
 					
 					if( matchingSum > h.taxaCount)
-						throw new Exception("Parsing error");
+						throw new Exception("Parsing error " + h.taxaLine + " " + matchingSum + " " + h.taxaCount);
 					
 					if( matchingSum < h.taxaCount)
 						map.put(h.taxaLine, h.taxaCount - matchingSum);
@@ -256,6 +256,39 @@ public class KrakenExpectedUnclassified
 		}
 	}
 
+	/*
+	 * When we create unclassified taxa, there can be duplicates
+	 * if there are two unclassified taxa with the same parent taxa
+	 * this function collapses the duplicates
+	 */
+	private static List<Holder> mergeList(List<Holder> list) throws Exception
+	{
+		HashMap<String, Long> map =new LinkedHashMap<>();
+		
+		for(Holder h : list)
+		{
+			Long aVal = map.get(h.taxaLine);
+			
+			if( aVal == null)
+				aVal= 0L;
+			
+			aVal = aVal + h.taxaCount;
+			
+			map.put(h.taxaLine,aVal);
+		}
+		
+		List<Holder> returnList= new ArrayList<>();
+		
+		for(String s : map.keySet())
+		{
+			Holder h = new Holder();
+			h.taxaLine =s;
+			h.taxaCount = map.get(s);
+			returnList.add(h);
+		}
+		
+		return returnList;
+	}
 
 	private static HashMap<String,Long> buildExpectationMap( List<Holder> fileLines, String startLevel, String endLevel ) throws Exception
 	{
@@ -325,6 +358,7 @@ public class KrakenExpectedUnclassified
 			}
 		}
 		
+		list =mergeList(list);
 		return list;
 	}
 	
@@ -341,7 +375,7 @@ public class KrakenExpectedUnclassified
 		
 		for(Holder h : fileLines)
 		{
-			if( h.taxaLine != null &&  h.taxaLine.indexOf("Euryarchaeota") != -1 )
+			if( h.taxaLine != null &&  h.taxaLine.indexOf("Enterobacterales") != -1 )
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount);
 			}
@@ -359,8 +393,7 @@ public class KrakenExpectedUnclassified
 		
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
 	//	
-	//	HashMap<String, Long> expectationMap = buildExpectationMap(fileLines, "phylum", "genus");
-	//	assertEquals(expectationMap, biolockJFile);
+		assertEquals(expectationMap, biolockJFile);
 		
 	//	for( Holder h : fileLines)
 		//	System.out.println(h.taxaLine);
