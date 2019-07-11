@@ -125,12 +125,21 @@ public class RdpExpectedUnclassified
 				Long anotherCount = map.get(taxa);
 				
 				if( anotherCount == null)
-					throw new Exception("Could not find " + taxa + " " + count);
-				
-				if( ! count.equals(anotherCount))
-					throw new Exception("Taxa mismatch " + taxa +  " " + count + " " + anotherCount);
-				
-				System.out.println("match " + taxa + " " + count);
+				{
+					//if( taxa.indexOf("Verrucomicrobia") != -1)
+					System.out.println("Could not find " + taxa + " " + count);
+					
+				}
+				else
+				{
+
+					if( ! count.equals(anotherCount))
+						System.out.println("Taxa MISMATCH " + taxa +  " " + count + " " + anotherCount);
+					else
+					//if( taxa.indexOf("Verrucomicrobia") != -1)	
+					System.out.println("match " + taxa + " " + count);
+				}
+					
 			}
 			
 		}
