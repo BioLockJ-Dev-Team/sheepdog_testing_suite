@@ -336,14 +336,14 @@ public class KrakenExpectedUnclassified
 		
 		for(Holder h : fileLines)
 		{
-			//if( h.taxaLine.indexOf("Acidobacteriaceae") != -1)
+			if( h.taxaLine.indexOf("Acidobacteriaceae") != -1)
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
 			}
 		}
 		
 		HashMap<String, Long> map = buildExpectationMap(fileLines, "genus", "phylum");
-		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
+		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
 		assertEquals(map, biolockJFile);
 		
