@@ -48,7 +48,7 @@ public class KrakenExpectedUnclassified
 					{
 						String candidateLine = fileLines.get(y).taxaLine;
 						
-						if( y != x &&  endAtLevel(candidateLine, endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
+						if( y != x &&  fileLines.get(y).isTerminal && candidateLine.indexOf(h.taxaLine) != -1 )
 						{
 							matchingSum += fileLines.get(y).taxaCount;
 							
@@ -64,59 +64,10 @@ public class KrakenExpectedUnclassified
 					if( matchingSum < h.taxaCount)
 						map.put(h.taxaLine, h.taxaCount - matchingSum);
 				}
-			
 			}
-			
-			/*
-			List<String> keysLong = new ArrayList<>( );
-			List<String> keysShort = new ArrayList<>();
-			
-			for( String s : map.keySet())
-			{
-				List<String> list =getExpectedString(s, startLevel, endLevel, true); 
-				keysLong.add(list.get(list.size()-1));
-				keysShort.add(s);
-			}
-				
-			for(int i=0; i < keysLong.size()-1; i++)
-			{
-				long aVal = map.get(keysShort.get(i));
-				
-				for(int j=i+1; j < keysLong.size(); j++)
-				{
-					if(  checkIfUnclassifiedTail(keysShort.get(i), keysLong.get(j)))
-					{
-						System.out.println("Subtract " + keysLong.get(j)+ " from " + keysShort.get(i));
-						aVal = aVal - map.get(keysShort.get(j));
-					}
-				}
-				
-				map.replace(keysShort.get(i),aVal);
-			}
-			*/
-
 		}
 		
 		return map;	
-	}
-	
-	private static boolean checkIfUnclassifiedTail(String s1, String s2) 
-	{
-		if( s2.indexOf(s1) == -1 )
-			return false;
-		
-		String aString = s2.replace(s1 + "|", "");
-		
-		String[] splits =aString.split("\\|");
-		
-		for( int x=0; x< splits.length; x++)
-		{
-			if(splits[x].indexOf("Unclassified") == -1 )
-			 return false;
-		}
-		
-		return true;
-		
 	}
 	
 	private static String getATaxa(String in, String level) throws Exception
@@ -265,6 +216,7 @@ public class KrakenExpectedUnclassified
 	{
 		String taxaLine;
 		long taxaCount;
+		boolean isTerminal;
 	}
 	
 	private static void assertEquals( HashMap<String,Long> expectationMap, File biolockJOuputFile ) throws Exception
@@ -410,6 +362,19 @@ public class KrakenExpectedUnclassified
 		}
 		
 		list =mergeList(list);
+		
+		for( int x=0; x < list.size(); x++)
+		{
+			Holder h = list.get(x);
+			h.isTerminal = true;
+			
+			for( int y=0; h.isTerminal && y < list.size(); y++)
+			{
+				if( y != x && list.get(y).taxaLine.indexOf(h.taxaLine)  != -1)
+					h.isTerminal = false;
+			}
+		}
+		
 		return list;
 	}
 	
