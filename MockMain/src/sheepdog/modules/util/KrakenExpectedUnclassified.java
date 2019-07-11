@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class KrakenExpectedUnclassified
 {
@@ -215,22 +216,51 @@ public class KrakenExpectedUnclassified
 	
 	private static void assertEquals( HashMap<String,Long> expectationMap, File biolockJOuputFile ) throws Exception
 	{
+		BufferedReader reader = new BufferedReader(new FileReader(biolockJOuputFile));
 		
+		for(String s = reader.readLine(); s != null; s= reader.readLine())
+		{
+			StringTokenizer sToken = new StringTokenizer(s,"\t");
+			
+			if( sToken.countTokens() != 2)
+				throw new Exception("Expecting 2 tabbed tokens " + sToken.countTokens() + " " +   s);
+			
+			String taxaString = sToken.nextToken();
+			Long countVal = Long.parseLong(sToken.nextToken());
+			
+			Long aVal = expectationMap.get(taxaString);
+			
+			if( taxaString.indexOf("Unclassified") == -1 )
+			{
+				if( aVal != null)
+				{
+					if( ! countVal.equals(aVal))
+						throw new Exception("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
+					else
+						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+				}
+				else
+					System.out.println("MISSED " + taxaString);
+			}			
+		}
+
 	}
 	
 	private static HashMap<String,Long> buildExpectationMap( List<Holder> fileLines, String endLevel ) throws Exception
 	{
-		HashMap<String,Long> map = new HashMap<>();
+		HashMap<String,Long> map = new LinkedHashMap<>();
 		
 		for(Holder h : fileLines)
 		{
 			if( h.taxaLine != null && ! endsBelowLevel(h.taxaLine, endLevel))
 			{
 
-				if( map.containsKey(h.taxaLine))
-					throw new Exception("Duplciate " + h.taxaLine);
+				Long oldVal = map.get(h.taxaLine);
 				
-				map.put(h.taxaLine, h.taxaCount);
+				if(oldVal == null)
+					oldVal =0l;
+				
+				map.put(h.taxaLine, Math.max(oldVal, h.taxaCount));
 			}
 			
 		}
@@ -273,6 +303,10 @@ public class KrakenExpectedUnclassified
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
 		HashMap<String,Long> expectationMap = buildExpectationMap(fileLines, "genus");
+		
+		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
+		
+		assertEquals(expectationMap, biolockJFile);
 		
 	//	for( Holder h : fileLines)
 		//	System.out.println(h.taxaLine);
