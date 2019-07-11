@@ -349,10 +349,15 @@ public class KrakenExpectedUnclassified
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
 					
-					if( levelToAdd.equals("phylum") && newTaxa.indexOf("Actinobacteria") != - 1)
+					if( newTaxa.indexOf("Rhodothermaceae") != - 1)
 					System.out.println("ADD " +  newTaxa + " " + count);
 					
-					toAdd.put(newTaxa, count);
+					Long oldCount = toAdd.get(newTaxa);
+					
+					if( oldCount == null)
+						oldCount = 0l;
+					
+					toAdd.put(newTaxa, count + oldCount);
 				}
 					
 			}
@@ -386,7 +391,7 @@ public class KrakenExpectedUnclassified
 		
 		for(Holder h : fileLines)
 		{
-			if( h.taxaLine.indexOf("Acidobacteriaceae") != -1)
+			if( h.taxaLine.indexOf("Rhodothermaceae") != -1)
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
 			}
@@ -402,7 +407,7 @@ public class KrakenExpectedUnclassified
 	
 			for(Holder h : fileLines)
 			{
-				if( h.taxaLine.indexOf("Acidobacteriaceae") != -1)
+				if( h.taxaLine.indexOf("Rhodothermaceae") != -1)
 				{
 					System.out.println("POST " + h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
 				}
