@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.StringTokenizer;
 
+
 public class KrakenExpectedUnclassified
 {
 	private static String[] TAXA_LEVELS = { "phylum" , "class" , "order" , "family" , "genus" , "species"} ;
@@ -25,6 +26,8 @@ public class KrakenExpectedUnclassified
 		
 		return -1;
 	}
+	
+	
 	
 	
 	public static HashMap<String, Long> getUnclassifiedMap( List<Holder> fileLines , String startLevel, String endLevel ) throws Exception
@@ -48,7 +51,8 @@ public class KrakenExpectedUnclassified
 					{
 						String candidateLine = fileLines.get(y).taxaLine;
 						
-						if( y != x &&  getLastLevel(candidateLine).equals(endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
+						if( y != x &&  ( getLastLevel(candidateLine).equals(endLevel)  || ( fileLines.get(y).isTerminal && ! endsBelowLevel(fileLines.get(y).taxaLine,endLevel)  )) 
+								&& candidateLine.indexOf(h.taxaLine) != -1 )
 						{
 							matchingSum += fileLines.get(y).taxaCount;
 							
@@ -395,7 +399,7 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{	
-		System.out.println(getLastLevel("phylum__Actinobacteria|class__Actinobacteria|order__Actinomycetales|family__Actinomycetaceae|genus__Unclassified Actinomycetaceae"));
+		//System.out.println(getLastLevel("phylum__Actinobacteria|class__Actinobacteria|order__Actinomycetales|family__Actinomycetaceae|genus__Unclassified Actinomycetaceae"));
 
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
@@ -403,7 +407,7 @@ public class KrakenExpectedUnclassified
 		
 		for(Holder h : fileLines)
 		{
-			if( h.taxaLine.indexOf("Actinomycetaceae") != -1)
+			if( h.taxaLine.indexOf("Corynebacteriales") != -1)
 			{
 				System.out.println(h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
 			}
@@ -413,7 +417,7 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : uMap.keySet())
 		{
-			if( s.indexOf("Actinomycetaceae") != -1 )
+			if( s.indexOf("Corynebacteriales") != -1 )
 			{
 				System.out.println("uMap " + s + " " +   uMap.get(s));
 				//System.out.println("uMapE " + s + " " +  getExpectedString(s, "phylum", "genus",true).get(0));
