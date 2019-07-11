@@ -67,62 +67,56 @@ public class KrakenExpectedUnclassified
 			
 			}
 			
-			List<String> keys = new ArrayList<>( map.keySet());
-			for(int i=0; i < keys.size()-1; i++)
+			/*
+			List<String> keysLong = new ArrayList<>( );
+			List<String> keysShort = new ArrayList<>();
+			
+			for( String s : map.keySet())
 			{
-				String iKey = keys.get(i);
-				long aVal = map.get(iKey);
+				List<String> list =getExpectedString(s, startLevel, endLevel, true); 
+				keysLong.add(list.get(list.size()-1));
+				keysShort.add(s);
+			}
 				
-				for(int j=i+1; j < keys.size(); j++)
+			for(int i=0; i < keysLong.size()-1; i++)
+			{
+				long aVal = map.get(keysShort.get(i));
+				
+				for(int j=i+1; j < keysLong.size(); j++)
 				{
-					String jKey = keys.get(j);
-					String jKeyNoUnclass = removeUnclassified(jKey);
-					
-					//if(  iKey.indexOf("Corynebacteriales") != -1 && jKey.indexOf("Corynebacteriales") != -1)
-						//System.out.println("COMPARE " + iKey + " " + jKey);
-					
-					if(  iKey.indexOf(jKeyNoUnclass) != -1)
+					if(  checkIfUnclassifiedTail(keysShort.get(i), keysLong.get(j)))
 					{
-						System.out.println("Subtract " + jKeyNoUnclass+ " from " + iKey);
-						aVal = aVal - map.get(keys.get(j));
+						System.out.println("Subtract " + keysLong.get(j)+ " from " + keysShort.get(i));
+						aVal = aVal - map.get(keysShort.get(j));
 					}
-						
 				}
 				
-				map.replace(keys.get(i),aVal);
+				map.replace(keysShort.get(i),aVal);
 			}
+			*/
 
 		}
 		
 		return map;	
 	}
 	
-	private static String removeUnclassified(String s) 
+	private static boolean checkIfUnclassifiedTail(String s1, String s2) 
 	{
-		String[] splits =s.split("\\|");
+		if( s2.indexOf(s1) == -1 )
+			return false;
 		
-		StringBuffer buff = new StringBuffer();
+		String aString = s2.replace(s1 + "|", "");
 		
-		boolean first = true;
+		String[] splits =aString.split("\\|");
+		
 		for( int x=0; x< splits.length; x++)
 		{
 			if(splits[x].indexOf("Unclassified") == -1 )
-			{
-				if( first)
-				{
-					first = false;
-				}
-				else
-				{
-					buff.append("|");
-				}
-				
-				buff.append(splits[x]);
-			}
-				
+			 return false;
 		}
 		
-		return buff.toString();
+		return true;
+		
 	}
 	
 	private static String getATaxa(String in, String level) throws Exception
@@ -296,7 +290,7 @@ public class KrakenExpectedUnclassified
 					if( ! countVal.equals(aVal))
 						throw new Exception("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
 					//else
-						System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
+						//System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 				}
 				else
 				{
@@ -435,10 +429,10 @@ public class KrakenExpectedUnclassified
 		
 		for(String s : uMap.keySet())
 		{
-			if( s.indexOf("Corynebacteriales") != -1 )
+			//if( s.indexOf("Corynebacteriales") != -1 )
 			{
 				System.out.println("uMap " + s + " " +   uMap.get(s));
-				System.out.println("uMapE " + s + " " +  getExpectedString(s, "phylum", "genus",true).get(0));
+				//System.out.println("uMapE " + s + " " +  getExpectedString(s, "phylum", "genus",true).get(0));
 			}
 		}
 		
