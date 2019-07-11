@@ -66,13 +66,8 @@ public class KrakenExpectedUnclassified
 	private static List<String> getExpectedString(String inString, String firstLevel, String lastLevel, boolean forceToEnd) throws Exception
 	{
 		List<String> list = new ArrayList<>();
-		//if( inString.indexOf("Crenarchaeota") != -1)
-		//System.out.println("In " + inString);
 		
 		HashMap<String, String> taxaMap = getAsTaxaMap(inString);
-	
-		//if( inString.indexOf("Crenarchaeota") != -1)
-			//System.out.println(taxaMap);
 		
 		if( taxaMap.size() == 0 )
 			return list;
@@ -85,16 +80,10 @@ public class KrakenExpectedUnclassified
 		
 		if(forceToEnd)
 			endLevel= getLevelIndex(lastLevel);
-
-		//if( inString.indexOf("Crenarchaeota") != -1)
-		//System.out.println("Start " + startLevel + " END " + endLevel);
-		
+	
 		String last = "";
 		String lastTaxaString= "";
-		
-		//if( inString.indexOf("Crenarchaeota") != -1)
-		//System.out.println("Start " + startLevel + " END " + endLevel);
-		
+				
 		for( int x=startLevel; x <= endLevel; x++)
 		{
 			String taxa = taxaMap.get(TAXA_LEVELS[x]);
@@ -120,8 +109,6 @@ public class KrakenExpectedUnclassified
 				list.add(buff.toString());
 		}
 		
-		//if( inString.indexOf("Crenarchaeota") != -1)
-		//	System.out.println("Out " + buff.toString());
 		String s= buff.toString();
 		
 		if( ! list.contains(s))
@@ -190,21 +177,17 @@ public class KrakenExpectedUnclassified
 			
 			Long aVal = expectationMap.get(taxaString);
 			
-			//if( taxaString.indexOf("Unclassified") == -1 )
+			if( aVal != null)
 			{
-				if( aVal != null)
-				{
-					if( ! countVal.equals(aVal))
-						throw new Exception("Mismatch :" + taxaString+ " reparse:" +   aVal + " blj:" + countVal);
-					//else
-						//System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
-				}
+				if( ! countVal.equals(aVal))
+					throw new Exception("Mismatch :" + taxaString+ " reparse:" +   aVal + " blj:" + countVal);
 				else
-				{
-					throw new Exception("MISSED " + taxaString);
-				}
+					System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 			}
-									
+			else
+			{
+				throw new Exception("MISSED " + taxaString);
+			}						
 		}
 	}
 
@@ -365,8 +348,6 @@ public class KrakenExpectedUnclassified
 				for(String s2 : map.keySet())
 					if( s2.contains(taxaLine) )
 					{
-				//		if( levelToAdd.equals("family") &&  s2.indexOf("Rhodothermaceae") != -1 ) 
-					//		System.out.println("CONTAINS " + s2 + " " + map.get(s2));
 						
 						count = count - map.get(s2);
 					}
@@ -376,16 +357,7 @@ public class KrakenExpectedUnclassified
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
 					
-					/*
-					if(levelToAdd.equals("family") &&   newTaxa.indexOf("Rhodothermaceae") != - 1)
-					{
-						for( int x=0; x < list.size(); x++)
-							System.out.println("LIST " + list.get(x) + " " + count);
-						
-						System.out.println("ADD " +  newTaxa + " " + count + " " + levelToAdd);
-
-					}*/
-					
+							
 					Long oldCount = toAdd.get(newTaxa);
 					
 					if( oldCount == null)
@@ -402,10 +374,7 @@ public class KrakenExpectedUnclassified
 			
 			if(oldVal == null)
 				oldVal = 0L;
-			
-			//if (levelToAdd.equals("family") &&  oldVal > 0 && s.indexOf("Rhodothermaceae") != -1)
-				//System.out.println("MERGE " + s + " " + oldVal + " " + toAdd.get(s));
-			
+				
 			map.put(s, toAdd.get(s) + oldVal);
 		}
 	}
@@ -417,11 +386,6 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{	
-		String s5 = "phylum__Chlamydiae|class__Chlamydiia|order__Parachlamydiales|family__Parachlamydiaceae";
-		System.out.println("EX " + getExpectedString(s5, "phylum", "genus", false));
-		
-		//System.out.println(getLastLevel("phylum__Actinobacteria|class__Actinobacteria|order__Actinomycetales|family__Actinomycetaceae|genus__Unclassified Actinomycetaceae"));
-
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
@@ -436,83 +400,15 @@ public class KrakenExpectedUnclassified
 		
 		HashMap<String, Long> map = buildExpectationMap(fileLines, "genus", "phylum");
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
-	//	
+	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
 			 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
-		 addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
-		
-
-			for(String s : map.keySet())
-			{
-				if( s.indexOf("Parachlamydiales") != -1)
-				{
-					System.out.println("POST " + s+ " " + map.get(s));
-				}
-			}
-		
-		
+		 addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);		
 		 
 		assertEquals(map, biolockJFile);
 		
-		
-		/*
-		HashMap<String, Long> uMap= getUnclassifiedMap(fileLines, "phylum", "genus");
-		
-		for(String s : uMap.keySet())
-		{
-			if( s.indexOf("Acidobacteriaceae") != -1 )
-			{
-				System.out.println("uMap " + s + " " +   uMap.get(s));
-				//System.out.println("uMapE " + s + " " +  getExpectedString(s, "phylum", "genus",true).get(0));
-			}
-		}
-		
-		
-		HashMap<String, Long> map= buildExpectationMap(fileLines, "phylum", "genus");
-		
-		for(String s : map.keySet())
-		{
-			if( s.indexOf("Actinomycetaceae") != -1 )
-			{
-				System.out.println("map " + s + " " +   map.get(s));
-			}
-		}
-		
-		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
-	//	
-		assertEquals(map, biolockJFile);
-		
-	//	for( Holder h : fileLines)
-		//	System.out.println(h.taxaLine);
-		
-	//	String s= 
-		//"d__Archaea|p__Crenarchaeota|c__Thermoprotei|o__Sulfolobales|f__Sulfolobaceae|g__Saccharolobus|s__Saccharolobus solfataricus";
-		
-		//System.out.println(removeJumps(s));
-		
-		/*
-		HashMap<String, Long> map = getUnclassifiedMap(inFile, "p",  "g");
-		
-		for(String s : map.keySet())
-		{
-			if( s.indexOf("Verrucomicrobia") != -1)
-				System.out.println(s + " " +  map.get(s) );
-		}
-		
-		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2_2019Jul10\\01_Kraken2Parser\\output\\justKraken2Parser_2_2019Jul10_otuCount_SRR4454586.tsv");
-		
-		RdpExpectedUnclassified.assertUnclassifiedEquals(biolockJFile, map);
-		
-		/*
-		
-		String testString = "d__Bacteria|p__Actinobacteria|c__Actinobacteria|o__Corynebacteriales|g__Lawsonella|s__Lawsonella clevelandensis";
-		
-		String[] splits = testString.split("\\|");
-		
-		for( int x=0; x < splits.length; x++)
-			System.out.println(splits[x] + " " + getIndex(splits[x]));
-			*/
+		System.out.println("Pass");
 	}
 	
 	
