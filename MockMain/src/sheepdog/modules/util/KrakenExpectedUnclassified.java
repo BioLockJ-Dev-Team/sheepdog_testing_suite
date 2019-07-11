@@ -336,21 +336,45 @@ public class KrakenExpectedUnclassified
 			}
 			
 			taxaLine = taxaLine.substring(taxaLine.indexOf("|") +1 , taxaLine.length());
-
+			
+			/*
+			List<String> someList = getExpectedString(taxaLine, startLevel, levelToAdd, true);
+			
+			if( someList.size() != 0 )
+				taxaLine = someList.get(someList.size()-1);
+				*/
+			
 			Long count = Long.parseLong(splits[1]);
 			if( getLastLevel(taxaLine).equals(levelToAdd))
 			{		
-				for(String s2 : map.keySet())
-					if( s2.indexOf(taxaLine) != -1 )
-						count = count - map.get(s2);
+
+				if( levelToAdd.equals("family") &&  taxaLine.indexOf("Rhodothermaceae") != - 1)
+				{
+					System.out.println("START " + taxaLine + " " + count);
+				}
 				
+				for(String s2 : map.keySet())
+					if( s2.contains(taxaLine) )
+					{
+						if( levelToAdd.equals("family") &&  s2.indexOf("Rhodothermaceae") != -1 ) 
+							System.out.println("CONTAINS " + s2 + " " + map.get(s2));
+						
+						count = count - map.get(s2);
+					}
+						
 				if( count>0)
 				{
 					List<String> list = getExpectedString(taxaLine, startLevel, endLevel, true);
 					String newTaxa= list.get(list.size()-1);
 					
-					if( newTaxa.indexOf("Rhodothermaceae") != - 1)
-					System.out.println("ADD " +  newTaxa + " " + count);
+					if(levelToAdd.equals("family") &&   newTaxa.indexOf("Rhodothermaceae") != - 1)
+					{
+						for( int x=0; x < list.size(); x++)
+							System.out.println("LIST " + list.get(x) + " " + count);
+						
+						System.out.println("ADD " +  newTaxa + " " + count + " " + levelToAdd);
+
+					}
 					
 					Long oldCount = toAdd.get(newTaxa);
 					
@@ -358,11 +382,8 @@ public class KrakenExpectedUnclassified
 						oldCount = 0l;
 					
 					toAdd.put(newTaxa, count + oldCount);
-				}
-					
+				}		
 			}
-			
-			
 		}
 		
 		for(String s : toAdd.keySet())
@@ -371,6 +392,9 @@ public class KrakenExpectedUnclassified
 			
 			if(oldVal == null)
 				oldVal = 0L;
+			
+			if (levelToAdd.equals("family") &&  oldVal > 0 && s.indexOf("Rhodothermaceae") != -1)
+				System.out.println("MERGE " + s + " " + oldVal + " " + toAdd.get(s));
 			
 			map.put(s, toAdd.get(s) + oldVal);
 		}
@@ -401,17 +425,20 @@ public class KrakenExpectedUnclassified
 		File biolockJFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\justKraken2Parser_2019Jul11\\01_Kraken2Parser\\output\\justKraken2Parser_2019Jul11_otuCount_SRR4454586.tsv");
 	//	
 		 addUnclassifiedTaxaForALevel(map, "family","phylum", "genus", inFile);
+		 
+		for(String s : map.keySet())
+		{
+			if( s.indexOf("Rhodothermaceae") != -1)
+			{
+				System.out.println("POST " + s+ " " + map.get(s));
+			}
+		}
+	
+	
+			 
 		 addUnclassifiedTaxaForALevel(map, "order","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "class","phylum", "genus", inFile);
 		 addUnclassifiedTaxaForALevel(map, "phylum","phylum", "genus", inFile);
-	
-			for(Holder h : fileLines)
-			{
-				if( h.taxaLine.indexOf("Rhodothermaceae") != -1)
-				{
-					System.out.println("POST " + h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
-				}
-			}
 			
 		
 		 
