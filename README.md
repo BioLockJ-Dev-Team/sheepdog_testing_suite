@@ -53,14 +53,16 @@ Pipeline resources like metadata, primers, barcodes etc are either the 'real' fi
 
 Wherever you have this repository stored, save that file path to your bash profile using the variables `$SHEP` and `$SHEP_DATA`.
 
-For example, you might **cd to this folder** and run:<br>
+**Navigate to this folder** and run:<br>
 (macOS)
 ```
+cd sheepdog_testing_suite
 echo "export SHEP=$(pwd)" >> ~/.bash_profile
 echo "export SHEP_DATA=$(pwd)" >> ~/.bash_profile
 ```
 (Ubuntu)
 ```
+cd sheepdog_testing_suite
 echo "export SHEP=$(pwd)" >> ~/.bashrc
 echo "export SHEP_DATA=$(pwd)" >> ~/.bashrc
 ```
