@@ -48,13 +48,13 @@ public class KrakenExpectedUnclassified
 					{
 						String candidateLine = fileLines.get(y).taxaLine;
 						
-						if( y != x &&  fileLines.get(y).isTerminal && candidateLine.indexOf(h.taxaLine) != -1 )
+						if( y != x &&  getLastLevel(candidateLine).equals(endLevel) && candidateLine.indexOf(h.taxaLine) != -1 )
 						{
 							matchingSum += fileLines.get(y).taxaCount;
 							
-							if( h.taxaLine.equals("phylum__Acidobacteria|class__Acidobacteriia|order__Acidobacteriales|family__Acidobacteriaceae") 
-									&& candidateLine.indexOf("Acidobacteriaceae") != -1 )
-							System.out.println("FOUND MATCH " + candidateLine + " "+  fileLines.get(y).taxaCount);
+							if( h.taxaLine.equals("phylum__Actinobacteria|class__Actinobacteria|order__Actinomycetales|family__Actinomycetaceae") 
+									&& candidateLine.indexOf("Actinomycetaceae") != -1 )
+							System.out.println("FOUND MATCH\t" + candidateLine + "\t"+  fileLines.get(y).taxaCount +"\t" + matchingSum);
 						}
 					}
 					
@@ -219,6 +219,16 @@ public class KrakenExpectedUnclassified
 		boolean isTerminal;
 	}
 	
+	private static String getLastLevel(String s)
+	{
+		int index= s.lastIndexOf("|");
+		
+		if( index == -1)
+			return "";
+		
+		return s.substring(index+1, s.lastIndexOf("__"));
+	}
+	
 	private static void assertEquals( HashMap<String,Long> expectationMap, File biolockJOuputFile ) throws Exception
 	{
 		BufferedReader reader = new BufferedReader(new FileReader(biolockJOuputFile));
@@ -240,7 +250,7 @@ public class KrakenExpectedUnclassified
 				if( aVal != null)
 				{
 					if( ! countVal.equals(aVal))
-						throw new Exception("Mismatch " + taxaString+ " " +   aVal + " " + countVal);
+						throw new Exception("Mismatch :" + taxaString+ " reparse:" +   aVal + " blj:" + countVal);
 					//else
 						//System.out.println("Match " + taxaString + " " +  aVal + " " + countVal);
 				}
@@ -385,27 +395,37 @@ public class KrakenExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{	
+		System.out.println(getLastLevel("phylum__Actinobacteria|class__Actinobacteria|order__Actinomycetales|family__Actinomycetaceae|genus__Unclassified Actinomycetaceae"));
 
 		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\input\\classifier\\kraken2\\urban_2files\\SRR4454586_reported.tsv");
 		
 		List<Holder> fileLines = getFileLines(inFile, "phylum", "genus");
 		
+		for(Holder h : fileLines)
+		{
+			if( h.taxaLine.indexOf("Actinomycetaceae") != -1)
+			{
+				System.out.println(h.taxaLine + " " + h.taxaCount + " " + h.isTerminal);
+			}
+		}
+		
 		HashMap<String, Long> uMap= getUnclassifiedMap(fileLines, "phylum", "genus");
 		
 		for(String s : uMap.keySet())
 		{
-			//if( s.indexOf("Corynebacteriales") != -1 )
+			if( s.indexOf("Actinomycetaceae") != -1 )
 			{
 				System.out.println("uMap " + s + " " +   uMap.get(s));
 				//System.out.println("uMapE " + s + " " +  getExpectedString(s, "phylum", "genus",true).get(0));
 			}
 		}
 		
+		
 		HashMap<String, Long> map= buildExpectationMap(fileLines, "phylum", "genus");
 		
 		for(String s : map.keySet())
 		{
-			if( s.indexOf("Corynebacteriales") != -1 )
+			if( s.indexOf("Actinomycetaceae") != -1 )
 			{
 				System.out.println("map " + s + " " +   map.get(s));
 			}
