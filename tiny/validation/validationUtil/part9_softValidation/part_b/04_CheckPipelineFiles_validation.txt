@@ -1,0 +1,3 @@
+name	size	md5	MATCHED_EXPECTATION
+02_RarefySeqs_validation.txt	475	6fb17eccf5daa8416dd69d8f35a684ab	FAIL
+03_SeqFileValidator_validation.txt	475	21b0c8f0ba1681ddd758d6d30d573fcb	PASS

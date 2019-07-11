@@ -45,8 +45,8 @@ mv ./ERR1456806_1* ./R1/rhizo_R1_subdir/.
 mv ./ERR1456807_1* ./R1/rhizo_R1_subdir/.
 mv ./ERR1456808_1* ./R1/rhizo_R1_subdir/.
 mv ./ERR1456826_1* ./R1/rhizo_R1_subdir/.
-mv ./ERR1456827_1* ./R1/rhizo_R1_subdir/.
-mv ./ERR1456828_1* ./R1/rhizo_R1_subdir/.
+mv ./ERR1456827_1* ./R1/rhizo_R1_subdir/rhizo_R1_subdir_2files/.
+mv ./ERR1456828_1* ./R1/rhizo_R1_subdir/rhizo_R1_subdir_2files/.
 
 mv ./ERR1456827_2* ./R2/rhizo_R2_subdir_2files/.
 mv ./ERR1456828_2* ./R2/rhizo_R2_subdir_2files/.
