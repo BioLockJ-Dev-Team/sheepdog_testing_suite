@@ -16,8 +16,8 @@ import parsers.NewRDPParserFileLine;
 public class RdpReparse extends BioModuleImpl
 {
 	//todo : Get these from the property file
-	private static final int RDP_THRESHOLD = 80;
-	private static final String GENUS_LEVEL = "genus";
+	public static final int RDP_THRESHOLD = 80;
+	public static final String GENUS_LEVEL = "genus";
 
 	@Override
 	public void checkDependencies() throws Exception
@@ -102,7 +102,7 @@ public class RdpReparse extends BioModuleImpl
 		System.out.println("Ok checked " + checked);
 		
 		if( innerMap.size() != 0)
-			System.out.println("COULD NOT FIND  " + innerMap);
+			throw new Exception("COULD NOT FIND  " + innerMap);
 	}
 	
 	private static File findMatchingSummaryFile( File rdpOutputFile,  List<File> biolockJSummaryFiles) throws Exception
