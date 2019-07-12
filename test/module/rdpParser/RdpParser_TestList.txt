@@ -1,0 +1,2 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/rdpParser/justRdpParser.properties	2	BioLockJ_Complete	basic Parser

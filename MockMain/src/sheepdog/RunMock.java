@@ -209,7 +209,7 @@ public class RunMock
 					oneTest.config = new File( Config.replaceEnvVar( row.get( iConfig ) ) );
 					if (iFlags > 0 ) oneTest.flags = row.get( iFlags ); else oneTest.flags = "";
 					if (iEnv > 0 ) oneTest.environment = row.get( iEnv ); else oneTest.environment = "";
-					if (iCompModsExp > 0 ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
+					if (iCompModsExp > 0 && !row.get( iCompModsExp ).isEmpty() ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
 					oneTest.out_exp = row.get( iExpected );
 					if (iNotes > 0 ) oneTest.notes = row.get( iNotes ); else oneTest.notes = "";
 					if (oneTest.environment.equals( DOCKER )) oneTest.extractInputDir();
@@ -338,7 +338,31 @@ public class RunMock
 	
 	protected static void writeComments(BufferedWriter writer) throws IOException {
 		writer.write( "# BioLockJ jar file: " + Config.replaceEnvVar(BLJ_JAR) + System.lineSeparator() );
+		writer.write( "# BioLockJ version: " + getJarVersion() + System.lineSeparator() );
 		writer.write( "# SHEP_DATA: " + (new File(Config.replaceEnvVar("${SHEP_DATA}"))).getName() + System.lineSeparator());
+	}
+	
+	protected static String getJarVersion() {
+		String version = "";
+		String cmd = "java -jar " + Config.replaceEnvVar(BLJ_JAR) + " --version";
+		try {
+			final Process p = Runtime.getRuntime().exec( cmd );
+			final BufferedReader br = new BufferedReader( new InputStreamReader( p.getInputStream() ) );
+			String s;
+			while( ( s = br.readLine() ) != null )
+			{
+				version = String.valueOf( s );
+			}
+			p.waitFor();
+			p.destroy();
+		}catch(Exception ex) {
+			System.err.println("There was an error while getting the jar file version.");
+			System.err.println(cmd);
+		}
+		if (version == null || version.isEmpty()) {
+			System.err.println(cmd);
+		}
+		return( version );
 	}
 	
 	protected static void clearPipelines() throws IOException {
