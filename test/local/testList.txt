@@ -1,0 +1,2 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/local/RdpPipeline.properties		BioLockJ_Complete	full pipeline
