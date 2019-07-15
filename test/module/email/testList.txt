@@ -1,0 +1,2 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/email/email.properties		BioLockJ_Complete	full pipeline
