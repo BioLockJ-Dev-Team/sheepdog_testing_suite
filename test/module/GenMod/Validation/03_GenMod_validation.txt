@@ -1,0 +1,2 @@
+name	size	md5	MATCHED_EXPECTATION
+myOutputFile.txt	0	10d8b93368f9e313c795e9ecf6b757b5	REPORT
