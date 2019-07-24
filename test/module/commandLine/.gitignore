@@ -1,0 +1,5 @@
+*.err
+*.out
+!expected/*.out
+!expected/*.err
+*NOT_IN_GIT*
