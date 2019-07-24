@@ -1,2 +1,3 @@
 ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
 ${SHEP}/test/module/rdpParser/justRdpParser.properties	2	BioLockJ_Complete	basic Parser
+${SHEP}/test/module/rdpParser/rdpParserToTaxaTables.properties	3	BioLockJ_Complete	parser and make tables
