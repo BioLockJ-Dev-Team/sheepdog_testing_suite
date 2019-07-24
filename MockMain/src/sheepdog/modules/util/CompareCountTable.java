@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class CompareCountTable
@@ -73,6 +74,26 @@ public class CompareCountTable
 				File inFile = new File(classificationDirectory.getAbsoluteFile()  +File.separator + s);
 				map.put(sampleId, getExpectationMap(inFile, level));
 			}
+		}
+		
+		return map;
+	}
+	
+	/*
+	 * Outer key is sample is;  inner key is taxa id
+	 */
+	public static HashMap<String, HashMap<String,Long>> getExpectationMaps(List<File> inputFiles, String level) 
+				throws Exception
+	{
+		HashMap<String, HashMap<String,Long>>  map = new HashMap<>();
+		
+		for(File inFile : inputFiles)
+		{
+			String fileName =inFile.getName();
+			
+			String sampleId = fileName.substring(fileName.lastIndexOf("_")+1, fileName.length()).replace(".tsv", "");
+				
+			map.put(sampleId, getExpectationMap(inFile, level));
 		}
 		
 		return map;
