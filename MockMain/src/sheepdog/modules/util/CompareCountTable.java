@@ -10,9 +10,39 @@ public class CompareCountTable
 {
 	private static String[] levels = { "phylum", "class", "order", "family", "genus" };
 	
-	private static void assertEquals(File classificationFile, File biolockJInputFile, String level) throws Exception
+	private static void assertEquals(File classificationDirectory, File biolockJTable, String level) throws Exception
 	{
+		OtuWrapper wrapper = new OtuWrapper(biolockJTable);
 		
+		HashMap<String, HashMap<String,Long>> expectationMaps = new HashMap<>();
+		
+	}
+	
+	/*
+	 * Outer key is sample is;  inner key is taxa id
+	 */
+	private static HashMap<String, HashMap<String,Long>> getExpectationMaps(File classificationDirectory, String level) 
+				throws Exception
+	{
+		HashMap<String, HashMap<String,Long>>  map = new HashMap<>();
+		
+		String[] inFiles = classificationDirectory.list();
+		
+		for(String s : inFiles)
+		{
+			if(! s.endsWith("metadata.tsv"))
+			{
+				String sampleId = s.substring(s.lastIndexOf("_")+1, s.length()).replace(".tsv", "");
+				
+				if( map.containsKey(sampleId))
+					throw new Exception("Duplicate sample ID " + sampleId);
+				
+				File inFile = new File(classificationDirectory.getAbsoluteFile()  +File.separator + s);
+				map.put(sampleId, getExpectationMap(inFile, level));
+			}
+		}
+		
+		return map;
 	}
 	
 	private static HashMap<String, Long> getExpectationMap(File inFile, String level)
@@ -55,16 +85,13 @@ public class CompareCountTable
 	
 	public static void main(String[] args) throws Exception
 	{
-		File classificationFile = 
-			new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2019Jul24\\01_Kraken2Parser\\output\\reparseKraken2Parser_2019Jul24_otuCount_SRR4454586.tsv");
+		File classificationDirectory= 
+			new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2019Jul24\\01_Kraken2Parser\\output");
 		
-		
-		
-		HashMap<String, Long> expectationMap = getExpectationMap(classificationFile, "genus");
-		
-		for(String s : expectationMap.keySet())
-		{
-			System.out.println(s + " " + expectationMap.get(s));
-		}
+		 HashMap<String, HashMap<String,Long>> expectationMaps = 
+				 getExpectationMaps(classificationDirectory, "genus");
+		 
+		 for(String s : expectationMaps.keySet())
+			 System.out.println(s + " " + expectationMaps.get(s));
 	}
 }
