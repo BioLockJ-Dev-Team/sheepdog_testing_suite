@@ -14,7 +14,10 @@ public class CompareCountTable
 	{
 		OtuWrapper wrapper = new OtuWrapper(biolockJTable);
 		
-		HashMap<String, HashMap<String,Long>> expectationMaps = new HashMap<>();
+		HashMap<String, HashMap<String,Long>> expectationMaps = getExpectationMaps(classificationDirectory, level);
+		
+		if( wrapper.getSampleNames().size() != expectationMaps.size())
+			throw new Exception("Unequal sample size " + wrapper.getSampleNames().size() + " " + expectationMaps.size());
 		
 	}
 	
@@ -48,6 +51,7 @@ public class CompareCountTable
 	private static HashMap<String, Long> getExpectationMap(File inFile, String level)
 		throws Exception
 	{
+		System.out.println("Expectation map for " + inFile.getAbsolutePath() + " " + level);
 		HashMap<String, Long> map = new HashMap<>();
 		
 		BufferedReader reader = new BufferedReader( new FileReader( inFile));
@@ -70,10 +74,12 @@ public class CompareCountTable
 					
 					foundTaxa = s2.replace(level + "__", "");
 					
-					if( map.containsKey(foundTaxa))
-						throw new Exception("Duplicate taxa " + foundTaxa);
+					Long oldVal = map.get(foundTaxa);
 					
-					map.put(foundTaxa, Long.parseLong(sToken.nextToken()));
+					if( oldVal == null)
+						oldVal =0l;
+					
+					map.put(foundTaxa, Long.parseLong(sToken.nextToken()) + oldVal);
 				}
 			
 			if( foundTaxa == null)
@@ -88,10 +94,24 @@ public class CompareCountTable
 		File classificationDirectory= 
 			new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2019Jul24\\01_Kraken2Parser\\output");
 		
+		for( String taxa : levels)
+		{
+			File inFile = 
+					new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2019Jul24\\03_BuildTaxaTables\\output\\"+ 
+								"reparseKraken2Parser_2019Jul24_taxaCount_" + taxa +  ".tsv");
+			
+			assertEquals(classificationDirectory, inFile, taxa);
+			System.out.println("Pass " + taxa);
+		}
+		
+		System.out.println("Global pass");
+		
+		/*
 		 HashMap<String, HashMap<String,Long>> expectationMaps = 
 				 getExpectationMaps(classificationDirectory, "genus");
 		 
 		 for(String s : expectationMaps.keySet())
 			 System.out.println(s + " " + expectationMaps.get(s));
+			 */
 	}
 }
