@@ -1,0 +1,12 @@
+
+ ---------> Execute CMD [  biolockj -r --pass bar example.properties  ]
+showcallonly = default
+gui = default
+pass = bar
+configoverride = default
+restart = true
+aws = default
+docker = default
+Using example.properties as the pipeline to restart.
+Launching BioLockJ:  nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/BioLockJ/pipelines -u /Users/ieclabau -r --pass bar example.properties >/dev/null 2>&1 &
+nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/BioLockJ/pipelines -u /Users/ieclabau -r --pass bar example.properties >/dev/null 2>&1 & 

@@ -1,0 +1,24 @@
+
+ ---------> Execute CMD [  biolockj -d example.properties  ]
+gui = default
+password = default
+configoverride = default
+restart = default
+aws = default
+docker = true
+blj = default
+blj_sup = default
+showcallonly = default
+KEY CMD: launch_docker -d example.properties
+
+ ---------> Execute CMD [  launch_docker -d example.properties  ]
+Using example.properties as the config file.
+argsFromUser docker
+configFile = example.properties
+restartDir = 
+
+---------> Execute CMD [  docker run --rm -e "BLJ_OPTIONS=-u /Users/ieclabau -b /Users/ieclabau/git/BioLockJ/pipelines -h CCI0PHJGH5AWS -i /Users/ieclabau/git/sheepdog_testing_suite/test/module/commandLine/expected -blj /Users/ieclabau/git/BioLockJ -blj_sup /Users/ieclabau/git/blj_support -c example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau:/home/ec2-user:delegated -v /mnt/efs:/mnt/efs:delegated -p 8080:3000 --expose 8080 -w /app/biolockj/web_app biolockj/biolockj_controller npm start  ] 
+
+launch_docker created "/Users/ieclabau/runDockerClone.sh" -->  This script will launch a clone of the current biolockj_controller (same env vars + volumes)
+alias "dclone" can be used to run "/Users/ieclabau/runDockerClone.sh"
+KEY CMD: docker run --rm -e "BLJ_OPTIONS=-u /Users/ieclabau -b /Users/ieclabau/git/BioLockJ/pipelines -h CCI0PHJGH5AWS -i /Users/ieclabau/git/sheepdog_testing_suite/test/module/commandLine/expected -blj /Users/ieclabau/git/BioLockJ -blj_sup /Users/ieclabau/git/blj_support -c example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau:/home/ec2-user:delegated -v /mnt/efs:/mnt/efs:delegated -p 8080:3000 --expose 8080 -w /app/biolockj/web_app biolockj/biolockj_controller npm start
