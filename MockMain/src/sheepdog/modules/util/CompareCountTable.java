@@ -19,6 +19,36 @@ public class CompareCountTable
 		if( wrapper.getSampleNames().size() != expectationMaps.size())
 			throw new Exception("Unequal sample size " + wrapper.getSampleNames().size() + " " + expectationMaps.size());
 		
+		for(int x=0; x < wrapper.getSampleNames().size();x++)
+		{
+			String sampleName = wrapper.getSampleNames().get(x);
+			
+			HashMap<String, Long> innerMap = expectationMaps.get(sampleName);
+			expectationMaps.remove(sampleName);
+			
+			for( int y=0; y < wrapper.getOtuNames().size(); y++)
+			{
+				String taxaName = wrapper.getOtuNames().get(y);
+				
+				Long expectationVal = innerMap.get(taxaName);
+				
+				if( expectationVal == null)
+					expectationVal = 0L;
+				
+				innerMap.remove(taxaName);
+				
+				Double tableVal = wrapper.getDataPointsUnnormalized().get(x).get(y);
+				
+				if( Math.abs(tableVal-expectationVal) > 0.00001)
+					throw new Exception("Mismatch " + taxaName + " " + tableVal + " " + expectationVal);
+				}
+			
+			if( innerMap.size() !=0)
+				throw new Exception("Expecting empty map " + innerMap);
+		}
+		
+		if( expectationMaps.size() != 0 )
+			throw new Exception("Expecting empty map " + expectationMaps.size());
 	}
 	
 	/*
@@ -51,7 +81,7 @@ public class CompareCountTable
 	private static HashMap<String, Long> getExpectationMap(File inFile, String level)
 		throws Exception
 	{
-		System.out.println("Expectation map for " + inFile.getAbsolutePath() + " " + level);
+		//System.out.println("Expectation map for " + inFile.getAbsolutePath() + " " + level);
 		HashMap<String, Long> map = new HashMap<>();
 		
 		BufferedReader reader = new BufferedReader( new FileReader( inFile));
