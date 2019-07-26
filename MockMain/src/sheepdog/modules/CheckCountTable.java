@@ -6,7 +6,7 @@ import java.util.List;
 import biolockj.Log;
 import biolockj.module.BioModule;
 import biolockj.module.BioModuleImpl;
-import biolockj.module.classifier.ClassifierModule;
+import biolockj.module.implicit.parser.wgs.Kraken2Parser;
 import biolockj.util.ModuleUtil;
 
 public class CheckCountTable extends BioModuleImpl
@@ -33,8 +33,22 @@ public class CheckCountTable extends BioModuleImpl
 		
 		for( BioModule bm : mods)
 		{
-			Log.info( getClass(), " TEST_ME module output directory = " +  bm.getClass().getName() + " " + 
+			if( bm.getClass().getName().equals(Kraken2Parser.class.getName()))
+			{
+				File outputDir = bm.getOutputDir();
+				
+				Log.info( getClass(), " TEST_ME module output directory = " +  bm.getClass().getName() + " " + 
 						bm.getOutputDir().getAbsolutePath());
+				
+				String[] files = outputDir.list();
+				
+				for(String s : files)
+				{
+
+					Log.info( getClass(), " TEST_ME module output File = " +  s+ " " + 
+							bm.getOutputDir().getAbsolutePath());
+				}
+			}
 		}
 		
 		List<File> inputFiles = getInputFiles();
