@@ -29,9 +29,13 @@ public class CheckCountTable extends BioModuleImpl
 	{
 		Log.info( getClass(), "IN stub for executeTask()");
 		
-		ClassifierModule cm =  ModuleUtil.getClassifier(this, false);
+		List<BioModule> mods =  ModuleUtil.getModules(this, false);
 		
-		Log.info( getClass(), " TEST_ME module output directory = " +  cm.getOutputDir().getAbsolutePath());
+		for( BioModule bm : mods)
+		{
+			Log.info( getClass(), " TEST_ME module output directory = " +  bm.getClass().getName() + " " + 
+						bm.getOutputDir().getAbsolutePath());
+		}
 		
 		List<File> inputFiles = getInputFiles();
 		
