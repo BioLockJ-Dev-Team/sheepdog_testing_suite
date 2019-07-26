@@ -7,6 +7,7 @@ import biolockj.Log;
 import biolockj.module.BioModule;
 import biolockj.module.BioModuleImpl;
 import biolockj.module.implicit.parser.wgs.Kraken2Parser;
+import biolockj.module.report.taxa.BuildTaxaTables;
 import biolockj.util.ModuleUtil;
 
 public class CheckCountTable extends BioModuleImpl
@@ -33,7 +34,7 @@ public class CheckCountTable extends BioModuleImpl
 		
 		for( BioModule bm : mods)
 		{
-			if( bm.getClass().getName().equals(Kraken2Parser.class.getName()))
+			if( bm.getClass().getName().equals(BuildTaxaTables.class.getName()))
 			{
 				File outputDir = bm.getOutputDir();
 				
