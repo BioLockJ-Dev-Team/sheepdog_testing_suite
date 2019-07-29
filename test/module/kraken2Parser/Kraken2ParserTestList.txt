@@ -1,4 +1,3 @@
 ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
 ${SHEP}/test/module/kraken2Parser/justKraken2Parser.properties	2	BioLockJ_Complete	parser plus test case for reparsing
 ${SHEP}/test/module/kraken2Parser/reparseKraken2Parser.properties	7	BioLockJ_Complete	
-${SHEP}/test/module/kraken2Parser/reparseKraken2Parser_limitTaxaLevels.properties	2	BioLockJ_Complete	
