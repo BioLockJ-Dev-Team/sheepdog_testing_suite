@@ -9,9 +9,9 @@ import java.util.StringTokenizer;
 
 public class CompareCountTable
 {
-	private static String[] levels = { "phylum", "class", "order", "family", "genus" };
+	public static final String[] LEVELS = { "phylum", "class", "order", "family", "genus" };
 	
-	private static void assertEquals(File classificationDirectory, File biolockJTable, String level) throws Exception
+	public static void assertEquals(File classificationDirectory, File biolockJTable, String level) throws Exception
 	{
 		OtuWrapper wrapper = new OtuWrapper(biolockJTable);
 		
@@ -143,9 +143,9 @@ public class CompareCountTable
 	public static void main(String[] args) throws Exception
 	{
 		File classificationDirectory= 
-			new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2019Jul24\\01_Kraken2Parser\\output");
+			new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2_2019Jul29\\01_Kraken2Parser\\output");
 		
-		for( String taxa : levels)
+		for( String taxa : LEVELS)
 		{
 			File inFile = 
 					new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\reparseKraken2Parser_2019Jul24\\03_BuildTaxaTables\\output\\"+ 
