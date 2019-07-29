@@ -25,7 +25,7 @@ public class CheckCountTable extends BioModuleImpl
 		return false;
 	}
 	
-	private static File findExactlyOne(String level, List<File> list) throws Exception
+	public static File findExactlyOne(String level, List<File> list) throws Exception
 	{
 		File aFile = null;
 		
