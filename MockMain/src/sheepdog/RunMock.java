@@ -84,18 +84,6 @@ public class RunMock
 			return null;
 		}
 		
-		public void extractInputDir() throws Exception
-		{
-			System.err.println("Extracting input.dirPaths value from: " + config.getName() );
-			Properties props = Properties.loadProperties( config );
-			inputDir = Config.replaceEnvVar((String) props.get( "input.dirPaths" ));
-			File input = new File(inputDir);
-			if (!input.exists() || !input.isDirectory()) {
-				throw new Exception("To run in docker, input.dirPaths should give a single valid directory."
-						+ "\nCould not find directory: " + input );
-			}
-		}
-		
 		public void setPipeline(String path) {
 			if (environment.equals( DOCKER )) {
 				File inDocker = new File(path);
@@ -212,7 +200,7 @@ public class RunMock
 					if (iCompModsExp > 0 && !row.get( iCompModsExp ).isEmpty() ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
 					oneTest.out_exp = row.get( iExpected );
 					if (iNotes > 0 ) oneTest.notes = row.get( iNotes ); else oneTest.notes = "";
-					if (oneTest.environment.equals( DOCKER )) oneTest.extractInputDir();
+					if (oneTest.environment.equals( DOCKER )) oneTest.inputDir = extractInputDir(oneTest.config);
 					tests.add( oneTest );
 				}
 			}
@@ -222,6 +210,19 @@ public class RunMock
 			reader.close();
 		}
 		System.err.println("Read in list of " + (tests.size())  + " tests");
+	}
+	
+	public static String extractInputDir(File config) throws Exception
+	{
+		System.err.println("Extracting input.dirPaths value from: " + config.getName() );
+		Properties props = Properties.loadProperties( config );
+		String inputDir = Config.replaceEnvVar((String) props.get( "input.dirPaths" ));
+		File input = new File(inputDir);
+		if (!input.exists() || !input.isDirectory()) {
+			throw new Exception("To run in docker, input.dirPaths should give a single valid directory."
+					+ "\nCould not find directory: " + input );
+		}
+		return inputDir;
 	}
 	
 	protected static void runMockBljMain (TestInfoRow test) throws Exception {
