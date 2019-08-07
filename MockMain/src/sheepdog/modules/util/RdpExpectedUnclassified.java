@@ -152,17 +152,14 @@ public class RdpExpectedUnclassified
 	 */
 	public static void main(String[] args) throws Exception
 	{
-		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\verifyRDPParser_2019Jul08\\02_RdpClassifier\\output\\ERR1456828_reported.tsv");
+		File inFile =new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\verifyRDPParser_2019Jul11\\02_RdpClassifier\\output\\ERR1456828_reported.tsv");
 		
 		HashMap<String, Long> map = getUnclassifiedMap(inFile, "phylum",  "genus");
 		
 		for(String s : map.keySet())
-		{
-			if( s.indexOf("Gp1") != -1 )
-				System.out.println(s + " " +  map.get(s) );
-		}
+			System.out.println(s + " " + map.get(s));
 		
-		File matchingFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\verifyRDPParser_2019Jul08\\03_RdpParser\\output\\verifyRDPParser_2019Jul08_otuCount_ERR1456828.tsv");
+		File matchingFile = new File("C:\\sheepDog\\sheepdog_testing_suite\\MockMain\\pipelines\\verifyRDPParser_2019Jul11\\03_RdpParser\\output\\verifyRDPParser_2019Jul11_otuCount_ERR1456828.tsv");
 		
 		assertUnclassifiedEquals(matchingFile,map);
 	}
