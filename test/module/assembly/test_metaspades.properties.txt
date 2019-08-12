@@ -1,0 +1,11 @@
+# Deployment path: $BLJ_SUP/resources/test/config/local/testDemux1.properties
+
+#BioModule biolockj.module.classifier.wgs.MetaspadesAssembly
+
+input.dirPaths=${SHEP}/tiny/input/seq/fq/single_sample/separate_fw_rv/rhizosphere_16S_data/R1andR2_2pairs
+exe.metaspades=/Users/shansun/Downloads/SPAdes-3.13.0-Darwin/bin/metaspades.py
+seqFileValidator.requireEqualNumPairs=N
+#pipeline.logLevel=DEBUG
+input.suffixFw=_1
+input.suffixRv=_2
+validation.disableValidation=Y
