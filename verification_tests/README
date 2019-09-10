@@ -1,9 +1,0 @@
-# Verification Tests
-
-Tests that have hard-coded scipts to verify the results.
-
-These are sanity checks to help us ensure that the results we produce are correct.
-
-For example: 
-If was run RDP worked correctly, then every read that it reports as classified from a particular sample should be found in the sequence file for that sample.
-
