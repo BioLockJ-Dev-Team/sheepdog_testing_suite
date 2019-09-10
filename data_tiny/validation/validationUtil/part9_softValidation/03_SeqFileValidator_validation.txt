@@ -5,4 +5,4 @@ ERR1456808_1.fastq	2789	296fa2f54aadc0319767d89bdd47f379	PASS - Real value is -2
 ERR1456826_1.fastq	2192	a7697ca90fb8b589550ae1f6c1528d55	PASS - Real value is -7.39051094890511% different from expectation size.
 ERR1456827_1.fastq	2627	c27ec84f2375fdf9a3b4f01e91b7f6a5	PASS - Real value is 3.08336505519604% different from expectation size.
 ERR1456828_1.fastq	1786	21bb1db1a41a40c57541c3a78504420d	FAIL - Real value is 13.6618141097424% different from expectation size.
-rarifySeqs_2019Jul03_metadata.tsv	189	bca0837518c81daa5b14e850d4ca62ee	FAIL - Real value is -10.5820105820106% different from expectation size.
+PIPELINE_DATE_metadata.tsv	189	bca0837518c81daa5b14e850d4ca62ee	FAIL - Real value is -10.5820105820106% different from expectation size.
