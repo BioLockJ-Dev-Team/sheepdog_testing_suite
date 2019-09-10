@@ -12,7 +12,7 @@ See example method of calling the MockMain jar file: resources/runExample.sh
 
 ## Creating validation files
 
-See the example validation in ${SHEP}/tiny/validation/validationUtil/part2_validation_fromPart1
+See the example validation in ${SHEP}/data_tiny/validation/validationUtil/part2_validation_fromPart1
 See https://github.com/msioda/BioLockJ/wiki/Validation
 
 ## Creating verification code
