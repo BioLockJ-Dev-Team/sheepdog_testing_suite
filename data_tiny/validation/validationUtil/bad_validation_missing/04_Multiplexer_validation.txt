@@ -1,2 +1,2 @@
 name	size	MATCHED_EXPECTATION
-rarifySeqs_2019Jul03.fastq.gz	5364	REPORT
+PIPELINE_DATE.fastq.gz	5364	REPORT
