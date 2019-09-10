@@ -1,19 +1,33 @@
-# dependencies
+# Dependencies
 
-All test pipelines require that you have BioLockJ installed.
+_All test pipelines require that you have BioLockJ installed and are able to run it._
 
-All test pipelines require a unix-like environment.
+## properties files
 
-Some pipelines require additional stuff.
+For configurations that are specific to a single user (such as email, or local machine file paths) the individual tests use this:
+`pipeline.defaultProps=NOT_IN_GIT_user.properties`
+
+The file  `TEMPLATE_user.properties` lists the properties that might be expected.  Save a copy of the template as `NOT_IN_GIT_user.properties` in the same directory, edit to reflect filepaths on your machine.
+
+  > cd $SHEP/dependencies <br>
+  > cp TEMPLATE_user.properties NOT_IN_GIT_user.properties
+
+## variables
+So important that we put it at the top level!<br>
+See [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in the top level README.
+
+  > echo $SHEP <br>
+  > echo $SHEP_DATA
+
 
 ## BioLockJ installation for developers
 
-1. Fork the [BioLockJ](https://github.com/msioda/BioLockJ) repository.
+1. Fork the [BioLockJ](https://github.com/BioLockJ-Dev-Team/BioLockJ) repository.
 1. Clone your fork to your local machine: `git clone https://github.com/<username>/BioLockJ`
-1. Build the jar file: `cd resources; ant`
 1. Run the install script: `cd BioLockJ; ./install`
+1. Build the jar file: `cd resources; ant`
 
-Start a new terminal session and make sure that the variales and executables are on your `PATH`:<br>
+Start a new terminal session and make sure that the variables and executables are on your `PATH`:<br>
 `echo $BLJ`<br>
 `echo $BLJ_PROJ`<br>
 `biolockj --help`<br>
@@ -49,18 +63,6 @@ As a BioLockJ developer, you need to be able to build both BioLockJ and the Mock
 (Ubuntu)<br>
 `apt-get update`<br>
 `apt-get install ant`<br>
-
-
-## properties files
-
-For configurations that are specific to a single user (such as email, or local machine file paths) the individual tests use this:
-`pipeline.defaultProps=NOT_IN_GIT_user.properties`
-
-The file  `TEMPLATE_user.properties` lists the properties that might be expected.  Save a copy of the template as `NOT_IN_GIT_user.properties` in the same directory, edit to reflect filepaths on your machine.
-
-## variables
-So important that we put it at the top level!<br>
-See [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in the top level README.
 
 ## Using Eclipse
 
