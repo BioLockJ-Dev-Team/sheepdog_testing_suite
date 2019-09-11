@@ -1,5 +1,0 @@
-
- ---------> Execute CMD [  biolockj --docker --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist example.properties  ]
-docker = true
-external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
-KEY CMD: launch_docker --docker --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist example.properties

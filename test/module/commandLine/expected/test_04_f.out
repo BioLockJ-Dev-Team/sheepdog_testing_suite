@@ -1,4 +1,0 @@
-
- ---------> Execute CMD [  biolockj -f example.properties  ]
-foreground = true
-KEY CMD: launch_java -f example.properties
