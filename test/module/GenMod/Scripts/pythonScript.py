@@ -1,11 +1,10 @@
-#!/usr/bin/python3
-
+#!/usr/bin/python
 
 import sys
 import os
 
 os.chdir("..")
-os.mkdir("output")
+#os.mkdir("output")
 
 with open("output/PythonScriptResults.txt", "w") as file:
     x="This is the name of the script: "+ str(sys.argv[0])
@@ -15,4 +14,3 @@ with open("output/PythonScriptResults.txt", "w") as file:
     file.write(str(x)+"\n")
     file.write(str(y)+"\n")
     file.write(str(z)+"\n")
-
