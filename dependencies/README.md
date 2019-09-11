@@ -4,21 +4,32 @@ _All test pipelines require that you have BioLockJ installed and are able to run
 
 ## properties files
 
-For configurations that are specific to a single user (such as email, or local machine file paths) the individual tests use this:
-`pipeline.defaultProps=NOT_IN_GIT_user.properties`
+For configurations that are specific to a single user (such as email or aws user info) the individual tests use this: <br>
+`pipeline.defaultProps=${SHEP}/dependencies/NOT_IN_GIT_user.properties`
 
-The file  `TEMPLATE_user.properties` lists the properties that might be expected.  Save a copy of the template as `NOT_IN_GIT_user.properties` in the same directory, edit to reflect filepaths on your machine.
+For configurations that are specific to a single machine (such as file paths for Rscript or the RDP jar file) the individual tests use this: <br>
+`pipeline.defaultProps=${SHEP}/dependencies/NOT_IN_GIT_local.properties`
 
-  > cd $SHEP/dependencies <br>
-  > cp TEMPLATE_user.properties NOT_IN_GIT_user.properties
+Unlike user.properties, **local.properties should NOT be used with docker or aws**.  In docker, configuring file paths for exacutables that are specific to your machine might override the paths for executables that are built into the docker containters.  In aws, the added configuration could result in uploading files / databases / programs that are unnecisary, thus costing time and money.
+
+The file  `TEMPLATE_user.properties` lists the properties that might be expected.  Save a copy of the template as `NOT_IN_GIT_user.properties` in the same directory, likewise for `TEMPLATE_local.properties`. Edit the NOT_IN_GIT copy to reflect your user info, or filepaths on your machine.
+
+```(bash)
+cd $SHEP/dependencies
+cp TEMPLATE_local.properties NOT_IN_GIT_local.properties
+cp TEMPLATE_user.properties NOT_IN_GIT_user.properties
+```
+
+Avoid adding information that is not already listed.  If you need additional properties to make an _existing_ test work, that is a cue that something else is wrong.  If you need additional properties to make a _new_ test work, then we need to add that to the TEMPLATE file.  Individual tests should list (commendted out) what properties they need from their defaultProps files.
 
 ## variables
 So important that we put it at the top level!<br>
 See [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/README.md#variables) in the top level README.
 
-  > echo $SHEP <br>
-  > echo $SHEP_DATA
-
+```(bash)
+echo $SHEP <br>
+echo $SHEP_DATA
+```
 
 ## BioLockJ installation for developers
 
@@ -27,10 +38,12 @@ See [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/REA
 1. Run the install script: `cd BioLockJ; ./install`
 1. Build the jar file: `cd resources; ant`
 
-Start a new terminal session and make sure that the variables and executables are on your `PATH`:<br>
-`echo $BLJ`<br>
-`echo $BLJ_PROJ`<br>
-`biolockj --help`<br>
+Start a new terminal session and make sure that the variables exist and executables are on your `PATH`:<br>
+```(bash)
+echo $BLJ
+echo $BLJ_PROJ
+biolockj --help
+```
 
 The MockMain project in the test suite automates the process of running a set of test pipelines.  It uses the jar file.  You can check to see the most recent git commit when the jar file was built:<br>
 `java -jar $BLJ/dist/BioLockJ.jar --version`<br>
@@ -50,19 +63,22 @@ If you want to download the full size data (to use the `big` directory), you wil
 ### ant
 As a BioLockJ developer, you need to be able to build both BioLockJ and the MockMain testing program.  Both use ant.
 <br>
-(Bash)<br>
-`cd /Applications` # wherever you want to install ant<br>
-`ANT_DIST=apache-ant-1.9.14`<br>
-`curl -O http://apache.mirrors.lucidnetworks.net//ant/binaries/$ANT_DIST-bin.tar.bz2`<br>
-`tar xfj $ANT_DIST-bin.tar.bz2`<br>
-`cd $ANT_DIST`<br>
-`echo export ANT_HOME=$(pwd) >> ~/.bash_profile`<br>
-`echo export PATH=\$PATH:\$ANT_HOME/bin >> ~/.bash_profile`<br>
-`. ~/.bash_profile`<br>
-<br>
+(macOS)<br>
+```(bash)
+cd /Applications # wherever you want to install ant
+ANT_DIST=apache-ant-1.9.14
+curl -O http://apache.mirrors.lucidnetworks.net//ant/binaries/$ANT_DIST-bin.tar.bz2
+tar xfj $ANT_DIST-bin.tar.bz2
+cd $ANT_DIST
+echo export ANT_HOME=$(pwd) >> ~/.bash_profile
+echo export PATH=\$PATH:\$ANT_HOME/bin >> ~/.bash_profile
+. ~/.bash_profile
+```
 (Ubuntu)<br>
-`apt-get update`<br>
-`apt-get install ant`<br>
+```(bash)
+apt-get update
+apt-get install ant
+```
 
 ## Using Eclipse
 
