@@ -4,4 +4,6 @@ For each environment, we need to run a complete set of full pipelines.
 The folders for aws, cluster, docker and local contain full pipelines.
 These are run routinely to quickly show that no problems have been introduced.
 
-The module folder holds tests designed to get a comprehensive view of a single module or utility.  These are only created/used when developing or troubleshooting a particular module or utility and are not run routinely.
+The module folder holds tests designed to get a comprehensive view of a single module or utility.  These are only created/used when developing or troubleshooting a particular module or utility and may not be routinely.
+
+The bash folder holds tests designed to make sure the bash layer is passing information correctly. It tests code that executes between the point when the user calls `biolockj` and the point when the BioLockJ java program launches.

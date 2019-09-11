@@ -1,0 +1,23 @@
+
+ ---------> Execute CMD [  biolockj -b configFile/example.properties  ]
+error: unrecognized short-form argument [ -b ].
+
+BioLockJ v1.2 - UNCC Fodor Lab July 2018
+Usage:
+  biolockj [options] <config|pipeline>
+
+Options:
+  -v  --version                 Show version
+  -h  --help                    Show help menu
+  -r  --restart                 Resume an existing pipeline
+  -c  --config-override <file>  New config file (if restarting a pipeline)
+  -p  --password <password>     Encrypt password
+  -d  --docker                  Run in docker
+  -a  --aws                     Run on aws
+  -g  --gui                     Start the BioLockJ GUI
+  -f  --foreground              Run the java process in the foreground without nohup
+      --external-modules <dir>  Directory with compiled java code giving additional modules
+      --blj                     Map $BLJ folder into the docker container;
+                                this replaces BioLockJ packaged in a docker container with the local copy.
+      --blj_sup <dir>           Map <dir> folder into the docker container as /app/blj_support,
+                                if <dir> is not given, variable $BLJ_SUP is used
