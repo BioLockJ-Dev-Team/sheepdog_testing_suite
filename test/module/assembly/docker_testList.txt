@@ -1,0 +1,2 @@
+ConfigFile	NumberShouldComplete	Environment	ExpectedOutcome	Notes
+${SHEP}/test/module/assembly/test_assembly_docker.properties		docker	BioLockJ_Complete	full pipeline
