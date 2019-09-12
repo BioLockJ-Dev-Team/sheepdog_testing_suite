@@ -10,7 +10,7 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. Fork and clone this repository: `git clone https://github.com/<username>/sheepdog_testing_suite.git`
 1. Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies/README.md#variables).
 1. Build the MockMain project: `cd MockMain; ant`
-1. Run the example test set: `${SHEP}/MockMain/resources/runExample.sh`
+1. Run the example test set: `${SHEP}/MockMain/resources/runThisTestSet.sh`
 <br>This should print some output to the screen that starts with something like:
 <br>`Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/resources/exampleTestList.txt`
 <br>and ends with something like:

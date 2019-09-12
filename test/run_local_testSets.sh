@@ -20,6 +20,10 @@ ${DIR}/kraken2/runThisTestSet.sh         2>&1 | tee -a $RES
 ${DIR}/kraken2Parser/runThisTestSet.sh   2>&1 | tee -a $RES
 ${DIR}/GenMod/runThisTestSet.sh          2>&1 | tee -a $RES
 
+# the sheepdog quickstart example
+DIR=${SHEP}/MockMain/resources
+${DIR}/runThisTestSet.sh                 2>&1 | tee -a $RES
+
 # full pipeline
 ${SHEP}/test/local/runThisTestSet.sh     2>&1 | tee -a $RES
 
