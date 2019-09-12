@@ -20,7 +20,7 @@ cp TEMPLATE_local.properties NOT_IN_GIT_local.properties
 cp TEMPLATE_user.properties NOT_IN_GIT_user.properties
 ```
 
-Avoid adding information that is not already listed.  If you need additional properties to make an _existing_ test work, that is a cue that something else is wrong.  If you need additional properties to make a _new_ test work, then we need to add that to the TEMPLATE file.  Individual tests should list (commendted out) what properties they need from their defaultProps files.
+Avoid adding information that is not already listed.  If you need additional properties to make an _existing_ test work, that is a cue that something else is wrong.  If you need additional properties to make a _new_ test work, then we need to add that to the TEMPLATE file.  Individual tests should list (commented out) what properties they need from their defaultProps files.
 
 ## Variables
 
