@@ -12,12 +12,13 @@ date > $RES
 
 # module tests
 DIR=${SHEP}/test/module
+#${DIR}/assembly/runThisTestSet.sh        2>&1 | tee -a $RES
 ${DIR}/email/runThisTestSet.sh           2>&1 | tee -a $RES
-${DIR}/rdp/runThisTestSet.sh             2>&1 | tee -a $RES
-${DIR}/rdpParser/runThisTestSet.sh       2>&1 | tee -a $RES
+#${DIR}/rdp/runThisTestSet.sh             2>&1 | tee -a $RES
+#${DIR}/rdpParser/runThisTestSet.sh       2>&1 | tee -a $RES
 ${DIR}/validationUtil/runThisTestSet.sh  2>&1 | tee -a $RES
-${DIR}/kraken2/runThisTestSet.sh         2>&1 | tee -a $RES
-${DIR}/kraken2Parser/runThisTestSet.sh   2>&1 | tee -a $RES
+#${DIR}/kraken2/runThisTestSet.sh         2>&1 | tee -a $RES
+#${DIR}/kraken2Parser/runThisTestSet.sh   2>&1 | tee -a $RES
 ${DIR}/GenMod/runThisTestSet.sh          2>&1 | tee -a $RES
 
 # the sheepdog quickstart example

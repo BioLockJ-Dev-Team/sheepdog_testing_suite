@@ -13,7 +13,7 @@ date > $RES
 # module tests
 DIR=${SHEP}/test/module
 ${DIR}/assembly/docker_runThisTestSet.sh        2>&1 | tee -a $RES
-${DIR}/kraken2/docker_runThisTestSet.sh         2>&1 | tee -a $RES
+#${DIR}/kraken2/docker_runThisTestSet.sh         2>&1 | tee -a $RES
 
 # full pipeline
 ${SHEP}/test/docker/docker_runThisTestSet.sh    2>&1 | tee -a $RES
