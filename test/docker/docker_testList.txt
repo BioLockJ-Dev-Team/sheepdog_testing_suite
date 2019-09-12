@@ -1,2 +1,2 @@
 ConfigFile	Environment	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/docker/docker_RdpPipeline.properties	docker	18	BioLockJ_Complete	full pipeline
+${SHEP}/test/docker/onlyJavaModules.properties	docker	5	BioLockJ_Complete	full pipeline
