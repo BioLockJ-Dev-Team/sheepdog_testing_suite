@@ -6,17 +6,19 @@ The tests in `testCommandLine.sh` do not actually run a pipeline.  They make use
 
 ### First time
 
-Run the `testCommandLine.sh script`. This will produce files in the output dir.  Those that have a corresponding file in the `expected` folder should match that file exactly.  Many of the output includes file paths, which will be different for different machines.  Use the files that are checked-in in the `expected_examples` folder as a guide for what your output should look like.  Add your own files to the expected folder as you "approve" them by comparing them to the examples.  Git will ignore them.  In a few mintues, all of the tests in testCommandLine.sh should report "just as expected".
+Run the `testCommandLine.sh` script. This will produce files in the output dir.  Those that have a corresponding file in the `expected` folder should match that file exactly.  Many of the outputs include file paths, which will be different for different machines.  Use the files that are checked-in in the `expected_examples` folder as a guide for what your output should look like.  Add your own files to the expected folder as you "approve" them by comparing them to the examples.  Git will ignore them.  In a few mintues, all of the tests in testCommandLine.sh should report "just as expected".
 
 To do this in bulk:
 ```(bash)
 cd $SHEP/test/bash
+testCommandLine.sh
 rm -rf expected
 git checkout -- expected
 mv expected/* output/.
 mv output/* expected/.
+testCommandLine.sh
 ```
-This will move all of your file-path-specific outputs into the expected folder so they can be used as a reference for the testCommandLine.sh script, but the existing reference files that are checked in in git will be unaffected. `git status` should show no changes.
+This will move all of your file-path-specific outputs into the expected folder so they can be used as a reference for the testCommandLine.sh script, but the existing reference files that are checked in in git will be unaffected. `git status` should show no changes. When `testCommandLine.sh` runs again, everything should report "as expected".
 
 ### Use tests
 
