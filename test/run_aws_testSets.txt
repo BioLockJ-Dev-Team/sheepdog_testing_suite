@@ -1,0 +1,22 @@
+
+AWS test collection
+
+NOT EXECUTABLE
+Not machine-readable, its human-readable. 
+
+For aws tests, we should run one test at a time.
+We don't have a way (yet) for bash to know if/when a pipeline is complete.
+Thus, this is not an executable script like the other run_*_testSets,
+it is instructions for a human about what commands to run
+with the idea that some smart human will also be looking at the 
+aws console and signing in to the ec2 head node 
+to see that the tests complete.
+This will get more automated as features progress.
+
+# Run the following commands ... smartly.
+
+biolockj --aws ${SHEP}/test/module/email/email.properties
+
+biolockj --aws ${SHEP}/test/module/assembly/test_assembly_aws.properties
+
+biolockj --aws ${SHEP}/test/aws/aws_RdpPipeline.properties

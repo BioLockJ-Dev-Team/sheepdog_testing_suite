@@ -14,6 +14,6 @@ else
 fi
 
 # make a horizontal line in the console
-N=$(tput cols); T=$(seq 1 $N); for i in $T; do printf "="; done;
+echo "=========================================================="
 
 java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.RunMock ${IN_FILE}

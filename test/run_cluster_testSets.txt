@@ -1,0 +1,17 @@
+
+For this test suite, at this time,
+**cluster config files are identical to local config files.**
+
+The properties that would make a cluster pipeline different from a local pipeline are all stored in $SHEP/dependencies/NOT_IN_GIT_local.properties, so the copy that exists on the cluster has the cluster-specific versions.
+
+If you are on a cluster, set up that file for the cluster, and run the "local" tests. If you copy the result summary files to another location, manually edit the name to say "cluster" in place of "local".
+
+In theory, any local pipeline can run on the cluster as long as the file paths are provided correctly in local.properties.
+
+Some coinfig files can be cluster-only if they include general properties that only the cluster is able to fulfull (ie, script.numThreads=12 may cause errors if used on a laptop).
+
+Even after we have a set of cluster-only pipelines, we should still be able to run "local" pipelines on the cluster.
+
+Here are config files designed specifically for the cluster:
+
+biolockj ${SHEP}/test/module/assembly/test_assembly_cluster.properties
