@@ -218,3 +218,21 @@ id=test_13full_ext_mods_docker
 biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
+
+
+id=test_14_g
+biolockj -g $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_14_gui
+biolockj --gui $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_14_gui_noConfig
+biolockj --gui 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+#id=test_14full_gui
+#biolockj --gui $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+#launch_docker --gui $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+#check_it
