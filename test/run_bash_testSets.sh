@@ -10,6 +10,7 @@
 echo "part 1 ..."
 ${SHEP}/test/bash/wrap_testCommandLine.sh
 echo "part 1 is done."
+
 echo "part 2 ..."
 ${SHEP}/test/bash/wrap_basicRealTest.sh
 echo "part 2 is done."

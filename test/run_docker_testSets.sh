@@ -9,6 +9,7 @@
 
 RES=${SHEP}/test/results_docker_testSet_NOT_IN_GIT.txt
 date > $RES
+start=$(date '+%s')
 
 # module tests
 DIR=${SHEP}/test/module
@@ -18,6 +19,10 @@ ${DIR}/assembly/docker_runThisTestSet.sh        2>&1 | tee -a $RES
 # full pipeline
 ${SHEP}/test/docker/docker_runThisTestSet.sh    2>&1 | tee -a $RES
 
+end=$(date '+%s')
+time=$(( $(($end - $start)) / 60 ))
+echo ""
+echo "Total time to run tests:  $time minutes"  2>&1 | tee -a $RES
 
 # print the quick-reference version of the results
 echo "* * * * * * * * * * * * * * * * * * * *"
