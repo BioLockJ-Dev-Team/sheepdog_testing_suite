@@ -2,10 +2,10 @@
 
 # Local test collection
 
-# Each 'run this test set' script prints output to the screen
+# Each 'run this test set' script prints output to the screen.
 # Each line pipes that output to tee so it is
 # printed for you to see in real-time AND saved to a file.
-# At the end, this script a cliff-notes summary.
+# At the end, this script prints a cliff-notes summary.
 
 RES=${SHEP}/test/results_local_testSet_NOT_IN_GIT.txt
 date > $RES
