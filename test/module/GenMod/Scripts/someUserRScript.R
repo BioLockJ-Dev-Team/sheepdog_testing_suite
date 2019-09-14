@@ -24,8 +24,6 @@ sfv.reads = sapply(seqFileVal.files, getNumReads)
 rarify.files = getModOutputFiles( "RarefySeqs" )
 rfy.reads = sapply(rarify.files, getNumReads)
 
-system("mkdir ../output")
-
 png("../output/ReadsBeforeAfterRarifying.png")
 boxplot(sfv.reads, rfy.reads, las=1, 
         col = c("coral", "dodgerblue3"), 

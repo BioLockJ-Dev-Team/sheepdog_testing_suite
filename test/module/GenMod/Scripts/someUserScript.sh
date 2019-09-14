@@ -7,9 +7,6 @@ echo hello world
 echo "My script runs in the script directory."
 touch I-ran-here
 
-echo "It creates an output directory..."
-mkdir ../output
-
 echo "And it creates a file."
 OUT="../output/myOutputFile.txt"
 touch $OUT
