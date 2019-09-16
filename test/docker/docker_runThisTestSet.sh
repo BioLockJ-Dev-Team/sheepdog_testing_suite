@@ -1,3 +1,3 @@
 #! /bin/bash
 
-${SHEP}/MockMain/resources/runMockMain.sh ${SHEP}/test/docker/docker_testList.txt
+${SHEP}/MockMain/resources/testBiolockj ${SHEP}/test/docker/docker_testList.txt
