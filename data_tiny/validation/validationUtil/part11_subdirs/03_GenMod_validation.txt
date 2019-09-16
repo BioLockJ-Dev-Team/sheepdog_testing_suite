@@ -1,0 +1,5 @@
+name	size	md5	MATCHED_EXPECTATION
+dir2/deep/layer3.txt	36	b6da8a50793ddf7481bc3b2c7fd3c09c	REPORT
+dir2/layer2.txt	14	1d7e0e75025959ccd62d06f7cd4ffd7c	REPORT
+dir3/way/down/deep/deep.txt	36	0bdfc90863098dc4fae123ccad1578c5	REPORT
+layer1.txt	30	256d61b9cc1878ade821dd0b756763b0	REPORT
