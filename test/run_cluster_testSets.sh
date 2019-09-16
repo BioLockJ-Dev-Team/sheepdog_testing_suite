@@ -24,7 +24,7 @@ DIR=${SHEP}/test/module
 #testBiolockj ${DIR}/assembly/testList.txt              2>&1 | tee -a $RES
 #testBiolockj ${DIR}/email/testList.txt                 2>&1 | tee -a $RES
 testBiolockj ${DIR}/rdp/RdpTestList.txt                   2>&1 | tee -a $RES
-#testBiolockj ${DIR}/rdpParser/testList.txt             2>&1 | tee -a $RES
+testBiolockj ${DIR}/rdpParser/testList.txt             2>&1 | tee -a $RES
 testBiolockj ${DIR}/validationUtil/testList.txt        2>&1 | tee -a $RES
 #testBiolockj ${DIR}/kraken2/testList.txt               2>&1 | tee -a $RES
 #testBiolockj ${DIR}/kraken2Parser/testList.txt         2>&1 | tee -a $RES
