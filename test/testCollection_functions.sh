@@ -9,6 +9,11 @@ beforeTests(){
 	start=$(date '+%s')
 }
 
+# arg 1 - tests list
+runTestSet(){
+	testBiolockj $1     2>&1 | tee -a $RES
+}
+
 afterTests(){
 	end=$(date '+%s')
 	time=$(( $(($end - $start)) / 60 ))
