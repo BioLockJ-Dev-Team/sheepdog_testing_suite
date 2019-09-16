@@ -8,30 +8,30 @@
 # printed for you to see in real-time AND saved to a file.
 # At the end, this script prints a cliff-notes summary.
 
-. ${SHEP}/MockMain/resources/testCollectionInfo.sh
+. ${SHEP}/test/testCollection_functions.sh
 testCollectionName=cluster
 
 beforeTests # see testCollectionInfo.sh
 
 DIR=${SHEP}/test/module/assembly
-#testBiolockj $DIR/cluster_testList.txt                 2>&1 | tee -a $RES
+#runTestSet $DIR/cluster_testList.txt
 
 # In theory, any local pipeline can run on the cluster as long 
 # as the file paths are provided correctly in local.properties.
 
 # local module tests
 DIR=${SHEP}/test/module
-#testBiolockj ${DIR}/assembly/testList.txt              2>&1 | tee -a $RES
-#testBiolockj ${DIR}/email/testList.txt                 2>&1 | tee -a $RES
-testBiolockj ${DIR}/rdp/RdpTestList.txt                   2>&1 | tee -a $RES
-testBiolockj ${DIR}/rdpParser/testList.txt             2>&1 | tee -a $RES
-testBiolockj ${DIR}/validationUtil/testList.txt        2>&1 | tee -a $RES
-#testBiolockj ${DIR}/kraken2/testList.txt               2>&1 | tee -a $RES
-#testBiolockj ${DIR}/kraken2Parser/testList.txt         2>&1 | tee -a $RES
-testBiolockj ${DIR}/GenMod/testList.txt                2>&1 | tee -a $RES
+#runTestSet ${DIR}/assembly/testList.txt 
+#runTestSet ${DIR}/email/testList.txt 
+runTestSet ${DIR}/rdp/RdpTestList.txt 
+runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt 
+runTestSet ${DIR}/validationUtil/testList.txt
+runTestSet ${DIR}/kraken2/testList.txt 
+runTestSet ${DIR}/kraken2Parser/testList.txt 
+runTestSet ${DIR}/GenMod/testList.txt 
 
 # full local pipeline
-testBiolockj ${SHEP}/test/local/testList.txt           2>&1 | tee -a $RES
+runTestSet ${SHEP}/test/local/testList.txt 
 
 # "* * * * * * * * * * * * * * * * * * * *"
 afterTests # see testCollectionInfo.sh

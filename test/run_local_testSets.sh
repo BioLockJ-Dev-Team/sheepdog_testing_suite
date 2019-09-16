@@ -7,28 +7,28 @@
 # printed for you to see in real-time AND saved to a file.
 # At the end, this script prints a cliff-notes summary.
 
-. ${SHEP}/MockMain/resources/testCollectionInfo.sh
+. ${SHEP}/test/testCollection_functions.sh
 testCollectionName=local
 
 beforeTests # see testCollectionInfo.sh
 
 # module tests
 DIR=${SHEP}/test/module
-#${DIR}/assembly/runThisTestSet.sh                2>&1 | tee -a $RES
-testBiolockj ${DIR}/email/testList.txt           2>&1 | tee -a $RES
-testBiolockj ${DIR}/rdp/RdpTestList.txt          2>&1 | tee -a $RES
-testBiolockj ${DIR}/rdpParser/RdpParser_TestList.txt  2>&1 | tee -a $RES
-testBiolockj ${DIR}/validationUtil/testList.txt  2>&1 | tee -a $RES
-#testBiolockj ${DIR}/kraken2/testList.txt         2>&1 | tee -a $RES
-#testBiolockj ${DIR}/kraken2Parser/testList.txt   2>&1 | tee -a $RES
-testBiolockj ${DIR}/GenMod/testList.txt          2>&1 | tee -a $RES
+#runTestSet ${DIR}/assembly/testList.txt   
+runTestSet ${DIR}/email/testList.txt     
+runTestSet ${DIR}/rdp/RdpTestList.txt 
+runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
+runTestSet ${DIR}/validationUtil/testList.txt 
+#runTestSet ${DIR}/kraken2/testList.txt   
+runTestSet ${DIR}/kraken2Parser/testList.txt 
+runTestSet ${DIR}/GenMod/testList.txt 
 
 # the sheepdog quickstart example
 DIR=${SHEP}/MockMain/resources
-${DIR}/runThisTestSet.sh                         2>&1 | tee -a $RES
+runTestSet ${DIR}/testList.txt         
 
 # full pipeline
-testBiolockj ${SHEP}/test/local/testList.txt     2>&1 | tee -a $RES
+runTestSet ${SHEP}/test/local/testList.txt 
 
 # "* * * * * * * * * * * * * * * * * * * *"
 afterTests # see testCollectionInfo.sh
