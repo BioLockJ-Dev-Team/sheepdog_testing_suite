@@ -1,3 +1,3 @@
 #! /bin/bash
 
-${SHEP}/MockMain/resources/runMockMain.sh ${SHEP}/MockMain/resources/testList.txt
+${SHEP}/MockMain/resources/testBiolockj ${SHEP}/MockMain/resources/testList.txt
