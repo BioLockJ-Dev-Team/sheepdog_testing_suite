@@ -114,7 +114,7 @@ public class RunMock
 		int surprises = 0;
 		int testsRun = 0;
 		ArrayList<String> summary = new ArrayList<String>();
-		String outFileName = args.length > 1 ? args[ 1 ] : createOutFileName( args[ 0 ] );
+		String outFileName = createOutFileName( args[ 0 ] );
 		try{
 			readTestList( args[ 0 ] );
 			
@@ -150,6 +150,10 @@ public class RunMock
 			System.err.println( System.lineSeparator() + "DONE!" + System.lineSeparator() );
 
 			addSummaryAtTop(outFileName, summary);
+			
+			if ( args.length > 1 ) {
+				appendCollectionResults(outFileName, args[ 1 ]);
+			}
 		}
 		catch( Exception e ){
 			System.err.println( "There was a problem..." );
@@ -403,4 +407,27 @@ public class RunMock
 		Files.move( Paths.get( tmpFile ), Paths.get(outFileName) );
 	}
 	
+	/*
+	 * If this tests set is being run as part of a larger collection, 
+	 * then the results will additionally be appended to the table for the collection.
+	 */
+	protected static void appendCollectionResults(String outFileName, String collectionOutTable) throws IOException {
+		if ( collectionOutTable != null ) {
+			final BufferedReader reader = BioLockJUtil.getFileReader( new File(outFileName) );
+			File collectionFile = new File(collectionOutTable);
+			final BufferedWriter writer = new BufferedWriter( new FileWriter( collectionFile, true ) );
+			
+			if ( collectionFile.length() == 0 ) { //collectionFile.createNewFile()
+				writeComments(writer);
+				writer.write( String.join( Constants.TAB_DELIM, outputHeader ) + System.lineSeparator() );
+			}
+			
+			for( String line = reader.readLine(); line != null; line = reader.readLine() )
+			{
+				if ( !line.startsWith( "#" ) && !line.startsWith( outputHeader.get( 0 ) ) ) 
+					writer.write( line + System.lineSeparator() );
+			}
+			writer.close();
+		}
+	}
 }
