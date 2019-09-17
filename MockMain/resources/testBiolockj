@@ -13,6 +13,8 @@ echo "=========================================================="
 
 if [ "$#" -eq 1 ]; then
 	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.RunMock $1
+elif [ "$#" -eq 2 ]; then
+	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.RunMock $1 $2
 else
 	echo "Oh dear.  testBiolockj reqires one argument giving the path to the test list."
 	exit 1
