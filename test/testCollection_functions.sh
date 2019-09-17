@@ -4,7 +4,7 @@
 
 beforeTests(){
 	PATH=${SHEP}/MockMain/resources:$PATH
-	RES=${SHEP}/test/results_${testCollectionName}_testSet_NOT_IN_GIT.txt
+	RES=${SHEP}/test/results_${testCollectionName}_testCollection_NOT_IN_GIT.txt
 	date > $RES
 	start=$(date '+%s')
 }

@@ -6,9 +6,9 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 
 ### Quick Start
 
-1. Get [BioLockJ](https://github.com/BioLockJ-Dev-Team/BioLockJ).  See [BioLockJ installation for developers](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies/README.md#biolockj-installation-for-developers).
+1. Get [BioLockJ](https://github.com/BioLockJ-Dev-Team/BioLockJ).  See [BioLockJ installation for developers](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies#biolockj-installation-for-developers).
 1. Fork and clone this repository: `git clone https://github.com/<username>/sheepdog_testing_suite.git`
-1. Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies/README.md#variables).
+1. Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies#variables).
 1. Build the MockMain project: `cd ${SHEP}/MockMain; ant`
 1. Run the example test set: `${SHEP}/MockMain/resources/runThisTestSet.sh`
 <br>This should print some output to the screen that starts with something like:
@@ -18,7 +18,7 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 
 <br>See the [MockMain user guide](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/MockMain#mockmain-user-guide) to learn more about what you see in the example and how to expand from it.
 
-Now that you've gotten started, get good at it!  [Build up your reference pipelines](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/README.md#build-up-your-reference-pipelines) to get aquainted with this level of [automated testing](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/README.md#automated-testing) so you can use [routine comprehensive tests](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/test/README.md#routine-comprehensive-tests) in your normal dev process.
+Now that you've gotten started, get good at it!  [Build up your reference pipelines](https://github.com/IvoryC/sheepdog_testing_suite/tree/master#build-up-your-reference-pipelines) to get aquainted with this level of [automated testing](https://github.com/IvoryC/sheepdog_testing_suite/tree/master#automated-testing) so you can use [routine comprehensive tests](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/test#routine-comprehensive-tests) in your normal dev process.
 
 ### Build up your reference pipelines
 
@@ -31,7 +31,7 @@ Now that you've gotten started, get good at it!  [Build up your reference pipeli
 
 ### Automated testing
 
-The MockMain project is a java program that takes a list of tests as input, runs BioLockJ for each test, and reports the output.  See the [MockMain Users Guide](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/MockMain/README.md#mockmain-user-guide) for more details on using the program.  In very very short: most folders of tests have a `testList.txt` table and a `runThisTestSet.sh` script.  Calling the script will run all the tests listed in the test list, and create a new table ( `testList_results.txt` ) giving the results of each test.  After you are confortable handling individual test sets ( see [build up your reference pipelines](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/README.md#build-up-your-reference-pipelines) ) you can move on to running [Routine Comprehensive Tests](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/test/README.md#routine-comprehensive-tests).
+The MockMain project is a java program that takes a list of tests as input, runs BioLockJ for each test, and reports the output.  See the [MockMain Users Guide](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/MockMain#mockmain-user-guide) for more details on using the program.  In very very short: most folders of tests have a `testList.txt` table and a `runThisTestSet.sh` script.  Calling the script will run all the tests listed in the test list, and create a new table ( `testList_results.txt` ) giving the results of each test.  After you are confortable handling individual test sets ( see [build up your reference pipelines](https://github.com/IvoryC/sheepdog_testing_suite/tree/master#build-up-your-reference-pipelines) ) you can move on to running [Routine Comprehensive Tests](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/test#routine-comprehensive-tests).
 
 When you make changes to BioLockJ (weather fixing a bug, refactoring the framwork or adding new features), you should run a testList.  Pick an existing testList that runs full pipelines, or make a custom one to include more extensive testing of the componenents that might be affected by your work.  Run the testList before you start working using the current master version of BioLockJ.  Run it periodically as you work.  Most importantly, run all reasonable tests _after_ you have finalized your changes, but _before_ you submit the pull request to merge your work into the master branch.
 
@@ -61,7 +61,7 @@ Many pipelines require parameters or resources that have to be provided in a com
 Java project that automates the testing process.
 
 **test**<br>
-Configuration files to run test pipelines.  Most folders have several configuration files, a `testList.txt` file that lists the tests along with the expected output, and a `runThisTestSet.sh` script which launches the MockMain test system using the `testList.txt` file.  These are aggregated into the [Routine Comprehensive Tests](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/test/README.md#routine-comprehensive-tests).
+Configuration files to run test pipelines.  Most folders have several configuration files, a `testList.txt` file that lists the tests along with the expected output, and a `runThisTestSet.sh` script which launches the MockMain test system using the `testList.txt` file.  These are aggregated into the [Routine Comprehensive Tests](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/test#routine-comprehensive-tests).
 
 _Why no metadata folder?_
 

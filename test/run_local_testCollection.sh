@@ -20,7 +20,7 @@ runTestSet ${DIR}/rdp/RdpTestList.txt
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
 runTestSet ${DIR}/validationUtil/testList.txt 
 #runTestSet ${DIR}/kraken2/testList.txt   
-runTestSet ${DIR}/kraken2Parser/testList.txt 
+runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt 
 runTestSet ${DIR}/GenMod/testList.txt 
 
 # the sheepdog quickstart example
