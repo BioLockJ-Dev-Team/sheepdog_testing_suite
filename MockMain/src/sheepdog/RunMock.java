@@ -31,7 +31,6 @@ public class RunMock
 	private static final String OUTCOME_SEEN_COL = "Observed";
 	private static final String PASS_FAIL = "Pass/Fail";
 	private static final String NOTES_COL = "Notes";
-	private static final String HACKERS_PIPELINE_KEY = "Set Config property [ internal.pipelineDir ] = ";
 	private static final String BLJ_JAR="${BLJ}/dist/BioLockJ.jar";
 	private static final String MOCK_JAR="${SHEP}/MockMain/dist/MockMain.jar";
 	private static final String MOCK_DIST="${SHEP}/MockMain/dist";
@@ -250,15 +249,9 @@ public class RunMock
 				{
 					result = s.replace( MockMain.RESULT_KEY, "" ).trim();
 				}
-				if( s.contains( HACKERS_PIPELINE_KEY ) )
+				if( s.startsWith( Constants.PIPELINE_LOCATION_KEY ) )
 				{
-					int end = s.indexOf( HACKERS_PIPELINE_KEY ) + HACKERS_PIPELINE_KEY.length();
-					pipeline = s.substring( end + 1 );
-					System.err.println("Created pipeline dir: " + pipeline);
-				}
-				if( s.startsWith( MockMain.PIPELINE_KEY ) )
-				{
-					pipeline = s.replace( MockMain.PIPELINE_KEY, "" ).trim();
+					pipeline = s.replace( Constants.PIPELINE_LOCATION_KEY, "" ).trim();
 				}
 				if( s.contentEquals( Constants.VALIDATION_ENABLED )) {
 					test.validationEnabled=true;
