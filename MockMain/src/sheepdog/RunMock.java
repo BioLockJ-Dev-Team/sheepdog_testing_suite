@@ -34,8 +34,8 @@ public class RunMock
 	private static final String PASS_FAIL = "Pass/Fail";
 	private static final String NOTES_COL = "Notes";
 	private static final String BLJ_JAR="${BLJ}/dist/BioLockJ.jar";
-	private static final String MOCK_JAR="${SHEP}/MockMain/dist/MockMain.jar";
 	private static final String MOCK_DIST="${SHEP}/MockMain/dist";
+	private static final String MOCK_JAR="${SHEP}/MockMain/dist/MockMain.jar";
 	private static final String TMP_PROJ="${SHEP}/MockMain/pipelines";
 	private static final String NOT_IN_GIT="NOT_IN_GIT";
 	private static final String DOCKER = "docker";
@@ -285,7 +285,7 @@ public class RunMock
 						+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
 						+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
 						+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
-						+ " sheepdog.MockMain -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
+						+ " biolockj.BioLockJ -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
 						+ " -i " + test.inputDir + " -c " + test.config ;
 				String msg = String.valueOf( cmd );
 				// The msg printed to the console can be copy/pasted to run the command
@@ -303,7 +303,7 @@ public class RunMock
 	private static String generateJavaCmd(TestInfoRow test) {
 		String cmd;
 		cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
-		+ " sheepdog.MockMain " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
+		+ " biolockj.BioLockJ " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
 		+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.flags ;
 		System.err.println(cmd);
 		return( cmd );
