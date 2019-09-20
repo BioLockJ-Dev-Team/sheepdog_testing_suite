@@ -17,9 +17,11 @@ import biolockj.Constants;
 import biolockj.Properties;
 import biolockj.util.BioLockJUtil;
 import biolockj.util.SummaryUtil;
+import biolockj.exception.FatalExceptionHandler;
 
 public class RunMock
 {
+	private static final String COMPLETE = "BioLockJ_Complete";
 	private static final String CONFIG_FILE_COL = "ConfigFile";
 	private static final String FLAGS_COL = "Flags";
 	private static final String ENV_COL = "Environment";
@@ -245,12 +247,13 @@ public class RunMock
 			String s = null;
 			while( ( s = br.readLine() ) != null )
 			{
-				if( s.startsWith( MockMain.RESULT_KEY ) )
-				{
-					result = s.replace( MockMain.RESULT_KEY, "" ).trim();
+				if( s.startsWith( SummaryUtil.PIPELINE_STATUS ) && s.endsWith( Constants.SCRIPT_SUCCESS.toUpperCase() )) {
+					result = COMPLETE;
 				}
-				if( s.startsWith( Constants.PIPELINE_LOCATION_KEY ) )
-				{
+				if( s.startsWith( FatalExceptionHandler.ERROR_TYPE ) ) {
+					result = s.replace( FatalExceptionHandler.ERROR_TYPE, "" ).trim();
+				}
+				if( s.startsWith( Constants.PIPELINE_LOCATION_KEY ) ){
 					pipeline = s.replace( Constants.PIPELINE_LOCATION_KEY, "" ).trim();
 				}
 				if( s.contentEquals( Constants.VALIDATION_ENABLED )) {
