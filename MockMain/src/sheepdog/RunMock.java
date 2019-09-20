@@ -260,7 +260,7 @@ public class RunMock
 				{
 					pipeline = s.replace( MockMain.PIPELINE_KEY, "" ).trim();
 				}
-				if( s.contentEquals( MockMain.VALIDATION_ENABLED )) {
+				if( s.contentEquals( Constants.VALIDATION_ENABLED )) {
 					test.validationEnabled=true;
 				}
 			}
