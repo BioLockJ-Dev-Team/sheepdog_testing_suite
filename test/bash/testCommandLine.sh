@@ -236,3 +236,28 @@ check_it
 #biolockj --gui $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 #launch_docker --gui $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 #check_it
+
+
+id=test_15_w
+biolockj -w $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_15_wait
+biolockj --wait-for-start $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_15full_w
+biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_java -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+# verify that bash times out in waiting, unless --wait-for-start is used
+export BIOLOCKJ_TEST_MODE=""
+
+id=test_15full_longWait
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_15full_w_longWait
+biolockj --external-modules ${SHEP}/MockMain/dist -w ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
