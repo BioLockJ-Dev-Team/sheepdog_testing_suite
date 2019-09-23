@@ -10,7 +10,14 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. Fork and clone this repository: `git clone https://github.com/<username>/sheepdog_testing_suite.git`
 1. Set your environment [variables](https://github.com/IvoryC/sheepdog_testing_suite/blob/master/dependencies#variables).
 1. Build the MockMain project: `cd ${SHEP}/MockMain; ant`
-1. Run the example test set: `${SHEP}/MockMain/resources/runThisTestSet.sh`
+1. Add the TestBioLockJ wrapper script to your path: <br>
+  (macOS)<br>
+  `echo "export PATH=$PATH:${SHEP}/MockMain/resources" >> ~/.bash_profile` <br>
+  `source ~/.bash_profile` <br>
+  (Ubuntu)<br>
+  `echo "export PATH=$PATH:${SHEP}/MockMain/resources" >> ~/.bashrc` <br>
+  `source ~/.bashrc`<br>
+1. Run the example test set: `testBiolockj ${SHEP}/MockMain/resources/testList.txt`
 <br>This should print some output to the screen that starts with something like:
 <br>`Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/resources/exampleTestList.txt`
 <br>and ends with something like:
@@ -22,7 +29,7 @@ Now that you've gotten started, get good at it!  [Build up your reference pipeli
 
 ### Build up your reference pipelines
 
-1. Look at the `runThisTestSet.sh` script that you just ran.  Look at the `testList.txt` file that goes with it (Excel is recommended).  Look at one of the individual config files listed in `testList.txt`.  Look at the pipelines that were created in `${SHEP}/MockMain/pipelines/`.  See how these things relate to each other. This pattern is the backbone of this test suite.
+1. Look at the `testBiolockj` script that you just ran.  Look at the `testList.txt` file that you ran it on (Excel is recommended).  Look at one of the individual config files listed in `testList.txt`.  Look at the pipelines that were created in `${SHEP}/MockMain/pipelines/`.  See how these things relate to each other. This pattern is the backbone of this test suite.
 1. Create your `NOT_IN_GIT_user.properties` file following the instructions in [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies#properties-files).<br>Not all tests use this file. Depending on the test you want to run, you may need to set up other [dependencies](https://github.com/IvoryC/sheepdog_testing_suite/tree/master/dependencies) as well, so go ahead and skim that whole page.
 1. Find another existing `testList.txt` and `runThisTestSet.sh` pair (Several `runThisTestSet.sh` scripts are listed in ${SHEP}/test/run_local_testSets.sh.).  Review the config files listed in that testList, and make sure you have the dependencies that the tests require. Run the test set.
 1. Create a folder called `pipelines` next to the testList file.  This folder will be ignored by git. Its just for you.
