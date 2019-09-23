@@ -2,7 +2,7 @@
  ---------> Execute CMD [  biolockj -p configFile/example.properties  ]
 error: argument [ password ] must take a value.
 
-BioLockJ v1.2 - UNCC Fodor Lab July 2018
+BioLockJ v1.2.1 - UNCC Fodor Lab July 2018
 Usage:
   biolockj [options] <config|pipeline>
 
