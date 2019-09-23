@@ -19,7 +19,7 @@ import biolockj.util.BioLockJUtil;
 import biolockj.util.SummaryUtil;
 import biolockj.exception.FatalExceptionHandler;
 
-public class RunMock
+public class TestBioLockJ
 {
 	private static final String COMPLETE = "BioLockJ_Complete";
 	private static final String CONFIG_FILE_COL = "ConfigFile";
@@ -35,7 +35,7 @@ public class RunMock
 	private static final String NOTES_COL = "Notes";
 	private static final String BLJ_JAR="${BLJ}/dist/BioLockJ.jar";
 	private static final String MOCK_DIST="${SHEP}/MockMain/dist";
-	private static final String MOCK_JAR="${SHEP}/MockMain/dist/MockMain.jar";
+	private static final String MOCK_JAR="${SHEP}/MockMain/dist/TestBioLockJ.jar";
 	private static final String TMP_PROJ="${SHEP}/MockMain/pipelines";
 	private static final String NOT_IN_GIT="NOT_IN_GIT";
 	private static final String DOCKER = "docker";
@@ -88,7 +88,7 @@ public class RunMock
 		public void setPipeline(String path) {
 			if (environment.equals( DOCKER )) {
 				File inDocker = new File(path);
-				File onSystem = new File(Config.replaceEnvVar(RunMock.TMP_PROJ), inDocker.getName() );
+				File onSystem = new File(Config.replaceEnvVar(TestBioLockJ.TMP_PROJ), inDocker.getName() );
 				path = onSystem.getAbsolutePath();
 			}
 			this.pipeline = path;
@@ -375,7 +375,7 @@ public class RunMock
 		File[] oldPipelines = pipesDir.listFiles();
 		int count = 0;
 		for (File oldFile : oldPipelines) {
-			if (oldFile.isDirectory()) {
+			if (oldFile.isDirectory() && ! oldFile.getName().equals( prevPipesDirName )) {
 				oldFile.renameTo( new File(prevPipesDir, oldFile.getName()) );
 				count++;
 			}else if (oldFile.getName().startsWith( "README" )) {

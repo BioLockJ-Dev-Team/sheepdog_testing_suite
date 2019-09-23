@@ -4,11 +4,15 @@
 
 beforeTests(){
 	PATH=${SHEP}/MockMain/resources:$PATH
+	
+	testBiolockj # with no args, this just runs build scripts
+	
 	LOG=${SHEP}/test/results_${testCollectionName}_testCollection_NOT_IN_GIT.txt
-	rm $LOG
+	mv $LOG previous.$LOG
 	date > $LOG
 	RES=${SHEP}/test/results_${testCollectionName}_table_NOT_IN_GIT.txt
-	rm $RES
+	mv $RES previous.$RES
+
 	start=$(date '+%s')
 }
 
