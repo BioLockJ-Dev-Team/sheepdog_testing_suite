@@ -1,8 +1,15 @@
 #! /bin/bash
 
 # use:
+# (to run all tests listed in a test list table)
 # testBiolockj exampleTestList.txt
+#
 # OR
+# (to run a test list WITHOUT building BioLockJ and TestBioLockJ)
+# testBiolockj exampleTestList.txt no-build
+#
+# OR
+# (to save the results of several test lists to single output file)
 # testBiolockj exampleTestList.txt collectionOfResults.txt
 
 TESTER_JAR=${SHEP}/MockMain/dist/TestBioLockJ.jar
@@ -15,10 +22,15 @@ doBuild(){
 	ant -f ${SHEP}/MockMain/build.xml
 }
 
+# "#$" gives the number of args passed to this script.
 if [ "$#" -eq 0 ]; then
 	doBuild
 elif [ "$#" -eq 1 ]; then
 	doBuild
+	echo "=========================================================="
+	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.TestBioLockJ $1
+elif [ "$#" -eq 2 ] && [ $2 == "no-build" ]; then
+	echo "build step was skipped... presumably to save time."
 	echo "=========================================================="
 	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.TestBioLockJ $1
 elif [ "$#" -eq 2 ]; then
