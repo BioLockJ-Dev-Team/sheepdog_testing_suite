@@ -2,5 +2,5 @@
  ---------> Execute CMD [  launch_java -w /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
 wait-for-start = true
 Using /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties as the config file.
-Starting BioLockJ:  nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/BioLockJ/pipelines -u /Users/ieclabau /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties >/dev/null 2>&1 &
-KEY CMD: nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/BioLockJ/pipelines -u /Users/ieclabau /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties >/dev/null 2>&1 &
+Starting BioLockJ:  nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -u /Users/ieclabau /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -u /Users/ieclabau /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties >/dev/null 2>&1 &
