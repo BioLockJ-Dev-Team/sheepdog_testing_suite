@@ -5,17 +5,26 @@
 # OR
 # testBiolockj exampleTestList.txt collectionOfResults.txt
 
-TESTER_JAR=${SHEP}/MockMain/dist/MockMain.jar
+TESTER_JAR=${SHEP}/MockMain/dist/TestBioLockJ.jar
 BLJ_JAR=${BLJ}/dist/BioLockJ.jar
 
-# make a horizontal line in the console
-echo "=========================================================="
+doBuild(){
+	echo "======================build BioLockJ======================"
+	ant -f ${BLJ}/resources/build.xml
+	echo "====================build TestBioLockJ===================="
+	ant -f ${SHEP}/MockMain/build.xml
+}
 
-if [ "$#" -eq 1 ]; then
-	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.RunMock $1
+if [ "$#" -eq 0 ]; then
+	doBuild
+elif [ "$#" -eq 1 ]; then
+	doBuild
+	echo "=========================================================="
+	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.TestBioLockJ $1
 elif [ "$#" -eq 2 ]; then
-	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.RunMock $1 $2
+	echo "=========================================================="
+	java -cp ${TESTER_JAR}:${BLJ_JAR} sheepdog.TestBioLockJ $1 $2
 else
-	echo "Oh dear.  testBiolockj reqires one argument giving the path to the test list."
+	echo "Too many args passed to testBiolockj."
 	exit 1
 fi

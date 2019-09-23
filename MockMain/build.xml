@@ -1,4 +1,4 @@
-<project name="MockMain" default="jar">
+<project name="TestBioLockJ" default="jar">
 	
 	<path id="lib.path">
 		<fileset dir="../../BioLockJ/dist"/>
@@ -16,9 +16,9 @@
 
     <target name="jar" depends="compile">
         <mkdir dir="dist"/>
-        <jar destfile="dist/MockMain.jar" basedir="bin">
+        <jar destfile="dist/TestBioLockJ.jar" basedir="bin">
             <manifest>
-                <attribute name="Main-Class" value="sheepdog.RunMock"/>
+                <attribute name="Main-Class" value="sheepdog.TestBioLockJ"/>
             </manifest>
         </jar>
     </target>
