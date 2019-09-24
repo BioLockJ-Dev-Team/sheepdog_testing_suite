@@ -1,0 +1,13 @@
+
+ ---------> Execute CMD [  biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -w /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/longWait.properties  ]
+
+ ---------> Execute CMD [  launch_java --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -w /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/longWait.properties  ]
+Starting BioLockJ:  nohup java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar:/Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist/* biolockj.BioLockJ -b /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -u /Users/ieclabau /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/longWait.properties >/dev/null 2>&1 &
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/longWait_2_2019Sep23
+blj_go       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status (no timeout) ...
+
+Pipeline is running.

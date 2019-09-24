@@ -22,6 +22,7 @@ Options:
   -a  --aws                     Run on aws
   -g  --gui                     Start the BioLockJ GUI
   -f  --foreground              Run the java process in the foreground without nohup
+  -w  --wait-for-start          Do not release terminal until pipeline completes check-dependencies step.
       --external-modules <dir>  Directory with compiled java code giving additional modules
       --blj                     Map $BLJ folder into the docker container;
                                 this replaces BioLockJ packaged in a docker container with the local copy.
