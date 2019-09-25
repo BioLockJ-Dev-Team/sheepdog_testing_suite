@@ -32,10 +32,10 @@ EXP="$SHEP/test/bash/expected"
 rm -rf $OUT
 mkdir $OUT
 export BLJ_PROJ="${SHEP}/MockMain/pipelines"
-rm -rf "${SHEP}/MockMain/pipelines/test_*"
-rm -rf "${SHEP}/MockMain/pipelines/example*"
-rm -rf "${SHEP}/MockMain/pipelines/longWait*"
-rm -rf "${SHEP}/MockMain/pipelines/fastFail*"
+rm -rf ${SHEP}/MockMain/pipelines/test_*
+rm -rf ${SHEP}/MockMain/pipelines/example*
+rm -rf ${SHEP}/MockMain/pipelines/longWait*
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 echo "Output from individual tests are stored in: $OUT"
 
 exampleConfig="configFile/example.properties"
