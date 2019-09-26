@@ -1,3 +1,3 @@
-ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/module/rdp/justRDP.properties	4	BioLockJ_Complete	basic defaults
-${SHEP}/test/module/rdp/verifyRDPParser.properties	5	BioLockJ_Complete	basic defaults
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/rdp/justRDP.properties		4	BioLockJ_Complete	basic defaults
+${SHEP}/test/module/rdp/verifyRDPParser.properties	 --external-modules ${SHEP}/MockMain/dist	5	BioLockJ_Complete	basic defaults

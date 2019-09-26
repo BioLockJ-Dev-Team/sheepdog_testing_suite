@@ -1,2 +1,3 @@
-ConfigFile	Environment	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/module/validationUtil/part1_noExpectation.properties	docker	5	BioLockJ_Complete	"part1 - no expectation file, no validation configurations"
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/validationUtil/part1_noExpectation.properties	 --blj --docker	5	BioLockJ_Complete	"part1 - no expectation file, no validation configurations"
+${SHEP}/test/module/validationUtil/part1_noExpectation.properties	 --docker	5	BioLockJ_Complete	test the current DOCKER CONTAINER rather than the current BLJ_JAR
