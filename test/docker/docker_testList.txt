@@ -1,2 +1,2 @@
-ConfigFile	Environment	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/docker/onlyJavaModules.properties	docker	5	BioLockJ_Complete	full pipeline
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/docker/onlyJavaModules.properties	 --blj --docker	5	BioLockJ_Complete	full pipeline
