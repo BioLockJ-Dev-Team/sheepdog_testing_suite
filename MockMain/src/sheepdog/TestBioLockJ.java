@@ -23,8 +23,8 @@ public class TestBioLockJ
 {
 	private static final String COMPLETE = "BioLockJ_Complete";
 	private static final String CONFIG_FILE_COL = "ConfigFile";
-	private static final String FLAGS_COL = "Flags";
-	private static final String ENV_COL = "Environment";
+	private static final String JAVA_ARGS_COL = "java_BioLockJ_args";
+	private static final String BASH_ARGS_COL = "bash_biolockj_args";
 	private static final String PIPELINE_COL = "PipelineDirectory";
 	private static final String VAL_ENABLED_COL = "ValidationEnabled";
 	private static final String EXP_COMPLETE_MODS_COL = "NumberShouldComplete";
@@ -34,16 +34,14 @@ public class TestBioLockJ
 	private static final String PASS_FAIL = "Pass/Fail";
 	private static final String NOTES_COL = "Notes";
 	private static final String BLJ_JAR="${BLJ}/dist/BioLockJ.jar";
-	private static final String MOCK_DIST="${SHEP}/MockMain/dist";
 	private static final String MOCK_JAR="${SHEP}/MockMain/dist/TestBioLockJ.jar";
 	private static final String TMP_PROJ="${SHEP}/MockMain/pipelines";
 	private static final String NOT_IN_GIT="NOT_IN_GIT";
-	private static final String DOCKER = "docker";
 	
 	private static class TestInfoRow {
 		File config;
-		String flags;
-		String environment;
+		String java_args;
+		String bash_args;
 		String pipeline;
 		int expCompleteModules = -1;
 		int completedModules;
@@ -52,18 +50,15 @@ public class TestBioLockJ
 		String result;
 		boolean passes;
 		String notes;
-		String inputDir;
 		
 		String getField(String colName){
 			switch (colName) {
 				case CONFIG_FILE_COL:
 					return( config.getAbsolutePath() );
-				case FLAGS_COL:
-					return( flags );
-				case ENV_COL:
-					//only return the environment value if that affected how the test was run
-					if (environment.equals( DOCKER ) ) return( environment );
-					return( "" );
+				case JAVA_ARGS_COL:
+					return( java_args );
+				case BASH_ARGS_COL:
+					return( bash_args );
 				case PIPELINE_COL:
 					return( pipeline );
 				case VAL_ENABLED_COL:
@@ -85,15 +80,6 @@ public class TestBioLockJ
 			return null;
 		}
 		
-		public void setPipeline(String path) {
-			if (environment.equals( DOCKER )) {
-				File inDocker = new File(path);
-				File onSystem = new File(Config.replaceEnvVar(TestBioLockJ.TMP_PROJ), inDocker.getName() );
-				path = onSystem.getAbsolutePath();
-			}
-			this.pipeline = path;
-		}
-		
 		public String toString(){
 			ArrayList<String> row = new ArrayList<String>();
 			for (String s: outputHeader) {
@@ -104,7 +90,7 @@ public class TestBioLockJ
 	}
 
 	protected static ArrayList<String> outputHeader = new ArrayList<String>( Arrays.asList(
-			CONFIG_FILE_COL, FLAGS_COL, ENV_COL, PIPELINE_COL, VAL_ENABLED_COL, 
+			CONFIG_FILE_COL, JAVA_ARGS_COL, BASH_ARGS_COL, PIPELINE_COL, VAL_ENABLED_COL, 
 			EXP_COMPLETE_MODS_COL, NUM_COMPLETE_MODS_COL,
 			EXPECTED_OUTCOME_COL, OUTCOME_SEEN_COL, PASS_FAIL, NOTES_COL) );
 	
@@ -176,8 +162,8 @@ public class TestBioLockJ
 		System.err.println("Reading test list from: " + filePath);
 		File inFile = new File( filePath );
 		int iConfig = 0;
-		int iFlags = 0;
-		int iEnv = 0;
+		int iJavaArgs = 0;
+		int iBashArgs = 0;
 		int iCompModsExp = 0;
 		int iExpected = 0;
 		int iNotes = 0;
@@ -192,20 +178,19 @@ public class TestBioLockJ
 				
 				if( iNotes==0 ){
 					iConfig = row.indexOf( CONFIG_FILE_COL );
-					iFlags = row.indexOf( FLAGS_COL );
-					iEnv = row.indexOf( ENV_COL );
+					iJavaArgs = row.indexOf( JAVA_ARGS_COL );
+					iBashArgs = row.indexOf( BASH_ARGS_COL );
 					iCompModsExp = row.indexOf( EXP_COMPLETE_MODS_COL );
 					iExpected = row.indexOf( EXPECTED_OUTCOME_COL );
 					iNotes = row.indexOf( NOTES_COL );
 				}else {
 					TestInfoRow oneTest = new TestInfoRow();
 					oneTest.config = new File( Config.replaceEnvVar( row.get( iConfig ) ) );
-					if (iFlags > 0 ) oneTest.flags = row.get( iFlags ); else oneTest.flags = "";
-					if (iEnv > 0 ) oneTest.environment = row.get( iEnv ); else oneTest.environment = "";
+					if (iJavaArgs > 0 ) oneTest.java_args = row.get( iJavaArgs ); else oneTest.java_args = "";
+					if (iBashArgs > 0 ) oneTest.bash_args = row.get( iBashArgs ); else oneTest.bash_args = "";
 					if (iCompModsExp > 0 && !row.get( iCompModsExp ).isEmpty() ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
 					oneTest.out_exp = row.get( iExpected );
 					if (iNotes > 0 ) oneTest.notes = row.get( iNotes ); else oneTest.notes = "";
-					if (oneTest.environment.equals( DOCKER )) oneTest.inputDir = extractInputDir(oneTest.config);
 					tests.add( oneTest );
 				}
 			}
@@ -232,17 +217,20 @@ public class TestBioLockJ
 	
 	protected static void runMockBljMain (TestInfoRow test) throws Exception {
 		String cmd;
-		if (test.environment.equals( DOCKER ))
-		{
-			cmd = generateDockerCmd(test);
-		}else {
+		if ( test.bash_args.isEmpty() && ! test.java_args.isEmpty() ) {
 			cmd = generateJavaCmd(test);
+		}else if ( ! test.bash_args.isEmpty() && ! test.java_args.isEmpty() ) {
+			throw new Exception("Can't use both " + BASH_ARGS_COL + " and " + JAVA_ARGS_COL + " in the same test." );
+		}else {
+			cmd = "biolockj --blj_proj " + Config.replaceEnvVar(TMP_PROJ) + " -f " 
+							+ Config.replaceEnvVar(test.bash_args) + " " + test.config;
 		}
-
+		System.err.println("Command for subprocess: " + cmd);
+		
 		String result = "";
 		String pipeline = "NA";
 		try {
-			final Process p = Runtime.getRuntime().exec( cmd );
+			final Process p = Runtime.getRuntime().exec( cmd ); 
 			final BufferedReader br = new BufferedReader( new InputStreamReader( p.getInputStream() ) );
 			String s = null;
 			while( ( s = br.readLine() ) != null )
@@ -255,6 +243,7 @@ public class TestBioLockJ
 				}
 				if( s.startsWith( Constants.PIPELINE_LOCATION_KEY ) ){
 					pipeline = s.replace( Constants.PIPELINE_LOCATION_KEY, "" ).trim();
+					pipeline = pipeline.replace( "/mnt/efs/pipelines", Config.replaceEnvVar(TMP_PROJ) ); //for docker case
 				}
 				if( s.contentEquals( Constants.VALIDATION_ENABLED )) {
 					test.validationEnabled=true;
@@ -267,55 +256,18 @@ public class TestBioLockJ
 			ex.printStackTrace();
 		}
 		test.result = result ;
-		test.setPipeline(pipeline) ;
-	}
-	
-	private static String generateDockerCmd(TestInfoRow test) {
-		String cmd = "docker run --rm"
-//						+ " -v " + Config.replaceEnvVar("${SHEP}") + ":/shep"
-//						+ " -v " + Config.replaceEnvVar("${SHEP_DATA}") + ":/shep_data"
-//						+ " -e SHEP=/shep"
-//						+ " -e SHEP_DATA=/shep_data"
-						+ " -v /var/run/docker.sock:/var/run/docker.sock"
-						+ " -v " + Config.replaceEnvVar("~") + ":/home/ec2-user"
-						+ " -v " + Config.replaceEnvVar(TMP_PROJ) + ":/mnt/efs/pipelines:delegated"
-						+ " -v " + test.inputDir + ":/mnt/efs/input:ro"
-						+ " -v " + test.config.getParent() + ":/mnt/efs/config:ro"
-						+ " -v " + Config.replaceEnvVar(MOCK_DIST) + ":/modules "
-						+ " -v " + Config.replaceEnvVar("${BLJ}/resources") + ":/app/biolockj/resources"
-						+ " -v " + Config.replaceEnvVar(BLJ_JAR) + ":/app/biolockj/dist/BioLockJ.jar"
-						+ " biolockj/biolockj_controller java -cp /modules/*:/app/biolockj/dist/BioLockJ.jar"
-						+ " biolockj.BioLockJ -u " + Config.replaceEnvVar("~") + " -b " + Config.replaceEnvVar(TMP_PROJ)
-						+ " -i " + test.inputDir + " -c " + test.config ;
-				String msg = String.valueOf( cmd );
-				// The msg printed to the console can be copy/pasted to run the command
-				// AND it has logical line breaks to make it more human readable.
-				msg = msg.replaceAll( "run --rm",  "holdThisDash"); 
-				msg = msg.replaceAll( "ec2-user",  "holdUser" );
-				msg = msg.replaceAll( "-",  " \\\\" + System.lineSeparator() + "-");
-				msg = msg.replaceAll( "biolockj/biolockj_controller",  " \\\\" + System.lineSeparator() + "biolockj/biolockj_controller");
-				msg = msg.replaceAll( "holdThisDash",  "run --rm");
-				msg = msg.replaceAll( "holdUser",  "ec2-user");
-				System.err.println(msg);
-				return( cmd );
+		test.pipeline = pipeline ;
 	}
 	
 	private static String generateJavaCmd(TestInfoRow test) {
 		String cmd;
 		cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
 		+ " biolockj.BioLockJ " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
-		+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.flags ;
+		+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.java_args ;
 		System.err.println(cmd);
 		return( cmd );
 	}
 
-	protected static void writeHeader( BufferedWriter writer ) throws IOException{
-		
-	}
-	
-	protected static void writeResult( BufferedWriter writer, Integer key ) throws IOException{
-		
-	}
 	
 	private static String getCompletedModuleCount( TestInfoRow test ) {
 		File top = new File(test.pipeline);
