@@ -1,5 +1,5 @@
 Initializing BioLockJ..
-Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/longWait_2_2019Sep25
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/longWait_2_2019Sep27
 blj_go       -> Move to pipeline output directory
 blj_log      -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary  -> View module execution summary
