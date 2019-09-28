@@ -2,18 +2,28 @@
 
 # Bash test collection
 
-# Each 'run this test set' script prints output to the screen
-# Each line pipes that output to tee so it is
-# printed for you to see in real-time AND saved to a file.
-# At the end, this script a cliff-notes summary.
+TOTAL_TESTS=0
+PASSING_TESTS=0
 
-echo "part 1 ..."
-${SHEP}/test/bash/wrap_testCommandLine.sh
-echo "part 1 is done."
+do_bash_test(){
+	TOTAL_TESTS=$((TOTAL_TESTS + 1))
+	echo "part $TOTAL_TESTS ..."
+	wrap_bash_tests.sh $1 && PASSING_TESTS=$((PASSING_TESTS + 1))
+	echo "part $TOTAL_TESTS is done."
+}
 
-echo "part 2 ..."
-${SHEP}/test/bash/wrap_basicRealTest.sh
-echo "part 2 is done."
+do_bash_test ${SHEP}/test/bash/testCommandLine.sh
+
+do_bash_test ${SHEP}/test/bash/testRestartCylce.sh
+
+do_bash_test ${SHEP}/test/bash/basicRealTest.sh
 
 echo ""
 echo "Done running bash tests."
+
+if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	echo "At least one test FAILED!!!"
+else
+	"All tests PASSED."
+fi
+

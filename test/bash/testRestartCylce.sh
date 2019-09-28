@@ -6,7 +6,7 @@ export BLJ_PROJ=${SHEP}/test/bash/pipelines
 [ ! -d $BLJ_PROJ ] && mdir $BLJ_PROJ
 
 biolockj --external-modules ${SHEP}/MockMain/dist \
-         configFile/configToFail.properties
+         ${SHEP}/test/bash/configFile/configToFail.properties
         
 RESTART_DIR=$(most_recent_pipeline)
 
@@ -60,6 +60,8 @@ fi
 
 if [ $failures -eq 0 ]; then
 	echo "Basic Restart Test: PASSING"
+	exit 0
 else
 	echo "Basic Restart Test: FAIL, at $failures checkpoints."
+	exit 1
 fi

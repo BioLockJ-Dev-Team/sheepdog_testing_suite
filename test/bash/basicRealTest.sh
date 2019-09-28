@@ -10,6 +10,7 @@ getPipeInfo(){
 	pipeName=`pwd`
 	if [ -f biolockjComplete ] ; then
 		STATUS="It completed."
+		PASSING_TESTS=$((PASSING_TESTS + 1))
 	elif [ -f biolockjFailed ]; then
 		STATUS="It failed."
 	else
@@ -18,6 +19,7 @@ getPipeInfo(){
 	cd - > /dev/null
 	}
 wrap_cmd_with_check(){
+	TOTAL_TESTS=$((TOTAL_TESTS + 1))
 	CMD="$@"
 	NUM_PIPES_PREV=$(countPipelines)
 	($CMD) > /dev/null
@@ -36,8 +38,17 @@ wrap_cmd_with_check(){
 
 DIR=$SHEP/test/bash/configFile
 
+TOTAL_TESTS=0
+PASSING_TESTS=0
+
 wrap_cmd_with_check biolockj $DIR/rarifySeqs.properties
 
 wrap_cmd_with_check biolockj --docker $DIR/rarifySeqs.properties
 
 #wrap_cmd_with_check biolockj --external-modules $SHEP/MockMain/dist --docker $DIR/verifyRDPParser.properties
+
+if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	exit 1
+else
+	exit 0
+fi

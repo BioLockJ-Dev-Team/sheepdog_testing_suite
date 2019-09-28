@@ -16,16 +16,24 @@ export BIOLOCKJ_TEST_MODE="KEY CMD: "
 
 check_it(){
 	echo "-"
+	TOTAL_TESTS=$((TOTAL_TESTS + 1))
 	# we don't expect anything in the .err files
 	errSize=$(du $OUT/${id}.err | cut -f 1)
 	[ $errSize -gt 0 ] && echo "$(du -h $OUT/${id}.err)"
 	[ $errSize -eq 0 ] && rm $OUT/${id}.err
 	# compare the .out files to previous run
 	hasDiff=$(diff $OUT/${id}.out $EXP/${id}.out || echo "comparison failed")
-	[ ${#hasDiff} -gt 0 ] && echo "oh no! examine $id !"
-	[ ${#hasDiff} -eq 0 ] && echo "$id --> just as expected."
-	git --no-pager diff --no-index $EXP/${id}.out $OUT/${id}.out
+	if [ ${#hasDiff} -gt 0 ]; then
+		echo "oh no! examine $id !"
+		git --no-pager diff --no-index $EXP/${id}.out $OUT/${id}.out
+	else
+		echo "$id --> just as expected."
+		PASSING_TESTS=$((PASSING_TESTS + 1))
+	fi
 }
+
+TOTAL_TESTS=0
+PASSING_TESTS=0
 
 OUT="$SHEP/test/bash/output"
 EXP="$SHEP/test/bash/expected"
@@ -270,3 +278,13 @@ check_it
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
+
+
+
+
+
+if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	exit 1
+else
+	exit 0
+fi
