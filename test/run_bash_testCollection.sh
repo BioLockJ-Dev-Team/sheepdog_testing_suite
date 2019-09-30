@@ -4,11 +4,13 @@
 
 TOTAL_TESTS=0
 PASSING_TESTS=0
+TESTS_THAT_FAILED=()
 
 do_bash_test(){
 	TOTAL_TESTS=$((TOTAL_TESTS + 1))
 	echo "part $TOTAL_TESTS ..."
-	wrap_bash_tests.sh $1 && PASSING_TESTS=$((PASSING_TESTS + 1))
+	# wrap_bash_tests.sh exits with 0 if test(s) pass, exits 1 otherwise
+	${SHEP}/test/bash/wrap_bash_tests.sh $1 && PASSING_TESTS=$((PASSING_TESTS + 1)) || TESTS_THAT_FAILED=(${TESTS_THAT_FAILED[@]} $(basename $1) )
 	echo "part $TOTAL_TESTS is done."
 }
 
@@ -22,8 +24,11 @@ echo ""
 echo "Done running bash tests."
 
 if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
-	echo "At least one test FAILED!!!"
+	echo "The following test(s) FAILED!!!"
+	for fail in ${TESTS_THAT_FAILED[@]}; do
+		echo "    $fail"
+	done
 else
-	"All tests PASSED."
+	echo "All tests PASSED."
 fi
 

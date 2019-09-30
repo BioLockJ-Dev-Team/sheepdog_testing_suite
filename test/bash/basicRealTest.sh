@@ -48,7 +48,10 @@ wrap_cmd_with_check biolockj --docker $DIR/rarifySeqs.properties
 #wrap_cmd_with_check biolockj --external-modules $SHEP/MockMain/dist --docker $DIR/verifyRDPParser.properties
 
 if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	numFailed=$((TOTAL_TESTS - PASSING_TESTS))
+	echo "There were $numFailed tests that FAILED !!!"
 	exit 1
 else
+	echo "Ran $TOTAL_TESTS basic launch process tests, all PASSED."
 	exit 0
 fi

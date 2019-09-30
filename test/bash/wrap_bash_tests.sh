@@ -30,7 +30,9 @@ run_test(){
 	# The relative path outputs of the bash args 
 	# require a consistent working directory.
 	cd $(dirname $SCRIPT)
-	$SCRIPT >> $OUTPUT && PASSING=true || PASSING=false
+	SCRIPT_NAME=$(basename $SCRIPT)
+	OUT_NAME=$(basename $OUTPUT)
+	$SCRIPT_NAME >> $OUT_NAME && PASSING=true || PASSING=false
 	cd - > /dev/null
 }
 
@@ -38,12 +40,12 @@ print_output(){
 	echo ">=================> Results summary: "
 	echo ""
 	cat $OUTPUT
-	 ""
+	echo ""
 	echo "<=================<"
 }
 
 return_result(){
-	if [ $PASSING ]; then
+	if [ $PASSING == "true" ]; then
 		exit 0
 	else
 		exit 1
