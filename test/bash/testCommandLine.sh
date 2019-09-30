@@ -44,6 +44,7 @@ rm -rf ${SHEP}/MockMain/pipelines/test_*
 rm -rf ${SHEP}/MockMain/pipelines/example*
 rm -rf ${SHEP}/MockMain/pipelines/longWait*
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+rm -rf ${SHEP}/MockMain/pipelines/restart*
 echo "Output from individual tests are stored in: $OUT"
 
 exampleConfig="configFile/example.properties"
@@ -266,6 +267,7 @@ check_it
 
 # verify that bash times out in waiting, unless --wait-for-start is used
 export BIOLOCKJ_TEST_MODE=""
+. $BLJ/script/blj_functions
 
 id=test_15full_longWait
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -277,6 +279,19 @@ check_it
 
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+
+id=test_17full_restart
+biolockj --external-modules ${SHEP}/MockMain/dist \
+	${SHEP}/test/bash/configFile/restartWithWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+RESTART_DIR=$(most_recent_pipeline)
+echo "RESTART_DIR: $RESTART_DIR" 1>> $OUT/${id}.out
+MASTER_PROP=$(ls $RESTART_DIR/MASTER*.properties)
+echo "MASTER_PROP: $MASTER_PROP" 1>> $OUT/${id}.out
+echo "configToFail.fail=N" >> $MASTER_PROP
+biolockj --external-modules ${SHEP}/MockMain/dist \
+	--restart $RESTART_DIR 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
