@@ -281,10 +281,12 @@ check_it
 
 
 
-
-
+echo ""
 if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	numFailed=$((TOTAL_TESTS - PASSING_TESTS))
+	echo "There were $numFailed tests that FAILED !!!"
 	exit 1
 else
+	echo "Basic tests of bash command line args: PASSING"
 	exit 0
 fi
