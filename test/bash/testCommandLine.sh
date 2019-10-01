@@ -102,6 +102,12 @@ biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --foreground $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
+id=test_04full_fd
+biolockj -fd $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_docker -fd $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it
+
+
 id=test_05_basic
 biolockj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
