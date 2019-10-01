@@ -11,7 +11,8 @@ beforeTests(){
 	mv $LOG previous.$LOG
 	date > $LOG
 	RES=${SHEP}/test/results_${testCollectionName}_table_NOT_IN_GIT.txt
-	mv $RES previous.$RES
+	OLD=${SHEP}/test/previous_${testCollectionName}_table_NOT_IN_GIT.txt
+	mv $RES $OLD
 
 	start=$(date '+%s')
 }
