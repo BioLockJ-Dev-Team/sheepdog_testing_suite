@@ -1,9 +1,0 @@
-
- ---------> Execute CMD [  biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
-external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
-KEY CMD: launch_java --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties
-
- ---------> Execute CMD [  launch_java --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
-external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
-Using /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties as the config file.
-KEY CMD: nohup java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar:/Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist/* biolockj.BioLockJ -b /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -u /Users/ieclabau -c /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties >/dev/null 2>&1 &

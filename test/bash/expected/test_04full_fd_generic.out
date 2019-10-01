@@ -1,0 +1,14 @@
+
+---------> Execute CMD [ biolockj -fd configFile/example.properties ]
+docker = true
+foreground = true
+KEY CMD: launch_docker -fd configFile/example.properties
+
+---------> Execute CMD [ launch_docker -fd configFile/example.properties ]
+docker = true
+foreground = true
+Using configFile/example.properties as the config file.
+args used: foreground docker
+configFile = configFile/example.properties
+restartDir =
+KEY CMD: docker run --rm -e "BLJ_OPTIONS=-u /Users/ieclabau -b <SHEP>/MockMain/pipelines -h CCI0PHJGH5AWS -i <SHEP>/test/bash/expected -c configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau:/home/ec2-user:delegated -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/expected:/mnt/efs/input:ro -v configFile:/mnt/efs/config:ro biolockj/biolockj_controller

@@ -1,8 +1,0 @@
-showcallonly = default
-gui = default
-pass = default
-configoverride = default
-restart = default
-aws = default
-docker = default
-Using  baz  as the config file.

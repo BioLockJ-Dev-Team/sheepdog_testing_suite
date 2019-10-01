@@ -1,9 +1,0 @@
-
- ---------> Execute CMD [  biolockj --password bar configFile/example.properties  ]
-password = bar
-KEY CMD: launch_java --password bar configFile/example.properties
-
- ---------> Execute CMD [  launch_java --password bar configFile/example.properties  ]
-password = bar
-Using configFile/example.properties as the config file.
-KEY CMD: nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -u /Users/ieclabau -p bar -c configFile/example.properties >/dev/null 2>&1 &

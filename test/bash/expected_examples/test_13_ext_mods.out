@@ -1,4 +1,0 @@
-
- ---------> Execute CMD [  biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist configFile/example.properties  ]
-external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
-KEY CMD: launch_java --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist configFile/example.properties
