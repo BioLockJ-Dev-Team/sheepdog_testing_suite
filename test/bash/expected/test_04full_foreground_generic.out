@@ -1,0 +1,10 @@
+
+---------> Execute CMD [ biolockj --foreground configFile/example.properties ]
+foreground = true
+KEY CMD: launch_java --foreground configFile/example.properties
+
+---------> Execute CMD [ launch_java --foreground configFile/example.properties ]
+foreground = true
+Using configFile/example.properties as the config file.
+Starting BioLockJ: java -jar <BLJ>/dist/BioLockJ.jar -b <SHEP>/MockMain/pipelines -u /Users/ieclabau -c configFile/example.properties
+KEY CMD: java -jar <BLJ>/dist/BioLockJ.jar -b <SHEP>/MockMain/pipelines -u /Users/ieclabau -c configFile/example.properties

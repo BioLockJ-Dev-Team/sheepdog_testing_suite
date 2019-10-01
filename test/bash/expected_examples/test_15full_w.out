@@ -1,5 +1,0 @@
-
- ---------> Execute CMD [  launch_java -w /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
-wait-for-start = true
-Using /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties as the config file.
-KEY CMD: nohup java -jar /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar -b /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -u /Users/ieclabau -c /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties >/dev/null 2>&1 &

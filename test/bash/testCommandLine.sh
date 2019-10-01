@@ -17,16 +17,32 @@ export BIOLOCKJ_TEST_MODE="KEY CMD: "
 check_it(){
 	echo "-"
 	TOTAL_TESTS=$((TOTAL_TESTS + 1))
+	#
 	# we don't expect anything in the .err files
 	errSize=$(du $OUT/${id}.err | cut -f 1)
 	[ $errSize -gt 0 ] && echo "$(du -h $OUT/${id}.err)"
 	[ $errSize -eq 0 ] && rm $OUT/${id}.err
-	# compare the .out files to previous run
-	hasDiff=$(diff $OUT/${id}.out $EXP/${id}.out || echo "comparison failed")
-	if [ ${#hasDiff} -gt 0 ]; then
-		echo "oh no! examine $id !"
-		git --no-pager diff --no-index $EXP/${id}.out $OUT/${id}.out
+	#
+	# compare the .out files to previous run.
+	# if $1=="g" (for "generic") then use 
+	# the generic version of the output
+	if [ $# -gt 0 ] && [ $1 == "g" ] ; then
+		OUT_FILE=$(${SHEP}/test/bash/generalize.sh $OUT/${id}.out)
+		EXP_FILE=$EXP/${id}_generic.out
 	else
+		OUT_FILE=$OUT/${id}.out
+		EXP_FILE=$EXP/${id}.out
+	fi
+	[ ! -f $EXP_FILE ] && "The expectation file for ${id}, [ $EXP_FILE ] does not exist."
+	#
+	# if $OUT_FILE and $EXP_FILE are identical, then hasDiff will be empty
+	hasDiff=$(diff $OUT_FILE $EXP_FILE || echo "comparison failed")
+	#
+	# make conclusions from the comparison
+	if [ ${#hasDiff} -gt 0 ]; then 
+		echo "oh no! examine $id !"
+		git --no-pager diff --no-index $EXP_FILE $OUT_FILE
+	else # hasDiff is empty
 		echo "$id --> just as expected."
 		PASSING_TESTS=$((PASSING_TESTS + 1))
 	fi
@@ -100,29 +116,29 @@ check_it
 id=test_04full_foreground
 biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --foreground $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_04full_fd
 biolockj -fd $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker -fd $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_05_basic
 biolockj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_6_r
 biolockj -r $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java -r $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_6_restart
 biolockj --restart $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --restart $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_6_restart_nonDir
 biolockj --restart $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -141,12 +157,12 @@ check_it
 id=test_7full_d
 biolockj -d $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker -d $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_7full_docker
 biolockj --docker $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_8_a
@@ -174,12 +190,12 @@ check_it
 id=test_10_p
 biolockj -p bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java -p bar $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_10_pass
 biolockj --password bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --password  bar $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_10_p_noArg1
 biolockj -p -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -200,7 +216,7 @@ check_it
 id=test_11full_blj
 biolockj --docker --blj $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --blj $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_12_bljsup
 biolockj --docker --blj_sup $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -209,35 +225,35 @@ check_it
 id=test_12full_bljsup
 biolockj --docker --blj_sup $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --blj_sup $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_12full_bljsup_arg
 biolockj --docker --blj_sup $SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --blj_sup $SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_13full_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_13_ext_mods_noShort
 biolockj -e $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_13_ext_mods_docker
 biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_13full_ext_mods_docker
 biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_14_g
@@ -269,7 +285,7 @@ check_it
 id=test_15full_w
 biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 # verify that bash times out in waiting, unless --wait-for-start is used
 export BIOLOCKJ_TEST_MODE=""
@@ -277,16 +293,17 @@ export BIOLOCKJ_TEST_MODE=""
 
 id=test_15full_longWait
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_15full_w_longWait
 biolockj --external-modules ${SHEP}/MockMain/dist -w ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
+sleep 1
 
 id=test_17full_restart
 biolockj --external-modules ${SHEP}/MockMain/dist \
@@ -303,11 +320,12 @@ check_it
 
 
 echo ""
+echo "Ran $TOTAL_TESTS tests on bash command line args."
 if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
 	numFailed=$((TOTAL_TESTS - PASSING_TESTS))
 	echo "There were $numFailed tests that FAILED !!!"
 	exit 1
 else
-	echo "Basic tests of bash command line args: PASSING"
+	echo "All $PASSING_TESTS tests PASS."
 	exit 0
 fi
