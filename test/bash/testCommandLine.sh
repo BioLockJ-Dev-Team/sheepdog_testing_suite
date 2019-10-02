@@ -301,7 +301,7 @@ check_it g
 
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 sleep 1
 
@@ -315,7 +315,7 @@ echo "MASTER_PROP: $MASTER_PROP" 1>> $OUT/${id}.out
 echo "configToFail.fail=N" >> $MASTER_PROP
 biolockj --external-modules ${SHEP}/MockMain/dist \
 	--restart $RESTART_DIR 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 
 
