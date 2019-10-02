@@ -1,6 +1,6 @@
 biolockj requires at least one argument.
 
-BioLockJ v1.2.1 - UNCC Fodor Lab July 2018
+BioLockJ v1.2.2 - UNCC Fodor Lab July 2018
 Usage:
   biolockj [options] <config|pipeline>
 
