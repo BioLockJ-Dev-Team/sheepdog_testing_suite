@@ -1,0 +1,7 @@
+Most recent sheepdog commit: v1.2.1-a-15-g9ba0db7
+Most recent BioLockJ commit: v1.2.2
+Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_5_2019Oct02
+-->It completed.
+Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_6_2019Oct02
+-->It completed.
+Ran 2 basic launch process tests, all PASSED.
