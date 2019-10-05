@@ -110,7 +110,7 @@ public class TestBioLockJ
 			writeComments(writer);
 			writer.write( String.join( Constants.TAB_DELIM, outputHeader ) + System.lineSeparator() );
 			
-			clearPipelines();
+			if ( shouldClearPipelines(args) ) clearPipelines();
 			
 			for( TestInfoRow test : tests ){
 				System.err.println("=====");
@@ -316,6 +316,14 @@ public class TestBioLockJ
 			System.err.println(cmd);
 		}
 		return( version );
+	}
+	
+	protected static boolean shouldClearPipelines(String[] args) {
+		boolean clear = true;
+		if ( args.length > 1 ) {
+			clear = ! (new File(args[1])).exists();
+		}
+		return clear;
 	}
 	
 	protected static void clearPipelines() throws IOException {
