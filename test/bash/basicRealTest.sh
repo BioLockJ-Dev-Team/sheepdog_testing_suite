@@ -8,6 +8,13 @@ countPipelines(){
 getPipeInfo(){ 
 	blj_go > /dev/null
 	pipeName=`pwd`
+	if [ -f biolockjStarted ]; then
+		printf "It is running"
+		while [ -f biolockjStarted ]; do
+			printf "."
+			sleep 1
+		done
+	fi
 	if [ -f biolockjComplete ] ; then
 		STATUS="It completed."
 		PASSING_TESTS=$((PASSING_TESTS + 1))
@@ -21,8 +28,9 @@ getPipeInfo(){
 wrap_cmd_with_check(){
 	TOTAL_TESTS=$((TOTAL_TESTS + 1))
 	CMD="$@"
+	echo " Test $TOTAL_TESTS ---> $CMD"
 	NUM_PIPES_PREV=$(countPipelines)
-	($CMD) > /dev/null
+	$CMD
 	sleep 1
 	NUM_PIPES_NOW=$(countPipelines)
 
