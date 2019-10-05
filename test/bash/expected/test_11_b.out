@@ -2,7 +2,7 @@
  ---------> Execute CMD [  biolockj -b configFile/example.properties  ]
 error: unrecognized short-form argument [ -b ].
 
-BioLockJ v1.2.2 - UNCC Fodor Lab July 2018
+BioLockJ v1.2.3 - UNCC Fodor Lab July 2018
 Usage:
   biolockj [options] <config|pipeline>
 
