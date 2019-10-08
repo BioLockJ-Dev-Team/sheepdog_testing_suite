@@ -20,5 +20,3 @@ Options:
                                 this replaces BioLockJ packaged in a docker container with the local copy.
       --blj_proj <dir>          Directory that contains BioLockJ pipelines. If not supplied, 
                                 biolockj will use the value of environment variable "BLJ_PROJ".
-      --blj_sup <dir>           Map <dir> folder into the docker container as /app/blj_support,
-                                if <dir> is not given, variable $BLJ_SUP is used
