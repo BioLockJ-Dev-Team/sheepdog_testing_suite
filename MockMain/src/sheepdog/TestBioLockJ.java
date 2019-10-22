@@ -222,7 +222,7 @@ public class TestBioLockJ
 		}else if ( ! test.bash_args.isEmpty() && ! test.java_args.isEmpty() ) {
 			throw new Exception("Can't use both " + BASH_ARGS_COL + " and " + JAVA_ARGS_COL + " in the same test." );
 		}else {
-			cmd = "biolockj --blj_proj " + Config.replaceEnvVar(TMP_PROJ) + " -f " 
+			cmd = "biolockj -f --blj_proj " + Config.replaceEnvVar(TMP_PROJ) + " " 
 							+ Config.replaceEnvVar(test.bash_args) + " " + test.config;
 		}
 		System.err.println("Command for subprocess: " + cmd);
