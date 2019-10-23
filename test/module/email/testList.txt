@@ -1,2 +1,3 @@
 ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
 ${SHEP}/test/module/email/email.properties		BioLockJ_Complete	full pipeline
+${SHEP}/test/module/email/email_noAddress.properties		ConfigNotFoundException	should get good message about needing an address
