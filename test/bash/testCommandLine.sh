@@ -218,20 +218,18 @@ biolockj --docker --blj $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --blj $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
-id=test_12_bljsup
-biolockj --docker --blj_sup $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
-
-id=test_12full_bljsup
-biolockj --docker --blj_sup $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --blj_sup $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+id=test_12_e
+biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
-id=test_12full_bljsup_arg
-biolockj --docker --blj_sup $SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --blj_sup $SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+id=test_12_env-var
+biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
+id=test_12full_env-var
+biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_docker --docker -e SHEP=$SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
 
 id=test_13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -240,10 +238,6 @@ check_it g
 id=test_13full_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it g
-
-id=test_13_ext_mods_noShort
-biolockj -e $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
 id=test_13_ext_mods_docker
