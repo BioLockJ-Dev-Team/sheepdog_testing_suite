@@ -317,7 +317,13 @@ biolockj --external-modules ${SHEP}/MockMain/dist \
 	--restart $RESTART_DIR 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
-
+id=test_18_jar_info
+# note that the output of version and help is sent to std err, not std out
+java -jar $BLJ/dist/BioLockJ.jar --help 2> $OUT/${id}.out 1>$OUT/${id}.err
+java -jar $BLJ/dist/BioLockJ.jar -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
+java -jar $BLJ/dist/BioLockJ.jar --version 2>> $OUT/${id}.out 1>>$OUT/${id}.err
+java -jar $BLJ/dist/BioLockJ.jar -version 2>> $OUT/${id}.out 1>>$OUT/${id}.err
+check_it g
 
 echo ""
 echo "Ran $TOTAL_TESTS tests on bash command line args."
