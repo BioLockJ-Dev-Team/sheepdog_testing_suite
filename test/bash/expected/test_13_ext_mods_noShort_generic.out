@@ -2,7 +2,7 @@
 ---------> Execute CMD [ biolockj <SHEP>/MockMain/dist configFile/example.properties ]
 error: unrecognized short-form argument [ -e ].
 
-BioLockJ v1.2.3 - UNCC Fodor Lab July 2018
+BioLockJ <VERSION> - UNCC Fodor Lab July 2018
 Usage:
 biolockj [options] <config|pipeline>
 
