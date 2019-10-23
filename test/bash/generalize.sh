@@ -17,6 +17,8 @@ while read -r line; do
 	line=${line//"${DATE}"/"<DATE>"}
 	# replace current version
 	line=${line//"${VERSION}"/"<VERSION>"}
+	# replace HOME
+	line=${line//"${HOME}"/"<HOME>"}
 	# write to output
 	echo $line >> $OUTPUT_NAME	
 done < $1
