@@ -72,38 +72,38 @@ examplePipelineFP="$SHEP/test/bash/${examplePipeline}"
 
 id=test_00
 biolockj 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_01_v
 biolockj -v 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_01_version
 biolockj --version 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_02_h
 biolockj -h 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_02_help
 biolockj --help 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 
 id=test_03_typo
 biolockj -i 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_03_typos
 biolockj -ih 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_03_longTypo
 biolockj --aBadParam 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_04_f
 biolockj -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -133,17 +133,17 @@ check_it g
 id=test_6_r
 biolockj -r $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java -r $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it g
+check_it
 
 id=test_6_restart
 biolockj --restart $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --restart $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it g
+check_it
 
 id=test_6_restart_nonDir
 biolockj --restart $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --restart $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_7_d
 biolockj -d $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -199,15 +199,15 @@ check_it g
 
 id=test_10_p_noArg1
 biolockj -p -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_10_p_noArg2
 biolockj -p $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_11_b
 biolockj -b $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+check_it g
 
 id=test_11_blj
 biolockj --docker --blj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
