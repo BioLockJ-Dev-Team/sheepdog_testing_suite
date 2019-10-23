@@ -13,5 +13,5 @@ Created "<HOME>/runDockerClone.sh"
 This script will launch another instance of this docker image,
 with the same env vars + volumes, but in interactive mode.
 
-Docker container id: KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname CCI0PHJGH5AWS -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <HOME>:/home/ec2-user:delegated -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockj/biolockj_controller
+Docker container id: <ID_STRING>
 KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname CCI0PHJGH5AWS -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <HOME>:/home/ec2-user:delegated -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockj/biolockj_controller

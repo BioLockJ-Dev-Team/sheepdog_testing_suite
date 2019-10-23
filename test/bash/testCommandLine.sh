@@ -296,8 +296,13 @@ check_it g
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
-
 sleep 1
+
+id=test_16full_fail_docker
+biolockj -e SHEP=$SHEP --blj -d --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it g
+sleep 1
+
 
 id=test_17full_restart
 biolockj --external-modules ${SHEP}/MockMain/dist \
@@ -325,7 +330,6 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
   && [ $(grep "Build" $OUT/${id}.out | wc -l ) -eq 2 ] \
   && [ $(cat $OUT/${id}.out | wc -l ) -eq 2 ] \
   && PASSING_TESTS=$((PASSING_TESTS + 1))
-
 
 echo ""
 echo "Ran $TOTAL_TESTS tests on bash command line args."

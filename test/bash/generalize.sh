@@ -7,6 +7,8 @@ DATE=$(date '+%Y%b%d')
 VERSION=$(cat ${SHEP}/biolockjVersion)
 
 while read -r line; do
+	# replace the container id
+	line=${line//Docker\ container\ id:\ */"Docker container id: <ID_STRING>"}
 	# replace SHEP
 	line=${line//"${SHEP}"/"<SHEP>"}
 	# replace BLJ_PROJ
