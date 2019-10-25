@@ -1,0 +1,7 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/GenMod/GenModR_String.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test RScript w/ Rcript String in launcher property
+${SHEP}/test/module/GenMod/GenModPython.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Python Script
+${SHEP}/test/module/GenMod/GenModPythonArg.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Python Script with args and launcher property
+${SHEP}/test/module/GenMod/GenModBash.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Bash
+${SHEP}/test/module/GenMod/GenModBroken.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	Basic Run: Test CheckDependecies() 
+${SHEP}/test/module/GenMod/GenModNoContainer.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	Get correct error if missing container property
