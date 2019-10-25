@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# specialExecutable
+
+# I'm not really special,
+# I'm actually just simple shell script in disguise.
+
+cp ./0* ../output/.

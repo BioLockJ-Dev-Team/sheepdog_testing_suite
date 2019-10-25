@@ -12,9 +12,15 @@ testCollectionName=docker
 
 beforeTests 
 
+# feature tests
+DIR=${SHEP}/test/feature
+runTestSet ${DIR}/defaultProps/docker_testList.txt
+runTestSet ${DIR}/exeProps/docker_testList.txt
+
 # module tests
 DIR=${SHEP}/test/module
 runTestSet ${DIR}/assembly/docker_testList.txt 
+runTestSet ${DIR}/GenMod/docker_testList.txt
 runTestSet ${DIR}/validationUtil/docker_testList.txt
 #runTestSet ${DIR}/kraken2/docker_testList.txt 
 

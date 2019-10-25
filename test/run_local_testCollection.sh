@@ -12,6 +12,11 @@ testCollectionName=local
 
 beforeTests # see testCollectionInfo.sh
 
+# feature tests
+DIR=${SHEP}/test/feature
+runTestSet ${DIR}/defaultProps/testList.txt
+runTestSet ${DIR}/exeProps/testList.txt
+
 # module tests
 DIR=${SHEP}/test/module
 #runTestSet ${DIR}/assembly/testList.txt   

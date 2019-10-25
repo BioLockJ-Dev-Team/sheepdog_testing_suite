@@ -1,0 +1,9 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/defaultProps/noDefaultProps.properties	 --external-modules ${SHEP}/MockMain/dist --blj --docker -e SHEP=${SHEP}	1	BioLockJ_Complete	no defaults to read
+${SHEP}/test/feature/defaultProps/checkCustomProp.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
+${SHEP}/test/feature/defaultProps/checkCustomPropFail.properties	 --blj --docker -e SHEP=${SHEP} 	0	DirectModuleException	
+${SHEP}/test/feature/defaultProps/checkBranching.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
+${SHEP}/test/feature/defaultProps/checkBranchingConflicts.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
+${SHEP}/test/feature/defaultProps/checkLayer3MakesIt.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
+${SHEP}/test/feature/defaultProps/checkPrimaryWins.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
+${SHEP}/test/feature/defaultProps/badFilePath.properties	 --blj --docker -e SHEP=${SHEP} 	0	ConfigPathException	
