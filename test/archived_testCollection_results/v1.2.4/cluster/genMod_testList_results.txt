@@ -1,0 +1,14 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 7
+# Total test runtime: 00 hours : 01 minutes : 26 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.4 Build: v1.2.4-0-geef577d
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModR.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModR_2019Nov01	NO	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test RScript
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModR_UseEXE.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModR_UseEXE_2019Nov01	NO	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test RScript w/ EXE()
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModR_String.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModR_String_2019Nov01	NO	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test RScript w/ Rcript String in launcher property
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModPython.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModPython_2019Nov01	NO	NA	3	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test Python Script
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModPythonArg.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModPythonArg_2019Nov01	NO	NA	3	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test Python Script with args and launcher property
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModBash.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModBash_2019Nov01	NO	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test Bash
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModBroken.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/GenModBroken_2019Nov01	NO	NA	0	ConfigNotFoundException	ConfigNotFoundException	PASS	Basic Run: Test CheckDependecies() 

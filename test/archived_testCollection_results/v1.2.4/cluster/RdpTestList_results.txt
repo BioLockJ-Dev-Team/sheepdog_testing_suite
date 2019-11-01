@@ -1,0 +1,9 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 2
+# Total test runtime: 00 hours : 02 minutes : 11 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.4 Build: v1.2.4-0-geef577d
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/justRDP.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/justRDP_2019Nov01	YES	4	4	BioLockJ_Complete	BioLockJ_Complete	PASS	basic defaults
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/verifyRDPParser.properties		 --external-modules ${SHEP}/MockMain/dist	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/verifyRDPParser_2019Nov01	NO	5	5	BioLockJ_Complete	BioLockJ_Complete	PASS	basic defaults

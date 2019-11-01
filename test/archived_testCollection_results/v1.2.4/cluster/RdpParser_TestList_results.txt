@@ -1,0 +1,9 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 2
+# Total test runtime: 00 hours : 00 minutes : 12 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.4 Build: v1.2.4-0-geef577d
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdpParser/justRdpParser.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/justRdpParser_2019Nov01	NO	2	2	BioLockJ_Complete	BioLockJ_Complete	PASS	basic Parser
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdpParser/rdpParserToTaxaTables.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/rdpParserToTaxaTables_2019Nov01	NO	3	3	BioLockJ_Complete	BioLockJ_Complete	PASS	parser and make tables
