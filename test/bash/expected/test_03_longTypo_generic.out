@@ -1,0 +1,26 @@
+
+---------> Execute CMD [ biolockj --aBadParam ]
+error: unrecognized argument [ aBadParam ].
+
+BioLockJ <VERSION> - UNCC Fodor Lab July 2018
+Usage:
+biolockj [options] <config|pipeline>
+
+Options:
+-v --version Show version
+-h --help Show help menu
+-r --restart Resume an existing pipeline
+-c --config-override <file> New config file (if restarting a pipeline)
+-p --password <password> Encrypt password
+-d --docker Run in docker
+-a --aws Run on aws
+-g --gui Start the BioLockJ GUI
+-f --foreground Run the java process in the foreground without nohup
+-w --wait-for-start Do not release terminal until pipeline completes check-dependencies step.
+--external-modules <dir> Directory with compiled java code giving additional modules
+--blj Map $BLJ folder into the docker container;
+this replaces BioLockJ packaged in a docker container with the local copy.
+--blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
+biolockj will use the value of environment variable "BLJ_PROJ".
+--blj_sup <dir> Map <dir> folder into the docker container as /app/blj_support,
+if <dir> is not given, variable $BLJ_SUP is used
