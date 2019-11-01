@@ -1,0 +1,47 @@
+Fri Nov  1 14:38:19 EDT 2019
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/assembly/docker_testList.txt
+Read in list of 1 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/assembly/docker_testList_results_NOT_IN_GIT.txt
+Moved 46 directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --blj --docker /Users/ieclabau/git/sheepdog_testing_suite/test/module/assembly/test_assembly_docker.properties
+This pipeline completed 2 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 1
+Total test runtime: 00 hours : 00 minutes : 10 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/docker_testList.txt
+Read in list of 2 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/docker_testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --blj --docker /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --docker /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties
+This pipeline completed 5 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 30 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/docker/docker_testList.txt
+Read in list of 1 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/docker/docker_testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --blj --docker /Users/ieclabau/git/sheepdog_testing_suite/test/docker/onlyJavaModules.properties
+This pipeline completed 5 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 1
+Total test runtime: 00 hours : 00 minutes : 16 seconds
+
+* * * * * * * * * * * * * * * * * * * *
+Total time to run docker test collection:  0 minutes

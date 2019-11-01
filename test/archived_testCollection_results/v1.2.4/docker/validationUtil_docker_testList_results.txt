@@ -1,0 +1,9 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 2
+# Total test runtime: 00 hours : 00 minutes : 30 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.4 Build: v1.2.4-0-geef577d9
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties		 --blj --docker	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/part1_noExpectation_2019Nov01	NO	5	5	BioLockJ_Complete	BioLockJ_Complete	PASS	"part1 - no expectation file, no validation configurations"
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties		 --docker	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/part1_noExpectation_2_2019Nov01	NO	5	5	BioLockJ_Complete	BioLockJ_Complete	PASS	test the current DOCKER CONTAINER rather than the current BLJ_JAR

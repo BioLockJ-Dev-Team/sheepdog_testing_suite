@@ -1,0 +1,205 @@
+Fri Nov  1 14:42:35 EDT 2019
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/email/testList.txt
+Read in list of 2 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/email/testList_results_NOT_IN_GIT.txt
+Moved 4 directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/email/email.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/email/email_noAddress.properties
+This pipeline completed 0 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 05 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/RdpTestList.txt
+Read in list of 2 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/RdpTestList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdp/verifyRDPParser.properties
+This pipeline completed 5 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 41 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdpParser/RdpParser_TestList.txt
+Read in list of 2 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdpParser/RdpParser_TestList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdpParser/justRdpParser.properties
+This pipeline completed 2 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdpParser/rdpParserToTaxaTables.properties
+This pipeline completed 3 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 06 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/testList.txt
+Read in list of 12 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part2_goodExp.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part3_badFormatExp.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part4_missingExp.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part5_validationExcept_passModule.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part6_limitComparOn.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part7_limitReportOn_compareOn.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part8_badAttribute.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part9_softValidation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part10_fileNotListed.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part9b_badSizes.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part11_outputSubdirectories.properties
+This pipeline completed 4 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 12
+Total test runtime: 00 hours : 00 minutes : 19 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/Kraken2ParserTestList.txt
+Read in list of 2 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/Kraken2ParserTestList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/justKraken2Parser.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/reparseKraken2Parser.properties
+This pipeline completed 7 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 10 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/testList.txt
+Read in list of 7 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModR.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModR_UseEXE.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModR_String.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModPython.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModPythonArg.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModBash.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModBroken.properties
+This pipeline completed 0 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 7
+Total test runtime: 00 hours : 00 minutes : 22 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/resources/testList.txt
+Read in list of 12 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/resources/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part2_goodExp.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part3_badFormatExp.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part4_missingExp.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part5_validationExcept_passModule.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part6_limitComparOn.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part7_limitReportOn_compareOn.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part8_badAttribute.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part9_softValidation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part10_fileNotListed.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part9b_badSizes.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/part11_outputSubdirectories.properties
+This pipeline completed 4 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 12
+Total test runtime: 00 hours : 00 minutes : 19 seconds
+==========================================================
+Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/local/testList.txt
+Read in list of 1 tests
+Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/local/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -f  /Users/ieclabau/git/sheepdog_testing_suite/test/local/RdpPipeline.properties
+This pipeline completed 17 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 1
+Total test runtime: 00 hours : 01 minutes : 29 seconds
+
+* * * * * * * * * * * * * * * * * * * *
+Total time to run local test collection:  3 minutes
