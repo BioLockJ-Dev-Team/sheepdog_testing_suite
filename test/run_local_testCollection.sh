@@ -20,13 +20,13 @@ runTestSet ${DIR}/exeProps/testList.txt
 # module tests
 DIR=${SHEP}/test/module
 #runTestSet ${DIR}/assembly/testList.txt   
-runTestSet ${DIR}/email/testList.txt     
+runTestSet ${DIR}/email/testList.txt    
+runTestSet ${DIR}/GenMod/testList.txt 
+#runTestSet ${DIR}/kraken2/testList.txt   
+runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt 
 runTestSet ${DIR}/rdp/RdpTestList.txt 
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
 runTestSet ${DIR}/validationUtil/testList.txt 
-#runTestSet ${DIR}/kraken2/testList.txt   
-runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt 
-runTestSet ${DIR}/GenMod/testList.txt 
 
 # the sheepdog quickstart example
 DIR=${SHEP}/MockMain/resources
