@@ -1,0 +1,24 @@
+Most recent sheepdog commit: v1.2.4-21-gf71823e
+Most recent BioLockJ commit: v1.2.5
+ Test 1 ---> biolockj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2019Nov06
+blj_go       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+Pipeline is complete.
+Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2019Nov06
+-->It completed.
+ Test 2 ---> biolockj --docker /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 9f60b14b3dddcc45bafb992bd512a685207ebf69477feac67e253de06295f48a
+Initializing BioLockJ..
+Docker started; but the pipeline did not.
+Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2019Nov06
+-->It completed.
+Ran 2 basic launch process tests, all PASSED.

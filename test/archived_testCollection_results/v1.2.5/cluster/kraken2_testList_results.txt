@@ -1,0 +1,8 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 1
+# Total test runtime: 00 hours : 00 minutes : 59 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.5 Build: v1.2.5-0-g6c354e0
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2/justKraken2.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/justKraken2_2019Nov06	NO	NA	4	BioLockJ_Complete	BioLockJ_Complete	PASS	just the parser
