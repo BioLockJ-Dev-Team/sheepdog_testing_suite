@@ -1,2 +1,2 @@
 ConfigFile	NumberShouldComplete	bash_biolockj_args	ExpectedOutcome	Notes
-${SHEP}/test/module/assembly/test_assembly_docker.properties		 --blj --docker	BioLockJ_Complete	full pipeline
+${SHEP}/test/module/assembly/test_assembly_docker.properties		 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	full pipeline

@@ -1,0 +1,9 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 2
+# Total test runtime: 00 hours : 00 minutes : 11 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.5 Build: v1.2.5-0-g6c354e02
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/email/email.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/email_2019Nov06	NO	NA	3	BioLockJ_Complete	BioLockJ_Complete	PASS	full pipeline
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/email/email_noAddress.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/email_noAddress_2019Nov06	NO	NA	0	ConfigNotFoundException	ConfigNotFoundException	PASS	should get good message about needing an address

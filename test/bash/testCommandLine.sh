@@ -218,20 +218,18 @@ biolockj --docker --blj $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --blj $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
-id=test_12_bljsup
-biolockj --docker --blj_sup $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
-
-id=test_12full_bljsup
-biolockj --docker --blj_sup $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --blj_sup $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+id=test_12_e
+biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
-id=test_12full_bljsup_arg
-biolockj --docker --blj_sup $SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --blj_sup $SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+id=test_12_env-var
+biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
+id=test_12full_env-var
+biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_docker --docker -e SHEP=$SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
 
 id=test_13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -240,10 +238,6 @@ check_it g
 id=test_13full_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it g
-
-id=test_13_ext_mods_noShort
-biolockj -e $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
 id=test_13_ext_mods_docker
@@ -302,8 +296,13 @@ check_it g
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
-
 sleep 1
+
+id=test_16full_fail_docker
+biolockj -e SHEP=$SHEP --blj -d --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it g
+sleep 1
+
 
 id=test_17full_restart
 biolockj --external-modules ${SHEP}/MockMain/dist \
@@ -317,7 +316,20 @@ biolockj --external-modules ${SHEP}/MockMain/dist \
 	--restart $RESTART_DIR 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
+id=test_18_jar_help
+# note that the output of version and help is sent to std err, not std out
+java -jar $BLJ/dist/BioLockJ.jar --help 2> $OUT/${id}.out 1>$OUT/${id}.err
+java -jar $BLJ/dist/BioLockJ.jar -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
+check_it g
 
+id=test_19_jar_version
+java -jar $BLJ/dist/BioLockJ.jar --version &> $OUT/${id}.out
+java -jar $BLJ/dist/BioLockJ.jar -version >> $OUT/${id}.out
+TOTAL_TESTS=$((TOTAL_TESTS + 1))
+[ $(grep "BioLockJ v" $OUT/${id}.out | wc -l ) -eq 2 ] \
+  && [ $(grep "Build" $OUT/${id}.out | wc -l ) -eq 2 ] \
+  && [ $(cat $OUT/${id}.out | wc -l ) -eq 2 ] \
+  && PASSING_TESTS=$((PASSING_TESTS + 1))
 
 echo ""
 echo "Ran $TOTAL_TESTS tests on bash command line args."

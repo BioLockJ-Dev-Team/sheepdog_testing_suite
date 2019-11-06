@@ -9,9 +9,9 @@ Using <SHEP>/test/bash/configFile/example.properties as the config file.
 args used: docker
 configFile = <SHEP>/test/bash/configFile/example.properties
 restartDir =
-Created "/Users/ieclabau/runDockerClone.sh"
+Created "<HOME>/runDockerClone.sh"
 This script will launch another instance of this docker image,
 with the same env vars + volumes, but in interactive mode.
 
-Docker container id: KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-u /Users/ieclabau -b <SHEP>/MockMain/pipelines -h CCI0PHJGH5AWS -i <SHEP>/test/bash/expected -c <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau:/home/ec2-user:delegated -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/expected:/mnt/efs/input:ro -v <SHEP>/test/bash/configFile:/mnt/efs/config:ro biolockj/biolockj_controller
-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-u /Users/ieclabau -b <SHEP>/MockMain/pipelines -h CCI0PHJGH5AWS -i <SHEP>/test/bash/expected -c <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau:/home/ec2-user:delegated -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/expected:/mnt/efs/input:ro -v <SHEP>/test/bash/configFile:/mnt/efs/config:ro biolockj/biolockj_controller
+Docker container id: <ID_STRING>
+KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname CCI0PHJGH5AWS -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <HOME>:/home/ec2-user:delegated -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockj/biolockj_controller

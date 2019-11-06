@@ -1,0 +1,159 @@
+Wed Nov  6 11:21:15 EST 2019
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/RdpTestList.txt
+Read in list of 3 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/RdpTestList_results_NOT_IN_GIT.txt
+Moved 28 directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/justRDP.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines --external-modules /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/dist /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/verifyRDPParser.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdp/rdp_noJarPath.properties
+This pipeline completed 0 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 3
+Total test runtime: 00 hours : 00 minutes : 40 seconds
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdpParser/RdpParser_TestList.txt
+Read in list of 2 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdpParser/RdpParser_TestList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdpParser/justRdpParser.properties
+This pipeline completed 2 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/rdpParser/rdpParserToTaxaTables.properties
+This pipeline completed 3 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 11 seconds
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/testList.txt
+Read in list of 12 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part1_noExpectation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part2_goodExp.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part3_badFormatExp.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part4_missingExp.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part5_validationExcept_passModule.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part6_limitComparOn.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part7_limitReportOn_compareOn.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part8_badAttribute.properties
+This pipeline completed 0 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines --external-modules /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/dist /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part9_softValidation.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines --external-modules /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/dist /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part10_fileNotListed.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines --external-modules /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/dist /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part9b_badSizes.properties
+This pipeline completed 4 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/validationUtil/part11_outputSubdirectories.properties
+This pipeline completed 4 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 12
+Total test runtime: 00 hours : 00 minutes : 25 seconds
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2/testList.txt
+Read in list of 1 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2/justKraken2.properties
+This pipeline completed 4 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 1
+Total test runtime: 00 hours : 00 minutes : 59 seconds
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2Parser/Kraken2ParserTestList.txt
+Read in list of 2 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2Parser/Kraken2ParserTestList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines --external-modules /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/dist /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2Parser/justKraken2Parser.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines --external-modules /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/dist /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/kraken2Parser/reparseKraken2Parser.properties
+This pipeline completed 7 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 2
+Total test runtime: 00 hours : 00 minutes : 19 seconds
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/testList.txt
+Read in list of 7 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModR.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModR_UseEXE.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModR_String.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModPython.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModPythonArg.properties
+This pipeline completed 3 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModBash.properties
+This pipeline completed 5 modules.
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/GenMod/GenModBroken.properties
+This pipeline completed 0 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 7
+Total test runtime: 00 hours : 00 minutes : 31 seconds
+==========================================================
+Reading test list from: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/local/testList.txt
+Read in list of 1 tests
+Test results will be written to: /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/local/testList_results_NOT_IN_GIT.txt
+=====
+Command for subprocess: biolockj -f --blj_proj /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines  /nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/local/RdpPipeline.properties
+This pipeline completed 17 modules.
+
+DONE!
+
+Number of tests that failed:   0
+Number of tests that were run: 1
+Total test runtime: 00 hours : 01 minutes : 03 seconds
+
+* * * * * * * * * * * * * * * * * * * *
+Total time to run cluster test collection:  4 minutes

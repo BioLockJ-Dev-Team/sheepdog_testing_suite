@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/rdpParser/justRdpParser.properties	 --blj --docker -e SHEP=${SHEP}	2	BioLockJ_Complete	basic Parser
+${SHEP}/test/module/rdpParser/rdpParserToTaxaTables.properties	 --blj --docker -e SHEP=${SHEP}	3	BioLockJ_Complete	parser and make tables

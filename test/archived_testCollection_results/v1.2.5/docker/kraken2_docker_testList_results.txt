@@ -1,0 +1,8 @@
+# Number of tests that failed:   1
+# Number of tests that were run: 1
+# Total test runtime: 00 hours : 00 minutes : 01 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.5 Build: v1.2.5-0-g6c354e02
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2/docker_justKraken2.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/docker_justKraken2_2019Nov06	NO	NA	0	BioLockJ_Complete	ConfigNotFoundException	FAIL	just the parser

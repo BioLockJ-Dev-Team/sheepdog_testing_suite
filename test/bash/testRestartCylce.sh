@@ -2,31 +2,54 @@
 
 . $BLJ/script/blj_functions
 
-export BLJ_PROJ=${SHEP}/test/bash/pipelines
-[ ! -d $BLJ_PROJ ] && mdir $BLJ_PROJ
+useDocker=$([ ${#1} -gt 0 ] && [ $1 == "docker" ] && echo "true" || echo "false" )
+if [ $useDocker == "true" ]; then
+	echo "Use docker"
+	dOpt="-d --blj -e SHEP=$SHEP"
+else 
+	echo "Don't use docker"
+	dOpt=""
+fi
+echo ""
 
-biolockj --external-modules ${SHEP}/MockMain/dist \
-         ${SHEP}/test/bash/configFile/configToFail.properties
+MY_PIPELINES=${SHEP}/test/bash/pipelines
+rm -rf $MY_PIPELINES
+export BLJ_PROJ=$MY_PIPELINES
+[ ! -d $BLJ_PROJ ] && mkdir -p $BLJ_PROJ/previousDir
+
+echo ""
+echo "Part 1"
+CMD1="biolockj --external-modules ${SHEP}/MockMain/dist $dOpt \
+         ${SHEP}/test/bash/configFile/configToFail.properties"
+echo $CMD1
+$CMD1
         
 RESTART_DIR=$(most_recent_pipeline)
+while [ -f $RESTART_DIR/biolockjStarted ]; do sleep 1; done
 
 cp -r $RESTART_DIR ${RESTART_DIR}_run1
 
-sleep 1
+echo ""
+echo "Part 2"
+CMD2="biolockj --external-modules ${SHEP}/MockMain/dist $dOpt \
+		 --restart $RESTART_DIR"
+echo "$CMD2"
+$CMD2
 
-biolockj --external-modules ${SHEP}/MockMain/dist \
-		 --restart $RESTART_DIR
+while [ -f $RESTART_DIR/biolockjStarted ]; do sleep 1; done
 
 cp -r $RESTART_DIR ${RESTART_DIR}_run2
 
 MASTER_PROP=$(ls $RESTART_DIR/MASTER*.properties)
 echo "configToFail.fail=N" >> $MASTER_PROP
 
-sleep 1
 
-biolockj --external-modules ${SHEP}/MockMain/dist \
-		 --restart $RESTART_DIR
+echo ""
+echo "Part 3"
+echo "$CMD2"
+$CMD2
 
+while [ -f $RESTART_DIR/biolockjStarted ]; do sleep 1; done
 
 run1_mod3=$( cat ${RESTART_DIR}_run1/03*/output/*txt )
 run1_mod4=$( cat ${RESTART_DIR}_run1/04*/output/*txt )

@@ -18,6 +18,8 @@ do_bash_test ${SHEP}/test/bash/testCommandLine.sh
 
 do_bash_test ${SHEP}/test/bash/testRestartCylce.sh
 
+do_bash_test ${SHEP}/test/bash/testRestartCylce_inDocker.sh
+
 do_bash_test ${SHEP}/test/bash/basicRealTest.sh
 
 echo ""

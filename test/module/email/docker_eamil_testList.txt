@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/email/email.properties	 --blj --docker -e SHEP=${SHEP}		BioLockJ_Complete	full pipeline
+${SHEP}/test/module/email/email_noAddress.properties	 --blj --docker -e SHEP=${SHEP}		ConfigNotFoundException	should get good message about needing an address

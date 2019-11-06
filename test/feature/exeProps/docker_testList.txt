@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/exeProps/useMyExecutable.properties 	 --blj --docker -e SHEP=${SHEP}	1	DirectModuleException	The exe path given is not valid in the docker container
+${SHEP}/test/feature/exeProps/useMyExecutable_inDocker.properties 	 --blj --docker -e SHEP=${SHEP}	2	BioLockJ_Complete	
