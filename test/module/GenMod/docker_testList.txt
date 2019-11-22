@@ -5,3 +5,4 @@ ${SHEP}/test/module/GenMod/GenModPythonArg.properties	 --blj --docker -e SHEP=${
 ${SHEP}/test/module/GenMod/GenModBash.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Bash
 ${SHEP}/test/module/GenMod/GenModBroken.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	Basic Run: Test CheckDependecies() 
 ${SHEP}/test/module/GenMod/GenModNoContainer.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	Get correct error if missing container property
+${SHEP}/test/module/GenMod/GenModMultiple.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	test for AS syntax

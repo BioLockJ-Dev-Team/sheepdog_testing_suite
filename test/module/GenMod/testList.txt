@@ -6,3 +6,4 @@ ${SHEP}/test/module/GenMod/GenModPython.properties	BioLockJ_Complete	Basic Run: 
 ${SHEP}/test/module/GenMod/GenModPythonArg.properties	BioLockJ_Complete	Basic Run: Test Python Script with args and launcher property
 ${SHEP}/test/module/GenMod/GenModBash.properties	BioLockJ_Complete	Basic Run: Test Bash
 ${SHEP}/test/module/GenMod/GenModBroken.properties	ConfigNotFoundException	Basic Run: Test CheckDependecies() 
+${SHEP}/test/module/GenMod/GenModMultiple.properties	BioLockJ_Complete	test for AS syntax
