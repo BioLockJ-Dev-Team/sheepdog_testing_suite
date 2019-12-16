@@ -1,2 +1,2 @@
-ConfigFile	Environment	ExpectedOutcome	Notes
-${SHEP}/test/module/kraken2/docker_justKraken2.properties	docker	BioLockJ_Complete	just the parser
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/kraken2/docker_justKraken2.properties	 --blj --docker -e SHEP=${SHEP} 	BioLockJ_Complete	simplest case of classifier
