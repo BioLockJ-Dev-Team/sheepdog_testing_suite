@@ -1,0 +1,4 @@
+ConfigFile	ExpectedOutcome	Notes
+${SHEP}/test/feature/asSyntax/checkAs.properties	BioLockJ_Complete	test for AS syntax
+${SHEP}/test/feature/asSyntax/aliasNameError.properties	PipelineFormationException	Alias should not start with lower case letter
+${SHEP}/test/feature/asSyntax/noDuplicateNames.properties	PipelineFormationException	Don't allow an alias to create a duplicated name within a pipeline
