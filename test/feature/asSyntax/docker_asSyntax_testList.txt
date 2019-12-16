@@ -1,0 +1,4 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/feature/asSyntax/checkAs.properties	 --blj --docker -e SHEP=${SHEP} 	BioLockJ_Complete	test for AS syntax
+${SHEP}/test/feature/asSyntax/aliasNameError.properties	 --blj --docker -e SHEP=${SHEP} 	PipelineFormationException	Alias should not start with lower case letter
+${SHEP}/test/feature/asSyntax/noDuplicateNames.properties	 --blj --docker -e SHEP=${SHEP} 	PipelineFormationException	Don't allow an alias to create a duplicated name within a pipeline

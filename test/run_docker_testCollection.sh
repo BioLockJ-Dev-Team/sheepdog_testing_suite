@@ -16,6 +16,7 @@ beforeTests
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/defaultProps/docker_testList.txt
 runTestSet ${DIR}/exeProps/docker_testList.txt
+runTestSet ${DIR}/asSyntax/docker_asSyntax_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module

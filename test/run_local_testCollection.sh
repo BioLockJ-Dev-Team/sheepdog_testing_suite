@@ -16,6 +16,7 @@ beforeTests # see testCollectionInfo.sh
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/defaultProps/testList.txt
 runTestSet ${DIR}/exeProps/testList.txt
+runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module
