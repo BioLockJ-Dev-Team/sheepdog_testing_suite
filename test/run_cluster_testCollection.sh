@@ -16,6 +16,12 @@ beforeTests # see testCollectionInfo.sh
 DIR=${SHEP}/test/module/assembly
 #runTestSet $DIR/cluster_testList.txt
 
+# feature tests
+DIR=${SHEP}/test/feature
+runTestSet ${DIR}/defaultProps/testList.txt
+runTestSet ${DIR}/exeProps/testList.txt
+runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
+
 # In theory, any local pipeline can run on the cluster as long 
 # as the file paths are provided correctly in local.properties.
 
