@@ -1,2 +1,2 @@
 name	size	md5	MATCHED_EXPECTATION
-showThatAsWorked.txt	248	ba9ae5b6f52309a65872c41faeabcfc3	FAIL
+showThatAsWorked.txt	62	481236f265c121ed75369b4b17ae5300	FAIL

@@ -2,7 +2,7 @@
 
 OUT="../output/showThatAsWorked.txt"
 
-ls ../../0* > $OUT
+ls ../.. | grep ^0 - > $OUT
 
 #echo "" >> $OUT
 #echo "summary.txt:" >> $OUT
