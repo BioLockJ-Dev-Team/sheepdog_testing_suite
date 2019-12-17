@@ -1,0 +1,6 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/feature/metadata/create_metadata.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	"auto-create metadata, should list samples: ERR1456827_2, ERR1456828_2"
+${SHEP}/test/feature/metadata/implicit_metadata.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	import metadata is added implicitly
+${SHEP}/test/feature/metadata/create_metadata_paired.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	"with paired files, only add the sample 1 time for the two files, should create a list of 8 samples"
+${SHEP}/test/feature/metadata/metadata_badFilePath.properties	 --blj --docker -e SHEP=${SHEP}	ConfigPathException	bad file path for metadata.filePath
+${SHEP}/test/feature/metadata/metadata_filePath.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	
