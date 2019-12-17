@@ -17,10 +17,12 @@ DIR=${SHEP}/test/feature
 runTestSet ${DIR}/defaultProps/testList.txt
 runTestSet ${DIR}/exeProps/testList.txt
 runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
+runTestSet ${DIR}/metadata/metadata_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module
 #runTestSet ${DIR}/assembly/testList.txt   
+runTestSet ${DIR}/calcStats/calcStats_testList.txt
 runTestSet ${DIR}/email/testList.txt    
 runTestSet ${DIR}/GenMod/testList.txt 
 #runTestSet ${DIR}/kraken2/testList.txt   

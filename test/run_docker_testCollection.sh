@@ -17,10 +17,12 @@ DIR=${SHEP}/test/feature
 runTestSet ${DIR}/defaultProps/docker_testList.txt
 runTestSet ${DIR}/exeProps/docker_testList.txt
 runTestSet ${DIR}/asSyntax/docker_asSyntax_testList.txt
+runTestSet ${DIR}/metadata/docker_metadata_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module
 runTestSet ${DIR}/assembly/docker_testList.txt 
+#runTestSet ${DIR}/calcStats/docker_calcStats_testList.txt
 runTestSet ${DIR}/email/docker_eamil_testList.txt
 runTestSet ${DIR}/GenMod/docker_testList.txt
 runTestSet ${DIR}/kraken2/docker_testList.txt 
