@@ -21,6 +21,7 @@ DIR=${SHEP}/test/feature
 runTestSet ${DIR}/defaultProps/testList.txt
 runTestSet ${DIR}/exeProps/testList.txt
 runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
+runTestSet ${DIR}/metadata/metadata_testList.txt
 
 # In theory, any local pipeline can run on the cluster as long 
 # as the file paths are provided correctly in local.properties.
@@ -28,6 +29,7 @@ runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 # local module tests
 DIR=${SHEP}/test/module
 #runTestSet ${DIR}/assembly/testList.txt 
+runTestSet ${DIR}/calcStats/calcStats_testList.txt
 #runTestSet ${DIR}/email/testList.txt 
 runTestSet ${DIR}/rdp/RdpTestList.txt 
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt 
