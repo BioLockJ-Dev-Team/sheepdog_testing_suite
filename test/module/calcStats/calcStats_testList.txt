@@ -1,0 +1,2 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/calcStats/calcStats.properties	1	BioLockJ_Complete	basic use case
