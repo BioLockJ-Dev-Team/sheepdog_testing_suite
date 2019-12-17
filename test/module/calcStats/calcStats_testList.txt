@@ -1,2 +1,5 @@
 ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
 ${SHEP}/test/module/calcStats/calcStats.properties	1	BioLockJ_Complete	basic use case
+${SHEP}/test/module/calcStats/leaveOutRareOtuHalf.properties	1	BioLockJ_Complete	r.rareOtuThreshold=.5 (drops Acidobacteria_Gp25 from class level)
+${SHEP}/test/module/calcStats/leaveOutRareOtu5.properties	1	BioLockJ_Complete	"r.rareOtuThreshold=5, drops 7 taxa from class level"
+${SHEP}/test/module/calcStats/badVal_rareOtu.properties	0	ConfigFormatException	r.rareOtuThreshold must be positive number
