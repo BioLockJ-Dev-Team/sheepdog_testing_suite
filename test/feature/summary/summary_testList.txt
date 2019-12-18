@@ -1,0 +1,2 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/summary/waitAsec.properties		3	BioLockJ_Complete	Need to do a manual check for pipeline runtime: should be 05 seconds

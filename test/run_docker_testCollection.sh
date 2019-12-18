@@ -18,6 +18,7 @@ runTestSet ${DIR}/defaultProps/docker_testList.txt
 runTestSet ${DIR}/exeProps/docker_testList.txt
 runTestSet ${DIR}/asSyntax/docker_asSyntax_testList.txt
 runTestSet ${DIR}/metadata/docker_metadata_testList.txt
+#runTestSet ${DIR}/summary/summary_testList.txt #currently does not have functional docker tests
 
 # module tests
 DIR=${SHEP}/test/module

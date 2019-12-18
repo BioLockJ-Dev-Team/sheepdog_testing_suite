@@ -18,10 +18,11 @@ DIR=${SHEP}/test/module/assembly
 
 # feature tests
 DIR=${SHEP}/test/feature
+runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/defaultProps/testList.txt
 runTestSet ${DIR}/exeProps/testList.txt
-runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt
+runTestSet ${DIR}/summary/summary_testList.txt #currently slow and not very valuable
 
 # In theory, any local pipeline can run on the cluster as long 
 # as the file paths are provided correctly in local.properties.
