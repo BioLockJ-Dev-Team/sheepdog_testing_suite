@@ -1,0 +1,5 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/normalizeTaxa/normTaxa.properties	1	BioLockJ_Complete	basic use case
+${SHEP}/test/module/normalizeTaxa/logNormTaxa.properties	2	BioLockJ_Complete	LogTransform is automatically added
+${SHEP}/test/module/normalizeTaxa/justLogTaxa.properties	1	BioLockJ_Complete	LogTransform stands alone
+${SHEP}/test/module/normalizeTaxa/badLogScale.properties	0	ConfigFormatException	
