@@ -3,4 +3,6 @@ ${SHEP}/test/module/normalizeTaxa/normTaxa.properties	1	BioLockJ_Complete	basic 
 ${SHEP}/test/module/normalizeTaxa/logNormTaxa.properties	2	BioLockJ_Complete	LogTransform is automatically added
 ${SHEP}/test/module/normalizeTaxa/justLogTaxa.properties	1	BioLockJ_Complete	LogTransform stands alone
 ${SHEP}/test/module/normalizeTaxa/badLogScale.properties	0	ConfigFormatException	
-${SHEP}/test/module/normalizeTaxa/readPerMill.properties	3	BioLockJ_Complete	
+${SHEP}/test/module/normalizeTaxa/readsPerMill.properties	3	BioLockJ_Complete	
+${SHEP}/test/module/normalizeTaxa/numberTooBig.properties	0	BioLockJException	input values include a number too big to be a double
+${SHEP}/test/module/normalizeTaxa/infinityPlus1.properties	1	BioLockJ_Complete	
