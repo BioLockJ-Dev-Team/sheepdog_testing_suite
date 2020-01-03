@@ -6,3 +6,4 @@ ${SHEP}/test/module/normalizeTaxa/badLogScale.properties	0	ConfigFormatException
 ${SHEP}/test/module/normalizeTaxa/readsPerMill.properties	3	BioLockJ_Complete	
 ${SHEP}/test/module/normalizeTaxa/numberTooBig.properties	0	BioLockJException	input values include a number too big to be a double
 ${SHEP}/test/module/normalizeTaxa/infinityPlus1.properties	1	BioLockJ_Complete	
+${SHEP}/test/module/normalizeTaxa/normSoManyValues.properties	1	BioLockJ_Complete	check for time / memory efficiency.

@@ -1,0 +1,3 @@
+name	size	md5	MATCHED_EXPECTATION
+RdpPipeline_taxaCount_norm_class.tsv	4351	1387e74aa85792c4d5c8e91c7e0350f2	REPORT
+RdpPipeline_taxaCount_norm_phylum.tsv	1781	78cf91ba0d0e74ffd1ff02df07272399	REPORT
