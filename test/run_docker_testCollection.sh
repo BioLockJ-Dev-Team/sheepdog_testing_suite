@@ -28,6 +28,7 @@ runTestSet ${DIR}/email/docker_eamil_testList.txt
 runTestSet ${DIR}/GenMod/docker_testList.txt
 runTestSet ${DIR}/kraken2/docker_testList.txt 
 runTestSet ${DIR}/kraken2Parser/docker_Kraken2ParserTestList.txt
+runTestSet ${DIR}/normalizeTaxa/docker_normTaxa_testList.txt
 runTestSet ${DIR}/rdp/docker_RdpTestList.txt
 runTestSet ${DIR}/rdpParser/docker_RdpParser_TestList.txt
 runTestSet ${DIR}/validationUtil/docker_testList.txt

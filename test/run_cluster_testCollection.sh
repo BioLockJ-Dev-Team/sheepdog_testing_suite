@@ -38,6 +38,7 @@ runTestSet ${DIR}/validationUtil/testList.txt
 runTestSet ${DIR}/kraken2/testList.txt 
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
 runTestSet ${DIR}/GenMod/testList.txt 
+runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
 
 # full local pipeline
 runTestSet ${SHEP}/test/local/testList.txt 
