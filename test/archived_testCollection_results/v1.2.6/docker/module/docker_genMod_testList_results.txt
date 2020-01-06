@@ -1,0 +1,14 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 7
+# Total test runtime: 00 hours : 01 minutes : 07 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.6 Build: v1.2.6-0-gcc222571
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModR_String.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModR_String_2020Jan06	NO	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test RScript w/ Rcript String in launcher property
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModPython.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModPython_2020Jan06	NO	NA	3	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test Python Script
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModPythonArg.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModPythonArg_2020Jan06	NO	NA	3	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test Python Script with args and launcher property
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModBash.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModBash_2020Jan06	NO	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	Basic Run: Test Bash
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModBroken.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModBroken_2020Jan06	NO	NA	0	ConfigNotFoundException	ConfigNotFoundException	PASS	Basic Run: Test CheckDependecies() 
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModNoContainer.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModNoContainer_2020Jan06	NO	NA	0	ConfigNotFoundException	ConfigNotFoundException	PASS	Get correct error if missing container property
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/GenMod/GenModMultiple.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/GenModMultiple_2020Jan06	NO	NA	6	BioLockJ_Complete	BioLockJ_Complete	PASS	test for AS syntax
