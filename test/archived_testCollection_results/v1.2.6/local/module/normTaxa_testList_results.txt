@@ -1,0 +1,15 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 8
+# Total test runtime: 00 hours : 00 minutes : 17 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.6 Build: v1.2.6-0-gcc222571
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/normTaxa.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/normTaxa_2020Jan06	YES	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	basic use case
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/logNormTaxa.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/logNormTaxa_2020Jan06	NO	2	2	BioLockJ_Complete	BioLockJ_Complete	PASS	LogTransform is automatically added
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/justLogTaxa.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justLogTaxa_2020Jan06	YES	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	LogTransform stands alone
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/badLogScale.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/badLogScale_2020Jan06	NO	0	0	ConfigFormatException	ConfigFormatException	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/readsPerMill.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/readsPerMill_2020Jan06	YES	3	3	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/numberTooBig.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/numberTooBig_2020Jan06	NO	0	0	BioLockJException	BioLockJException	PASS	input values include a number too big to be a double
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/infinityPlus1.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/infinityPlus1_2020Jan06	YES	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/normSoManyValues.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/normSoManyValues_2020Jan06	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	check for time / memory efficiency.

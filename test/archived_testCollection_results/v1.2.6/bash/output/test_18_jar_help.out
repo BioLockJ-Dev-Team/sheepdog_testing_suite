@@ -1,0 +1,44 @@
+
+BioLockJ v1.2.6 java help menu:
+The BioLockJ.jar file is not intended to be called directly,
+it should be called through the biolockj shell command.
+
+Developers: 
+Usage: java -jar BioLockJ.jar <args>
+To run the program, args MUST include one of: 
+-config, -restartDir, -direct
+Arguments
+Named arguments for directories:
+-projectDir, -homeDir, -restartDir
+Other named arguments:
+-config, -direct, -hostname, -password
+Flags:
+-aws, -systemOut
+Info-only arguments:
+-help, -version
+
+Users:
+please use the biolockj command.
+See: "biolockj --help" 
+
+BioLockJ v1.2.6 java help menu:
+The BioLockJ.jar file is not intended to be called directly,
+it should be called through the biolockj shell command.
+
+Developers: 
+Usage: java -jar BioLockJ.jar <args>
+To run the program, args MUST include one of: 
+-config, -restartDir, -direct
+Arguments
+Named arguments for directories:
+-projectDir, -homeDir, -restartDir
+Other named arguments:
+-config, -direct, -hostname, -password
+Flags:
+-aws, -systemOut
+Info-only arguments:
+-help, -version
+
+Users:
+please use the biolockj command.
+See: "biolockj --help" 

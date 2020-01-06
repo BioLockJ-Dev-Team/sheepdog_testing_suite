@@ -1,0 +1,8 @@
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/longWait_2020Jan06
+blj_go       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status ...Reached max wait time: 5 seconds. 
+Could not verify that the pipeline is running.
+It may still be checking dependencies.

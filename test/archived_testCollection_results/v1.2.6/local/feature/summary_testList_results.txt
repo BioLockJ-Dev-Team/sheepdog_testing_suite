@@ -1,0 +1,8 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 1
+# Total test runtime: 00 hours : 00 minutes : 09 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.5-dev Build: v1.2.5-9-g535ae139
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/summary/waitAsec.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/waitAsec_2019Dec18	YES	3	3	BioLockJ_Complete	BioLockJ_Complete	PASS	Need to do a manual check for pipeline runtime: should be 05 seconds

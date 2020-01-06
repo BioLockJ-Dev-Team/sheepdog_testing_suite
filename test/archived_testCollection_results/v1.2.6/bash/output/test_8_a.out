@@ -1,0 +1,9 @@
+
+ ---------> Execute CMD [  biolockj -a configFile/example.properties  ]
+aws = true
+KEY CMD: launch_aws -a configFile/example.properties
+
+ ---------> Execute CMD [  launch_aws -a configFile/example.properties  ]
+aws = true
+Using configFile/example.properties as the config file.
+KEY CMD: run_aws configFile/example.properties

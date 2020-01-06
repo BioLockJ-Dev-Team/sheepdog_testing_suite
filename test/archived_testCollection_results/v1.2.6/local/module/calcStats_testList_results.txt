@@ -1,0 +1,11 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 4
+# Total test runtime: 00 hours : 00 minutes : 18 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.6 Build: v1.2.6-0-gcc222571
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/calcStats/calcStats.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/calcStats_2020Jan06	YES	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	basic use case
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/calcStats/leaveOutRareOtuHalf.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/leaveOutRareOtuHalf_2020Jan06	YES	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	r.rareOtuThreshold=.5 (drops Acidobacteria_Gp25 from class level)
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/calcStats/leaveOutRareOtu5.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/leaveOutRareOtu5_2020Jan06	YES	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	"r.rareOtuThreshold=5, drops 7 taxa from class level"
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/calcStats/badVal_rareOtu.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/badVal_rareOtu_2020Jan06	NO	0	0	ConfigFormatException	ConfigFormatException	PASS	r.rareOtuThreshold must be positive number
