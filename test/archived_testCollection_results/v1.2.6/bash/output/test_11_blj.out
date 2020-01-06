@@ -1,0 +1,5 @@
+
+ ---------> Execute CMD [  biolockj --docker --blj configFile/example.properties  ]
+docker = true
+blj = true
+KEY CMD: launch_docker --docker --blj configFile/example.properties

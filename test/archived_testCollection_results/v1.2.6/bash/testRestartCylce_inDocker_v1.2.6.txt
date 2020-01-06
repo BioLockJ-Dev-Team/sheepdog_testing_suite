@@ -1,0 +1,78 @@
+Most recent sheepdog commit: v1.2.5-24-gb4b19b7
+Most recent BioLockJ commit: v1.2.6
+Use docker
+
+
+Part 1
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/configToFail.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: ad2fd5a16f01f0a36e656ca52a7170365cae1d2eff630be4a518e56d586b73ab
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+blj_go       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+Pipeline is running.
+
+Part 2
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/05_SeqFileValidator/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/biolockjFailed
+Reset complete.
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: c51035b565f12bcbe49ab10b7afbe827d4ff7322415cbfa1983cb1455787aa29
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+blj_go       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+BioLockJ has stopped.
+
+ERROR TYPE:    BioLockJException
+ERROR MESSAGE: This module is configured to fail.
+
+
+Part 3
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/05_SeqFileValidator/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06/biolockjFailed
+Reset complete.
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 54e71badb6879ac172591623f4ce64140b7814a8afd3710eeeb165776c8066ff
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jan06
+blj_go       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+Pipeline is running.
+Good: module 03 was never deleted.
+Good: module 04 re-executed each time.
+Good: with correction, the pipeline completes.
+Basic Restart Test: PASSING
