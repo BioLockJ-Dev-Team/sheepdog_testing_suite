@@ -1,0 +1,12 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 5
+# Total test runtime: 00 hours : 00 minutes : 13 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.6 Build: v1.2.6-0-gcc222571
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/metadata/create_metadata.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/create_metadata_2020Jan06	NO	NA	1	BioLockJ_Complete	BioLockJ_Complete	PASS	"auto-create metadata, should list samples: ERR1456827_2, ERR1456828_2"
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/metadata/implicit_metadata.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/implicit_metadata_2020Jan06	NO	NA	3	BioLockJ_Complete	BioLockJ_Complete	PASS	import metadata is added implicitly
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/metadata/create_metadata_paired.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/create_metadata_paired_2020Jan06	NO	NA	1	BioLockJ_Complete	BioLockJ_Complete	PASS	"with paired files, only add the sample 1 time for the two files, should create a list of 8 samples"
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/metadata/metadata_badFilePath.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/metadata_badFilePath_2020Jan06	NO	NA	0	ConfigPathException	ConfigPathException	PASS	bad file path for metadata.filePath
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/metadata/metadata_filePath.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/metadata_filePath_2020Jan06	NO	NA	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
