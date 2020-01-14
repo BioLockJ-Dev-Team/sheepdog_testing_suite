@@ -14,7 +14,7 @@ biolockj_api listProps $MOD
 
 MODS=$(biolockj_api listApiModules 2> /dev/null)
 for m in $MODS; do
-	echo "-->  $m"
+	echo "***  $m"
 	biolockj_api listProps $m
 done 
 
@@ -52,6 +52,11 @@ biolockj_api isValidProp script.numTYPO 1 $MOD # null
 
 # test a prop/val pair for the backbone (one good, bad, null)
 
+# get the value for a given property given a config file
+
+# get the value for a given property, with now config file (ie, defaults)
+biolockj_api propValue script.numThreads
+
 # get a json string with lots of this data using allProperties
 
 # show help menu
@@ -63,3 +68,16 @@ biolockj_api
 grep "\." $BLJ/resources/config/default/standard.properties | wc -l
 # how many properties are listed using this API:
 biolockj_api listAllProps  2> /dev/null | wc -l
+
+
+allProps=$(biolockj_api listProps  2> /dev/null)
+for prop in $allProps; do
+	echo ""
+	printf '%-15s %-55s\n' "property:" $prop
+	type=$(biolockj_api propType $prop)
+	printf '%-15s %-55s\n' "type:" "$type"
+	desc=$(biolockj_api describeProp $prop)
+	printf '%-15s %-55s\n' "description:" "$desc"
+	default=$(biolockj_api propValue $prop)
+	printf '%-15s %-55s\n' "default:" "$default"
+done  
