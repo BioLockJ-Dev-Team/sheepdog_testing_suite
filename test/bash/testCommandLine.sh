@@ -187,23 +187,19 @@ launch_aws --aws --gui $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
-id=test_10_p
-biolockj -p bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -p bar $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it g
-
 id=test_10_pass
 biolockj --password bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java --password  bar $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
-id=test_10_p_noArg1
-biolockj -p -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+id=test_10_pass_noArg1
+biolockj --password -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
-id=test_10_p_noArg2
-biolockj -p $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+id=test_10_pass_noArg2
+biolockj --password $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
+
 
 id=test_11_b
 biolockj -b $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -218,6 +214,7 @@ biolockj --docker --blj $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker --blj $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
+
 id=test_12_e
 biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
@@ -230,6 +227,7 @@ id=test_12full_env-var
 biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_docker --docker -e SHEP=$SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
+
 
 id=test_13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -281,9 +279,35 @@ biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it g
 
+
+
+id=test_20_precheck
+biolockj --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_java --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
+
+id=test_20_p
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_java -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
+
+id=test_20_rp
+biolockj -rp $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_java -rp $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
+
+
+
+
+
+
 # verify that bash times out in waiting, unless --wait-for-start is used
 export BIOLOCKJ_TEST_MODE=""
 . $BLJ/script/blj_functions
+
+
+
+
 
 id=test_15full_longWait
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -330,6 +354,29 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
   && [ $(grep "Build" $OUT/${id}.out | wc -l ) -eq 2 ] \
   && [ $(cat $OUT/${id}.out | wc -l ) -eq 2 ] \
   && PASSING_TESTS=$((PASSING_TESTS + 1))
+
+
+id=test_20_precheck_repeats
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.out
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.out
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# new precheck with different name creates a new folder" 1>> $OUT/${id}.out
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# new precheck replaces old one with the same name (after success)" 1>> $OUT/${id}.out
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# standard pipeline replaces precheck pipeline (after success)" 1>> $OUT/${id}.out
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
+
+
 
 echo ""
 echo "Ran $TOTAL_TESTS tests on bash command line args."

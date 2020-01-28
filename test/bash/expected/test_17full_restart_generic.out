@@ -16,8 +16,11 @@ Starting [ blj_reset ]
 Reseting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
 Determined that module number 3 was the last module to complete.
 Setting status of modules after 3 to --> "biolockjFailed"
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/04_ConfigToFail/biolockjFailed
 Created <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/04_ConfigToFail/biolockjFailed
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/05_Wait/precheckComplete
 Created <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/05_Wait/biolockjFailed
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/06_Multiplexer/precheckComplete
 Created <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/06_Multiplexer/biolockjFailed
 Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/biolockjFailed
 Reset complete.

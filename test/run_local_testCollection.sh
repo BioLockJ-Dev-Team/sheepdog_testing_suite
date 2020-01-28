@@ -18,6 +18,7 @@ runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/defaultProps/testList.txt
 runTestSet ${DIR}/exeProps/testList.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt
+runTestSet ${DIR}/precheck/precheck_testList.txt
 #runTestSet ${DIR}/summary/summary_testList.txt #currently slow and not valuable
 
 # module tests
