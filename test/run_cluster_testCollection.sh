@@ -19,7 +19,7 @@ DIR=${SHEP}/test/module/assembly
 # feature tests
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
-runTestSet ${DIR}/defaultProps/testList.txt
+runTestSet ${DIR}/defaultProps/defaultProps_testList.txt
 runTestSet ${DIR}/exeProps/testList.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt
 runTestSet ${DIR}/precheck/precheck_testList.txt
