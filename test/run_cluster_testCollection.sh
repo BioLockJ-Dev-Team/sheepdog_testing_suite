@@ -38,7 +38,7 @@ runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
 runTestSet ${DIR}/validationUtil/testList.txt
 runTestSet ${DIR}/kraken2/testList.txt 
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
-runTestSet ${DIR}/GenMod/testList.txt 
+runTestSet ${DIR}/GenMod/genMod_testList.txt 
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
 
 # full local pipeline
