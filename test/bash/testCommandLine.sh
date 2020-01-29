@@ -296,6 +296,10 @@ biolockj -rp $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_java -rp $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
+id=test_20_ap
+biolockj -ap $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
+launch_aws -ap $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
 
 
 
