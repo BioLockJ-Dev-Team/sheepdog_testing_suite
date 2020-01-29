@@ -26,7 +26,7 @@ DIR=${SHEP}/test/module
 #runTestSet ${DIR}/assembly/testList.txt   
 runTestSet ${DIR}/calcStats/calcStats_testList.txt
 runTestSet ${DIR}/email/testList.txt    
-runTestSet ${DIR}/GenMod/testList.txt 
+runTestSet ${DIR}/GenMod/genMod_testList.txt 
 #runTestSet ${DIR}/kraken2/testList.txt   
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt 
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
