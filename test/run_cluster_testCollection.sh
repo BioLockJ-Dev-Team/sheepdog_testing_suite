@@ -20,7 +20,7 @@ DIR=${SHEP}/test/module/assembly
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/defaultProps/defaultProps_testList.txt
-runTestSet ${DIR}/exeProps/testList.txt
+runTestSet ${DIR}/exeProps/exeProps_testList.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt
 runTestSet ${DIR}/precheck/precheck_testList.txt
 #runTestSet ${DIR}/summary/summary_testList.txt #currently slow and not very valuable
