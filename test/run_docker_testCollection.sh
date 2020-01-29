@@ -27,7 +27,7 @@ runTestSet ${DIR}/assembly/docker_assembly_testList.txt
 #runTestSet ${DIR}/calcStats/docker_calcStats_testList.txt
 runTestSet ${DIR}/email/docker_eamil_testList.txt
 runTestSet ${DIR}/GenMod/docker_genMod_testList.txt
-runTestSet ${DIR}/kraken2/docker_testList.txt 
+runTestSet ${DIR}/kraken2/docker_k2_testList.txt 
 runTestSet ${DIR}/kraken2Parser/docker_Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/docker_normTaxa_testList.txt
 runTestSet ${DIR}/rdp/docker_RdpTestList.txt
