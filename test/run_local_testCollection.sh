@@ -23,7 +23,7 @@ runTestSet ${DIR}/precheck/precheck_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module
-#runTestSet ${DIR}/assembly/testList.txt   
+#runTestSet ${DIR}/assembly/assembly_testList.txt   
 runTestSet ${DIR}/calcStats/calcStats_testList.txt
 runTestSet ${DIR}/email/testList.txt    
 runTestSet ${DIR}/GenMod/genMod_testList.txt 

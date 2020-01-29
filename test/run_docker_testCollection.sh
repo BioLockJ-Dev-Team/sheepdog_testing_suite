@@ -23,7 +23,7 @@ runTestSet ${DIR}/precheck/docker_precheck_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module
-runTestSet ${DIR}/assembly/docker_testList.txt 
+runTestSet ${DIR}/assembly/docker_assembly_testList.txt 
 #runTestSet ${DIR}/calcStats/docker_calcStats_testList.txt
 runTestSet ${DIR}/email/docker_eamil_testList.txt
 runTestSet ${DIR}/GenMod/docker_genMod_testList.txt
