@@ -51,7 +51,7 @@ PASSING_TESTS=0
 
 wrap_cmd_with_check biolockj $DIR/rarifySeqs.properties
 
-wrap_cmd_with_check biolockj --docker $DIR/rarifySeqs.properties
+wrap_cmd_with_check biolockj --docker -e SHEP=$SHEP $DIR/rarifySeqs.properties
 
 #wrap_cmd_with_check biolockj --external-modules $SHEP/MockMain/dist --docker $DIR/verifyRDPParser.properties
 
