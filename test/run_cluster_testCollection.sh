@@ -35,7 +35,7 @@ runTestSet ${DIR}/calcStats/calcStats_testList.txt
 #runTestSet ${DIR}/email/testList.txt 
 runTestSet ${DIR}/rdp/RdpTestList.txt 
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt 
-runTestSet ${DIR}/validationUtil/testList.txt
+runTestSet ${DIR}/validationUtil/validation_testList.txt
 runTestSet ${DIR}/kraken2/testList.txt 
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
 runTestSet ${DIR}/GenMod/genMod_testList.txt 
