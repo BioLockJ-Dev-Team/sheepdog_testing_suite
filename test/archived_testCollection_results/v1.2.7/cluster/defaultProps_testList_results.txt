@@ -1,0 +1,15 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 8
+# Total test runtime: 00 hours : 00 minutes : 19 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/noDefaultProps.properties		 --external-modules ${SHEP}/MockMain/dist	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/noDefaultProps_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	no defaults to read
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/checkCustomProp.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkCustomProp_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/checkCustomPropFail.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkCustomPropFail_2020Jan30	NO	0	0	DirectModuleException	DirectModuleException	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/checkBranching.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkBranching_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/checkBranchingConflicts.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkBranchingConflicts_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/checkLayer3MakesIt.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkLayer3MakesIt_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/checkPrimaryWins.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkPrimaryWins_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/defaultProps/badFilePath.properties			NA	NO	0	0	ConfigPathException	ConfigPathException	PASS	

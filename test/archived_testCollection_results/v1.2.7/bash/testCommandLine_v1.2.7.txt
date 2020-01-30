@@ -1,0 +1,114 @@
+Most recent sheepdog commit: v1.2.7
+Most recent BioLockJ commit: v1.2.7
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output
+-
+test_00 --> just as expected.
+-
+test_01_v --> just as expected.
+-
+test_01_version --> just as expected.
+-
+test_02_h --> just as expected.
+-
+test_02_help --> just as expected.
+-
+test_03_typo --> just as expected.
+-
+test_03_typos --> just as expected.
+-
+test_03_longTypo --> just as expected.
+-
+test_04_f --> just as expected.
+-
+test_04_foreground --> just as expected.
+-
+test_04full_foreground --> just as expected.
+-
+test_04full_fd --> just as expected.
+-
+test_05_basic --> just as expected.
+-
+test_6_r --> just as expected.
+-
+test_6_restart --> just as expected.
+-
+test_6_restart_nonDir --> just as expected.
+-
+test_7_d --> just as expected.
+-
+test_7_docker --> just as expected.
+-
+test_7full_d --> just as expected.
+-
+test_7full_docker --> just as expected.
+-
+test_8_a --> just as expected.
+-
+test_8_aws --> just as expected.
+-
+test_9_aws_g --> just as expected.
+-
+test_9_aws_gui --> just as expected.
+-
+test_10_pass --> just as expected.
+-
+test_10_pass_noArg1 --> just as expected.
+-
+test_10_pass_noArg2 --> just as expected.
+-
+test_11_b --> just as expected.
+-
+test_11_blj --> just as expected.
+-
+test_11full_blj --> just as expected.
+-
+test_12_e --> just as expected.
+-
+test_12_env-var --> just as expected.
+-
+test_12full_env-var --> just as expected.
+-
+test_13_ext_mods --> just as expected.
+-
+test_13full_ext_mods --> just as expected.
+-
+test_13_ext_mods_docker --> just as expected.
+-
+test_13full_ext_mods_docker --> just as expected.
+-
+test_14_g --> just as expected.
+-
+test_14_gui --> just as expected.
+-
+test_14_gui_noConfig --> just as expected.
+-
+test_15_w --> just as expected.
+-
+test_15_wait --> just as expected.
+-
+test_15full_w --> just as expected.
+-
+test_20_precheck --> just as expected.
+-
+test_20_p --> just as expected.
+-
+test_20_rp --> just as expected.
+-
+test_20_ap --> just as expected.
+-
+test_15full_longWait --> just as expected.
+-
+test_15full_w_longWait --> just as expected.
+-
+test_16full_fail --> just as expected.
+-
+test_16full_fail_docker --> just as expected.
+-
+test_17full_restart --> just as expected.
+-
+test_18_jar_help --> just as expected.
+-
+test_20_precheck_repeats --> just as expected.
+
+Ran 55 tests on bash command line args.
+All 55 tests PASS.

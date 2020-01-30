@@ -1,0 +1,14 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 7
+# Total test runtime: 00 hours : 00 minutes : 21 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/nonExistingModule.properties		 --precheck-only	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/nonExistingModule_2020Jan30	NO	0	0	ClassNotFoundException	ClassNotFoundException	PASS	pipeline formation
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/badModuleProperty.properties		 --precheck-only	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/badModuleProperty_2020Jan30	NO	0	0	ConfigNotFoundException	ConfigNotFoundException	PASS	problem for module
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/badGeneralProperty.properties		 --precheck-only	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/badGeneralProperty_2020Jan30	NO	0	0	ConfigPathException	ConfigPathException	PASS	problem for utility class
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/goodCase.properties		 --precheck-only	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/goodCase_2020Jan30	NO	0	0	StopAfterPrecheck	StopAfterPrecheck	PASS	
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/repeatCase.properties		 --precheck-only	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/repeatCase_2020Jan30	NO	0	0	ClassNotFoundException	ClassNotFoundException	PASS	"config calls for class in sheepdog, but external mods is not used in the biolockj call"
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/repeatCase.properties		 --precheck-only --external-modules ${SHEP}/MockMain/dist	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/repeatCase_2020Jan30	NO	0	0	StopAfterPrecheck	StopAfterPrecheck	PASS	"this replaces the previous precheck pipeline, and precheck passes"
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/precheck/repeatCase.properties		 --external-modules ${SHEP}/MockMain/dist	/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/repeatCase_2020Jan30	NO	2	2	BioLockJ_Complete	BioLockJ_Complete	PASS	this pipeline replaces the precheck pipeline.

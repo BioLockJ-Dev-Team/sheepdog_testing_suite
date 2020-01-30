@@ -1,0 +1,15 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 8
+# Total test runtime: 00 hours : 00 minutes : 18 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/noDefaultProps.properties		 --external-modules ${SHEP}/MockMain/dist	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/noDefaultProps_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	no defaults to read
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/checkCustomProp.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/checkCustomProp_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/checkCustomPropFail.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/checkCustomPropFail_2020Jan30	NO	0	0	DirectModuleException	DirectModuleException	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/checkBranching.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/checkBranching_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/checkBranchingConflicts.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/checkBranchingConflicts_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/checkLayer3MakesIt.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/checkLayer3MakesIt_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/checkPrimaryWins.properties			/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/checkPrimaryWins_2020Jan30	NO	1	1	BioLockJ_Complete	BioLockJ_Complete	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/badFilePath.properties			NA	NO	0	0	ConfigPathException	ConfigPathException	PASS	

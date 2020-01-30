@@ -1,0 +1,9 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 2
+# Total test runtime: 00 hours : 00 minutes : 06 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/exeProps/useMyExecutable.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/useMyExecutable_2020Jan30	YES	1	1	DirectModuleException	DirectModuleException	PASS	The exe path given is not valid in the docker container
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/exeProps/useMyExecutable_inDocker.properties		 --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/useMyExecutable_inDocker_2020Jan30	YES	2	2	BioLockJ_Complete	BioLockJ_Complete	PASS	

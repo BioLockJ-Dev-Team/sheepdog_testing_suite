@@ -1,0 +1,11 @@
+# Number of tests that failed:   3
+# Number of tests that were run: 4
+# Total test runtime: 00 hours : 00 minutes : 03 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/calcStats/calcStats.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/calcStats_2020Jan30	YES	1	0	BioLockJ_Complete	IOException	FAIL	basic use case
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/calcStats/leaveOutRareOtuHalf.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/leaveOutRareOtuHalf_2020Jan30	YES	1	0	BioLockJ_Complete	IOException	FAIL	r.rareOtuThreshold=.5 (drops Acidobacteria_Gp25 from class level)
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/calcStats/leaveOutRareOtu5.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/leaveOutRareOtu5_2020Jan30	YES	1	0	BioLockJ_Complete	IOException	FAIL	"r.rareOtuThreshold=5, drops 7 taxa from class level"
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/module/calcStats/badVal_rareOtu.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/badVal_rareOtu_2020Jan30	NO	0	0	ConfigFormatException	ConfigFormatException	PASS	r.rareOtuThreshold must be positive number

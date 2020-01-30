@@ -1,0 +1,10 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 3
+# Total test runtime: 00 hours : 00 minutes : 10 seconds
+# BioLockJ jar file: /nobackup/afodor_research/ieclabau/publicGit/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/asSyntax/checkAs.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/checkAs_2020Jan30	YES	NA	5	BioLockJ_Complete	BioLockJ_Complete	PASS	test for AS syntax
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/asSyntax/aliasNameError.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/aliasNameError_2020Jan30	NO	NA	0	PipelineFormationException	PipelineFormationException	PASS	Alias should not start with lower case letter
+/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/test/feature/asSyntax/noDuplicateNames.properties			/nobackup/afodor_research/ieclabau/publicGit/sheepdog_testing_suite/MockMain/pipelines/noDuplicateNames_2020Jan30	NO	NA	0	PipelineFormationException	PipelineFormationException	PASS	Don't allow an alias to create a duplicated name within a pipeline

@@ -1,0 +1,9 @@
+# Number of tests that failed:   1
+# Number of tests that were run: 2
+# Total test runtime: 00 hours : 01 minutes : 01 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/justKraken2Parser.properties		 --blj --docker -e SHEP=${SHEP} --external-modules ${SHEP}/MockMain/dist	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/justKraken2Parser_2020Jan30	NO	3	3	BioLockJ_Complete	BioLockJ_Complete	PASS	parser plus test case for reparsing
+/Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/reparseKraken2Parser.properties		 --blj --docker -e SHEP=${SHEP} --external-modules ${SHEP}/MockMain/dist	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/reparseKraken2Parser_2020Jan30	NO	7	7	BioLockJ_Complete	Exception	FAIL	

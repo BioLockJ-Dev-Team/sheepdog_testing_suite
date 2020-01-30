@@ -1,0 +1,14 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 7
+# Total test runtime: 00 hours : 00 minutes : 15 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.2.7 Build: v1.2.7-0-ge11fdc42
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/nonExistingModule.properties		 --precheck-only --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/nonExistingModule_2020Jan30	NO	0	0	ClassNotFoundException	ClassNotFoundException	PASS	pipeline formation
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/badModuleProperty.properties		 --precheck-only --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/badModuleProperty_2020Jan30	NO	0	0	ConfigNotFoundException	ConfigNotFoundException	PASS	problem for module
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/badGeneralproperty.properties		 --precheck-only --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/badGeneralproperty_2020Jan30	NO	0	0	ConfigPathException	ConfigPathException	PASS	problem for utility class
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/goodCase.properties		 --precheck-only --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/goodCase_2020Jan30	NO	0	0	StopAfterPrecheck	StopAfterPrecheck	PASS	
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/repeatCase.properties		 --precheck-only --blj --docker -e SHEP=${SHEP}	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/repeatCase_2020Jan30	NO	0	0	ClassNotFoundException	ClassNotFoundException	PASS	"config calls for class in sheepdog, but external mods is not used in the biolockj call"
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/repeatCase.properties		 --precheck-only --blj --docker -e SHEP=${SHEP} --external-modules ${SHEP}/MockMain/dist	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/repeatCase_2020Jan30	NO	0	0	StopAfterPrecheck	StopAfterPrecheck	PASS	"this replaces the previous precheck pipeline, and precheck passes"
+/Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/repeatCase.properties		 --blj --docker -e SHEP=${SHEP} --external-modules ${SHEP}/MockMain/dist	/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/repeatCase_2020Jan30	NO	2	2	BioLockJ_Complete	BioLockJ_Complete	PASS	this pipeline replaces the precheck pipeline.
