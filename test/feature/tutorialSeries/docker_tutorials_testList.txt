@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${BLJ}/templates/myFirstPipeline/myFirstPipeline.properties	 --blj --docker 	4	BioLockJ_Complete	first example in user-guide --DO NOT REFERENCE $SHEP
+${BLJ}/templates/myFirstPipeline/myFirstPipeline.properties	 --docker 	4	BioLockJ_Complete	first example in user-guide --DO NOT REFERENCE $SHEP
