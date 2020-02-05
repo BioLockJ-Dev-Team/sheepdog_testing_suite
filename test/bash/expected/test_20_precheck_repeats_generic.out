@@ -108,3 +108,9 @@ BioLockJ has stopped.
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: This module is configured to fail.
 
+# pipeline fails to form at all; show correct message.
+Initializing BioLockJ..
+Pipeline may have failed to launch - check <SHEP>/MockMain/pipelines for new pipeline
+blj_go -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary

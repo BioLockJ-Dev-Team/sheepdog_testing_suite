@@ -378,6 +378,8 @@ echo "# new precheck replaces old one with the same name (after success)" 1>> $O
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# standard pipeline replaces precheck pipeline (after success)" 1>> $OUT/${id}.out
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+echo "# pipeline fails to form at all; show correct message." 1>> $OUT/${id}.out
+biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
 
