@@ -58,6 +58,9 @@ biolockj_api isValidProp script.numThreads foo $MOD # false
 biolockj_api isValidProp script.numTYPO 1 $MOD # null
 
 # test a prop/val pair for the backbone (one good, bad, null)
+biolockj_api isValidProp script.numThreads 1 2> /dev/null # true
+biolockj_api isValidProp script.numThreads apple 2> /dev/null 
+
 
 # get the value for a given property given a config file
 
@@ -65,10 +68,10 @@ biolockj_api isValidProp script.numTYPO 1 $MOD # null
 biolockj_api propValue script.numThreads
 
 # get a json string with lots of this data using the general properties
-biolockj_api propInfo
+biolockj_api propInfo 2> /dev/null
 
 # get a json string with all info on all available modules
-biolockj_api moduleInfo
+biolockj_api moduleInfo 2> /dev/null
 
 # get a json string with all info on all modules including extra modules
 biolockj_api moduleInfo $MORE_MODS
