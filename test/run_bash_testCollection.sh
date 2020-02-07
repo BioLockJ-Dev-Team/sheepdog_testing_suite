@@ -16,6 +16,8 @@ do_bash_test(){
 
 ${SHEP}/MockMain/resources/testBioLockJ ${SHEP}/test/bash/empty_testList.txt 2>/dev/null || exit
 
+do_bash_test ${SHEP}/test/bash/testAPI.sh
+
 do_bash_test ${SHEP}/test/bash/testCommandLine.sh
 
 do_bash_test ${SHEP}/test/bash/testRestartCylce.sh
