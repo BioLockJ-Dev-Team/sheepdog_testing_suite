@@ -1,19 +1,420 @@
 [
 {
+"property": "aws.copyDbToS3",
+"type": "boolean",
+"description": "If true, save all input files to S3"
+},
+{
+"property": "aws.copyPipelineToS3",
+"type": "boolean",
+"description": "If enabled save pipeline to S3"
+},
+{
+"property": "aws.copyReportsToS3",
+"type": "boolean",
+"description": "If enabled save reports to S3"
+},
+{
+"property": "aws.ec2AcquisitionStrategy",
+"type": "string",
+"description": "The AWS acquisition strategy (SPOT or DEMAND) sets the service SLA for procuring new EC2 instances"
+},
+{
+"property": "aws.ec2InstanceID",
+"type": "string",
+"description": "ID of an existing ec2 instance to use as the head node"
+},
+{
+"property": "aws.ec2InstanceType",
+"type": "string",
+"description": "AWS instance type determines initial resource class (t2.micro is common)"
+},
+{
 "property": "aws.ec2SpotPer",
 "type": "",
 "description": ""
 },
 {
-"property": "report.scarceCountCutoff",
-"description": "Minimum percentage of samples that must contain a count value for it to be kept.",
-"default": "0.25",
-"type": "numeric"
+"property": "aws.ec2TerminateHead",
+"type": "boolean",
+"description": ""
+},
+{
+"property": "aws.profile",
+"type": "file path",
+"description": ""
+},
+{
+"property": "aws.purgeEfsInputs",
+"type": "boolean",
+"description": "If enabled delete all EFS dirs (except pipelines)"
+},
+{
+"property": "aws.purgeEfsOutput",
+"type": "boolean",
+"description": "If enabled delete all EFS/pipelines"
+},
+{
+"property": "aws.ram",
+"type": "string",
+"description": "AWS memory set in Nextflow main.nf"
+},
+{
+"property": "aws.region",
+"type": "string",
+"description": ""
+},
+{
+"property": "aws.s3",
+"type": "string",
+"description": "AWS S3 pipeline output directory used by Nextflow main.nf"
+},
+{
+"property": "aws.s3TransferTimeout",
+"type": "integer",
+"description": "Set the max number of minutes to allow for S3 transfers to complete."
+},
+{
+"property": "aws.saveCloud",
+"type": "boolean",
+"description": ""
+},
+{
+"property": "aws.stack",
+"type": "string",
+"description": "An existing aws cloud stack ID"
+},
+{
+"property": "aws.walltime",
+"type": "",
+"description": ""
+},
+{
+"property": "cluster.batchCommand",
+"type": "string",
+"description": "Terminal command used to submit jobs on the cluster"
+},
+{
+"property": "cluster.host",
+"type": "string",
+"description": "The remote cluster host URL (used for ssh, scp, rsync, etc)"
+},
+{
+"property": "cluster.jobHeader",
+"type": "string",
+"description": "Header written at top of worker scripts"
+},
+{
+"property": "cluster.modules",
+"type": "list",
+"description": "List of cluster modules to load at start of worker scripts"
+},
+{
+"property": "cluster.prologue",
+"type": "string",
+"description": "To run at the start of every script after loading cluster modules (if any)"
+},
+{
+"property": "cluster.statusCommand",
+"type": "string",
+"description": "Terminal command used to submit jobs on the cluster"
+},
+{
+"property": "docker.imgVersion",
+"type": "string",
+"description": "indicate specific version of Docker images"
+},
+{
+"property": "docker.saveContainerOnExit",
+"type": "boolean",
+"description": "if ture, docker run command will NOT include the --rm flag"
+},
+{
+"property": "docker.user",
+"type": "string",
+"description": "name of the Docker Hub user for getting docker containers"
 },
 {
 "property": "exe.Rscript",
 "type": "executable",
 "description": "Path for the \"Rscript\" executable; if not supplied, any script that needs the Rscript command will assume it is on the PATH."
+},
+{
+"property": "exe.awk",
+"type": "executable",
+"description": "Path for the \"awk\" executable; if not supplied, any script that needs the awk command will assume it is on the PATH."
+},
+{
+"property": "exe.docker",
+"type": "executable",
+"description": "Path for the \"docker\" executable; if not supplied, any script that needs the docker command will assume it is on the PATH."
+},
+{
+"property": "exe.gzip",
+"type": "executable",
+"description": "Path for the \"gzip\" executable; if not supplied, any script that needs the gzip command will assume it is on the PATH."
+},
+{
+"property": "exe.java",
+"type": "executable",
+"description": "Path for the \"java\" executable; if not supplied, any script that needs the java command will assume it is on the PATH."
+},
+{
+"property": "exe.python",
+"type": "executable",
+"description": "Path for the \"python\" executable; if not supplied, any script that needs the python command will assume it is on the PATH."
+},
+{
+"property": "genMod.dockerContainerName",
+"type": "string",
+"description": "Name of the docker container to use when executing an instance of the GenMod module."
+},
+{
+"property": "humann2.disableGeneFamilies",
+"type": "boolean",
+"description": "disable HumanN2 Gene Family report"
+},
+{
+"property": "humann2.disablePathAbundance",
+"type": "boolean",
+"description": "disable HumanN2 Pathway Abundance report"
+},
+{
+"property": "humann2.disablePathCoverage",
+"type": "boolean",
+"description": "disable HumanN2 Pathway Coverage report"
+},
+{
+"property": "input.dirPaths",
+"type": "list of file paths",
+"description": "List of one or more directories containing the pipeline input data."
+},
+{
+"property": "input.ignoreFiles",
+"type": "list",
+"description": "file names to ignore if found in input directories"
+},
+{
+"property": "input.requireCompletePairs",
+"description": "Require all sequence input files have matching paired reads",
+"default": "Y",
+"type": "boolean"
+},
+{
+"property": "input.suffixFw",
+"description": "file suffix used to identify forward reads ininput.dirPaths",
+"default": "_R1",
+"type": "regex"
+},
+{
+"property": "input.suffixRv",
+"description": "file suffix used to identify reverse reads ininput.dirPaths",
+"default": "_R2",
+"type": "regex"
+},
+{
+"property": "input.trimPrefix",
+"type": "string",
+"description": "prefix to trim from sequence file names or headers to obtain Sample ID"
+},
+{
+"property": "input.trimSuffix",
+"type": "string",
+"description": "suffix to trim from sequence file names or headers to obtain Sample ID"
+},
+{
+"property": "metadata.barcodeColumn",
+"description": "metadata column with identifying barcodes",
+"default": "BarcodeSequence",
+"type": "string"
+},
+{
+"property": "metadata.columnDelim",
+"description": "defines how metadata columns are separated; Typically files are tab or comma separated.",
+"default": "\\t",
+"type": "string"
+},
+{
+"property": "metadata.commentChar",
+"type": "string",
+"description": "metadata file comment indicator; Empty string is a valid option indicating no comments in metadata file."
+},
+{
+"property": "metadata.fileNameColumn",
+"description": "name of the metadata column with input file names",
+"default": "InputFileName",
+"type": "string"
+},
+{
+"property": "metadata.filePath",
+"type": "string",
+"description": "If absolute file path, use file as metadata.<br>If directory path, must find exactly 1 file within, to use as metadata."
+},
+{
+"property": "metadata.nullValue",
+"description": "metadata cells with this value will be treated as empty",
+"default": "NA",
+"type": "string"
+},
+{
+"property": "metadata.required",
+"description": "If Y, require metadata row for each sample with sequence data in input dirs; If N, samples without metadata are ignored.",
+"default": "Y",
+"type": "boolean"
+},
+{
+"property": "metadata.useEveryRow",
+"type": "boolean",
+"description": "If Y, require a sequence file for every SampleID (every row) in metadata file; If N, metadata can include extraneous SampleIDs."
+},
+{
+"property": "pipeline.copyInput",
+"type": "boolean",
+"description": "copy input files into pipeline root directory"
+},
+{
+"property": "pipeline.defaultDemultiplexer",
+"description": "Java class name for default module used to demultiplex data",
+"default": "biolockj.module.implicit.Demultiplexer",
+"type": "string"
+},
+{
+"property": "pipeline.defaultFastaConverter",
+"description": "Java class name for default module used to convert files into fasta format",
+"default": "biolockj.module.seq.AwkFastaConverter",
+"type": "string"
+},
+{
+"property": "pipeline.defaultProps",
+"type": "list of file paths",
+"description": "file path of default property file(s); Nested default properties are supported (so the default property file can also have a default, and so on)."
+},
+{
+"property": "pipeline.defaultSeqMerger",
+"description": "Java class name for default module used combined paired read files",
+"default": "biolockj.module.seq.PearMergeReads",
+"type": "string"
+},
+{
+"property": "pipeline.defaultStatsModule",
+"type": "string",
+"description": "Java class name for default module used generate p-value and other stats"
+},
+{
+"property": "pipeline.deleteTempFiles",
+"type": "boolean",
+"description": "delete files in temp directories"
+},
+{
+"property": "pipeline.detachJavaModules",
+"type": "boolean",
+"description": "If true Java modules do not run with main BioLockJ Java application. Instead they run on compute nodes on the CLUSTER or AWS environments."
+},
+{
+"property": "pipeline.disableAddImplicitModules",
+"type": "boolean",
+"description": "If set to true, implicit modules will not be added to the pipeline."
+},
+{
+"property": "pipeline.disableAddPreReqModules",
+"type": "boolean",
+"description": "If set to true, prerequisite modules will not be added to the pipeline."
+},
+{
+"property": "pipeline.downloadDir",
+"description": "local directory used as the destination in the download command",
+"default": "$HOME/projects/downloads",
+"type": "file path"
+},
+{
+"property": "pipeline.env",
+"description": "Environment in which a pipeline is run. Options: cluster, aws, local",
+"default": "local",
+"type": "string"
+},
+{
+"property": "pipeline.limitDebugClasses",
+"type": "list",
+"description": "limit classes that log debug statements"
+},
+{
+"property": "pipeline.logLevel",
+"description": "Options: DEBUG, INFO, WARN, ERROR",
+"default": "INFO",
+"type": "string"
+},
+{
+"property": "pipeline.permissions",
+"description": "Set chmod -R command security bits on pipeline root directory (Ex. 770)",
+"default": "770",
+"type": "string"
+},
+{
+"property": "pipeline.setSeed",
+"type": "integer",
+"description": "set the seed for a random process. Must be positive integer."
+},
+{
+"property": "pipeline.userProfile",
+"description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others",
+"default": "${HOME}/.bash_profile",
+"type": "file path"
+},
+{
+"property": "qiime.alphaMetrics",
+"description": "alpha diversity metrics to calculate through qiime; For complete list of skbio.diversity.alpha options, see <a href= \"http://scikit-bio.org/docs/latest/generated/skbio.diversity.alpha.html\" target=\"_top\">http://scikit-bio.org/docs/latest/generated/skbio.diversity.alpha.html<\/a>",
+"default": "shannon",
+"type": "list"
+},
+{
+"property": "qiime.plotAlphaMetrics",
+"description": "",
+"default": "Y",
+"type": "boolean"
+},
+{
+"property": "r.colorBase",
+"description": "base color used for labels & headings in the PDF report; Must be a valid color in R.",
+"default": "black",
+"type": "string"
+},
+{
+"property": "r.colorFile",
+"type": "file path",
+"description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
+},
+{
+"property": "r.colorHighlight",
+"description": "color is used to highlight significant OTUs in plot",
+"default": "red",
+"type": "string"
+},
+{
+"property": "r.colorPalette",
+"type": "string",
+"description": "palette argument passed to [get_palette {ggpubr}](https://www.rdocumentation.org/packages/ggpubr/versions/0.2/topics/get_palette) to select colors for some output visualiztions"
+},
+{
+"property": "r.colorPoint",
+"description": "default color of scatterplot and strip-chart plot points",
+"default": "black",
+"type": "string"
+},
+{
+"property": "r.debug",
+"description": "Options: Y/N. If Y, will generate R Script log files",
+"default": "Y",
+"type": "boolean"
+},
+{
+"property": "r.excludeFields",
+"type": "list",
+"description": "Fields from the metadata that will be excluded from any auto-determined typing, or plotting; R reports must contain at least one valid nominal or numeric metadata field."
+},
+{
+"property": "r.nominalFields",
+"type": "list",
+"description": "Override default property type by explicitly listing it as nominal."
 },
 {
 "property": "r.numericFields",
@@ -24,420 +425,6 @@
 "property": "r.pch",
 "description": "Sets R plot pch parameter for PDF report",
 "default": "21",
-"type": "integer"
-},
-{
-"property": "docker.user",
-"type": "string",
-"description": "name of the Docker Hub user for getting docker containers"
-},
-{
-"property": "metadata.fileNameColumn",
-"description": "name of the metadata column with input file names",
-"default": "InputFileName",
-"type": "string"
-},
-{
-"property": "cluster.batchCommand",
-"type": "string",
-"description": "Terminal command used to submit jobs on the cluster"
-},
-{
-"property": "qiime.plotAlphaMetrics",
-"description": "",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "r.colorHighlight",
-"description": "color is used to highlight significant OTUs in plot",
-"default": "red",
-"type": "string"
-},
-{
-"property": "aws.ram",
-"type": "string",
-"description": "AWS memory set in Nextflow main.nf"
-},
-{
-"property": "r.colorFile",
-"type": "file path",
-"description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
-},
-{
-"property": "report.numHits",
-"description": "Options: Y/N. If Y, and add Num_Hits to metadata",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "metadata.barcodeColumn",
-"description": "metadata column with identifying barcodes",
-"default": "BarcodeSequence",
-"type": "string"
-},
-{
-"property": "humann2.disablePathAbundance",
-"type": "boolean",
-"description": "disable HumanN2 Pathway Abundance report"
-},
-{
-"property": "metadata.filePath",
-"type": "string",
-"description": "If absolute file path, use file as metadata.<br>If directory path, must find exactly 1 file within, to use as metadata."
-},
-{
-"property": "pipeline.disableAddImplicitModules",
-"type": "boolean",
-"description": "If set to true, implicit modules will not be added to the pipeline."
-},
-{
-"property": "r.useUniqueColors",
-"type": "boolean",
-"description": "force to use a unique color for every value in every field plotted; only recommended for low numbers of metadata columns/values."
-},
-{
-"property": "validation.sizeWithinPercent",
-"type": "numeric",
-"description": "What percentage difference is permitted between an output file and its expectation. Options: any positive number"
-},
-{
-"property": "r.colorPalette",
-"type": "string",
-"description": "palette argument passed to [get_palette {ggpubr}](https://www.rdocumentation.org/packages/ggpubr/versions/0.2/topics/get_palette) to select colors for some output visualiztions"
-},
-{
-"property": "input.requireCompletePairs",
-"description": "Require all sequence input files have matching paired reads",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "pipeline.logLevel",
-"description": "Options: DEBUG, INFO, WARN, ERROR",
-"default": "INFO",
-"type": "string"
-},
-{
-"property": "aws.copyDbToS3",
-"type": "boolean",
-"description": "If true, save all input files to S3"
-},
-{
-"property": "r_PlotMds.reportFields",
-"type": "list",
-"description": "Metadata column names indicating fields to include in the MDS report; Fields listed here must exist in the metadata file."
-},
-{
-"property": "aws.walltime",
-"type": "",
-"description": ""
-},
-{
-"property": "qiime.alphaMetrics",
-"description": "alpha diversity metrics to calculate through qiime; For complete list of skbio.diversity.alpha options, see <a href= \"http://scikit-bio.org/docs/latest/generated/skbio.diversity.alpha.html\" target=\"_top\">http://scikit-bio.org/docs/latest/generated/skbio.diversity.alpha.html<\/a>",
-"default": "shannon",
-"type": "list"
-},
-{
-"property": "aws.profile",
-"type": "file path",
-"description": ""
-},
-{
-"property": "docker.imgVersion",
-"type": "string",
-"description": "indicate specific version of Docker images"
-},
-{
-"property": "metadata.commentChar",
-"type": "string",
-"description": "metadata file comment indicator; Empty string is a valid option indicating no comments in metadata file."
-},
-{
-"property": "script.numThreads",
-"description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
-"default": "8",
-"type": "integer"
-},
-{
-"property": "pipeline.setSeed",
-"type": "integer",
-"description": "set the seed for a random process. Must be positive integer."
-},
-{
-"property": "aws.s3TransferTimeout",
-"type": "integer",
-"description": "Set the max number of minutes to allow for S3 transfers to complete."
-},
-{
-"property": "cluster.prologue",
-"type": "string",
-"description": "To run at the start of every script after loading cluster modules (if any)"
-},
-{
-"property": "input.trimPrefix",
-"type": "string",
-"description": "prefix to trim from sequence file names or headers to obtain Sample ID"
-},
-{
-"property": "script.timeout",
-"type": "integer",
-"description": "Sets # of minutes before worker scripts times out."
-},
-{
-"property": "aws.copyReportsToS3",
-"type": "boolean",
-"description": "If enabled save reports to S3"
-},
-{
-"property": "humann2.disablePathCoverage",
-"type": "boolean",
-"description": "disable HumanN2 Pathway Coverage report"
-},
-{
-"property": "aws.stack",
-"type": "string",
-"description": "An existing aws cloud stack ID"
-},
-{
-"property": "input.suffixRv",
-"description": "file suffix used to identify reverse reads ininput.dirPaths",
-"default": "_R2",
-"type": "regex"
-},
-{
-"property": "r.colorBase",
-"description": "base color used for labels & headings in the PDF report; Must be a valid color in R.",
-"default": "black",
-"type": "string"
-},
-{
-"property": "exe.docker",
-"type": "executable",
-"description": "Path for the \"docker\" executable; if not supplied, any script that needs the docker command will assume it is on the PATH."
-},
-{
-"property": "pipeline.downloadDir",
-"description": "local directory used as the destination in the download command",
-"default": "$HOME/projects/downloads",
-"type": "file path"
-},
-{
-"property": "aws.ec2InstanceType",
-"type": "string",
-"description": "AWS instance type determines initial resource class (t2.micro is common)"
-},
-{
-"property": "exe.awk",
-"type": "executable",
-"description": "Path for the \"awk\" executable; if not supplied, any script that needs the awk command will assume it is on the PATH."
-},
-{
-"property": "metadata.required",
-"description": "If Y, require metadata row for each sample with sequence data in input dirs; If N, samples without metadata are ignored.",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "cluster.modules",
-"type": "list",
-"description": "List of cluster modules to load at start of worker scripts"
-},
-{
-"property": "exe.gzip",
-"type": "executable",
-"description": "Path for the \"gzip\" executable; if not supplied, any script that needs the gzip command will assume it is on the PATH."
-},
-{
-"property": "r.debug",
-"description": "Options: Y/N. If Y, will generate R Script log files",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "pipeline.limitDebugClasses",
-"type": "list",
-"description": "limit classes that log debug statements"
-},
-{
-"property": "pipeline.disableAddPreReqModules",
-"type": "boolean",
-"description": "If set to true, prerequisite modules will not be added to the pipeline."
-},
-{
-"property": "validation.compareOn",
-"type": "list",
-"description": "Which columns in the expectation file should be used for the comparison. Options: name, size, md5. Default: use all columns in the expectation file."
-},
-{
-"property": "aws.region",
-"type": "string",
-"description": ""
-},
-{
-"property": "pipeline.defaultDemultiplexer",
-"description": "Java class name for default module used to demultiplex data",
-"default": "biolockj.module.implicit.Demultiplexer",
-"type": "string"
-},
-{
-"property": "r.saveRData",
-"type": "boolean",
-"description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
-},
-{
-"property": "humann2.disableGeneFamilies",
-"type": "boolean",
-"description": "disable HumanN2 Gene Family report"
-},
-{
-"property": "script.numWorkers",
-"description": "Set number of samples to process per script (if parallel processing)",
-"default": "1",
-"type": "integer"
-},
-{
-"property": "validation.disableValidation",
-"type": "boolean",
-"description": "Turn off validation. No validation file output is produced. Options: Y/N. default: N"
-},
-{
-"property": "exe.python",
-"type": "executable",
-"description": "Path for the \"python\" executable; if not supplied, any script that needs the python command will assume it is on the PATH."
-},
-{
-"property": "aws.purgeEfsOutput",
-"type": "boolean",
-"description": "If enabled delete all EFS/pipelines"
-},
-{
-"property": "cluster.statusCommand",
-"type": "string",
-"description": "Terminal command used to submit jobs on the cluster"
-},
-{
-"property": "r.timeout",
-"description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
-"default": "10",
-"type": "integer"
-},
-{
-"property": "r.reportFields",
-"type": "list",
-"description": "Metadata fields to include in reports; Fields listed here must exist in the metadata file. R reports must contain at least one valid field."
-},
-{
-"property": "pipeline.copyInput",
-"type": "boolean",
-"description": "copy input files into pipeline root directory"
-},
-{
-"property": "cluster.host",
-"type": "string",
-"description": "The remote cluster host URL (used for ssh, scp, rsync, etc)"
-},
-{
-"property": "pipeline.defaultStatsModule",
-"type": "string",
-"description": "Java class name for default module used generate p-value and other stats"
-},
-{
-"property": "pipeline.detachJavaModules",
-"type": "boolean",
-"description": "If true Java modules do not run with main BioLockJ Java application. Instead they run on compute nodes on the CLUSTER or AWS environments."
-},
-{
-"property": "aws.ec2InstanceID",
-"type": "string",
-"description": "ID of an existing ec2 instance to use as the head node"
-},
-{
-"property": "metadata.nullValue",
-"description": "metadata cells with this value will be treated as empty",
-"default": "NA",
-"type": "string"
-},
-{
-"property": "aws.ec2TerminateHead",
-"type": "boolean",
-"description": ""
-},
-{
-"property": "input.dirPaths",
-"type": "list of file paths",
-"description": "List of one or more directories containing the pipeline input data."
-},
-{
-"property": "aws.saveCloud",
-"type": "boolean",
-"description": ""
-},
-{
-"property": "report.numReads",
-"description": "Options: Y/N. If Y, and add Num_Reads to metadata",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "genMod.dockerContainerName",
-"type": "string",
-"description": "Name of the docker container to use when executing an instance of the GenMod module."
-},
-{
-"property": "pipeline.userProfile",
-"description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others",
-"default": "${HOME}/.bash_profile",
-"type": "file path"
-},
-{
-"property": "validation.expectationFile",
-"type": "file path",
-"description": "file path that gives the expected values for file metrics (probably generated by a previous run of the same pipeline)"
-},
-{
-"property": "r.nominalFields",
-"type": "list",
-"description": "Override default property type by explicitly listing it as nominal."
-},
-{
-"property": "report.logBase",
-"description": "Options: 10,e,null. If e, use natural log (base e); if 10, use log base 10; if not set, counts will not be converted to a log scale.",
-"default": "10",
-"type": "string"
-},
-{
-"property": "aws.ec2AcquisitionStrategy",
-"type": "string",
-"description": "The AWS acquisition strategy (SPOT or DEMAND) sets the service SLA for procuring new EC2 instances"
-},
-{
-"property": "exe.java",
-"type": "executable",
-"description": "Path for the \"java\" executable; if not supplied, any script that needs the java command will assume it is on the PATH."
-},
-{
-"property": "report.unclassifiedTaxa",
-"description": "report unclassified taxa",
-"default": "Y",
-"type": "boolean"
-},
-{
-"property": "input.trimSuffix",
-"type": "string",
-"description": "suffix to trim from sequence file names or headers to obtain Sample ID"
-},
-{
-"property": "pipeline.permissions",
-"description": "Set chmod -R command security bits on pipeline root directory (Ex. 770)",
-"default": "770",
-"type": "string"
-},
-{
-"property": "report.minCount",
-"description": "minimum table count allowed, if a count less that this value is found, it is set to 0.",
-"default": "2",
 "type": "integer"
 },
 {
@@ -453,83 +440,78 @@
 "type": "numeric"
 },
 {
+"property": "r.reportFields",
+"type": "list",
+"description": "Metadata fields to include in reports; Fields listed here must exist in the metadata file. R reports must contain at least one valid field."
+},
+{
+"property": "r.saveRData",
+"type": "boolean",
+"description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
+},
+{
+"property": "r.timeout",
+"description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+"default": "10",
+"type": "integer"
+},
+{
+"property": "r.useUniqueColors",
+"type": "boolean",
+"description": "force to use a unique color for every value in every field plotted; only recommended for low numbers of metadata columns/values."
+},
+{
+"property": "r_PlotMds.reportFields",
+"type": "list",
+"description": "Metadata column names indicating fields to include in the MDS report; Fields listed here must exist in the metadata file."
+},
+{
+"property": "report.logBase",
+"description": "Options: 10,e,null. If e, use natural log (base e); if 10, use log base 10; if not set, counts will not be converted to a log scale.",
+"default": "10",
+"type": "string"
+},
+{
+"property": "report.minCount",
+"description": "minimum table count allowed, if a count less that this value is found, it is set to 0.",
+"default": "2",
+"type": "integer"
+},
+{
+"property": "report.numHits",
+"description": "Options: Y/N. If Y, and add Num_Hits to metadata",
+"default": "Y",
+"type": "boolean"
+},
+{
+"property": "report.numReads",
+"description": "Options: Y/N. If Y, and add Num_Reads to metadata",
+"default": "Y",
+"type": "boolean"
+},
+{
+"property": "report.scarceCountCutoff",
+"description": "Minimum percentage of samples that must contain a count value for it to be kept.",
+"default": "0.25",
+"type": "numeric"
+},
+{
 "property": "report.scarceSampleCutoff",
 "description": "Minimum percentage of data columns that must be non-zero to keep the sample.",
 "default": "0.25",
 "type": "numeric"
 },
 {
-"property": "aws.purgeEfsInputs",
-"type": "boolean",
-"description": "If enabled delete all EFS dirs (except pipelines)"
+"property": "report.taxonomyLevels",
+"description": "Options: domain,phylum,class,order,family,genus,species. Generate reports for listed taxonomy levels",
+"default": "phylum,class,order,family,genus",
+"type": "list"
 },
 {
-"property": "aws.copyPipelineToS3",
-"type": "boolean",
-"description": "If enabled save pipeline to S3"
-},
-{
-"property": "pipeline.defaultSeqMerger",
-"description": "Java class name for default module used combined paired read files",
-"default": "biolockj.module.seq.PearMergeReads",
-"type": "string"
-},
-{
-"property": "docker.saveContainerOnExit",
-"type": "boolean",
-"description": "if ture, docker run command will NOT include the --rm flag"
-},
-{
-"property": "pipeline.env",
-"description": "Environment in which a pipeline is run. Options: cluster, aws, local",
-"default": "local",
-"type": "string"
-},
-{
-"property": "validation.reportOn",
-"type": "list",
-"description": "Which attributes of the file should be included in the validation report file. Options: name, size, md5"
-},
-{
-"property": "pipeline.deleteTempFiles",
-"type": "boolean",
-"description": "delete files in temp directories"
-},
-{
-"property": "r.colorPoint",
-"description": "default color of scatterplot and strip-chart plot points",
-"default": "black",
-"type": "string"
-},
-{
-"property": "metadata.useEveryRow",
-"type": "boolean",
-"description": "If Y, require a sequence file for every SampleID (every row) in metadata file; If N, metadata can include extraneous SampleIDs."
-},
-{
-"property": "r.excludeFields",
-"type": "list",
-"description": "Fields from the metadata that will be excluded from any auto-determined typing, or plotting; R reports must contain at least one valid nominal or numeric metadata field."
-},
-{
-"property": "pipeline.defaultProps",
-"type": "list of file paths",
-"description": "file path of default property file(s); Nested default properties are supported (so the default property file can also have a default, and so on)."
-},
-{
-"property": "cluster.jobHeader",
-"type": "string",
-"description": "Header written at top of worker scripts"
-},
-{
-"property": "validation.stopPipeline",
-"type": "boolean",
-"description": "If enabled, the validation utlility will stop the pipeline if any module fails validation. Options: Y/N"
-},
-{
-"property": "input.ignoreFiles",
-"type": "list",
-"description": "file names to ignore if found in input directories"
+"property": "report.unclassifiedTaxa",
+"description": "report unclassified taxa",
+"default": "Y",
+"type": "boolean"
 },
 {
 "property": "script.defaultHeader",
@@ -538,10 +520,16 @@
 "type": "string"
 },
 {
-"property": "pipeline.defaultFastaConverter",
-"description": "Java class name for default module used to convert files into fasta format",
-"default": "biolockj.module.seq.AwkFastaConverter",
-"type": "string"
+"property": "script.numThreads",
+"description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+"default": "8",
+"type": "integer"
+},
+{
+"property": "script.numWorkers",
+"description": "Set number of samples to process per script (if parallel processing)",
+"default": "1",
+"type": "integer"
 },
 {
 "property": "script.permissions",
@@ -550,26 +538,38 @@
 "type": "string"
 },
 {
-"property": "input.suffixFw",
-"description": "file suffix used to identify forward reads ininput.dirPaths",
-"default": "_R1",
-"type": "regex"
+"property": "script.timeout",
+"type": "integer",
+"description": "Sets # of minutes before worker scripts times out."
 },
 {
-"property": "metadata.columnDelim",
-"description": "defines how metadata columns are separated; Typically files are tab or comma separated.",
-"default": "\\t",
-"type": "string"
+"property": "validation.compareOn",
+"type": "list",
+"description": "Which columns in the expectation file should be used for the comparison. Options: name, size, md5. Default: use all columns in the expectation file."
 },
 {
-"property": "aws.s3",
-"type": "string",
-"description": "AWS S3 pipeline output directory used by Nextflow main.nf"
+"property": "validation.disableValidation",
+"type": "boolean",
+"description": "Turn off validation. No validation file output is produced. Options: Y/N. default: N"
 },
 {
-"property": "report.taxonomyLevels",
-"description": "Options: domain,phylum,class,order,family,genus,species. Generate reports for listed taxonomy levels",
-"default": "phylum,class,order,family,genus",
-"type": "list"
+"property": "validation.expectationFile",
+"type": "file path",
+"description": "file path that gives the expected values for file metrics (probably generated by a previous run of the same pipeline)"
+},
+{
+"property": "validation.reportOn",
+"type": "list",
+"description": "Which attributes of the file should be included in the validation report file. Options: name, size, md5"
+},
+{
+"property": "validation.sizeWithinPercent",
+"type": "numeric",
+"description": "What percentage difference is permitted between an output file and its expectation. Options: any positive number"
+},
+{
+"property": "validation.stopPipeline",
+"type": "boolean",
+"description": "If enabled, the validation utlility will stop the pipeline if any module fails validation. Options: Y/N"
 }
 ]
