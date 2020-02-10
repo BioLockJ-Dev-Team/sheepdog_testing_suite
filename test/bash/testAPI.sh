@@ -62,7 +62,7 @@ echo "Any pipelines formed will be stored in: $BLJ_PROJ"
 
 MOD=biolockj.module.report.taxa.AddPseudoCount
 MORE_MODS=$SHEP/MockMain/dist
-CONFIG=$SHEP/bash/configFile/rarifySeqs.properties
+CONFIG=$SHEP/test/bash/configFile/rarifySeqs.properties
 
 
 # For a subset of tests, see the command that the bash layer is sending to java.
@@ -215,24 +215,17 @@ id=api-test_13_isValidProp_msg
 biolockj-api isValidProp --property script.numThreads --value apple 1>> $OUT/${id}.out 2>> $OUT/${id}.err # false (and error message)
 check_it g
 
-# test a prop/val pair given a config file
-id=api-test_14_isValidConfigProp
-#biolockj-api isValidConfigProp --config $CONFIG --property script.numThreads 
-
-id=api-test_15_isValidConfigProp_msg
-#biolockj-api isValidConfigProp --config $CONFIG --property script.numThreads
-
-id=api-test_16_withConfig_noConfig_msg
-#biolockj-api isValidConfigProp --config bad/config/path --property script.numThreads
-
 # get the value for a given property, with no config file (ie, defaults)
 id=api-test_17_propValue
 biolockj-api propValue --property script.numThreads 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propValue --property input.dirPaths 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it g
 
 # get the value for a given property given a config file
 id=api-test_18_propValue_config
-#biolockj-api propValue $CONFIG script.numThreads
+biolockj-api propValue --config $CONFIG --property script.numThreads 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propValue --config $CONFIG --property input.dirPaths 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+check_it g
 
 # get a json string with lots of this data using the general properties
 id=api-test_19_propInfo

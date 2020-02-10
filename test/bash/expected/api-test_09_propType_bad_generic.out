@@ -3,5 +3,5 @@ STANDARD_ERR:
 The query [propType] requires the [--property] option.
 See help menu using: biolockj-api help
 The query [propType] does not support the [--config] option.
-Found [ config = <SHEP>/bash/configFile/rarifySeqs.properties ].
+Found [ config = <SHEP>/test/bash/configFile/rarifySeqs.properties ].
 See help menu using: biolockj-api help
