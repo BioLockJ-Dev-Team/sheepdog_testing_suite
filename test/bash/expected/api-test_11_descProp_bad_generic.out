@@ -1,0 +1,7 @@
+
+STANDARD_ERR:
+The query [describeProp] requires the [--property] option.
+See help menu using: biolockj-api help
+The query [describeProp] does not support the [--config] option.
+Found [ config = <SHEP>/bash/configFile/rarifySeqs.properties ].
+See help menu using: biolockj-api help

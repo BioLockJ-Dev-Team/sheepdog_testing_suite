@@ -4,3 +4,4 @@ expected_examples/*.out
 expected_examples/*.err
 *NOT_IN_GIT*
 output/*
+output-api/*

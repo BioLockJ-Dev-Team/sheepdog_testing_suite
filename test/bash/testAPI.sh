@@ -52,7 +52,7 @@ check_it(){
 TOTAL_TESTS=0
 PASSING_TESTS=0
 
-OUT="$SHEP/test/bash/output"
+OUT="$SHEP/test/bash/output-api"
 EXP="$SHEP/test/bash/expected"
 rm -rf $OUT
 mkdir $OUT
@@ -172,6 +172,11 @@ biolockj-api propType --property pipeline.defaultStatsModule 1>> $OUT/${id}.out 
 biolockj-api propType --property pipeleeene.Typo 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
 check_it g
 
+id=api-test_09_propType_bad
+biolockj-api propType 1>> $OUT/${id}.out 2>> $OUT/${id}.err # boolean
+biolockj-api propType --property pipeline.detachJavaModules --config $CONFIG 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+check_it g
+
 # get the description for a few properties from a module
 id=api-test_10_descProp_mod
 biolockj-api describeProp --property pipeline.defaultSeqMerger --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
@@ -183,6 +188,11 @@ id=api-test_11_descProp
 biolockj-api describeProp --property pipeline.defaultSeqMerger 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
 biolockj-api describeProp --property major.TYPO 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
 biolockj-api describeProp --property pipeline.detachJavaModules 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
+check_it g
+
+id=api-test_11_descProp_bad
+biolockj-api describeProp 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
+biolockj-api describeProp --config $CONFIG 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
 check_it g
 
 # test a prop/val pair for a module (one good, bad, null)
