@@ -56,9 +56,7 @@ OUT="$SHEP/test/bash/output-api"
 EXP="$SHEP/test/bash/expected"
 rm -rf $OUT
 mkdir $OUT
-export BLJ_PROJ="${SHEP}/MockMain/pipelines"
 echo "Output from individual tests are stored in: $OUT"
-echo "Any pipelines formed will be stored in: $BLJ_PROJ"
 
 MOD=biolockj.module.report.taxa.AddPseudoCount
 MORE_MODS=$SHEP/MockMain/dist
