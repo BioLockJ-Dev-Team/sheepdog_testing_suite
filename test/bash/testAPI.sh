@@ -83,7 +83,7 @@ check_it g
 
 # list all modules, including extra modules in $MORE_MODS
 id=api-test_02_listExtModules
-biolockj-api listModules $MORE_MODS 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api listModules --external-modules $MORE_MODS 1> $OUT/${id}.out 2> $OUT/${id}.err
 check_it g
 
 # get a list of modules that use the API_Module interface
@@ -93,12 +93,12 @@ check_it g
 
 # get ApiModules including extra modules
 id=api-test_03_listExtApiModules
-biolockj-api listApiModules $MORE_MODS 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api listApiModules --external-modules $MORE_MODS 1> $OUT/${id}.out 2> $OUT/${id}.err
 check_it g
 
 # for a module that uses the interface, get a list of properties
 id=api-test_04_listProps_module
-biolockj-api listProps $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api listProps --module $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
 check_it g
 
 # Get a list of properties for the backbone
@@ -113,70 +113,70 @@ check_it g
 
 # Get all props including props for extra modules
 id=api-test_07_listAllExtProps
-biolockj-api listAllProps $MORE_MODS  1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api listAllProps --external-modules $MORE_MODS  1> $OUT/${id}.out 2> $OUT/${id}.err
 check_it g
 
 # get the format type for a few properties for an individual module
 id=api-test_08_propType_mod
-biolockj-api propType script.numThreads $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
-biolockj-api propType cluster.batchCommand $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj-api propType pipeline.defaultStatsModule $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj-api propType pipeleeene.Typo $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propType --property script.numThreads --module $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api propType --property cluster.batchCommand --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propType --property pipeline.defaultStatsModule --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propType --property pipeleeene.Typo --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it g
 
 # get the format type for a few properties for the backbone
 id=api-test_09_propType
-biolockj-api propType pipeline.detachJavaModules 1> $OUT/${id}.out 2> $OUT/${id}.err # boolean
-biolockj-api propType pipeline.defaultStatsModule 1>> $OUT/${id}.out 2>> $OUT/${id}.err # string
-biolockj-api propType pipeleeene.Typo 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
+biolockj-api propType --property pipeline.detachJavaModules 1> $OUT/${id}.out 2> $OUT/${id}.err # boolean
+biolockj-api propType --property pipeline.defaultStatsModule 1>> $OUT/${id}.out 2>> $OUT/${id}.err # string
+biolockj-api propType --property pipeleeene.Typo 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
 check_it g
 
 # get the description for a few properties from a module
 id=api-test_10_descProp_mod
-biolockj-api describeProp pipeline.defaultSeqMerger $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # null
-biolockj-api describeProp script.defaultHeader $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
+biolockj-api describeProp --property pipeline.defaultSeqMerger --module $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # null
+biolockj-api describeProp --property script.defaultHeader --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
 check_it g
 
 # get the description for a few properties from the backbone
 id=api-test_11_descProp
-biolockj-api describeProp pipeline.defaultSeqMerger 1> $OUT/${id}.out 2> $OUT/${id}.err # text
-biolockj-api describeProp major.TYPO 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
-biolockj-api describeProp pipeline.detachJavaModules 1>> $OUT/${id}.out 2>> $OUT/${id}.err $OUT/${id}.err # text
+biolockj-api describeProp --property pipeline.defaultSeqMerger 1> $OUT/${id}.out 2> $OUT/${id}.err # text
+biolockj-api describeProp --property major.TYPO 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
+biolockj-api describeProp --property pipeline.detachJavaModules 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
 check_it g
 
 # test a prop/val pair for a module (one good, bad, null)
 id=api-test_12_isValidProp_mod
-biolockj-api isValidProp script.numThreads 1 $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # true
-biolockj-api isValidProp script.numTYPO 1 $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err $OUT/${id}.err # null
+biolockj-api isValidProp --property script.numThreads --value 1 --module $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # true
+biolockj-api isValidProp --property script.numTYPO --value 1 --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
 check_it g
 
 id=api-test_12_isValidProp_mod_msg
-biolockj-api isValidProp script.numThreads foo $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # false
+biolockj-api isValidProp --property script.numThreads --value foo --module $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # false
 check_it g
 
 # test a prop/val pair for the backbone (one good, bad, null)
 id=api-test_13_isValidProp
-biolockj-api isValidProp script.numThreads 1 1> $OUT/${id}.out 2> $OUT/${id}.err # true
-biolockj-api isValidProp script.numTYPO 1 1>> $OUT/${id}.out 2>> $OUT/${id}.err $OUT/${id}.err # null
+biolockj-api isValidProp --property script.numThreads --value 1 1> $OUT/${id}.out 2> $OUT/${id}.err # true
+biolockj-api isValidProp --property script.numTYPO --value 1 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
 check_it g
 
 id=api-test_13_isValidProp_msg
-biolockj-api isValidProp script.numThreads apple 1> $OUT/${id}.out 2> $OUT/${id}.err # false (and error message)
+biolockj-api isValidProp --property script.numThreads --value apple 1> $OUT/${id}.out 2> $OUT/${id}.err # false (and error message)
 check_it g
 
 # test a prop/val pair given a config file
 id=api-test_14_isValidConfigProp
-#biolockj-api isValidConfigProp $CONFIG script.numThreads 
+#biolockj-api isValidConfigProp --config $CONFIG --property script.numThreads 
 
 id=api-test_15_isValidConfigProp_msg
-#biolockj-api isValidConfigProp $CONFIG script.numThreads
+#biolockj-api isValidConfigProp --config $CONFIG --property script.numThreads
 
 id=api-test_16_withConfig_noConfig_msg
-#biolockj-api isValidConfigProp bad/config/path script.numThreads
+#biolockj-api isValidConfigProp --config bad/config/path --property script.numThreads
 
 # get the value for a given property, with no config file (ie, defaults)
 id=api-test_17_propValue
-biolockj-api propValue script.numThreads 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api propValue --property script.numThreads 1> $OUT/${id}.out 2> $OUT/${id}.err
 check_it g
 
 # get the value for a given property given a config file
@@ -195,5 +195,14 @@ check_it g
 
 # get a json string with all info on all modules including extra modules
 id=api-test_21_moduleExtInfo
-biolockj-api moduleInfo $MORE_MODS 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api moduleInfo --external-modules $MORE_MODS 1> $OUT/${id}.out 2> $OUT/${id}.err
+check_it g
+
+id=api-test_22_unknown_query
+biolockj-api isTYPOvalue 1> $OUT/${id}.out 2> $OUT/${id}.err
+check_it g
+
+id=api-test_23_unknown_option
+biolockj-api listProps madeUpOption  1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api listProps --madeUpOption val 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it g
