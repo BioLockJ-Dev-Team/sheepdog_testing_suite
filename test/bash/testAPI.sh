@@ -117,41 +117,37 @@ biolockj-api listAllProps $MORE_MODS  1> $OUT/${id}.out 2> $OUT/${id}.err
 check_it g
 
 # get the format type for a few properties for an individual module
- # integer
- # string
- # null for the module
- # null
 id=api-test_08_propType_mod
 biolockj-api propType script.numThreads $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
-biolockj-api propType cluster.batchCommand $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
-biolockj-api propType pipeline.defaultStatsModule $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
-biolockj-api propType pipeleeene.Typo $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api propType cluster.batchCommand $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propType pipeline.defaultStatsModule $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api propType pipeleeene.Typo $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it g
 
 # get the format type for a few properties for the backbone
 id=api-test_09_propType
-biolockj-api propType pipeline.detachJavaModules 1> $OUT/${id}.out 2> $OUT/${id}.err # Boolean
-biolockj-api propType pipeline.defaultStatsModule 1> $OUT/${id}.out 2> $OUT/${id}.err # String
-biolockj-api propType pipeleeene.Typo 1> $OUT/${id}.out 2> $OUT/${id}.err # null
+biolockj-api propType pipeline.detachJavaModules 1> $OUT/${id}.out 2> $OUT/${id}.err # boolean
+biolockj-api propType pipeline.defaultStatsModule 1>> $OUT/${id}.out 2>> $OUT/${id}.err # string
+biolockj-api propType pipeleeene.Typo 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
 check_it g
 
 # get the description for a few properties from a module
 id=api-test_10_descProp_mod
 biolockj-api describeProp pipeline.defaultSeqMerger $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # null
-biolockj-api describeProp script.defaultHeader $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # text
+biolockj-api describeProp script.defaultHeader $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err # text
 check_it g
 
 # get the description for a few properties from the backbone
 id=api-test_11_descProp
 biolockj-api describeProp pipeline.defaultSeqMerger 1> $OUT/${id}.out 2> $OUT/${id}.err # text
-biolockj-api describeProp major.TYPO 1> $OUT/${id}.out 2> $OUT/${id}.err # text
-biolockj-api describeProp pipeline.detachJavaModules 1> $OUT/${id}.out 2> $OUT/${id}.err # text
+biolockj-api describeProp major.TYPO 1>> $OUT/${id}.out 2>> $OUT/${id}.err # null
+biolockj-api describeProp pipeline.detachJavaModules 1>> $OUT/${id}.out 2>> $OUT/${id}.err $OUT/${id}.err # text
 check_it g
 
 # test a prop/val pair for a module (one good, bad, null)
 id=api-test_12_isValidProp_mod
 biolockj-api isValidProp script.numThreads 1 $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # true
-biolockj-api isValidProp script.numTYPO 1 $MOD 1> $OUT/${id}.out 2> $OUT/${id}.err # null
+biolockj-api isValidProp script.numTYPO 1 $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err $OUT/${id}.err # null
 check_it g
 
 id=api-test_12_isValidProp_mod_msg
@@ -161,7 +157,7 @@ check_it g
 # test a prop/val pair for the backbone (one good, bad, null)
 id=api-test_13_isValidProp
 biolockj-api isValidProp script.numThreads 1 1> $OUT/${id}.out 2> $OUT/${id}.err # true
-biolockj-api isValidProp script.numTYPO 1 1> $OUT/${id}.out 2> $OUT/${id}.err # null
+biolockj-api isValidProp script.numTYPO 1 1>> $OUT/${id}.out 2>> $OUT/${id}.err $OUT/${id}.err # null
 check_it g
 
 id=api-test_13_isValidProp_msg
