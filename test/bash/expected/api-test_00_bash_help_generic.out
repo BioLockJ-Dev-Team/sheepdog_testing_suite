@@ -1,0 +1,3 @@
+
+---------> Execute CMD [ biolockj-api help ]
+CMD: java -cp <BLJ>/dist/BioLockJ.jar biolockj.api.BioLockJ_API help

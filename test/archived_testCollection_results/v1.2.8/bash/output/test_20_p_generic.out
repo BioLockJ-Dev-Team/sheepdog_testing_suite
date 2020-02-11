@@ -1,0 +1,11 @@
+
+---------> Execute CMD [ biolockj -p --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/fastFail.properties ]
+precheck-only = true
+external-modules = <SHEP>/MockMain/dist
+KEY CMD: launch_java -p --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/fastFail.properties
+
+---------> Execute CMD [ launch_java -p --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/fastFail.properties ]
+precheck-only = true
+external-modules = <SHEP>/MockMain/dist
+Using <SHEP>/test/bash/configFile/fastFail.properties as the config file.
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -homeDir <HOME> -precheck -config <SHEP>/test/bash/configFile/fastFail.properties >/dev/null 2>&1 &
