@@ -1,0 +1,5 @@
+
+---------> Execute CMD [ biolockj --docker --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
+docker = true
+external-modules = <SHEP>/MockMain/dist
+KEY CMD: launch_docker --docker --external-modules <SHEP>/MockMain/dist configFile/example.properties

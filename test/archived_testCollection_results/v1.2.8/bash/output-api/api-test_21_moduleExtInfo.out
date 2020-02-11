@@ -1,0 +1,2514 @@
+[
+  {
+    "description": "Pick OTUs using a closed reference database and construct an OTU table via the QIIME script pick_closed_reference_otus.py",
+    "details": "This module picks OTUs using a closed reference database and constructs an OTU table via the QIIME script [pick_closed_reference_otus.py](http://qiime.org/scripts/pick_closed_reference_otus.html).  Taxonomy is assigned using a pre-defined taxonomy map of reference sequence OTU to taxonomy.  This is the fastest OTU picking method since samples can be processed in parallel batches.  Before the QIIME script is run, batches are prepared in the temp directory, with each batch directory containing a fasta directory with *script.batchSize* fasta files and a QIIME mapping file, created with awk, called batchMapping.tsv for the batch of samples.   Inherits from [QiimeClassifier](../../../module.implicit.qiime#QiimeClassifier).",
+    "title": "QiimeClosedRefClassifier",
+    "citation": "QIIME allows analysis of high-throughput community sequencing data\nJ Gregory Caporaso, Justin Kuczynski, Jesse Stombaugh, Kyle Bittinger, Frederic D Bushman, Elizabeth K Costello, Noah Fierer, Antonio Gonzalez Pena, Julia K Goodrich, Jeffrey I Gordon, Gavin A Huttley, Scott T Kelley, Dan Knights, Jeremy E Koenig, Ruth E Ley, Catherine A Lozupone, Daniel McDonald, Brian D Muegge, Meg Pirrung, Jens Reeder, Joel R Sevinsky, Peter J Turnbaugh, William A Walters, Jeremy Widmann, Tanya Yatsunenko, Jesse Zaneveld and Rob Knight; Nature Methods, 2010; doi:10.1038/nmeth.f.303\n(needs further citation)\nhttp://www.wernerlab.org/software/macqiime/citations",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.awk",
+        "type": "executable",
+        "description": "Path for the \"awk\" executable; if not supplied, any script that needs the awk command will assume it is on the PATH."
+      },
+      {
+        "property": "exe.vsearch",
+        "type": "executable",
+        "description": "Path for the \"vsearch\" executable; if not supplied, any script that needs the vsearch command will assume it is on the PATH."
+      },
+      {"property": "qiime.params"},
+      {"property": "qiime.pynastAlignDB"},
+      {"property": "qiime.refSeqDB"},
+      {
+        "property": "qiime.removeChimeras",
+        "default": "Y"
+      },
+      {"property": "qiime.taxaDB"},
+      {"property": "qiime.vsearchParams"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.classifier.r16s.QiimeClosedRefClassifier"
+  },
+  {
+    "description": "Run the QIIME pick_de_novo_otus.py script on all fasta sequence files",
+    "details": "This module runs the QIIME [pick_de_novo_otus.py](http://qiime.org/scripts/pick_de_novo_otus.html) script on all fasta sequence files in a single script since OTUs are assigned by a clustering algorithm.  Additional parameters for this script are set using *exe.classifierParams*.  If *qiime.removeChimeras* = \"Y\", vsearch is used to find chimeric sequences in the output and the QIIME script [filter_otus_from_otu_table.py](http://qiime.org/scripts/filter_otus_from_otu_table.html) is run to remove them from ./output/otu_table.biom.  Inherits from [QiimeClassifier](../../../module.implicit.qiime#QiimeClassifier).",
+    "title": "QiimeDeNovoClassifier",
+    "citation": "QIIME allows analysis of high-throughput community sequencing data\nJ Gregory Caporaso, Justin Kuczynski, Jesse Stombaugh, Kyle Bittinger, Frederic D Bushman, Elizabeth K Costello, Noah Fierer, Antonio Gonzalez Pena, Julia K Goodrich, Jeffrey I Gordon, Gavin A Huttley, Scott T Kelley, Dan Knights, Jeremy E Koenig, Ruth E Ley, Catherine A Lozupone, Daniel McDonald, Brian D Muegge, Meg Pirrung, Jens Reeder, Joel R Sevinsky, Peter J Turnbaugh, William A Walters, Jeremy Widmann, Tanya Yatsunenko, Jesse Zaneveld and Rob Knight; Nature Methods, 2010; doi:10.1038/nmeth.f.303\n(needs further citation)\nhttp://www.wernerlab.org/software/macqiime/citations",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.vsearch",
+        "type": "executable",
+        "description": "Path for the \"vsearch\" executable; if not supplied, any script that needs the vsearch command will assume it is on the PATH."
+      },
+      {"property": "qiime.params"},
+      {"property": "qiime.pynastAlignDB"},
+      {"property": "qiime.refSeqDB"},
+      {
+        "property": "qiime.removeChimeras",
+        "default": "Y"
+      },
+      {"property": "qiime.taxaDB"},
+      {"property": "qiime.vsearchParams"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.classifier.r16s.QiimeDeNovoClassifier"
+  },
+  {
+    "description": "Run the QIIME pick_open_reference_otus.py script on all fasta sequence files",
+    "details": "This module runs the QIIME [pick_open_reference_otus.py](http://qiime.org/scripts/pick_open_reference_otus.html) script on all fasta sequence files in a single script since clusters not identified in the reference database are assigned by a clustering algorithm.  Additional parameters for this script are set using *exe.classifierParams*.  If *qiime.removeChimeras* = \"Y\", vsearch is used to find chimeric sequences in the output and the QIIME script [filter_otus_from_otu_table.py](http://qiime.org/scripts/filter_otus_from_otu_table.html) is run to remove them from ./output/otu_table.biom.  Inherits from [QiimeClassifier](../../../module.implicit.qiime#QiimeClassifier).",
+    "title": "QiimeOpenRefClassifier",
+    "citation": "QIIME allows analysis of high-throughput community sequencing data\nJ Gregory Caporaso, Justin Kuczynski, Jesse Stombaugh, Kyle Bittinger, Frederic D Bushman, Elizabeth K Costello, Noah Fierer, Antonio Gonzalez Pena, Julia K Goodrich, Jeffrey I Gordon, Gavin A Huttley, Scott T Kelley, Dan Knights, Jeremy E Koenig, Ruth E Ley, Catherine A Lozupone, Daniel McDonald, Brian D Muegge, Meg Pirrung, Jens Reeder, Joel R Sevinsky, Peter J Turnbaugh, William A Walters, Jeremy Widmann, Tanya Yatsunenko, Jesse Zaneveld and Rob Knight; Nature Methods, 2010; doi:10.1038/nmeth.f.303\n(needs further citation)\nhttp://www.wernerlab.org/software/macqiime/citations",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.vsearch",
+        "type": "executable",
+        "description": "Path for the \"vsearch\" executable; if not supplied, any script that needs the vsearch command will assume it is on the PATH."
+      },
+      {"property": "qiime.params"},
+      {"property": "qiime.pynastAlignDB"},
+      {"property": "qiime.refSeqDB"},
+      {
+        "property": "qiime.removeChimeras",
+        "default": "Y"
+      },
+      {"property": "qiime.taxaDB"},
+      {"property": "qiime.vsearchParams"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.classifier.r16s.QiimeOpenRefClassifier"
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.classifier.r16s.RdpClassifier",
+    "pre-req modules": [],
+    "description": "Classify 16s samples with [RDP](http://rdp.cme.msu.edu/classifier/classifier.jsp).",
+    "details": "",
+    "post-req modules": ["biolockj.module.implicit.parser.r16s.RdpParser"],
+    "title": "RdpClassifier",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {"property": "rdp.db"},
+      {"property": "rdp.jar"},
+      {"property": "rdp.javaParams"},
+      {
+        "property": "rdp.params",
+        "default": "-f fixrank"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Franzosa EA*, McIver LJ*, Rahnavard G, Thompson LR, Schirmer M, Weingart G, Schwarzberg Lipson K, Knight R, Caporaso JG, Segata N, Huttenhower C. \nSpecies-level functional profiling of metagenomes and metatranscriptomes. Nat Methods 15: 962-968 (2018).\nhttp://huttenhower.sph.harvard.edu/humann2\nBioLockJ module developed by Mike Siota",
+    "usage": "#BioModule biolockj.module.classifier.wgs.Humann2Classifier",
+    "pre-req modules": [],
+    "description": "Profile the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data.",
+    "details": "",
+    "post-req modules": ["biolockj.module.implicit.parser.wgs.Humann2Parser"],
+    "title": "HUMAnN2",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.humann2",
+        "type": "executable",
+        "description": "Path for the \"humann2\" executable; if not supplied, any script that needs the humann2 command will assume it is on the PATH."
+      },
+      {"property": "humann2.humann2JoinTableParams"},
+      {"property": "humann2.humann2Params"},
+      {"property": "humann2.humann2RenormTableParams"},
+      {"property": "humann2.nuclDB"},
+      {"property": "humann2.protDB"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Improved metagenomic analysis with Kraken 2\r\nDerrick E. Wood, Jennifer Lu, Ben Langmead\r\nbioRxiv 762302; doi: https://doi.org/10.1101/762302",
+    "usage": "#BioModule biolockj.module.classifier.wgs.Kraken2Classifier",
+    "pre-req modules": [],
+    "description": "Classify WGS samples with [KRAKEN 2](https://ccb.jhu.edu/software/kraken2/).",
+    "details": "",
+    "post-req modules": ["biolockj.module.implicit.parser.wgs.Kraken2Parser"],
+    "title": "Kraken2Classifier",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.kraken2",
+        "type": "executable",
+        "description": "Path for the \"kraken2\" executable; if not supplied, any script that needs the kraken2 command will assume it is on the PATH."
+      },
+      {"property": "kraken2.db"},
+      {"property": "kraken2.kraken2Params"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Wood DE, Salzberg SL: Kraken: ultrafast metagenomic sequence classification using exact alignments. Genome Biology 2014, 15:R46.",
+    "usage": "#BioModule biolockj.module.classifier.wgs.KrakenClassifier",
+    "pre-req modules": [],
+    "description": "Classify WGS samples with KRAKEN.",
+    "details": "Classify WGS samples with [KRAKEN](http://ccb.jhu.edu/software/kraken/).",
+    "post-req modules": ["biolockj.module.implicit.parser.wgs.KrakenParser"],
+    "title": "KrakenClassifier",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.kraken",
+        "type": "executable",
+        "description": "Path for the \"kraken\" executable; if not supplied, any script that needs the kraken command will assume it is on the PATH."
+      },
+      {"property": "kraken.db"},
+      {
+        "property": "kraken.krakenParams",
+        "default": "--only-classified-output, --preload"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "MetaPhlAn2 for enhanced metagenomic taxonomic profiling. Duy Tin Truong, Eric A Franzosa, Timothy L Tickle, Matthias Scholz, George Weingart, Edoardo Pasolli, Adrian Tett, Curtis Huttenhower & Nicola Segata. Nature Methods 12, 902-903 (2015)",
+    "usage": "#BioModule biolockj.module.classifier.wgs.Metaphlan2Classifier",
+    "pre-req modules": [],
+    "description": "Classify WGS samples with [MetaPhlAn2](http://bitbucket.org/biobakery/metaphlan2).",
+    "details": "",
+    "post-req modules": ["biolockj.module.implicit.parser.wgs.Metaphlan2Parser"],
+    "title": "Metaphlan2Classifier",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.metaphlan2",
+        "type": "executable",
+        "description": "Path for the \"metaphlan2\" executable; if not supplied, any script that needs the metaphlan2 command will assume it is on the PATH."
+      },
+      {"property": "metaphlan2.db"},
+      {"property": "metaphlan2.metaphlan2Params"},
+      {"property": "metaphlan2.mpa_pkl"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "BioLockJ v1.2.8",
+    "usage": "#BioModule biolockj.module.diy.GenMod",
+    "pre-req modules": [],
+    "description": "Allows user to add their own scripts into the BioLockJ pipeline.",
+    "details": "",
+    "post-req modules": [],
+    "title": "GenMod",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {"property": "genMod.launcher"},
+      {"property": "genMod.param"},
+      {"property": "genMod.scriptPath"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.implicit.Demultiplexer",
+    "pre-req modules": [],
+    "description": "Demultiplex samples into separate files for each sample.",
+    "details": "",
+    "post-req modules": [],
+    "title": "Demultiplexer",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "demultiplexer.barcodeCutoff",
+        "default": "0.05"
+      },
+      {"property": "demultiplexer.barcodeRevComp"},
+      {"property": "demultiplexer.strategy"},
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "metadata.barcodeColumn",
+        "description": "metadata column with identifying barcodes",
+        "default": "BarcodeSequence",
+        "type": "string"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.implicit.parser.r16s.RdpParser",
+    "pre-req modules": [],
+    "description": "Build OTU tables from [RDP](http://rdp.cme.msu.edu/classifier/classifier.jsp) reports.",
+    "details": "",
+    "post-req modules": [],
+    "title": "RdpParser",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "rdp.minThresholdScore",
+        "default": "80"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockJ v1.2.8",
+    "usage": "#BioModule biolockj.module.implicit.parser.wgs.Humann2Parser",
+    "pre-req modules": [],
+    "description": "Build OTU tables from HumanN2 classifier module output.",
+    "details": "",
+    "post-req modules": [],
+    "title": "Humann2Parser",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {"property": "humann2.keepUnintegrated"},
+      {"property": "humann2.keepUnmapped"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.implicit.parser.wgs.KrakenParser",
+    "pre-req modules": [],
+    "description": "Build OTU tables from [KRAKEN](http://ccb.jhu.edu/software/kraken/) mpa-format reports.",
+    "details": "",
+    "post-req modules": [],
+    "title": "KrakenParser",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "report.unclassifiedTaxa",
+        "description": "report unclassified taxa",
+        "default": "Y",
+        "type": "boolean"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda.\nBioLockJ v1.2.8",
+    "usage": "#BioModule biolockj.module.report.Email",
+    "pre-req modules": [],
+    "description": "Send user an email containing the pipeline summary when the pipeline either completes or fails.",
+    "details": "",
+    "post-req modules": [],
+    "title": "Email",
+    "properties": [
+      {
+        "property": "mail.encryptedPassword",
+        "default": "7GYvu1m+Yv1Gk7Cd9BLaznJ/jq33g0q1"
+      },
+      {
+        "property": "mail.from",
+        "default": "biolockj@gmail.com"
+      },
+      {
+        "property": "mail.smtp.auth",
+        "default": "Y"
+      },
+      {
+        "property": "mail.smtp.host",
+        "default": "smtp.gmail.com"
+      },
+      {
+        "property": "mail.smtp.port",
+        "default": "587"
+      },
+      {
+        "property": "mail.smtp.starttls.enable",
+        "default": "Y"
+      },
+      {"property": "mail.to"}
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.report.otu.RarefyOtuCounts",
+    "pre-req modules": [],
+    "description": "Applies a mean iterative post-OTU classification rarefication algorithm so that each output sample will have approximately the same number of OTUs.",
+    "details": "",
+    "post-req modules": [],
+    "title": "RarefyOtuCounts",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "rarefyOtuCounts.iterations",
+        "default": "10"
+      },
+      {
+        "property": "rarefyOtuCounts.lowAbundantCutoff",
+        "default": "0.01"
+      },
+      {
+        "property": "rarefyOtuCounts.quantile",
+        "default": "0.5"
+      },
+      {"property": "rarefyOtuCounts.rmLowSamples"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "description": "Generate a summary statistics table with [adjusted and unadjusted] [parameteric and non-parametirc] p-values and r<sup>2<\/sup> values for each reportable metadata field and each *report.taxonomyLevel* configured.",
+    "details": "",
+    "title": "R_CalculateStats",
+    "citation": "BioLockJ v1.2.8\nModule developted by Mike Sioda.",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.Rscript",
+        "type": "executable",
+        "description": "Path for the \"Rscript\" executable; if not supplied, any script that needs the Rscript command will assume it is on the PATH."
+      },
+      {
+        "property": "r.colorFile",
+        "type": "file path",
+        "description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
+      },
+      {
+        "property": "r.debug",
+        "description": "Options: Y/N. If Y, will generate R Script log files",
+        "default": "Y",
+        "type": "boolean"
+      },
+      {
+        "property": "r.saveRData",
+        "type": "boolean",
+        "description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
+      },
+      {
+        "property": "r.timeout",
+        "description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+        "default": "10",
+        "type": "integer"
+      },
+      {
+        "property": "r_CalculateStats.pAdjustMethod",
+        "default": "BH"
+      },
+      {
+        "property": "r_CalculateStats.pAdjustScope",
+        "default": "LOCAL"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.report.r.R_CalculateStats"
+  },
+  {
+    "description": "Generate horizontal barplot representing effect size (Cohen's d, r<sup>2<\/sup>, and/or fold change) for each reportable metadata field and each *report.taxonomyLevel* configured.",
+    "details": "",
+    "title": "R_PlotEffectSize",
+    "citation": "BioLockJ v1.2.8\nModule developted by Ivory Blakley.",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.Rscript",
+        "type": "executable",
+        "description": "Path for the \"Rscript\" executable; if not supplied, any script that needs the Rscript command will assume it is on the PATH."
+      },
+      {
+        "property": "r.colorFile",
+        "type": "file path",
+        "description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
+      },
+      {
+        "property": "r.debug",
+        "description": "Options: Y/N. If Y, will generate R Script log files",
+        "default": "Y",
+        "type": "boolean"
+      },
+      {
+        "property": "r.saveRData",
+        "type": "boolean",
+        "description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
+      },
+      {
+        "property": "r.timeout",
+        "description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+        "default": "10",
+        "type": "integer"
+      },
+      {"property": "r_PlotEffectSize.disableCohensD"},
+      {
+        "property": "r_PlotEffectSize.disableFoldChange",
+        "default": "Y"
+      },
+      {"property": "r_PlotEffectSize.disablePvalAdj"},
+      {"property": "r_PlotEffectSize.disableRSquared"},
+      {
+        "property": "r_PlotEffectSize.excludePvalAbove",
+        "default": "1"
+      },
+      {
+        "property": "r_PlotEffectSize.maxNumTaxa",
+        "default": "40"
+      },
+      {"property": "r_PlotEffectSize.parametricPval"},
+      {"property": "r_PlotEffectSize.taxa"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.report.r.R_PlotEffectSize"
+  },
+  {
+    "description": "Generate sets of multidimensional scaling plots showing 2 axes at a time (up to the <*r_PlotMds.numAxis*>th axis) with color coding based on each categorical metadata field (default) or by each field given in *r_PlotMds.reportFields*",
+    "details": "",
+    "title": "R_PlotMds",
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.Rscript",
+        "type": "executable",
+        "description": "Path for the \"Rscript\" executable; if not supplied, any script that needs the Rscript command will assume it is on the PATH."
+      },
+      {
+        "property": "r.colorBase",
+        "description": "base color used for labels & headings in the PDF report; Must be a valid color in R.",
+        "default": "black",
+        "type": "string"
+      },
+      {
+        "property": "r.colorFile",
+        "type": "file path",
+        "description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
+      },
+      {
+        "property": "r.colorHighlight",
+        "description": "color is used to highlight significant OTUs in plot",
+        "default": "red",
+        "type": "string"
+      },
+      {
+        "property": "r.colorPalette",
+        "type": "string",
+        "description": "palette argument passed to [get_palette {ggpubr}](https://www.rdocumentation.org/packages/ggpubr/versions/0.2/topics/get_palette) to select colors for some output visualiztions"
+      },
+      {
+        "property": "r.debug",
+        "description": "Options: Y/N. If Y, will generate R Script log files",
+        "default": "Y",
+        "type": "boolean"
+      },
+      {
+        "property": "r.pch",
+        "description": "Sets R plot pch parameter for PDF report",
+        "default": "21",
+        "type": "integer"
+      },
+      {
+        "property": "r.saveRData",
+        "type": "boolean",
+        "description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
+      },
+      {
+        "property": "r.timeout",
+        "description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+        "default": "10",
+        "type": "integer"
+      },
+      {
+        "property": "r_PlotMds.distance",
+        "default": "bray"
+      },
+      {
+        "property": "r_PlotMds.numAxis",
+        "default": "3"
+      },
+      {
+        "property": "r_PlotMds.reportFields",
+        "type": "list",
+        "description": "Metadata column names indicating fields to include in the MDS report; Fields listed here must exist in the metadata file."
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.report.r.R_PlotMds"
+  },
+  {
+    "description": "Generate OTU-metadata box-plots and scatter-plots for each reportable metadata field and each *report.taxonomyLevel* configured",
+    "details": "",
+    "title": "R_PlotOtus",
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.Rscript",
+        "type": "executable",
+        "description": "Path for the \"Rscript\" executable; if not supplied, any script that needs the Rscript command will assume it is on the PATH."
+      },
+      {
+        "property": "r.colorBase",
+        "description": "base color used for labels & headings in the PDF report; Must be a valid color in R.",
+        "default": "black",
+        "type": "string"
+      },
+      {
+        "property": "r.colorFile",
+        "type": "file path",
+        "description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
+      },
+      {
+        "property": "r.colorHighlight",
+        "description": "color is used to highlight significant OTUs in plot",
+        "default": "red",
+        "type": "string"
+      },
+      {
+        "property": "r.colorPalette",
+        "type": "string",
+        "description": "palette argument passed to [get_palette {ggpubr}](https://www.rdocumentation.org/packages/ggpubr/versions/0.2/topics/get_palette) to select colors for some output visualiztions"
+      },
+      {
+        "property": "r.colorPoint",
+        "description": "default color of scatterplot and strip-chart plot points",
+        "default": "black",
+        "type": "string"
+      },
+      {
+        "property": "r.debug",
+        "description": "Options: Y/N. If Y, will generate R Script log files",
+        "default": "Y",
+        "type": "boolean"
+      },
+      {
+        "property": "r.pValFormat",
+        "default": "%1.2g"
+      },
+      {
+        "property": "r.pch",
+        "description": "Sets R plot pch parameter for PDF report",
+        "default": "21",
+        "type": "integer"
+      },
+      {
+        "property": "r.rareOtuThreshold",
+        "description": "If >=1, R will filter OTUs found in fewer than this many samples. If <1, R will interperate the value as a percentage and discard OTUs not found in at least that percentage of samples",
+        "default": "1",
+        "type": "numeric"
+      },
+      {
+        "property": "r.saveRData",
+        "type": "boolean",
+        "description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
+      },
+      {
+        "property": "r.timeout",
+        "description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+        "default": "10",
+        "type": "integer"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.report.r.R_PlotOtus"
+  },
+  {
+    "description": "Generate p-value histograms for each reportable metadata field and each *report.taxonomyLevel* configured",
+    "details": "",
+    "title": "R_PlotPvalHistograms",
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.Rscript",
+        "type": "executable",
+        "description": "Path for the \"Rscript\" executable; if not supplied, any script that needs the Rscript command will assume it is on the PATH."
+      },
+      {
+        "property": "r.colorFile",
+        "type": "file path",
+        "description": "path to a tab-delimited file giving the color to use for each value of each metadata field plotted."
+      },
+      {
+        "property": "r.debug",
+        "description": "Options: Y/N. If Y, will generate R Script log files",
+        "default": "Y",
+        "type": "boolean"
+      },
+      {
+        "property": "r.pvalCutoff",
+        "description": "p-value cutoff used to assign label _r.colorHighlight_",
+        "default": "0.05",
+        "type": "numeric"
+      },
+      {
+        "property": "r.saveRData",
+        "type": "boolean",
+        "description": "If Y, all R script generating BioModules will save R Session data to the module output directory to a file using the extension \".RData\""
+      },
+      {
+        "property": "r.timeout",
+        "description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+        "default": "10",
+        "type": "integer"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.report.r.R_PlotPvalHistograms"
+  },
+  {
+    "description": "Add a pseudocount (+1) to each value in each taxa table.",
+    "details": "",
+    "title": "AddPseudoCount",
+    "citation": "BioLockJ v1.2.8",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.report.taxa.AddPseudoCount"
+  },
+  {
+    "citation": "https://bitbucket.org/biobakery/kneaddata/wiki/Home\nModule developed by Mike Sioda",
+    "usage": "#BioModule biolockj.module.seq.KneadData",
+    "pre-req modules": [],
+    "description": "Run the Biobakery [KneadData](https://bitbucket.org/biobakery/kneaddata/wiki/Home) program to remove contaminated DNA.",
+    "details": "",
+    "post-req modules": [],
+    "title": "KneadData",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.kneaddata",
+        "type": "executable",
+        "description": "Path for the \"kneaddata\" executable; if not supplied, any script that needs the kneaddata command will assume it is on the PATH."
+      },
+      {"property": "kneaddata.dbs"},
+      {"property": "kneaddata.kneaddataParams"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.seq.Multiplexer",
+    "pre-req modules": [],
+    "description": "Multiplex samples into a single file, or two files (one with forward reads, one with reverse reads) if multiplexing paired reads.",
+    "details": "",
+    "post-req modules": [],
+    "title": "Multiplexer",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "metadata.barcodeColumn",
+        "description": "metadata column with identifying barcodes",
+        "default": "BarcodeSequence",
+        "type": "string"
+      },
+      {
+        "property": "multiplexer.gzip",
+        "default": "Y"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "citation": "Jiajie Zhang, Kassian Kobert, Tomáš Flouri, Alexandros Stamatakis, PEAR: a fast and accurate Illumina Paired-End reAd mergeR, Bioinformatics, Volume 30, Issue 5, 1 March 2014, Pages 614\u2013620, https://doi.org/10.1093/bioinformatics/btt593\nhttps://cme.h-its.org/exelixis/web/software/pear/doc.html\nModule developed by Mike Sioda",
+    "usage": "#BioModule biolockj.module.seq.PearMergeReads",
+    "pre-req modules": [],
+    "description": "Run pear, the Paired-End reAd mergeR",
+    "details": "",
+    "post-req modules": [],
+    "title": "PearMergeReads",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "exe.pear",
+        "type": "executable",
+        "description": "Path for the \"pear\" executable; if not supplied, any script that needs the pear command will assume it is on the PATH."
+      },
+      {"property": "pearMergeReads.pearParams"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ]
+  },
+  {
+    "description": "Randomly select samples to reduce all samples to the configured maximum.<br> Samples with less than the minimum number of reads are discarded. ",
+    "details": "",
+    "title": "RarefySeqs",
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {"property": "rarefySeqs.max"},
+      {"property": "rarefySeqs.min"},
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      }
+    ],
+    "usage": "#BioModule biolockj.module.seq.RarefySeqs"
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.seq.SeqFileValidator",
+    "pre-req modules": [],
+    "description": "This BioModule validates fasta/fastq file formats are valid and enforces min/max read lengths.",
+    "details": "",
+    "post-req modules": [],
+    "title": "SeqFileValidator",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      },
+      {
+        "property": "seqFileValidator.requireEqualNumPairs",
+        "default": "Y"
+      },
+      {"property": "seqFileValidator.seqMaxLen"},
+      {"property": "seqFileValidator.seqMinLen"}
+    ]
+  },
+  {
+    "citation": "Module developed by Mike Sioda\nBioLockj v1.2.8",
+    "usage": "#BioModule biolockj.module.seq.TrimPrimers",
+    "pre-req modules": [],
+    "description": "Remove primers from reads, option to discard reads unless primers are attached to both forward and reverse reads.",
+    "details": "",
+    "post-req modules": [],
+    "title": "TrimPrimers",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "cluster.jobHeader",
+        "type": "string",
+        "description": "Header written at top of worker scripts"
+      },
+      {
+        "property": "cluster.modules",
+        "type": "list",
+        "description": "List of cluster modules to load at start of worker scripts"
+      },
+      {
+        "property": "cluster.prologue",
+        "type": "string",
+        "description": "To run at the start of every script after loading cluster modules (if any)"
+      },
+      {
+        "property": "cluster.statusCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"
+      },
+      {
+        "property": "docker.imgVersion",
+        "type": "string",
+        "description": "indicate specific version of Docker images"
+      },
+      {
+        "property": "docker.saveContainerOnExit",
+        "type": "boolean",
+        "description": "if ture, docker run command will NOT include the --rm flag"
+      },
+      {
+        "property": "docker.user",
+        "type": "string",
+        "description": "name of the Docker Hub user for getting docker containers"
+      },
+      {
+        "property": "script.defaultHeader",
+        "description": "Store default script header for MAIN script and locally run WORKER scripts.",
+        "default": "#!/bin/bash",
+        "type": "string"
+      },
+      {
+        "property": "script.numThreads",
+        "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+        "default": "8",
+        "type": "integer"
+      },
+      {
+        "property": "script.numWorkers",
+        "description": "Set number of samples to process per script (if parallel processing)",
+        "default": "1",
+        "type": "integer"
+      },
+      {
+        "property": "script.permissions",
+        "description": "Used as chmod permission parameter (ex: 774)",
+        "default": "770",
+        "type": "string"
+      },
+      {
+        "property": "script.timeout",
+        "type": "integer",
+        "description": "Sets # of minutes before worker scripts times out."
+      },
+      {"property": "trimPrimers.filePath"},
+      {
+        "property": "trimPrimers.requirePrimer",
+        "default": "Y"
+      }
+    ]
+  },
+  {
+    "citation": "Ivory Blakley",
+    "usage": "#BioModule sheepdog.modules.CopyMasterProps",
+    "pre-req modules": [],
+    "description": "Copy the master properties file",
+    "details": "",
+    "post-req modules": [],
+    "title": "CopyMasterProps",
+    "properties": []
+  }
+]

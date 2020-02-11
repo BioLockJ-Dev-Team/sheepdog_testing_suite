@@ -1,0 +1,4 @@
+
+---------> Execute CMD [ biolockj-api listModules --external-modules <SHEP>/MockMain/dist ]
+external-modules = <SHEP>/MockMain/dist
+CMD: java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.api.BioLockJ_API listModules
