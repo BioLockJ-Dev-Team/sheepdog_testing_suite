@@ -53,7 +53,7 @@ describeProp --property <property> [ --module <module_path> [ --external-modules
 Returns a description of the property.
 If a module is supplied, then the modules getDescription method is used.
 
-propValue --property <property> [ --config <file> ]
+propValue --property <property> [ --config <file> ] [ --module <module_path> ]
 Returns the value for that property given that config file (optional) or
 no config file (ie the default value)
 
@@ -128,7 +128,7 @@ describeProp --property <property> [ --module <module_path> [ --external-modules
 Returns a description of the property.
 If a module is supplied, then the modules getDescription method is used.
 
-propValue --property <property> [ --config <file> ]
+propValue --property <property> [ --config <file> ] [ --module <module_path> ]
 Returns the value for that property given that config file (optional) or
 no config file (ie the default value)
 
