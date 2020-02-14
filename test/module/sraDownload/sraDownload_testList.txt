@@ -1,0 +1,3 @@
+ConfigFile	ExpectedOutcome	Notes
+${SHEP}/test/module/sraDownload/sraDownload.properties	BioLockJ_Complete	standard case
+${SHEP}/test/module/sraDownload/badColName.properties	MetadataException	bad col name
