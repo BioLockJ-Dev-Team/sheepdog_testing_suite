@@ -3,7 +3,7 @@ package sheepdog.modules;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
-
+import biolockj.Constants;
 import biolockj.Log;
 import biolockj.module.BioModuleImpl;
 import biolockj.util.BioLockJUtil;
@@ -71,5 +71,9 @@ public class KrakenReparse extends BioModuleImpl
 		return returnFile;
 	}
 		
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
+	}
 	
 }

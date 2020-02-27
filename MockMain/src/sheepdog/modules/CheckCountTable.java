@@ -3,7 +3,7 @@ package sheepdog.modules;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
+import biolockj.Constants;
 import biolockj.Log;
 import biolockj.module.BioModule;
 import biolockj.module.BioModuleImpl;
@@ -112,4 +112,10 @@ public class CheckCountTable extends BioModuleImpl
 		Log.info( getClass(), "Global pass ");
 		
 	}
+	
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
+	}
+	
 }
