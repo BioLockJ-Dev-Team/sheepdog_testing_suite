@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import biolockj.Constants;
 import biolockj.module.BioModuleImpl;
 
 public class WriteTime extends BioModuleImpl {
@@ -22,6 +23,11 @@ public class WriteTime extends BioModuleImpl {
 		Date date = new Date();
 		writer.write( dateFormat.format(date) );
 		writer.close();
+	}
+	
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
 	}
 
 }

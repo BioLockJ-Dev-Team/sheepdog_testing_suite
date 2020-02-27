@@ -1,5 +1,6 @@
 package testBash;
 
+import biolockj.Constants;
 import biolockj.Log;
 import biolockj.module.BioModuleImpl;
 
@@ -17,6 +18,11 @@ public class LongCheckDependencies extends BioModuleImpl {
 		Log.info( this.getClass(), "This module does nothing.  "
 			+ "It only exists to test the bash scripts and whether they time out in check-dependencies." );
 		Thread.sleep( 4000 );
+	}
+	
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
 	}
 
 }

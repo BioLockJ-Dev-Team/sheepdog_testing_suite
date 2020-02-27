@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import biolockj.Config;
+import biolockj.Constants;
 import biolockj.exception.ConfigPathException;
 import biolockj.module.BioModuleImpl;
 
@@ -37,6 +38,11 @@ public class CheckPipelineFiles extends BioModuleImpl {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
 	}
 	
 	private static final String CHECK_FILES_PROP = "checkPipelineFiles.pipelineFiles";

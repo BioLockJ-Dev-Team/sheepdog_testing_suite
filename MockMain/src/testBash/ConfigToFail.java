@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import biolockj.Config;
+import biolockj.Constants;
 import biolockj.Log;
 import biolockj.exception.BioLockJException;
 import biolockj.module.BioModuleImpl;
@@ -35,6 +36,11 @@ public class ConfigToFail extends BioModuleImpl {
 		}else {
 			Log.info(this.getClass(), "This module is configured to pass.");
 		}
+	}
+
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
 	}
 
 }

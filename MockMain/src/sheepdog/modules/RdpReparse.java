@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.StringTokenizer;
-
+import biolockj.Constants;
 import biolockj.Log;
 import biolockj.module.BioModuleImpl;
 import biolockj.util.ModuleUtil;
@@ -160,6 +160,11 @@ public class RdpReparse extends BioModuleImpl
 		
 		return returnMap;
 		
+	}
+	
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
 	}
 	
 }

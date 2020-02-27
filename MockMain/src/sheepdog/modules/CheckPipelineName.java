@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import biolockj.Config;
+import biolockj.Constants;
 import biolockj.exception.BioLockJException;
 import biolockj.module.BioModuleImpl;
 import biolockj.util.BioLockJUtil;
@@ -33,6 +34,11 @@ public class CheckPipelineName extends BioModuleImpl {
 				+ System.lineSeparator() + "Found: " + pipeName
 				+ System.lineSeparator());
 		}
+	}
+	
+	@Override
+	public String getDockerImageName() {
+		return Constants.MAIN_DOCKER_IMAGE;
 	}
 	
 	private static final String NAME_BASE = "checkPipelineName.nameBase";
