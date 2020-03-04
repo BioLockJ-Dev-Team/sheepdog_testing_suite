@@ -7,3 +7,5 @@ MockMain/dist/
 *NOT_IN_GIT*
 **/pipelines/**
 .Rhistory
+test/feature/buildDocs/output/*
+

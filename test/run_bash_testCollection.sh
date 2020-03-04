@@ -26,6 +26,9 @@ do_bash_test ${SHEP}/test/bash/testRestartCylce_inDocker.sh
 
 do_bash_test ${SHEP}/test/bash/basicRealTest.sh
 
+# technically, this is a java feature, but this is the best place for it.
+do_bash_test ${SHEP}/test/feature/buildDocs/testBuldDocs.sh
+
 echo ""
 echo "Done running bash tests."
 

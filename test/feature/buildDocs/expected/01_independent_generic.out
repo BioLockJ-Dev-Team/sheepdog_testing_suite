@@ -1,0 +1,60 @@
+# All Modules
+*This is an auto-generated list of all modules with links to auto-generated module documentation.*
+
+[CheckCountTable](sheepdog.modules/CheckCountTable.md)
+[CheckNormalizationTable](sheepdog.modules/CheckNormalizationTable.md)
+[CheckPipelineFiles](sheepdog.modules/CheckPipelineFiles.md)
+[CheckPipelineName](sheepdog.modules/CheckPipelineName.md)
+[CopyMasterProps](sheepdog.modules/CopyMasterProps.md) - *Copy the master properties file*
+[KrakenReparse](sheepdog.modules/KrakenReparse.md)
+[RdpReparse](sheepdog.modules/RdpReparse.md)
+
+Example Module Documentation:
+# CopyMasterProps
+Add to module run order:
+`#BioModule sheepdog.modules.CopyMasterProps`
+
+## Description
+Copy the master properties file
+
+## Properties
+*Properties are the `name=value` pairs in the configuration file.*
+
+### CopyMasterProps properties:
+*none*
+
+### General properties applicable to this module:
+*none*
+
+## Details
+*none*
+
+## Adds modules
+**pre-requisite modules**
+*none found*
+**post-requisite modules**
+*none found*
+
+## Citation
+Ivory Blakley
+
+
+STANDARD_ERR:
+Will generate documentation for modules with classpath beginning: sheepdog.modules
+Creating documentation page for module: sheepdog.modules.CheckCountTable
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckCountTable.md
+Creating documentation page for module: sheepdog.modules.CheckNormalizationTable
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckNormalizationTable.md
+Creating documentation page for module: sheepdog.modules.CheckPipelineFiles
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckPipelineFiles.md
+Creating documentation page for module: sheepdog.modules.CheckPipelineName
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckPipelineName.md
+Creating documentation page for module: sheepdog.modules.CopyMasterProps
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CopyMasterProps.md
+Creating documentation page for module: sheepdog.modules.KrakenReparse
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/KrakenReparse.md
+Creating documentation page for module: sheepdog.modules.RdpReparse
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/RdpReparse.md
+Module List Page:
+Saving all-modules list to file: <SHEP>/test/feature/buildDocs/output/all-modules.md
+Done writing all-modules list.

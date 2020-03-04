@@ -1,0 +1,120 @@
+
+STANDARD_ERR:
+Will generate documentation for all in-scope modules and the help menu pages.
+Creating documentation page for module: biolockj.module.assembly.GenomeAssembly
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.assembly/GenomeAssembly.md
+Creating documentation page for module: biolockj.module.classifier.r16s.QiimeClosedRefClassifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.r16s/QiimeClosedRefClassifier.md
+Creating documentation page for module: biolockj.module.classifier.r16s.QiimeDeNovoClassifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.r16s/QiimeDeNovoClassifier.md
+Creating documentation page for module: biolockj.module.classifier.r16s.QiimeOpenRefClassifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.r16s/QiimeOpenRefClassifier.md
+Creating documentation page for module: biolockj.module.classifier.r16s.RdpClassifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.r16s/RdpClassifier.md
+Creating documentation page for module: biolockj.module.classifier.wgs.Humann2Classifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/Humann2Classifier.md
+Creating documentation page for module: biolockj.module.classifier.wgs.Kraken2Classifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/Kraken2Classifier.md
+Creating documentation page for module: biolockj.module.classifier.wgs.KrakenClassifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/KrakenClassifier.md
+Creating documentation page for module: biolockj.module.classifier.wgs.Metaphlan2Classifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/Metaphlan2Classifier.md
+Creating documentation page for module: biolockj.module.diy.GenMod
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diy/GenMod.md
+Creating documentation page for module: biolockj.module.getData.SraDownload
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData/SraDownload.md
+Creating documentation page for module: biolockj.module.implicit.Demultiplexer
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit/Demultiplexer.md
+Creating documentation page for module: biolockj.module.implicit.ImportMetadata
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit/ImportMetadata.md
+Creating documentation page for module: biolockj.module.implicit.RegisterNumReads
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit/RegisterNumReads.md
+Creating documentation page for module: biolockj.module.implicit.parser.r16s.QiimeParser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.r16s/QiimeParser.md
+Creating documentation page for module: biolockj.module.implicit.parser.r16s.RdpParser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.r16s/RdpParser.md
+Creating documentation page for module: biolockj.module.implicit.parser.wgs.Humann2Parser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.wgs/Humann2Parser.md
+Creating documentation page for module: biolockj.module.implicit.parser.wgs.Kraken2Parser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.wgs/Kraken2Parser.md
+Creating documentation page for module: biolockj.module.implicit.parser.wgs.KrakenParser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.wgs/KrakenParser.md
+Creating documentation page for module: biolockj.module.implicit.parser.wgs.Metaphlan2Parser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.wgs/Metaphlan2Parser.md
+Creating documentation page for module: biolockj.module.implicit.qiime.BuildQiimeMapping
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.qiime/BuildQiimeMapping.md
+Creating documentation page for module: biolockj.module.implicit.qiime.MergeQiimeOtuTables
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.qiime/MergeQiimeOtuTables.md
+Creating documentation page for module: biolockj.module.implicit.qiime.QiimeClassifier
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.qiime/QiimeClassifier.md
+Creating documentation page for module: biolockj.module.report.Email
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report/Email.md
+Creating documentation page for module: biolockj.module.report.JsonReport
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report/JsonReport.md
+Creating documentation page for module: biolockj.module.report.humann2.AddMetadataToPathwayTables
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.humann2/AddMetadataToPathwayTables.md
+Creating documentation page for module: biolockj.module.report.humann2.RemoveLowPathwayCounts
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.humann2/RemoveLowPathwayCounts.md
+Creating documentation page for module: biolockj.module.report.humann2.RemoveScarcePathwayCounts
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.humann2/RemoveScarcePathwayCounts.md
+Creating documentation page for module: biolockj.module.report.otu.CompileOtuCounts
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.otu/CompileOtuCounts.md
+Creating documentation page for module: biolockj.module.report.otu.RarefyOtuCounts
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.otu/RarefyOtuCounts.md
+Creating documentation page for module: biolockj.module.report.otu.RemoveLowOtuCounts
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.otu/RemoveLowOtuCounts.md
+Creating documentation page for module: biolockj.module.report.otu.RemoveScarceOtuCounts
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.otu/RemoveScarceOtuCounts.md
+Creating documentation page for module: biolockj.module.report.r.R_CalculateStats
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.r/R_CalculateStats.md
+Creating documentation page for module: biolockj.module.report.r.R_PlotEffectSize
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.r/R_PlotEffectSize.md
+Creating documentation page for module: biolockj.module.report.r.R_PlotMds
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.r/R_PlotMds.md
+Creating documentation page for module: biolockj.module.report.r.R_PlotOtus
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.r/R_PlotOtus.md
+Creating documentation page for module: biolockj.module.report.r.R_PlotPvalHistograms
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.r/R_PlotPvalHistograms.md
+Creating documentation page for module: biolockj.module.report.taxa.AddMetadataToTaxaTables
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/AddMetadataToTaxaTables.md
+Creating documentation page for module: biolockj.module.report.taxa.AddPseudoCount
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/AddPseudoCount.md
+Creating documentation page for module: biolockj.module.report.taxa.BuildTaxaTables
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/BuildTaxaTables.md
+Creating documentation page for module: biolockj.module.report.taxa.LogTransformTaxaTables
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/LogTransformTaxaTables.md
+Creating documentation page for module: biolockj.module.report.taxa.NormalizeByReadsPerMillion
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/NormalizeByReadsPerMillion.md
+Creating documentation page for module: biolockj.module.report.taxa.NormalizeTaxaTables
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/NormalizeTaxaTables.md
+Creating documentation page for module: biolockj.module.seq.AwkFastaConverter
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/AwkFastaConverter.md
+Creating documentation page for module: biolockj.module.seq.Gunzipper
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/Gunzipper.md
+Creating documentation page for module: biolockj.module.seq.KneadData
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/KneadData.md
+Creating documentation page for module: biolockj.module.seq.Multiplexer
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/Multiplexer.md
+Creating documentation page for module: biolockj.module.seq.PearMergeReads
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/PearMergeReads.md
+Creating documentation page for module: biolockj.module.seq.RarefySeqs
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/RarefySeqs.md
+Creating documentation page for module: biolockj.module.seq.SeqFileValidator
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/SeqFileValidator.md
+Creating documentation page for module: biolockj.module.seq.TrimPrimers
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/TrimPrimers.md
+Module List Page:
+Saving all-modules list to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/all-modules.md
+Done writing all-modules list.
+Help menu pages:
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj-help.md
+Done: biolockj-help.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/BioLockJ-Api.md
+Exception in thread "main" java.io.FileNotFoundException: mkdocs/user-guide/docs/partials/BioLockJ-Api_header.md (No such file or directory)
+at java.io.FileInputStream.open0(Native Method)
+at java.io.FileInputStream.open(FileInputStream.java:195)
+at java.io.FileInputStream.<init>(FileInputStream.java:138)
+at java.io.FileReader.<init>(FileReader.java:72)
+at biolockj.api.BuildDocs.copyFromFile(BuildDocs.java:349)
+at biolockj.api.BuildDocs.generateApiHelpPage(BuildDocs.java:374)
+at biolockj.api.BuildDocs.main(BuildDocs.java:67)
