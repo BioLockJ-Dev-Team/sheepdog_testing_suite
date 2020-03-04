@@ -57,7 +57,16 @@ GENERATED_TEST=$BLJ/mkdocs/user-guide/docs/GENERATED
 
 # standard use case
 id=00_standard
-java -jar $BLJ/dist/BioLockJ.jar biolockj.api.BuildDocs $GENERATED_TEST 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+java -cp $BLJ/dist/BioLockJ.jar biolockj.api.BuildDocs $GENERATED_TEST 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+check_it
+
+id=01_independent
+java -cp $BLJ/dist/BioLockJ.jar:${MORE_MODS}/* \
+    biolockj.api.BuildDocs $OUT sheepdog.modules 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+cat $OUT/all-modules.md >> $OUT/${id}.out
+echo "" >> $OUT/${id}.out
+echo "Example Module Documentation:" >> $OUT/${id}.out
+cat $OUT/sheepdog.modules/CopyMasterProps.md >> $OUT/${id}.out
 check_it
 
 
@@ -66,3 +75,14 @@ check_it
 
 
 
+
+echo ""
+echo "Ran $TOTAL_TESTS tests on buildDocs utility."
+if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	numFailed=$((TOTAL_TESTS - PASSING_TESTS))
+	echo "There were $numFailed tests that FAILED !!!"
+	exit 1
+else
+	echo "All $PASSING_TESTS tests PASS."
+	exit 0
+fi
