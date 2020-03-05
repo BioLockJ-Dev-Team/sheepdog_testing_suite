@@ -5,7 +5,7 @@ ${SHEP}/test/module/validationUtil/part3_badFormatExp.properties		0	ExpectationF
 ${SHEP}/test/module/validationUtil/part4_missingExp.properties		0	ConfigPathException	part4 - validation file missing for module 2
 ${SHEP}/test/module/validationUtil/part5_validationExcept_passModule.properties		3	ValidationException	"part5 - pass the rarifyer module dispite FAILED files, then fail in seqFileVal module (should finish 3 modules)"
 ${SHEP}/test/module/validationUtil/part6_limitComparOn.properties		5	BioLockJ_Complete	"part6 - compareOn name only; RarefySeqs output should have name, size, md5; SeqFileValidator should have name and md5 (no size); Multiplexer should only report name; all report MATCHED"
-${SHEP}/test/module/validationUtil/part7_limitReportOn_compareOn.properties		5	BioLockJ_Complete	part7 - use separate validation file for module 2; check logs to see that module 3 comparison does not include size; module 4 comparison does not include md5.
+${SHEP}/test/module/validationUtil/part7_limitReportOn_compareOn.properties		5	BioLockJ_Complete	part7 - use separate validation file for module 2
 ${SHEP}/test/module/validationUtil/part8_badAttribute.properties		0	ConfigViolationException	part8 - badAttribute
 ${SHEP}/test/module/validationUtil/part9_softValidation.properties	 --external-modules ${SHEP}/MockMain/dist	5	ValidationException	"part9 - soft validation; fail in module 05; check that the individual files in 02, 03, and 04 pass/fail as expected; see expectation file"
 ${SHEP}/test/module/validationUtil/part10_fileNotListed.properties	 --external-modules ${SHEP}/MockMain/dist	4	ValidationException	part 10 - fails when an expected file is not produced
