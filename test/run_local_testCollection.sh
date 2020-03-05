@@ -33,6 +33,7 @@ runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
 runTestSet ${DIR}/rdp/RdpTestList.txt 
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
+runTestSet ${DIR}/sraDownload/sraDownload_testList.txt
 runTestSet ${DIR}/validationUtil/validation_testList.txt 
 
 # the sheepdog quickstart example
