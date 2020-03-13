@@ -1,6 +1,6 @@
 Initializing BioLockJ..
 Building pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
-blj_go -> Move to pipeline output directory
+cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
 Fetching pipeline status
@@ -26,7 +26,7 @@ Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/biolockjFailed
 Reset complete.
 Initializing BioLockJ..
 Restarting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
-blj_go -> Move to pipeline output directory
+cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
 Fetching pipeline status

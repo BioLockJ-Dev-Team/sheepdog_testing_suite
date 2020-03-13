@@ -383,6 +383,11 @@ biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/
 check_it g
 
 
+id=test_21_cd-blj
+biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+cd-blj  1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it g
+
 
 echo ""
 echo "Ran $TOTAL_TESTS tests on bash command line args."

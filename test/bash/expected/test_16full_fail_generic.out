@@ -1,6 +1,6 @@
 Initializing BioLockJ..
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
-blj_go -> Move to pipeline output directory
+cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
 Fetching pipeline status
