@@ -5,5 +5,5 @@ ${SHEP}/test/feature/precheck/badGeneralProperty.properties	 --precheck-only	0	C
 ${SHEP}/test/feature/precheck/goodCase.properties	 --precheck-only	0	StopAfterPrecheck	
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only	0	ClassNotFoundException	"config calls for class in sheepdog, but external mods is not used in the biolockj call"
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only --external-modules ${SHEP}/MockMain/dist	0	StopAfterPrecheck	"this replaces the previous precheck pipeline, and precheck passes"
-${SHEP}/test/feature/precheck/repeatCase.properties	 --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline replaces the precheck pipeline.
+${SHEP}/test/feature/precheck/repeatCase.properties	 --external-modules ${SHEP}/MockMain/dist	3	BioLockJ_Complete	this pipeline replaces the precheck pipeline.
 ${SHEP}/test/feature/precheck/implicitCounter.properties	 --precheck-only	0	StopAfterPrecheck	look at the automatically added modules

@@ -1,2 +1,2 @@
 ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/feature/exeProps/useMyExecutable.properties 		2	BioLockJ_Complete	use a special path for an executable file
+${SHEP}/test/feature/exeProps/useMyExecutable.properties 		3	BioLockJ_Complete	use a special path for an executable file
