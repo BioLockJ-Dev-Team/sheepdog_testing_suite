@@ -1,2 +1,0 @@
-name	size	MATCHED_EXPECTATION
-PIPELINE_DATE_metadata.tsv	56	REPORT

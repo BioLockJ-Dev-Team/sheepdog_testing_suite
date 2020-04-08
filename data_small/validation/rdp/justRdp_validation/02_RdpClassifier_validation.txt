@@ -1,3 +1,0 @@
-name	size	md5	MATCHED_EXPECTATION
-ERR1456827_reported.tsv	401811	4a28c2faac08a67390fac7dd5b5b317e	FAIL
-ERR1456828_reported.tsv	298965	b9e68a51de1bc4edb54d342eeeb30f0e	FAIL
