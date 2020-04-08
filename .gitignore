@@ -5,6 +5,7 @@ README.html
 MockMain/pipelines/
 MockMain/dist/
 *NOT_IN_GIT*
+**/downloads/**
 **/pipelines/**
 .Rhistory
 test/feature/buildDocs/output/*

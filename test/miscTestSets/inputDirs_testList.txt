@@ -1,0 +1,6 @@
+ConfigFile	ExpectedOutcome	Notes
+${SHEP}/test/feature/asSyntax/aliasNameError.properties	PipelineFormationException	on master (BioLockJ v1.2.9-dev Build: v1.2.8-53-g52439d30) this fails with configNotFound exception because input.dirPaths is empty.  With branch inputDirs it creates correct exception.
+${SHEP}/test/module/GenMod/GenModPython.properties	BioLockJ_Complete	
+${SHEP}/test/module/GenMod/GenModPythonArg.properties	BioLockJ_Complete	
+${SHEP}/test/module/sraDownload/sraDownload.properties	BioLockJ_Complete	
+${SHEP}/test/module/sraDownload/badColName.properties	MetadataException	
