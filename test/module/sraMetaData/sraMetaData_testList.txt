@@ -1,0 +1,5 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/sraMetaData/basic_sraMetaData.properties	3	BioLockJ_Complete	standard case
+${SHEP}/test/module/sraMetaData/multipleProjects.properties	3	BioLockJ_Complete	two project ids
+${SHEP}/test/module/sraMetaData/bad_id.properties	0	ConfigFormatException	bad id
+${SHEP}/test/module/sraMetaData/basic_getDB.properties	2	BioLockJ_Complete	Just the database
