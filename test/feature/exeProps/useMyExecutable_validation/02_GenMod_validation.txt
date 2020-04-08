@@ -1,3 +1,0 @@
-name	size	MATCHED_EXPECTATION
-02.0_GenMod.sh	809	REPORT
-02.0_GenMod.sh_Started	0	REPORT

@@ -1,2 +1,0 @@
-name	size	md5	MATCHED_EXPECTATION
-PIPELINE_DATE_metadata.tsv	52	279b5fc287e6de9a15eed71d3f63fe15	PASS
