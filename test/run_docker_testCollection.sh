@@ -33,6 +33,7 @@ runTestSet ${DIR}/kraken2Parser/docker_Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/docker_normTaxa_testList.txt
 runTestSet ${DIR}/rdp/docker_RdpTestList.txt
 runTestSet ${DIR}/rdpParser/docker_RdpParser_TestList.txt
+runTestSet $DIR/sraMetaData/docker_sraMetaData_testList.txt
 runTestSet ${DIR}/validationUtil/docker_validation_testList.txt
 
 # full pipeline

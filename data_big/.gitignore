@@ -6,3 +6,4 @@
 *.fasta.gz
 *.fa
 *.fa.gz
+*SRAmetadb.sqlite

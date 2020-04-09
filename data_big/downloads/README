@@ -1,0 +1,4 @@
+This folder is used as a download location.
+For some pipelines, the first time the pipeline is run it will download one or files.
+Each subsequent run should detect that the files are already here; and will not repeat the process.
+
