@@ -1,6 +1,4 @@
 ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/module/sraMetaData/helpers/clearDownloads.properties			BioLockJ_Complete	"not a test, a convenient way to insert an action"
-${SHEP}/test/module/sraMetaData/basic_sraMetaData.properties	--blj --docker -e SHEP=${SHEP}	2	BioLockJ_Complete	"less common, the db is not here"
 ${SHEP}/test/module/sraMetaData/basic_sraMetaData.properties	--blj --docker -e SHEP=${SHEP}	2	BioLockJ_Complete	"standard case, db already here"
 ${SHEP}/test/module/sraMetaData/multipleProjects.properties	--blj --docker -e SHEP=${SHEP}	2	BioLockJ_Complete	two project ids
 ${SHEP}/test/module/sraMetaData/bad_id.properties	--blj --docker -e SHEP=${SHEP}	0	ConfigFormatException	bad id
