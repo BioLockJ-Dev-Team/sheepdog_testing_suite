@@ -1,5 +1,6 @@
 ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/module/sraMetaData/basic_sraMetaData.properties	3	BioLockJ_Complete	standard case
-${SHEP}/test/module/sraMetaData/multipleProjects.properties	3	BioLockJ_Complete	two project ids
+${SHEP}/test/module/sraMetaData/helpers/clearDownloads.properties		BioLockJ_Complete	"not a test, a convenient way to insert an action"
+${SHEP}/test/module/sraMetaData/basic_sraMetaData.properties	2	BioLockJ_Complete	"less common, the db is not here"
+${SHEP}/test/module/sraMetaData/basic_sraMetaData.properties	2	BioLockJ_Complete	"standard case, db already here"
+${SHEP}/test/module/sraMetaData/multipleProjects.properties	2	BioLockJ_Complete	two project ids
 ${SHEP}/test/module/sraMetaData/bad_id.properties	0	ConfigFormatException	bad id
-${SHEP}/test/module/sraMetaData/basic_getDB.properties	2	BioLockJ_Complete	Just the database
