@@ -1,5 +1,6 @@
 ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
 ${SHEP}/test/module/sraDownload/sraDownload.properties		BioLockJ_Complete	standard case
 ${SHEP}/test/module/sraDownload/badColName.properties		MetadataException	bad col name
-${SHEP}/test/module/sraDownload/clearDownloads.properties		BioLockJ_Complete	not really a test; just the easiest way to insert an action here.
-${SHEP}/test/module/sraDownload/externalDestDir.properties	 --external-modules $SHEP/MockMain/dist 	BioLockJ_Complete	download files
+${SHEP}/test/module/sraDownload/helpers/clearDownloads.properties		BioLockJ_Complete	not really a test; just the easiest way to insert an action here.
+${SHEP}/test/module/sraDownload/externalDestDir.properties	 --external-modules ${SHEP}/MockMain/dist 	BioLockJ_Complete	download files
+${SHEP}/test/module/sraDownload/externalDestDir.properties	 --external-modules ${SHEP}/MockMain/dist 	BioLockJ_Complete	files are already there
