@@ -1,0 +1,5 @@
+
+ ---------> Execute CMD [  biolockj --docker --env-var SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
+docker = true
+env-var = SHEP=/Users/ieclabau/git/sheepdog_testing_suite
+KEY CMD: launch_docker --docker --env-var SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties

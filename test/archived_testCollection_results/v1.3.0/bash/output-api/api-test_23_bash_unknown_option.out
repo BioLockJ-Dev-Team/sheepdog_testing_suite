@@ -1,0 +1,14 @@
+
+ ---------> Execute CMD [  biolockj-api listProps madeUpOption  ]
+
+ ---------> Execute CMD [  biolockj-api listProps --madeUpOption val  ]
+
+STANDARD_ERR:
+error: unnamed value [ madeUpOption ]
+
+ ---------> Execute CMD [  biolockj-api help  ]
+CMD: java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar biolockj.api.BioLockJ_API help
+error: unrecognized argument [ madeUpOption ].
+
+ ---------> Execute CMD [  biolockj-api help  ]
+CMD: java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar biolockj.api.BioLockJ_API help

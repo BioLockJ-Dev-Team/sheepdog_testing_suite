@@ -1,0 +1,84 @@
+Most recent sheepdog commit: v1.2.8-31-gb58451d
+Most recent BioLockJ commit: v1.3.0-rc
+Don't use docker
+
+
+Part 1
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/configToFail.properties
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+BioLockJ has stopped.
+
+ERROR TYPE:    BioLockJException
+ERROR MESSAGE: This module is configured to fail.
+
+
+Part 2
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist  		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/04_ConfigToFail/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/05_SeqFileValidator/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/05_SeqFileValidator/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/06_Multiplexer/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/biolockjFailed
+Reset complete.
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+BioLockJ has stopped.
+
+ERROR TYPE:    BioLockJException
+ERROR MESSAGE: This module is configured to fail.
+
+Appending fail=N to /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/MASTER_configToFail_2020Apr16.properties
+report.scarceSampleCutoff=0.25
+report.taxonomyLevels=phylum, class, order, family, genus
+report.unclassifiedTaxa=Y
+script.defaultHeader=#!/bin/bash
+script.numThreads=8
+script.numWorkers=1
+script.permissions=770
+seqFileValidator.requireEqualNumPairs=Y
+trimPrimers.requirePrimer=Y
+configToFail.fail=N
+
+Part 3
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist  		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/04_ConfigToFail/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/05_SeqFileValidator/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/05_SeqFileValidator/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/06_Multiplexer/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16/biolockjFailed
+Reset complete.
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Apr16
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+Fetching pipeline status 
+
+Pipeline is complete.
+Good: module 03 was never deleted.
+Good: module 04 re-executed each time.
+Good: with correction, the pipeline completes.
+Basic Restart Test: PASSING

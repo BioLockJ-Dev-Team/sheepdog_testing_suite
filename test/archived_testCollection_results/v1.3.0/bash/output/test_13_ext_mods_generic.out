@@ -1,0 +1,4 @@
+
+---------> Execute CMD [ biolockj --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
+external-modules = <SHEP>/MockMain/dist
+KEY CMD: launch_java --external-modules <SHEP>/MockMain/dist configFile/example.properties

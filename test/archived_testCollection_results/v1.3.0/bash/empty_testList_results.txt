@@ -1,0 +1,7 @@
+# Number of tests that failed:   0
+# Number of tests that were run: 0
+# Total test runtime: 00 hours : 00 minutes : 01 seconds
+# BioLockJ jar file: /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar
+# BioLockJ version: BioLockJ v1.3.0 Build: v1.3.0-rc-0-g62a7ceeb
+# SHEP_DATA: data_small
+ConfigFile	java_BioLockJ_args	bash_biolockj_args	PipelineDirectory	ValidationEnabled	NumberShouldComplete	NumberCompletedModules	ExpectedOutcome	Observed	Pass/Fail	Notes
