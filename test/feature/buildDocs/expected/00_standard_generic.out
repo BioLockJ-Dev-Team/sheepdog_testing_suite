@@ -21,8 +21,14 @@ Creating documentation page for module: biolockj.module.classifier.wgs.Metaphlan
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/Metaphlan2Classifier.md
 Creating documentation page for module: biolockj.module.diy.GenMod
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diy/GenMod.md
-Creating documentation page for module: biolockj.module.getData.SraDownload
-Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData/SraDownload.md
+Creating documentation page for module: biolockj.module.getData.sra.SraDownload
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SraDownload.md
+Creating documentation page for module: biolockj.module.getData.sra.SraMetaDB
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SraMetaDB.md
+Creating documentation page for module: biolockj.module.getData.sra.SraMetaData
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SraMetaData.md
+Creating documentation page for module: biolockj.module.getData.sra.SrpSrrConverter
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SrpSrrConverter.md
 Creating documentation page for module: biolockj.module.implicit.Demultiplexer
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit/Demultiplexer.md
 Creating documentation page for module: biolockj.module.implicit.ImportMetadata
@@ -110,11 +116,20 @@ Help menu pages:
 Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj-help.md
 Done: biolockj-help.md
 Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/BioLockJ-Api.md
-Exception in thread "main" java.io.FileNotFoundException: mkdocs/user-guide/docs/partials/BioLockJ-Api_header.md (No such file or directory)
-at java.io.FileInputStream.open0(Native Method)
-at java.io.FileInputStream.open(FileInputStream.java:195)
-at java.io.FileInputStream.<init>(FileInputStream.java:138)
-at java.io.FileReader.<init>(FileReader.java:72)
-at biolockj.api.BuildDocs.copyFromFile(BuildDocs.java:349)
-at biolockj.api.BuildDocs.generateApiHelpPage(BuildDocs.java:374)
-at biolockj.api.BuildDocs.main(BuildDocs.java:67)
+Done: BioLockJ-Api.md
+Building from 'partials' pages for user guide:
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Cluster.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Docker.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Input.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Metadata.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/R.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Script.md
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Validation.md
+Properties menu page:
+Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/General-Properties.md
+Developer note: The [humann2] subgroup of properties don't have any linked details!
+Developer note: The [pipeline] subgroup of properties don't have any linked details!
+Developer note: The [qiime] subgroup of properties don't have any linked details!
+Developer note: The [r_PlotMds] subgroup of properties don't have any linked details!
+Developer note: The [report] subgroup of properties don't have any linked details!
+Developer note: The [aws] subgroup of properties don't have any linked details!
