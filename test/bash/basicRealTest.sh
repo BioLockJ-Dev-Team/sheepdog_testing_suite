@@ -6,7 +6,7 @@ countPipelines(){
 	echo $(ls $BLJ_PROJ | wc -l)
 }
 getPipeInfo(){ 
-	blj_go > /dev/null
+	cd $(last-pipeline) > /dev/null
 	pipeName=`pwd`
 	if [ -f biolockjStarted ]; then
 		printf "It is running"
