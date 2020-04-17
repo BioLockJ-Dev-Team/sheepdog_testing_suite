@@ -1,0 +1,9 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/classLookup/rdp_noJarPath.properties		0	ConfigNotFoundException	
+${SHEP}/test/feature/classLookup/logNormTaxa.properties		2	BioLockJ_Complete	adds correct module; runs java modules
+${SHEP}/test/feature/classLookup/logNormTaxa.properties	 --external-modules ${SHEP}/MockMain/dist	0	PipelineFormationException	"Two modules with the same name, can't distinguish"
+${SHEP}/test/feature/classLookup/specifyFullPath.properties	 --external-modules ${SHEP}/MockMain/dist	1	BioLockJ_Complete	Two modules with the same name CAN be distinguished
+${SHEP}/test/feature/classLookup/badModuleName.properties		0	PipelineFormationException	unrecognized module
+${SHEP}/test/feature/classLookup/badModulePath.properties	 --external-modules ${SHEP}/MockMain/dist	0	PipelineFormationException	"unrecognized module - say ""there are other modules with that name"""
+${SHEP}/test/feature/classLookup/badModulePath.properties		0	PipelineFormationException	unrecognized module - suggest correct path
+${SHEP}/test/feature/classLookup/badPathAndName.properties		0	PipelineFormationException	
