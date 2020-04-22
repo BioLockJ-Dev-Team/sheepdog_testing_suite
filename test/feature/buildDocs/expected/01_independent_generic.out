@@ -35,6 +35,16 @@ Copy the master properties file
 **post-requisite modules**
 *none found*
 
+## Docker
+If running in docker, this module will run in a docker container from this image:<br>
+```
+biolockjdevteam/biolockj_controller:<VERSION>
+```
+This can be modified using the following properties:<br>
+`CopyMasterProps.imgOwner`<br>
+`CopyMasterProps.imageName`<br>
+`CopyMasterProps.imageTag`<br>
+
 ## Citation
 Ivory Blakley
 

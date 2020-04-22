@@ -5,6 +5,7 @@ OUTPUT_NAME=${INPUT_NAME%.out}_generic.out
 
 DATE=$(date '+%Y%b%d')
 VERSION=$(cat ${SHEP}/biolockjVersion)
+TRIMMED_VERSION=${VERSION//-*}
 
 while read -r line; do
 	# replace the container id
@@ -19,6 +20,8 @@ while read -r line; do
 	line=${line//"${DATE}"/"<DATE>"}
 	# replace current version
 	line=${line//"${VERSION}"/"<VERSION>"}
+	# replace trimmed form of current version
+	line=${line//"${TRIMMED_VERSION}"/"<VERSION>"}
 	# replace HOME
 	line=${line//"${HOME}"/"<HOME>"}
 	# write to output
