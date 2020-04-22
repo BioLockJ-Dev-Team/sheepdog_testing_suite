@@ -1,0 +1,21 @@
+Initializing BioLockJ..
+Building pipeline: <SHEP>/MockMain/pipelines/failsCheckDep_hasUnused_2_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: ConfigPathException
+ERROR MESSAGE: Invalid Path: /bad/path does not exist on the file system
+

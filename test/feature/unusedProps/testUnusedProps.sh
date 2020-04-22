@@ -73,8 +73,13 @@ id=03_hasUnused_p
 biolockj -p $DIR/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
+id=04_fails
+biolockj $DIR/failsCheckDep_hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+check_it
 
-
+id=04_showsUnused
+biolockj -u $DIR/failsCheckDep_hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+check_it
 
 
 
