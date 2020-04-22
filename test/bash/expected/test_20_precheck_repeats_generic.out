@@ -3,6 +3,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 There is a problem with this pipeline configuration.
@@ -16,6 +17,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 There is a problem with this pipeline configuration.
@@ -29,6 +31,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 BioLockJ has stopped.
@@ -42,6 +45,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 There is a problem with this pipeline configuration.
@@ -55,6 +59,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 BioLockJ has stopped.
@@ -68,6 +73,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_5_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 There is a problem with this pipeline configuration.
@@ -81,6 +87,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 Precheck is complete. No problems were found in this pipeline configuration.
@@ -91,6 +98,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 Precheck is complete. No problems were found in this pipeline configuration.
@@ -101,6 +109,7 @@ Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
+
 Fetching pipeline status
 
 BioLockJ has stopped.

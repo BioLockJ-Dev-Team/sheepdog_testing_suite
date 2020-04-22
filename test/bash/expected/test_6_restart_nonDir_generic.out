@@ -17,6 +17,8 @@ Options:
 -h --help Show help menu
 -p --precheck-only Set up pipeline and check dependencies and then STOP;
 do not execute the pipeline. This is helpful when testing edits to config files.
+-u --unused-props Check dependencies for all modules and report unused properties. Implies -p.
+This helps remove unnecessary properties and highlights errors in property names.
 -r --restart Resume an existing pipeline
 -c --config-override <file> New config file (if restarting a pipeline)
 --password <password> Encrypt password
