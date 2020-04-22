@@ -1,0 +1,17 @@
+Initializing BioLockJ..
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_2_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+

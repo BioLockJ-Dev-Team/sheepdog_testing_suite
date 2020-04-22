@@ -9,4 +9,4 @@ MockMain/dist/
 **/pipelines/**
 .Rhistory
 test/feature/buildDocs/output/*
-
+test/feature/unusedProps/output/*
