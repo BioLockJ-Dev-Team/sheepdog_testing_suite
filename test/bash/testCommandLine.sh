@@ -389,7 +389,7 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
 id=test_21_cd-blj
 #alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
 biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-cd-blj  1>> $OUT/${id}.out 2>>$OUT/${id}.err
+cd $(last-pipeline); quick_pipeline_view  1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it g
 
 
