@@ -10,3 +10,5 @@ MockMain/dist/
 .Rhistory
 test/feature/buildDocs/output/*
 test/feature/unusedProps/output/*
+test/bash/output/*
+test/bash/output-api/*
