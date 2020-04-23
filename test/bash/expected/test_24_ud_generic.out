@@ -16,7 +16,7 @@ This script will launch another instance of this docker image,
 with the same env vars + volumes, but in interactive mode.
 
 Docker container id: <ID_STRING>
-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname CCI0PHJGH5AWS -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
+KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
 
 # With -u, the call to java should be identical with and without -p
 
@@ -33,4 +33,4 @@ This script will launch another instance of this docker image,
 with the same env vars + volumes, but in interactive mode.
 
 Docker container id: <ID_STRING>
-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname CCI0PHJGH5AWS -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
+KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
