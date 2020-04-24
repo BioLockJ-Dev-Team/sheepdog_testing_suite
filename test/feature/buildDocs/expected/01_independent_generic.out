@@ -41,7 +41,7 @@ If running in docker, this module will run in a docker container from this image
 biolockjdevteam/biolockj_controller:<VERSION>
 ```
 This can be modified using the following properties:<br>
-`CopyMasterProps.imgOwner`<br>
+`CopyMasterProps.imageOwner`<br>
 `CopyMasterProps.imageName`<br>
 `CopyMasterProps.imageTag`<br>
 
