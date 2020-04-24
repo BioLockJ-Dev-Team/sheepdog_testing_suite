@@ -1,0 +1,7 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/deseq2/standardDeseq_validation.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	standard case
+${SHEP}/test/module/deseq2/userDesign.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	user passing in the design
+${SHEP}/test/module/deseq2/customScript.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	custom script
+${SHEP}/test/module/deseq2/badColumnName.properties	 --blj --docker -e SHEP=${SHEP}	MetadataException	bad design factors
+${SHEP}/test/module/deseq2/bothDesignAndFactors.properties	 --blj --docker -e SHEP=${SHEP}	ConfigViolationException	has mutually exclusive properties
+${SHEP}/test/module/deseq2/lacksDesignFactors.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	lacks required property

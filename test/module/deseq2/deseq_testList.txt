@@ -1,0 +1,7 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/deseq2/standardDeseq.properties		BioLockJ_Complete	standard case
+${SHEP}/test/module/deseq2/userDesign.properties		BioLockJ_Complete	user passing in the design
+${SHEP}/test/module/deseq2/customScript.properties		BioLockJ_Complete	custom script
+${SHEP}/test/module/deseq2/badColumnName.properties		MetadataException	bad design factors
+${SHEP}/test/module/deseq2/bothDesignAndFactors.properties		ConfigViolationException	has mutually exclusive properties
+${SHEP}/test/module/deseq2/lacksDesignFactors.properties		ConfigNotFoundException	lacks required property
