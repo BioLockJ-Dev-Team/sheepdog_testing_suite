@@ -1,0 +1,778 @@
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+ ---------> Docker CMD [  docker run --rm -e "BLJ_OPTIONS=-homeDir /Users/ieclabau -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -hostname CCI0PHJGH5AWS -config /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir/genMod_dotPath.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau/git/BioLockJ:/app/biolockj:ro -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines:/mnt/efs/pipelines:delegated -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir:/mnt/efs/vol_1:ro -v /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data:/mnt/efs/vol_2:ro -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script:/mnt/efs/vol_3:ro -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir:/mnt/efs/vol_4:ro  biolockjdevteam/biolockj_controller:v1.3.2   ]
+Starting BioLockJ...
+Pipeline root directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/genMod_dotPath_17_2020Apr30
+This pipeline has validation enabled.
+2020-04-30 02:51:33 DEBUG DockerUtil: Containerizing path: null
+2020-04-30 02:51:33 INFO Log: ========================================================================
+2020-04-30 02:51:33 INFO Log: Launching BioLockJ v1.3.2 ~ Distributed by UNCC Fodor Lab @2019
+2020-04-30 02:51:33 INFO Log: ========================================================================
+2020-04-30 02:51:33 INFO Log: This code is free software; you can redistribute and/or modify it
+2020-04-30 02:51:33 INFO Log: under the terms of the GNU General Public License as published by
+2020-04-30 02:51:33 INFO Log: the Free Software Foundation; either version 2 of the License, or
+2020-04-30 02:51:33 INFO Log: any later version, provided proper credit is given to the authors.
+2020-04-30 02:51:33 INFO Log: This program is distributed in the hope that it will be useful,
+2020-04-30 02:51:33 INFO Log: but WITHOUT ANY WARRANTY; without even the implied warranty of
+2020-04-30 02:51:33 INFO Log: MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+2020-04-30 02:51:33 INFO Log: GNU General Public License for more details at http://www.gnu.org
+2020-04-30 02:51:33 DEBUG Log: APP_START_TIME (millis): 1588229493346
+2020-04-30 02:51:33 DEBUG Log: INTIAL MEMORY STATS: => Max: 443 mb, Total: 31 mb, %Free: 7%, Free: 29 mb
+2020-04-30 02:51:33 INFO Log: 
+========================================================================
+2020-04-30 02:51:33 INFO Log: Application runtime args:
+2020-04-30 02:51:33 INFO Log:  ---> arg[0] = -homeDir
+2020-04-30 02:51:33 INFO Log:  ---> arg[1] = /Users/ieclabau
+2020-04-30 02:51:33 INFO Log:  ---> arg[2] = -projectDir
+2020-04-30 02:51:33 INFO Log:  ---> arg[3] = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines
+2020-04-30 02:51:33 INFO Log:  ---> arg[4] = -hostname
+2020-04-30 02:51:33 INFO Log:  ---> arg[5] = CCI0PHJGH5AWS
+2020-04-30 02:51:33 INFO Log:  ---> arg[6] = -config
+2020-04-30 02:51:33 INFO Log:  ---> arg[7] = /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir/genMod_dotPath.properties
+2020-04-30 02:51:33 INFO Log: ========================================================================
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: null
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir/genMod_dotPath.properties
+2020-04-30 02:51:33 INFO Log: Host directory: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /mnt/efs/vol_1
+2020-04-30 02:51:33 INFO Log: Host directory: /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /mnt/efs/vol_2
+2020-04-30 02:51:33 INFO Log: Host directory: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /mnt/efs/vol_3
+2020-04-30 02:51:33 INFO Log: Host directory: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /mnt/efs/vol_4
+2020-04-30 02:51:33 INFO Log: Host directory: /var/run/docker.sock
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /var/run/docker.sock
+2020-04-30 02:51:33 INFO Log: Host directory: /Users/ieclabau/git/BioLockJ
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /app/biolockj
+2020-04-30 02:51:33 INFO Log: Host directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines
+2020-04-30 02:51:33 INFO Log: is mapped to container directory: /mnt/efs/pipelines
+2020-04-30 02:51:33 INFO Log: {/Users/ieclabau/git/BioLockJ=/app/biolockj, /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data=/mnt/efs/vol_2, /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines=/mnt/efs/pipelines, /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script=/mnt/efs/vol_3, /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir=/mnt/efs/vol_1, /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir=/mnt/efs/vol_4, /var/run/docker.sock=/var/run/docker.sock}
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 INFO Log: Initialize Config: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 DEBUG Log: Run loadProperties for Config: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 INFO Log: Import All Config Properties for --> Top Level Pipeline Properties File: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 DEBUG Log: Replace "${BLJ}" in "${BLJ}/resources/config/default/standard.properties"
+2020-04-30 02:51:33 INFO Log: no props to reference.
+2020-04-30 02:51:33 DEBUG Log: Bash var "${BLJ}" = "/app/biolockj"
+2020-04-30 02:51:33 DEBUG Log: Updated "${BLJ}/resources/config/default/standard.properties" --> /app/biolockj/resources/config/default/standard.properties"
+2020-04-30 02:51:33 INFO Log: --------> Bash Var Converted "${BLJ}/resources/config/default/standard.properties" ======> "/app/biolockj/resources/config/default/standard.properties"
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: /app/biolockj/resources/config/default/standard.properties
+2020-04-30 02:51:33 INFO Log: LOAD CONFIG [ #0 ]: ---> /app/biolockj/resources/config/default/standard.properties
+2020-04-30 02:51:33 DEBUG Log: Replace "${BLJ}" in "${BLJ}/resources/config/default/docker.properties"
+2020-04-30 02:51:33 DEBUG Log: Bash var "${BLJ}" = "/app/biolockj"
+2020-04-30 02:51:33 DEBUG Log: Updated "${BLJ}/resources/config/default/docker.properties" --> /app/biolockj/resources/config/default/docker.properties"
+2020-04-30 02:51:33 INFO Log: --------> Bash Var Converted "${BLJ}/resources/config/default/docker.properties" ======> "/app/biolockj/resources/config/default/docker.properties"
+2020-04-30 02:51:33 DEBUG Log: Containerizing path: /app/biolockj/resources/config/default/docker.properties
+2020-04-30 02:51:33 INFO Log: LOAD CONFIG [ #1 ]: ---> /app/biolockj/resources/config/default/docker.properties
+2020-04-30 02:51:33 INFO Log: LOAD CONFIG [ #2 ]: ---> /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:33 DEBUG Log:  ---------- Report [ /mnt/efs/vol_1/genMod_dotPath.properties ] ------------> 
+2020-04-30 02:51:33 DEBUG Log: Project Config: genMod.scriptPath=../script/otherUserScript.sh
+2020-04-30 02:51:33 DEBUG Log: Project Config: validation.expectationFile=../validation/TOS_subdir
+2020-04-30 02:51:33 DEBUG Log: Project Config: pipeline.logLevel=DEBUG
+2020-04-30 02:51:33 DEBUG Log: Project Config: input.dirPaths=${BLJ}/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:33 DEBUG Log: Project Config: validation.stopPipeline=Y
+2020-04-30 02:51:33 DEBUG Log:  ----------------------------------------------------------------------------------
+2020-04-30 02:51:33 INFO Log: Configured BioModule: biolockj.module.diy.GenMod
+2020-04-30 02:51:33 DEBUG Log:  ---------------------- replace Config Env Vars ----------------------
+2020-04-30 02:51:33 DEBUG Log: pipeline.downloadDir = $HOME/projects/downloads
+2020-04-30 02:51:33 DEBUG Log: report.scarceCountCutoff = 0.25
+2020-04-30 02:51:33 DEBUG Log: aws.copyPipelineToS3 = N
+2020-04-30 02:51:33 DEBUG Log: Replace "${BLJ_DB}" in "uniref uniref90_diamond ${BLJ_DB}"
+2020-04-30 02:51:33 INFO Log: no props to reference.
+2020-04-30 02:51:33 INFO Log: [ Get Bash Var (${BLJ_DB}) ]: STARTING
+2020-04-30 02:51:33 INFO Log: [ Get Bash Var (${BLJ_DB}) ]: CMD --> /app/biolockj/script/get_env_var ${BLJ_DB} /root/.bashrc 
+2020-04-30 02:51:33 INFO Log: [ Get Bash Var (${BLJ_DB}) ]: COMPLETE
+2020-04-30 02:51:33 DEBUG Log: Bash var "${BLJ_DB}" = "${BLJ_DB}"
+2020-04-30 02:51:33 DEBUG Log: humann2.protDB = uniref uniref90_diamond ${BLJ_DB}
+2020-04-30 02:51:33 DEBUG Log: exe.vsearchParams = --db /usr/local/lib/python2.7/dist-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+2020-04-30 02:51:33 DEBUG Log: demultiplexer.barcodeCutoff = 0.05
+2020-04-30 02:51:33 DEBUG Log: aws.ec2InstanceType = t2.micro
+2020-04-30 02:51:33 DEBUG Log: r.debug = Y
+2020-04-30 02:51:33 DEBUG Log: r_PlotEffectSize.maxNumTaxa = 40
+2020-04-30 02:51:33 DEBUG Log: script.defaultHeader = #!/bin/bash
+2020-04-30 02:51:33 DEBUG Log: rdp.params = -f fixrank
+2020-04-30 02:51:33 DEBUG Log: aws.ec2SpotPer = 70
+2020-04-30 02:51:33 DEBUG Log: metadata.nullValue = NA
+2020-04-30 02:51:33 DEBUG Log: Replace "${BLJ_DB}" in "chocophlan full ${BLJ_DB}"
+2020-04-30 02:51:33 INFO Log: no props to reference.
+2020-04-30 02:51:33 INFO Log: [ Get Bash Var (${BLJ_DB}) ]: STARTING
+2020-04-30 02:51:33 INFO Log: [ Get Bash Var (${BLJ_DB}) ]: CMD --> /app/biolockj/script/get_env_var ${BLJ_DB} /root/.bashrc 
+2020-04-30 02:51:33 INFO Log: [ Get Bash Var (${BLJ_DB}) ]: COMPLETE
+2020-04-30 02:51:33 DEBUG Log: Bash var "${BLJ_DB}" = "${BLJ_DB}"
+2020-04-30 02:51:33 DEBUG Log: humann2.nuclDB = chocophlan full ${BLJ_DB}
+2020-04-30 02:51:33 DEBUG Log: mail.encryptedPassword = 7GYvu1m+Yv1Gk7Cd9BLaznJ/jq33g0q1
+2020-04-30 02:51:33 DEBUG Log: pipeline.env = local
+2020-04-30 02:51:33 DEBUG Log: r.colorHighlight = red
+2020-04-30 02:51:33 DEBUG Log: pipeline.defaultDemultiplexer = biolockj.module.implicit.Demultiplexer
+2020-04-30 02:51:33 DEBUG Log: r.pValFormat = %1.2g
+2020-04-30 02:51:34 DEBUG Log: mail.smtp.port = 587
+2020-04-30 02:51:34 DEBUG Log: script.numWorkers = 8
+2020-04-30 02:51:34 DEBUG Log: report.taxonomyLevels = phylum,class,order,family,genus
+2020-04-30 02:51:34 DEBUG Log: metadata.fileNameColumn = InputFileName
+2020-04-30 02:51:34 DEBUG Log: exe.emapper = 
+2020-04-30 02:51:34 DEBUG Log: script.permissions = 777
+2020-04-30 02:51:34 DEBUG Log: r_PlotEffectSize.excludePvalAbove = 1
+2020-04-30 02:51:34 DEBUG Log: pipeline.detachJavaModules = Y
+2020-04-30 02:51:34 DEBUG Log: r_PlotEffectSize.disableFoldChange = Y
+2020-04-30 02:51:34 DEBUG Log: rarefyOtuCounts.quantile = 0.5
+2020-04-30 02:51:34 DEBUG Log: r.colorPoint = black
+2020-04-30 02:51:34 DEBUG Log: Replace "${BLJ_DEFAULT_DB}" in "${BLJ_DEFAULT_DB}"
+2020-04-30 02:51:34 INFO Log: no props to reference.
+2020-04-30 02:51:34 INFO Log: [ Get Bash Var (${BLJ_DEFAULT_DB}) ]: STARTING
+2020-04-30 02:51:34 INFO Log: [ Get Bash Var (${BLJ_DEFAULT_DB}) ]: CMD --> /app/biolockj/script/get_env_var ${BLJ_DEFAULT_DB} /root/.bashrc 
+2020-04-30 02:51:34 INFO Log: [ Get Bash Var (${BLJ_DEFAULT_DB}) ]: COMPLETE
+2020-04-30 02:51:34 DEBUG Log: Bash var "${BLJ_DEFAULT_DB}" = "${BLJ_DEFAULT_DB}"
+2020-04-30 02:51:34 DEBUG Log: kneaddata.dbs = ${BLJ_DEFAULT_DB}
+2020-04-30 02:51:34 DEBUG Log: input.suffixFw = _R1
+2020-04-30 02:51:34 DEBUG Log: mail.smtp.auth = Y
+2020-04-30 02:51:34 DEBUG Log: kraken.krakenParams = --only-classified-output, --preload
+2020-04-30 02:51:34 DEBUG Log: Replace "${BLJ_DEFAULT_DB}" in "${BLJ_DEFAULT_DB}"
+2020-04-30 02:51:34 INFO Log: no props to reference.
+2020-04-30 02:51:34 INFO Log: [ Get Bash Var (${BLJ_DEFAULT_DB}) ]: STARTING
+2020-04-30 02:51:34 INFO Log: [ Get Bash Var (${BLJ_DEFAULT_DB}) ]: CMD --> /app/biolockj/script/get_env_var ${BLJ_DEFAULT_DB} /root/.bashrc 
+2020-04-30 02:51:34 INFO Log: [ Get Bash Var (${BLJ_DEFAULT_DB}) ]: COMPLETE
+2020-04-30 02:51:34 DEBUG Log: Bash var "${BLJ_DEFAULT_DB}" = "${BLJ_DEFAULT_DB}"
+2020-04-30 02:51:34 DEBUG Log: kraken.db = ${BLJ_DEFAULT_DB}
+2020-04-30 02:51:34 DEBUG Log: mail.from = biolockj@gmail.com
+2020-04-30 02:51:34 DEBUG Log: input.suffixRv = _R2
+2020-04-30 02:51:34 DEBUG Log: aws.saveCloud = Y
+2020-04-30 02:51:34 DEBUG Log: aws.purgeEfsInputs = Y
+2020-04-30 02:51:34 DEBUG Log: pipeline.permissions = 777
+2020-04-30 02:51:34 DEBUG Log: trimPrimers.requirePrimer = Y
+2020-04-30 02:51:34 DEBUG Log: report.logBase = 10
+2020-04-30 02:51:34 DEBUG Log: rarefyOtuCounts.iterations = 10
+2020-04-30 02:51:34 DEBUG Log: metadata.required = Y
+2020-04-30 02:51:34 DEBUG Log: seqFileValidator.requireEqualNumPairs = Y
+2020-04-30 02:51:34 DEBUG Log: pipeline.defaultFastaConverter = biolockj.module.seq.AwkFastaConverter
+2020-04-30 02:51:34 DEBUG Log: report.unclassifiedTaxa = Y
+2020-04-30 02:51:34 DEBUG Log: qiime.alphaMetrics = shannon
+2020-04-30 02:51:34 DEBUG Log: mail.smtp.starttls.enable = Y
+2020-04-30 02:51:34 DEBUG Log: metadata.columnDelim = \t
+2020-04-30 02:51:34 DEBUG Log: report.minCount = 2
+2020-04-30 02:51:34 DEBUG Log: pipeline.defaultSeqMerger = biolockj.module.seq.PearMergeReads
+2020-04-30 02:51:34 DEBUG Log: r_PlotMds.distance = bray
+2020-04-30 02:51:34 DEBUG Log: input.requireCompletePairs = Y
+2020-04-30 02:51:34 DEBUG Log: r.colorBase = black
+2020-04-30 02:51:34 DEBUG Log: report.numHits = Y
+2020-04-30 02:51:34 DEBUG Log: qiime.plotAlphaMetrics = Y
+2020-04-30 02:51:34 DEBUG Log: multiplexer.gzip = Y
+2020-04-30 02:51:34 DEBUG Log: r.pch = 21
+2020-04-30 02:51:34 DEBUG Log: pipeline.userProfile = root/.bashrc
+2020-04-30 02:51:34 DEBUG Log: aws.s3TransferTimeout = 60
+2020-04-30 02:51:34 DEBUG Log: r.timeout = 
+2020-04-30 02:51:34 DEBUG Log: r_CalculateStats.pAdjustMethod = BH
+2020-04-30 02:51:34 DEBUG Log: genMod.scriptPath = ../script/otherUserScript.sh
+2020-04-30 02:51:34 DEBUG Log: rdp.minThresholdScore = 80
+2020-04-30 02:51:34 DEBUG Log: rdp.jar = /app/classifier.jar
+2020-04-30 02:51:34 DEBUG Log: validation.stopPipeline = Y
+2020-04-30 02:51:34 DEBUG Log: internal.defaultConfig = /app/biolockj/resources/config/default/standard.properties, /app/biolockj/resources/config/default/docker.properties
+2020-04-30 02:51:34 DEBUG Log: aws.ec2AcquisitionStrategy = DEMAND
+2020-04-30 02:51:34 DEBUG Log: aws.profile = default
+2020-04-30 02:51:34 DEBUG Log: aws.purgeEfsOutputs = N
+2020-04-30 02:51:34 DEBUG Log: aws.copyReportsToS3 = Y
+2020-04-30 02:51:34 DEBUG Log: mail.smtp.host = smtp.gmail.com
+2020-04-30 02:51:34 DEBUG Log: r.pvalCutoff = 0.05
+2020-04-30 02:51:34 DEBUG Log: pipeline.defaultStatsModule = biolockj.module.report.r.R_CalculateStats
+2020-04-30 02:51:34 DEBUG Log: r_CalculateStats.pAdjustScope = LOCAL
+2020-04-30 02:51:34 DEBUG Log: script.numThreads = 2
+2020-04-30 02:51:34 DEBUG Log: report.scarceSampleCutoff = 0.25
+2020-04-30 02:51:34 DEBUG Log: r_PlotMds.numAxis = 3
+2020-04-30 02:51:34 DEBUG Log: r.rareOtuThreshold = 1
+2020-04-30 02:51:34 DEBUG Log: report.numReads = Y
+2020-04-30 02:51:34 DEBUG Log: mail.to = 
+2020-04-30 02:51:34 DEBUG Log: validation.expectationFile = ../validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Log: Replace "${BLJ}" in "${BLJ}/templates/myFirstPipeline/rhizosphere_16S_data"
+2020-04-30 02:51:34 DEBUG Log: Bash var "${BLJ}" = "/app/biolockj"
+2020-04-30 02:51:34 DEBUG Log: Updated "${BLJ}/templates/myFirstPipeline/rhizosphere_16S_data" --> /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data"
+2020-04-30 02:51:34 INFO Log: --------> Bash Var Converted "${BLJ}/templates/myFirstPipeline/rhizosphere_16S_data" ======> "/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data"
+2020-04-30 02:51:34 DEBUG Log: input.dirPaths = /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:34 DEBUG Log: metadata.barcodeColumn = BarcodeSequence
+2020-04-30 02:51:34 DEBUG Log: aws.ram = 4
+2020-04-30 02:51:34 DEBUG Log: pipeline.logLevel = DEBUG
+2020-04-30 02:51:34 DEBUG Log: internal.configModules = biolockj.module.diy.GenMod
+2020-04-30 02:51:34 DEBUG Log: aws.copyDbToS3 = N
+2020-04-30 02:51:34 DEBUG Log: rarefyOtuCounts.lowAbundantCutoff = 0.01
+2020-04-30 02:51:34 DEBUG Log: aws.ec2TerminateHead = Y
+2020-04-30 02:51:34 DEBUG Log: qiime.removeChimeras = Y
+2020-04-30 02:51:34 DEBUG Log:  --------------------------------------------------------------------
+2020-04-30 02:51:34 DEBUG Log: Containerizing path: null
+2020-04-30 02:51:34 DEBUG Log: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 INFO Log: Set Config property [ internal.pipelineDir ] = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/genMod_dotPath_17_2020Apr30
+2020-04-30 02:51:34 INFO Log: Assign NEW pipeline root directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30
+2020-04-30 02:51:34 INFO Log: Total # initial properties: 93
+2020-04-30 02:51:34 INFO Log: Set Config property [ report.taxonomyLevels ] = phylum, class, order, family, genus
+2020-04-30 02:51:34 INFO Log: Initialize metadata property [ metadata.nullValue ] = NA
+2020-04-30 02:51:34 INFO Log: Metadata initialized
+2020-04-30 02:51:34 INFO Log: Set LOG_FILE = /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/genMod_dotPath_17_2020Apr30.log
+2020-04-30 02:51:34 INFO Log: Set pipeline.logLevel = DEBUG
+2020-04-30 02:51:34 INFO Log: Set LOG_APPEND = true
+2020-04-30 02:51:34 INFO Log: Set LOG_FORMAT = %m%n
+2020-04-30 02:51:34 INFO Log: ========================================================================
+2020-04-30 02:51:34 INFO Log: Pipeline Project Config File: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 INFO Log: Pipeline Default Config Files: [/app/biolockj/resources/config/default/standard.properties, /app/biolockj/resources/config/default/docker.properties]
+2020-04-30 02:51:34 INFO Log: ========================================================================
+2020-04-30 02:51:34 INFO Log: ===> List All Configured Properties:
+2020-04-30 02:51:34 INFO Log: ========================================================================
+2020-04-30 02:51:34 INFO Log: aws.copyDbToS3 = N
+2020-04-30 02:51:34 INFO Log: aws.copyPipelineToS3 = N
+2020-04-30 02:51:34 INFO Log: aws.copyReportsToS3 = Y
+2020-04-30 02:51:34 INFO Log: aws.ec2AcquisitionStrategy = DEMAND
+2020-04-30 02:51:34 INFO Log: aws.ec2InstanceType = t2.micro
+2020-04-30 02:51:34 INFO Log: aws.ec2SpotPer = 70
+2020-04-30 02:51:34 INFO Log: aws.ec2TerminateHead = Y
+2020-04-30 02:51:34 INFO Log: aws.profile = default
+2020-04-30 02:51:34 INFO Log: aws.purgeEfsInputs = Y
+2020-04-30 02:51:34 INFO Log: aws.purgeEfsOutputs = N
+2020-04-30 02:51:34 INFO Log: aws.ram = 4
+2020-04-30 02:51:34 INFO Log: aws.s3TransferTimeout = 60
+2020-04-30 02:51:34 INFO Log: aws.saveCloud = Y
+2020-04-30 02:51:34 INFO Log: demultiplexer.barcodeCutoff = 0.05
+2020-04-30 02:51:34 INFO Log: exe.emapper = 
+2020-04-30 02:51:34 INFO Log: exe.vsearchParams = --db /usr/local/lib/python2.7/dist-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+2020-04-30 02:51:34 INFO Log: genMod.scriptPath = ../script/otherUserScript.sh
+2020-04-30 02:51:34 INFO Log: humann2.nuclDB = chocophlan full ${BLJ_DB}
+2020-04-30 02:51:34 INFO Log: humann2.protDB = uniref uniref90_diamond ${BLJ_DB}
+2020-04-30 02:51:34 INFO Log: input.dirPaths = /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:34 INFO Log: input.requireCompletePairs = Y
+2020-04-30 02:51:34 INFO Log: input.suffixFw = _R1
+2020-04-30 02:51:34 INFO Log: input.suffixRv = _R2
+2020-04-30 02:51:34 INFO Log: internal.configModules = biolockj.module.diy.GenMod
+2020-04-30 02:51:34 INFO Log: internal.defaultConfig = /app/biolockj/resources/config/default/standard.properties, /app/biolockj/resources/config/default/docker.properties
+2020-04-30 02:51:34 INFO Log: internal.pipelineDir = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/genMod_dotPath_17_2020Apr30
+2020-04-30 02:51:34 INFO Log: kneaddata.dbs = ${BLJ_DEFAULT_DB}
+2020-04-30 02:51:34 INFO Log: kraken.db = ${BLJ_DEFAULT_DB}
+2020-04-30 02:51:34 INFO Log: kraken.krakenParams = --only-classified-output, --preload
+2020-04-30 02:51:34 INFO Log: mail.encryptedPassword = 7GYvu1m+Yv1Gk7Cd9BLaznJ/jq33g0q1
+2020-04-30 02:51:34 INFO Log: mail.from = biolockj@gmail.com
+2020-04-30 02:51:34 INFO Log: mail.smtp.auth = Y
+2020-04-30 02:51:34 INFO Log: mail.smtp.host = smtp.gmail.com
+2020-04-30 02:51:34 INFO Log: mail.smtp.port = 587
+2020-04-30 02:51:34 INFO Log: mail.smtp.starttls.enable = Y
+2020-04-30 02:51:34 INFO Log: mail.to = 
+2020-04-30 02:51:34 INFO Log: metadata.barcodeColumn = BarcodeSequence
+2020-04-30 02:51:34 INFO Log: metadata.columnDelim = \t
+2020-04-30 02:51:34 INFO Log: metadata.commentChar = 
+2020-04-30 02:51:34 INFO Log: metadata.fileNameColumn = InputFileName
+2020-04-30 02:51:34 INFO Log: metadata.nullValue = NA
+2020-04-30 02:51:34 INFO Log: metadata.required = Y
+2020-04-30 02:51:34 INFO Log: multiplexer.gzip = Y
+2020-04-30 02:51:34 INFO Log: pipeline.defaultDemultiplexer = biolockj.module.implicit.Demultiplexer
+2020-04-30 02:51:34 INFO Log: pipeline.defaultFastaConverter = biolockj.module.seq.AwkFastaConverter
+2020-04-30 02:51:34 INFO Log: pipeline.defaultSeqMerger = biolockj.module.seq.PearMergeReads
+2020-04-30 02:51:34 INFO Log: pipeline.defaultStatsModule = biolockj.module.report.r.R_CalculateStats
+2020-04-30 02:51:34 INFO Log: pipeline.detachJavaModules = Y
+2020-04-30 02:51:34 INFO Log: pipeline.downloadDir = $HOME/projects/downloads
+2020-04-30 02:51:34 INFO Log: pipeline.env = local
+2020-04-30 02:51:34 INFO Log: pipeline.logLevel = DEBUG
+2020-04-30 02:51:34 INFO Log: pipeline.permissions = 777
+2020-04-30 02:51:34 INFO Log: pipeline.userProfile = root/.bashrc
+2020-04-30 02:51:34 INFO Log: qiime.alphaMetrics = shannon
+2020-04-30 02:51:34 INFO Log: qiime.plotAlphaMetrics = Y
+2020-04-30 02:51:34 INFO Log: qiime.removeChimeras = Y
+2020-04-30 02:51:34 INFO Log: r.colorBase = black
+2020-04-30 02:51:34 INFO Log: r.colorHighlight = red
+2020-04-30 02:51:34 INFO Log: r.colorPoint = black
+2020-04-30 02:51:34 INFO Log: r.debug = Y
+2020-04-30 02:51:34 INFO Log: r.pValFormat = %1.2g
+2020-04-30 02:51:34 INFO Log: r.pch = 21
+2020-04-30 02:51:34 INFO Log: r.pvalCutoff = 0.05
+2020-04-30 02:51:34 INFO Log: r.rareOtuThreshold = 1
+2020-04-30 02:51:34 INFO Log: r.timeout = 
+2020-04-30 02:51:34 INFO Log: r_CalculateStats.pAdjustMethod = BH
+2020-04-30 02:51:34 INFO Log: r_CalculateStats.pAdjustScope = LOCAL
+2020-04-30 02:51:34 INFO Log: r_PlotEffectSize.disableFoldChange = Y
+2020-04-30 02:51:34 INFO Log: r_PlotEffectSize.excludePvalAbove = 1
+2020-04-30 02:51:34 INFO Log: r_PlotEffectSize.maxNumTaxa = 40
+2020-04-30 02:51:34 INFO Log: r_PlotMds.distance = bray
+2020-04-30 02:51:34 INFO Log: r_PlotMds.numAxis = 3
+2020-04-30 02:51:34 INFO Log: rarefyOtuCounts.iterations = 10
+2020-04-30 02:51:34 INFO Log: rarefyOtuCounts.lowAbundantCutoff = 0.01
+2020-04-30 02:51:34 INFO Log: rarefyOtuCounts.quantile = 0.5
+2020-04-30 02:51:34 INFO Log: rdp.jar = /app/classifier.jar
+2020-04-30 02:51:34 INFO Log: rdp.minThresholdScore = 80
+2020-04-30 02:51:34 INFO Log: rdp.params = -f fixrank
+2020-04-30 02:51:34 INFO Log: report.logBase = 10
+2020-04-30 02:51:34 INFO Log: report.minCount = 2
+2020-04-30 02:51:34 INFO Log: report.numHits = Y
+2020-04-30 02:51:34 INFO Log: report.numReads = Y
+2020-04-30 02:51:34 INFO Log: report.scarceCountCutoff = 0.25
+2020-04-30 02:51:34 INFO Log: report.scarceSampleCutoff = 0.25
+2020-04-30 02:51:34 INFO Log: report.taxonomyLevels = phylum, class, order, family, genus
+2020-04-30 02:51:34 INFO Log: report.unclassifiedTaxa = Y
+2020-04-30 02:51:34 INFO Log: script.defaultHeader = #!/bin/bash
+2020-04-30 02:51:34 INFO Log: script.numThreads = 2
+2020-04-30 02:51:34 INFO Log: script.numWorkers = 8
+2020-04-30 02:51:34 INFO Log: script.permissions = 777
+2020-04-30 02:51:34 INFO Log: seqFileValidator.requireEqualNumPairs = Y
+2020-04-30 02:51:34 INFO Log: trimPrimers.requirePrimer = Y
+2020-04-30 02:51:34 INFO Log: validation.expectationFile = ../validation/TOS_subdir
+2020-04-30 02:51:34 INFO Log: validation.stopPipeline = Y
+2020-04-30 02:51:34 INFO Log: ========================================================================
+2020-04-30 02:51:34 INFO Log: Java Logger initialized
+2020-04-30 02:51:34 INFO Log: ========================================================================
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: null
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:34 DEBUG Config: The file path "/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data" has been interpreted as: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:34 INFO Config: Set Config property [ input.dirPaths ] = /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:34 INFO BioLockJUtil: Found pipeline input dir /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data
+2020-04-30 02:51:34 INFO BioLockJUtil: # Initial input files found: 4
+2020-04-30 02:51:34 INFO BioLockJUtil: # Initial input files after removing empty/ignored files: 4
+2020-04-30 02:51:34 INFO SeqUtil: Check if input file is a SEQ file: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456827_1.fastq
+2020-04-30 02:51:34 INFO SeqUtil: header: @ERR1456827.1000 1000 length=301
+2020-04-30 02:51:34 INFO SeqUtil: seq: GACCTACGGGCGGCAGCAGTGGGGAATTTTGCGCAATGGGGGAAACCCTGACGCAGCAACGCCGCGTGGAGGATGAAGTCCCTTGGGATGTAAACTCCTTTCGATCGGGACGATTATGACGGTACCGGAAGAAGAAGCACCGGCTAACTCTGTGCCAGCAGCCGCGGTAATCCAGATGGTGCAAGCGTCGGTAGGAATTT
+2020-04-30 02:51:34 INFO SeqUtil: Check if input file is a SEQ file: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456807_1.fastq
+2020-04-30 02:51:34 INFO SeqUtil: header: @ERR1456807.1000 1000 length=301
+2020-04-30 02:51:34 INFO SeqUtil: seq: TGCCTACGGGGGGCAGCAGTAGGGAATCTTCCGCAATGGACGAAAGTCTGACGGAGCAACGCCGCGTGAGTGATGAAGGTTTTCGGATCGTAAAACTCTTTTGTTAGGGAAGAACAAGTACGAGAGTAACTGCTCGTACCTTGACGGTACCTAACCAGAAAGCCACGGCTAACTACGTGCCAGCAGCCGCGGTACAACGT
+2020-04-30 02:51:34 INFO SeqUtil: Check if input file is a SEQ file: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456806_1.fastq
+2020-04-30 02:51:34 INFO SeqUtil: header: @ERR1456806.1000 1000 length=299
+2020-04-30 02:51:34 INFO SeqUtil: seq: GCCTACGGGTGGCAGCAGTGGGGAATTGTTCGCAATGGGCGCAAGCCTGACGACGCAACGCCGCGTGGAGGACGAAGATCTTCGGGTCGTAAACTCCTGTCGAGCGGGAAGAATGCCTCGCGGAGGAATAAGCCGCGGGGGTGACGGTACCGCTAAAGGAAGCCCCGGCTAACTCCGTGCCAGCAGACGCGGGAATACGG
+2020-04-30 02:51:34 INFO SeqUtil: Check if input file is a SEQ file: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456826_1.fastq
+2020-04-30 02:51:34 INFO SeqUtil: header: @ERR1456826.1000 1000 length=301
+2020-04-30 02:51:34 INFO SeqUtil: seq: CCCTACGGGAGGCTGCAGTGAGGAATTTTCCGCAATGGGCGCAAGCCTGACGGAGCAACGCCGCGTGAGTGATGAAGGCCTTCGGGTTGTGAAACTCTGTCTTCTGTGAAGAACAAGCCTGTGAGTGGAAAGCTCAGGCCTTGACGGTAACAGAGGAGGAAGCCCCGGCTAACTACGTGCCAGCAGCCGCGGTAATACGT
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 INFO BioLockJUtil: The module [GenMod] brings filetype(s): 
+2020-04-30 02:51:34 INFO Config: Set Config property [ internal.pipelineInputTypes ] = seq
+2020-04-30 02:51:34 DEBUG SeqUtil:  --> 1st headerChar = @
+2020-04-30 02:51:34 DEBUG SeqUtil: sub_ERR1456827_1.fastq --> Line[1] = GACCTACGGGCGGCAGCAGTGGGGAATTTTGCGCAATGGGGGAAACCCTGACGCAGCAACGCCGCGTGGAGGATGAAGTCCCTTGGGATGTAAACTCCTTTCGATCGGGACGATTATGACGGTACCGGAAGAAGAAGCACCGGCTAACTCTGTGCCAGCAGCCGCGGTAATCCAGATGGTGCAAGCGTCGGTAGGAATTTTTGGTCGTAAAGGGCACGTAGTCGGTGGGGTAAGTCTGACTGGAAGTGTCGGGGATCACCCGAGTATCTGCATAAGAAACTGCCGTGCGTAACTAGGGGAG
+2020-04-30 02:51:34 DEBUG SeqUtil: sub_ERR1456827_1.fastq --> Line[2] = +ERR1456827.1000 1000 length=301
+2020-04-30 02:51:34 INFO SeqUtil: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456827_1.fastq --> #lines/read: 2
+2020-04-30 02:51:34 DEBUG SeqUtil: detected FASTQ: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456827_1.fastq
+2020-04-30 02:51:34 DEBUG SeqUtil: sub_ERR1456807_1.fastq --> Line[1] = @ERR1456807.1000 1000 length=301
+2020-04-30 02:51:34 INFO SeqUtil: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456807_1.fastq --> #lines/read: 2
+2020-04-30 02:51:34 DEBUG SeqUtil: detected FASTQ: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456807_1.fastq
+2020-04-30 02:51:34 DEBUG SeqUtil: sub_ERR1456806_1.fastq --> Line[1] = @ERR1456806.1000 1000 length=299
+2020-04-30 02:51:34 INFO SeqUtil: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456806_1.fastq --> #lines/read: 2
+2020-04-30 02:51:34 DEBUG SeqUtil: detected FASTQ: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456806_1.fastq
+2020-04-30 02:51:34 DEBUG SeqUtil: sub_ERR1456826_1.fastq --> Line[1] = @ERR1456826.1000 1000 length=301
+2020-04-30 02:51:34 INFO SeqUtil: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456826_1.fastq --> #lines/read: 2
+2020-04-30 02:51:34 DEBUG SeqUtil: detected FASTQ: /app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456826_1.fastq
+2020-04-30 02:51:34 INFO Config: Set Config property [ internal.seqType ] = fastq
+2020-04-30 02:51:34 INFO Config: Set Config property [ internal.seqHeaderChar ] = @
+2020-04-30 02:51:34 INFO SeqUtil: Register Demux Status for: 4 input files.
+2020-04-30 02:51:34 INFO Config: Set Config property [ internal.multiplexed ] = N
+2020-04-30 02:51:34 DEBUG SeqUtil: Looking for paired reads in 4 files 
+2020-04-30 02:51:34 DEBUG SeqUtil: Search for paired read to match forward read ( sub_ERR1456827_1.fastq ) with sample ID: sub_ERR1456827_1
+2020-04-30 02:51:34 DEBUG SeqUtil: Search for paired read to match forward read ( sub_ERR1456807_1.fastq ) with sample ID: sub_ERR1456807_1
+2020-04-30 02:51:34 DEBUG SeqUtil: Search for paired read to match forward read ( sub_ERR1456806_1.fastq ) with sample ID: sub_ERR1456806_1
+2020-04-30 02:51:34 DEBUG SeqUtil: Search for paired read to match forward read ( sub_ERR1456826_1.fastq ) with sample ID: sub_ERR1456826_1
+2020-04-30 02:51:34 INFO SeqUtil: Set internal.pairedReads=N
+2020-04-30 02:51:34 INFO Config: Set Config property [ internal.pairedReads ] = N
+2020-04-30 02:51:34 INFO Pipeline: Initialize DOCKER pipeline
+2020-04-30 02:51:34 INFO BioModuleFactory: Pipeline has no metadata file. Metadata can be inferred from input files. Set 1st module: biolockj.module.implicit.ImportMetadata
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 WARN BioModuleFactory: biolockj.module.implicit.ImportMetadatawas added to the beginning of the pipeline.
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 WARN GenMod: Unable to find ID for: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 WARN BioModuleFactory: The following module(s) may bring input data to the pipeline: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 WARN BioModuleFactory: That data will not be detected by biolockj.module.implicit.ImportMetadata
+2020-04-30 02:51:34 WARN BioModuleFactory: To remedy this, add biolockj.module.implicit.ImportMetadata in the biomodule run order after the data input module(s).
+2020-04-30 02:51:34 INFO ImportMetadata: Construct module [ 00 ] for new /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata
+2020-04-30 02:51:34 INFO GenMod: Construct module [ 01 ] for new /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod
+2020-04-30 02:51:34 INFO Pipeline: Check dependencies for: biolockj.module.implicit.ImportMetadata
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG ValidationUtil: Using [PIPELINE_DATE_metadata.tsv] as the key based on [PIPELINE_DATE_metadata.tsv].
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG ValidationUtil: Comparing based on features: [size, md5]
+2020-04-30 02:51:34 DEBUG ValidationUtil$FileSummary: Setting size to 78
+2020-04-30 02:51:34 DEBUG ValidationUtil$FileSummary: Setting md5 to afb10a9c61e1c7a1e174f6110e746da0
+2020-04-30 02:51:34 INFO ValidationUtil: The ImportMetadata module is expected to produce 1 output files.
+2020-04-30 02:51:34 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: path to info file: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/dockerInfo.json
+2020-04-30 02:51:34 DEBUG DockerUtil: path to info file: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/dockerInfo.json
+2020-04-30 02:51:34 INFO DockerUtil: Creating dockerInfo.json file.
+2020-04-30 02:51:34 INFO DockerUtil: the info file is here:/mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/dockerInfo.json
+2020-04-30 02:51:34 INFO DockerUtil: The ImportMetadata module will use this docker image: biolockjdevteam/biolockj_controller:v1.3.2
+2020-04-30 02:51:34 INFO Pipeline: Check dependencies for: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script/otherUserScript.sh
+2020-04-30 02:51:34 DEBUG Config: The file path "../script/otherUserScript.sh" has been interpreted as: /mnt/efs/vol_3/otherUserScript.sh
+2020-04-30 02:51:34 INFO Config: Set Config property [ genMod.scriptPath ] = /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script/otherUserScript.sh
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG ValidationUtil: Using [originalFinalFrontier.txt] as the key based on [originalFinalFrontier.txt].
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG ValidationUtil: Comparing based on features: [size, md5]
+2020-04-30 02:51:34 DEBUG ValidationUtil$FileSummary: Setting size to 222
+2020-04-30 02:51:34 DEBUG ValidationUtil$FileSummary: Setting md5 to b64ae199bfeabe721b050b00f6f86ea2
+2020-04-30 02:51:34 INFO ValidationUtil: The GenMod module is expected to produce 1 output files.
+2020-04-30 02:51:34 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: path to info file: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/dockerInfo.json
+2020-04-30 02:51:34 INFO DockerUtil: The GenMod module will use this docker image: biolockjdevteam/blj_basic:v1.3.2
+2020-04-30 02:51:34 INFO Config: Path to configFile: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:34 INFO ModuleUtil: STARTING [ 00_ImportMetadata ] 
+2020-04-30 02:51:34 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:34 INFO ModuleUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/output
+2020-04-30 02:51:34 DEBUG ImportMetadata: Initialize input files...
+2020-04-30 02:51:34 DEBUG ImportMetadata: Previous module is NULL.  Return pipleline input from: input.dirPaths
+2020-04-30 02:51:34 INFO ImportMetadata: List seqFiles sorted for equal batch sizes 
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456826_1.fastq
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456827_1.fastq
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456806_1.fastq
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456807_1.fastq
+
+2020-04-30 02:51:34 INFO ImportMetadata: Clean up: biolockj.module.implicit.ImportMetadata
+2020-04-30 02:51:34 INFO Config: Set Config property [ input.ignoreFiles ] = genMod_dotPath_17_2020Apr30_metadata.tsv
+2020-04-30 02:51:34 INFO MetaUtil: Update metadata cache: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/output/genMod_dotPath_17_2020Apr30_metadata.tsv
+2020-04-30 02:51:34 DEBUG MetaUtil: ===> Meta line: SAMPLE_ID
+2020-04-30 02:51:34 DEBUG MetaUtil: ===> Meta line: sub_ERR1456806_1
+2020-04-30 02:51:34 DEBUG MetaUtil: ===> Meta line: sub_ERR1456807_1
+2020-04-30 02:51:34 DEBUG MetaUtil: ===> Meta line: sub_ERR1456826_1
+2020-04-30 02:51:34 DEBUG MetaUtil: ===> Meta line: sub_ERR1456827_1
+2020-04-30 02:51:34 DEBUG MetaUtil: Metadata Headers: [SAMPLE_ID]
+2020-04-30 02:51:34 DEBUG MetaUtil: metadataMap add: SAMPLE_ID = []
+2020-04-30 02:51:34 DEBUG MetaUtil: Metadata Record (1st Row): [sub_ERR1456806_1]
+2020-04-30 02:51:34 DEBUG MetaUtil: metadataMap add: sub_ERR1456806_1 = []
+2020-04-30 02:51:34 DEBUG MetaUtil: metadataMap add: sub_ERR1456807_1 = []
+2020-04-30 02:51:34 DEBUG MetaUtil: metadataMap add: sub_ERR1456826_1 = []
+2020-04-30 02:51:34 DEBUG MetaUtil: metadataMap add: sub_ERR1456827_1 = []
+2020-04-30 02:51:34 INFO MetaUtil: ************************************************************************
+2020-04-30 02:51:34 INFO MetaUtil: ===> New Metadata file: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/output/genMod_dotPath_17_2020Apr30_metadata.tsv
+2020-04-30 02:51:34 INFO MetaUtil: ===> Sample IDs: [sub_ERR1456806_1, sub_ERR1456807_1, sub_ERR1456826_1, sub_ERR1456827_1]
+2020-04-30 02:51:34 INFO MetaUtil: ===> Metadata fields: []
+2020-04-30 02:51:34 INFO MetaUtil: ===> 1st Record: [sub_ERR1456806_1]: []
+2020-04-30 02:51:34 INFO MetaUtil: ************************************************************************
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG ValidationUtil: Using [PIPELINE_DATE_metadata.tsv] as the key based on [PIPELINE_DATE_metadata.tsv].
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG ValidationUtil: Comparing based on features: [size, md5]
+2020-04-30 02:51:34 DEBUG ValidationUtil$FileSummary: Setting size to 78
+2020-04-30 02:51:34 DEBUG ValidationUtil$FileSummary: Setting md5 to afb10a9c61e1c7a1e174f6110e746da0
+2020-04-30 02:51:34 INFO ValidationUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/validation
+2020-04-30 02:51:34 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG ValidationUtil: Found [1] files in output dir of module [00_ImportMetadata].
+2020-04-30 02:51:34 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG ValidationUtil: Using [PIPELINE_DATE_metadata.tsv] as the key based on [genMod_dotPath_17_2020Apr30_metadata.tsv].
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG ValidationUtil: Using [PIPELINE_DATE_metadata.tsv] as the key based on [PIPELINE_DATE_metadata.tsv].
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG ValidationUtil: Comparing based on features: [size, md5]
+2020-04-30 02:51:34 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG ValidationUtil: Using [PIPELINE_DATE_metadata.tsv] as the key based on [genMod_dotPath_17_2020Apr30_metadata.tsv].
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:34 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:34 INFO Processor: [ Query Host ]: STARTING CMD --> hostname 
+2020-04-30 02:51:34 INFO Processor: [ Query Host ]: a81dd313dbc6
+2020-04-30 02:51:34 INFO Processor: [ Query Host ]: COMPLETE
+2020-04-30 02:51:34 INFO SummaryUtil: Summary updated
+2020-04-30 02:51:34 INFO SummaryUtil: Update BioModule summary [ 00_ImportMetadata ] /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/summary.txt
+2020-04-30 02:51:34 INFO SummaryUtil: Building module summary for: 00_ImportMetadata
+2020-04-30 02:51:34 INFO SummaryUtil: Summary updated
+2020-04-30 02:51:34 INFO ModuleUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/log
+2020-04-30 02:51:34 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:34 INFO ModuleUtil: FINISHED [ 00_ImportMetadata ] 
+2020-04-30 02:51:34 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:34 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:34 INFO ModuleUtil: STARTING [ 01_GenMod ] 
+2020-04-30 02:51:34 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:34 DEBUG GenMod: Initialize input files...
+2020-04-30 02:51:34 DEBUG GenMod: Check previous module for valid input files... # biolockj.module.implicit.ImportMetadata ---> dir: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/output
+2020-04-30 02:51:34 DEBUG GenMod: Previous module is NULL.  Return pipleline input from: input.dirPaths
+2020-04-30 02:51:34 INFO GenMod: List seqFiles sorted for equal batch sizes 
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456826_1.fastq
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456827_1.fastq
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456806_1.fastq
+/app/biolockj/templates/myFirstPipeline/rhizosphere_16S_data/sub_ERR1456807_1.fastq
+
+2020-04-30 02:51:34 DEBUG GenMod: No Launcher provided
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:34 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script/otherUserScript.sh
+2020-04-30 02:51:34 DEBUG Config: The file path "/Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script/otherUserScript.sh" has been interpreted as: /mnt/efs/vol_3/otherUserScript.sh
+2020-04-30 02:51:34 INFO Config: Set Config property [ genMod.scriptPath ] = /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script/otherUserScript.sh
+2020-04-30 02:51:34 DEBUG GenMod: Users script saved to: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/otherUserScript.sh
+2020-04-30 02:51:34 DEBUG GenMod: No param provided
+2020-04-30 02:51:34 INFO GenMod: Command ran: [[/mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/otherUserScript.sh]]
+2020-04-30 02:51:34 INFO ModuleUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script
+2020-04-30 02:51:34 INFO ModuleUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/log
+2020-04-30 02:51:34 INFO ModuleUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/temp
+2020-04-30 02:51:34 INFO ModuleUtil: Create directory: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/output
+2020-04-30 02:51:34 INFO BashScriptBuilder: Write new script: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script/01.0_GenMod.sh
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: #!/bin/bash
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: # BioLockJ.v1.3.2: ${scriptDir}/01.0_GenMod.sh
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: pipeDir="/mnt/efs/pipelines/genMod_dotPath_17_2020Apr30"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: modDir="${pipeDir}/01_GenMod"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: scriptDir="${modDir}/script"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: tempDir="${modDir}/temp"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: logDir="${modDir}/log"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: outputDir="${modDir}/output"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: touch "${scriptDir}/01.0_GenMod.sh_Started"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: exec 1>${logDir}/01.0_GenMod.log
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: exec 2>&1
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: cd ${scriptDir}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: function scriptFailed() {
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     echo "Line #${2} failure status code [ ${3} ]:  ${1}" >> "${scriptDir}/01.0_GenMod.sh_Failures"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     exit ${3}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: }
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: function executeLine() {
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     ${1}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     statusCode=$?
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     [ ${statusCode} -ne 0 ] && scriptFailed "${1}" ${2} ${statusCode}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: }
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: executeLine "${modDir}/otherUserScript.sh" ${LINENO}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: touch "${scriptDir}/01.0_GenMod.sh_Success"
+2020-04-30 02:51:34 INFO BashScriptBuilder: ========================================================================
+2020-04-30 02:51:34 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.diy.GenMod
+2020-04-30 02:51:34 INFO BashScriptBuilder: ========================================================================
+2020-04-30 02:51:34 DEBUG DockerUtil: Assign Docker volumes for module: GenMod
+2020-04-30 02:51:34 DEBUG DockerUtil: Passed along volumes: [ -v /var/run/docker.sock:/var/run/docker.sock \,  -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines:/mnt/efs/pipelines:delegated \,  -v /Users/ieclabau/git/BioLockJ:/app/biolockj:ro \,  -v /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data:/mnt/efs/vol_2:ro \,  -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script:/mnt/efs/vol_3:ro \,  -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir:/mnt/efs/vol_1:ro \,  -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir:/mnt/efs/vol_4:ro \]
+2020-04-30 02:51:34 INFO BashScriptBuilder: Write new script: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script/MAIN_01_GenMod.sh
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: #!/bin/bash
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: # BioLockJ v1.3.2: ${scriptDir}/MAIN_01_GenMod.sh
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: pipeDir="/mnt/efs/pipelines/genMod_dotPath_17_2020Apr30"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: modDir="${pipeDir}/01_GenMod"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: scriptDir="${modDir}/script"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: tempDir="${modDir}/temp"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: logDir="${modDir}/log"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: outputDir="${modDir}/output"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: touch "${scriptDir}/MAIN_01_GenMod.sh_Started"
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: exec 1>${tempDir}/MAIN.log
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: exec 2>&1
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: cd ${scriptDir}
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: # Spawn Docker container
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: function spawnDockerContainer() {
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     SCRIPT_ID=$(basename $1)
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     containerId=$(docker run --detach --rm \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /var/run/docker.sock:/var/run/docker.sock \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines:/mnt/efs/pipelines:delegated \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /Users/ieclabau/git/BioLockJ:/app/biolockj:ro \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data:/mnt/efs/vol_2:ro \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/script:/mnt/efs/vol_3:ro \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/subdir:/mnt/efs/vol_1:ro \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      -v /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir:/mnt/efs/vol_4:ro \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:      biolockjdevteam/blj_basic:v1.3.2 \
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     /bin/bash -c "$1" )
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     echo "Launched docker image: biolockjdevteam/blj_basic:v1.3.2"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     echo "To execute module: GenMod"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     echo "Docker container id: $containerId"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     echo "${SCRIPT_ID}:docker:${containerId}" >> ${scriptDir}/MAIN_01_GenMod.sh_Started
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     docker inspect ${containerId}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: }
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: function scriptFailed() {
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     echo "Line #${2} failure status code [ ${3} ]:  ${1}" >> "${scriptDir}/MAIN_01_GenMod.sh_Failures"
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     exit ${3}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: }
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: function executeLine() {
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     ${1}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     statusCode=$?
+2020-04-30 02:51:34 DEBUG BashScriptBuilder:     [ ${statusCode} -ne 0 ] && scriptFailed "${1}" ${2} ${statusCode}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: }
+
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: executeLine "spawnDockerContainer ${scriptDir}/01.0_GenMod.sh" ${LINENO}
+2020-04-30 02:51:34 DEBUG BashScriptBuilder: 
+touch "${scriptDir}/MAIN_01_GenMod.sh_Success"
+2020-04-30 02:51:34 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 777 /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script 
+2020-04-30 02:51:34 INFO Processor: [ Set File Privs ]: COMPLETE
+2020-04-30 02:51:34 INFO Processor: [ GenMod ]: STARTING CMD --> /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script/MAIN_01_GenMod.sh 
+2020-04-30 02:51:35 INFO Processor: [ GenMod ]: COMPLETE
+2020-04-30 02:51:35 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2020-04-30 02:51:35 INFO Pipeline: ------> Status determined by existance of indicator files in /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script
+2020-04-30 02:51:35 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2020-04-30 02:51:35 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2020-04-30 02:51:35 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2020-04-30 02:51:35 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2020-04-30 02:51:35 DEBUG Pipeline: mainScript = /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script/MAIN_01_GenMod.sh
+2020-04-30 02:51:35 DEBUG Pipeline: Worker Script = /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script/01.0_GenMod.sh
+2020-04-30 02:51:35 DEBUG DockerUtil: Docker inspect result: 'false'
+2020-04-30 02:51:35 INFO Pipeline: GenMod Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2020-04-30 02:51:35 INFO GenMod: Clean up: biolockj.module.diy.GenMod
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG ValidationUtil: Using [originalFinalFrontier.txt] as the key based on [originalFinalFrontier.txt].
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:35 DEBUG ValidationUtil: Comparing based on features: [size, md5]
+2020-04-30 02:51:35 DEBUG ValidationUtil$FileSummary: Setting size to 222
+2020-04-30 02:51:35 DEBUG ValidationUtil$FileSummary: Setting md5 to b64ae199bfeabe721b050b00f6f86ea2
+2020-04-30 02:51:35 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:35 DEBUG ValidationUtil: Found [1] files in output dir of module [01_GenMod].
+2020-04-30 02:51:35 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG ValidationUtil: Using [originalFinalFrontier.txt] as the key based on [originalFinalFrontier.txt].
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG ValidationUtil: Using [originalFinalFrontier.txt] as the key based on [originalFinalFrontier.txt].
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 DEBUG ValidationUtil: Expectation file headers: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:35 DEBUG ValidationUtil: Comparing based on features: [size, md5]
+2020-04-30 02:51:35 DEBUG ValidationUtil: Reporting on features: [name, size, md5, MATCHED_EXPECTATION]
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG ValidationUtil: Using [originalFinalFrontier.txt] as the key based on [originalFinalFrontier.txt].
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /mnt/efs/vol_1/genMod_dotPath.properties
+2020-04-30 02:51:35 DEBUG DockerUtil: Containerizing path: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/dotPath/validation/TOS_subdir
+2020-04-30 02:51:35 DEBUG Config: The file path "../validation/TOS_subdir" has been interpreted as: /mnt/efs/vol_4
+2020-04-30 02:51:35 INFO SummaryUtil: Update BioModule summary [ 01_GenMod ] /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/summary.txt
+2020-04-30 02:51:35 INFO SummaryUtil: Building module summary for: 01_GenMod
+2020-04-30 02:51:35 DEBUG SummaryUtil: 01.0_GenMod.sh duration: 0
+2020-04-30 02:51:35 INFO SummaryUtil: Summary updated
+2020-04-30 02:51:35 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:35 INFO ModuleUtil: FINISHED [ 01_GenMod ] 
+2020-04-30 02:51:35 INFO ModuleUtil: ========================================================================
+2020-04-30 02:51:35 DEBUG SummaryUtil: duration : 2220
+2020-04-30 02:51:35 INFO DownloadUtil: DownloadUtil found there are no downloadable modules
+2020-04-30 02:51:35 INFO SummaryUtil: Summary updated
+2020-04-30 02:51:35 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 777 /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30 
+2020-04-30 02:51:35 INFO Processor: [ Set File Privs ]: COMPLETE
+2020-04-30 02:51:35 INFO MasterConfigUtil: Distilling the MASTER Config into the FINAL Config file to show only properties accessed during pipeline execution.
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: docker.imageTag=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: docker.imageOwner=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: metadata.fileNameColumn=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: hostExe.docker=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: metadata.filePath=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: pipeline.disableAddImplicitModules=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: validation.sizeWithinPercent=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: demultiplexer.strategy=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: internal.allModules=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: input.trimSuffix=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: genMod.launcher=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: metadata.commentChar=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: cluster.prologue=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: input.trimPrefix=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: script.timeout=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: docker.saveContainerOnExit=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: pipeline.inputTypes=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: exe.docker=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: validation.reportOn=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: pipeline.deleteTempFiles=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: internal.isMultiLineSeq=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: docker.imageName=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: cluster.modules=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: cluster.jobHeader=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: pipeline.limitDebugClasses=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: pipeline.disableAddPreReqModules=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: validation.compareOn=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: genMod.param=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: validation.disableValidation=null
+2020-04-30 02:51:35 DEBUG MasterConfigUtil: Remove unused property from sanatized MASTER Config: pipeline.copyInput=null
+2020-04-30 02:51:35 INFO MasterConfigUtil: The original version of project Config contained: 93 properties
+2020-04-30 02:51:35 INFO MasterConfigUtil: The final version of MASTER Config contains: 17 properties
+2020-04-30 02:51:35 INFO BioLockJ: Log Pipeline Summary...
+Pipeline Name:    genMod_dotPath_17_2020Apr30
+Pipeline Config:  /mnt/efs/vol_1/genMod_dotPath.properties
+Pipeline Metadata:  N/A
+BioLockJ version:  v1.3.2
+Runtime Env:         Host [ ieclabau@CCI0PHJGH5AWS ] --> Docker Container [ root@a81dd313dbc6 ]
+Pipeline Input:      /Users/ieclabau/git/BioLockJ/templates/myFirstPipeline/rhizosphere_16S_data
+# Modules:        2
+# Attempts:       1
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  00_ImportMetadata
+Module class:  biolockj.module.implicit.ImportMetadata
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  78 bytes
+New metadata: /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/output/genMod_dotPath_17_2020Apr30_metadata.tsv
+# Samples: 4
+# Fields:  0
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  01_GenMod
+Module class:  biolockj.module.diy.GenMod
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  222 bytes
+Main Script:  /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/01_GenMod/script/MAIN_01_GenMod.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Status:     SUCCESS
+Pipeline Runtime:    00 hours : 00 minutes : 02 seconds
+Master Config:       /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/MASTER_genMod_dotPath_17_2020Apr30.properties
+Final Metadata:      /mnt/efs/pipelines/genMod_dotPath_17_2020Apr30/00_ImportMetadata/output/genMod_dotPath_17_2020Apr30_metadata.tsv
+  _______      ___      ________      ___           ________      ________      ___ ____            __
+|\   __  \    |\  \    |\   __  \    |\  \         |\   __  \    |\   ____\    |\  \|\  \         |\  \
+\ \  \|\ /_   \ \  \   \ \  \|\  \   \ \  \        \ \  \|\  \   \ \  \___|    \ \  \/  /|_       \ \  \
+ \ \   __  \   \ \  \   \ \  \\\  \   \ \  \        \ \  \\\  \   \ \  \        \ \   ___  \    __ \ \  \
+  \ \  \|\  \   \ \  \   \ \  \\\  \   \ \  \____    \ \  \\\  \   \ \  \____    \ \  \\ \  \  |\  \\_\  \
+   \ \_______\   \ \__\   \ \_______\   \ \_______\   \ \_______\   \ \_______\   \ \__\\ \__\ \ \________\
+    \|_______|    \|__|    \|_______|    \|_______|    \|_______|    \|_______|    \|__| \|__|  \|________|
+
+                C          O          M          P          L          E          T          E          
+
+

@@ -16,6 +16,7 @@ beforeTests # see testCollectionInfo.sh
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/defaultProps/defaultProps_testList.txt
+runTestSet ${DIR}/dotPath/dot_testList.txt
 runTestSet ${DIR}/exeProps/exeProps_testList.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt
 runTestSet ${DIR}/precheck/precheck_testList.txt

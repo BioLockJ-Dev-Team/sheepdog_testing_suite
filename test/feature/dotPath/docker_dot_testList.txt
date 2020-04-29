@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/dotPath/genMod_dotPath_1.properties	 --blj --docker	2	BioLockJ_Complete	use ./script
+${SHEP}/test/feature/dotPath/subdir/genMod_dotPath_2.properties	 --blj --docker	2	BioLockJ_Complete	use ./script
