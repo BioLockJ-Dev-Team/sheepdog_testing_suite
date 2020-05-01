@@ -7,3 +7,4 @@ ${SHEP}/test/feature/defaultProps/checkBranchingConflicts.properties		1	BioLockJ
 ${SHEP}/test/feature/defaultProps/checkLayer3MakesIt.properties		1	BioLockJ_Complete	
 ${SHEP}/test/feature/defaultProps/checkPrimaryWins.properties		1	BioLockJ_Complete	
 ${SHEP}/test/feature/defaultProps/badFilePath.properties		0	ConfigPathException	
+${SHEP}/test/feature/defaultProps/badDefaultProps_undressedVar.properties		0	ConfigPathException	
