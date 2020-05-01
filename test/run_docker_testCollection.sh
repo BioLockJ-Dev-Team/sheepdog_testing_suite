@@ -16,6 +16,7 @@ beforeTests
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/asSyntax/docker_asSyntax_testList.txt
 #runTestSet ${DIR}/defaultProps/docker_defaultProps_testList.txt
+runTestSet ${DIR}/dotPath/docker_dot_testList.txt
 runTestSet ${DIR}/exeProps/docker_exeProps_testList.txt
 runTestSet ${DIR}/metadata/docker_metadata_testList.txt
 runTestSet ${DIR}/precheck/docker_precheck_testList.txt

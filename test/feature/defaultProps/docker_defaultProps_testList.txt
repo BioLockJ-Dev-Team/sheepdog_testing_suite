@@ -6,4 +6,4 @@ ${SHEP}/test/feature/defaultProps/checkBranching.properties	 --blj --docker -e S
 ${SHEP}/test/feature/defaultProps/checkBranchingConflicts.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
 ${SHEP}/test/feature/defaultProps/checkLayer3MakesIt.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
 ${SHEP}/test/feature/defaultProps/checkPrimaryWins.properties	 --blj --docker -e SHEP=${SHEP} 	1	BioLockJ_Complete	
-${SHEP}/test/feature/defaultProps/badFilePath.properties	 --blj --docker -e SHEP=${SHEP} 	0	ConfigPathException	
+${SHEP}/test/feature/defaultProps/badDefaultProps_undressedVar.properties	 --blj --docker -e SHEP=${SHEP} 	0	ConfigPathException	

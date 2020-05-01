@@ -1,0 +1,4 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/dotPath/genMod_dotPath_1.properties		2	BioLockJ_Complete	use ./script
+${SHEP}/test/feature/dotPath/subdir/genMod_dotPath_2.properties		2	BioLockJ_Complete	use ./script
+${SHEP}/test/feature/dotPath/subdir/subsubdir/genMod_dotPath_3.properties		2	BioLockJ_Complete	use a ../../ path
