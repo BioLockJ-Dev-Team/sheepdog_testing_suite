@@ -1,0 +1,19 @@
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+d51af753c3d3: Pulling fs layer
+fc878cd0a91c: Pulling fs layer
+6154df8ff988: Pulling fs layer
+fee5db0ff82f: Pulling fs layer
+fee5db0ff82f: Waiting
+fc878cd0a91c: Download complete
+6154df8ff988: Verifying Checksum
+6154df8ff988: Download complete
+fee5db0ff82f: Download complete
+d51af753c3d3: Verifying Checksum
+d51af753c3d3: Download complete
+d51af753c3d3: Pull complete
+fc878cd0a91c: Pull complete
+6154df8ff988: Pull complete
+fee5db0ff82f: Pull complete
+Digest: sha256:747d2dbbaaee995098c9792d99bd333c6783ce56150d1b11e333bbceed5c54d7
+Status: Downloaded newer image for ubuntu:latest

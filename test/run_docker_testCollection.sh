@@ -22,6 +22,7 @@ runTestSet ${DIR}/metadata/docker_metadata_testList.txt
 runTestSet ${DIR}/precheck/docker_precheck_testList.txt
 #runTestSet ${DIR}/summary/summary_testList.txt #currently does not have functional docker tests
 runTestSet ${DIR}/tutorialSeries/docker_tutorials_testList.txt
+runTestSet ${DIR}/verifyDocker/docker_verifyDocker_testList.txt
 
 # module tests
 DIR=${SHEP}/test/module

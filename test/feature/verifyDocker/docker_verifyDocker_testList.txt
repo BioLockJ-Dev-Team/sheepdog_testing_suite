@@ -1,0 +1,7 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/verifyDocker/badImage.properties	 -d --blj 	0	DockerImageException	image name invalid
+${SHEP}/test/feature/verifyDocker/badImage2.properties	 -d --blj 	0	DockerImageException	image does not exist / access denied
+${SHEP}/test/feature/verifyDocker/nonBashImage.properties	 -d --blj 	0	DockerImageException	image does not have bash
+${SHEP}/test/feature/verifyDocker/downloadImage-helper.properties			BioLockJ_Complete	"not a test, just an easy way to run a script to remove a local docker image as prep for download image test."
+${SHEP}/test/feature/verifyDocker/downloadImage.properties	 -d --blj 	1	DirectModuleException	"image must be downloaded, it passes check dependencies; hits a DirectModuleError because that container does not have fasterq-dump"
+${SHEP}/test/feature/verifyDocker/skipCheck.properties	 -d --blj 	1	DirectModuleException	verifyimage is disabled
