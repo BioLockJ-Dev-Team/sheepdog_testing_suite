@@ -12,10 +12,10 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
 1. Build the MockMain project: `cd ${SHEP}/MockMain; ant`
 1. Add the TestBioLockJ wrapper script to your path: <br>
   (macOS)<br>
-  `echo "export PATH=$PATH:${SHEP}/MockMain/resources" >> ~/.bash_profile` <br>
+  `echo "export PATH=$PATH:"'${SHEP}/MockMain/resources' >> ~/.bash_profile` <br>
   `source ~/.bash_profile` <br>
   (Ubuntu)<br>
-  `echo "export PATH=$PATH:${SHEP}/MockMain/resources" >> ~/.bashrc` <br>
+  `echo "export PATH=$PATH:"'${SHEP}/MockMain/resources' >> ~/.bashrc` <br>
   `source ~/.bashrc`<br>
 1. Run the example test set: `testBiolockj ${SHEP}/MockMain/resources/testList.txt`
 <br>This should print some output to the screen that starts with something like:
