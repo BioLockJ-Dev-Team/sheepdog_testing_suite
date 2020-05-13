@@ -32,14 +32,14 @@ Less often, the dynamic `$SHEP_DATA` variable is used in the same way.
 ```
 cd sheepdog_testing_suite
 echo "export SHEP=$(pwd)" >> ~/.bash_profile
-echo "export SHEP_DATA=$SHEP/data_small" >> ~/.bash_profile
+echo 'export SHEP_DATA=$SHEP/data_small' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 (Ubuntu)
 ```
 cd sheepdog_testing_suite
 echo "export SHEP=$(pwd)" >> ~/.bashrc
-echo "export SHEP_DATA=$SHEP/data_small" >> ~/.bashrc
+echo 'export SHEP_DATA=$SHEP/data_small' >> ~/.bashrc
 source ~/.bashrc
 ```
 
