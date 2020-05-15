@@ -1,2 +1,2 @@
 ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
-${SHEP}/test/module/shannon/testCorrectCalculation.properties		BioLockJ_Complete	standard case
+${SHEP}/test/module/shannon/testCorrectCalculation.properties	 --external-modules ${SHEP}/MockMain/dist	BioLockJ_Complete	standard case
