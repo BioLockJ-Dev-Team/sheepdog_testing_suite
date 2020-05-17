@@ -21,6 +21,25 @@ public class CheckShannon extends BioModuleImpl
 		Log.info( getClass(), "IN stub for checkDendencies()");	
 	}
 	
+	private void compareTwoMaps( HashMap<String, Double> map1, HashMap<String, Double> map2 ) throws Exception
+	{
+		Log.info( getClass(), "Checking maps " + map1 + " " + map2);
+		
+		if( ! map1.keySet().equals(map2.keySet()))
+			throw new Exception("Unequal keys " + map1.keySet() + " " + map2.keySet());
+		
+		for(String s : map1.keySet())
+		{
+			Double val1 = map1.get(s);
+			Double val2 = map2.get(s);
+			
+			if( val2 == null)
+				throw new Exception("Logic error");
+			
+			if( Math.abs(val1 - val2) > 0.0001)
+				throw new Exception("Disagreement " + s + " " + val1 + " " + val2);
+		}
+	}
 	
 	@Override
 	public void executeTask() throws Exception
@@ -33,17 +52,14 @@ public class CheckShannon extends BioModuleImpl
 		
 		for(File f : pipelineInput)
 		{
-			HashMap<String, Double> orginalMap = getDiversityMap(f);
+			HashMap<String, Double> originalMap = getDiversityMap(f);
 			
 			File matching = findMatching(f, inputFiles);
 			Log.info( getClass(), "Compare " + f.getAbsolutePath() + " " + matching.getAbsolutePath());
 			
 			HashMap<String, Double> biolockJMap = getOutputMap(matching);
 			
-			if( ! biolockJMap.equals(orginalMap))
-				throw new Exception("Mismatch " + biolockJMap + " " + orginalMap);
-			else
-				Log.info( getClass(), "Matching maps " + biolockJMap + " " + orginalMap);
+			compareTwoMaps(biolockJMap, originalMap );
 			
 			Log.info( getClass(), "HELLO:  Pass " + f.getAbsolutePath() + " " + matching.getAbsolutePath());
 			
@@ -146,10 +162,10 @@ public class CheckShannon extends BioModuleImpl
 					shannon += p * Math.log(p);
 			}
 			
-			if( shannon > 0 )
+			if( shannon <  0 )
 				map.put(key, -shannon);
 			else
-				map.put(key, shannon);
+				map.put(key, 0.0);
 		}
 		
 		reader.close();
