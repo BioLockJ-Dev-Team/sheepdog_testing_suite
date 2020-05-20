@@ -73,7 +73,9 @@ public class CheckShannon extends BioModuleImpl
 	private static File findMatching(File pipelineFile, List<File> inputFiles) throws Exception
 	{
 		String sampleId = pipelineFile.getName();
-		sampleId = sampleId.replace("_taxaCount", "").replace(".tsv", "");
+		//sampleId = sampleId.replace("_taxaCount", "").replace(".tsv", "");
+		sampleId = sampleId.replace(".tsv", "");
+		
 		sampleId = sampleId + "_Shannon.tsv";
 		
 		File returnFile = null;
