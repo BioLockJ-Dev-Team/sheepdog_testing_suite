@@ -1,3 +1,3 @@
 name	size	md5	MATCHED_EXPECTATION
-RdpPipeline_taxaCount_shannon_class.tsv	200	4c87620229a7e42aaf022392a56823f7	REPORT
-RdpPipeline_taxaCount_shannon_phylum.tsv	204	3132c4916fdfe2489da862372dc26626	REPORT
+RdpPipeline_taxaCount_shannon_class.tsv	201	ec5ba3fd09f76a1cee934c00c7526ba2	FAIL
+RdpPipeline_taxaCount_shannon_phylum.tsv	204	0e436c5630d30ee366ab3b6b297bbe27	FAIL
