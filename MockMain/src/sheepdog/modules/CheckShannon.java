@@ -78,7 +78,7 @@ public class CheckShannon extends BioModuleImpl
 		
 		for( File f : inputFiles)
 		{
-			String aName = f.getName().replace("_Shannon", "");
+			String aName = f.getName().replace("_shannon", "");
 			
 			if( sampleId.indexOf(aName) != -1 )
 			{
