@@ -15,6 +15,7 @@ beforeTests
 # feature tests
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/asSyntax/docker_asSyntax_testList.txt
+runTestSet ${DIR}/classLookup/docker_lookup_testList.txt
 #runTestSet ${DIR}/defaultProps/docker_defaultProps_testList.txt
 runTestSet ${DIR}/dotPath/docker_dot_testList.txt
 runTestSet ${DIR}/exeProps/docker_exeProps_testList.txt

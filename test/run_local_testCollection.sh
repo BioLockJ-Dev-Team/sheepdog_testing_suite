@@ -15,6 +15,7 @@ beforeTests # see testCollectionInfo.sh
 # feature tests
 DIR=${SHEP}/test/feature
 runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
+runTestSet ${DIR}/classLookup/lookup_testList.txt
 runTestSet ${DIR}/defaultProps/defaultProps_testList.txt
 runTestSet ${DIR}/dotPath/dot_testList.txt
 runTestSet ${DIR}/exeProps/exeProps_testList.txt
