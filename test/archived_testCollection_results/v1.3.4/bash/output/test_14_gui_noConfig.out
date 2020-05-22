@@ -1,0 +1,5 @@
+
+ ---------> Execute CMD [  biolockj --gui  ]
+gui = true
+The BioLockJ GUI runs in a docker container.
+KEY CMD: launch_docker --gui

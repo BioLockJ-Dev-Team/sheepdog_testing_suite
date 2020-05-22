@@ -1,0 +1,4 @@
+
+ ---------> Execute CMD [  biolockj-api listModules --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist  ]
+external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
+CMD: java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar:/Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist/* biolockj.api.BioLockJ_API listModules

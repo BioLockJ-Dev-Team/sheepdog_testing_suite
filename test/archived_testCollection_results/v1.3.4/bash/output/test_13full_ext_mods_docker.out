@@ -1,0 +1,19 @@
+
+ ---------> Execute CMD [  biolockj --docker --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
+docker = true
+external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
+KEY CMD: launch_docker --docker --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties
+
+ ---------> Execute CMD [  launch_docker --docker --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties  ]
+docker = true
+external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
+Using /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties as the config file.
+args used: docker external-modules
+configFile = /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties
+restartDir = 
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir /Users/ieclabau -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -hostname CCI0PHJGH5AWS -config /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist:/app/external_modules:ro -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines:/mnt/efs/pipelines:delegated -v /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile:/mnt/efs/vol_1:ro -v /Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:v1.3.4
+KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir /Users/ieclabau -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -hostname CCI0PHJGH5AWS -config /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist:/app/external_modules:ro -v /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines:/mnt/efs/pipelines:delegated -v /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile:/mnt/efs/vol_1:ro -v /Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:v1.3.4

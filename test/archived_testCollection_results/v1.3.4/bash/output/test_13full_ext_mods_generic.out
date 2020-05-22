@@ -1,0 +1,9 @@
+
+---------> Execute CMD [ biolockj --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
+external-modules = <SHEP>/MockMain/dist
+KEY CMD: launch_java --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties
+
+---------> Execute CMD [ launch_java --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
+external-modules = <SHEP>/MockMain/dist
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -homeDir <HOME> -config <SHEP>/test/bash/configFile/example.properties >/dev/null 2>&1 &

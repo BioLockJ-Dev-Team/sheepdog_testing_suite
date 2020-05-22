@@ -1,0 +1,34 @@
+Most recent sheepdog commit: v1.3.4-rc-1-ga3a0677
+Most recent BioLockJ commit: v1.3.4-rc
+ Test 1 ---> biolockj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/BioLockJ/pipelines/rarifySeqs_3_2020May21
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is complete.
+
+Made pipeline /Users/ieclabau/git/BioLockJ/pipelines/rarifySeqs_3_2020May21
+-->It completed.
+ Test 2 ---> biolockj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 4fe7e3fbe50a65634b253c523bb30d39e89d4c93af7b8720fa7771521cde4141
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/BioLockJ/pipelines/rarifySeqs_4_2020May21
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+It is running........Made pipeline /Users/ieclabau/git/BioLockJ/pipelines/rarifySeqs_4_2020May21
+-->It completed.
+Ran 2 basic launch process tests, all PASSED.

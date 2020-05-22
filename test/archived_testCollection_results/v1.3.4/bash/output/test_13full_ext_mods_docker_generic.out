@@ -1,0 +1,19 @@
+
+---------> Execute CMD [ biolockj --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+external-modules = <SHEP>/MockMain/dist
+KEY CMD: launch_docker --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties
+
+---------> Execute CMD [ launch_docker --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+external-modules = <SHEP>/MockMain/dist
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
+args used: docker external-modules
+configFile = <SHEP>/test/bash/configFile/example.properties
+restartDir =
+Created "<HOME>/runDockerClone.sh"
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: <ID_STRING>
+KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/dist:/app/external_modules:ro -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>

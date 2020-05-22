@@ -1,0 +1,7 @@
+
+---------> Execute CMD [ biolockj-api isValidProp --property script.numThreads --value 1 --module biolockj.module.report.taxa.AddPseudoCount --verbose ]
+module = biolockj.module.report.taxa.AddPseudoCount
+property = script.numThreads
+value = 1
+verbose = true
+CMD: java -cp <BLJ>/dist/BioLockJ.jar biolockj.api.BioLockJ_API isValidProp module=biolockj.module.report.taxa.AddPseudoCount property=script.numThreads value=1 verbose=true
