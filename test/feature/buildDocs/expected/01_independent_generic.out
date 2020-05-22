@@ -5,8 +5,10 @@
 [CheckNormalizationTable](sheepdog.modules/CheckNormalizationTable.md)
 [CheckPipelineFiles](sheepdog.modules/CheckPipelineFiles.md)
 [CheckPipelineName](sheepdog.modules/CheckPipelineName.md)
+[CheckShannon](sheepdog.modules/CheckShannon.md)
 [CopyMasterProps](sheepdog.modules/CopyMasterProps.md) - *Copy the master properties file*
 [KrakenReparse](sheepdog.modules/KrakenReparse.md)
+[NormalizeTaxaTables](sheepdog.modules/NormalizeTaxaTables.md)
 [RdpReparse](sheepdog.modules/RdpReparse.md)
 
 Example Module Documentation:
@@ -59,10 +61,14 @@ Creating documentation page for module: sheepdog.modules.CheckPipelineFiles
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckPipelineFiles.md
 Creating documentation page for module: sheepdog.modules.CheckPipelineName
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckPipelineName.md
+Creating documentation page for module: sheepdog.modules.CheckShannon
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckShannon.md
 Creating documentation page for module: sheepdog.modules.CopyMasterProps
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CopyMasterProps.md
 Creating documentation page for module: sheepdog.modules.KrakenReparse
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/KrakenReparse.md
+Creating documentation page for module: sheepdog.modules.NormalizeTaxaTables
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/NormalizeTaxaTables.md
 Creating documentation page for module: sheepdog.modules.RdpReparse
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/RdpReparse.md
 Module List Page:
