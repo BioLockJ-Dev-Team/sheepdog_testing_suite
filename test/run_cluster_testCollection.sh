@@ -42,6 +42,7 @@ runTestSet ${DIR}/kraken2/k2_testList.txt
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
 runTestSet ${DIR}/GenMod/genMod_testList.txt 
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
+runTestSet ${DIE}/shannon/shannonTestList.txt
 runTestSet ${DIR}/sraDownload/sraDownload_testList.txt
 
 # full local pipeline
