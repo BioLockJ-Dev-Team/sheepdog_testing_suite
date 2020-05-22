@@ -73,14 +73,14 @@ public class CheckShannon extends BioModuleImpl
 	private static File findMatching(File pipelineFile, List<File> inputFiles) throws Exception
 	{
 		String sampleId = pipelineFile.getName();
-		sampleId = sampleId.replace("_taxaCount", "").replace(".tsv", "");
-		sampleId = sampleId + "_Shannon.tsv";
 		
 		File returnFile = null;
 		
 		for( File f : inputFiles)
 		{
-			if( f.getName().indexOf(sampleId) != -1 )
+			String aName = f.getName().replace("_shannon", "");
+			
+			if( sampleId.indexOf(aName) != -1 )
 			{
 				if( returnFile != null)
 					throw new Exception("Duplicate for " + sampleId);
