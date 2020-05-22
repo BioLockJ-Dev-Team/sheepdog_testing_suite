@@ -19,6 +19,8 @@ Creating documentation page for module: biolockj.module.classifier.wgs.KrakenCla
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/KrakenClassifier.md
 Creating documentation page for module: biolockj.module.classifier.wgs.Metaphlan2Classifier
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.classifier.wgs/Metaphlan2Classifier.md
+Creating documentation page for module: biolockj.module.diversity.ShannonDiversity
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diversity/ShannonDiversity.md
 Creating documentation page for module: biolockj.module.diy.GenMod
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diy/GenMod.md
 Creating documentation page for module: biolockj.module.getData.sra.SraDownload
