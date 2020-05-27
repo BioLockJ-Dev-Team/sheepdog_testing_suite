@@ -14,7 +14,6 @@ import biolockj.module.BioModule;
 import biolockj.module.BioModuleImpl;
 import biolockj.module.diversity.ShannonDiversity;
 import biolockj.module.report.taxa.BuildTaxaTables;
-import biolockj.util.BioLockJUtil;
 import biolockj.util.ModuleUtil;
 
 public class CheckShannon extends BioModuleImpl
