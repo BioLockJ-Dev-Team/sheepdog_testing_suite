@@ -1,2 +1,2 @@
-ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
-${SHEP}/test/local/RdpPipeline.properties	 --external-modules ${SHEP}/MockMain/dist	BioLockJ_Complete	full pipeline
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/local/RdpPipeline.properties	17	BioLockJ_Complete	full pipeline
