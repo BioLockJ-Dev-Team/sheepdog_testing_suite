@@ -10,8 +10,11 @@ import java.util.List;
 
 import biolockj.Constants;
 import biolockj.Log;
+import biolockj.module.BioModule;
 import biolockj.module.BioModuleImpl;
-import biolockj.util.BioLockJUtil;
+import biolockj.module.diversity.ShannonDiversity;
+import biolockj.module.report.taxa.BuildTaxaTables;
+import biolockj.util.ModuleUtil;
 
 public class CheckShannon extends BioModuleImpl
 {
@@ -46,9 +49,20 @@ public class CheckShannon extends BioModuleImpl
 	{
 		Log.info( getClass(), "IN stub for executeTask()");
 		
-		Collection<File> pipelineInput = BioLockJUtil.getPipelineInputFiles();
+		Collection<File> pipelineInput = getInputFiles();
+
 		
-		List<File> inputFiles = getInputFiles();
+		List<File> inputFiles = new ArrayList<File>();
+		
+		BioModule aMod = 
+		ModuleUtil.getModule(this, ShannonDiversity.class.getName(), false);
+		
+		File outDir = aMod.getOutputDir();
+		
+		String[] names = outDir.list();
+		
+		for(String s : names)
+			inputFiles.add( new File( aMod.getOutputDir() + File.separator + s));
 		
 		for(File f : pipelineInput)
 		{
@@ -171,12 +185,15 @@ public class CheckShannon extends BioModuleImpl
 		reader.close();
 		return map;
 	}
-	
-	
 			
 	@Override
 	public String getDockerImageName() {
 		return Constants.MAIN_DOCKER_IMAGE;
+	}
+	
+	@Override
+	public boolean isValidInputModule( final BioModule module ) {
+		return module instanceof BuildTaxaTables;
 	}
 	
 }
