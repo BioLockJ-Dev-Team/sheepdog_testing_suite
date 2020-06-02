@@ -1,2 +1,2 @@
 
-rmarkdown::render("../resource/Example.Rmd", output_dir="../output")
+rmarkdown::render("../resources/Example.Rmd", output_dir="../output")

@@ -7,3 +7,5 @@ ${SHEP}/test/module/GenMod/GenModPythonArg.properties	BioLockJ_Complete	Basic Ru
 ${SHEP}/test/module/GenMod/GenModBash.properties	BioLockJ_Complete	Basic Run: Test Bash
 ${SHEP}/test/module/GenMod/GenModBroken.properties	ConfigNotFoundException	Basic Run: Test CheckDependecies() 
 ${SHEP}/test/module/GenMod/GenModMultiple.properties	BioLockJ_Complete	test for AS syntax
+${SHEP}/test/module/GenMod/GenModResources.properties	BioLockJ_Complete	Successfully transfer resources
+${SHEP}/test/module/GenMod/GenModBadResource.properties	ConfigPathException	Find that resources are not valid
