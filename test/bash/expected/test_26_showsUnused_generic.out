@@ -1,5 +1,5 @@
 # With -p, the unused props are shown at the end of check dependencies
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -19,7 +19,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
 
 
 # With -u, the unused props are shown at the end of check dependencies
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -39,7 +39,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
 
 
 # With no args, the unused props are shown at the end of check dependencies
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)

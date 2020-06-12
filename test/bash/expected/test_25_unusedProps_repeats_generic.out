@@ -1,4 +1,4 @@
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -21,7 +21,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck pipeline replaces an old one by the same name (after failure)
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -44,7 +44,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # standard pipeline replaces precheck pipeline (after failure)
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -59,7 +59,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck cannot replace a standard pipeline
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_2_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -82,7 +82,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # standard pipeline replaces precheck pipeline
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_2_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -97,7 +97,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck cannot replace a standard pipeline
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)

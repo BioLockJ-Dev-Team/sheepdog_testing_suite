@@ -27,6 +27,13 @@ while read -r line; do
 	line=${line//"${HOME}"/"<HOME>"}
 	# replace HOST
 	line=${line//"${HOST}"/"<HOST>"}
+	# replace the variable number of ...'s
+	INIT="Initializing BioLockJ<...>"
+	line=${line//"Initializing BioLockJ....."/"<$INIT>"}
+	line=${line//"Initializing BioLockJ...."/"<$INIT>"}
+	line=${line//"Initializing BioLockJ..."/"<$INIT>"}
+	line=${line//"Initializing BioLockJ.."/"<$INIT>"}
+	line=${line//"Initializing BioLockJ."/"<$INIT>"}
 	# write to output
 	echo $line >> $OUTPUT_NAME	
 done < $1
