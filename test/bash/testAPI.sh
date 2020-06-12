@@ -233,11 +233,21 @@ check_it g
 # get a json string with all info on all available modules
 id=api-test_20_moduleInfo
 biolockj-api moduleInfo 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+# this is very long detailed output, that often changes, for the routine test,
+# just look at the first 20 lines. That's just enough the make sure the format isn't jacked up.
+head -n 20 $OUT/${id}.out > $OUT/temp
+cat $OUT/temp > $OUT/${id}.out
+rm $OUT/temp
 check_it g
 
 # get a json string with all info on all modules including extra modules
 id=api-test_21_moduleExtInfo
 biolockj-api moduleInfo --external-modules $MORE_MODS 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+# this is very long detailed output, that often changes, for the routine test,
+# just look at the last 20 lines. That's just enough the make sure the format isn't jacked up.
+tail -n 20 $OUT/${id}.out > $OUT/temp
+cat $OUT/temp > $OUT/${id}.out
+rm $OUT/temp
 check_it g
 
 id=api-test_22_unknown_query

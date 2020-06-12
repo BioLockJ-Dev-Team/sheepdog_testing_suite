@@ -3,9 +3,8 @@ cluster.jobHeader
 cluster.modules
 cluster.prologue
 cluster.statusCommand
-docker.imgVersion
 docker.saveContainerOnExit
-docker.user
+docker.verifyImage
 script.defaultHeader
 script.numThreads
 script.numWorkers

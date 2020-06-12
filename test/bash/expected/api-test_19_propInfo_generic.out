@@ -117,22 +117,32 @@
 {
 "property": "cluster.statusCommand",
 "type": "string",
-"description": "Terminal command used to submit jobs on the cluster"
+"description": "Terminal command used to check the status of jobs on the cluster"
 },
 {
-"property": "docker.imgVersion",
+"property": "docker.imageName",
+"type": "string",
+"description": "The name of a docker image to override whatever a module says to use."
+},
+{
+"property": "docker.imageOwner",
+"type": "string",
+"description": "name of the Docker Hub user that owns the docker containers"
+},
+{
+"property": "docker.imageTag",
 "type": "string",
 "description": "indicate specific version of Docker images"
 },
 {
 "property": "docker.saveContainerOnExit",
 "type": "boolean",
-"description": "if ture, docker run command will NOT include the --rm flag"
+"description": "If Y, docker run command will NOT include the --rm flag"
 },
 {
-"property": "docker.user",
-"type": "string",
-"description": "name of the Docker Hub user for getting docker containers"
+"property": "docker.verifyImage",
+"type": "boolean",
+"description": "In check dependencies, run a test to verify the docker image."
 },
 {
 "property": "exe.Rscript",
@@ -163,11 +173,6 @@
 "property": "exe.python",
 "type": "executable",
 "description": "Path for the \"python\" executable; if not supplied, any script that needs the python command will assume it is on the PATH."
-},
-{
-"property": "genMod.dockerContainerName",
-"type": "string",
-"description": "Name of the docker container to use when executing an instance of the GenMod module."
 },
 {
 "property": "humann2.disableGeneFamilies",
@@ -297,8 +302,9 @@
 },
 {
 "property": "pipeline.defaultStatsModule",
-"type": "string",
-"description": "Java class name for default module used generate p-value and other stats"
+"description": "Java class name for default module used generate p-value and other stats",
+"default": "biolockj.module.report.r.R_CalculateStats",
+"type": "string"
 },
 {
 "property": "pipeline.deleteTempFiles",
@@ -331,6 +337,11 @@
 "description": "Environment in which a pipeline is run. Options: cluster, aws, local",
 "default": "local",
 "type": "string"
+},
+{
+"property": "pipeline.inputTypes",
+"type": "list",
+"description": "List of file types. This manually overrides the recommended auto-detection."
 },
 {
 "property": "pipeline.limitDebugClasses",

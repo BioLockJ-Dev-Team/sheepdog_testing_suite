@@ -8,12 +8,12 @@ biolockj-api <query> [options...]
 
 For some uses, redirecting stderr is recommended:
 biolockj-api <query> [options...] 2> /dev/null
+Options shown in [ ] are optional for a given query.
 
 Use biolockj-api without args to get help menu.
 
 Options:
 
-Options shown in [ ] are optional for a given query.
 --external-modules <dir>
 path to a directory containing additional modules
 --module <module_path>
@@ -83,12 +83,12 @@ biolockj-api <query> [options...]
 
 For some uses, redirecting stderr is recommended:
 biolockj-api <query> [options...] 2> /dev/null
+Options shown in [ ] are optional for a given query.
 
 Use biolockj-api without args to get help menu.
 
 Options:
 
-Options shown in [ ] are optional for a given query.
 --external-modules <dir>
 path to a directory containing additional modules
 --module <module_path>
