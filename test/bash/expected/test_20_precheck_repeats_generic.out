@@ -1,4 +1,4 @@
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -13,7 +13,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck pipeline replaces an old one by the same name (after failure)
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -28,7 +28,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # standard pipeline replaces precheck pipeline (after failure)
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -43,7 +43,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck cannot replace a standard pipeline
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -58,7 +58,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # standard pipeline replaces precheck pipeline
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -73,7 +73,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck cannot replace a standard pipeline
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_5_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -88,7 +88,7 @@ ERROR MESSAGE: Helpful message for the user.
 
 
 # new precheck with different name creates a new folder
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -99,7 +99,7 @@ Fetching pipeline status
 Precheck is complete. No problems were found in this pipeline configuration.
 
 # new precheck replaces old one with the same name (after success)
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -110,7 +110,7 @@ Fetching pipeline status
 Precheck is complete. No problems were found in this pipeline configuration.
 
 # standard pipeline replaces precheck pipeline (after success)
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
@@ -124,9 +124,3 @@ ERROR TYPE: BioLockJException
 ERROR MESSAGE: This module is configured to fail.
 
 
-# pipeline fails to form at all; show correct message.
-Initializing BioLockJ..
-Pipeline may have failed to launch - check <SHEP>/MockMain/pipelines for new pipeline
-cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary

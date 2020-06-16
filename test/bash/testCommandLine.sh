@@ -331,14 +331,14 @@ export BIOLOCKJ_TEST_MODE=""
 
 
 
-
-id=test_15full_longWait
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
-
-id=test_15full_w_longWait
-biolockj --external-modules ${SHEP}/MockMain/dist -w ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+# Less practical now that the wait time is very long by default.
+# id=test_15full_longWait
+# biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+# check_it
+#
+# id=test_15full_w_longWait
+# biolockj --external-modules ${SHEP}/MockMain/dist -w ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+# check_it
 
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -405,8 +405,8 @@ echo "# new precheck replaces old one with the same name (after success)" 1>> $O
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# standard pipeline replaces precheck pipeline (after success)" 1>> $OUT/${id}.out
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# pipeline fails to form at all; show correct message." 1>> $OUT/${id}.out
-biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+# echo "# pipeline fails to form at all; show correct message." 1>> $OUT/${id}.out
+# biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_25_unusedProps_repeats

@@ -23,6 +23,8 @@ Creating documentation page for module: biolockj.module.diversity.ShannonDiversi
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diversity/ShannonDiversity.md
 Creating documentation page for module: biolockj.module.diy.GenMod
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diy/GenMod.md
+Creating documentation page for module: biolockj.module.diy.Rmarkdown
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.diy/Rmarkdown.md
 Creating documentation page for module: biolockj.module.getData.sra.SraDownload
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SraDownload.md
 Creating documentation page for module: biolockj.module.getData.sra.SraMetaDB

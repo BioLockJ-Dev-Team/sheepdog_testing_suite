@@ -1,4 +1,4 @@
-Initializing BioLockJ..
+<Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
 cd-blj -> Move to pipeline output directory
 blj_log -> Tail pipeline log (accepts tail runtime parameters)
