@@ -19,6 +19,7 @@ runTestSet ${DIR}/classLookup/docker_lookup_testList.txt
 #runTestSet ${DIR}/defaultProps/docker_defaultProps_testList.txt
 runTestSet ${DIR}/dotPath/docker_dot_testList.txt
 runTestSet ${DIR}/exeProps/docker_exeProps_testList.txt
+runTestSet ${DIR}/fileNameInput/docker_testList_filename.txt
 runTestSet ${DIR}/metadata/docker_metadata_testList.txt
 runTestSet ${DIR}/precheck/docker_precheck_testList.txt
 #runTestSet ${DIR}/summary/summary_testList.txt #currently does not have functional docker tests

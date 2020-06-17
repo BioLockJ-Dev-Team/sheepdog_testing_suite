@@ -22,6 +22,7 @@ runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/classLookup/lookup_testList.txt
 runTestSet ${DIR}/defaultProps/defaultProps_testList.txt
 runTestSet ${DIR}/exeProps/exeProps_testList.txt
+runTestSet ${DIR}/fileNameInput/testList_filename.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt
 runTestSet ${DIR}/precheck/precheck_testList.txt
 #runTestSet ${DIR}/summary/summary_testList.txt #currently slow and not very valuable
