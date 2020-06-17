@@ -1,0 +1,5 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/fileNameInput/useNamedInput.properties		BioLockJ_Complete	"standard use case, specify files by name that do not match sample id, not include all files in input"
+${SHEP}/test/feature/fileNameInput/badInput_metaHasExtraFile.properties	0	MetadataException	disallow having file names in metadata that are not found as files
+${SHEP}/test/feature/fileNameInput/badInput_1file2samples.properties	0	ConfigViolationException	disallow having file names that link to more than one sample
+${SHEP}/test/feature/fileNameInput/badInput_slimMeta.properties	0	FileWithoutMetadataException	disallow having files in input dir that are not linked to a sample in metadata
