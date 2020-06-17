@@ -1,0 +1,2 @@
+Sample_ID	accession	forward_seq_file	reverse_seq_file
+sample1	ERR1456790	ERR1456790_1.fastq.gz	ERR1456790_2.fastq.gz
