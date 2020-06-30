@@ -69,7 +69,11 @@ print("I'm the custom one!!!")
 
 # res <- lrt$table
 # resOrdered <- res[order(res$PValue),]
-# outfile <- paste0(c("../output/", args[3], ".tsv"), collapse = "")
+
+# out_design_name<-gsub("[+]","_",design)
+# out_design_name<-gsub("~","",out_design_name)
+
+# outfile <- paste0(c("../output/", args[3], out_design_name, ".tsv"), collapse = "")
 # write.table(cbind(row.names(resOrdered), as.data.frame(resOrdered)),
 #     file=outfile,
 #     sep="\t",
