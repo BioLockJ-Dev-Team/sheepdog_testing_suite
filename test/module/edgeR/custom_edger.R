@@ -86,7 +86,7 @@ print("I'm the custom one!!!")
 
 print("Getting citation info ...")
 
-cite = citation("edgeR")
+cite = citation("edgeR", auto=TRUE)
 writeLines(cite$textVersion)
 writeLines(cite$textVersion, "../temp/citation.txt")
 

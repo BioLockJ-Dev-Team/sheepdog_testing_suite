@@ -1,7 +1,7 @@
 ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
-${SHEP}/test/module/edger/standardEdgeR.properties		BioLockJ_Complete	standard case
-${SHEP}/test/module/edger/userDesign.properties		BioLockJ_Complete	user passing in the design
-${SHEP}/test/module/edger/customScript.properties		BioLockJ_Complete	custom script
-${SHEP}/test/module/edger/badColumnName.properties		MetadataException	bad design factors
-${SHEP}/test/module/edger/bothDesignAndFactors.properties		ConfigViolationException	has mutually exclusive properties
-${SHEP}/test/module/edger/lacksDesignFactors.properties		ConfigNotFoundException	lacks required property
+${SHEP}/test/module/edgeR/standardEdgeR.properties		BioLockJ_Complete	standard case
+${SHEP}/test/module/edgeR/userDesign.properties		BioLockJ_Complete	user passing in the design
+${SHEP}/test/module/edgeR/customScript.properties		BioLockJ_Complete	custom script
+${SHEP}/test/module/edgeR/badColumnName.properties		MetadataException	bad design factors
+${SHEP}/test/module/edgeR/bothDesignAndFactors.properties		ConfigViolationException	has mutually exclusive properties
+${SHEP}/test/module/edgeR/lacksDesignFactors.properties		ConfigNotFoundException	lacks required property

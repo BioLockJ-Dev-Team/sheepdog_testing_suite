@@ -1,7 +1,7 @@
 ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
-${SHEP}/test/module/edger/standardEdgeR_validation.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	standard case
-${SHEP}/test/module/edger/userDesign.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	user passing in the design
-${SHEP}/test/module/edger/customScript.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	custom script
-${SHEP}/test/module/edger/badColumnName.properties	 --blj --docker -e SHEP=${SHEP}	MetadataException	bad design factors
-${SHEP}/test/module/edger/bothDesignAndFactors.properties	 --blj --docker -e SHEP=${SHEP}	ConfigViolationException	has mutually exclusive properties
-${SHEP}/test/module/edger/lacksDesignFactors.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	lacks required property
+${SHEP}/test/module/edgeR/standardEdgeR_validation.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	standard case
+${SHEP}/test/module/edgeR/userDesign.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	user passing in the design
+${SHEP}/test/module/edgeR/customScript.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	custom script
+${SHEP}/test/module/edgeR/badColumnName.properties	 --blj --docker -e SHEP=${SHEP}	MetadataException	bad design factors
+${SHEP}/test/module/edgeR/bothDesignAndFactors.properties	 --blj --docker -e SHEP=${SHEP}	ConfigViolationException	has mutually exclusive properties
+${SHEP}/test/module/edgeR/lacksDesignFactors.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	lacks required property
