@@ -162,6 +162,7 @@ rarefyOtuCounts.quantile
 rarefyOtuCounts.rmLowSamples
 rarefySeqs.max
 rarefySeqs.min
+rdp.containerJar
 rdp.db
 rdp.jar
 rdp.javaParams

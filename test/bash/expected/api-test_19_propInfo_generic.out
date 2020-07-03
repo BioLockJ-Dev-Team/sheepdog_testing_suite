@@ -246,9 +246,8 @@
 },
 {
 "property": "metadata.fileNameColumn",
-"description": "name of the metadata column with input file names",
-"default": "InputFileName",
-"type": "string"
+"type": "list",
+"description": "name of the metadata column(s) with input file names"
 },
 {
 "property": "metadata.filePath",
@@ -264,7 +263,7 @@
 {
 "property": "metadata.required",
 "description": "If Y, require metadata row for each sample with sequence data in input dirs; If N, samples without metadata are ignored.",
-"default": "Y",
+"default": "N",
 "type": "boolean"
 },
 {
