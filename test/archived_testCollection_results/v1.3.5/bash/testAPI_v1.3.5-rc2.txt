@@ -1,0 +1,122 @@
+Most recent sheepdog commit: v1.3.4-17-ga886368
+Most recent BioLockJ commit: v1.3.5-rc2
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api
+-
+api-test_00_bash_noArgs --> just as expected.
+-
+api-test_00_bash_help --> just as expected.
+-
+api-test_01_bash_listModules --> just as expected.
+-
+api-test_02_bash_listExtModules --> just as expected.
+-
+api-test_12_bash_isValidProp_mod --> just as expected.
+-
+api-test_23_bash_unknown_option --> just as expected.
+-
+api-test_24_bash_debug_option --> just as expected.
+-
+api-test_00_noArgs --> just as expected.
+-
+api-test_00_help --> just as expected.
+-
+api-test_01_listModules --> just as expected.
+-
+api-test_02_listExtModules --> just as expected.
+-
+api-test_02_listApiModules --> just as expected.
+-
+api-test_03_listExtApiModules --> just as expected.
+-
+api-test_04_listProps_module --> just as expected.
+-
+api-test_05_listProps_backbone --> just as expected.
+-
+oh no! examine api-test_06_listAllProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+index 6bc287b..b08bbbf 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+@@ -162,6 +162,7 @@ rarefyOtuCounts.quantile
+ rarefyOtuCounts.rmLowSamples
+ rarefySeqs.max
+ rarefySeqs.min
++rdp.containerJar
+ rdp.db
+ rdp.jar
+ rdp.javaParams
+-
+oh no! examine api-test_07_listAllExtProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+index 52b32fa..88b83b8 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+@@ -164,6 +164,7 @@ rarefyOtuCounts.quantile
+ rarefyOtuCounts.rmLowSamples
+ rarefySeqs.max
+ rarefySeqs.min
++rdp.containerJar
+ rdp.db
+ rdp.jar
+ rdp.javaParams
+-
+api-test_08_propType_mod --> just as expected.
+-
+api-test_09_propType --> just as expected.
+-
+api-test_09_propType_bad --> just as expected.
+-
+api-test_10_descProp_mod --> just as expected.
+-
+api-test_11_descProp --> just as expected.
+-
+api-test_11_descProp_bad --> just as expected.
+-
+api-test_12_isValidProp_mod --> just as expected.
+-
+api-test_12_isValidProp_mod_msg --> just as expected.
+-
+api-test_13_isValidProp --> just as expected.
+-
+api-test_13_isValidProp_msg --> just as expected.
+-
+api-test_17_propValue --> just as expected.
+-
+api-test_18_propValue_config --> just as expected.
+-
+oh no! examine api-test_19_propInfo !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+index fa52efa..a436463 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+@@ -246,9 +246,8 @@
+ },
+ {
+ "property": "metadata.fileNameColumn",
+-"description": "name of the metadata column with input file names",
+-"default": "InputFileName",
+-"type": "string"
++"type": "list",
++"description": "name of the metadata column(s) with input file names"
+ },
+ {
+ "property": "metadata.filePath",
+@@ -264,7 +263,7 @@
+ {
+ "property": "metadata.required",
+ "description": "If Y, require metadata row for each sample with sequence data in input dirs; If N, samples without metadata are ignored.",
+-"default": "Y",
++"default": "N",
+ "type": "boolean"
+ },
+ {
+-
+api-test_20_moduleInfo --> just as expected.
+-
+api-test_21_moduleExtInfo --> just as expected.
+-
+api-test_22_unknown_query --> just as expected.
+-
+api-test_23_unknown_option --> just as expected.
+-
+api-test_24_debug_option --> just as expected.
