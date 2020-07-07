@@ -1,6 +1,6 @@
 ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
 ${SHEP}/test/feature/precheck/nonExistingModule.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	PipelineFormationException	pipeline formation
-${SHEP}/test/feature/precheck/badModuleProperty.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	ConfigNotFoundException	problem for module
+${SHEP}/test/feature/precheck/badModuleProperty.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	ConfigPathException	problem for module
 ${SHEP}/test/feature/precheck/badGeneralproperty.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	ConfigPathException	problem for utility class
 ${SHEP}/test/feature/precheck/goodCase.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	StopAfterPrecheck	
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	PipelineFormationException	"config calls for class in sheepdog, but external mods is not used in the biolockj call"
