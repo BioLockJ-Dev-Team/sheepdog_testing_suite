@@ -1,0 +1,86 @@
+Most recent sheepdog commit: v1.3.5-4-g09f8ffa
+Most recent BioLockJ commit: v1.3.6-rc2
+Use docker
+
+
+Part 1
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/configToFail.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 81a296e26dcb9555caabaed18df8348aad6846c17d20860bcb48175a38ec60e4
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status .
+
+Pipeline is running.
+
+
+Part 2
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/04_ConfigToFail/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/05_SeqFileValidator/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/05_SeqFileValidator/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/06_Multiplexer/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/biolockjFailed
+Reset complete.
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 06895eebc03416a5d518a92cab740abab5eed4f7dd7d837dc620f6544618af7d
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+
+Part 3
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/04_ConfigToFail/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/05_SeqFileValidator/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/05_SeqFileValidator/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/06_Multiplexer/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07/biolockjFailed
+Reset complete.
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 86b5387e2d9f77d9999ed4de786cd9ede48d1db44dcd2342da7a28c0c19476d8
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Jul07
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+Good: module 03 was never deleted.
+Good: module 04 re-executed each time.
+Good: with correction, the pipeline completes.
+Basic Restart Test: PASSING

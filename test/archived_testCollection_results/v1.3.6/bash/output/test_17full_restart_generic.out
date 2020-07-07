@@ -1,0 +1,38 @@
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: This module is configured to fail.
+
+
+RESTART_DIR: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+MASTER_PROP: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/MASTER_restartWithWait_<DATE>.properties
+Starting [ blj_reset ]
+Reseting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3 to --> "biolockjFailed"
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/04_ConfigToFail/biolockjFailed
+Created <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/04_ConfigToFail/biolockjFailed
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/05_Wait/precheckComplete
+Created <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/05_Wait/biolockjFailed
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/06_Multiplexer/precheckComplete
+Created <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/06_Multiplexer/biolockjFailed
+Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/biolockjFailed
+Reset complete.
+<Initializing BioLockJ<...>>
+Restarting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Pipeline is running.
+

@@ -1,0 +1,4 @@
+
+---------> Execute CMD [ biolockj --foreground configFile/example.properties ]
+foreground = true
+KEY CMD: launch_java --foreground configFile/example.properties

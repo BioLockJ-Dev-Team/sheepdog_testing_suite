@@ -1,0 +1,5 @@
+
+ ---------> Execute CMD [  biolockj -g configFile/example.properties  ]
+gui = true
+The BioLockJ GUI runs in a docker container.
+KEY CMD: launch_docker -g configFile/example.properties

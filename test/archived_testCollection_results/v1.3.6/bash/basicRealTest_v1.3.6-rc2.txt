@@ -1,0 +1,52 @@
+Most recent sheepdog commit: v1.3.5-4-g09f8ffa
+Most recent BioLockJ commit: v1.3.6-rc2
+ Test 1 ---> biolockj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2020Jul07
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is complete.
+
+Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2020Jul07
+-->It completed.
+ Test 2 ---> biolockj --blj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 8a209473d5ce1888cd5b25e51aecc6450eef0ac4e35015aa0ce3f569130a2400
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2020Jul07
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+It is running......................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2020Jul07
+-->It completed.
+ Test 3 ---> biolockj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 28b01a0c1e440d5e3891954e13a427c67a3ce8fe3c5bd41e21bf02cf6edf3652
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2020Jul07
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+It is running......................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2020Jul07
+-->It completed.
+Ran 3 basic launch process tests, all PASSED.
