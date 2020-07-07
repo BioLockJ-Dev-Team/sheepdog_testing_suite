@@ -133,6 +133,7 @@ Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Script.md
 Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/Validation.md
 Properties menu page:
 Creating file: <BLJ>/mkdocs/user-guide/docs/GENERATED/General-Properties.md
+Developer note: The [demultiplexer] subgroup of properties don't have any linked details!
 Developer note: The [humann2] subgroup of properties don't have any linked details!
 Developer note: The [pipeline] subgroup of properties don't have any linked details!
 Developer note: The [qiime] subgroup of properties don't have any linked details!

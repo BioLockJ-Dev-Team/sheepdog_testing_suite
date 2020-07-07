@@ -21,6 +21,7 @@ cluster.host
 cluster.jobHeader
 cluster.modules
 cluster.prologue
+cluster.returnsBatchIds
 cluster.statusCommand
 demultiplexer.barcodeCutoff
 demultiplexer.barcodeRevComp

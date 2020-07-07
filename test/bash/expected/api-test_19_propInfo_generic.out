@@ -115,9 +115,31 @@
 "description": "To run at the start of every script after loading cluster modules (if any)"
 },
 {
+"property": "cluster.returnsBatchIds",
+"description": "Options Y/N. Does the cluster.batchCommand return a job id. If Y, if a job is submitted and no id is returned, that will be treated as a failure and the pipeline will stop.",
+"default": "Y",
+"type": "boolean"
+},
+{
 "property": "cluster.statusCommand",
 "type": "string",
 "description": "Terminal command used to check the status of jobs on the cluster"
+},
+{
+"property": "demultiplexer.barcodeCutoff",
+"description": "Options: (0.0 - 1.0); if defined, pipeline will fail if the percentage of reads with a barcode is less than this cutoff.",
+"default": "0.05",
+"type": "numeric"
+},
+{
+"property": "demultiplexer.barcodeRevComp",
+"type": "boolean",
+"description": "Options: Y/N. Use reverse compliment of metadata.barcodeColumn if demultimplexer.strategy = barcode_in_header or barcode_in_seq."
+},
+{
+"property": "demultiplexer.strategy",
+"type": "string",
+"description": "Options: barcode_in_header, barcode_in_seq, id_in_header, do_not_demux.If using barcodes, they must be provided in the metadata file within column defined by _metadata.barcodeColumn_."
 },
 {
 "property": "docker.imageName",
@@ -220,12 +242,12 @@
 {
 "property": "input.trimPrefix",
 "type": "string",
-"description": "prefix to trim from sequence file names or headers to obtain Sample ID"
+"description": "Prefix to trim from sequence file names or headers to obtain Sample ID; this string can appear anywhere in the filename and all text before it will be removed."
 },
 {
 "property": "input.trimSuffix",
 "type": "string",
-"description": "suffix to trim from sequence file names or headers to obtain Sample ID"
+"description": "Suffix to trim from sequence file names or headers to obtain Sample ID; this string can appear anywhere in the filename and all text after it will be removed."
 },
 {
 "property": "metadata.barcodeColumn",
