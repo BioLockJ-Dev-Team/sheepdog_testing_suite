@@ -9,9 +9,9 @@ To run the program, args MUST include one of:
 -config, -restartDir, -direct
 Arguments
 Named arguments for directories:
--projectDir, -homeDir, -restartDir
+-projectDir, -restartDir
 Other named arguments:
--config, -direct, -hostname, -password
+-config, -direct, -password
 Flags:
 -aws, -systemOut, -precheck, -unusedProps
 Info-only arguments:
@@ -31,9 +31,9 @@ To run the program, args MUST include one of:
 -config, -restartDir, -direct
 Arguments
 Named arguments for directories:
--projectDir, -homeDir, -restartDir
+-projectDir, -restartDir
 Other named arguments:
--config, -direct, -hostname, -password
+-config, -direct, -password
 Flags:
 -aws, -systemOut, -precheck, -unusedProps
 Info-only arguments:

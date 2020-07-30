@@ -6,7 +6,7 @@ KEY CMD: launch_java -u configFile/example.properties
 ---------> Execute CMD [ launch_java -u configFile/example.properties ]
 unused-props = true
 Using configFile/example.properties as the config file.
-KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -homeDir <HOME> -precheck -unusedProps -config configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config configFile/example.properties >/dev/null 2>&1 &
 
 # With -u, the call to java should be identical with and without -p
 
@@ -14,4 +14,4 @@ KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pip
 precheck-only = true
 unused-props = true
 Using configFile/example.properties as the config file.
-KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -homeDir <HOME> -precheck -unusedProps -config configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config configFile/example.properties >/dev/null 2>&1 &

@@ -6,4 +6,4 @@ KEY CMD: launch_java --password bar configFile/example.properties
 ---------> Execute CMD [ launch_java --password bar configFile/example.properties ]
 password = bar
 Using configFile/example.properties as the config file.
-KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -homeDir <HOME> -password bar -config configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -password bar -config configFile/example.properties >/dev/null 2>&1 &
