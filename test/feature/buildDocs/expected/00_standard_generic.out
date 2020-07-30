@@ -99,6 +99,8 @@ Creating documentation page for module: biolockj.module.report.taxa.NormalizeTax
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.report.taxa/NormalizeTaxaTables.md
 Creating documentation page for module: biolockj.module.rnaseq.DESeq2
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.rnaseq/DESeq2.md
+Creating documentation page for module: biolockj.module.rnaseq.EdgeR
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.rnaseq/EdgeR.md
 Creating documentation page for module: biolockj.module.seq.AwkFastaConverter
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.seq/AwkFastaConverter.md
 Creating documentation page for module: biolockj.module.seq.Gunzipper
