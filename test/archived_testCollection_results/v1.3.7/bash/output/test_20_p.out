@@ -1,0 +1,11 @@
+
+ ---------> Execute CMD [  biolockj -p --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/fastFail.properties  ]
+precheck-only = true
+external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
+KEY CMD: launch_java -p --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/fastFail.properties
+
+ ---------> Execute CMD [  launch_java -p --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/fastFail.properties  ]
+precheck-only = true
+external-modules = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist
+Using /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/fastFail.properties as the config file.
+KEY CMD: nohup java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar:/Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist/* biolockj.BioLockJ -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -precheck -config /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/fastFail.properties >/dev/null 2>&1 &

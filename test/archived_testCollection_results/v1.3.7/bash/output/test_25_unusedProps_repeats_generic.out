@@ -1,0 +1,109 @@
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# new precheck pipeline replaces an old one by the same name (after failure)
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# standard pipeline replaces precheck pipeline (after failure)
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# new precheck cannot replace a standard pipeline
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# standard pipeline replaces precheck pipeline
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# new precheck cannot replace a standard pipeline
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_3_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+

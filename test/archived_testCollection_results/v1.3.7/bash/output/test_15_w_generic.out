@@ -1,0 +1,4 @@
+
+---------> Execute CMD [ biolockj -w configFile/example.properties ]
+wait-for-start = true
+KEY CMD: launch_java -w configFile/example.properties

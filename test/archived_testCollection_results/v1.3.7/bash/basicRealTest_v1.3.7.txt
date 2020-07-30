@@ -1,0 +1,46 @@
+Most recent sheepdog commit: v1.3.7-rc-2-g19f5ff7
+Most recent BioLockJ commit: v1.3.7
+ Test 1 ---> biolockj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2020Jul30
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status 
+
+Pipeline is complete.
+
+Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2020Jul30
+-->It completed.
+ Test 2 ---> biolockj --blj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 0fc5d5c2162cfa93a07aefc1a0b2ee142406eaec8ce461174b47c26ecc504106
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2020Jul30
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+It is running............................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2020Jul30
+-->It completed.
+ Test 3 ---> biolockj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Created "/Users/ieclabau/runDockerClone.sh" 
+This script will launch another instance of this docker image,
+with the same env vars + volumes, but in interactive mode.
+
+Docker container id: 967589d34f8dbf24206f4f197a2e4820ddfad4cc864396d8ea7dc0c6988a349d
+Initializing BioLockJ...
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2020Jul30
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status 
+
+Pipeline is running.
+
+It is running............................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2020Jul30
+-->It completed.
+Ran 3 basic launch process tests, all PASSED.

@@ -1,0 +1,53 @@
+# With -p, the unused props are shown at the end of check dependencies
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+
+
+# With -u, the unused props are shown at the end of check dependencies
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+
+
+# With no args, the unused props are shown at the end of check dependencies
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Pipeline is complete.
+

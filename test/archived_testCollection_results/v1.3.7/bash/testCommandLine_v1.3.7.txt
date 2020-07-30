@@ -1,0 +1,558 @@
+Most recent sheepdog commit: v1.3.7-rc-2-g19f5ff7
+Most recent BioLockJ commit: v1.3.7
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output
+-
+test_00 --> just as expected.
+-
+test_01_v --> just as expected.
+-
+test_01_version --> just as expected.
+-
+test_02_h --> just as expected.
+-
+test_02_help --> just as expected.
+-
+test_03_typo --> just as expected.
+-
+test_03_typos --> just as expected.
+-
+test_03_longTypo --> just as expected.
+-
+test_04_f --> just as expected.
+-
+test_04_foreground --> just as expected.
+-
+test_04full_foreground --> just as expected.
+-
+oh no! examine test_04full_fd !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_04full_fd_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_04full_fd_generic.out
+index b89b390..e485a62 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_04full_fd_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_04full_fd_generic.out
+@@ -15,5 +15,5 @@ Created "<HOME>/runDockerClone.sh"
+ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+----------> Docker CMD [ docker run --rm -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION> ]
+-KEY CMD: docker run --rm -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++---------> Docker CMD [ docker run --rm -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION> ]
++KEY CMD: docker run --rm -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+test_05_basic --> just as expected.
+-
+test_6_r --> just as expected.
+-
+test_6_restart --> just as expected.
+-
+test_6_restart_nonDir --> just as expected.
+-
+test_7_d --> just as expected.
+-
+test_7_docker --> just as expected.
+-
+oh no! examine test_7full_d !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_7full_d_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_7full_d_generic.out
+index 78757d0..4ab9503 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_7full_d_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_7full_d_generic.out
+@@ -14,4 +14,4 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+oh no! examine test_7full_docker !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_7full_docker_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_7full_docker_generic.out
+index fa8a891..a43d578 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_7full_docker_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_7full_docker_generic.out
+@@ -14,4 +14,4 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+test_8_a --> just as expected.
+-
+test_8_aws --> just as expected.
+-
+test_9_aws_g --> just as expected.
+-
+test_9_aws_gui --> just as expected.
+-
+test_10_pass --> just as expected.
+-
+test_10_pass_noArg1 --> just as expected.
+-
+test_10_pass_noArg2 --> just as expected.
+-
+test_11_b --> just as expected.
+-
+test_11_blj --> just as expected.
+-
+oh no! examine test_11full_blj !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_11full_blj_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_11full_blj_generic.out
+index dd1c4ab..270393d 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_11full_blj_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_11full_blj_generic.out
+@@ -16,4 +16,4 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <BLJ>:/app/biolockj:ro -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<BLJ>,target=/app/biolockj --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+test_12_e --> just as expected.
+-
+test_12_env-var --> just as expected.
+-
+oh no! examine test_12full_env-var !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_12full_env-var_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_12full_env-var_generic.out
+index ee8d320..7bb40a4 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_12full_env-var_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_12full_env-var_generic.out
+@@ -16,4 +16,4 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e SHEP=<SHEP> -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e SHEP=<SHEP> -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+test_13_ext_mods --> just as expected.
+-
+test_13full_ext_mods --> just as expected.
+-
+test_13_ext_mods_docker --> just as expected.
+-
+oh no! examine test_13full_ext_mods_docker !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_13full_ext_mods_docker_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_13full_ext_mods_docker_generic.out
+index 3fdaa01..4a7f000 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_13full_ext_mods_docker_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_13full_ext_mods_docker_generic.out
+@@ -16,4 +16,4 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/dist:/app/external_modules:ro -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/dist,target=/app/external_modules --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=<SHEP>/test/bash/configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+test_14_g --> just as expected.
+-
+test_14_gui --> just as expected.
+-
+test_14_gui_noConfig --> just as expected.
+-
+test_15_w --> just as expected.
+-
+test_15_wait --> just as expected.
+-
+test_15full_w --> just as expected.
+-
+test_20_precheck --> just as expected.
+-
+test_20_p --> just as expected.
+-
+test_20_rp --> just as expected.
+-
+test_20_ap --> just as expected.
+-
+test_24_u --> just as expected.
+-
+oh no! examine test_24_ud !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_24_ud_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_24_ud_generic.out
+index 18d75f0..a3da06d 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_24_ud_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_24_ud_generic.out
+@@ -16,7 +16,7 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+ 
+ # With -u, the call to java should be identical with and without -p
+ 
+@@ -33,4 +33,4 @@ This script will launch another instance of this docker image,
+ with the same env vars + volumes, but in interactive mode.
+ 
+ Docker container id: <ID_STRING>
+-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-homeDir <HOME> -projectDir <SHEP>/MockMain/pipelines -hostname <HOST> -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock -v <SHEP>/MockMain/pipelines:/mnt/efs/pipelines:delegated -v <SHEP>/test/bash/configFile:/mnt/efs/vol_1:ro -v <SHEP>/test/bash/expected:/mnt/efs/vol_2:ro biolockjdevteam/biolockj_controller:<VERSION>
++KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=--------->,target=/mnt/efs/vol_1 --mount type=bind,source=Execute,target=/mnt/efs/vol_2 --mount type=bind,source=CMD,target=/mnt/efs/vol_3 --mount type=bind,source=[,target=/mnt/efs/vol_4 --mount type=bind,source=biolockj-api,target=/mnt/efs/vol_5 --mount type=bind,source=listMounts,target=/mnt/efs/vol_6 --mount type=bind,source=--config,target=/mnt/efs/vol_7 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_8 --mount type=bind,source=],target=/mnt/efs/vol_9 --mount type=bind,source=config,target=/mnt/efs/vol_10 --mount type=bind,source==,target=/mnt/efs/vol_11 --mount type=bind,source=configFile/example.properties,target=/mnt/efs/vol_12 --mount type=bind,source=KEY,target=/mnt/efs/vol_13 --mount type=bind,source=CMD:,target=/mnt/efs/vol_14 --mount type=bind,source=java,target=/mnt/efs/vol_15 --mount type=bind,source=-cp,target=/mnt/efs/vol_16 --mount type=bind,source=<BLJ>/dist/BioLockJ.jar,target=/mnt/efs/vol_17 --mount type=bind,source=biolockj.api.BioLockJ_API,target=/mnt/efs/vol_18 --mount type=bind,source=listMounts,target=/mnt/efs/vol_19 --mount type=bind,source=config=configFile/example.properties,target=/mnt/efs/vol_20 biolockjdevteam/biolockj_controller:<VERSION>
+-
+test_24_unused --> just as expected.
+-
+test_24_ur --> just as expected.
+-
+oh no! examine test_16full_fail !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_16full_fail_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_16full_fail_generic.out
+index f96abc3..8189603 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_16full_fail_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_16full_fail_generic.out
+@@ -1,8 +1,6 @@
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_16full_fail_docker !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_16full_fail_docker_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_16full_fail_docker_generic.out
+index 465800d..6334fbc 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_16full_fail_docker_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_16full_fail_docker_generic.out
+@@ -5,9 +5,7 @@ with the same env vars + volumes, but in interactive mode.
+ Docker container id: <ID_STRING>
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_17full_restart !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_17full_restart_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_17full_restart_generic.out
+index 3f597fb..58d73ec 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_17full_restart_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_17full_restart_generic.out
+@@ -1,8 +1,6 @@
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -28,9 +26,7 @@ Deleted <SHEP>/MockMain/pipelines/restartWithWait_<DATE>/biolockjFailed
+ Reset complete.
+ <Initializing BioLockJ<...>>
+ Restarting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+test_18_jar_help --> just as expected.
+-
+oh no! examine test_21_cd-blj !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_21_cd-blj_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_21_cd-blj_generic.out
+index d62ab6a..1e22109 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_21_cd-blj_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_21_cd-blj_generic.out
+@@ -1,8 +1,6 @@
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_20_precheck_repeats !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_20_precheck_repeats_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_20_precheck_repeats_generic.out
+index bd41f5a..6d790ef 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_20_precheck_repeats_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_20_precheck_repeats_generic.out
+@@ -1,8 +1,6 @@
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -15,9 +13,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck pipeline replaces an old one by the same name (after failure)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -30,9 +26,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # standard pipeline replaces precheck pipeline (after failure)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -45,9 +39,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck cannot replace a standard pipeline
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -60,9 +52,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # standard pipeline replaces precheck pipeline
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -75,9 +65,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck cannot replace a standard pipeline
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_5_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -90,9 +78,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck with different name creates a new folder
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -101,9 +87,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ # new precheck replaces old one with the same name (after success)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -112,9 +96,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ # standard pipeline replaces precheck pipeline (after success)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_25_unusedProps_repeats !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_25_unusedProps_repeats_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_25_unusedProps_repeats_generic.out
+index 49c53e8..dd916ca 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_25_unusedProps_repeats_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_25_unusedProps_repeats_generic.out
+@@ -1,8 +1,6 @@
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -23,9 +21,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck pipeline replaces an old one by the same name (after failure)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -46,9 +42,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # standard pipeline replaces precheck pipeline (after failure)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -61,9 +55,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck cannot replace a standard pipeline
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_2_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -84,9 +76,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # standard pipeline replaces precheck pipeline
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_2_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -99,9 +89,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # new precheck cannot replace a standard pipeline
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_26_noneUnused !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_noneUnused_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_noneUnused_generic.out
+index c60d647..0daee37 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_noneUnused_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_noneUnused_generic.out
+@@ -1,8 +1,6 @@
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -10,9 +8,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ 
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -20,9 +16,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ 
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_26_showsUnused !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_showsUnused_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_showsUnused_generic.out
+index 7720838..0c841cb 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_showsUnused_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_showsUnused_generic.out
+@@ -1,9 +1,7 @@
+ # With -p, the unused props are shown at the end of check dependencies
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -21,9 +19,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ # With -u, the unused props are shown at the end of check dependencies
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -41,9 +37,7 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ # With no args, the unused props are shown at the end of check dependencies
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+-
+oh no! examine test_26_showsUnusedWithFailure !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_showsUnusedWithFailure_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_showsUnusedWithFailure_generic.out
+index 0df7c03..b018c8a 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_showsUnusedWithFailure_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_showsUnusedWithFailure_generic.out
+@@ -1,9 +1,7 @@
+ # With -p, the unused props are not shown because there is a failure in check dependencies
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -17,9 +15,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # With -u, the unused props are shown (despite failing in check dependencies)
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+@@ -41,9 +37,7 @@ ERROR MESSAGE: Helpful message for the user.
+ # With no args, the unused props are not shown because there is a failure in check dependencies
+ <Initializing BioLockJ<...>>
+ Building pipeline: <SHEP>/MockMain/pipelines/fastFail_multiModule_3_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
++After an initial status check, all pipeline updates will be in the pipeline folder.
+ 
+ Fetching pipeline status
+ 
+
+Ran 62 tests on bash command line args.
+There were 16 tests that FAILED !!!

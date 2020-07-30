@@ -1,0 +1,5 @@
+
+---------> Execute CMD [ biolockj --docker --env-var SHEP=<SHEP> <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+env-var = SHEP=<SHEP>
+KEY CMD: launch_docker --docker --env-var SHEP=<SHEP> <SHEP>/test/bash/configFile/example.properties

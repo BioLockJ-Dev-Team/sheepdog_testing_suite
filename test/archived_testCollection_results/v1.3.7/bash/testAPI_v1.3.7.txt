@@ -1,0 +1,236 @@
+Most recent sheepdog commit: v1.3.7-rc-2-g19f5ff7
+Most recent BioLockJ commit: v1.3.7
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api
+-
+api-test_00_bash_noArgs --> just as expected.
+-
+api-test_00_bash_help --> just as expected.
+-
+api-test_01_bash_listModules --> just as expected.
+-
+api-test_02_bash_listExtModules --> just as expected.
+-
+api-test_12_bash_isValidProp_mod --> just as expected.
+-
+api-test_23_bash_unknown_option --> just as expected.
+-
+api-test_24_bash_debug_option --> just as expected.
+-
+oh no! examine api-test_00_noArgs !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_noArgs_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_noArgs_generic.out
+index dc3606a..eb5e2ab 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_noArgs_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_noArgs_generic.out
+@@ -70,6 +70,14 @@ Returns a json formatted list of all modules and for each module that
+ implements the ApiModule interface, it lists the props used by the module,
+ and for each prop the type, descrption and default.
+ 
++listMounts --config <file>
++Returns a list of directories that would need to be mounted in order for
++the files listed in the config file to be available to a pipeline running in docker.
++
++listUploads --config <file>
++Returns a list of file and directories that would need to be uploaded in order for
++the files listed in the config file to be available to a pipeline running in the cloud.
++
+ help (or no args)
+ Print help menu.
+ 
+-
+oh no! examine api-test_00_help !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_help_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_help_generic.out
+index dc3606a..eb5e2ab 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_help_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_help_generic.out
+@@ -70,6 +70,14 @@ Returns a json formatted list of all modules and for each module that
+ implements the ApiModule interface, it lists the props used by the module,
+ and for each prop the type, descrption and default.
+ 
++listMounts --config <file>
++Returns a list of directories that would need to be mounted in order for
++the files listed in the config file to be available to a pipeline running in docker.
++
++listUploads --config <file>
++Returns a list of file and directories that would need to be uploaded in order for
++the files listed in the config file to be available to a pipeline running in the cloud.
++
+ help (or no args)
+ Print help menu.
+ 
+-
+oh no! examine api-test_01_listModules !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_01_listModules_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_01_listModules_generic.out
+index 5758271..92df987 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_01_listModules_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_01_listModules_generic.out
+@@ -47,6 +47,7 @@ biolockj.module.report.taxa.LogTransformTaxaTables
+ biolockj.module.report.taxa.NormalizeByReadsPerMillion
+ biolockj.module.report.taxa.NormalizeTaxaTables
+ biolockj.module.rnaseq.DESeq2
++biolockj.module.rnaseq.EdgeR
+ biolockj.module.seq.AwkFastaConverter
+ biolockj.module.seq.Gunzipper
+ biolockj.module.seq.KneadData
+-
+oh no! examine api-test_02_listExtModules !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_02_listExtModules_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_02_listExtModules_generic.out
+index a8df201..5a16ab7 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_02_listExtModules_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_02_listExtModules_generic.out
+@@ -47,6 +47,7 @@ biolockj.module.report.taxa.LogTransformTaxaTables
+ biolockj.module.report.taxa.NormalizeByReadsPerMillion
+ biolockj.module.report.taxa.NormalizeTaxaTables
+ biolockj.module.rnaseq.DESeq2
++biolockj.module.rnaseq.EdgeR
+ biolockj.module.seq.AwkFastaConverter
+ biolockj.module.seq.Gunzipper
+ biolockj.module.seq.KneadData
+-
+oh no! examine api-test_02_listApiModules !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_02_listApiModules_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_02_listApiModules_generic.out
+index 702a8e1..b7ff5fe 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_02_listApiModules_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_02_listApiModules_generic.out
+@@ -35,6 +35,7 @@ biolockj.module.report.taxa.LogTransformTaxaTables
+ biolockj.module.report.taxa.NormalizeByReadsPerMillion
+ biolockj.module.report.taxa.NormalizeTaxaTables
+ biolockj.module.rnaseq.DESeq2
++biolockj.module.rnaseq.EdgeR
+ biolockj.module.seq.AwkFastaConverter
+ biolockj.module.seq.Gunzipper
+ biolockj.module.seq.KneadData
+-
+oh no! examine api-test_03_listExtApiModules !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_03_listExtApiModules_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_03_listExtApiModules_generic.out
+index 25d236d..ae831bc 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_03_listExtApiModules_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_03_listExtApiModules_generic.out
+@@ -35,6 +35,7 @@ biolockj.module.report.taxa.LogTransformTaxaTables
+ biolockj.module.report.taxa.NormalizeByReadsPerMillion
+ biolockj.module.report.taxa.NormalizeTaxaTables
+ biolockj.module.rnaseq.DESeq2
++biolockj.module.rnaseq.EdgeR
+ biolockj.module.seq.AwkFastaConverter
+ biolockj.module.seq.Gunzipper
+ biolockj.module.seq.KneadData
+-
+api-test_04_listProps_module --> just as expected.
+-
+api-test_05_listProps_backbone --> just as expected.
+-
+oh no! examine api-test_06_listAllProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+index 1c0d44b..979ed83 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+@@ -34,6 +34,9 @@ docker.imageOwner
+ docker.imageTag
+ docker.saveContainerOnExit
+ docker.verifyImage
++edgeR.designFactors
++edgeR.designFormula
++edgeR.scriptPath
+ exe.Rscript
+ exe.awk
+ exe.docker
+-
+oh no! examine api-test_07_listAllExtProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+index 5cfe7a4..593e3bf 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+@@ -34,6 +34,9 @@ docker.imageOwner
+ docker.imageTag
+ docker.saveContainerOnExit
+ docker.verifyImage
++edgeR.designFactors
++edgeR.designFormula
++edgeR.scriptPath
+ exe.Rscript
+ exe.awk
+ exe.docker
+-
+api-test_08_propType_mod --> just as expected.
+-
+api-test_09_propType --> just as expected.
+-
+api-test_09_propType_bad --> just as expected.
+-
+api-test_10_descProp_mod --> just as expected.
+-
+api-test_11_descProp --> just as expected.
+-
+api-test_11_descProp_bad --> just as expected.
+-
+api-test_12_isValidProp_mod --> just as expected.
+-
+api-test_12_isValidProp_mod_msg --> just as expected.
+-
+api-test_13_isValidProp --> just as expected.
+-
+api-test_13_isValidProp_msg --> just as expected.
+-
+api-test_17_propValue --> just as expected.
+-
+api-test_18_propValue_config --> just as expected.
+-
+oh no! examine api-test_19_propInfo !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+index 22277f6..cde06df 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+@@ -388,9 +388,8 @@
+ },
+ {
+ "property": "pipeline.userProfile",
+-"description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others",
+-"default": "${HOME}/.bash_profile",
+-"type": "file path"
++"type": "file path",
++"description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others"
+ },
+ {
+ "property": "qiime.alphaMetrics",
+-
+api-test_20_moduleInfo --> just as expected.
+-
+api-test_21_moduleExtInfo --> just as expected.
+-
+api-test_22_unknown_query --> just as expected.
+-
+oh no! examine api-test_23_unknown_option !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_23_unknown_option_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_23_unknown_option_generic.out
+index 72e35af..c773f7b 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_23_unknown_option_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_23_unknown_option_generic.out
+@@ -73,6 +73,14 @@ Returns a json formatted list of all modules and for each module that
+ implements the ApiModule interface, it lists the props used by the module,
+ and for each prop the type, descrption and default.
+ 
++listMounts --config <file>
++Returns a list of directories that would need to be mounted in order for
++the files listed in the config file to be available to a pipeline running in docker.
++
++listUploads --config <file>
++Returns a list of file and directories that would need to be uploaded in order for
++the files listed in the config file to be available to a pipeline running in the cloud.
++
+ help (or no args)
+ Print help menu.
+ error: unrecognized argument [ madeUpOption ].
+@@ -148,5 +156,13 @@ Returns a json formatted list of all modules and for each module that
+ implements the ApiModule interface, it lists the props used by the module,
+ and for each prop the type, descrption and default.
+ 
++listMounts --config <file>
++Returns a list of directories that would need to be mounted in order for
++the files listed in the config file to be available to a pipeline running in docker.
++
++listUploads --config <file>
++Returns a list of file and directories that would need to be uploaded in order for
++the files listed in the config file to be available to a pipeline running in the cloud.
++
+ help (or no args)
+ Print help menu.
+-
+api-test_24_debug_option --> just as expected.

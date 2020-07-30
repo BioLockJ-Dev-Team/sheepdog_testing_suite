@@ -1,0 +1,19 @@
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/myFirstPipeline_2020Jul30
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status 
+
+Pipeline is complete.
+
+Moved to most recent pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/myFirstPipeline_2020Jul30
+00_ImportMetadata
+01_RegisterNumReads
+02_RarefySeqs
+03_Multiplexer
+MASTER_myFirstPipeline_2020Jul30.properties
+biolockjComplete
+myFirstPipeline.properties
+myFirstPipeline_2020Jul30.log
+summary.txt
+validation

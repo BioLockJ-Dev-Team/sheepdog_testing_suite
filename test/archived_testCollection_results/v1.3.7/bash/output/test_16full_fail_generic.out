@@ -1,0 +1,12 @@
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+

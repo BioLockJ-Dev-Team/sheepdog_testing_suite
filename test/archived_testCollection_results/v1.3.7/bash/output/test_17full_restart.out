@@ -1,0 +1,34 @@
+Initializing BioLockJ..
+Building pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status 
+
+BioLockJ has stopped.
+
+ERROR TYPE:    BioLockJException
+ERROR MESSAGE: This module is configured to fail.
+
+
+RESTART_DIR: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30
+MASTER_PROP: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/MASTER_restartWithWait_2020Jul30.properties
+Starting [ blj_reset ]
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30
+Determined that module number 3 was the last module to complete.
+Setting status of modules after 3  to --> "biolockjFailed"
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/04_ConfigToFail/biolockjFailed
+Created /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/04_ConfigToFail/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/05_Wait/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/05_Wait/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/06_Multiplexer/precheckComplete
+Created /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/06_Multiplexer/biolockjFailed
+Deleted /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30/biolockjFailed
+Reset complete.
+Initializing BioLockJ..
+Restarting pipeline:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Jul30
+After an initial status check, all pipeline updates will be in the pipeline folder.
+
+Fetching pipeline status 
+
+Pipeline is running.
+

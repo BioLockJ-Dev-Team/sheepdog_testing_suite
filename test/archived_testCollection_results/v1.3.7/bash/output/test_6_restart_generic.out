@@ -1,0 +1,9 @@
+
+---------> Execute CMD [ biolockj --restart restartDir/examplePipeline_11_1969-07-16 ]
+restart = true
+KEY CMD: launch_java --restart restartDir/examplePipeline_11_1969-07-16
+
+---------> Execute CMD [ launch_java --restart restartDir/examplePipeline_11_1969-07-16 ]
+restart = true
+Using restartDir/examplePipeline_11_1969-07-16 as the pipeline to restart.
+KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -restartDir restartDir/examplePipeline_11_1969-07-16 >/dev/null 2>&1 &
