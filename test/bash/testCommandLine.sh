@@ -18,10 +18,16 @@ check_it(){
 	echo "-"
 	TOTAL_TESTS=$((TOTAL_TESTS + 1))
 	#
-	# we don't expect anything in the .err files
-	errSize=$(du $OUT/${id}.err | cut -f 1)
-	[ $errSize -gt 0 ] && echo "$(du -h $OUT/${id}.err)"
-	[ $errSize -eq 0 ] && rm $OUT/${id}.err
+	# for some tests, we expect messages in the .err files
+	if [ -f $OUT/${id}.err ]; then
+		errSize=$(du $OUT/${id}.err | cut -f 1)
+		if [ $errSize -gt 0 ]; then
+			echo "" >> $OUT/${id}.out
+			echo "STANDARD_ERR:" >> $OUT/${id}.out
+			cat $OUT/${id}.err >> $OUT/${id}.out
+		fi
+		rm $OUT/${id}.err
+	fi
 	#
 	# always use the generic version of the output
 	OUT_FILE=$(${SHEP}/test/bash/generalize.sh $OUT/${id}.out)
