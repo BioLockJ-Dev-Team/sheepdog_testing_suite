@@ -1,6 +1,7 @@
+---------> Execute CMD [ Launcher --password -f configFile/example.properties ]
 
----------> Execute CMD [ biolockj --password -f configFile/example.properties ]
-error: the value of argument [ password ] should not begin with "-", found [ -f ].
+STANDARD_ERR:
+Error: argument [ password ] takes a value; the value should not begin with "-", found [ -f ].
 
 BioLockJ <VERSION> - UNCC Fodor Lab July 2018
 Usage:
@@ -28,3 +29,4 @@ this replaces BioLockJ packaged in a docker container with the local copy.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
 biolockj will use the value of environment variable "BLJ_PROJ".
+

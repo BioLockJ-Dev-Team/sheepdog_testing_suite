@@ -1,3 +1,5 @@
+
+STANDARD_ERR:
 biolockj requires at least one argument.
 
 BioLockJ <VERSION> - UNCC Fodor Lab July 2018
@@ -26,3 +28,4 @@ this replaces BioLockJ packaged in a docker container with the local copy.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
 biolockj will use the value of environment variable "BLJ_PROJ".
+

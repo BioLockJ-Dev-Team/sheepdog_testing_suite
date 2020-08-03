@@ -1,4 +1,6 @@
-
----------> Execute CMD [ biolockj -d configFile/example.properties ]
+---------> Execute CMD [ Launcher -d configFile/example.properties ]
 docker = true
-KEY CMD: launch_docker -d configFile/example.properties
+---------> Execute CMD [ DockerLaunchProcess -d configFile/example.properties ]
+docker = true
+Using configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -e BLJ_OPTIONS=" -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam:biolockj_controller:<VERSION>

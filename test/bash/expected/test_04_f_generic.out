@@ -1,4 +1,6 @@
-
----------> Execute CMD [ biolockj -f configFile/example.properties ]
+---------> Execute CMD [ Launcher -f configFile/example.properties ]
 foreground = true
-KEY CMD: launch_java -f configFile/example.properties
+---------> Execute CMD [ JavaLaunchProcess -f configFile/example.properties ]
+foreground = true
+Using configFile/example.properties as the config file.
+KEY CMD: java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

@@ -113,37 +113,28 @@ id=test_04_foreground
 biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_04full_foreground
-biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --foreground $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
-id=test_04full_fd
+id=test_04_fd
 biolockj -fd $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker -fd $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
 id=test_05_basic
 biolockj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
 id=test_6_r
 biolockj -r $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -r $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_6_restart
 biolockj --restart $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --restart $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_6_restart_nonDir
 biolockj --restart $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --restart $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
+
 
 id=test_7_d
 biolockj -d $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -153,15 +144,12 @@ id=test_7_docker
 biolockj --docker $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-# the results here include a lot of computer specific file paths
 id=test_7full_d
 biolockj -d $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker -d $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_7full_docker
 biolockj --docker $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -189,7 +177,6 @@ check_it
 
 id=test_10_pass
 biolockj --password bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --password  bar $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_10_pass_noArg1
@@ -209,11 +196,6 @@ id=test_11_blj
 biolockj --docker --blj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_11full_blj
-biolockj --docker --blj $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --blj $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
 
 id=test_12_e
 biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -223,28 +205,13 @@ id=test_12_env-var
 biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_12full_env-var
-biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker -e SHEP=$SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
 
 id=test_13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_13full_ext_mods
-biolockj --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
 id=test_13_ext_mods_docker
-biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
-
-id=test_13full_ext_mods_docker
 biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -267,33 +234,24 @@ check_it
 
 
 id=test_15_w
-biolockj -w $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 id=test_15_wait
 biolockj --wait-for-start $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_15full_w
-biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
-
-
 
 id=test_20_precheck
 biolockj --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_20_p
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_20_rp
 biolockj -rp $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -rp $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_20_ap
@@ -304,28 +262,24 @@ check_it
 
 id=test_24_u
 biolockj -u $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -u $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "" 1>> $OUT/${id}.out
 echo "# With -u, the call to java should be identical with and without -p" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-launch_java -up $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -up $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_24_ud
 biolockj -du $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker -du $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With -u, the call to java should be identical with and without -p" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-launch_docker -dup $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -dup $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_24_unused
 biolockj --unused-props $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --unused-props $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_24_ur
 biolockj -ru $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -ru $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
