@@ -1,5 +1,8 @@
-
----------> Execute CMD [ biolockj --docker --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
+---------> Execute CMD [ Launcher --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 external-modules = <SHEP>/MockMain/dist
-KEY CMD: launch_docker --docker --external-modules <SHEP>/MockMain/dist configFile/example.properties
+---------> Execute CMD [ DockerLaunchProcess --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+external-modules = <SHEP>/MockMain/dist
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -e BLJ_OPTIONS=" -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/dist,target=/app/external_modules --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam:biolockj_controller:<VERSION>

@@ -1,8 +1,7 @@
-
----------> Execute CMD [ biolockj -ap restartDir/examplePipeline_11_1969-07-16 ]
+---------> Execute CMD [ Launcher -ap restartDir/examplePipeline_11_1969-07-16 ]
 aws = true
 precheck-only = true
-KEY CMD: launch_aws -ap restartDir/examplePipeline_11_1969-07-16
+Using restartDir/examplePipeline_11_1969-07-16 as the config file.
 
 ---------> Execute CMD [ launch_aws -ap restartDir/examplePipeline_11_1969-07-16 ]
 aws = true
@@ -36,3 +35,7 @@ this replaces BioLockJ packaged in a docker container with the local copy.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
 biolockj will use the value of environment variable "BLJ_PROJ".
+
+STANDARD_ERR:
+This feature is under active development...
+KEY CMD:<BLJ>/script/launch_aws -ap restartDir/examplePipeline_11_1969-07-16

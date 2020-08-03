@@ -1,17 +1,16 @@
-
----------> Execute CMD [ biolockj -u configFile/example.properties ]
+---------> Execute CMD [ Launcher -u configFile/example.properties ]
 unused-props = true
-KEY CMD: launch_java -u configFile/example.properties
-
----------> Execute CMD [ launch_java -u configFile/example.properties ]
+---------> Execute CMD [ JavaLaunchProcess -u configFile/example.properties ]
 unused-props = true
 Using configFile/example.properties as the config file.
-KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties >/dev/null 2>&1 &
 
 # With -u, the call to java should be identical with and without -p
-
----------> Execute CMD [ launch_java -up configFile/example.properties ]
+---------> Execute CMD [ Launcher -up configFile/example.properties ]
+precheck-only = true
+unused-props = true
+---------> Execute CMD [ JavaLaunchProcess -up configFile/example.properties ]
 precheck-only = true
 unused-props = true
 Using configFile/example.properties as the config file.
-KEY CMD: nohup java -jar <BLJ>/dist/BioLockJ.jar -projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties >/dev/null 2>&1 &

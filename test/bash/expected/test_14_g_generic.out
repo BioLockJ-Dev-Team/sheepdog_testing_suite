@@ -1,5 +1,6 @@
-
----------> Execute CMD [ biolockj -g configFile/example.properties ]
+---------> Execute CMD [ Launcher -g configFile/example.properties ]
 gui = true
-The BioLockJ GUI runs in a docker container.
-KEY CMD: launch_docker -g configFile/example.properties
+---------> Execute CMD [ DockerLaunchProcess -g configFile/example.properties ]
+gui = true
+Using configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -e BLJ_OPTIONS=" -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines-p 8080:3000 --expose 8080 -w /app/biolockj/web_app biolockjdevteam:biolockj_controller:<VERSION> npm start

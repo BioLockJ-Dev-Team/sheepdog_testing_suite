@@ -201,6 +201,14 @@ id=test_12_e
 biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
+id=test_12_es
+biolockj --docker -e SHEP=$SHEP,FOO=BAR $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_12_es_badForm
+biolockj --docker -e SHEP=$SHEP,FOOBARBAZ $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
 id=test_12_env-var
 biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
@@ -223,9 +231,9 @@ id=test_14_gui
 biolockj --gui $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_14_gui_noConfig
-biolockj --gui 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+#id=test_14_gui_noConfig
+#biolockj --gui 1> $OUT/${id}.out 2>$OUT/${id}.err
+#check_it
 
 #id=test_14full_gui
 #biolockj --gui $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
