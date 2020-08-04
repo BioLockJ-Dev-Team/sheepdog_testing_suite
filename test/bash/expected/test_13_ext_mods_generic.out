@@ -3,4 +3,4 @@ external-modules = <SHEP>/MockMain/dist
 ---------> Execute CMD [ JavaLaunchProcess --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
 external-modules = <SHEP>/MockMain/dist
 Using configFile/example.properties as the config file.
-KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

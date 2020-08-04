@@ -3,4 +3,4 @@ wait-for-start = true
 ---------> Execute CMD [ JavaLaunchProcess -w <SHEP>/test/bash/configFile/example.properties ]
 wait-for-start = true
 Using <SHEP>/test/bash/configFile/example.properties as the config file.
-KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties >/dev/null 2>&1 &
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties
