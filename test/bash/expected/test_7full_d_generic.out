@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher -d <SHEP>/test/bash/configFile/example.properties ]
 docker = true
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess -d <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 Using <SHEP>/test/bash/configFile/example.properties as the config file.

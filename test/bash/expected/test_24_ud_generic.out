@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher -du configFile/example.properties ]
 docker = true
 unused-props = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess -du configFile/example.properties ]
 docker = true
 unused-props = true
@@ -12,6 +13,7 @@ KEY CMD: docker run --rm -d -v /var/run/docker.sock:/var/run/docker.sock --mount
 docker = true
 precheck-only = true
 unused-props = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess -dup configFile/example.properties ]
 docker = true
 precheck-only = true

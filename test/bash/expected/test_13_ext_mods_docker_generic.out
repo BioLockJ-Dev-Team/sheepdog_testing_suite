@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 external-modules = <SHEP>/MockMain/dist
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess --docker --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 external-modules = <SHEP>/MockMain/dist

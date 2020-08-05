@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
 external-modules = <SHEP>/MockMain/dist
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ JavaLaunchProcess --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
 external-modules = <SHEP>/MockMain/dist
 Using configFile/example.properties as the config file.

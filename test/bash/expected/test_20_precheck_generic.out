@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher --precheck-only --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/fastFail.properties ]
 precheck-only = true
 external-modules = <SHEP>/MockMain/dist
+Using <SHEP>/test/bash/configFile/fastFail.properties as the config file.
 ---------> Execute CMD [ JavaLaunchProcess --precheck-only --external-modules <SHEP>/MockMain/dist <SHEP>/test/bash/configFile/fastFail.properties ]
 precheck-only = true
 external-modules = <SHEP>/MockMain/dist

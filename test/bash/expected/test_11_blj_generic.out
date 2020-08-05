@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher --docker --blj configFile/example.properties ]
 docker = true
 blj = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess --docker --blj configFile/example.properties ]
 docker = true
 blj = true

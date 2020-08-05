@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher -a configFile/example.properties ]
 aws = true
 Using configFile/example.properties as the config file.
+Using configFile/example.properties as the config file.
 
 ---------> Execute CMD [ launch_aws -a configFile/example.properties ]
 aws = true

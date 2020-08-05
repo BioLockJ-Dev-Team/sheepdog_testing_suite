@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher -fd configFile/example.properties ]
 docker = true
 foreground = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess -fd configFile/example.properties ]
 docker = true
 foreground = true

@@ -1,9 +1,6 @@
 ---------> Execute CMD [ Launcher -ru configFile/example.properties ]
 restart = true
 unused-props = true
----------> Execute CMD [ JavaLaunchProcess -ru configFile/example.properties ]
-restart = true
-unused-props = true
 Using configFile/example.properties as the pipeline to restart.
 
 STANDARD_ERR:

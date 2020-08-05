@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher -d configFile/example.properties ]
 docker = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess -d configFile/example.properties ]
 docker = true
 Using configFile/example.properties as the config file.

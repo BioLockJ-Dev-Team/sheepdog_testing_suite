@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher -f configFile/example.properties ]
 foreground = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ JavaLaunchProcess -f configFile/example.properties ]
 foreground = true
 Using configFile/example.properties as the config file.

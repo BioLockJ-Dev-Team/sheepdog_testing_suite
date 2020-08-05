@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher -g configFile/example.properties ]
 gui = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess -g configFile/example.properties ]
 gui = true
 Using configFile/example.properties as the config file.

@@ -1,7 +1,5 @@
 ---------> Execute CMD [ Launcher --restart configFile/example.properties ]
 restart = true
----------> Execute CMD [ JavaLaunchProcess --restart configFile/example.properties ]
-restart = true
 Using configFile/example.properties as the pipeline to restart.
 
 STANDARD_ERR:

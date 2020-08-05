@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher -w <SHEP>/test/bash/configFile/example.properties ]
 wait-for-start = true
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
 ---------> Execute CMD [ JavaLaunchProcess -w <SHEP>/test/bash/configFile/example.properties ]
 wait-for-start = true
 Using <SHEP>/test/bash/configFile/example.properties as the config file.

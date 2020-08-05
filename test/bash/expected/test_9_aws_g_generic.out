@@ -2,6 +2,7 @@
 gui = true
 aws = true
 Using configFile/example.properties as the config file.
+Using configFile/example.properties as the config file.
 
 ---------> Execute CMD [ launch_aws --aws -g configFile/example.properties ]
 gui = true

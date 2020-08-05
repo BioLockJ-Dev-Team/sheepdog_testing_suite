@@ -1,6 +1,7 @@
 ---------> Execute CMD [ Launcher --docker --env-var SHEP=<SHEP> <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 env-var = SHEP=<SHEP>
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
 ---------> Execute CMD [ DockerLaunchProcess --docker --env-var SHEP=<SHEP> <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 env-var = SHEP=<SHEP>

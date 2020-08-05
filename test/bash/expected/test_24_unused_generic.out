@@ -1,5 +1,6 @@
 ---------> Execute CMD [ Launcher --unused-props configFile/example.properties ]
 unused-props = true
+Using configFile/example.properties as the config file.
 ---------> Execute CMD [ JavaLaunchProcess --unused-props configFile/example.properties ]
 unused-props = true
 Using configFile/example.properties as the config file.
