@@ -4,7 +4,11 @@ error: unnamed value [ madeUpOption ]
 BioLockJ API <VERSION> - UNCC Fodor Lab
 
 Usage:
+(bash)
 biolockj-api <query> [options...]
+
+(java)
+java -cp /path/to/BioLockJ.jar[:<external-modules-dir>] biolockj.api.BioLockJ_API <query> [options...]
 
 For some uses, redirecting stderr is recommended:
 biolockj-api <query> [options...] 2> /dev/null
@@ -72,6 +76,14 @@ moduleInfo [--external-modules <dir>]
 Returns a json formatted list of all modules and for each module that
 implements the ApiModule interface, it lists the props used by the module,
 and for each prop the type, descrption and default.
+
+listMounts --config <file>
+Returns a list of directories that would need to be mounted in order for
+the files listed in the config file to be available to a pipeline running in docker.
+
+listUploads --config <file>
+Returns a list of file and directories that would need to be uploaded in order for
+the files listed in the config file to be available to a pipeline running in the cloud.
 
 help (or no args)
 Print help menu.
@@ -79,7 +91,11 @@ error: unrecognized argument [ madeUpOption ].
 BioLockJ API <VERSION> - UNCC Fodor Lab
 
 Usage:
+(bash)
 biolockj-api <query> [options...]
+
+(java)
+java -cp /path/to/BioLockJ.jar[:<external-modules-dir>] biolockj.api.BioLockJ_API <query> [options...]
 
 For some uses, redirecting stderr is recommended:
 biolockj-api <query> [options...] 2> /dev/null
@@ -147,6 +163,14 @@ moduleInfo [--external-modules <dir>]
 Returns a json formatted list of all modules and for each module that
 implements the ApiModule interface, it lists the props used by the module,
 and for each prop the type, descrption and default.
+
+listMounts --config <file>
+Returns a list of directories that would need to be mounted in order for
+the files listed in the config file to be available to a pipeline running in docker.
+
+listUploads --config <file>
+Returns a list of file and directories that would need to be uploaded in order for
+the files listed in the config file to be available to a pipeline running in the cloud.
 
 help (or no args)
 Print help menu.
