@@ -250,6 +250,8 @@ biolockj --wait-for-start $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+
 id=test_20_precheck
 biolockj --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
@@ -308,6 +310,8 @@ export BIOLOCKJ_TEST_MODE=""
 # biolockj --external-modules ${SHEP}/MockMain/dist -w ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 # check_it
 
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
@@ -347,13 +351,8 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
   && PASSING_TESTS=$((PASSING_TESTS + 1))
 
 
-
-id=test_21_cd-blj
-#alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
-biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-cd $(last-pipeline); quick_pipeline_view  1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+rm -rf ${SHEP}/MockMain/pipelines/configToFail*
 
 id=test_20_precheck_repeats
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -376,6 +375,18 @@ biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/c
 # echo "# pipeline fails to form at all; show correct message." 1>> $OUT/${id}.out
 # biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
+
+
+
+id=test_21_cd-blj
+rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
+#alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
+biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+cd $(last-pipeline); quick_pipeline_view  1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it
+
+
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_25_unusedProps_repeats
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -409,6 +420,9 @@ echo "" 1>> $OUT/${id}.out
 echo "# With no args, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj ${SHEP}/test/bash/configFile/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
+
+
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_26_showsUnusedWithFailure
 echo "# With -p, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
