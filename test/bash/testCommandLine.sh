@@ -389,17 +389,17 @@ check_it
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_25_unusedProps_repeats
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.out
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.out
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -426,13 +426,13 @@ rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_26_showsUnusedWithFailure
 echo "# With -p, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With -u, the unused props are shown (despite failing in check dependencies)" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With no args, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
 
