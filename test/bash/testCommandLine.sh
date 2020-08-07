@@ -337,13 +337,13 @@ check_it
 
 id=test_18_jar_help
 # note that the output of version and help is sent to std err, not std out
-java -jar $BLJ/dist/BioLockJ.jar --help 2> $OUT/${id}.out 1>$OUT/${id}.err
-java -jar $BLJ/dist/BioLockJ.jar -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ --help 2> $OUT/${id}.out 1>$OUT/${id}.err
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
 check_it
 
 id=test_19_jar_version
-java -jar $BLJ/dist/BioLockJ.jar --version &> $OUT/${id}.out
-java -jar $BLJ/dist/BioLockJ.jar -version >> $OUT/${id}.out
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ --version &> $OUT/${id}.out
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ -version >> $OUT/${id}.out
 TOTAL_TESTS=$((TOTAL_TESTS + 1))
 [ $(grep "BioLockJ v" $OUT/${id}.out | wc -l ) -eq 2 ] \
   && [ $(grep "Build" $OUT/${id}.out | wc -l ) -eq 2 ] \
