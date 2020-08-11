@@ -1,9 +1,9 @@
-Fri Aug  7 17:59:35 EDT 2020
+Tue Aug 11 13:32:36 EDT 2020
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/asSyntax/asSyntax_testList.txt
 Read in list of 3 tests
 Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/asSyntax/asSyntax_testList_results_NOT_IN_GIT.txt
-Moved 5 directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.
+Moved 91 directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.
 =====
 Command for subprocess: biolockj -f --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines  /Users/ieclabau/git/sheepdog_testing_suite/test/feature/asSyntax/checkAs.properties
 This pipeline completed 5 modules.
@@ -18,7 +18,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 3
-Total test runtime: 00 hours : 00 minutes : 05 seconds
+Total test runtime: 00 hours : 00 minutes : 08 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/classLookup/lookup_testList.txt
 Read in list of 8 tests
@@ -52,7 +52,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 8
-Total test runtime: 00 hours : 00 minutes : 13 seconds
+Total test runtime: 00 hours : 00 minutes : 19 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/defaultProps/defaultProps_testList.txt
 Read in list of 9 tests
@@ -146,7 +146,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 4
-Total test runtime: 00 hours : 00 minutes : 35 seconds
+Total test runtime: 00 hours : 00 minutes : 37 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/metadata/metadata_testList.txt
 Read in list of 5 tests
@@ -171,7 +171,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 5
-Total test runtime: 00 hours : 00 minutes : 05 seconds
+Total test runtime: 00 hours : 00 minutes : 04 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/precheck/precheck_testList.txt
 Read in list of 8 tests
@@ -240,7 +240,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 4
-Total test runtime: 00 hours : 00 minutes : 18 seconds
+Total test runtime: 00 hours : 00 minutes : 16 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/email/testList.txt
 Read in list of 2 tests
@@ -256,7 +256,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 2
-Total test runtime: 00 hours : 00 minutes : 05 seconds
+Total test runtime: 00 hours : 00 minutes : 06 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/genMod/genMod_testList.txt
 Read in list of 10 tests
@@ -287,17 +287,16 @@ Command for subprocess: biolockj -f --blj_proj /Users/ieclabau/git/sheepdog_test
 This pipeline completed 6 modules.
 =====
 Command for subprocess: biolockj -f --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines  /Users/ieclabau/git/sheepdog_testing_suite/test/module/genMod/GenModResources.properties
-This pipeline completed 0 modules.
-SURPRISE! This didn't give me what I expected: GenModResources.properties
+This pipeline completed 1 modules.
 =====
 Command for subprocess: biolockj -f --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines  /Users/ieclabau/git/sheepdog_testing_suite/test/module/genMod/GenModBadResource.properties
 This pipeline completed 0 modules.
 
 DONE!
 
-Number of tests that failed:   1
+Number of tests that failed:   0
 Number of tests that were run: 10
-Total test runtime: 00 hours : 00 minutes : 17 seconds
+Total test runtime: 00 hours : 00 minutes : 16 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/kraken2Parser/Kraken2ParserTestList.txt
 Read in list of 2 tests
@@ -314,7 +313,7 @@ DONE!
 
 Number of tests that failed:   1
 Number of tests that were run: 2
-Total test runtime: 00 hours : 00 minutes : 08 seconds
+Total test runtime: 00 hours : 00 minutes : 07 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/normalizeTaxa/normTaxa_testList.txt
 Read in list of 8 tests
@@ -367,7 +366,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 3
-Total test runtime: 00 hours : 00 minutes : 44 seconds
+Total test runtime: 00 hours : 00 minutes : 41 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/rdpParser/RdpParser_TestList.txt
 Read in list of 2 tests
@@ -406,7 +405,8 @@ Read in list of 5 tests
 Test results will be written to: /Users/ieclabau/git/sheepdog_testing_suite/test/module/sraDownload/sraDownload_testList_results_NOT_IN_GIT.txt
 =====
 Command for subprocess: biolockj -f --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines  /Users/ieclabau/git/sheepdog_testing_suite/test/module/sraDownload/sraDownload.properties
-This pipeline completed 1 modules.
+This pipeline completed 0 modules.
+SURPRISE! This didn't give me what I expected: sraDownload.properties
 =====
 Command for subprocess: biolockj -f --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines  /Users/ieclabau/git/sheepdog_testing_suite/test/module/sraDownload/badColName.properties
 This pipeline completed 0 modules.
@@ -424,9 +424,9 @@ SURPRISE! This didn't give me what I expected: externalDestDir.properties
 
 DONE!
 
-Number of tests that failed:   2
+Number of tests that failed:   3
 Number of tests that were run: 5
-Total test runtime: 00 hours : 02 minutes : 05 seconds
+Total test runtime: 00 hours : 05 minutes : 14 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/module/validationUtil/validation_testList.txt
 Read in list of 12 tests
@@ -472,7 +472,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 12
-Total test runtime: 00 hours : 00 minutes : 14 seconds
+Total test runtime: 00 hours : 00 minutes : 13 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/resources/testList.txt
 Read in list of 12 tests
@@ -518,7 +518,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 12
-Total test runtime: 00 hours : 00 minutes : 14 seconds
+Total test runtime: 00 hours : 00 minutes : 13 seconds
 ==========================================================
 Reading test list from: /Users/ieclabau/git/sheepdog_testing_suite/test/local/testList.txt
 Read in list of 1 tests
@@ -531,7 +531,7 @@ DONE!
 
 Number of tests that failed:   0
 Number of tests that were run: 1
-Total test runtime: 00 hours : 01 minutes : 36 seconds
+Total test runtime: 00 hours : 01 minutes : 35 seconds
 
 * * * * * * * * * * * * * * * * * * * *
-Total time to run local test collection:  7 minutes
+Total time to run local test collection:  10 minutes
