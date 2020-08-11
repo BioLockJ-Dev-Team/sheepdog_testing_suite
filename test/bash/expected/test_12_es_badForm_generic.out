@@ -1,10 +1,10 @@
----------> Execute CMD [ Launcher -ru configFile/example.properties ]
-restart = true
-unused-props = true
-Using configFile/example.properties as the pipeline to restart.
+---------> Execute CMD [ Launcher --docker -e SHEP=<SHEP>,FOOBARBAZ <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+env-var = SHEP=<SHEP>,FOOBARBAZ
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
 
 STANDARD_ERR:
-Error: "unused-props" can only be used with new pipelines; cannot be used in conjunction with "restart".
+Error: the value of the env-var argument should be a comma-separated list, where each list element is a key=value pair using exactly one "=".
 
 BioLockJ <VERSION> - UNCC Fodor Lab July 2018
 Usage:

@@ -1,7 +1,5 @@
 
 ### Real Pipelines
-. $BLJ/script/blj_functions
-. $BLJ/script/blj_user_lib
 countPipelines(){
 	echo $(ls $BLJ_PROJ | wc -l)
 }

@@ -1,10 +1,10 @@
 
 BioLockJ <VERSION> java help menu:
-The BioLockJ.jar file is not intended to be called directly,
-it should be called through the biolockj shell command.
+The biolockj.BioLockJ entry point is not intended to be called directly,
+it should be called through the biolockj shell command, or the biolockj.launch.Launcher entry point.
 
 Developers:
-Usage: java -jar BioLockJ.jar <args>
+Usage: java -cp BioLockJ.jar biolockj.BioLockJ <args>
 To run the program, args MUST include one of:
 -config, -restartDir, -direct
 Arguments
@@ -22,11 +22,11 @@ please use the biolockj command.
 See: "biolockj --help"
 
 BioLockJ <VERSION> java help menu:
-The BioLockJ.jar file is not intended to be called directly,
-it should be called through the biolockj shell command.
+The biolockj.BioLockJ entry point is not intended to be called directly,
+it should be called through the biolockj shell command, or the biolockj.launch.Launcher entry point.
 
 Developers:
-Usage: java -jar BioLockJ.jar <args>
+Usage: java -cp BioLockJ.jar biolockj.BioLockJ <args>
 To run the program, args MUST include one of:
 -config, -restartDir, -direct
 Arguments

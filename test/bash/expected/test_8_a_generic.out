@@ -1,9 +1,13 @@
-
----------> Execute CMD [ biolockj -a configFile/example.properties ]
+---------> Execute CMD [ Launcher -a configFile/example.properties ]
 aws = true
-KEY CMD: launch_aws -a configFile/example.properties
+Using configFile/example.properties as the config file.
+Using configFile/example.properties as the config file.
 
 ---------> Execute CMD [ launch_aws -a configFile/example.properties ]
 aws = true
 Using configFile/example.properties as the config file.
 KEY CMD: run_aws configFile/example.properties
+
+STANDARD_ERR:
+This feature is under active development...
+KEY CMD:<BLJ>/script/launch_aws -a configFile/example.properties

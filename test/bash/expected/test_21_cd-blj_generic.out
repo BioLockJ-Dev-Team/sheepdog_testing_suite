@@ -6,7 +6,9 @@ blj_summary -> View module execution summary
 
 Fetching pipeline status
 
+
 Pipeline is complete.
+
 
 Moved to most recent pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
 00_ImportMetadata

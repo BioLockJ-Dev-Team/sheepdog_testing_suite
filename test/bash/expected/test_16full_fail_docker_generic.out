@@ -1,7 +1,3 @@
-Created "<HOME>/runDockerClone.sh"
-This script will launch another instance of this docker image,
-with the same env vars + volumes, but in interactive mode.
-
 Docker container id: <ID_STRING>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
@@ -10,6 +6,7 @@ blj_log -> Tail pipeline log (accepts tail runtime parameters)
 blj_summary -> View module execution summary
 
 Fetching pipeline status
+
 
 BioLockJ has stopped.
 

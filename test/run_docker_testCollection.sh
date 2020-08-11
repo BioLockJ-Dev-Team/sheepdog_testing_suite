@@ -37,6 +37,7 @@ runTestSet ${DIR}/kraken2Parser/docker_Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/docker_normTaxa_testList.txt
 runTestSet ${DIR}/rdp/docker_RdpTestList.txt
 runTestSet ${DIR}/rdpParser/docker_RdpParser_TestList.txt
+runTestSet ${DIR}/rmarkdown/docker_testList_rmd.txt
 runTestSet ${DIR}/shannon/docker_shannonTestList.txt
 runTestSet ${DIR}/sraDownload/docker_sraDownload_testList.txt
 runTestSet ${DIR}/sraMetaData/docker_sraMetaData_testList.txt

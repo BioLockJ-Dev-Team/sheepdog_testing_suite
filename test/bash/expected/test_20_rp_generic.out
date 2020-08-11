@@ -1,14 +1,10 @@
-
----------> Execute CMD [ biolockj -rp restartDir/examplePipeline_11_1969-07-16 ]
-restart = true
-precheck-only = true
-KEY CMD: launch_java -rp restartDir/examplePipeline_11_1969-07-16
-
----------> Execute CMD [ launch_java -rp restartDir/examplePipeline_11_1969-07-16 ]
+---------> Execute CMD [ Launcher -rp restartDir/examplePipeline_11_1969-07-16 ]
 restart = true
 precheck-only = true
 Using restartDir/examplePipeline_11_1969-07-16 as the pipeline to restart.
-Error [ launch_java ]: "precheck-only" can only be used with new pipelines; cannot be used in conjunction with "restart".
+
+STANDARD_ERR:
+Error: "precheck-only" can only be used with new pipelines; cannot be used in conjunction with restart.
 
 BioLockJ <VERSION> - UNCC Fodor Lab July 2018
 Usage:
@@ -36,3 +32,4 @@ this replaces BioLockJ packaged in a docker container with the local copy.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
 biolockj will use the value of environment variable "BLJ_PROJ".
+

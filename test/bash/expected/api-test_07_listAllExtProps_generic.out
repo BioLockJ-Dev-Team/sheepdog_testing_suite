@@ -34,6 +34,9 @@ docker.imageOwner
 docker.imageTag
 docker.saveContainerOnExit
 docker.verifyImage
+edgeR.designFactors
+edgeR.designFormula
+edgeR.scriptPath
 exe.Rscript
 exe.awk
 exe.docker

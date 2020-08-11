@@ -1,36 +1,22 @@
-
----------> Execute CMD [ biolockj -du configFile/example.properties ]
-docker = true
-unused-props = true
-KEY CMD: launch_docker -du configFile/example.properties
-
----------> Execute CMD [ launch_docker -du configFile/example.properties ]
+---------> Execute CMD [ Launcher -du configFile/example.properties ]
 docker = true
 unused-props = true
 Using configFile/example.properties as the config file.
-args used: docker unused-props
-configFile = configFile/example.properties
-restartDir =
-Created "<HOME>/runDockerClone.sh"
-This script will launch another instance of this docker image,
-with the same env vars + volumes, but in interactive mode.
-
-Docker container id: <ID_STRING>
-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION>
+---------> Execute CMD [ DockerLaunchProcess -du configFile/example.properties ]
+docker = true
+unused-props = true
+Using configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION> java -cp /app/biolockj/dist/BioLockJ.jar biolockj.BioLockJ -precheck -unusedProps -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties
 
 # With -u, the call to java should be identical with and without -p
-
----------> Execute CMD [ launch_docker -dup configFile/example.properties ]
+---------> Execute CMD [ Launcher -dup configFile/example.properties ]
 docker = true
 precheck-only = true
 unused-props = true
 Using configFile/example.properties as the config file.
-args used: docker unused-props precheck-only
-configFile = configFile/example.properties
-restartDir =
-Created "<HOME>/runDockerClone.sh"
-This script will launch another instance of this docker image,
-with the same env vars + volumes, but in interactive mode.
-
-Docker container id: <ID_STRING>
-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -precheck -unusedProps -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION>
+---------> Execute CMD [ DockerLaunchProcess -dup configFile/example.properties ]
+docker = true
+precheck-only = true
+unused-props = true
+Using configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION> java -cp /app/biolockj/dist/BioLockJ.jar biolockj.BioLockJ -precheck -unusedProps -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

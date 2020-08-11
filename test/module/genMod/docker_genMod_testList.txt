@@ -1,10 +1,10 @@
 ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
-${SHEP}/test/module/GenMod/GenModR_String.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test RScript w/ Rcript String in launcher property
-${SHEP}/test/module/GenMod/GenModPython.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Python Script
-${SHEP}/test/module/GenMod/GenModPythonArg.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Python Script with args and launcher property
-${SHEP}/test/module/GenMod/GenModBash.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Bash
-${SHEP}/test/module/GenMod/GenModBroken.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	Basic Run: Test CheckDependecies() 
-${SHEP}/test/module/GenMod/GenModR.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test RScript
-${SHEP}/test/module/GenMod/GenModMultiple.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	test for AS syntax
-${SHEP}/test/module/GenMod/GenModResources.properties	 --blj --docker 	BioLockJ_Complete	Successfully transfer resources
-${SHEP}/test/module/GenMod/GenModBadResource.properties	 --blj --docker 	ConfigPathException	Find that resources are not valid
+${SHEP}/test/module/genMod/GenModR_String.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test RScript w/ Rcript String in launcher property
+${SHEP}/test/module/genMod/GenModPython.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Python Script
+${SHEP}/test/module/genMod/GenModPythonArg.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Python Script with args and launcher property
+${SHEP}/test/module/genMod/GenModBash.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test Bash
+${SHEP}/test/module/genMod/GenModBroken.properties	 --blj --docker -e SHEP=${SHEP}	ConfigNotFoundException	Basic Run: Test CheckDependecies() 
+${SHEP}/test/module/genMod/GenModR.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	Basic Run: Test RScript
+${SHEP}/test/module/genMod/GenModMultiple.properties	 --blj --docker -e SHEP=${SHEP}	BioLockJ_Complete	test for AS syntax
+${SHEP}/test/module/genMod/GenModResources.properties	 --blj --docker 	BioLockJ_Complete	Successfully transfer resources
+${SHEP}/test/module/genMod/GenModBadResource.properties	 --blj --docker 	ConfigPathException	Find that resources are not valid

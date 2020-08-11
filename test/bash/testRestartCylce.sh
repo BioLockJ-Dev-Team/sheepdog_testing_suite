@@ -1,7 +1,5 @@
 #! /bin/bash
 
-. $BLJ/script/blj_functions
-
 useDocker=$([ ${#1} -gt 0 ] && [ $1 == "docker" ] && echo "true" || echo "false" )
 if [ $useDocker == "true" ]; then
 	echo "Use docker"
@@ -20,11 +18,12 @@ export BLJ_PROJ=$MY_PIPELINES
 echo ""
 echo "Part 1"
 CMD1="biolockj --external-modules ${SHEP}/MockMain/dist $dOpt \
+		 --blj_proj $BLJ_PROJ \
          ${SHEP}/test/bash/configFile/configToFail.properties"
 echo $CMD1
 $CMD1
         
-RESTART_DIR=$(most_recent_pipeline)
+RESTART_DIR=$(last-pipeline)
 while [ -f $RESTART_DIR/biolockjStarted ]; do sleep 1; done
 
 cp -r $RESTART_DIR ${RESTART_DIR}_run1
@@ -32,6 +31,7 @@ cp -r $RESTART_DIR ${RESTART_DIR}_run1
 echo ""
 echo "Part 2"
 CMD2="biolockj --external-modules ${SHEP}/MockMain/dist $dOpt \
+		 --blj_proj $BLJ_PROJ \
 		 --restart $RESTART_DIR"
 echo "$CMD2"
 $CMD2

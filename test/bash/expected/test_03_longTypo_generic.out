@@ -1,6 +1,7 @@
+---------> Execute CMD [ Launcher --aBadParam ]
 
----------> Execute CMD [ biolockj --aBadParam ]
-error: unrecognized argument [ aBadParam ].
+STANDARD_ERR:
+Error: unrecognized argument name [ --aBadParam ]
 
 BioLockJ <VERSION> - UNCC Fodor Lab July 2018
 Usage:
@@ -28,3 +29,4 @@ this replaces BioLockJ packaged in a docker container with the local copy.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
 biolockj will use the value of environment variable "BLJ_PROJ".
+

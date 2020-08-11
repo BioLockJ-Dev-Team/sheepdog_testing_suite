@@ -1,12 +1,9 @@
-
----------> Execute CMD [ biolockj --restart configFile/example.properties ]
-restart = true
-KEY CMD: launch_java --restart configFile/example.properties
-
----------> Execute CMD [ launch_java --restart configFile/example.properties ]
+---------> Execute CMD [ Launcher --restart configFile/example.properties ]
 restart = true
 Using configFile/example.properties as the pipeline to restart.
-Error [ launch_java ]: configFile/example.properties is not a directory on the filesystem.
+
+STANDARD_ERR:
+Error: [<SHEP>/test/bash/configFile/example.properties] is not a directory on the filesystem.
 
 BioLockJ <VERSION> - UNCC Fodor Lab July 2018
 Usage:
@@ -34,3 +31,4 @@ this replaces BioLockJ packaged in a docker container with the local copy.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
 biolockj will use the value of environment variable "BLJ_PROJ".
+

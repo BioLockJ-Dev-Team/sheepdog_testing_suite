@@ -18,10 +18,16 @@ check_it(){
 	echo "-"
 	TOTAL_TESTS=$((TOTAL_TESTS + 1))
 	#
-	# we don't expect anything in the .err files
-	errSize=$(du $OUT/${id}.err | cut -f 1)
-	[ $errSize -gt 0 ] && echo "$(du -h $OUT/${id}.err)"
-	[ $errSize -eq 0 ] && rm $OUT/${id}.err
+	# for some tests, we expect messages in the .err files
+	if [ -f $OUT/${id}.err ]; then
+		errSize=$(du $OUT/${id}.err | cut -f 1)
+		if [ $errSize -gt 0 ]; then
+			echo "" >> $OUT/${id}.out
+			echo "STANDARD_ERR:" >> $OUT/${id}.out
+			cat $OUT/${id}.err >> $OUT/${id}.out
+		fi
+		rm $OUT/${id}.err
+	fi
 	#
 	# always use the generic version of the output
 	OUT_FILE=$(${SHEP}/test/bash/generalize.sh $OUT/${id}.out)
@@ -107,37 +113,28 @@ id=test_04_foreground
 biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_04full_foreground
-biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --foreground $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
-id=test_04full_fd
+id=test_04_fd
 biolockj -fd $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker -fd $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
 id=test_05_basic
 biolockj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
 id=test_6_r
 biolockj -r $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -r $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_6_restart
 biolockj --restart $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --restart $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_6_restart_nonDir
 biolockj --restart $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --restart $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
+
 
 id=test_7_d
 biolockj -d $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -147,15 +144,12 @@ id=test_7_docker
 biolockj --docker $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-# the results here include a lot of computer specific file paths
 id=test_7full_d
 biolockj -d $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker -d $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_7full_docker
 biolockj --docker $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -183,7 +177,6 @@ check_it
 
 id=test_10_pass
 biolockj --password bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --password  bar $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_10_pass_noArg1
@@ -203,23 +196,21 @@ id=test_11_blj
 biolockj --docker --blj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_11full_blj
-biolockj --docker --blj $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --blj $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
 
 id=test_12_e
 biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_12_env-var
-biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+id=test_12_es
+biolockj --docker -e SHEP=$SHEP,FOO=BAR $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_12full_env-var
-biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker -e SHEP=$SHEP $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+id=test_12_es_badForm
+biolockj --docker -e SHEP=$SHEP,FOOBARBAZ $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
+id=test_12_env-var
+biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
@@ -227,18 +218,8 @@ id=test_13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_13full_ext_mods
-biolockj --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
 id=test_13_ext_mods_docker
-biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
-
-id=test_13full_ext_mods_docker
 biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -250,9 +231,9 @@ id=test_14_gui
 biolockj --gui $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_14_gui_noConfig
-biolockj --gui 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
+#id=test_14_gui_noConfig
+#biolockj --gui 1> $OUT/${id}.out 2>$OUT/${id}.err
+#check_it
 
 #id=test_14full_gui
 #biolockj --gui $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -261,33 +242,26 @@ check_it
 
 
 id=test_15_w
-biolockj -w $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 id=test_15_wait
 biolockj --wait-for-start $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_15full_w
-biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
-check_it
 
-
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_20_precheck
 biolockj --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_20_p
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_20_rp
 biolockj -rp $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -rp $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_20_ap
@@ -298,28 +272,24 @@ check_it
 
 id=test_24_u
 biolockj -u $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -u $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "" 1>> $OUT/${id}.out
 echo "# With -u, the call to java should be identical with and without -p" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-launch_java -up $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -up $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_24_ud
 biolockj -du $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_docker -du $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With -u, the call to java should be identical with and without -p" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-launch_docker -dup $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -dup $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_24_unused
 biolockj --unused-props $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java --unused-props $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 id=test_24_ur
 biolockj -ru $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
-launch_java -ru $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -339,6 +309,8 @@ export BIOLOCKJ_TEST_MODE=""
 # id=test_15full_w_longWait
 # biolockj --external-modules ${SHEP}/MockMain/dist -w ${SHEP}/test/bash/configFile/longWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 # check_it
+
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -365,13 +337,13 @@ check_it
 
 id=test_18_jar_help
 # note that the output of version and help is sent to std err, not std out
-java -jar $BLJ/dist/BioLockJ.jar --help 2> $OUT/${id}.out 1>$OUT/${id}.err
-java -jar $BLJ/dist/BioLockJ.jar -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ --help 2> $OUT/${id}.out 1>$OUT/${id}.err
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
 check_it
 
 id=test_19_jar_version
-java -jar $BLJ/dist/BioLockJ.jar --version &> $OUT/${id}.out
-java -jar $BLJ/dist/BioLockJ.jar -version >> $OUT/${id}.out
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ --version &> $OUT/${id}.out
+java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ -version >> $OUT/${id}.out
 TOTAL_TESTS=$((TOTAL_TESTS + 1))
 [ $(grep "BioLockJ v" $OUT/${id}.out | wc -l ) -eq 2 ] \
   && [ $(grep "Build" $OUT/${id}.out | wc -l ) -eq 2 ] \
@@ -379,13 +351,8 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
   && PASSING_TESTS=$((PASSING_TESTS + 1))
 
 
-
-id=test_21_cd-blj
-#alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
-biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-cd $(last-pipeline); quick_pipeline_view  1>> $OUT/${id}.out 2>>$OUT/${id}.err
-check_it
-
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+rm -rf ${SHEP}/MockMain/pipelines/configToFail*
 
 id=test_20_precheck_repeats
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
@@ -409,18 +376,30 @@ biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/c
 # biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
+
+
+id=test_21_cd-blj
+rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
+#alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
+biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+cd $(last-pipeline); quick_pipeline_view  1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it
+
+
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+
 id=test_25_unusedProps_repeats
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.out
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.out
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
@@ -442,15 +421,18 @@ echo "# With no args, the unused props are shown at the end of check dependencie
 biolockj ${SHEP}/test/bash/configFile/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
+
+rm -rf ${SHEP}/MockMain/pipelines/fastFail*
+
 id=test_26_showsUnusedWithFailure
 echo "# With -p, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With -u, the unused props are shown (despite failing in check dependencies)" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With no args, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail_multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
 

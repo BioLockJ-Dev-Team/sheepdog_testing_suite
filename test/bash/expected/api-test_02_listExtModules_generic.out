@@ -47,6 +47,7 @@ biolockj.module.report.taxa.LogTransformTaxaTables
 biolockj.module.report.taxa.NormalizeByReadsPerMillion
 biolockj.module.report.taxa.NormalizeTaxaTables
 biolockj.module.rnaseq.DESeq2
+biolockj.module.rnaseq.EdgeR
 biolockj.module.seq.AwkFastaConverter
 biolockj.module.seq.Gunzipper
 biolockj.module.seq.KneadData

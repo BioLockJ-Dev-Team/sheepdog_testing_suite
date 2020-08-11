@@ -334,8 +334,9 @@
 },
 {
 "property": "pipeline.detachJavaModules",
-"type": "boolean",
-"description": "If true Java modules do not run with main BioLockJ Java application. Instead they run on compute nodes on the CLUSTER or AWS environments."
+"description": "If true Java modules do not run with main BioLockJ Java application. Instead they run on compute nodes on the CLUSTER or AWS environments.",
+"default": "Y",
+"type": "boolean"
 },
 {
 "property": "pipeline.disableAddImplicitModules",
@@ -388,9 +389,8 @@
 },
 {
 "property": "pipeline.userProfile",
-"description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others",
-"default": "${HOME}/.bash_profile",
-"type": "file path"
+"type": "file path",
+"description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others"
 },
 {
 "property": "qiime.alphaMetrics",

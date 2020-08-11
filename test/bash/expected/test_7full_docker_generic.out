@@ -1,17 +1,7 @@
-
----------> Execute CMD [ biolockj --docker <SHEP>/test/bash/configFile/example.properties ]
-docker = true
-KEY CMD: launch_docker --docker <SHEP>/test/bash/configFile/example.properties
-
----------> Execute CMD [ launch_docker --docker <SHEP>/test/bash/configFile/example.properties ]
+---------> Execute CMD [ Launcher --docker <SHEP>/test/bash/configFile/example.properties ]
 docker = true
 Using <SHEP>/test/bash/configFile/example.properties as the config file.
-args used: docker
-configFile = <SHEP>/test/bash/configFile/example.properties
-restartDir =
-Created "<HOME>/runDockerClone.sh"
-This script will launch another instance of this docker image,
-with the same env vars + volumes, but in interactive mode.
-
-Docker container id: <ID_STRING>
-KEY CMD: docker run --rm -d -e "BLJ_OPTIONS=-projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties" -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION>
+---------> Execute CMD [ DockerLaunchProcess --docker <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION> java -cp /app/biolockj/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

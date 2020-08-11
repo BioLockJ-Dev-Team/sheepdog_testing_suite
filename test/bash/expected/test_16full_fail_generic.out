@@ -6,6 +6,7 @@ blj_summary -> View module execution summary
 
 Fetching pipeline status
 
+
 BioLockJ has stopped.
 
 ERROR TYPE: BioLockJException
