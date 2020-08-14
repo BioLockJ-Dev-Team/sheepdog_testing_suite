@@ -15,7 +15,7 @@ The repository is designed to give [BioLockJ](https://github.com/msioda/BioLockJ
   `echo "export PATH=$PATH:"'${SHEP}/MockMain/resources' >> ~/.bash_profile` <br>
   `source ~/.bash_profile` <br>
   (Ubuntu)<br>
-  `echo "export PATH=$PATH:"'${SHEP}/MockMain/resources' >> ~/.bashrc` <br>
+  `echo 'export PATH=$PATH:${SHEP}/MockMain/resources' >> ~/.bashrc` <br>
   `source ~/.bashrc`<br>
 1. Run the example test set: `testBiolockj ${SHEP}/MockMain/resources/testList.txt`
 <br>This should print some output to the screen that starts with something like:
