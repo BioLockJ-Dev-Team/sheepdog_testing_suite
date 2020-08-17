@@ -1,3 +1,1 @@
-
----------> Execute CMD [ biolockj-api listModules ]
 CMD: java -cp <BLJ>/dist/BioLockJ.jar biolockj.api.BioLockJ_API listModules

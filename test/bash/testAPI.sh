@@ -73,25 +73,10 @@ id=api-test_01_bash_listModules
 biolockj-api listModules 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
-# list all modules, including extra modules in $MORE_MODS
-id=api-test_02_bash_listExtModules
-biolockj-api listModules --external-modules $MORE_MODS 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-check_it
-
 # test a prop/val pair for a module (one good, bad, null)
 id=api-test_12_bash_isValidProp_mod
 biolockj-api isValidProp --property script.numThreads --value 1 --module $MOD 1>> $OUT/${id}.out 2>> $OUT/${id}.err # true
 check_it
-
-id=api-test_23_bash_unknown_option
-biolockj-api listProps madeUpOption  1>> $OUT/${id}.out 2>> $OUT/${id}.err
-biolockj-api listProps --madeUpOption val 1>> $OUT/${id}.out 2>> $OUT/${id}.err
-check_it
-
-id=api-test_24_bash_debug_option
-biolockj-api isValidProp --property script.numThreads --value 1 --module $MOD --verbose  1>> $OUT/${id}.out 2>> $OUT/${id}.err
-check_it
-
 
 
 # Test the biolockj API java layer
