@@ -1,0 +1,164 @@
+Most recent sheepdog commit: v1.3.8-rc
+Most recent BioLockJ commit: v1.3.8-rc
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output
+-
+test_00 --> just as expected.
+-
+test_01_v --> just as expected.
+-
+test_01_version --> just as expected.
+-
+test_02_h --> just as expected.
+-
+test_02_help --> just as expected.
+-
+test_03_typo --> just as expected.
+-
+test_03_typos --> just as expected.
+-
+test_03_longTypo --> just as expected.
+-
+test_04_f --> just as expected.
+-
+test_04_foreground --> just as expected.
+-
+test_04_fd --> just as expected.
+-
+test_05_basic --> just as expected.
+-
+test_6_r --> just as expected.
+-
+test_6_restart --> just as expected.
+-
+test_6_restart_nonDir --> just as expected.
+-
+test_7_d --> just as expected.
+-
+test_7_docker --> just as expected.
+-
+test_7full_d --> just as expected.
+-
+test_7full_docker --> just as expected.
+-
+test_8_a --> just as expected.
+-
+test_8_aws --> just as expected.
+-
+test_9_aws_g --> just as expected.
+-
+test_9_aws_gui --> just as expected.
+-
+test_10_pass --> just as expected.
+-
+test_10_pass_noArg1 --> just as expected.
+-
+test_10_pass_noArg2 --> just as expected.
+-
+test_11_b --> just as expected.
+-
+test_11_blj --> just as expected.
+-
+test_12_e --> just as expected.
+-
+test_12_es --> just as expected.
+-
+test_12_es_badForm --> just as expected.
+-
+test_12_env-var --> just as expected.
+-
+test_13_ext_mods --> just as expected.
+-
+test_13_ext_mods_docker --> just as expected.
+-
+test_14_g --> just as expected.
+-
+test_14_gui --> just as expected.
+-
+test_15_w --> just as expected.
+-
+test_15_wait --> just as expected.
+-
+test_20_precheck --> just as expected.
+-
+test_20_p --> just as expected.
+-
+test_20_rp --> just as expected.
+-
+oh no! examine test_20_ap !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_20_ap_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_20_ap_generic.out
+index 71e5dc5..1513d8b 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_20_ap_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_20_ap_generic.out
+@@ -2,7 +2,6 @@
+ aws = true
+ precheck-only = true
+ Using restartDir/examplePipeline_11_1969-07-16 as the config file.
+-Using restartDir/examplePipeline_11_1969-07-16 as the config file.
+ 
+ ---------> Execute CMD [ launch_aws -ap restartDir/examplePipeline_11_1969-07-16 ]
+ aws = true
+@@ -38,5 +37,9 @@ Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
+ biolockj will use the value of environment variable "BLJ_PROJ".
+ 
+ STANDARD_ERR:
+-This feature is under active development...
+-KEY CMD:<BLJ>/script/launch_aws -ap restartDir/examplePipeline_11_1969-07-16
++An unexpected general error occurred during the initial launch process.
++java.lang.NullPointerException
++at biolockj.util.PipelineUtil.getProjectNameFromPropFile(PipelineUtil.java:78)
++at biolockj.launch.LaunchProcess.setInitialState(LaunchProcess.java:474)
++at biolockj.launch.LaunchProcess.<init>(LaunchProcess.java:193)
++at biolockj.launch.Launcher.main(Launcher.java:32)
+-
+test_24_u --> just as expected.
+-
+test_24_ud --> just as expected.
+-
+test_24_unused --> just as expected.
+-
+test_24_ur --> just as expected.
+-
+test_16full_fail --> just as expected.
+-
+oh no! examine test_16full_fail_docker !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_16full_fail_docker_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_16full_fail_docker_generic.out
+index d93aedf..cde1bd1 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_16full_fail_docker_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_16full_fail_docker_generic.out
+@@ -1,16 +1,3 @@
+ Docker container id: <ID_STRING>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+-cd-blj -> Move to pipeline output directory
+-blj_log -> Tail pipeline log (accepts tail runtime parameters)
+-blj_summary -> View module execution summary
+-
+-Fetching pipeline status
+-
+-
+-BioLockJ has stopped.
+-
+-ERROR TYPE: BioLockJException
+-ERROR MESSAGE: Helpful message for the user.
+-
+-
++Pipeline may have failed to launch - check <SHEP>/MockMain/pipelines for new pipeline
+-
+test_17full_restart --> just as expected.
+-
+test_18_jar_help --> just as expected.
+-
+test_20_precheck_repeats --> just as expected.
+-
+test_21_cd-blj --> just as expected.
+-
+test_25_unusedProps_repeats --> just as expected.
+-
+test_26_noneUnused --> just as expected.
+-
+test_26_showsUnused --> just as expected.
+-
+test_26_showsUnusedWithFailure --> just as expected.
+
+Ran 57 tests on bash command line args.
+There were 2 tests that FAILED !!!

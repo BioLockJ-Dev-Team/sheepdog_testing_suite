@@ -1,0 +1,67 @@
+# With -p, the unused props are shown at the end of check dependencies
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+
+
+
+# With -u, the unused props are shown at the end of check dependencies
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+
+
+
+# With no args, the unused props are shown at the end of check dependencies
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+Pipeline is complete.
+
+

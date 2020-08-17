@@ -1,0 +1,69 @@
+Most recent sheepdog commit: v1.3.8-rc
+Most recent BioLockJ commit: v1.3.8-rc
+Use docker
+
+
+Part 1
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/configToFail.properties
+Docker container id: 902403fd54d534a726e5ff9a6222bed2efc52140d3fa8b6c50c756c4bdba6c15
+Initializing BioLockJ..
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+
+
+Part 2
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite 		 --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11
+Starting reset process... 
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11
+Reseting module 04_ConfigToFail and any subsequent modules...
+Removed status flag: precheckStarted
+Reset complete.
+Docker container id: d8cfd67f3e727f714d4db1cf1a55c454a787f7fe9ea9dff5b0108a3b40b9510f
+Initializing BioLockJ..
+Restarting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11_run1
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+
+BioLockJ has stopped.
+
+ERROR TYPE:    BioLockJException
+ERROR MESSAGE: This module is configured to fail.
+
+
+
+Part 3
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist -d --blj -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite 		 --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11
+Starting reset process... 
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11
+Reseting module 04_ConfigToFail and any subsequent modules...
+Removed status flag: precheckStarted
+Reset complete.
+Docker container id: b1e4333499e4e266d7e64b00b5bf77b9694473aff9d143bf5f1f1aa8d800b980
+Initializing BioLockJ..
+Restarting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2020Aug11
+cd-blj       -> Move to pipeline output directory
+blj_log      -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary  -> View module execution summary
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+
+Good: module 03 was never deleted.
+Good: module 04 re-executed each time.
+Good: with correction, the pipeline completes.
+Basic Restart Test: PASSING

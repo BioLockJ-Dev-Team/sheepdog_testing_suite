@@ -1,0 +1,130 @@
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# new precheck pipeline replaces an old one by the same name (after failure)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# standard pipeline replaces precheck pipeline (after failure)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# new precheck cannot replace a standard pipeline
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# standard pipeline replaces precheck pipeline
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+# new precheck cannot replace a standard pipeline
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_3_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+

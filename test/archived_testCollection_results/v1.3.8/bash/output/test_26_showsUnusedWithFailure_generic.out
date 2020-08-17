@@ -1,0 +1,60 @@
+# With -p, the unused props are not shown because there is a failure in check dependencies
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+
+# With -u, the unused props are shown (despite failing in check dependencies)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+random.mispelled=whoops
+# The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
+sequenceReadArchive.sraAccList=nonsense
+
+
+There is a problem with this pipeline configuration.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
+
+# With no args, the unused props are not shown because there is a failure in check dependencies
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+cd-blj -> Move to pipeline output directory
+blj_log -> Tail pipeline log (accepts tail runtime parameters)
+blj_summary -> View module execution summary
+
+Fetching pipeline status
+
+
+BioLockJ has stopped.
+
+ERROR TYPE: BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
