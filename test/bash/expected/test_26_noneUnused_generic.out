@@ -1,8 +1,7 @@
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -13,9 +12,8 @@ Precheck is complete. No problems were found in this pipeline configuration.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -26,9 +24,8 @@ Precheck is complete. No problems were found in this pipeline configuration.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
