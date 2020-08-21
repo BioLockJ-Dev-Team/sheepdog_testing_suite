@@ -15,3 +15,6 @@ test/bash/output-api/*
 /bin/
 .classpath
 .project
+test/feature/envVars/TestModule/ShowTestVar/mkdocs/site/*
+test/feature/envVars/TestModule/ShowTestVar/bin/*
+test/feature/envVars/TestModule/ShowTestVar/.settings
