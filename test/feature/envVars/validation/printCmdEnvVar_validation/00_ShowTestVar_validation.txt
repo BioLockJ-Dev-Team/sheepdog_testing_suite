@@ -1,0 +1,2 @@
+name	size	md5	MATCHED_EXPECTATION
+testVarVal.txt	56	2f8b9ba5ecff664fc8fb149ed8a26412	REPORT

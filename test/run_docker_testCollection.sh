@@ -18,6 +18,7 @@ runTestSet ${DIR}/asSyntax/docker_asSyntax_testList.txt
 runTestSet ${DIR}/classLookup/docker_lookup_testList.txt
 #runTestSet ${DIR}/defaultProps/docker_defaultProps_testList.txt
 runTestSet ${DIR}/dotPath/docker_dot_testList.txt
+runTestSet ${DIR}/envVars/docker_testList_envVars.txt
 runTestSet ${DIR}/exeProps/docker_exeProps_testList.txt
 runTestSet ${DIR}/fileNameInput/docker_testList_filename.txt
 runTestSet ${DIR}/metadata/docker_metadata_testList.txt

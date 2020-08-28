@@ -18,6 +18,7 @@ runTestSet ${DIR}/asSyntax/asSyntax_testList.txt
 runTestSet ${DIR}/classLookup/lookup_testList.txt
 runTestSet ${DIR}/defaultProps/defaultProps_testList.txt
 runTestSet ${DIR}/dotPath/dot_testList.txt
+runTestSet ${DIR}/envVars/testList_envVars.txt
 runTestSet ${DIR}/exeProps/exeProps_testList.txt
 runTestSet ${DIR}/fileNameInput/testList_filename.txt
 runTestSet ${DIR}/metadata/metadata_testList.txt

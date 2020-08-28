@@ -1,0 +1,6 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/feature/envVars/printBlj.properties	 --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	3	BioLockJ_Complete	BLJ variable
+${SHEP}/test/feature/envVars/printDefinedVar.properties	 --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	2	BioLockJ_Complete	variable defined in config file
+${SHEP}/test/feature/envVars/printCmdEnvVar.properties	 -e TEST_VAR=successfulTest  --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	2	BioLockJ_Complete	"variable defined via -e reaches java env, and script env."
+${SHEP}/test/feature/envVars/shepNotReferenced.properties	 --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	2	BioLockJ_Complete	variable defined in local evironment but not referenced should not be in the module java env
+${SHEP}/test/feature/envVars/shepReferencedNotDefined.properties	 --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	2	BioLockJ_Complete	variable defined in local evironment AND referenced in config file should be in the module java env
