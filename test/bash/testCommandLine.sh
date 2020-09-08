@@ -296,7 +296,6 @@ check_it
 
 # verify that bash times out in waiting, unless --wait-for-start is used
 export BIOLOCKJ_TEST_MODE=""
-. $BLJ/script/blj_functions
 
 
 
@@ -326,7 +325,7 @@ sleep 1
 id=test_17full_restart
 biolockj --external-modules ${SHEP}/MockMain/dist \
 	${SHEP}/test/bash/configFile/restartWithWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-RESTART_DIR=$(most_recent_pipeline)
+RESTART_DIR=$(last-pipeline)
 echo "RESTART_DIR: $RESTART_DIR" 1>> $OUT/${id}.out
 MASTER_PROP=$(ls $RESTART_DIR/MASTER*.properties)
 echo "MASTER_PROP: $MASTER_PROP" 1>> $OUT/${id}.out

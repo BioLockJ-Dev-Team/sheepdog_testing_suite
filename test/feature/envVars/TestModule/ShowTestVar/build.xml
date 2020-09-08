@@ -1,0 +1,47 @@
+<project name="ShowTestVar" default="docs"  basedir=".">
+	
+    <property name="BLJ" value="../../../../../../BioLockJ"/>
+    <property name="BLJ.JAR" value="../../../../../../BioLockJ/dist/BioLockJ.jar"/>
+
+	<path id="lib.path">
+		<fileset dir="${BLJ}"/>
+	</path>
+
+    <target name="blj">
+        <echo message="BLJ: ${BLJ}"/>
+        <available file="${BLJ.JAR}" property="blj.jar.present"/>
+    </target>
+
+    <target name="clean" depends="blj" if="blj.jar.present">
+        <delete dir="dist"/>
+        <delete dir="bin"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin" classpathref="lib.path"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="dist"/>
+        <jar destfile="dist/ShowTestVar.jar" basedir="bin">
+        </jar>
+    </target>
+
+    <target name="docs" depends="jar">
+        <delete dir="mkdocs/docs"/>
+        <mkdir dir="mkdocs/docs"/>
+        <java classpath="${BLJ.JAR}:dist/ShowTestVar.jar" classname="biolockj.api.BuildDocs">
+            <arg value="mkdocs/docs"/>
+            <arg value="envVar"/>
+        </java>
+        <move file="mkdocs/docs/all-modules.md" tofile="mkdocs/docs/index.md" />
+    </target>
+
+    <target name="userguide" depends="docs">
+        <exec executable="mkdocs" dir="mkdocs">
+            <arg value="build"/>
+        </exec>
+    </target>
+
+</project>

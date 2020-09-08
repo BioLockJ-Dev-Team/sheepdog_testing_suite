@@ -1,8 +1,7 @@
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -17,9 +16,8 @@ ERROR MESSAGE: Helpful message for the user.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -34,9 +32,8 @@ ERROR MESSAGE: Helpful message for the user.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -50,9 +47,8 @@ ERROR MESSAGE: Helpful message for the user.
 # new precheck cannot replace a standard pipeline
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -67,9 +63,8 @@ ERROR MESSAGE: Helpful message for the user.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -83,9 +78,8 @@ ERROR MESSAGE: Helpful message for the user.
 # new precheck cannot replace a standard pipeline
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -99,9 +93,8 @@ ERROR MESSAGE: Helpful message for the user.
 # new precheck with different name creates a new folder
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -113,9 +106,8 @@ Precheck is complete. No problems were found in this pipeline configuration.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -127,9 +119,8 @@ Precheck is complete. No problems were found in this pipeline configuration.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 

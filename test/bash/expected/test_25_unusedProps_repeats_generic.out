@@ -1,8 +1,7 @@
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -25,9 +24,8 @@ ERROR MESSAGE: Helpful message for the user.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -50,9 +48,8 @@ ERROR MESSAGE: Helpful message for the user.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -66,9 +63,8 @@ ERROR MESSAGE: Helpful message for the user.
 # new precheck cannot replace a standard pipeline
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -91,9 +87,8 @@ ERROR MESSAGE: Helpful message for the user.
 Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
@@ -107,9 +102,8 @@ ERROR MESSAGE: Helpful message for the user.
 # new precheck cannot replace a standard pipeline
 <Initializing BioLockJ<...>>
 Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_3_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-blj_log -> Tail pipeline log (accepts tail runtime parameters)
-blj_summary -> View module execution summary
 
 Fetching pipeline status
 
