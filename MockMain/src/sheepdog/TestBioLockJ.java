@@ -11,9 +11,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import biolockj.Config;
 import biolockj.Constants;
+import biolockj.Processor;
 import biolockj.Properties;
 import biolockj.util.BioLockJUtil;
 import biolockj.util.SummaryUtil;
@@ -185,7 +187,7 @@ public class TestBioLockJ
 					iNotes = row.indexOf( NOTES_COL );
 				}else {
 					TestInfoRow oneTest = new TestInfoRow();
-					oneTest.config = new File( Config.replaceEnvVar( row.get( iConfig ) ) );
+					oneTest.config = new File( replaceEnvVar( row.get( iConfig ) ) );
 					if (iJavaArgs > 0 ) oneTest.java_args = row.get( iJavaArgs ); else oneTest.java_args = "";
 					if (iBashArgs > 0 ) oneTest.bash_args = row.get( iBashArgs ); else oneTest.bash_args = "";
 					if (iCompModsExp > 0 && !row.get( iCompModsExp ).isEmpty() ) oneTest.expCompleteModules = Integer.parseInt( row.get( iCompModsExp ) ) ;
@@ -206,7 +208,7 @@ public class TestBioLockJ
 	{
 		System.err.println("Extracting input.dirPaths value from: " + config.getName() );
 		Properties props = Properties.loadProperties( config );
-		String inputDir = Config.replaceEnvVar((String) props.get( "input.dirPaths" ));
+		String inputDir = replaceEnvVar((String) props.get( "input.dirPaths" ));
 		File input = new File(inputDir);
 		if (!input.exists() || !input.isDirectory()) {
 			throw new Exception("To run in docker, input.dirPaths should give a single valid directory."
@@ -222,8 +224,8 @@ public class TestBioLockJ
 		}else if ( ! test.bash_args.isEmpty() && ! test.java_args.isEmpty() ) {
 			throw new Exception("Can't use both " + BASH_ARGS_COL + " and " + JAVA_ARGS_COL + " in the same test." );
 		}else {
-			cmd = "biolockj -f --blj_proj " + Config.replaceEnvVar(TMP_PROJ) + " " 
-							+ Config.replaceEnvVar(test.bash_args) + " " + test.config;
+			cmd = "biolockj -f --blj_proj " + replaceEnvVar(TMP_PROJ) + " " 
+							+ replaceEnvVar(test.bash_args) + " " + test.config;
 		}
 		System.err.println("Command for subprocess: " + cmd);
 		
@@ -243,7 +245,7 @@ public class TestBioLockJ
 				}
 				if( s.startsWith( Constants.PIPELINE_LOCATION_KEY ) ){
 					pipeline = s.replace( Constants.PIPELINE_LOCATION_KEY, "" ).trim();
-					pipeline = pipeline.replace( "/mnt/efs/pipelines", Config.replaceEnvVar(TMP_PROJ) ); //for docker case
+					pipeline = pipeline.replace( "/mnt/efs/pipelines", replaceEnvVar(TMP_PROJ) ); //for docker case
 				}
 				if( s.contentEquals( Constants.VALIDATION_ENABLED )) {
 					test.validationEnabled=true;
@@ -261,8 +263,8 @@ public class TestBioLockJ
 	
 	private static String generateJavaCmd(TestInfoRow test) {
 		String cmd;
-		cmd = "java -cp " + Config.replaceEnvVar(MOCK_JAR) + ":" + Config.replaceEnvVar(BLJ_JAR) 
-		+ " biolockj.BioLockJ " + "-b " + Config.replaceEnvVar(TMP_PROJ) 
+		cmd = "java -cp " + replaceEnvVar(MOCK_JAR) + ":" + replaceEnvVar(BLJ_JAR) 
+		+ " biolockj.BioLockJ " + "-b " + replaceEnvVar(TMP_PROJ) 
 		+ " -u ~ -c " + test.config.getAbsolutePath()+ " " + test.java_args ;
 		System.err.println(cmd);
 		return( cmd );
@@ -290,14 +292,14 @@ public class TestBioLockJ
 	}
 	
 	protected static void writeComments(BufferedWriter writer) throws IOException {
-		writer.write( "# BioLockJ jar file: " + Config.replaceEnvVar(BLJ_JAR) + System.lineSeparator() );
+		writer.write( "# BioLockJ jar file: " + replaceEnvVar(BLJ_JAR) + System.lineSeparator() );
 		writer.write( "# BioLockJ version: " + getJarVersion() + System.lineSeparator() );
-		writer.write( "# SHEP_DATA: " + (new File(Config.replaceEnvVar("${SHEP_DATA}"))).getName() + System.lineSeparator());
+		writer.write( "# SHEP_DATA: " + (new File(replaceEnvVar("${SHEP_DATA}"))).getName() + System.lineSeparator());
 	}
 	
 	protected static String getJarVersion() {
 		String version = "";
-		String cmd = "java -jar " + Config.replaceEnvVar(BLJ_JAR) + " --version";
+		String cmd = "java -jar " + replaceEnvVar(BLJ_JAR) + " --version";
 		try {
 			final Process p = Runtime.getRuntime().exec( cmd );
 			final BufferedReader br = new BufferedReader( new InputStreamReader( p.getInputStream() ) );
@@ -328,7 +330,7 @@ public class TestBioLockJ
 	
 	protected static void clearPipelines() throws IOException {
 		String prevPipesDirName = "previousPipelineSet";
-		File pipesDir = new File(Config.replaceEnvVar(TMP_PROJ));
+		File pipesDir = new File(replaceEnvVar(TMP_PROJ));
 		File prevPipesDir = new File(pipesDir, prevPipesDirName);
 		if (prevPipesDir.exists() && prevPipesDir.isDirectory() ) FileUtils.deleteDirectory(prevPipesDir);
 		prevPipesDir.mkdir();
@@ -346,6 +348,24 @@ public class TestBioLockJ
 		System.err.println("Moved " + count + " directories from $SHEP/pipelines into previousPipelineSet; these will be deleted the next time this program is run.");
 	}
 		
+	/**
+	 * Replace any variables surrounded with "${" and "}" with the variables value from the environment.
+	 * @param string
+	 * @param var
+	 * @return
+	 */
+	private static String replaceEnvVar(final String string) {
+		String result = string;
+		while(result.contains( "${" ) && result.contains( "}" ) && result.indexOf( "}" ) > result.indexOf( "$}" )) {
+			String var = result.substring( result.indexOf( "${" ) + 2, result.indexOf( "}" ) );
+			String val = System.getenv( var );
+			String newString = result.substring( 0,  result.indexOf( "${" )) + val + result.substring( result.indexOf( "}" ) + 1 );
+			result = newString;
+		}
+		//System.out.println("Replaced env var to conver [" + string + "] into: " + result);
+		return result;
+	}
+
 	protected static void addSummaryAtTop(String outFileName, Collection<String> summary) throws IOException {
 		String tmpFile = outFileName + "~";
 		final BufferedReader reader = BioLockJUtil.getFileReader( new File(outFileName) );
