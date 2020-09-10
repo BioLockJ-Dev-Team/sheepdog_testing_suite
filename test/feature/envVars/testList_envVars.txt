@@ -5,6 +5,5 @@ ${SHEP}/test/feature/envVars/printCmdEnvVar.properties	 -e TEST_VAR=successfulTe
 ${SHEP}/test/feature/envVars/shepNotReferenced.properties	 --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	2	BioLockJ_Complete	variable defined in local evironment but not referenced should not be in the module java env
 ${SHEP}/test/feature/envVars/shepReferencedNotDefined.properties	 --external-modules ${SHEP}/test/feature/envVars/TestModule/ShowTestVar/dist	3	BioLockJ_Complete	variable defined in local evironment AND referenced in config file should be in the module java env
 ${SHEP}/test/feature/envVars/missingVar.properties 		0	ConfigNotFoundException	get correct error when a pipeline variable is empty
-${SHEP}/test/feature/envVars/ignoreEnvVar.properties 		2	BioLockJ_Complete	ignore vars property should mean that local vars are NOT passed to module env.
 ${SHEP}/test/feature/envVars/multipleVars.properties 		2	BioLockJ_Complete	make sure a single property with multiple variables replaces all variables
 ${SHEP}/test/feature/envVars/propsOvorrideEnv.properties 		2	BioLockJ_Complete	SHEP is devined in env and in props: props should win
