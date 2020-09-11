@@ -1,0 +1,179 @@
+Most recent sheepdog commit: v1.3.9-rc-1-ge3b33c3
+Most recent BioLockJ commit: v1.3.9-rc-2-ge4b0e243
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api
+-
+api-test_00_bash_noArgs --> just as expected.
+-
+api-test_00_bash_help --> just as expected.
+-
+api-test_01_bash_listModules --> just as expected.
+-
+api-test_12_bash_isValidProp_mod --> just as expected.
+-
+oh no! examine api-test_00_noArgs !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_noArgs_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_noArgs_generic.out
+index 08fcf9c..d2f42bf 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_noArgs_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_noArgs_generic.out
+@@ -30,6 +30,9 @@ flag indicating that all messages should go to standard err, including some that
+ 
+ query:
+ 
++last-pipeline
++Returns the path to the most recent pipeline.
++
+ listModules [ --external-modules <dir> ]
+ Returns a list of classpaths to the classes that extend BioModule.
+ 
+-
+oh no! examine api-test_00_help !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_help_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_help_generic.out
+index 08fcf9c..d2f42bf 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_help_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_help_generic.out
+@@ -30,6 +30,9 @@ flag indicating that all messages should go to standard err, including some that
+ 
+ query:
+ 
++last-pipeline
++Returns the path to the most recent pipeline.
++
+ listModules [ --external-modules <dir> ]
+ Returns a list of classpaths to the classes that extend BioModule.
+ 
+-
+api-test_01_listModules --> just as expected.
+-
+api-test_02_listExtModules --> just as expected.
+-
+api-test_02_listApiModules --> just as expected.
+-
+api-test_03_listExtApiModules --> just as expected.
+-
+api-test_04_listProps_module --> just as expected.
+-
+oh no! examine api-test_05_listProps_backbone !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_05_listProps_backbone_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_05_listProps_backbone_generic.out
+index 828a56d..dbe127c 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_05_listProps_backbone_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_05_listProps_backbone_generic.out
+@@ -67,11 +67,13 @@ pipeline.disableAddImplicitModules
+ pipeline.disableAddPreReqModules
+ pipeline.downloadDir
+ pipeline.env
++pipeline.envVars
+ pipeline.inputTypes
+ pipeline.limitDebugClasses
+ pipeline.logLevel
+ pipeline.permissions
+ pipeline.setSeed
++pipeline.useEnvVars
+ pipeline.userProfile
+ qiime.alphaMetrics
+ qiime.plotAlphaMetrics
+-
+oh no! examine api-test_06_listAllProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+index 979ed83..037600b 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+@@ -116,11 +116,13 @@ pipeline.disableAddImplicitModules
+ pipeline.disableAddPreReqModules
+ pipeline.downloadDir
+ pipeline.env
++pipeline.envVars
+ pipeline.inputTypes
+ pipeline.limitDebugClasses
+ pipeline.logLevel
+ pipeline.permissions
+ pipeline.setSeed
++pipeline.useEnvVars
+ pipeline.userProfile
+ qiime.alphaMetrics
+ qiime.params
+-
+oh no! examine api-test_07_listAllExtProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+index 593e3bf..de73ad3 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+@@ -116,11 +116,13 @@ pipeline.disableAddImplicitModules
+ pipeline.disableAddPreReqModules
+ pipeline.downloadDir
+ pipeline.env
++pipeline.envVars
+ pipeline.inputTypes
+ pipeline.limitDebugClasses
+ pipeline.logLevel
+ pipeline.permissions
+ pipeline.setSeed
++pipeline.useEnvVars
+ pipeline.userProfile
+ pipelineTime.maxMillis
+ pipelineTime.minMillis
+-
+api-test_08_propType_mod --> just as expected.
+-
+api-test_09_propType --> just as expected.
+-
+api-test_09_propType_bad --> just as expected.
+-
+api-test_10_descProp_mod --> just as expected.
+-
+api-test_11_descProp --> just as expected.
+-
+api-test_11_descProp_bad --> just as expected.
+-
+api-test_12_isValidProp_mod --> just as expected.
+-
+api-test_12_isValidProp_mod_msg --> just as expected.
+-
+api-test_13_isValidProp --> just as expected.
+-
+api-test_13_isValidProp_msg --> just as expected.
+-
+api-test_17_propValue --> just as expected.
+-
+api-test_18_propValue_config --> just as expected.
+-
+oh no! examine api-test_19_propInfo !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+index 8829d4f..66bd808 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+@@ -361,6 +361,12 @@
+ "type": "string"
+ },
+ {
++"property": "pipeline.envVars",
++"description": "list of variables that should be passed into the runtime environment for all modules.",
++"default": "BLJ",
++"type": "list"
++},
++{
+ "property": "pipeline.inputTypes",
+ "type": "list",
+ "description": "List of file types. This manually overrides the recommended auto-detection."
+@@ -388,6 +394,12 @@
+ "description": "set the seed for a random process. Must be positive integer."
+ },
+ {
++"property": "pipeline.useEnvVars",
++"description": "when evaluating variables in the ${VAR} format, should environment variables be used. Regardless, priority is given to variable values defined in the config file.",
++"default": "Y",
++"type": "boolean"
++},
++{
+ "property": "pipeline.userProfile",
+ "type": "file path",
+ "description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others"
+-
+api-test_20_moduleInfo --> just as expected.
+-
+api-test_21_moduleExtInfo --> just as expected.
+-
+api-test_22_unknown_query --> just as expected.
+-
+api-test_23_unknown_option --> just as expected.
+-
+api-test_24_debug_option --> just as expected.
