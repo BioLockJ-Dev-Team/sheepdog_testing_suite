@@ -1,0 +1,7 @@
+name	size	md5	MATCHED_EXPECTATION
+PIPELINE_DATE_class_fractionBelow-0.15.tsv	321	a79a745f3d206540905d5e2283c9b4bc	REPORT
+PIPELINE_DATE_class_histograms.pdf_image-1.ppm	6315092	db18888d43aaead298e980f601664692	REPORT
+PIPELINE_DATE_class_histograms.pdf_image-2.ppm	6315092	f8e00c82a2c1572f55c6383284962567	REPORT
+PIPELINE_DATE_phylum_fractionBelow-0.15.tsv	322	51faf41f3e85b0fd2602fe4a3026f836	REPORT
+PIPELINE_DATE_phylum_histograms.pdf_image-1.ppm	6315092	8b4cbc79bf2acdd9c1e31b686b7232e0	REPORT
+PIPELINE_DATE_phylum_histograms.pdf_image-2.ppm	6315092	7b4419e9284ba3fd47af31ef65b288ab	REPORT
