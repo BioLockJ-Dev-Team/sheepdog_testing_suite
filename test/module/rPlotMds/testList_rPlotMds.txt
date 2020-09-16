@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/rPlotMds/plotMds.properties		BioLockJ_Complete	standard case
+${SHEP}/test/module/rPlotMds/plotMdsWithVal.properties	 -d --blj --external-modules ${SHEP}/MockMain/dist 	BioLockJ_Complete	standard case
