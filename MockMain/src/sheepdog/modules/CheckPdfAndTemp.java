@@ -14,6 +14,12 @@ import biolockj.util.ModuleUtil;
 public class CheckPdfAndTemp extends ScriptModuleImpl implements ApiModule {
 
 	@Override
+	public void checkDependencies() throws Exception {
+		super.checkDependencies();
+		Config.getExe( this, EXE_PDFTOPPM );
+	}
+	
+	@Override
 	public List<List<String>> buildScript( List<File> files ) throws Exception {
 		BioModule prev = ModuleUtil.getPreviousModule( this );
 		Log.info(getClass(), "Found previous module: " + ModuleUtil.displaySignature( prev ));
@@ -27,10 +33,13 @@ public class CheckPdfAndTemp extends ScriptModuleImpl implements ApiModule {
 
 		List<List<String>> outer = new ArrayList<>();
 		List<String> inner = new ArrayList<>();
+		// show pdftoppm version and help
+		inner.add( "echo $( " + Config.getExe( this, EXE_PDFTOPPM ) + " -v )" );
+		inner.add( "" );
 		for( File outFile: prev.getOutputDir().listFiles() ) {
 			if( outFile.getName().endsWith( ".pdf" ) ) {
 				Log.info(getClass(), "Found pdf file: " + outFile.getName() );
-				inner.add( Config.getExe( this, "exe.pdftoppm" ) + " " + outFile.getAbsolutePath() + " " +
+				inner.add( Config.getExe( this, EXE_PDFTOPPM ) + " " + outFile.getAbsolutePath() + " " +
 					getOutputDir().getAbsolutePath() + File.separator + outFile.getName() + "_image" );
 			}
 		}
@@ -57,5 +66,7 @@ public class CheckPdfAndTemp extends ScriptModuleImpl implements ApiModule {
 	public String getDockerImageTag() {
 		return "latest";
 	}
+	
+	public static final String EXE_PDFTOPPM = "exe.pdftoppm";
 
 }
