@@ -1,5 +1,4 @@
 ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
 ${SHEP}/test/module/rPlotMds/plotMds.properties		BioLockJ_Complete	standard case
-${SHEP}/test/module/rPlotMds/plotMdsWithVal.properties	 -d --blj --external-modules ${SHEP}/MockMain/dist 	BioLockJ_Complete	standard case
 ${SHEP}/test/module/rPlotMds/customScript.properties		BioLockJ_Complete	use a user-supplied script
-${SHEP}/test/module/rPlotMds/customScriptWithVal.properties	 -d --blj --external-modules ${SHEP}/MockMain/dist 	BioLockJ_Complete	use a user-supplied script
+${SHEP}/test/module/rPlotMds/myColors.properties		BioLockJ_Complete	user-supplied color file

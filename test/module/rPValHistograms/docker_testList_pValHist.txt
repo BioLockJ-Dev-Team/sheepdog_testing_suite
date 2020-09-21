@@ -1,0 +1,2 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/rPValHistograms/pValHistWithVal.properties	 -d --blj --external-modules ${SHEP}/MockMain/dist 	BioLockJ_Complete	standard case

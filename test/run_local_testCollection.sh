@@ -37,6 +37,10 @@ runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
 runTestSet ${DIR}/rdp/RdpTestList.txt 
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
+runTestSet ${DIR}/rPlotMds/testList_rPlotMds.txt
+runTestSet ${DIR}/rPlotEffectSize/testList_rPlotEffectSize.txt
+runTestSet ${DIR}/rPlotOtus/testList_rPlotOtus.txt
+runTestSet ${DIR}/rPValHistograms/testList_pValHist.txt
 runTestSet ${DIR}/shannon/shannonTestList.txt
 runTestSet ${DIR}/sraDownload/sraDownload_testList.txt
 runTestSet ${DIR}/validationUtil/validation_testList.txt 
