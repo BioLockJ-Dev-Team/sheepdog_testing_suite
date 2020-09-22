@@ -3,6 +3,7 @@
 
 [CheckCountTable](sheepdog.modules/CheckCountTable.md)
 [CheckNormalizationTable](sheepdog.modules/CheckNormalizationTable.md)
+[CheckPdfAndTemp](sheepdog.modules/CheckPdfAndTemp.md) - *Make an image of each page of each pdf output from the previous module*
 [CheckPipelineFiles](sheepdog.modules/CheckPipelineFiles.md)
 [CheckPipelineName](sheepdog.modules/CheckPipelineName.md)
 [CheckShannon](sheepdog.modules/CheckShannon.md)
@@ -57,6 +58,8 @@ Creating documentation page for module: sheepdog.modules.CheckCountTable
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckCountTable.md
 Creating documentation page for module: sheepdog.modules.CheckNormalizationTable
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckNormalizationTable.md
+Creating documentation page for module: sheepdog.modules.CheckPdfAndTemp
+Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckPdfAndTemp.md
 Creating documentation page for module: sheepdog.modules.CheckPipelineFiles
 Saving document to file: <SHEP>/test/feature/buildDocs/output/sheepdog.modules/CheckPipelineFiles.md
 Creating documentation page for module: sheepdog.modules.CheckPipelineName
