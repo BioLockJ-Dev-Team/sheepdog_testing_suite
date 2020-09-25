@@ -1,0 +1,7 @@
+
+STANDARD_ERR:
+Looking for option name, found unnamed value [ madeUpOption ].
+See help menu using: biolockj-api help
+The query [listProps] does not support the [--madeUpOption] option.
+Found [ madeUpOption = val ].
+See help menu using: biolockj-api help

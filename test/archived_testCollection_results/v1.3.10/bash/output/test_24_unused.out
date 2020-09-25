@@ -1,0 +1,7 @@
+ ---------> Execute CMD [  Launcher --unused-props configFile/example.properties ]
+unused-props = true
+Using configFile/example.properties as the config file.
+ ---------> Execute CMD [  JavaLaunchProcess --unused-props configFile/example.properties ]
+unused-props = true
+Using configFile/example.properties as the config file.
+KEY CMD:  nohup java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar biolockj.BioLockJ -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -precheck -unusedProps -config /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties

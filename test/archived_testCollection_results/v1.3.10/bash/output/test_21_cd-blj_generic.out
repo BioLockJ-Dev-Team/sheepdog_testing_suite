@@ -1,0 +1,25 @@
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj -> Move to pipeline output directory
+
+Fetching pipeline status
+
+
+Pipeline is running.
+
+
+Moved to most recent pipeline: <SHEP>/MockMain/pipelines/configToFail_2_<DATE>
+00_ImportMetadata
+01_RegisterNumReads
+02_RarefySeqs
+03_WriteTime
+04_ConfigToFail
+05_SeqFileValidator
+06_Multiplexer
+MASTER_configToFail_2_<DATE>.properties
+biolockjStarted
+configToFail.properties
+configToFail_2_<DATE>.log
+summary.txt
+validation

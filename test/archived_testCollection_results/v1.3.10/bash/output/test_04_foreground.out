@@ -1,0 +1,7 @@
+ ---------> Execute CMD [  Launcher --foreground configFile/example.properties ]
+foreground = true
+Using configFile/example.properties as the config file.
+ ---------> Execute CMD [  JavaLaunchProcess --foreground configFile/example.properties ]
+foreground = true
+Using configFile/example.properties as the config file.
+KEY CMD:  java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar biolockj.BioLockJ -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -config /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties

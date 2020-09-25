@@ -1,0 +1,34 @@
+Initializing BioLockJ.
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/noneUnused_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+
+
+Initializing BioLockJ.
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/noneUnused_2_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Precheck is complete. No problems were found in this pipeline configuration.
+
+
+Discarding pre-existing precheck pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/noneUnused_2_2020Sep24
+Initializing BioLockJ.
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/noneUnused_2_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+

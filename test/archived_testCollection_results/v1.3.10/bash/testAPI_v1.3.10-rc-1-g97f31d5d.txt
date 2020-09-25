@@ -1,0 +1,338 @@
+Most recent sheepdog commit: v1.3.9-14-gcca3186
+Most recent BioLockJ commit: v1.3.10-rc-1-g97f31d5d
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api
+-
+api-test_00_bash_noArgs --> just as expected.
+-
+api-test_00_bash_help --> just as expected.
+-
+api-test_01_bash_listModules --> just as expected.
+-
+api-test_12_bash_isValidProp_mod --> just as expected.
+-
+oh no! examine api-test_00_noArgs !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_noArgs_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_noArgs_generic.out
+index 08fcf9c..d2f42bf 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_noArgs_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_noArgs_generic.out
+@@ -30,6 +30,9 @@ flag indicating that all messages should go to standard err, including some that
+ 
+ query:
+ 
++last-pipeline
++Returns the path to the most recent pipeline.
++
+ listModules [ --external-modules <dir> ]
+ Returns a list of classpaths to the classes that extend BioModule.
+ 
+-
+oh no! examine api-test_00_help !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_help_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_help_generic.out
+index 08fcf9c..d2f42bf 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_00_help_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_00_help_generic.out
+@@ -30,6 +30,9 @@ flag indicating that all messages should go to standard err, including some that
+ 
+ query:
+ 
++last-pipeline
++Returns the path to the most recent pipeline.
++
+ listModules [ --external-modules <dir> ]
+ Returns a list of classpaths to the classes that extend BioModule.
+ 
+-
+api-test_01_listModules --> just as expected.
+-
+oh no! examine api-test_02_listExtModules !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_02_listExtModules_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_02_listExtModules_generic.out
+index 5a16ab7..6e377c1 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_02_listExtModules_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_02_listExtModules_generic.out
+@@ -58,6 +58,7 @@ biolockj.module.seq.SeqFileValidator
+ biolockj.module.seq.TrimPrimers
+ sheepdog.modules.CheckCountTable
+ sheepdog.modules.CheckNormalizationTable
++sheepdog.modules.CheckPdfAndTemp
+ sheepdog.modules.CheckPipelineFiles
+ sheepdog.modules.CheckPipelineName
+ sheepdog.modules.CheckShannon
+-
+api-test_02_listApiModules --> just as expected.
+-
+oh no! examine api-test_03_listExtApiModules !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_03_listExtApiModules_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_03_listExtApiModules_generic.out
+index ae831bc..14e0270 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_03_listExtApiModules_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_03_listExtApiModules_generic.out
+@@ -44,5 +44,6 @@ biolockj.module.seq.PearMergeReads
+ biolockj.module.seq.RarefySeqs
+ biolockj.module.seq.SeqFileValidator
+ biolockj.module.seq.TrimPrimers
++sheepdog.modules.CheckPdfAndTemp
+ sheepdog.modules.CopyMasterProps
+ testBash.PipelineTime
+-
+api-test_04_listProps_module --> just as expected.
+-
+oh no! examine api-test_05_listProps_backbone !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_05_listProps_backbone_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_05_listProps_backbone_generic.out
+index 828a56d..d973ce7 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_05_listProps_backbone_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_05_listProps_backbone_generic.out
+@@ -16,6 +16,7 @@ aws.s3TransferTimeout
+ aws.saveCloud
+ aws.stack
+ aws.walltime
++biolockj.version
+ cluster.batchCommand
+ cluster.host
+ cluster.jobHeader
+@@ -67,11 +68,13 @@ pipeline.disableAddImplicitModules
+ pipeline.disableAddPreReqModules
+ pipeline.downloadDir
+ pipeline.env
++pipeline.envVars
+ pipeline.inputTypes
+ pipeline.limitDebugClasses
+ pipeline.logLevel
+ pipeline.permissions
+ pipeline.setSeed
++pipeline.useEnvVars
+ pipeline.userProfile
+ qiime.alphaMetrics
+ qiime.plotAlphaMetrics
+@@ -101,6 +104,7 @@ report.scarceSampleCutoff
+ report.taxonomyLevels
+ report.unclassifiedTaxa
+ script.defaultHeader
++script.fileRefreshDelay
+ script.numThreads
+ script.numWorkers
+ script.permissions
+-
+oh no! examine api-test_06_listAllProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+index 979ed83..4b98c09 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_06_listAllProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_06_listAllProps_generic.out
+@@ -16,6 +16,7 @@ aws.s3TransferTimeout
+ aws.saveCloud
+ aws.stack
+ aws.walltime
++biolockj.version
+ cluster.batchCommand
+ cluster.host
+ cluster.jobHeader
+@@ -116,12 +117,15 @@ pipeline.disableAddImplicitModules
+ pipeline.disableAddPreReqModules
+ pipeline.downloadDir
+ pipeline.env
++pipeline.envVars
+ pipeline.inputTypes
+ pipeline.limitDebugClasses
+ pipeline.logLevel
+ pipeline.permissions
+ pipeline.setSeed
++pipeline.useEnvVars
+ pipeline.userProfile
++plotPvalHistograms.customScript
+ qiime.alphaMetrics
+ qiime.params
+ qiime.plotAlphaMetrics
+@@ -147,8 +151,10 @@ r.reportFields
+ r.saveRData
+ r.timeout
+ r.useUniqueColors
++r_CalculateStats.customScript
+ r_CalculateStats.pAdjustMethod
+ r_CalculateStats.pAdjustScope
++r_PlotEffectSize.customScript
+ r_PlotEffectSize.disableCohensD
+ r_PlotEffectSize.disableFoldChange
+ r_PlotEffectSize.disablePvalAdj
+@@ -157,9 +163,11 @@ r_PlotEffectSize.excludePvalAbove
+ r_PlotEffectSize.maxNumTaxa
+ r_PlotEffectSize.parametricPval
+ r_PlotEffectSize.taxa
++r_PlotMds.customScript
+ r_PlotMds.distance
+ r_PlotMds.numAxis
+ r_PlotMds.reportFields
++r_PlotOtus.customScript
+ rarefyOtuCounts.iterations
+ rarefyOtuCounts.lowAbundantCutoff
+ rarefyOtuCounts.quantile
+@@ -183,6 +191,7 @@ report.unclassifiedTaxa
+ rmarkdown.resources
+ rmarkdown.rmarkdown
+ script.defaultHeader
++script.fileRefreshDelay
+ script.numThreads
+ script.numWorkers
+ script.permissions
+-
+oh no! examine api-test_07_listAllExtProps !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+index 593e3bf..40bbacd 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_07_listAllExtProps_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_07_listAllExtProps_generic.out
+@@ -16,6 +16,7 @@ aws.s3TransferTimeout
+ aws.saveCloud
+ aws.stack
+ aws.walltime
++biolockj.version
+ cluster.batchCommand
+ cluster.host
+ cluster.jobHeader
+@@ -116,14 +117,17 @@ pipeline.disableAddImplicitModules
+ pipeline.disableAddPreReqModules
+ pipeline.downloadDir
+ pipeline.env
++pipeline.envVars
+ pipeline.inputTypes
+ pipeline.limitDebugClasses
+ pipeline.logLevel
+ pipeline.permissions
+ pipeline.setSeed
++pipeline.useEnvVars
+ pipeline.userProfile
+ pipelineTime.maxMillis
+ pipelineTime.minMillis
++plotPvalHistograms.customScript
+ qiime.alphaMetrics
+ qiime.params
+ qiime.plotAlphaMetrics
+@@ -149,8 +153,10 @@ r.reportFields
+ r.saveRData
+ r.timeout
+ r.useUniqueColors
++r_CalculateStats.customScript
+ r_CalculateStats.pAdjustMethod
+ r_CalculateStats.pAdjustScope
++r_PlotEffectSize.customScript
+ r_PlotEffectSize.disableCohensD
+ r_PlotEffectSize.disableFoldChange
+ r_PlotEffectSize.disablePvalAdj
+@@ -159,9 +165,11 @@ r_PlotEffectSize.excludePvalAbove
+ r_PlotEffectSize.maxNumTaxa
+ r_PlotEffectSize.parametricPval
+ r_PlotEffectSize.taxa
++r_PlotMds.customScript
+ r_PlotMds.distance
+ r_PlotMds.numAxis
+ r_PlotMds.reportFields
++r_PlotOtus.customScript
+ rarefyOtuCounts.iterations
+ rarefyOtuCounts.lowAbundantCutoff
+ rarefyOtuCounts.quantile
+@@ -185,6 +193,7 @@ report.unclassifiedTaxa
+ rmarkdown.resources
+ rmarkdown.rmarkdown
+ script.defaultHeader
++script.fileRefreshDelay
+ script.numThreads
+ script.numWorkers
+ script.permissions
+-
+api-test_08_propType_mod --> just as expected.
+-
+api-test_09_propType --> just as expected.
+-
+api-test_09_propType_bad --> just as expected.
+-
+api-test_10_descProp_mod --> just as expected.
+-
+api-test_11_descProp --> just as expected.
+-
+api-test_11_descProp_bad --> just as expected.
+-
+api-test_12_isValidProp_mod --> just as expected.
+-
+api-test_12_isValidProp_mod_msg --> just as expected.
+-
+api-test_13_isValidProp --> just as expected.
+-
+api-test_13_isValidProp_msg --> just as expected.
+-
+api-test_17_propValue --> just as expected.
+-
+api-test_18_propValue_config --> just as expected.
+-
+oh no! examine api-test_19_propInfo !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+index 8829d4f..184aa76 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+@@ -90,6 +90,11 @@
+ "description": ""
+ },
+ {
++"property": "biolockj.version",
++"type": "string",
++"description": "Property giving the biolockj version that was used to generate the config file."
++},
++{
+ "property": "cluster.batchCommand",
+ "type": "string",
+ "description": "Terminal command used to submit jobs on the cluster"
+@@ -361,6 +366,12 @@
+ "type": "string"
+ },
+ {
++"property": "pipeline.envVars",
++"description": "list of variables that should be passed into the runtime environment for all modules.",
++"default": "BLJ",
++"type": "list"
++},
++{
+ "property": "pipeline.inputTypes",
+ "type": "list",
+ "description": "List of file types. This manually overrides the recommended auto-detection."
+@@ -388,6 +399,12 @@
+ "description": "set the seed for a random process. Must be positive integer."
+ },
+ {
++"property": "pipeline.useEnvVars",
++"description": "when evaluating variables in the ${VAR} format, should environment variables be used. Regardless, priority is given to variable values defined in the config file.",
++"default": "Y",
++"type": "boolean"
++},
++{
+ "property": "pipeline.userProfile",
+ "type": "file path",
+ "description": "Bash profile - may be ~/.bash_profile or ~/.bashrc or others"
+@@ -483,8 +500,8 @@
+ },
+ {
+ "property": "r.timeout",
+-"description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
+-"default": "10",
++"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt basicRealTest_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt configFile empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.10-rc-1-g97f31d5d_NOT_IN_GIT.txt testAPI_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testAPI_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testCommandLine_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
++"default": "0",
+ "type": "integer"
+ },
+ {
+@@ -552,6 +569,12 @@
+ "type": "string"
+ },
+ {
++"property": "script.fileRefreshDelay",
++"description": "delay this many seconds after scripts complete to allow the file system to reflect changes from a worker node/container/virtual machine.",
++"default": "1",
++"type": "integer"
++},
++{
+ "property": "script.numThreads",
+ "description": "Used to reserve cluster resources and passed to any external application call that accepts a numThreads parameter.",
+ "default": "8",
+-
+api-test_20_moduleInfo --> just as expected.
+-
+api-test_21_moduleExtInfo --> just as expected.
+-
+api-test_22_unknown_query --> just as expected.
+-
+api-test_23_unknown_option --> just as expected.
+-
+api-test_24_debug_option --> just as expected.

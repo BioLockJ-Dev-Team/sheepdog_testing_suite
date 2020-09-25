@@ -1,0 +1,3 @@
+Java class name for default module used combined paired read files
+null
+If true Java modules do not run with main BioLockJ Java application. Instead they run on compute nodes on the CLUSTER or AWS environments.

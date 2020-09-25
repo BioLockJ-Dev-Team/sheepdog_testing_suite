@@ -1,0 +1,1 @@
+CMD: java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar biolockj.api.BioLockJ_API listModules

@@ -1,0 +1,17 @@
+ ---------> Execute CMD [  Launcher -a configFile/example.properties ]
+aws = true
+Using configFile/example.properties as the config file.
+Using configFile/example.properties as the config file.
+Warning: The blj_functions library is deprecated.
+Warning: It will be removed as of version v1.4.0.
+Warning: The blj_functions library is deprecated.
+Warning: It will be removed as of version v1.4.0.
+
+ ---------> Execute CMD [  launch_aws -a configFile/example.properties  ]
+aws = true
+Using configFile/example.properties as the config file.
+KEY CMD: run_aws configFile/example.properties
+
+STANDARD_ERR:
+This feature is under active development...
+KEY CMD: /Users/ieclabau/git/BioLockJ/script/launch_aws  -a configFile/example.properties
