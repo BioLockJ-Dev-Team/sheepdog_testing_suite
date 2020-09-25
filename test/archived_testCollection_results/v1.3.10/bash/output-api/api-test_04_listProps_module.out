@@ -1,0 +1,12 @@
+cluster.batchCommand
+cluster.jobHeader
+cluster.modules
+cluster.prologue
+cluster.statusCommand
+docker.saveContainerOnExit
+docker.verifyImage
+script.defaultHeader
+script.numThreads
+script.numWorkers
+script.permissions
+script.timeout

@@ -1,0 +1,7 @@
+false
+
+STANDARD_ERR:
+[ script.numThreads=foo ] 
+Current value "foo" does not meet format requirements!
+Property only accepts integer values: For input string: "foo"
+Restart pipeline after updating the property value in your config file.

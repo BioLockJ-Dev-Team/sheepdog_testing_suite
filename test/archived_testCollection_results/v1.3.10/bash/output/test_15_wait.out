@@ -1,0 +1,7 @@
+ ---------> Execute CMD [  Launcher --wait-for-start configFile/example.properties ]
+wait-for-start = true
+Using configFile/example.properties as the config file.
+ ---------> Execute CMD [  JavaLaunchProcess --wait-for-start configFile/example.properties ]
+wait-for-start = true
+Using configFile/example.properties as the config file.
+KEY CMD:  nohup java -cp /Users/ieclabau/git/BioLockJ/dist/BioLockJ.jar biolockj.BioLockJ -projectDir /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines -config /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/example.properties

@@ -1,0 +1,9 @@
+---------> Execute CMD [ Launcher --docker --env-var SHEP=<SHEP> <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+env-var = SHEP=<SHEP>
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
+---------> Execute CMD [ DockerLaunchProcess --docker --env-var SHEP=<SHEP> <SHEP>/test/bash/configFile/example.properties ]
+docker = true
+env-var = SHEP=<SHEP>
+Using <SHEP>/test/bash/configFile/example.properties as the config file.
+KEY CMD: docker run --rm -d -e BLJ=<BLJ> -e SHEP=<SHEP> -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,source=<SHEP>/MockMain/pipelines,target=/mnt/efs/pipelines --mount type=bind,source=<SHEP>/test/bash/configFile,target=/mnt/efs/vol_1 --mount type=bind,source=<SHEP>/test/bash/expected,target=/mnt/efs/vol_2 biolockjdevteam/biolockj_controller:<VERSION> java -cp /app/biolockj/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

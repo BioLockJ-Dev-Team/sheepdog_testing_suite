@@ -1,0 +1,29 @@
+Initializing BioLockJ.
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+
+RESTART_DIR: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Sep24
+MASTER_PROP: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Sep24/MASTER_restartWithWait_2020Sep24.properties
+Starting reset process... 
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Sep24
+Reseting module 00_ImportMetadata and any subsequent modules...
+Removed status flag: biolockjStarted
+Reset complete.
+Initializing BioLockJ.
+Restarting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/restartWithWait_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+

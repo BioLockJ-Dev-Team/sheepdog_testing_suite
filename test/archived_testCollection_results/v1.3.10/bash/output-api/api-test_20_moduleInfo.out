@@ -1,0 +1,20 @@
+[
+  {
+    "menuPlacement": [
+      "biolockj",
+      "module",
+      "assembly",
+      "GenomeAssembly"
+    ],
+    "citation": "checkM database\nhttps://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz\nHMMER\nhttp://eddylab.org/software/hmmer/hmmer.tar.gz\nMASH\nhttps://github.com/marbl/Mash/releases/download/v2.2/mash-Linux64-v2.2.tar\nMetabat2\nhttps://bitbucket.org/berkeleylab/metabat/downloads/metabat-static-binary-linux-x64_v2.12.1.tar.gz\nMetaSPAdes\nhttps://github.com/ablab/spades/releases/download/v3.13.0/SPAdes-3.13.0-Linux.tar.gz\nPPLACER\nhttps://github.com/matsen/pplacer/releases/download/v1.1.alpha19/pplacer-linux-v1.1.alpha19.zip\nPRODIGAL\nhttps://github.com/hyattpd/Prodigal/releases/download/v2.6.3/prodigal.linux\n\nModule developed by Shan Sun\nBioLockJ v1.3.10",
+    "usage": "#BioModule biolockj.module.assembly.GenomeAssembly",
+    "pre-req modules": [],
+    "description": "Assemble WGS sequences with MetaSPAdes, bin contigs with Metabat2 and check quality with checkM.",
+    "details": "",
+    "post-req modules": [],
+    "title": "GenomeAssembly",
+    "properties": [
+      {
+        "property": "cluster.batchCommand",
+        "type": "string",
+        "description": "Terminal command used to submit jobs on the cluster"

@@ -1,0 +1,47 @@
+Most recent sheepdog commit: v1.3.9-14-gcca3186
+Most recent BioLockJ commit: v1.3.10-rc-1-g97f31d5d
+ Test 1 ---> biolockj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Initializing BioLockJ.
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+
+It is running....Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2020Sep24
+-->It completed.
+ Test 2 ---> biolockj --blj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Docker container id: b6c79854ab26eed7ad42688c0b2b653ce424f53d1922006eaba740eb181d87cb
+Initializing BioLockJ..
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+
+It is running....................................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2020Sep24
+-->It completed.
+ Test 3 ---> biolockj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+Docker container id: 693ffdb142d16cfd7389ab931295e79a879ece00f8a5d3fd0ece081337abdc23
+Initializing BioLockJ..
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+Pipeline is running.
+
+
+It is running...........................................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2020Sep24
+-->It completed.
+Ran 3 basic launch process tests, all PASSED.

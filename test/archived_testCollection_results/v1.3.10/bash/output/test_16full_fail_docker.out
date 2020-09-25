@@ -1,0 +1,15 @@
+Docker container id: aa1e58124ade190a9f6a7c45f618717d8a238bee99fe950b8ca5e63b78e893fe
+Initializing BioLockJ..
+Building pipeline: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/fastFail_2_2020Sep24
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj       -> Move to pipeline output directory
+
+Fetching pipeline status 
+
+
+BioLockJ has stopped.
+
+ERROR TYPE:    BioLockJException
+ERROR MESSAGE: Helpful message for the user.
+
+
