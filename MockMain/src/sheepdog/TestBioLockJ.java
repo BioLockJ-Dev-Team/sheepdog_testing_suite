@@ -299,7 +299,7 @@ public class TestBioLockJ
 	
 	protected static String getJarVersion() {
 		String version = "";
-		String cmd = "java -jar " + replaceEnvVar(BLJ_JAR) + " --version";
+		String cmd = "java -cp " + replaceEnvVar(BLJ_JAR) + " biolockj.BioLockJ --version";
 		try {
 			final Process p = Runtime.getRuntime().exec( cmd );
 			final BufferedReader br = new BufferedReader( new InputStreamReader( p.getInputStream() ) );
