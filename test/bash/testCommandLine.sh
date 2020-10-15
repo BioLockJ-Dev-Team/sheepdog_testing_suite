@@ -323,10 +323,10 @@ sleep 1
 
 
 id=test_17full_restart
-biolockj --external-modules ${SHEP}/MockMain/dist \
-	${SHEP}/test/bash/configFile/restartWithWait.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+biolockj -f --external-modules ${SHEP}/MockMain/dist \
+	${SHEP}/test/bash/configFile/restartWithWait.properties 1> /dev/null 2>/dev/null
 RESTART_DIR=$(last-pipeline)
-echo "RESTART_DIR: $RESTART_DIR" 1>> $OUT/${id}.out
+echo "RESTART_DIR: $RESTART_DIR" 1> $OUT/${id}.out 2>$OUT/${id}.err
 MASTER_PROP=$(ls $RESTART_DIR/MASTER*.properties)
 echo "MASTER_PROP: $MASTER_PROP" 1>> $OUT/${id}.out
 echo "configToFail.fail=N" >> $MASTER_PROP
@@ -380,8 +380,8 @@ check_it
 id=test_21_cd-blj
 rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
 #alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
-biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-cd $(last-pipeline); quick_pipeline_view  1>> $OUT/${id}.out 2>>$OUT/${id}.err
+biolockj -f $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1> /dev/null 2>/dev/null
+cd $(last-pipeline); quick_pipeline_view  1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
@@ -389,14 +389,19 @@ rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
 id=test_25_unusedProps_repeats
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
+sleep 1
 echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+sleep 1
 echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.out
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+sleep 1
 echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+sleep 1
 echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.out
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+sleep 1
 echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it

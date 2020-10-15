@@ -16,6 +16,7 @@ aws.s3TransferTimeout
 aws.saveCloud
 aws.stack
 aws.walltime
+biolockj.version
 cluster.batchCommand
 cluster.host
 cluster.jobHeader
@@ -29,6 +30,7 @@ demultiplexer.strategy
 docker.imageName
 docker.imageOwner
 docker.imageTag
+docker.mountSock
 docker.saveContainerOnExit
 docker.verifyImage
 exe.Rscript
@@ -67,11 +69,13 @@ pipeline.disableAddImplicitModules
 pipeline.disableAddPreReqModules
 pipeline.downloadDir
 pipeline.env
+pipeline.envVars
 pipeline.inputTypes
 pipeline.limitDebugClasses
 pipeline.logLevel
 pipeline.permissions
 pipeline.setSeed
+pipeline.useEnvVars
 pipeline.userProfile
 qiime.alphaMetrics
 qiime.plotAlphaMetrics
@@ -101,6 +105,7 @@ report.scarceSampleCutoff
 report.taxonomyLevels
 report.unclassifiedTaxa
 script.defaultHeader
+script.fileRefreshDelay
 script.numThreads
 script.numWorkers
 script.permissions

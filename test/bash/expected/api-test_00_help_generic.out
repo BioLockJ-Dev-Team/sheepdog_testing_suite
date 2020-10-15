@@ -30,6 +30,9 @@ flag indicating that all messages should go to standard err, including some that
 
 query:
 
+last-pipeline
+Returns the path to the most recent pipeline.
+
 listModules [ --external-modules <dir> ]
 Returns a list of classpaths to the classes that extend BioModule.
 
