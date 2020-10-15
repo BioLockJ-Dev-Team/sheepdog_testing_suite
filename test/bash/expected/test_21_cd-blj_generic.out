@@ -1,14 +1,3 @@
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
-cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
-
-Pipeline is running.
-
-
 Moved to most recent pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
 00_ImportMetadata
 01_RegisterNumReads

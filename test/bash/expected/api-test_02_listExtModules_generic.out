@@ -58,6 +58,7 @@ biolockj.module.seq.SeqFileValidator
 biolockj.module.seq.TrimPrimers
 sheepdog.modules.CheckCountTable
 sheepdog.modules.CheckNormalizationTable
+sheepdog.modules.CheckPdfAndTemp
 sheepdog.modules.CheckPipelineFiles
 sheepdog.modules.CheckPipelineName
 sheepdog.modules.CheckShannon

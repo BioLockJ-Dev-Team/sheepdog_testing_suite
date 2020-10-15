@@ -44,5 +44,6 @@ biolockj.module.seq.PearMergeReads
 biolockj.module.seq.RarefySeqs
 biolockj.module.seq.SeqFileValidator
 biolockj.module.seq.TrimPrimers
+sheepdog.modules.CheckPdfAndTemp
 sheepdog.modules.CopyMasterProps
 testBash.PipelineTime

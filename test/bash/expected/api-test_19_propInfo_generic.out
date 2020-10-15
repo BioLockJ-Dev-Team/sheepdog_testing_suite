@@ -90,6 +90,11 @@
 "description": ""
 },
 {
+"property": "biolockj.version",
+"type": "string",
+"description": "Property giving the biolockj version that was used to generate the config file."
+},
+{
 "property": "cluster.batchCommand",
 "type": "string",
 "description": "Terminal command used to submit jobs on the cluster"
@@ -155,6 +160,12 @@
 "property": "docker.imageTag",
 "type": "string",
 "description": "indicate specific version of Docker images"
+},
+{
+"property": "docker.mountSock",
+"description": "should /var/docker/docker.sock be mounted for modules.",
+"default": "N",
+"type": "boolean"
 },
 {
 "property": "docker.saveContainerOnExit",
@@ -361,6 +372,12 @@
 "type": "string"
 },
 {
+"property": "pipeline.envVars",
+"description": "list of variables that should be passed into the runtime environment for all modules.",
+"default": "BLJ",
+"type": "list"
+},
+{
 "property": "pipeline.inputTypes",
 "type": "list",
 "description": "List of file types. This manually overrides the recommended auto-detection."
@@ -386,6 +403,12 @@
 "property": "pipeline.setSeed",
 "type": "integer",
 "description": "set the seed for a random process. Must be positive integer."
+},
+{
+"property": "pipeline.useEnvVars",
+"description": "when evaluating variables in the ${VAR} format, should environment variables be used. Regardless, priority is given to variable values defined in the config file.",
+"default": "Y",
+"type": "boolean"
 },
 {
 "property": "pipeline.userProfile",
@@ -483,8 +506,8 @@
 },
 {
 "property": "r.timeout",
-"description": "the # minutes before R Script will time out and fail; If undefined, no timeout is used.",
-"default": "10",
+"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt basicRealTest_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt basicRealTest_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt configFile empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testAPI_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testAPI_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testCommandLine_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testCommandLine_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
+"default": "0",
 "type": "integer"
 },
 {
@@ -550,6 +573,12 @@
 "description": "Store default script header for MAIN script and locally run WORKER scripts.",
 "default": "#!/bin/bash",
 "type": "string"
+},
+{
+"property": "script.fileRefreshDelay",
+"description": "delay this many seconds after scripts complete to allow the file system to reflect changes from a worker node/container/virtual machine.",
+"default": "1",
+"type": "integer"
 },
 {
 "property": "script.numThreads",
