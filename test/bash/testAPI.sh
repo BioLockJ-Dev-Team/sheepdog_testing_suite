@@ -246,4 +246,11 @@ biolockj-api listMounts --config $SHEP/test/bash/dockerMounts/apple/deepdirs.pro
 echo '' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo 'See three dirs: bash, feature and module; bash contains ape and apple' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj-api listMounts --config $SHEP/test/bash/dockerMounts/apple/defaultProps.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+
+id=api-test_26_dockerVols
+# this test should probably go under test/features. ...one day.
+echo 'See that this pipeline passes check dependencies. It maps many folders. In an ealier bug, ' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo 'that cuased biolockj to look for the required script in ../b10/hello.sh even though it ' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo 'is given in the config as ../b1/hello.sh' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj --blj -d ${SHEP}/test/bash/dockerMounts/ape/bee/manyDirs.config 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it

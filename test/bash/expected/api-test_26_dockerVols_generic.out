@@ -1,0 +1,32 @@
+See that this pipeline passes check dependencies. It maps many folders. In an ealier bug,
+that cuased biolockj to look for the required script in ../b10/hello.sh even though it
+is given in the config as ../b1/hello.sh
+Docker container id: <ID_STRING>
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/manyDirs_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj -> Move to pipeline output directory
+
+Fetching pipeline status
+
+Warning: see "unverified.properties"
+
+### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
+#
+b1=../b1
+b2=../b2
+b3=../b3
+b4=../b4
+b5=../b5
+b6=../b6
+b7=../b7
+b8=../b8
+b9=../b9
+bx=../bx
+by=../by
+bz=../bz
+
+
+Pipeline is running.
+
+
