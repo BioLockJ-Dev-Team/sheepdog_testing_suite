@@ -1,0 +1,9 @@
+See three dirs, ape, apple and feature
+<SHEP>/test/bash/dockerMounts/ape
+<SHEP>/test/bash/dockerMounts/apple
+<SHEP>/test/feature
+
+See three dirs: bash, feature and module; bash contains ape and apple
+<SHEP>/test/bash
+<SHEP>/test/feature
+<SHEP>/test/module
