@@ -239,3 +239,11 @@ check_it
 id=api-test_24_debug_option
 biolockj-api isValidProp --property script.numThreads --value 1 --module $MOD --verbose  1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
+
+id=api-test_25_dockerVols
+echo 'See three dirs, ape, apple and feature' 1> $OUT/${id}.out 2> $OUT/${id}.err
+biolockj-api listMounts --config $SHEP/test/bash/dockerMounts/apple/deepdirs.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo '' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo 'See three dirs: bash, feature and module; bash contains ape and apple' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+biolockj-api listMounts --config $SHEP/test/bash/dockerMounts/apple/defaultProps.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+check_it

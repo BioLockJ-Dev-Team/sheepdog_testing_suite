@@ -1,0 +1,4 @@
+These deeply nested directories are to test the volume mounting process.
+If a directory is mounted, all of its contents are recursively available, 
+so there is no need to map any child directories.
+
