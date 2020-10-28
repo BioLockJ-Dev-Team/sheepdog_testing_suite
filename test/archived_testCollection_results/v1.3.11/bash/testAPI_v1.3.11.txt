@@ -1,0 +1,80 @@
+Most recent sheepdog commit: v1.3.11-rc
+Most recent BioLockJ commit: v1.3.11
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api
+-
+api-test_00_bash_noArgs --> just as expected.
+-
+api-test_00_bash_help --> just as expected.
+-
+api-test_01_bash_listModules --> just as expected.
+-
+api-test_12_bash_isValidProp_mod --> just as expected.
+-
+api-test_00_noArgs --> just as expected.
+-
+api-test_00_help --> just as expected.
+-
+api-test_01_listModules --> just as expected.
+-
+api-test_02_listExtModules --> just as expected.
+-
+api-test_02_listApiModules --> just as expected.
+-
+api-test_03_listExtApiModules --> just as expected.
+-
+api-test_04_listProps_module --> just as expected.
+-
+api-test_05_listProps_backbone --> just as expected.
+-
+api-test_06_listAllProps --> just as expected.
+-
+api-test_07_listAllExtProps --> just as expected.
+-
+api-test_08_propType_mod --> just as expected.
+-
+api-test_09_propType --> just as expected.
+-
+api-test_09_propType_bad --> just as expected.
+-
+api-test_10_descProp_mod --> just as expected.
+-
+api-test_11_descProp --> just as expected.
+-
+api-test_11_descProp_bad --> just as expected.
+-
+api-test_12_isValidProp_mod --> just as expected.
+-
+api-test_12_isValidProp_mod_msg --> just as expected.
+-
+api-test_13_isValidProp --> just as expected.
+-
+api-test_13_isValidProp_msg --> just as expected.
+-
+api-test_17_propValue --> just as expected.
+-
+api-test_18_propValue_config --> just as expected.
+-
+oh no! examine api-test_19_propInfo !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+index dd93b95..f9ee8bb 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/api-test_19_propInfo_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output-api/api-test_19_propInfo_generic.out
+@@ -506,7 +506,7 @@
+ },
+ {
+ "property": "r.timeout",
+-"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt basicRealTest_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt basicRealTest_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt configFile empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testAPI_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testAPI_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testCommandLine_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testCommandLine_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
++"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt basicRealTest_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt basicRealTest_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt configFile empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testAPI_v1.3.11_NOT_IN_GIT.txt testAPI_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testAPI_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testCommandLine_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testCommandLine_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
+ "default": "0",
+ "type": "integer"
+ },
+-
+api-test_20_moduleInfo --> just as expected.
+-
+api-test_21_moduleExtInfo --> just as expected.
+-
+api-test_22_unknown_query --> just as expected.
+-
+api-test_23_unknown_option --> just as expected.
+-
+api-test_24_debug_option --> just as expected.

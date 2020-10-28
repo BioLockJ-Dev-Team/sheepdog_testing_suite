@@ -1,0 +1,229 @@
+Most recent sheepdog commit: v1.3.11-rc
+Most recent BioLockJ commit: v1.3.11
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output
+-
+test_00 --> just as expected.
+-
+test_01_v --> just as expected.
+-
+test_01_version --> just as expected.
+-
+test_02_h --> just as expected.
+-
+test_02_help --> just as expected.
+-
+test_03_typo --> just as expected.
+-
+test_03_typos --> just as expected.
+-
+test_03_longTypo --> just as expected.
+-
+test_04_f --> just as expected.
+-
+test_04_foreground --> just as expected.
+-
+test_04_fd --> just as expected.
+-
+test_05_basic --> just as expected.
+-
+test_6_r --> just as expected.
+-
+test_6_restart --> just as expected.
+-
+test_6_restart_nonDir --> just as expected.
+-
+test_7_d --> just as expected.
+-
+test_7_docker --> just as expected.
+-
+test_7full_d --> just as expected.
+-
+test_7full_docker --> just as expected.
+-
+test_8_a --> just as expected.
+-
+test_8_aws --> just as expected.
+-
+test_9_aws_g --> just as expected.
+-
+test_9_aws_gui --> just as expected.
+-
+test_10_pass --> just as expected.
+-
+test_10_pass_noArg1 --> just as expected.
+-
+test_10_pass_noArg2 --> just as expected.
+-
+test_11_b --> just as expected.
+-
+test_11_blj --> just as expected.
+-
+test_12_e --> just as expected.
+-
+test_12_es --> just as expected.
+-
+test_12_es_badForm --> just as expected.
+-
+test_12_env-var --> just as expected.
+-
+test_13_ext_mods --> just as expected.
+-
+test_13_ext_mods_docker --> just as expected.
+-
+test_14_g --> just as expected.
+-
+test_14_gui --> just as expected.
+-
+test_15_w --> just as expected.
+-
+test_15_wait --> just as expected.
+-
+test_20_precheck --> just as expected.
+-
+test_20_p --> just as expected.
+-
+test_20_rp --> just as expected.
+-
+test_20_ap --> just as expected.
+-
+test_24_u --> just as expected.
+-
+test_24_ud --> just as expected.
+-
+test_24_unused --> just as expected.
+-
+test_24_ur --> just as expected.
+-
+test_16full_fail --> just as expected.
+-
+test_16full_fail_docker --> just as expected.
+-
+test_17full_restart --> just as expected.
+-
+test_18_jar_help --> just as expected.
+-
+oh no! examine test_20_precheck_repeats !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_20_precheck_repeats_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_20_precheck_repeats_generic.out
+index 0abc345..581cc74 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_20_precheck_repeats_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_20_precheck_repeats_generic.out
+@@ -103,9 +103,8 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ 
+ 
+ # new precheck replaces old one with the same name (after success)
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/configToFail_2_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+@@ -116,9 +115,9 @@ Precheck is complete. No problems were found in this pipeline configuration.
+ 
+ 
+ # standard pipeline replaces precheck pipeline (after success)
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
++Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_2_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/configToFail_2_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+-
+test_21_cd-blj --> just as expected.
+-
+oh no! examine test_25_unusedProps_repeats !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_25_unusedProps_repeats_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_25_unusedProps_repeats_generic.out
+index 54a3afc..71a2969 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_25_unusedProps_repeats_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_25_unusedProps_repeats_generic.out
+@@ -21,9 +21,8 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ 
+ # new precheck pipeline replaces an old one by the same name (after failure)
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+@@ -45,9 +44,9 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ 
+ # standard pipeline replaces precheck pipeline (after failure)
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
++Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+@@ -62,7 +61,7 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ # new precheck cannot replace a standard pipeline
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_3_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+@@ -84,9 +83,9 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ 
+ # standard pipeline replaces precheck pipeline
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
++Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_3_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_3_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+@@ -101,7 +100,7 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ # new precheck cannot replace a standard pipeline
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_3_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_4_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+-
+test_26_noneUnused --> just as expected.
+-
+test_26_showsUnused --> just as expected.
+-
+oh no! examine test_26_showsUnusedWithFailure !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_showsUnusedWithFailure_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_showsUnusedWithFailure_generic.out
+index fe9d470..6eb3b7d 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_26_showsUnusedWithFailure_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_26_showsUnusedWithFailure_generic.out
+@@ -15,9 +15,8 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ 
+ # With -u, the unused props are shown (despite failing in check dependencies)
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+@@ -40,9 +39,9 @@ ERROR MESSAGE: Helpful message for the user.
+ 
+ 
+ # With no args, the unused props are not shown because there is a failure in check dependencies
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
++Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ <Initializing BioLockJ<...>>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ After an initial status check, all pipeline updates will be in the pipeline folder.
+ cd-blj -> Move to pipeline output directory
+ 
+
+Ran 57 tests on bash command line args.
+There were 3 tests that FAILED !!!
