@@ -1,0 +1,2 @@
+ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/stop/stop.config	1	StopModuleException	standard case

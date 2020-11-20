@@ -50,6 +50,7 @@ runTestSet ${DIR}/rPValHistograms/testList_pValHist.txt
 runTestSet ${DIR}/rmarkdown/testList_rmd.txt
 runTestSet ${DIR}/shannon/shannonTestList.txt
 runTestSet ${DIR}/sraDownload/sraDownload_testList.txt
+runTestSet ${DIR}/stop/testList_stop.txt
 runTestSet ${DIR}/validationUtil/validation_testList.txt
 
 # full local pipeline

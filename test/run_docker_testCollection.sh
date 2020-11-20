@@ -46,6 +46,7 @@ runTestSet ${DIR}/rmarkdown/docker_testList_rmd.txt
 runTestSet ${DIR}/shannon/docker_shannonTestList.txt
 runTestSet ${DIR}/sraDownload/docker_sraDownload_testList.txt
 runTestSet ${DIR}/sraMetaData/docker_sraMetaData_testList.txt
+runTestSet ${DIR}/stop/docker_testList_stop.txt
 runTestSet ${DIR}/validationUtil/docker_validation_testList.txt
 
 # full pipeline
