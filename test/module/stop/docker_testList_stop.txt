@@ -1,0 +1,2 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/stop/stop.config	 --blj --docker 	1	StopModuleException	standard case
