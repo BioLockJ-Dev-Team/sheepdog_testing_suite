@@ -37,6 +37,7 @@ runTestSet ${DIR}/kraken2/docker_k2_testList.txt
 runTestSet ${DIR}/kraken2Parser/docker_Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/docker_normTaxa_testList.txt
 runTestSet ${DIR}/rdp/docker_RdpTestList.txt
+runTestSet ${DIR}/rdpHierParser/docker_testList_rdpHierParser.txt
 runTestSet ${DIR}/rdpParser/docker_RdpParser_TestList.txt
 runTestSet ${DIR}/rPlotMds/docker_testList_rPlotMds.txt
 runTestSet ${DIR}/rPlotEffectSize/docker_testList_rPlotEffectSize.txt

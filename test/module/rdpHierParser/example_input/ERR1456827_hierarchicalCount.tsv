@@ -1,0 +1,205 @@
+taxid	lineage	name	rank	ERR1456827_2.fastq.gz
+0	null	Root	rootrank	2287
+1	Root;rootrank;Bacteria;domain;	Bacteria	domain	2086
+2	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;"	Actinobacteria	phylum	281
+3	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;"	Actinobacteria	class	268
+16	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;"	Actinobacteridae	subclass	218
+17	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;"	Actinomycetales	order	215
+95	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;"	Micrococcineae	suborder	70
+132	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Intrasporangiaceae;family;"	Intrasporangiaceae	family	9
+-133	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Intrasporangiaceae;family;unclassified_Intrasporangiaceae;;"	unclassified_Intrasporangiaceae		9
+190	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Micrococcaceae;family;"	Micrococcaceae	family	13
+198	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Micrococcaceae;family;Renibacterium;genus;"	Renibacterium	genus	1
+-191	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Micrococcaceae;family;unclassified_Micrococcaceae;;"	unclassified_Micrococcaceae		12
+154	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Microbacteriaceae;family;"	Microbacteriaceae	family	5
+-155	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Microbacteriaceae;family;unclassified_Microbacteriaceae;;"	unclassified_Microbacteriaceae		5
+204	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Promicromonosporaceae;family;"	Promicromonosporaceae	family	1
+-205	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;Promicromonosporaceae;family;unclassified_Promicromonosporaceae;;"	unclassified_Promicromonosporaceae		1
+-96	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micrococcineae;suborder;unclassified_Micrococcineae;;"	unclassified_Micrococcineae		42
+35	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Corynebacterineae;suborder;"	Corynebacterineae	suborder	2
+-36	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Corynebacterineae;suborder;unclassified_Corynebacterineae;;"	unclassified_Corynebacterineae		2
+222	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micromonosporineae;suborder;"	Micromonosporineae	suborder	5
+223	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micromonosporineae;suborder;Micromonosporaceae;family;"	Micromonosporaceae	family	5
+227	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micromonosporineae;suborder;Micromonosporaceae;family;Allocatelliglobosispora;genus;"	Allocatelliglobosispora	genus	1
+-224	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Micromonosporineae;suborder;Micromonosporaceae;family;unclassified_Micromonosporaceae;;"	unclassified_Micromonosporaceae		4
+280	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Pseudonocardineae;suborder;"	Pseudonocardineae	suborder	2
+281	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Pseudonocardineae;suborder;Pseudonocardiaceae;family;"	Pseudonocardiaceae	family	2
+-282	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Pseudonocardineae;suborder;Pseudonocardiaceae;family;unclassified_Pseudonocardiaceae;;"	unclassified_Pseudonocardiaceae		2
+254	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Propionibacterineae;suborder;"	Propionibacterineae	suborder	3
+-255	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Propionibacterineae;suborder;unclassified_Propionibacterineae;;"	unclassified_Propionibacterineae		3
+324	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Streptosporangineae;suborder;"	Streptosporangineae	suborder	4
+332	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Streptosporangineae;suborder;Streptosporangiaceae;family;"	Streptosporangiaceae	family	1
+-333	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Streptosporangineae;suborder;Streptosporangiaceae;family;unclassified_Streptosporangiaceae;;"	unclassified_Streptosporangiaceae		1
+344	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Streptosporangineae;suborder;Thermomonosporaceae;family;"	Thermomonosporaceae	family	1
+349	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Streptosporangineae;suborder;Thermomonosporaceae;family;Spirillospora;genus;"	Spirillospora	genus	1
+62	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Frankineae;suborder;"	Frankineae	suborder	2
+65	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Frankineae;suborder;Cryptosporangiaceae;family;"	Cryptosporangiaceae	family	2
+3104	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Frankineae;suborder;Cryptosporangiaceae;family;Jatrophihabitans;genus;"	Jatrophihabitans	genus	2
+-325	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;Streptosporangineae;suborder;unclassified_Streptosporangineae;;"	unclassified_Streptosporangineae		2
+-18	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;Actinomycetales;order;unclassified_Actinomycetales;;"	unclassified_Actinomycetales		127
+-17	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Actinobacteridae;subclass;unclassified_Actinobacteridae;;"	unclassified_Actinobacteridae		3
+386	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;"	Rubrobacteridae	subclass	23
+391	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Solirubrobacterales;order;"	Solirubrobacterales	order	10
+392	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Solirubrobacterales;order;Conexibacteraceae;family;"	Conexibacteraceae	family	6
+393	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Solirubrobacterales;order;Conexibacteraceae;family;Conexibacter;genus;"	Conexibacter	genus	6
+396	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Solirubrobacterales;order;Solirubrobacteraceae;family;"	Solirubrobacteraceae	family	1
+397	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Solirubrobacterales;order;Solirubrobacteraceae;family;Solirubrobacter;genus;"	Solirubrobacter	genus	1
+2792	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Gaiellales;order;"	Gaiellales	order	10
+2793	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Gaiellales;order;Gaiellaceae;family;"	Gaiellaceae	family	10
+2794	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Gaiellales;order;Gaiellaceae;family;Gaiella;genus;"	Gaiella	genus	10
+-392	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;Solirubrobacterales;order;unclassified_Solirubrobacterales;;"	unclassified_Solirubrobacterales		3
+-387	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Rubrobacteridae;subclass;unclassified_Rubrobacteridae;;"	unclassified_Rubrobacteridae		3
+4	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Acidimicrobidae;subclass;"	Acidimicrobidae	subclass	1
+5	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Acidimicrobidae;subclass;Acidimicrobiales;order;"	Acidimicrobiales	order	1
+6	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Acidimicrobidae;subclass;Acidimicrobiales;order;""Acidimicrobineae"";suborder;"	Acidimicrobineae	suborder	1
+12	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Acidimicrobidae;subclass;Acidimicrobiales;order;""Acidimicrobineae"";suborder;Iamiaceae;family;"	Iamiaceae	family	1
+3102	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;Acidimicrobidae;subclass;Acidimicrobiales;order;""Acidimicrobineae"";suborder;Iamiaceae;family;Aquihabitans;genus;"	Aquihabitans	genus	1
+-4	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;Actinobacteria;class;unclassified_Actinobacteria;;"	unclassified_Actinobacteria		26
+841	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;"	Proteobacteria	phylum	222
+842	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;"	Alphaproteobacteria	class	102
+1069	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodospirillales;order;"	Rhodospirillales	order	14
+1070	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodospirillales;order;Acetobacteraceae;family;"	Acetobacteraceae	family	10
+-1071	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodospirillales;order;Acetobacteraceae;family;unclassified_Acetobacteraceae;;"	unclassified_Acetobacteraceae		10
+3308	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodospirillales;order;Reyranella;genus;"	Reyranella	genus	2
+978	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodobacterales;order;"	Rhodobacterales	order	2
+979	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodobacterales;order;Rhodobacteraceae;family;"	Rhodobacteraceae	family	2
+-980	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodobacterales;order;Rhodobacteraceae;family;unclassified_Rhodobacteraceae;;"	unclassified_Rhodobacteraceae		2
+870	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;"	Rhizobiales	order	44
+886	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Bradyrhizobiaceae;family;"	Bradyrhizobiaceae	family	1
+-887	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Bradyrhizobiaceae;family;unclassified_Bradyrhizobiaceae;;"	unclassified_Bradyrhizobiaceae		1
+908	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Hyphomicrobiaceae;family;"	Hyphomicrobiaceae	family	1
+-909	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Hyphomicrobiaceae;family;unclassified_Hyphomicrobiaceae;;"	unclassified_Hyphomicrobiaceae		1
+959	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Rhodobiaceae;family;"	Rhodobiaceae	family	1
+961	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Rhodobiaceae;family;Anderseniella;genus;"	Anderseniella	genus	1
+966	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Xanthobacteraceae;family;"	Xanthobacteraceae	family	1
+969	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;Xanthobacteraceae;family;Labrys;genus;"	Labrys	genus	1
+-871	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhizobiales;order;unclassified_Rhizobiales;;"	unclassified_Rhizobiales		40
+1151	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Sphingomonadales;order;"	Sphingomonadales	order	2
+1158	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Sphingomonadales;order;Sphingomonadaceae;family;"	Sphingomonadaceae	family	2
+-1159	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Sphingomonadales;order;Sphingomonadaceae;family;unclassified_Sphingomonadaceae;;"	unclassified_Sphingomonadaceae		2
+-1070	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;Rhodospirillales;order;unclassified_Rhodospirillales;;"	unclassified_Rhodospirillales		2
+-843	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Alphaproteobacteria;class;unclassified_Alphaproteobacteria;;"	unclassified_Alphaproteobacteria		40
+1175	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;"	Betaproteobacteria	class	64
+1176	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;"	Burkholderiales	order	17
+1240	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;Oxalobacteraceae;family;"	Oxalobacteraceae	family	4
+1250	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;Oxalobacteraceae;family;Telluria;genus;"	Telluria	genus	1
+-1241	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;Oxalobacteraceae;family;unclassified_Oxalobacteraceae;;"	unclassified_Oxalobacteraceae		3
+1206	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;Comamonadaceae;family;"	Comamonadaceae	family	1
+-1207	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;Comamonadaceae;family;unclassified_Comamonadaceae;;"	unclassified_Comamonadaceae		1
+-1177	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;Burkholderiales;order;unclassified_Burkholderiales;;"	unclassified_Burkholderiales		12
+-1176	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Betaproteobacteria;class;unclassified_Betaproteobacteria;;"	unclassified_Betaproteobacteria		47
+1352	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;"	Deltaproteobacteria	class	7
+1429	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;"	Myxococcales	order	6
+1430	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Cystobacterineae;suborder;"	Cystobacterineae	suborder	4
+1438	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Cystobacterineae;suborder;Myxococcaceae;family;"	Myxococcaceae	family	1
+3065	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Cystobacterineae;suborder;Myxococcaceae;family;Aggregicoccus;genus;"	Aggregicoccus	genus	1
+-1431	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Cystobacterineae;suborder;unclassified_Cystobacterineae;;"	unclassified_Cystobacterineae		3
+1452	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Sorangiineae;suborder;"	Sorangiineae	suborder	2
+1453	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Sorangiineae;suborder;Phaselicystidaceae;family;"	Phaselicystidaceae	family	1
+1454	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Sorangiineae;suborder;Phaselicystidaceae;family;Phaselicystis;genus;"	Phaselicystis	genus	1
+1455	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Sorangiineae;suborder;Polyangiaceae;family;"	Polyangiaceae	family	1
+3232	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Myxococcales;order;Sorangiineae;suborder;Polyangiaceae;family;Minicystis;genus;"	Minicystis	genus	1
+1353	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Bdellovibrionales;order;"	Bdellovibrionales	order	1
+1354	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Bdellovibrionales;order;Bacteriovoracaceae;family;"	Bacteriovoracaceae	family	1
+1356	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Deltaproteobacteria;class;Bdellovibrionales;order;Bacteriovoracaceae;family;Peredibacter;genus;"	Peredibacter	genus	1
+1501	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Gammaproteobacteria;class;"	Gammaproteobacteria	class	2
+1826	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Gammaproteobacteria;class;Xanthomonadales;order;"	Xanthomonadales	order	1
+1834	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Gammaproteobacteria;class;Xanthomonadales;order;Xanthomonadaceae;family;"	Xanthomonadaceae	family	1
+-1835	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Gammaproteobacteria;class;Xanthomonadales;order;Xanthomonadaceae;family;unclassified_Xanthomonadaceae;;"	unclassified_Xanthomonadaceae		1
+-1502	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;Gammaproteobacteria;class;unclassified_Gammaproteobacteria;;"	unclassified_Gammaproteobacteria		1
+-842	"Root;rootrank;Bacteria;domain;""Proteobacteria"";phylum;unclassified_""Proteobacteria"";;"	"unclassified_""Proteobacteria"""		47
+2259	Root;rootrank;Bacteria;domain;Firmicutes;phylum;	Firmicutes	phylum	123
+2260	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;	Bacilli	class	77
+2261	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;	Bacillales	order	67
+2308	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Planococcaceae;family;	Planococcaceae	family	14
+-2309	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Planococcaceae;family;unclassified_Planococcaceae;;	unclassified_Planococcaceae		14
+2262	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Alicyclobacillaceae;family;	Alicyclobacillaceae	family	4
+2591	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Alicyclobacillaceae;family;Tumebacillus;genus;	Tumebacillus	genus	2
+2264	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Bacillaceae 1;family;	Bacillaceae 1	family	4
+2576	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Bacillaceae 1;family;Falsibacillus;genus;	Falsibacillus	genus	2
+-2265	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Bacillaceae 1;family;unclassified_Bacillaceae 1;;	unclassified_Bacillaceae 1		2
+2269	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Bacillaceae 2;family;	Bacillaceae 2	family	4
+-2270	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Bacillaceae 2;family;unclassified_Bacillaceae 2;;	unclassified_Bacillaceae 2		4
+-2263	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Alicyclobacillaceae;family;unclassified_Alicyclobacillaceae;;	unclassified_Alicyclobacillaceae		2
+2297	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Paenibacillaceae 1;family;	Paenibacillaceae 1	family	1
+2598	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;Paenibacillaceae 1;family;Saccharibacillus;genus;	Saccharibacillus	genus	1
+-2262	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;Bacillales;order;unclassified_Bacillales;;	unclassified_Bacillales		40
+-2261	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Bacilli;class;unclassified_Bacilli;;	unclassified_Bacilli		10
+2375	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Clostridia;class;	Clostridia	class	3
+2376	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Clostridia;class;Clostridiales;order;	Clostridiales	order	3
+2484	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Clostridia;class;Clostridiales;order;Ruminococcaceae;family;	Ruminococcaceae	family	2
+-2485	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Clostridia;class;Clostridiales;order;Ruminococcaceae;family;unclassified_Ruminococcaceae;;	unclassified_Ruminococcaceae		2
+-2377	Root;rootrank;Bacteria;domain;Firmicutes;phylum;Clostridia;class;Clostridiales;order;unclassified_Clostridiales;;	unclassified_Clostridiales		1
+-2260	Root;rootrank;Bacteria;domain;Firmicutes;phylum;unclassified_Firmicutes;;	unclassified_Firmicutes		43
+817	Root;rootrank;Bacteria;domain;Nitrospirae;phylum;	Nitrospirae	phylum	7
+818	"Root;rootrank;Bacteria;domain;Nitrospirae;phylum;""Nitrospira"";class;"	Nitrospira	class	7
+819	"Root;rootrank;Bacteria;domain;Nitrospirae;phylum;""Nitrospira"";class;""Nitrospirales"";order;"	Nitrospirales	order	7
+820	"Root;rootrank;Bacteria;domain;Nitrospirae;phylum;""Nitrospira"";class;""Nitrospirales"";order;""Nitrospiraceae"";family;"	Nitrospiraceae	family	7
+822	"Root;rootrank;Bacteria;domain;Nitrospirae;phylum;""Nitrospira"";class;""Nitrospirales"";order;""Nitrospiraceae"";family;Nitrospira;genus;"	Nitrospira	genus	7
+2195	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;"	Acidobacteria	phylum	68
+2204	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp1;class;"	Acidobacteria_Gp1	class	43
+2818	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp1;class;Candidatus Koribacter;genus;"	Candidatus Koribacter	genus	20
+2205	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp1;class;Gp1;genus;"	Gp1	genus	1
+-2205	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp1;class;unclassified_Acidobacteria_Gp1;;"	unclassified_Acidobacteria_Gp1		22
+2210	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp4;class;"	Acidobacteria_Gp4	class	5
+2817	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp4;class;Blastocatella;genus;"	Blastocatella	genus	2
+-2211	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp4;class;unclassified_Acidobacteria_Gp4;;"	unclassified_Acidobacteria_Gp4		3
+2234	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp16;class;"	Acidobacteria_Gp16	class	1
+2235	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp16;class;Gp16;genus;"	Gp16	genus	1
+2208	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp3;class;"	Acidobacteria_Gp3	class	12
+2819	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp3;class;Candidatus Solibacter;genus;"	Candidatus Solibacter	genus	6
+3101	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp3;class;Paludibaculum;genus;"	Paludibaculum	genus	2
+-2209	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp3;class;unclassified_Acidobacteria_Gp3;;"	unclassified_Acidobacteria_Gp3		4
+2214	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp6;class;"	Acidobacteria_Gp6	class	2
+2215	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;Acidobacteria_Gp6;class;Gp6;genus;"	Gp6	genus	2
+824	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;"	Planctomycetes	phylum	17
+825	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;"	Planctomycetia	class	16
+826	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;Planctomycetales;order;"	Planctomycetales	order	12
+827	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;Planctomycetales;order;Planctomycetaceae;family;"	Planctomycetaceae	family	12
+829	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;Planctomycetales;order;Planctomycetaceae;family;Gemmata;genus;"	Gemmata	genus	3
+2894	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;Planctomycetales;order;Planctomycetaceae;family;Aquisphaera;genus;"	Aquisphaera	genus	1
+-828	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;Planctomycetales;order;Planctomycetaceae;family;unclassified_Planctomycetaceae;;"	unclassified_Planctomycetaceae		8
+-826	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;Planctomycetia;class;unclassified_Planctomycetia;;"	unclassified_Planctomycetia		4
+-825	"Root;rootrank;Bacteria;domain;""Planctomycetes"";phylum;unclassified_""Planctomycetes"";;"	"unclassified_""Planctomycetes"""		1
+422	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;"	Bacteroidetes	phylum	22
+565	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;"	Sphingobacteriia	class	17
+566	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;"	Sphingobacteriales	order	17
+567	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Chitinophagaceae;family;"	Chitinophagaceae	family	15
+582	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Chitinophagaceae;family;Segetibacter;genus;"	Segetibacter	genus	3
+573	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Chitinophagaceae;family;Flavisolibacter;genus;"	Flavisolibacter	genus	2
+579	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Chitinophagaceae;family;Niastella;genus;"	Niastella	genus	1
+-568	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Chitinophagaceae;family;unclassified_Chitinophagaceae;;"	unclassified_Chitinophagaceae		9
+648	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Sphingobacteriaceae;family;"	Sphingobacteriaceae	family	2
+656	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Sphingobacteriaceae;family;Sphingobacterium;genus;"	Sphingobacterium	genus	1
+-649	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;Sphingobacteriia;class;""Sphingobacteriales"";order;Sphingobacteriaceae;family;unclassified_Sphingobacteriaceae;;"	unclassified_Sphingobacteriaceae		1
+694	"Root;rootrank;Bacteria;domain;""Chloroflexi"";phylum;"	Chloroflexi	phylum	3
+721	"Root;rootrank;Bacteria;domain;""Chloroflexi"";phylum;Ktedonobacteria;class;"	Ktedonobacteria	class	2
+722	"Root;rootrank;Bacteria;domain;""Chloroflexi"";phylum;Ktedonobacteria;class;Ktedonobacterales;order;"	Ktedonobacterales	order	2
+723	"Root;rootrank;Bacteria;domain;""Chloroflexi"";phylum;Ktedonobacteria;class;Ktedonobacterales;order;Ktedonobacteraceae;family;"	Ktedonobacteraceae	family	2
+724	"Root;rootrank;Bacteria;domain;""Chloroflexi"";phylum;Ktedonobacteria;class;Ktedonobacterales;order;Ktedonobacteraceae;family;Ktedonobacter;genus;"	Ktedonobacter	genus	2
+-2196	"Root;rootrank;Bacteria;domain;""Acidobacteria"";phylum;unclassified_""Acidobacteria"";;"	"unclassified_""Acidobacteria"""		5
+2164	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;"	Verrucomicrobia	phylum	3
+2165	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Opitutae;class;"	Opitutae	class	1
+2166	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Opitutae;class;Opitutales;order;"	Opitutales	order	1
+2167	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Opitutae;class;Opitutales;order;Opitutaceae;family;"	Opitutaceae	family	1
+2169	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Opitutae;class;Opitutales;order;Opitutaceae;family;Opitutus;genus;"	Opitutus	genus	1
+2176	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Spartobacteria;class;"	Spartobacteria	class	1
+-2177	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Spartobacteria;class;unclassified_Spartobacteria;;"	unclassified_Spartobacteria		1
+2179	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Subdivision3;class;"	Subdivision3	class	1
+2180	"Root;rootrank;Bacteria;domain;""Verrucomicrobia"";phylum;Subdivision3;class;Subdivision3_genera_incertae_sedis;genus;"	Subdivision3_genera_incertae_sedis	genus	1
+-3	"Root;rootrank;Bacteria;domain;""Actinobacteria"";phylum;unclassified_""Actinobacteria"";;"	"unclassified_""Actinobacteria"""		13
+-423	"Root;rootrank;Bacteria;domain;""Bacteroidetes"";phylum;unclassified_""Bacteroidetes"";;"	"unclassified_""Bacteroidetes"""		5
+-695	"Root;rootrank;Bacteria;domain;""Chloroflexi"";phylum;unclassified_""Chloroflexi"";;"	"unclassified_""Chloroflexi"""		1
+667	"Root;rootrank;Bacteria;domain;""Chlamydiae"";phylum;"	Chlamydiae	phylum	2
+668	"Root;rootrank;Bacteria;domain;""Chlamydiae"";phylum;Chlamydiia;class;"	Chlamydiia	class	2
+669	"Root;rootrank;Bacteria;domain;""Chlamydiae"";phylum;Chlamydiia;class;Chlamydiales;order;"	Chlamydiales	order	2
+673	"Root;rootrank;Bacteria;domain;""Chlamydiae"";phylum;Chlamydiia;class;Chlamydiales;order;Parachlamydiaceae;family;"	Parachlamydiaceae	family	1
+-674	"Root;rootrank;Bacteria;domain;""Chlamydiae"";phylum;Chlamydiia;class;Chlamydiales;order;Parachlamydiaceae;family;unclassified_Parachlamydiaceae;;"	unclassified_Parachlamydiaceae		1
+-670	"Root;rootrank;Bacteria;domain;""Chlamydiae"";phylum;Chlamydiia;class;Chlamydiales;order;unclassified_Chlamydiales;;"	unclassified_Chlamydiales		1
+-2	Root;rootrank;Bacteria;domain;unclassified_Bacteria;;	unclassified_Bacteria		1338
+-1	Root;rootrank;unclassified_Root;;	unclassified_Root		196
+1966	Root;rootrank;Archaea;domain;	Archaea	domain	5
+2134	"Root;rootrank;Archaea;domain;""Thaumarchaeota"";phylum;"	Thaumarchaeota	phylum	5
+2796	"Root;rootrank;Archaea;domain;""Thaumarchaeota"";phylum;Nitrososphaerales;order;"	Nitrososphaerales	order	5
+2797	"Root;rootrank;Archaea;domain;""Thaumarchaeota"";phylum;Nitrososphaerales;order;Nitrososphaeraceae;family;"	Nitrososphaeraceae	family	5
+2798	"Root;rootrank;Archaea;domain;""Thaumarchaeota"";phylum;Nitrososphaerales;order;Nitrososphaeraceae;family;Nitrososphaera;genus;"	Nitrososphaera	genus	5

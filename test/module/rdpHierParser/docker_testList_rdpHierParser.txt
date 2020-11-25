@@ -1,0 +1,3 @@
+ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
+${SHEP}/test/module/rdpHierParser/docker_rdpHierParser.config	--blj --docker -e SHEP=${SHEP}	3	BioLockJ_Complete	basic defaults
+${SHEP}/test/module/rdpHierParser/justHierParser.config	 --blj --docker 	1	BioLockJ_Complete	isolated module
