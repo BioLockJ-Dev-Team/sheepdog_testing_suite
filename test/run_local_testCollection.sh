@@ -36,6 +36,7 @@ runTestSet ${DIR}/genMod/genMod_testList.txt
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt 
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt
 runTestSet ${DIR}/rdp/RdpTestList.txt 
+runTestSet ${DIR}/rdpHierParser/testList_rdpHierParser.txt
 runTestSet ${DIR}/rdpParser/RdpParser_TestList.txt
 runTestSet ${DIR}/rPlotMds/testList_rPlotMds.txt
 runTestSet ${DIR}/rPlotEffectSize/testList_rPlotEffectSize.txt
