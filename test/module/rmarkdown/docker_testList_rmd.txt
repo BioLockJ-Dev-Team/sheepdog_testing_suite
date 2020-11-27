@@ -1,2 +1,3 @@
 ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/module/rmarkdown/MarkDownTest.properties	 --blj --docker -e SHEP=${SHEP}	5	BioLockJ_Complete	basic working case
+${SHEP}/test/module/rmarkdown/simpleMarkdown.properties	 --blj --docker 	2	BioLockJ_Complete	basic working case
+${SHEP}/test/module/rmarkdown/simpleMarkdownPdf.properties	 --blj --docker 	2	BioLockJ_Complete	basic working case

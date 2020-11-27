@@ -1,2 +1,3 @@
 ConfigFile	NumberShouldComplete	ExpectedOutcome	Notes
-${SHEP}/test/module/rmarkdown/MarkDownTest.properties	5	BioLockJ_Complete	basic working case
+${SHEP}/test/module/rmarkdown/simpleMarkdown.properties	2	BioLockJ_Complete	basic working case
+${SHEP}/test/module/rmarkdown/simpleMarkdownPdf.properties	2	BioLockJ_Complete	basic working case
