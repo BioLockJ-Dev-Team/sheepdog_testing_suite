@@ -1,3 +1,7 @@
 ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
 ${BLJ}/templates/myFirstPipeline/myFirstPipeline.properties	 --blj --docker 	4	BioLockJ_Complete	first example in user-guide --DO NOT REFERENCE $SHEP
 ${BLJ}/templates/myFirstPipeline/myFirstPipeline.properties	 --docker 	4	BioLockJ_Complete	first example in user-guide --DO NOT REFERENCE $SHEP
+${BLJ}/templates/Rmarkdown/simpleMarkdown.properties	 --blj --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown
+${BLJ}/templates/Rmarkdown/simpleMarkdown.properties	 --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown (test docker image)
+${BLJ}/templates/Rmarkdown/simpleMarkdownPdf.properties	 --blj --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown
+${BLJ}/templates/Rmarkdown/simpleMarkdownPdf.properties	 --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown (test docker image)
