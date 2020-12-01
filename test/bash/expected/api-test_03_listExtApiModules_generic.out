@@ -1,3 +1,4 @@
+biolockj.module.Stop
 biolockj.module.assembly.GenomeAssembly
 biolockj.module.classifier.r16s.QiimeClosedRefClassifier
 biolockj.module.classifier.r16s.QiimeDeNovoClassifier
@@ -16,6 +17,7 @@ biolockj.module.getData.sra.SraMetaData
 biolockj.module.getData.sra.SrpSrrConverter
 biolockj.module.implicit.Demultiplexer
 biolockj.module.implicit.ImportMetadata
+biolockj.module.implicit.parser.r16s.RdpHierParser
 biolockj.module.implicit.parser.r16s.RdpParser
 biolockj.module.implicit.parser.wgs.Humann2Parser
 biolockj.module.implicit.parser.wgs.Kraken2Parser

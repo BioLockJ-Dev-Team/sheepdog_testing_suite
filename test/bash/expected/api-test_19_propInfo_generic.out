@@ -223,6 +223,12 @@
 "description": "disable HumanN2 Pathway Coverage report"
 },
 {
+"property": "input.allowDuplicateNames",
+"description": "Should files with the same name be permitted in inputs. File names are used to link data to metadata, and duplicated names create ambiguity. However in some pipelines, duplicates are appropriate.",
+"default": "N",
+"type": "boolean"
+},
+{
 "property": "input.dirPaths",
 "type": "list of file paths",
 "description": "List of one or more directories containing the pipeline input data."
@@ -506,7 +512,7 @@
 },
 {
 "property": "r.timeout",
-"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt basicRealTest_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt basicRealTest_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt configFile empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testAPI_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testAPI_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testCommandLine_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testCommandLine_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_inDocker_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt testRestartCylce_v1.3.10-3-ga66f3389_NOT_IN_GIT.txt testRestartCylce_v1.3.8-25-g46c0bf25_NOT_IN_GIT.txt testRestartCylce_v1.3.9-7-g6cc450be_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
+"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.14-rc_NOT_IN_GIT.txt configFile dockerMounts empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.14-rc_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.14-rc_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.14-rc_NOT_IN_GIT.txt testRestartCylce_v1.3.14-rc_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
 "default": "0",
 "type": "integer"
 },
@@ -630,7 +636,8 @@
 },
 {
 "property": "validation.stopPipeline",
-"type": "boolean",
-"description": "If enabled, the validation utlility will stop the pipeline if any module fails validation. Options: Y/N"
+"description": "If enabled, the validation utlility will stop the pipeline if any module fails validation. Options: Y/N",
+"default": "N",
+"type": "boolean"
 }
 ]

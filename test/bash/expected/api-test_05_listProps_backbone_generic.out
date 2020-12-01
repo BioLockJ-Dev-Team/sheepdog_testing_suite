@@ -42,6 +42,7 @@ exe.python
 humann2.disableGeneFamilies
 humann2.disablePathAbundance
 humann2.disablePathCoverage
+input.allowDuplicateNames
 input.dirPaths
 input.ignoreFiles
 input.requireCompletePairs

@@ -73,6 +73,7 @@ humann2.keepUnintegrated
 humann2.keepUnmapped
 humann2.nuclDB
 humann2.protDB
+input.allowDuplicateNames
 input.dirPaths
 input.ignoreFiles
 input.requireCompletePairs
@@ -179,6 +180,7 @@ rarefySeqs.max
 rarefySeqs.min
 rdp.containerJar
 rdp.db
+rdp.hierCounts
 rdp.jar
 rdp.javaParams
 rdp.minThresholdScore
