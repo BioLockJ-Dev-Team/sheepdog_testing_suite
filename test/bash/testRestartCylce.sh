@@ -29,6 +29,7 @@ while [ -f $RESTART_DIR/biolockjStarted ]; do sleep 1; done
 cp -r $RESTART_DIR ${RESTART_DIR}_run1
 
 echo ""
+sleep 1
 echo "Part 2"
 CMD2="biolockj --external-modules ${SHEP}/MockMain/dist $dOpt \
 		 --blj_proj $BLJ_PROJ \
@@ -45,6 +46,7 @@ echo "configToFail.fail=N" >> $MASTER_PROP
 
 
 echo ""
+sleep 1
 echo "Part 3"
 echo "$CMD2"
 $CMD2
