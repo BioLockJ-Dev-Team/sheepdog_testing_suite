@@ -254,3 +254,19 @@ echo 'that cuased biolockj to look for the required script in ../b10/hello.sh ev
 echo 'is given in the config as ../b1/hello.sh' 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj --blj -d ${SHEP}/test/bash/dockerMounts/ape/bee/manyDirs.config 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
+
+
+
+
+
+
+echo ""
+echo "Ran $TOTAL_TESTS tests on command line api."
+if [ $TOTAL_TESTS -gt $PASSING_TESTS ]; then
+	numFailed=$((TOTAL_TESTS - PASSING_TESTS))
+	echo "There were $numFailed tests that FAILED !!!"
+	exit 1
+else
+	echo "All $PASSING_TESTS tests PASS."
+	exit 0
+fi
