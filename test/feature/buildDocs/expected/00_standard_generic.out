@@ -1,6 +1,8 @@
 
 STANDARD_ERR:
 Will generate documentation for all in-scope modules and the help menu pages.
+Creating documentation page for module: biolockj.module.Stop
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module/Stop.md
 Creating documentation page for module: biolockj.module.assembly.GenomeAssembly
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.assembly/GenomeAssembly.md
 Creating documentation page for module: biolockj.module.classifier.r16s.QiimeClosedRefClassifier
@@ -41,6 +43,8 @@ Creating documentation page for module: biolockj.module.implicit.RegisterNumRead
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit/RegisterNumReads.md
 Creating documentation page for module: biolockj.module.implicit.parser.r16s.QiimeParser
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.r16s/QiimeParser.md
+Creating documentation page for module: biolockj.module.implicit.parser.r16s.RdpHierParser
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.r16s/RdpHierParser.md
 Creating documentation page for module: biolockj.module.implicit.parser.r16s.RdpParser
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit.parser.r16s/RdpParser.md
 Creating documentation page for module: biolockj.module.implicit.parser.wgs.Humann2Parser
