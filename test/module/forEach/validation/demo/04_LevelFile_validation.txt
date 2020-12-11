@@ -1,5 +1,5 @@
-name	size	md5	MATCHED_EXPECTATION
-nChars-class.txt	9	1460ff007e66dd3d8c1741843476821b	FAIL
-nChars-family.txt	9	0307880f2cb35c2a8997a2647a7dfdb2	FAIL
-nChars-genus.txt	9	1460ff007e66dd3d8c1741843476821b	FAIL
-nChars-order.txt	9	1460ff007e66dd3d8c1741843476821b	FAIL
+name
+nChars-class.txt
+nChars-family.txt
+nChars-genus.txt
+nChars-order.txt
