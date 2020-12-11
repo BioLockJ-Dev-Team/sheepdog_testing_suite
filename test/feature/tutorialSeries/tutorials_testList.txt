@@ -2,3 +2,5 @@ ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
 ${BLJ}/templates/myFirstPipeline/myFirstPipeline.properties		4	BioLockJ_Complete	first example in user-guide --DO NOT REFERENCE $SHEP
 ${BLJ}/templates/Rmarkdown/simpleMarkdown.properties		2	BioLockJ_Complete	example of how to use Rmarkdown
 ${BLJ}/templates/Rmarkdown/simpleMarkdownPdf.properties		2	BioLockJ_Complete	example of how to use Rmarkdown
+${BLJ}/templates/GenMod/GenModDemo.config		5	BioLockJ_Complete	example of how to use GenMod
+${BLJ}/templates/GenMod/ForEach.config		7	BioLockJ_Complete	example of how to use the ForEach modules

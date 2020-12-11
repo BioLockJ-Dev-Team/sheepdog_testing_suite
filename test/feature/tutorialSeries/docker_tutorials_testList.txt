@@ -5,3 +5,7 @@ ${BLJ}/templates/Rmarkdown/simpleMarkdown.properties	 --blj --docker 	2	BioLockJ
 ${BLJ}/templates/Rmarkdown/simpleMarkdown.properties	 --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown (test docker image)
 ${BLJ}/templates/Rmarkdown/simpleMarkdownPdf.properties	 --blj --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown
 ${BLJ}/templates/Rmarkdown/simpleMarkdownPdf.properties	 --docker 	2	BioLockJ_Complete	example of how to use Rmarkdown (test docker image)
+${BLJ}/templates/GenMod/GenModDemo.config	 --blj --docker 	5	BioLockJ_Complete	example of how to use GenMod
+${BLJ}/templates/GenMod/GenModDemo.config	 --docker 	5	BioLockJ_Complete	example of how to use GenMod
+${BLJ}/templates/GenMod/ForEach.config	 --blj --docker 	7	BioLockJ_Complete	example of how to use the ForEach modules
+${BLJ}/templates/GenMod/ForEach.config	 --docker 	7	BioLockJ_Complete	example of how to use the ForEach modules
