@@ -1,0 +1,2 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/forEach/forEach.config	 --blj --docker 	BioLockJ_Complete	demo case for the ForEach family
