@@ -1,0 +1,7 @@
+---------> Execute CMD [ Launcher --verbose configFile/example.properties ]
+verbose = true
+Using configFile/example.properties as the config file.
+---------> Execute CMD [ JavaLaunchProcess --verbose configFile/example.properties ]
+verbose = true
+Using configFile/example.properties as the config file.
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -verbose -config <SHEP>/test/bash/configFile/example.properties
