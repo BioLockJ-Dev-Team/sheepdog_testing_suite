@@ -1,0 +1,27 @@
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj -> Move to pipeline output directory
+
+Fetching pipeline status
+
+
+Pipeline is complete.
+
+
+pipeline.logLevel=DEBUG
+There are over 100 DEBUG lines with --verbose.
+---------
+<Initializing BioLockJ<...>>
+Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_2_<DATE>
+After an initial status check, all pipeline updates will be in the pipeline folder.
+cd-blj -> Move to pipeline output directory
+
+Fetching pipeline status
+
+
+Pipeline is running.
+
+
+pipeline.logLevel=INFO
+There are fewer than 10 DEBUG lines without --verbose.

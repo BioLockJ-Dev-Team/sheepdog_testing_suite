@@ -292,6 +292,9 @@ id=test_1.24_ur
 biolockj -ru $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
+id=test_1.27_verbose
+biolockj --verbose $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
 
 
 # verify that bash times out in waiting, unless --wait-for-start is used
@@ -382,6 +385,7 @@ rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
 #alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
 biolockj -f $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1> /dev/null 2>/dev/null
 cd $(last-pipeline); quick_pipeline_view  1> $OUT/${id}.out 2>$OUT/${id}.err
+cd -
 check_it
 
 
@@ -440,7 +444,23 @@ biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/f
 check_it
 
 
+rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
 
+id=test_2.27_verbose
+biolockj --verbose $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+WITH=$(last-pipeline)
+grep pipeline.logLevel $WITH/MASTER* 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+BIG_NUM=$(grep DEBUG $WITH/myFirst*log | wc -l)
+[ $BIG_NUM -gt 100 ] && echo "There are over 100 DEBUG lines with --verbose." 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+#
+echo "---------" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+#
+biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+WITHOUT=$(last-pipeline)
+grep pipeline.logLevel $WITHOUT/MASTER* 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+SMALL_NUM=$(grep DEBUG $WITHOUT/myFirst*log | wc -l)
+[ $SMALL_NUM -lt 10 ] && echo "There are fewer than 10 DEBUG lines without --verbose." 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+check_it
 
 
 echo ""
