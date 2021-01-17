@@ -70,225 +70,225 @@ examplePipeline="restartDir/examplePipeline_11_1969-07-16"
 exampleConfigFP="$SHEP/test/bash/${exampleConfig}"
 examplePipelineFP="$SHEP/test/bash/${examplePipeline}"
 
-id=test_00
+id=test_1.00
 biolockj 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_01_v
+id=test_1.01_v
 biolockj -v 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_01_version
+id=test_1.01_version
 biolockj --version 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_02_h
+id=test_1.02_h
 biolockj -h 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_02_help
+id=test_1.02_help
 biolockj --help 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_03_typo
+id=test_1.03_typo
 biolockj -i 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_03_typos
+id=test_1.03_typos
 biolockj -ih 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_03_longTypo
+id=test_1.03_longTypo
 biolockj --aBadParam 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_04_f
+id=test_1.04_f
 biolockj -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_04_foreground
+id=test_1.04_foreground
 biolockj --foreground $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_04_fd
+id=test_1.04_fd
 biolockj -fd $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_05_basic
+id=test_1.05_basic
 biolockj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_6_r
+id=test_1.6_r
 biolockj -r $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_6_restart
+id=test_1.6_restart
 biolockj --restart $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_6_restart_nonDir
+id=test_1.6_restart_nonDir
 biolockj --restart $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_7_d
+id=test_1.7_d
 biolockj -d $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_7_docker
+id=test_1.7_docker
 biolockj --docker $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_7full_d
+id=test_1.7full_d
 biolockj -d $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_7full_docker
+id=test_1.7full_docker
 biolockj --docker $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_8_a
+id=test_1.8_a
 biolockj -a $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_aws -a $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
-id=test_8_aws
+id=test_1.8_aws
 biolockj --aws $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_aws --aws $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
-id=test_9_aws_g
+id=test_1.9_aws_g
 biolockj --aws -g $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_aws --aws -g $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
-id=test_9_aws_gui
+id=test_1.9_aws_gui
 biolockj --aws --gui $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_aws --aws --gui $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
-id=test_10_pass
+id=test_1.10_pass
 biolockj --password bar $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_10_pass_noArg1
+id=test_1.10_pass_noArg1
 biolockj --password -f $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_10_pass_noArg2
+id=test_1.10_pass_noArg2
 biolockj --password $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_11_b
+id=test_1.11_b
 biolockj -b $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_11_blj
+id=test_1.11_blj
 biolockj --docker --blj $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_12_e
+id=test_1.12_e
 biolockj --docker -e SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_12_es
+id=test_1.12_es
 biolockj --docker -e SHEP=$SHEP,FOO=BAR $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_12_es_badForm
+id=test_1.12_es_badForm
 biolockj --docker -e SHEP=$SHEP,FOOBARBAZ $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_12_env-var
+id=test_1.12_env-var
 biolockj --docker --env-var SHEP=$SHEP $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_13_ext_mods
+id=test_1.13_ext_mods
 biolockj --external-modules $SHEP/MockMain/dist $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_13_ext_mods_docker
+id=test_1.13_ext_mods_docker
 biolockj --docker --external-modules $SHEP/MockMain/dist $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
-id=test_14_g
+id=test_1.14_g
 biolockj -g $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_14_gui
+id=test_1.14_gui
 biolockj --gui $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-#id=test_14_gui_noConfig
+#id=test_1.14_gui_noConfig
 #biolockj --gui 1> $OUT/${id}.out 2>$OUT/${id}.err
 #check_it
 
-#id=test_14full_gui
+#id=test_1.14full_gui
 #biolockj --gui $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 #launch_docker --gui $exampleConfigFP 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 #check_it
 
 
-id=test_15_w
+id=test_1.15_w
 biolockj -w $exampleConfigFP 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_15_wait
+id=test_1.15_wait
 biolockj --wait-for-start $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
 
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
-id=test_20_precheck
+id=test_1.20_precheck
 biolockj --precheck-only --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_20_p
+id=test_1.20_p
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_20_rp
+id=test_1.20_rp
 biolockj -rp $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_20_ap
+id=test_1.20_ap
 biolockj -ap $examplePipeline 1> $OUT/${id}.out 2>$OUT/${id}.err
 launch_aws -ap $examplePipeline 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
-id=test_24_u
+id=test_1.24_u
 biolockj -u $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 echo "" 1>> $OUT/${id}.out
 echo "# With -u, the call to java should be identical with and without -p" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 biolockj -up $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
-id=test_24_ud
+id=test_1.24_ud
 biolockj -du $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
 echo "# With -u, the call to java should be identical with and without -p" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 biolockj -dup $exampleConfig 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
-id=test_24_unused
+id=test_1.24_unused
 biolockj --unused-props $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
-id=test_24_ur
+id=test_1.24_ur
 biolockj -ru $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
@@ -311,18 +311,18 @@ export BIOLOCKJ_TEST_MODE=""
 
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
-id=test_16full_fail
+id=test_2.16full_fail
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 sleep 1
 
-id=test_16full_fail_docker
+id=test_2.16full_fail_docker
 biolockj -e SHEP=$SHEP --blj -d --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 sleep 1
 
 
-id=test_17full_restart
+id=test_2.17full_restart
 biolockj -f --external-modules ${SHEP}/MockMain/dist \
 	${SHEP}/test/bash/configFile/restartWithWait.properties 1> /dev/null 2>/dev/null
 RESTART_DIR=$(last-pipeline)
@@ -334,13 +334,13 @@ biolockj --external-modules ${SHEP}/MockMain/dist \
 	--restart $RESTART_DIR 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
-id=test_18_jar_help
+id=test_2.18_jar_help
 # note that the output of version and help is sent to std err, not std out
 java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ --help 2> $OUT/${id}.out 1>$OUT/${id}.err
 java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ -help 2>> $OUT/${id}.out 1>>$OUT/${id}.err
 check_it
 
-id=test_19_jar_version
+id=test_2.19_jar_version
 java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ --version &> $OUT/${id}.out
 java -cp $BLJ/dist/BioLockJ.jar biolockj.BioLockJ -version >> $OUT/${id}.out
 TOTAL_TESTS=$((TOTAL_TESTS + 1))
@@ -353,7 +353,7 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 rm -rf ${SHEP}/MockMain/pipelines/configToFail*
 
-id=test_20_precheck_repeats
+id=test_2.20_precheck_repeats
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
@@ -377,7 +377,7 @@ check_it
 
 
 
-id=test_21_cd-blj
+id=test_2.21_cd-blj
 rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
 #alias cd-blj='cd $(last-pipeline); quick_pipeline_view'
 biolockj -f $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1> /dev/null 2>/dev/null
@@ -387,7 +387,7 @@ check_it
 
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
-id=test_25_unusedProps_repeats
+id=test_2.25_unusedProps_repeats
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 sleep 1
 echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
@@ -408,13 +408,13 @@ check_it
 
 
 
-id=test_26_noneUnused
+id=test_2.26_noneUnused
 biolockj -p ${SHEP}/test/bash/configFile/noneUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj -u ${SHEP}/test/bash/configFile/noneUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj ${SHEP}/test/bash/configFile/noneUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
-id=test_26_showsUnused
+id=test_2.26_showsUnused
 echo "# With -p, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj -p ${SHEP}/test/bash/configFile/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
@@ -428,7 +428,7 @@ check_it
 
 rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 
-id=test_26_showsUnusedWithFailure
+id=test_2.26_showsUnusedWithFailure
 echo "# With -p, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
