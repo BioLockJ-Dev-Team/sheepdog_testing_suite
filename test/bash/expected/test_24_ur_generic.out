@@ -6,9 +6,13 @@ Using configFile/example.properties as the pipeline to restart.
 STANDARD_ERR:
 Error: "unused-props" can only be used with new pipelines; cannot be used in conjunction with "restart".
 
-BioLockJ <VERSION> - UNCC Fodor Lab July 2018
+BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:
+(bash)
 biolockj [options] <config|pipeline>
+
+(java)
+java -jar /path/to/BioLockJ.jar [options] <config|pipeline>
 
 Options:
 -v --version Show version
@@ -28,6 +32,7 @@ This helps remove unnecessary properties and highlights errors in property names
 --external-modules <dir> Directory with compiled java code giving additional modules
 --blj Map $BLJ folder into the docker container;
 this replaces BioLockJ packaged in a docker container with the local copy.
+--verbose Equivalent to adding `pipeline.logLevel=DEBUG` to the config file.
 --env-var <var=val> Environment variables to be passed to the BioLockJ environment.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,
