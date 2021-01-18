@@ -9,6 +9,10 @@ biolockj.module.classifier.wgs.Kraken2Classifier
 biolockj.module.classifier.wgs.KrakenClassifier
 biolockj.module.classifier.wgs.Metaphlan2Classifier
 biolockj.module.diversity.ShannonDiversity
+biolockj.module.diy.ForEachFile
+biolockj.module.diy.ForEachLevel
+biolockj.module.diy.ForEachLoop
+biolockj.module.diy.ForEachSample
 biolockj.module.diy.GenMod
 biolockj.module.diy.Rmarkdown
 biolockj.module.getData.sra.SraDownload

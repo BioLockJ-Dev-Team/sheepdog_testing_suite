@@ -163,7 +163,7 @@
 },
 {
 "property": "docker.mountSock",
-"description": "should /var/docker/docker.sock be mounted for modules.",
+"description": "should /var/run/docker.sock be mounted for modules.",
 "default": "N",
 "type": "boolean"
 },
@@ -512,7 +512,7 @@
 },
 {
 "property": "r.timeout",
-"description": "defines the number of minutes before R script fails due to\n\t README.md basicRealTest.sh basicRealTest_v1.3.14-rc_NOT_IN_GIT.txt configFile dockerMounts empty_testList.txt empty_testList_results_NOT_IN_GIT.txt expected generalize.sh output output-api pipelines restartDir testAPI.sh testAPI_v1.3.14-rc_NOT_IN_GIT.txt testCommandLine.sh testCommandLine_v1.3.14-rc_NOT_IN_GIT.txt testRestartCylce.sh testRestartCylce_inDocker.sh testRestartCylce_inDocker_v1.3.14-rc_NOT_IN_GIT.txt testRestartCylce_v1.3.14-rc_NOT_IN_GIT.txt wrap_bash_tests.sh timeout. If set to 0, an estimate is used.",
+"description": "defines the number of minutes before R script fails due to timeout. If set to 0, an estimate is used.",
 "default": "0",
 "type": "integer"
 },

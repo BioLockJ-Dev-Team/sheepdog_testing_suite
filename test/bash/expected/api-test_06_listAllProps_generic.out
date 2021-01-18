@@ -60,6 +60,7 @@ exe.vsearch
 exe.wget
 exe.xtract
 genMod.launcher
+genMod.loopBy
 genMod.param
 genMod.resources
 genMod.scriptPath
