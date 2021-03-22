@@ -102,14 +102,16 @@ As a BioLockJ developer, you need to be able to build both BioLockJ and the Mock
 (macOS)<br>
 ```(bash)
 cd /Applications # wherever you want to install ant
-ANT_DIST=apache-ant-1.9.14
+ANT_DIST=apache-ant-1.9.15
 curl -O http://apache.mirrors.lucidnetworks.net//ant/binaries/$ANT_DIST-bin.tar.bz2
 tar xfj $ANT_DIST-bin.tar.bz2
 cd $ANT_DIST
-echo export ANT_HOME=$(pwd) >> ~/.bash_profile
-echo export PATH=\$PATH:\$ANT_HOME/bin >> ~/.bash_profile
+echo export ANT_HOME=$(pwd) >> ~/.zprofile
+echo export PATH=\$PATH:\$ANT_HOME/bin >> ~/.zprofile
 . ~/.bash_profile
 ```
+If using a bash shell, use `~/.bash_profile` in place of `~/.zprofile`.
+
 (Ubuntu)<br>
 ```(bash)
 apt-get update
