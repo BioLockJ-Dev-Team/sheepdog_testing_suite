@@ -149,17 +149,17 @@
 {
 "property": "docker.imageName",
 "type": "string",
-"description": "The name of a docker image to override whatever a module says to use."
+"description": "The name of a docker image to override whatever a module says to use. Only use the module-specific-override form of this property."
 },
 {
 "property": "docker.imageOwner",
 "type": "string",
-"description": "name of the Docker Hub user that owns the docker containers"
+"description": "Name of the Docker Hub user that owns the docker containers. Only use the module-specific-override form of this property."
 },
 {
 "property": "docker.imageTag",
 "type": "string",
-"description": "indicate specific version of Docker images"
+"description": "Image tag, a specific version of Docker images. Only use the module-specific-override form of this property."
 },
 {
 "property": "docker.mountSock",
@@ -290,7 +290,7 @@
 },
 {
 "property": "metadata.filePath",
-"type": "string",
+"type": "file path",
 "description": "If absolute file path, use file as metadata.<br>If directory path, must find exactly 1 file within, to use as metadata."
 },
 {
