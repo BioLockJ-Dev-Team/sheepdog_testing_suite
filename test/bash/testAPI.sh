@@ -221,8 +221,8 @@ check_it
 id=api-test_21_moduleExtInfo
 biolockj-api moduleInfo --external-modules $MORE_MODS 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 # this is very long detailed output, that often changes, for the routine test,
-# just look at the last 20 lines. That's just enough the make sure the format isn't jacked up.
-tail -n 20 $OUT/${id}.out > $OUT/temp
+# just look at the last 30 lines. That's just enough the make sure the format isn't jacked up.
+tail -n 30 $OUT/${id}.out > $OUT/temp
 cat $OUT/temp > $OUT/${id}.out
 rm $OUT/temp
 check_it

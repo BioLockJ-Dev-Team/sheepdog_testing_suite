@@ -3,6 +3,9 @@ cluster.jobHeader
 cluster.modules
 cluster.prologue
 cluster.statusCommand
+docker.imageName
+docker.imageOwner
+docker.imageTag
 docker.saveContainerOnExit
 docker.verifyImage
 script.defaultHeader

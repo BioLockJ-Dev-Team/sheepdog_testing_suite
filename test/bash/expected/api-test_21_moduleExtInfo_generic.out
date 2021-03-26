@@ -13,8 +13,18 @@
 "post-req modules": [],
 "title": "PipelineTime",
 "properties": [
-{"property": "pipelineTime.maxMillis"},
-{"property": "pipelineTime.minMillis"}
+{
+"property": "pipelineTime.maxMillis",
+"description": "If the pipeline takes longer than this many milliseconds to reach this point, throw exception.",
+"default": "2147483647",
+"type": "integer"
+},
+{
+"property": "pipelineTime.minMillis",
+"description": "If the pipeline reaches this point in fewer than this many milliseconds, throw exception.",
+"default": "0",
+"type": "integer"
+}
 ]
 }
 ]
