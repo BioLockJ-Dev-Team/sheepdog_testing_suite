@@ -13,7 +13,7 @@ Named arguments for directories:
 Other named arguments:
 -config, -direct, -password
 Flags:
--aws, -systemOut, -precheck, -unusedProps, -verbose
+-aws, -systemOut, -precheck, -unusedProps, -verbose, -docker
 Info-only arguments:
 -help, -version
 
@@ -35,7 +35,7 @@ Named arguments for directories:
 Other named arguments:
 -config, -direct, -password
 Flags:
--aws, -systemOut, -precheck, -unusedProps, -verbose
+-aws, -systemOut, -precheck, -unusedProps, -verbose, -docker
 Info-only arguments:
 -help, -version
 

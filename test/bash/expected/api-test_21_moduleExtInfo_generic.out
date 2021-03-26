@@ -1,20 +1,20 @@
-"properties": []
-},
-{
-"menuPlacement": [
-"testBash",
-"PipelineTime"
-],
-"citation": "Module developed by Ivory Blakley.",
-"usage": "#BioModule testBash.PipelineTime",
-"pre-req modules": [],
 "description": "This module allows for tests that fail a pipeline if it takes to long or finishes too quickly.",
 "details": "",
 "post-req modules": [],
 "title": "PipelineTime",
 "properties": [
-{"property": "pipelineTime.maxMillis"},
-{"property": "pipelineTime.minMillis"}
+{
+"property": "pipelineTime.maxMillis",
+"description": "If the pipeline takes longer than this many milliseconds to reach this point, throw exception.",
+"default": "2147483647",
+"type": "integer"
+},
+{
+"property": "pipelineTime.minMillis",
+"description": "If the pipeline reaches this point in fewer than this many milliseconds, throw exception.",
+"default": "0",
+"type": "integer"
+}
 ]
 }
 ]
