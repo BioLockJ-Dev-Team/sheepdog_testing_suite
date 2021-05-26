@@ -31,6 +31,8 @@ runTestSet ${DIR}/verifyDocker/docker_verifyDocker_testList.txt
 DIR=${SHEP}/test/module
 runTestSet ${DIR}/assembly/docker_assembly_testList.txt 
 #runTestSet ${DIR}/calcStats/docker_calcStats_testList.txt
+runTestSet ${DIR}/deseq2/docker_deseq_testList.txt 
+runTestSet ${DIR}/edgeR/docker_edger_testList.txt
 runTestSet ${DIR}/email/docker_eamil_testList.txt
 runTestSet ${DIR}/forEach/docker_testList_forEach.txt
 runTestSet ${DIR}/genMod/docker_genMod_testList.txt
