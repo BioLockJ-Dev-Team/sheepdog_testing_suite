@@ -1,7 +1,9 @@
+
+STANDARD_ERR:
 ---------> Execute CMD [ Launcher --restart restartDir/examplePipeline_11_1969-07-16 ]
-restart = true
-Using restartDir/examplePipeline_11_1969-07-16 as the pipeline to restart.
----------> Execute CMD [ JavaLaunchProcess --restart restartDir/examplePipeline_11_1969-07-16 ]
-restart = true
-Using restartDir/examplePipeline_11_1969-07-16 as the pipeline to restart.
-KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -restartDir <SHEP>/test/bash/restartDir/examplePipeline_11_1969-07-16 -config <SHEP>/test/bash/restartDir/examplePipeline_11_1969-07-16/MASTER_space.properties
+Registering options | restart = true
+ Registering options | Using restartDir/examplePipeline_11_1969-07-16 as the pipeline to restart.
+ Registering options |  ---------> Execute CMD [ JavaLaunchProcess --restart restartDir/examplePipeline_11_1969-07-16 ]
+ Registering options | restart = true
+ Registering options | Using restartDir/examplePipeline_11_1969-07-16 as the pipeline to restart.
+ Registering options | KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -restartDir <SHEP>/test/bash/restartDir/examplePipeline_11_1969-07-16 -config <SHEP>/test/bash/restartDir/examplePipeline_11_1969-07-16/MASTER_space.properties

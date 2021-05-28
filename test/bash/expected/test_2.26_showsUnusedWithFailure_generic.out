@@ -1,11 +1,20 @@
 # With -p, the unused props are not shown because there is a failure in check dependencies
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
+<SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+
+# With -u, the unused props are shown (despite failing in check dependencies)
+<SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+
+# With no args, the unused props are not shown because there is a failure in check dependencies
+<SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+
+STANDARD_ERR:
+Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+ Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
+ Checking dependencies | Checking module: 00_FailCheckDependencies | 
+ After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
+ 
+ Fetching pipeline status | 
 
 There is a problem with this pipeline configuration.
 
@@ -13,17 +22,16 @@ ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
 
-
-# With -u, the unused props are shown (despite failing in check dependencies)
-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
+Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
+ Checking dependencies | Checking module: 00_FailCheckDependencies | Checking module: 01_SraDownload | Checking module: 02_BuildTaxaTables | Done checking module: 02_BuildTaxaTables
+ Checking module: 03_LogTransformTaxaTables | Done checking module: 03_LogTransformTaxaTables
+ 
+ After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
-Warning: see "unverified.properties"
+ 
+ Fetching pipeline status |
+ Warning: see "unverified.properties"
 
 ### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
 #
@@ -38,16 +46,14 @@ ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
 
-
-# With no args, the unused props are not shown because there is a failure in check dependencies
-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
+Registering options | Initializing | Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+ Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
+ Checking dependencies | Checking module: 00_FailCheckDependencies | 
+ After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
+ 
+ Fetching pipeline status | 
 
 BioLockJ has stopped.
 

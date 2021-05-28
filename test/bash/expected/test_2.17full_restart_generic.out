@@ -5,13 +5,15 @@ Reseting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
 Reseting module 03_ConfigToFail and any subsequent modules...
 Removed status flag: biolockjFailed
 Reset complete.
-<Initializing BioLockJ<...>>
-Restarting pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
+<SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+
+STANDARD_ERR:
+Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/restartWithWait_<DATE>
+ Initializing BioLockJ ... |Initializing BioLockJ ... / 
+ After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
+ 
+ Fetching pipeline status | 
 
 Pipeline is running.
 

@@ -1,7 +1,9 @@
+
+STANDARD_ERR:
 ---------> Execute CMD [ Launcher --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
-external-modules = <SHEP>/MockMain/dist
-Using configFile/example.properties as the config file.
----------> Execute CMD [ JavaLaunchProcess --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
-external-modules = <SHEP>/MockMain/dist
-Using configFile/example.properties as the config file.
-KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties
+Registering options | external-modules = <SHEP>/MockMain/dist
+ Registering options | Using configFile/example.properties as the config file.
+ Registering options |  ---------> Execute CMD [ JavaLaunchProcess --external-modules <SHEP>/MockMain/dist configFile/example.properties ]
+ Registering options | external-modules = <SHEP>/MockMain/dist
+ Registering options | Using configFile/example.properties as the config file.
+ Registering options | KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar:<SHEP>/MockMain/dist/* biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

@@ -11,7 +11,7 @@ Arguments
 Named arguments for directories:
 -projectDir, -restartDir
 Other named arguments:
--config, -direct, -password
+-config, -direct, -password, -docker-mapper
 Flags:
 -aws, -systemOut, -precheck, -unusedProps, -verbose, -docker
 Info-only arguments:
@@ -33,7 +33,7 @@ Arguments
 Named arguments for directories:
 -projectDir, -restartDir
 Other named arguments:
--config, -direct, -password
+-config, -direct, -password, -docker-mapper
 Flags:
 -aws, -systemOut, -precheck, -unusedProps, -verbose, -docker
 Info-only arguments:

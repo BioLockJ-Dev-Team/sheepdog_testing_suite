@@ -1,7 +1,3 @@
----------> Execute CMD [ Launcher --aws configFile/example.properties ]
-aws = true
-Using configFile/example.properties as the config file.
-Using configFile/example.properties as the config file.
 Warning: The blj_functions library is deprecated.
 Warning: It will be removed as of version v1.4.0.
 Warning: The blj_functions library is deprecated.
@@ -13,5 +9,9 @@ Using configFile/example.properties as the config file.
 KEY CMD: run_aws configFile/example.properties
 
 STANDARD_ERR:
-This feature is under active development...
-KEY CMD: <BLJ>/script/launch_aws --aws configFile/example.properties
+---------> Execute CMD [ Launcher --aws configFile/example.properties ]
+Registering options | aws = true
+ Registering options | Using configFile/example.properties as the config file.
+ Registering options |This feature is under active development...
+ Using configFile/example.properties as the config file.
+ Registering options |KEY CMD: <BLJ>/script/launch_aws --aws configFile/example.properties

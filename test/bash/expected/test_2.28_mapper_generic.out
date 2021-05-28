@@ -1,0 +1,18 @@
+
+Use default
+Expected:
+[ DEBUG ] Using docker mapper class [biolockj.util.paths.CommonDockerMapper]
+Result:
+[ DEBUG ] Using docker mapper class [biolockj.util.paths.CommonDockerMapper]
+
+Use CommonDockerMapper
+Expected:
+[ DEBUG ] Using docker mapper class [biolockj.util.paths.CommonDockerMapper]
+Result:
+[ DEBUG ] Using docker mapper class [biolockj.util.paths.CommonDockerMapper]
+
+Use SimpleDockerMapper
+Expected:
+[ DEBUG ] Using docker mapper class [biolockj.util.paths.SimpleDockerMapper]
+Result:
+[ DEBUG ] Using docker mapper class [biolockj.util.paths.SimpleDockerMapper]

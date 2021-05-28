@@ -1,7 +1,9 @@
+
+STANDARD_ERR:
 ---------> Execute CMD [ Launcher --password bar configFile/example.properties ]
-password = bar
-Using configFile/example.properties as the config file.
----------> Execute CMD [ JavaLaunchProcess --password bar configFile/example.properties ]
-password = bar
-Using configFile/example.properties as the config file.
-KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -password bar -config <SHEP>/test/bash/configFile/example.properties
+Registering options | password = bar
+ Registering options | Using configFile/example.properties as the config file.
+ Registering options |  ---------> Execute CMD [ JavaLaunchProcess --password bar configFile/example.properties ]
+ Registering options | password = bar
+  Using configFile/example.properties as the config file.
+ Registering options | KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -password bar -config <SHEP>/test/bash/configFile/example.properties

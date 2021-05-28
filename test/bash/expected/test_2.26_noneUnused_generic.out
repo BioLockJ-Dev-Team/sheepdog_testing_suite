@@ -1,35 +1,1 @@
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
-cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
-
-Precheck is complete. No problems were found in this pipeline configuration.
-
-
-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
-cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
-
-Precheck is complete. No problems were found in this pipeline configuration.
-
-
-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
-cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
-
-Pipeline is running.
-
-
+<SHEP>/MockMain/pipelines/noneUnused_<DATE><SHEP>/MockMain/pipelines/noneUnused_<DATE><SHEP>/MockMain/pipelines/noneUnused_<DATE>STANDARD_ERR:Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE> Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ. Checking dependencies | Checking module: 00_AddPseudoCount | Done checking module: 00_AddPseudoCount Checking module: 01_NormalizeByReadsPerMillion | Done checking module: 01_NormalizeByReadsPerMillion Checking module: 02_LogTransformTaxaTables | Done checking module: 02_LogTransformTaxaTables Done checking dependencies.  After an initial status check, all pipeline updates will be in the pipeline folder.cd-blj -> Move to pipeline output directory  Fetching pipeline status | Precheck is complete. No problems were found in this pipeline configuration.Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE> Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE> Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ. Checking dependencies | Checking module: 00_AddPseudoCount | Done checking module: 00_AddPseudoCount Checking module: 01_NormalizeByReadsPerMillion | Done checking module: 01_NormalizeByReadsPerMillion Checking module: 02_LogTransformTaxaTables | Done checking module: 02_LogTransformTaxaTables Done checking dependencies.  After an initial status check, all pipeline updates will be in the pipeline folder.cd-blj -> Move to pipeline output directory  Fetching pipeline status | Precheck is complete. No problems were found in this pipeline configuration.Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE> Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/noneUnused_<DATE> Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ. Checking dependencies | Checking module: 00_AddPseudoCount | Done checking module: 00_AddPseudoCount Checking module: 01_NormalizeByReadsPerMillion | Done checking module: 01_NormalizeByReadsPerMillion Checking module: 02_LogTransformTaxaTables | Done checking module: 02_LogTransformTaxaTables Done checking dependencies.  After an initial status check, all pipeline updates will be in the pipeline folder.cd-blj -> Move to pipeline output directory  Fetching pipeline status | Pipeline is running.

@@ -1,9 +1,9 @@
----------> Execute CMD [ Launcher --restart configFile/example.properties ]
-restart = true
-Using configFile/example.properties as the pipeline to restart.
 
 STANDARD_ERR:
-Error: [<SHEP>/test/bash/configFile/example.properties] is not a directory on the filesystem.
+---------> Execute CMD [ Launcher --restart configFile/example.properties ]
+Registering options | restart = true
+ Registering options | Using configFile/example.properties as the pipeline to restart.
+ Registering options |Error: [<SHEP>/test/bash/configFile/example.properties] is not a directory on the filesystem.
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:
@@ -32,6 +32,7 @@ This helps remove unnecessary properties and highlights errors in property names
 --blj Map $BLJ folder into the docker container;
 this replaces BioLockJ packaged in a docker container with the local copy.
 --verbose Equivalent to adding `pipeline.logLevel=DEBUG` to the config file.
+--docker-mapper <class> Rarely used. See user guide. Ignored when not using docker.
 --env-var <var=val> Environment variables to be passed to the BioLockJ environment.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,

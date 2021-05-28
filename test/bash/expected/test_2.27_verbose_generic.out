@@ -1,27 +1,41 @@
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
+<SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
+pipeline.logLevel=DEBUG
+There are over 100 DEBUG lines with --verbose.
+---------
+<SHEP>/MockMain/pipelines/myFirstPipeline_2_<DATE>
+pipeline.logLevel=INFO
+There are fewer than 10 DEBUG lines without --verbose.
+
+STANDARD_ERR:
+Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_<DATE>
+ Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
+ Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
+ Checking module: 01_RegisterNumReads | Done checking module: 01_RegisterNumReads
+ Checking module: 02_RarefySeqs | Done checking module: 02_RarefySeqs
+ Checking module: 03_Multiplexer | Done checking module: 03_Multiplexer
+ Done checking dependencies.
+ 
+ After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
+ 
+ Fetching pipeline status | 
 
 Pipeline is complete.
 
 
-pipeline.logLevel=DEBUG
-There are over 100 DEBUG lines with --verbose.
----------
-<Initializing BioLockJ<...>>
-Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_2_<DATE>
-After an initial status check, all pipeline updates will be in the pipeline folder.
+Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/myFirstPipeline_2_<DATE>
+ Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
+ Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
+ Checking module: 01_RegisterNumReads | Done checking module: 01_RegisterNumReads
+ Checking module: 02_RarefySeqs | Done checking module: 02_RarefySeqs
+ Checking module: 03_Multiplexer | Done checking module: 03_Multiplexer
+ Done checking dependencies.
+ 
+ After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
-
-Fetching pipeline status
-
+ 
+ Fetching pipeline status | 
 
 Pipeline is running.
 
 
-pipeline.logLevel=INFO
-There are fewer than 10 DEBUG lines without --verbose.

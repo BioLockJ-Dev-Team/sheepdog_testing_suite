@@ -1,10 +1,10 @@
----------> Execute CMD [ Launcher --docker -e SHEP=<SHEP>,FOOBARBAZ <SHEP>/test/bash/configFile/example.properties ]
-docker = true
-env-var = SHEP=<SHEP>,FOOBARBAZ
-Using <SHEP>/test/bash/configFile/example.properties as the config file.
 
 STANDARD_ERR:
-Error: the value of the env-var argument should be a comma-separated list, where each list element is a key=value pair using exactly one "=".
+---------> Execute CMD [ Launcher --docker -e SHEP=<SHEP>,FOOBARBAZ <SHEP>/test/bash/configFile/example.properties ]
+Registering options | docker = true
+  env-var = SHEP=<SHEP>,FOOBARBAZ
+ Registering options | Using <SHEP>/test/bash/configFile/example.properties as the config file.
+ Registering options |Error: the value of the env-var argument should be a comma-separated list, where each list element is a key=value pair using exactly one "=".
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:
@@ -33,6 +33,7 @@ This helps remove unnecessary properties and highlights errors in property names
 --blj Map $BLJ folder into the docker container;
 this replaces BioLockJ packaged in a docker container with the local copy.
 --verbose Equivalent to adding `pipeline.logLevel=DEBUG` to the config file.
+--docker-mapper <class> Rarely used. See user guide. Ignored when not using docker.
 --env-var <var=val> Environment variables to be passed to the BioLockJ environment.
 Can be a comma-sep list. Values take the form: a=foo,b=bar,c=baz
 --blj_proj <dir> Directory that contains BioLockJ pipelines. If not supplied,

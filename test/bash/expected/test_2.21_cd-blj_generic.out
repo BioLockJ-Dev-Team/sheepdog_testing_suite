@@ -8,4 +8,5 @@ biolockjComplete
 myFirstPipeline.properties
 myFirstPipeline_<DATE>.log
 summary.txt
+systemInfo.txt
 validation
