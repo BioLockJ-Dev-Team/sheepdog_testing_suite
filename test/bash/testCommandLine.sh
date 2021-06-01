@@ -296,6 +296,10 @@ id=test_1.27_verbose
 biolockj --verbose $exampleConfig 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
+id=test_1.28_mapper
+${SHEP}/test/feature/dockerMapper/dockerMapper.sh 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
 
 # verify that bash times out in waiting, unless --wait-for-start is used
 export BIOLOCKJ_TEST_MODE=""
@@ -461,6 +465,11 @@ grep pipeline.logLevel $WITHOUT/MASTER* 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 SMALL_NUM=$(grep DEBUG $WITHOUT/myFirst*log | wc -l)
 [ $SMALL_NUM -lt 10 ] && echo "There are fewer than 10 DEBUG lines without --verbose." 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
+
+id=test_2.28_mapper
+${SHEP}/test/feature/dockerMapper/dockerMapper.sh 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
+
 
 
 echo ""
