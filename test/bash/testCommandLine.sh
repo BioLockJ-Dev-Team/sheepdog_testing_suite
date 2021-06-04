@@ -493,6 +493,9 @@ id=test_2.28_mapper
 ${SHEP}/test/feature/dockerMapper/dockerMapper.sh 1> $OUT/${id}.out 2>$OUT/${id}.err
 check_it
 
+id=test_2.29_progressDemo
+java -cp ${BLJ}/dist/BioLockJ.jar biolockj.launch.ProgressMsgDemo 1> $OUT/${id}.out 2>$OUT/${id}.err
+check_it
 
 
 echo ""

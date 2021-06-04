@@ -1,0 +1,11 @@
+
+STANDARD_ERR:
+This is a stand-alone message, unrealted to long processes.
+The long process is DONE!
+Interupting message: part 1 of 3 is done.
+Interupting message: part 2 of 3 is done.
+This is a stand-alone message, unrealted to long processes.
+Interupting message: part 3 of 3 is done.
+Multi-task process...DONE!
+Unrelated message.
+Done doing that thing.
