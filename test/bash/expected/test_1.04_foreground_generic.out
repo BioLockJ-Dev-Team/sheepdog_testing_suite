@@ -1,9 +1,9 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher --foreground configFile/example.properties ]
-Registering options | foreground = true
- Registering options | Using configFile/example.properties as the config file.
- Registering options |  ---------> Execute CMD [ JavaLaunchProcess --foreground configFile/example.properties ]
- Registering options | foreground = true
- Registering options | Using configFile/example.properties as the config file.
- Registering options | KEY CMD: java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties
+foreground = true
+Using configFile/example.properties as the config file.
+---------> Execute CMD [ JavaLaunchProcess --foreground configFile/example.properties ]
+foreground = true
+Using configFile/example.properties as the config file.
+KEY CMD: java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

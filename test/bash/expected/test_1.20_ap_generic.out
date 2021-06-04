@@ -47,9 +47,9 @@ biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher -ap restartDir/examplePipeline_11_1969-07-16 ]
-Registering options | aws = true
-  precheck-only = true
- Registering options | Using restartDir/examplePipeline_11_1969-07-16 as the config file.
- Registering options |This feature is under active development...
- Using restartDir/examplePipeline_11_1969-07-16 as the config file.
- Registering options |KEY CMD: <BLJ>/script/launch_aws -ap restartDir/examplePipeline_11_1969-07-16
+aws = true
+precheck-only = true
+Using restartDir/examplePipeline_11_1969-07-16 as the config file.
+This feature is under active development...
+Using restartDir/examplePipeline_11_1969-07-16 as the config file.
+KEY CMD: <BLJ>/script/launch_aws -ap restartDir/examplePipeline_11_1969-07-16

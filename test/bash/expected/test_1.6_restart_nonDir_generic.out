@@ -1,9 +1,9 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher --restart configFile/example.properties ]
-Registering options | restart = true
- Registering options | Using configFile/example.properties as the pipeline to restart.
- Registering options |Error: [<SHEP>/test/bash/configFile/example.properties] is not a directory on the filesystem.
+restart = true
+Using configFile/example.properties as the pipeline to restart.
+Error: [<SHEP>/test/bash/configFile/example.properties] is not a directory on the filesystem.
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:

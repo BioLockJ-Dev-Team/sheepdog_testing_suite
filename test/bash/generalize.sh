@@ -8,6 +8,9 @@ VERSION=$(cat ${SHEP}/biolockjVersion)
 TRIMMED_VERSION=${VERSION//-*}
 HOST=$(hostname)
 
+# spinner=""
+# prevspin=""
+
 while read -r line; do
 	# replace the container id
 	line=${line//Docker\ container\ id:\ */"Docker container id: <ID_STRING>"}
@@ -34,8 +37,16 @@ while read -r line; do
 	line=${line//"Initializing BioLockJ..."/"<$INIT>"}
 	line=${line//"Initializing BioLockJ.."/"<$INIT>"}
 	line=${line//"Initializing BioLockJ."/"<$INIT>"}
+
+	# For long lines that have many carriage returns resulting 
+	# from the animated status display, just take that part 
+	# that remains on the screen.
+	catV=$(echo $line | cat -v - )
+	line=${catV##*\^M} 
+
 	# write to output
 	echo $line >> $OUTPUT_NAME	
+
 done < $1
 
 echo $OUTPUT_NAME

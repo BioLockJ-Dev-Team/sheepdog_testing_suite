@@ -1,171 +1,141 @@
 <SHEP>/MockMain/pipelines/fastFail_<DATE>
-# new precheck pipeline replaces an old one by the same name (after failure)
 <SHEP>/MockMain/pipelines/fastFail_<DATE>
-# standard pipeline replaces precheck pipeline (after failure)
 <SHEP>/MockMain/pipelines/fastFail_<DATE>
-# new precheck cannot replace a standard pipeline
 <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
-# standard pipeline replaces precheck pipeline
 <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
-# new precheck cannot replace a standard pipeline
 <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
-# new precheck with different name creates a new folder
 <SHEP>/MockMain/pipelines/configToFail_<DATE>
-# new precheck replaces old one with the same name (after success)
 <SHEP>/MockMain/pipelines/configToFail_<DATE>
-# standard pipeline replaces precheck pipeline (after success)
 <SHEP>/MockMain/pipelines/configToFail_<DATE>
 
 STANDARD_ERR:
-Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
+
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 There is a problem with this pipeline configuration.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+# new precheck pipeline replaces an old one by the same name (_DATE, after failure)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
 
-Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
- Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 There is a problem with this pipeline configuration.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+# standard pipeline replaces precheck pipeline (_DATE, after failure)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
 
-Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
- Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 BioLockJ has stopped.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+# new precheck cannot replace a standard pipeline, _2_DATE
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
 
-Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 There is a problem with this pipeline configuration.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+# standard pipeline replaces precheck pipeline, _2_DATE
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
 
-Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
- Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 BioLockJ has stopped.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+# new precheck cannot replace a standard pipeline, _3_DATE
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
 
-Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 There is a problem with this pipeline configuration.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+# new precheck with different name creates a new folder, _DATE
+Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
+Done checking module: 01_RegisterNumReads
+Done checking module: 02_RarefySeqs
+Done checking module: 03_WriteTime
+Done checking module: 04_ConfigToFail
+Done checking module: 05_SeqFileValidator
+Done checking module: 06_Multiplexer
+Done checking dependencies.
 
-Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_RegisterNumReads | Done checking module: 01_RegisterNumReads
- Checking module: 02_RarefySeqs | Done checking module: 02_RarefySeqs
- Checking module: 03_WriteTime | Done checking module: 03_WriteTime
- Checking module: 04_ConfigToFail | Done checking module: 04_ConfigToFail
- Checking module: 05_SeqFileValidator | Done checking module: 05_SeqFileValidator
- Checking module: 06_Multiplexer | Done checking module: 06_Multiplexer
- Done checking dependencies.
- 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 Precheck is complete. No problems were found in this pipeline configuration.
+# new precheck replaces old one with the same name (_DATE, after success)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
+Done checking module: 01_RegisterNumReads
+Done checking module: 02_RarefySeqs
+Done checking module: 03_WriteTime
+Done checking module: 04_ConfigToFail
+Done checking module: 05_SeqFileValidator
+Done checking module: 06_Multiplexer
+Done checking dependencies.
 
-
-Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
- Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_RegisterNumReads | Done checking module: 01_RegisterNumReads
- Checking module: 02_RarefySeqs | Done checking module: 02_RarefySeqs
- Checking module: 03_WriteTime | Done checking module: 03_WriteTime
- Checking module: 04_ConfigToFail | Done checking module: 04_ConfigToFail
- Checking module: 05_SeqFileValidator | Done checking module: 05_SeqFileValidator
- Checking module: 06_Multiplexer | Done checking module: 06_Multiplexer
- Done checking dependencies.
- 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 Precheck is complete. No problems were found in this pipeline configuration.
+# standard pipeline replaces precheck pipeline (_DATE, after success)
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
+Done initializing BioLockJ.
+Done checking module: 00_ImportMetadata
+Done checking module: 01_RegisterNumReads
+Done checking module: 02_RarefySeqs
+Done checking module: 03_WriteTime
+Done checking module: 04_ConfigToFail
+Done checking module: 05_SeqFileValidator
+Done checking module: 06_Multiplexer
+Done checking dependencies.
 
-
-Registering options |  Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
- Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/configToFail_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_ImportMetadata | Done checking module: 00_ImportMetadata
- Checking module: 01_RegisterNumReads | Done checking module: 01_RegisterNumReads
- Checking module: 02_RarefySeqs | Done checking module: 02_RarefySeqs
- Checking module: 03_WriteTime | Done checking module: 03_WriteTime
- Checking module: 04_ConfigToFail | Done checking module: 04_ConfigToFail
- Checking module: 05_SeqFileValidator | Done checking module: 05_SeqFileValidator
- Checking module: 06_Multiplexer | Done checking module: 06_Multiplexer
- Done checking dependencies.
- 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 Pipeline is running.
-
-

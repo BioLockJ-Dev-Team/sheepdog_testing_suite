@@ -10,8 +10,8 @@ KEY CMD: run_aws configFile/example.properties
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher -a configFile/example.properties ]
-Registering options | aws = true
- Registering options | Using configFile/example.properties as the config file.
- Registering options |This feature is under active development...
- Using configFile/example.properties as the config file.
- Registering options |KEY CMD: <BLJ>/script/launch_aws -a configFile/example.properties
+aws = true
+Using configFile/example.properties as the config file.
+This feature is under active development...
+Using configFile/example.properties as the config file.
+KEY CMD: <BLJ>/script/launch_aws -a configFile/example.properties

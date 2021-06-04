@@ -1,7 +1,7 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher -i ]
-Registering options |Error: unrecognized short-form argument [ -i ].
+Error: unrecognized short-form argument [ -i ].
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:

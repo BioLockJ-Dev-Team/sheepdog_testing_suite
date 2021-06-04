@@ -1,7 +1,7 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher --aBadParam ]
-Registering options |Error: unrecognized argument name [ --aBadParam ]
+Error: unrecognized argument name [ --aBadParam ]
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:

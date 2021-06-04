@@ -361,22 +361,31 @@ rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 rm -rf ${SHEP}/MockMain/pipelines/configToFail*
 
 id=test_2.20_precheck_repeats
+echo "# new precheck pipeline creates a new pipeline folder; _DATE" 1>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
-echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
+sleep 1
+echo "# new precheck pipeline replaces an old one by the same name (_DATE, after failure)" 1>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.out
+sleep 1
+echo "# standard pipeline replaces precheck pipeline (_DATE, after failure)" 1>> $OUT/${id}.err
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
+sleep 1
+echo "# new precheck cannot replace a standard pipeline, _2_DATE" 1>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.out
+sleep 1
+echo "# standard pipeline replaces precheck pipeline, _2_DATE" 1>> $OUT/${id}.err
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
+sleep 1
+echo "# new precheck cannot replace a standard pipeline, _3_DATE" 1>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# new precheck with different name creates a new folder" 1>> $OUT/${id}.out
+sleep 1
+echo "# new precheck with different name creates a new folder, _DATE" 1>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# new precheck replaces old one with the same name (after success)" 1>> $OUT/${id}.out
+sleep 1
+echo "# new precheck replaces old one with the same name (_DATE, after success)" 1>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-echo "# standard pipeline replaces precheck pipeline (after success)" 1>> $OUT/${id}.out
+sleep 1
+echo "# standard pipeline replaces precheck pipeline (_DATE, after success)" 1>> $OUT/${id}.err
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/configToFail.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 # echo "# pipeline fails to form at all; show correct message." 1>> $OUT/${id}.out
 # biolockj ${SHEP}/test/bash/configFile/failPipelineFormation.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
@@ -398,38 +407,50 @@ rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 id=test_2.25_unusedProps_repeats
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1> $OUT/${id}.out 2>$OUT/${id}.err
 sleep 1
-echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.out
+echo "# new precheck pipeline replaces an old one by the same name (after failure)" 1>> $OUT/${id}.err
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 sleep 1
-echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.out
+echo "# standard pipeline replaces precheck pipeline (after failure)" 1>> $OUT/${id}.err
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 sleep 1
-echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
+echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.err
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 sleep 1
-echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.out
+echo "# standard pipeline replaces precheck pipeline" 1>> $OUT/${id}.err
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 sleep 1
-echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.out
+echo "# new precheck cannot replace a standard pipeline" 1>> $OUT/${id}.err
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 check_it
 
 
+rm -rf ${SHEP}/MockMain/pipelines/noneUnused*
 
 id=test_2.26_noneUnused
+echo "# new precheck pipeline makes a pipeline" >> $OUT/${id}.err
 biolockj -p ${SHEP}/test/bash/configFile/noneUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+sleep 1
+echo "# A pipeline with -u is also -p, and replaces a previous pipeline.  No mention of unused props." >> $OUT/${id}.err
 biolockj -u ${SHEP}/test/bash/configFile/noneUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+sleep 1
+echo "# New real pipeline replaces a previous pre-check pipeline.  No mention of unused props." >> $OUT/${id}.err
 biolockj ${SHEP}/test/bash/configFile/noneUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
+
+rm -rf ${SHEP}/MockMain/pipelines/hasUnused*
+
 id=test_2.26_showsUnused
-echo "# With -p, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo "# With -p, the unused props are shown at the end of check dependencies, std out only shows file path" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo "# With -p, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.err
 biolockj -p ${SHEP}/test/bash/configFile/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
-echo "# With -u, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo "# With -u, the unused props are shown at the end of check dependencies, std out only shows file path" 1>> $OUT/${id}.out 
+echo "# With -u, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.err
 biolockj -u ${SHEP}/test/bash/configFile/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 echo "" 1>> $OUT/${id}.out 
-echo "# With no args, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+echo "# With no args, the unused props are shown at the end of check dependencies, std out only shows file path" 1>> $OUT/${id}.out 
+echo "# With no args, the unused props are shown at the end of check dependencies" 1>> $OUT/${id}.err
 biolockj ${SHEP}/test/bash/configFile/hasUnused.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 check_it
 
@@ -439,9 +460,11 @@ rm -rf ${SHEP}/MockMain/pipelines/fastFail*
 id=test_2.26_showsUnusedWithFailure
 echo "# With -p, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj -p --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+sleep 1
 echo "" 1>> $OUT/${id}.out 
 echo "# With -u, the unused props are shown (despite failing in check dependencies)" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj -u --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
+sleep 1
 echo "" 1>> $OUT/${id}.out 
 echo "# With no args, the unused props are not shown because there is a failure in check dependencies" 1>> $OUT/${id}.out 2>> $OUT/${id}.err
 biolockj --external-modules ${SHEP}/MockMain/dist ${SHEP}/test/bash/configFile/fastFail-multiModule.properties 1>> $OUT/${id}.out 2>> $OUT/${id}.err
@@ -451,19 +474,19 @@ check_it
 rm -rf ${SHEP}/MockMain/pipelines/myFirstPipeline*
 
 id=test_2.27_verbose
-biolockj --verbose $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-WITH=$(last-pipeline)
-grep pipeline.logLevel $WITH/MASTER* 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+WITH=$( biolockj --verbose $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 2>>$OUT/${id}.err )
+echo "Pipeline with --verbose: $WITH" 1>> $OUT/${id}.out
+grep pipeline.logLevel $WITH/MASTER* 1>> $OUT/${id}.out
 BIG_NUM=$(grep DEBUG $WITH/myFirst*log | wc -l)
-[ $BIG_NUM -gt 100 ] && echo "There are over 100 DEBUG lines with --verbose." 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+[ $BIG_NUM -gt 100 ] && echo "There are over 100 DEBUG lines with --verbose." 1>> $OUT/${id}.out
 #
 echo "---------" 1>> $OUT/${id}.out 2>>$OUT/${id}.err
 #
-biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 1>> $OUT/${id}.out 2>>$OUT/${id}.err
-WITHOUT=$(last-pipeline)
-grep pipeline.logLevel $WITHOUT/MASTER* 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+WITHOUT=$( biolockj $BLJ/templates/myFirstPipeline/myFirstPipeline.properties 2>>$OUT/${id}.err )
+echo "Pipeline without -v: $WITHOUT" 1>> $OUT/${id}.out
+grep pipeline.logLevel $WITHOUT/MASTER* 1>> $OUT/${id}.out 
 SMALL_NUM=$(grep DEBUG $WITHOUT/myFirst*log | wc -l)
-[ $SMALL_NUM -lt 10 ] && echo "There are fewer than 10 DEBUG lines without --verbose." 1>> $OUT/${id}.out 2>>$OUT/${id}.err
+[ $SMALL_NUM -lt 10 ] && echo "There are fewer than 10 DEBUG lines without --verbose." 1>> $OUT/${id}.out
 check_it
 
 id=test_2.28_mapper

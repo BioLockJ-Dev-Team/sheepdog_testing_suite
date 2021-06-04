@@ -1,10 +1,10 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher -ru configFile/example.properties ]
-Registering options | restart = true
-  unused-props = true
- Registering options | Using configFile/example.properties as the pipeline to restart.
- Registering options |Error: "unused-props" can only be used with new pipelines; cannot be used in conjunction with "restart".
+restart = true
+unused-props = true
+Using configFile/example.properties as the pipeline to restart.
+Error: "unused-props" can only be used with new pipelines; cannot be used in conjunction with "restart".
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:

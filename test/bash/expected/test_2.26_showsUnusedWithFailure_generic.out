@@ -8,30 +8,26 @@
 <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
 
 STANDARD_ERR:
-Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... / Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_<DATE>
+Done initializing BioLockJ.
+
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 There is a problem with this pipeline configuration.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+Done initializing BioLockJ.
+Done checking module: 02_BuildTaxaTables
+Done checking module: 03_LogTransformTaxaTables
 
-Registering options | Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_FailCheckDependencies | Checking module: 01_SraDownload | Checking module: 02_BuildTaxaTables | Done checking module: 02_BuildTaxaTables
- Checking module: 03_LogTransformTaxaTables | Done checking module: 03_LogTransformTaxaTables
- 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status |
- Warning: see "unverified.properties"
+
+Warning: see "unverified.properties"
 
 ### Properties from the PRIMARY config file that were NOT USED during check-dependencies:
 #
@@ -39,25 +35,20 @@ random.mispelled=whoops
 # The property "sequenceReadArchive.sraAccList" has been deprecated. Please use "sra.sraAccList" instead.
 sequenceReadArchive.sraAccList=nonsense
 
-
 There is a problem with this pipeline configuration.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
 
+Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
+Done initializing BioLockJ.
 
-Registering options | Initializing | Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
- Initializing |Initializing / Initializing BioLockJ ... | Building pipeline: <SHEP>/MockMain/pipelines/fastFail-multiModule_2_<DATE>
- Initializing BioLockJ ... |Initializing BioLockJ ... /Initializing BioLockJ ... - Done initializing BioLockJ.
- Checking dependencies | Checking module: 00_FailCheckDependencies | 
- After an initial status check, all pipeline updates will be in the pipeline folder.
+After an initial status check, all pipeline updates will be in the pipeline folder.
 cd-blj -> Move to pipeline output directory
- 
- Fetching pipeline status | 
 
 BioLockJ has stopped.
 
 ERROR TYPE: BioLockJException
 ERROR MESSAGE: Helpful message for the user.
-
 

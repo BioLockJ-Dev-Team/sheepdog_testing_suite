@@ -1,7 +1,7 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher -b configFile/example.properties ]
-Registering options |Error: unrecognized short-form argument [ -b ].
+Error: unrecognized short-form argument [ -b ].
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:

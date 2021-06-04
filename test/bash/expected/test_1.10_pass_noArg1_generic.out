@@ -1,7 +1,7 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher --password -f configFile/example.properties ]
-Registering options |Error: argument [ password ] takes a value; the value should not begin with "-", found [ -f ].
+Error: argument [ password ] takes a value; the value should not begin with "-", found [ -f ].
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:

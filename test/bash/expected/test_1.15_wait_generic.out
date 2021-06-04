@@ -1,9 +1,9 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher --wait-for-start configFile/example.properties ]
-Registering options | wait-for-start = true
- Registering options | Using configFile/example.properties as the config file.
- Registering options |  ---------> Execute CMD [ JavaLaunchProcess --wait-for-start configFile/example.properties ]
- Registering options | wait-for-start = true
- Registering options | Using configFile/example.properties as the config file.
- Registering options | KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties
+wait-for-start = true
+Using configFile/example.properties as the config file.
+---------> Execute CMD [ JavaLaunchProcess --wait-for-start configFile/example.properties ]
+wait-for-start = true
+Using configFile/example.properties as the config file.
+KEY CMD: nohup java -cp <BLJ>/dist/BioLockJ.jar biolockj.BioLockJ -projectDir <SHEP>/MockMain/pipelines -config <SHEP>/test/bash/configFile/example.properties

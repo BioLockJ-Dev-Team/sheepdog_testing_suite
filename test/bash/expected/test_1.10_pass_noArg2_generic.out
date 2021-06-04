@@ -1,7 +1,7 @@
 
 STANDARD_ERR:
 ---------> Execute CMD [ Launcher --password configFile/example.properties ]
-Registering options |Error: argument [ password ] must take a value.
+Error: argument [ password ] must take a value.
 
 BioLockJ <VERSION> - UNCC Fodor Lab 2021
 Usage:
