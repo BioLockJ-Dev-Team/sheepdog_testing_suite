@@ -25,4 +25,9 @@ public class LongCheckDependencies extends BioModuleImpl {
 		return Constants.MAIN_DOCKER_IMAGE;
 	}
 
+	@Override
+	public String getDockerImageOwner() {
+		return Constants.MAIN_DOCKER_OWNER;
+	}
+
 }

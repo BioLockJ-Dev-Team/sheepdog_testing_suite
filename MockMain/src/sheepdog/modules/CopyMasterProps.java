@@ -2,6 +2,7 @@ package sheepdog.modules;
 
 import java.io.File;
 import org.apache.commons.io.FileUtils;
+import biolockj.BioLockJ;
 import biolockj.Config;
 import biolockj.Constants;
 import biolockj.api.ApiModule;
@@ -17,7 +18,7 @@ public class CopyMasterProps extends BioModuleImpl implements ApiModule{
 
 	@Override
 	public void executeTask() throws Exception {
-		File config = MasterConfigUtil.getExistingMasterConfig( Config.getPipelineDir() );
+		File config = MasterConfigUtil.getExistingMasterConfig( BioLockJ.getPipelineDir() );
 		File dest = getOutputDir();
 		FileUtils.copyFileToDirectory( config, dest );
 	}
@@ -35,6 +36,11 @@ public class CopyMasterProps extends BioModuleImpl implements ApiModule{
 	@Override
 	public String getDockerImageName() {
 		return Constants.MAIN_DOCKER_IMAGE;
+	}
+
+	@Override
+	public String getDockerImageOwner() {
+		return Constants.MAIN_DOCKER_OWNER;
 	}
 
 }

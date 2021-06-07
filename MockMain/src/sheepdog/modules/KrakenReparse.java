@@ -75,5 +75,10 @@ public class KrakenReparse extends BioModuleImpl
 	public String getDockerImageName() {
 		return Constants.MAIN_DOCKER_IMAGE;
 	}
+
+	@Override
+	public String getDockerImageOwner() {
+		return Constants.MAIN_DOCKER_OWNER;
+	}
 	
 }

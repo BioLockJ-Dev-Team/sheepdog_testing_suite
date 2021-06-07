@@ -3,6 +3,7 @@ package sheepdog.modules;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import biolockj.BioLockJ;
 import biolockj.Config;
 import biolockj.Constants;
 import biolockj.exception.BioLockJException;
@@ -19,7 +20,7 @@ public class CheckPipelineName extends BioModuleImpl {
 	@Override
 	public void executeTask() throws Exception {
 		String intendedName = Config.getString( this, NAME_BASE );
-		String pipeName = Config.getPipelineDir().getName();
+		String pipeName = BioLockJ.getPipelineDir().getName();
 		
 		final String year = String.valueOf( new GregorianCalendar().get( Calendar.YEAR ) );
 		final String month = new GregorianCalendar().getDisplayName( Calendar.MONTH, Calendar.SHORT, Locale.ENGLISH );
@@ -39,6 +40,11 @@ public class CheckPipelineName extends BioModuleImpl {
 	@Override
 	public String getDockerImageName() {
 		return Constants.MAIN_DOCKER_IMAGE;
+	}
+
+	@Override
+	public String getDockerImageOwner() {
+		return Constants.MAIN_DOCKER_OWNER;
 	}
 	
 	private static final String NAME_BASE = "checkPipelineName.nameBase";

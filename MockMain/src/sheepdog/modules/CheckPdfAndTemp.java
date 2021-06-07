@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
 import biolockj.Config;
+import biolockj.Constants;
 import biolockj.Log;
 import biolockj.api.ApiModule;
 import biolockj.module.BioModule;
@@ -65,6 +66,11 @@ public class CheckPdfAndTemp extends ScriptModuleImpl implements ApiModule {
 	@Override
 	public String getDockerImageTag() {
 		return "latest";
+	}
+
+	@Override
+	public String getDockerImageOwner() {
+		return Constants.MAIN_DOCKER_OWNER;
 	}
 	
 	public static final String EXE_PDFTOPPM = "exe.pdftoppm";
