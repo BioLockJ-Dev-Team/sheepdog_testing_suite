@@ -30,6 +30,7 @@ Copy the master properties file
 *none*
 
 ## Details
+_version: 0.0.0_
 *none*
 
 ## Adds modules
@@ -41,7 +42,7 @@ Copy the master properties file
 ## Docker
 If running in docker, this module will run in a docker container from this image:<br>
 ```
-biolockjdevteam/biolockj_controller:<VERSION>
+library/biolockj_controller:latest
 ```
 This can be modified using the following properties:<br>
 `CopyMasterProps.imageOwner`<br>

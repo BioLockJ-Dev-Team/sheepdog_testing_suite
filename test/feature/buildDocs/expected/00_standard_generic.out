@@ -43,6 +43,12 @@ Creating documentation page for module: biolockj.module.getData.sra.SraMetaData
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SraMetaData.md
 Creating documentation page for module: biolockj.module.getData.sra.SrpSrrConverter
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.getData.sra/SrpSrrConverter.md
+Creating documentation page for module: biolockj.module.hello_world.Hello_Friends
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.hello_world/Hello_Friends.md
+Creating documentation page for module: biolockj.module.hello_world.Hello_World
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.hello_world/Hello_World.md
+Creating documentation page for module: biolockj.module.hello_world.Step5
+Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.hello_world/Step5.md
 Creating documentation page for module: biolockj.module.implicit.Demultiplexer
 Saving document to file: <BLJ>/mkdocs/user-guide/docs/GENERATED/biolockj.module.implicit/Demultiplexer.md
 Creating documentation page for module: biolockj.module.implicit.ImportMetadata
