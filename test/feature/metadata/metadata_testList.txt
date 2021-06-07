@@ -4,3 +4,4 @@ ${SHEP}/test/feature/metadata/implicit_metadata.properties	BioLockJ_Complete	imp
 ${SHEP}/test/feature/metadata/create_metadata_paired.properties	BioLockJ_Complete	"with paired files, only add the sample 1 time for the two files, should create a list of 8 samples"
 ${SHEP}/test/feature/metadata/metadata_badFilePath.properties	ConfigPathException	bad file path for metadata.filePath
 ${SHEP}/test/feature/metadata/metadata_filePath.properties	BioLockJ_Complete	
+${SHEP}/test/feature/metadata/configured_delim.properties	BioLockJ_Complete	use a comma as the delimiter for the initial metadata file
