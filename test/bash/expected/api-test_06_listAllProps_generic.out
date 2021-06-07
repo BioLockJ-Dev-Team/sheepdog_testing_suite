@@ -59,11 +59,16 @@ exe.python
 exe.vsearch
 exe.wget
 exe.xtract
+genMod.codeLine
 genMod.launcher
 genMod.loopBy
 genMod.param
 genMod.resources
 genMod.scriptPath
+hello.excitmentLevel
+hello.myName
+helloFriends.excitmentLevel
+helloFriends.friendsName
 humann2.disableGeneFamilies
 humann2.disablePathAbundance
 humann2.disablePathCoverage

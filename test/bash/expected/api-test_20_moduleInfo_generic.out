@@ -5,7 +5,7 @@
 "module",
 "Stop"
 ],
-"citation": "Module created by Ivory Blakley",
+"citation": "Module created by Ivory Blakley.",
 "usage": "#BioModule biolockj.module.Stop",
 "pre-req modules": [],
 "description": "Stop a pipeline.",

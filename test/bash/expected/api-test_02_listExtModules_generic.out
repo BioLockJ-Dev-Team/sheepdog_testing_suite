@@ -19,6 +19,9 @@ biolockj.module.getData.sra.SraDownload
 biolockj.module.getData.sra.SraMetaDB
 biolockj.module.getData.sra.SraMetaData
 biolockj.module.getData.sra.SrpSrrConverter
+biolockj.module.hello_world.Hello_Friends
+biolockj.module.hello_world.Hello_World
+biolockj.module.hello_world.Step5
 biolockj.module.implicit.Demultiplexer
 biolockj.module.implicit.ImportMetadata
 biolockj.module.implicit.RegisterNumReads
