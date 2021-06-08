@@ -7,3 +7,5 @@ ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only	0	PipelineF
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only --external-modules ${SHEP}/MockMain/dist	0	StopAfterPrecheck	"this replaces the previous precheck pipeline, and precheck passes"
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline replaces the precheck pipeline.
 ${SHEP}/test/feature/precheck/implicitCounter.properties	 --precheck-only	0	StopAfterPrecheck	look at the automatically added modules
+${SHEP}/test/feature/precheck/repeat/repeatCase.properties	 --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline has a name with a _2_ in it
+${SHEP}/test/feature/precheck/repeat/repeat/repeatCase.properties	 --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline has a name with a _3_ in it

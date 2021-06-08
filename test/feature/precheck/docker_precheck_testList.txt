@@ -6,3 +6,5 @@ ${SHEP}/test/feature/precheck/goodCase.properties	 --precheck-only --blj --docke
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only --blj --docker -e SHEP=${SHEP}	0	PipelineFormationException	"config calls for class in sheepdog, but external mods is not used in the biolockj call"
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --precheck-only --blj --docker -e SHEP=${SHEP} --external-modules ${SHEP}/MockMain/dist	0	StopAfterPrecheck	"this replaces the previous precheck pipeline, and precheck passes"
 ${SHEP}/test/feature/precheck/repeatCase.properties	 --blj --docker -e SHEP=${SHEP} --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline replaces the precheck pipeline.
+${SHEP}/test/feature/precheck/repeat/repeatCase.properties	 --blj --docker -e SHEP=${SHEP}  --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline has a name with a _2_ in it
+${SHEP}/test/feature/precheck/repeat/repeat/repeatCase.properties	 --blj --docker -e SHEP=${SHEP}  --external-modules ${SHEP}/MockMain/dist	2	BioLockJ_Complete	this pipeline has a name with a _3_ in it
