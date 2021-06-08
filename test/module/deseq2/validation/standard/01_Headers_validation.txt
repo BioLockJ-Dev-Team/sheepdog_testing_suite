@@ -1,0 +1,5 @@
+name	size	md5	MATCHED_EXPECTATION
+header_class_Intercept.tsv	69	de87ff5c4268c5e9bbd0f98830b9f091	REPORT
+header_class_Location_AGR_vs_ADE.tsv	69	de87ff5c4268c5e9bbd0f98830b9f091	REPORT
+header_phylum_Intercept.tsv	69	de87ff5c4268c5e9bbd0f98830b9f091	REPORT
+header_phylum_Location_AGR_vs_ADE.tsv	69	de87ff5c4268c5e9bbd0f98830b9f091	REPORT

@@ -30,6 +30,8 @@ runTestSet ${DIR}/tutorialSeries/tutorials_testList.txt
 DIR=${SHEP}/test/module
 #runTestSet ${DIR}/assembly/assembly_testList.txt   
 runTestSet ${DIR}/calcStats/calcStats_testList.txt
+runTestSet ${DIR}/deseq2/deseq_testList.txt 
+runTestSet ${DIR}/edgeR/edger_testList.txt
 runTestSet ${DIR}/email/testList.txt    
 runTestSet ${DIR}/forEach/testList_forEach.txt
 runTestSet ${DIR}/genMod/genMod_testList.txt 
