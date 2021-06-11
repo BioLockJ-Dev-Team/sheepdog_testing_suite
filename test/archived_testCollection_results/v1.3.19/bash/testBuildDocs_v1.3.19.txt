@@ -1,0 +1,10 @@
+Most recent sheepdog commit: v1.3.17-12-g7e0ab70
+Most recent BioLockJ commit: v1.3.19-rc
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/feature/buildDocs/output
+-
+00_standard --> just as expected.
+-
+01_independent --> just as expected.
+
+Ran 2 tests on buildDocs utility.
+All 2 tests PASS.

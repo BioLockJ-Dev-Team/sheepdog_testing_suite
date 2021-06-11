@@ -1,0 +1,30 @@
+Most recent sheepdog commit: v1.3.17-12-g7e0ab70
+Most recent BioLockJ commit: v1.3.19-rc
+Don't use docker
+
+
+Part 1
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/configToFail.properties
+/Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+
+Part 2
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist  		 --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+Starting reset process... 
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+Reseting module 04_ConfigToFail and any subsequent modules...
+Removed status flag: biolockjFailed
+Reset complete.
+/Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+
+Part 3
+biolockj --external-modules /Users/ieclabau/git/sheepdog_testing_suite/MockMain/dist  		 --blj_proj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines 		 --restart /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+Starting reset process... 
+Reseting pipeline: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+Reseting module 04_ConfigToFail and any subsequent modules...
+Removed status flag: biolockjFailed
+Reset complete.
+/Users/ieclabau/git/sheepdog_testing_suite/test/bash/pipelines/configToFail_2021Jun07
+Good: module 03 was never deleted.
+Good: module 04 re-executed each time.
+Good: with correction, the pipeline completes.
+Basic Restart Test: PASSING

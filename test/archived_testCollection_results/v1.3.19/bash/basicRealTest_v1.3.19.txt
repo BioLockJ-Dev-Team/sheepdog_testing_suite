@@ -1,0 +1,15 @@
+Most recent sheepdog commit: v1.3.17-12-g7e0ab70
+Most recent BioLockJ commit: v1.3.19-rc
+ Test 1 ---> biolockj /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2021Jun07
+It is running......Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2021Jun07
+-->It completed.
+ Test 2 ---> biolockj --blj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2021Jun07
+It is running...........................................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_2_2021Jun07
+-->It completed.
+ Test 3 ---> biolockj --docker -e SHEP=/Users/ieclabau/git/sheepdog_testing_suite /Users/ieclabau/git/sheepdog_testing_suite/test/bash/configFile/rarifySeqs.properties
+/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2021Jun07
+It is running..........................................Made pipeline /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/rarifySeqs_3_2021Jun07
+-->It completed.
+Ran 3 basic launch process tests, all PASSED.

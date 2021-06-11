@@ -1,7 +1,7 @@
 Warning: The blj_functions library is deprecated.
-Warning: It will be removed as of version v1.4.0.
+Warning: It will be removed as of version <VERSION>.
 Warning: The blj_functions library is deprecated.
-Warning: It will be removed as of version v1.4.0.
+Warning: It will be removed as of version <VERSION>.
 
 ---------> Execute CMD [ launch_aws --aws -g configFile/example.properties ]
 gui = true
