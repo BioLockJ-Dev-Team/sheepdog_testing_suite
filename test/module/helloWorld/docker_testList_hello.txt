@@ -1,0 +1,7 @@
+ConfigFile	bash_biolockj_args	ExpectedOutcome	Notes
+${SHEP}/test/module/helloWorld/basicSteps.config	 -d --blj 	BioLockJ_Complete	Use the module that is part of the steps
+${SHEP}/test/module/helloWorld/justHelloFriends.config	 -d --blj 	BioLockJ_Complete	
+${SHEP}/test/module/helloWorld/justHelloWorld.config	 -d --blj 	BioLockJ_Complete	
+${BLJ}/templates/hello-world/helloWorld.config	 -d --blj 	BioLockJ_Complete	This is the example included with BioLockJ
+${SHEP}/test/module/helloWorld/helloWorld_withValidation.config	 -d --blj 	BioLockJ_Complete	"Based on the built in example, but adds validation to confirm desired outputs"
+${SHEP}/test/module/helloWorld/helloFriends_fail.config	 -d --blj 	ConfigFormatException	

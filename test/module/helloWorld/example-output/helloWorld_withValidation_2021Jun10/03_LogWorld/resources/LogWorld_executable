@@ -1,0 +1,2 @@
+
+cp ../../*Hello*/log/*Hello*.log ../output/.

@@ -38,6 +38,7 @@ runTestSet ${DIR}/edgeR/edger_testList.txt
 #runTestSet ${DIR}/email/testList.txt 
 runTestSet ${DIR}/forEach/testList_forEach.txt
 runTestSet ${DIR}/genMod/genMod_testList.txt 
+runTestSet ${DIR}/helloWorld/testList_hello.txt
 runTestSet ${DIR}/kraken2/k2_testList.txt 
 runTestSet ${DIR}/kraken2Parser/Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/normTaxa_testList.txt

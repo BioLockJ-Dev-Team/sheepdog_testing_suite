@@ -1,0 +1,2 @@
+
+cp ../../*BasicSteps/log/0*.log ../output/.

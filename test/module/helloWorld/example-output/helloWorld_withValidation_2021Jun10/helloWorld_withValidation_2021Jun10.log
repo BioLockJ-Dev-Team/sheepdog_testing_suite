@@ -1,0 +1,739 @@
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: Launching BioLockJ v1.4.0 ~ Distributed by UNCC Fodor Lab 2021
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: This code is free software; you can redistribute and/or modify it
+2021-06-10 16:47:57 INFO Log: under the terms of the GNU General Public License as published by
+2021-06-10 16:47:57 INFO Log: the Free Software Foundation; either version 2 of the License, or
+2021-06-10 16:47:57 INFO Log: any later version, provided proper credit is given to the authors.
+2021-06-10 16:47:57 INFO Log: This program is distributed in the hope that it will be useful,
+2021-06-10 16:47:57 INFO Log: but WITHOUT ANY WARRANTY; without even the implied warranty of
+2021-06-10 16:47:57 INFO Log: MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+2021-06-10 16:47:57 INFO Log: GNU General Public License for more details at http://www.gnu.org
+2021-06-10 16:47:57 INFO Log: 
+========================================================================
+2021-06-10 16:47:57 INFO Log: Application runtime args:
+2021-06-10 16:47:57 INFO Log:  ---> arg[0] = -projectDir
+2021-06-10 16:47:57 INFO Log:  ---> arg[1] = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines
+2021-06-10 16:47:57 INFO Log:  ---> arg[2] = -config
+2021-06-10 16:47:57 INFO Log:  ---> arg[3] = /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: Assign NEW pipeline root directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: Creating systemInfo.txt file.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: Initialize Config: /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+2021-06-10 16:47:57 INFO Log: Import All Config Properties for --> Top Level Pipeline Properties File: /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: --------> Bash Var Converted "${BLJ}/resources/config/default/standard.properties" ======> "/Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties"
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: LOAD CONFIG [ #0 ]: ---> /Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: LOAD CONFIG [ #1 ]: ---> /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.hello_world.Step5 AS BasicSteps
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.diy.GenMod AS LogBasicSteps
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.hello_world.Hello_World
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.diy.GenMod AS LogWorld
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.diy.GenMod AS LogFriends
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.diy.GenMod AS OneLine
+2021-06-10 16:47:57 INFO Log: Configured BioModule: biolockj.module.diy.GenMod AS UseScript
+2021-06-10 16:47:57 INFO Log: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Log: Set config property [ internal.pipelineDir ] = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10
+2021-06-10 16:47:57 INFO Log: Set config property [ internal.pipelineName ] = helloWorld_withValidation
+2021-06-10 16:47:57 INFO Log: Set config property [ internal.pipelineInstanceId ] = helloWorld_withValidation_2021Jun10
+2021-06-10 16:47:57 INFO Log: Total # initial properties: 84
+2021-06-10 16:47:57 INFO Log: Overwriting [report.taxonomyLevels=phylum,class,order,family,genus] to set config property [report.taxonomyLevels=phylum, class, order, family, genus]
+2021-06-10 16:47:57 INFO Log: Set LOG_FILE = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/helloWorld_withValidation_2021Jun10.log
+2021-06-10 16:47:57 INFO Log: Set pipeline.logLevel = INFO
+2021-06-10 16:47:57 INFO Log: Set LOG_APPEND = true
+2021-06-10 16:47:57 INFO Log: Set LOG_FORMAT = %m%n
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: Pipeline Project Config File: /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+2021-06-10 16:47:57 INFO Log: Pipeline Default Config Files: [/Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties]
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: ===> List All Configured Properties:
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: LogBasicSteps.codeLine = cp ../../*BasicSteps/log/0*.log ../output/.
+2021-06-10 16:47:57 INFO Log: LogFriends.codeLine = cp ../../*Hello*/log/*Hello*.log ../output/.
+2021-06-10 16:47:57 INFO Log: LogWorld.codeLine = cp ../../*Hello*/log/*Hello*.log ../output/.
+2021-06-10 16:47:57 INFO Log: OneLine.codeLine = echo "Hello world!" > ../output/hello.txt
+2021-06-10 16:47:57 INFO Log: UseScript.scriptPath = ./helloScript.sh
+2021-06-10 16:47:57 INFO Log: cluster.returnsBatchIds = Y
+2021-06-10 16:47:57 INFO Log: demultiplexer.barcodeCutoff = 0.05
+2021-06-10 16:47:57 INFO Log: docker.mountSock = N
+2021-06-10 16:47:57 INFO Log: helloFriends.excitmentLevel = 3
+2021-06-10 16:47:57 INFO Log: helloFriends.friendsName = Jean-Luc
+2021-06-10 16:47:57 INFO Log: input.allowDuplicateNames = N
+2021-06-10 16:47:57 INFO Log: input.requireCompletePairs = Y
+2021-06-10 16:47:57 INFO Log: input.suffixFw = _R1
+2021-06-10 16:47:57 INFO Log: input.suffixRv = _R2
+2021-06-10 16:47:57 INFO Log: internal.configModules = biolockj.module.hello_world.Step5 AS BasicSteps, biolockj.module.diy.GenMod AS LogBasicSteps, biolockj.module.hello_world.Hello_World, biolockj.module.diy.GenMod AS LogWorld, biolockj.module.hello_world.Hello_Friends, biolockj.module.diy.GenMod AS LogFriends, biolockj.module.diy.GenMod AS OneLine, biolockj.module.diy.GenMod AS UseScript
+2021-06-10 16:47:57 INFO Log: internal.defaultConfig = /Users/ieclabau/git/BioLockJ/resources/config/default/standard.properties
+2021-06-10 16:47:57 INFO Log: internal.pipelineDir = /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10
+2021-06-10 16:47:57 INFO Log: internal.pipelineInstanceId = helloWorld_withValidation_2021Jun10
+2021-06-10 16:47:57 INFO Log: internal.pipelineName = helloWorld_withValidation
+2021-06-10 16:47:57 INFO Log: kraken.krakenParams = --only-classified-output, --preload
+2021-06-10 16:47:57 INFO Log: mail.encryptedPassword = 7GYvu1m+Yv1Gk7Cd9BLaznJ/jq33g0q1
+2021-06-10 16:47:57 INFO Log: mail.from = biolockj@gmail.com
+2021-06-10 16:47:57 INFO Log: mail.smtp.auth = Y
+2021-06-10 16:47:57 INFO Log: mail.smtp.host = smtp.gmail.com
+2021-06-10 16:47:57 INFO Log: mail.smtp.port = 587
+2021-06-10 16:47:57 INFO Log: mail.smtp.starttls.enable = Y
+2021-06-10 16:47:57 INFO Log: mail.to = 
+2021-06-10 16:47:57 INFO Log: metadata.barcodeColumn = BarcodeSequence
+2021-06-10 16:47:57 INFO Log: metadata.columnDelim = \t
+2021-06-10 16:47:57 INFO Log: metadata.nullValue = NA
+2021-06-10 16:47:57 INFO Log: metadata.required = N
+2021-06-10 16:47:57 INFO Log: multiplexer.gzip = Y
+2021-06-10 16:47:57 INFO Log: pipeline.defaultDemultiplexer = biolockj.module.implicit.Demultiplexer
+2021-06-10 16:47:57 INFO Log: pipeline.defaultFastaConverter = biolockj.module.seq.AwkFastaConverter
+2021-06-10 16:47:57 INFO Log: pipeline.defaultSeqMerger = biolockj.module.seq.PearMergeReads
+2021-06-10 16:47:57 INFO Log: pipeline.defaultStatsModule = biolockj.module.report.r.R_CalculateStats
+2021-06-10 16:47:57 INFO Log: pipeline.detachJavaModules = Y
+2021-06-10 16:47:57 INFO Log: pipeline.downloadDir = $HOME/projects/downloads
+2021-06-10 16:47:57 INFO Log: pipeline.env = local
+2021-06-10 16:47:57 INFO Log: pipeline.envVars = BLJ
+2021-06-10 16:47:57 INFO Log: pipeline.inputTypes = none
+2021-06-10 16:47:57 INFO Log: pipeline.logLevel = INFO
+2021-06-10 16:47:57 INFO Log: pipeline.permissions = 770
+2021-06-10 16:47:57 INFO Log: pipeline.useEnvVars = Y
+2021-06-10 16:47:57 INFO Log: qiime.alphaMetrics = shannon
+2021-06-10 16:47:57 INFO Log: qiime.plotAlphaMetrics = Y
+2021-06-10 16:47:57 INFO Log: qiime.removeChimeras = Y
+2021-06-10 16:47:57 INFO Log: r.colorBase = black
+2021-06-10 16:47:57 INFO Log: r.colorHighlight = red
+2021-06-10 16:47:57 INFO Log: r.colorPoint = black
+2021-06-10 16:47:57 INFO Log: r.debug = Y
+2021-06-10 16:47:57 INFO Log: r.pValFormat = %1.2g
+2021-06-10 16:47:57 INFO Log: r.pch = 21
+2021-06-10 16:47:57 INFO Log: r.pvalCutoff = 0.05
+2021-06-10 16:47:57 INFO Log: r.rareOtuThreshold = 1
+2021-06-10 16:47:57 INFO Log: r.timeout = 0
+2021-06-10 16:47:57 INFO Log: r_CalculateStats.pAdjustMethod = BH
+2021-06-10 16:47:57 INFO Log: r_CalculateStats.pAdjustScope = LOCAL
+2021-06-10 16:47:57 INFO Log: r_PlotEffectSize.disableFoldChange = Y
+2021-06-10 16:47:57 INFO Log: r_PlotEffectSize.excludePvalAbove = 1
+2021-06-10 16:47:57 INFO Log: r_PlotEffectSize.maxNumTaxa = 40
+2021-06-10 16:47:57 INFO Log: r_PlotMds.distance = bray
+2021-06-10 16:47:57 INFO Log: r_PlotMds.numAxis = 3
+2021-06-10 16:47:57 INFO Log: rarefyOtuCounts.iterations = 10
+2021-06-10 16:47:57 INFO Log: rarefyOtuCounts.lowAbundantCutoff = 0.01
+2021-06-10 16:47:57 INFO Log: rarefyOtuCounts.quantile = 0.5
+2021-06-10 16:47:57 INFO Log: rdp.minThresholdScore = 80
+2021-06-10 16:47:57 INFO Log: rdp.params = -f fixrank
+2021-06-10 16:47:57 INFO Log: report.logBase = 10
+2021-06-10 16:47:57 INFO Log: report.minCount = 2
+2021-06-10 16:47:57 INFO Log: report.numHits = Y
+2021-06-10 16:47:57 INFO Log: report.numReads = Y
+2021-06-10 16:47:57 INFO Log: report.scarceCountCutoff = 0.25
+2021-06-10 16:47:57 INFO Log: report.scarceSampleCutoff = 0.25
+2021-06-10 16:47:57 INFO Log: report.taxonomyLevels = phylum, class, order, family, genus
+2021-06-10 16:47:57 INFO Log: report.unclassifiedTaxa = Y
+2021-06-10 16:47:57 INFO Log: script.defaultHeader = #!/bin/bash
+2021-06-10 16:47:57 INFO Log: script.fileRefreshDelay = 1
+2021-06-10 16:47:57 INFO Log: script.numThreads = 8
+2021-06-10 16:47:57 INFO Log: script.numWorkers = 1
+2021-06-10 16:47:57 INFO Log: script.permissions = 770
+2021-06-10 16:47:57 INFO Log: seqFileValidator.requireEqualNumPairs = Y
+2021-06-10 16:47:57 INFO Log: trimPrimers.requirePrimer = Y
+2021-06-10 16:47:57 INFO Log: validation.stopPipeline = Y
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO Log: Java Logger initialized
+2021-06-10 16:47:57 INFO Log: ========================================================================
+2021-06-10 16:47:57 INFO MetaUtil: Initialize metadata property [ metadata.nullValue ] = NA
+2021-06-10 16:47:57 INFO MetaUtil: Metadata initialized
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Step5 AS BasicSteps
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogBasicSteps
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Hello_World
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogWorld
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogFriends
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS OneLine
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS UseScript
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Step5 AS BasicSteps
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogBasicSteps
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Hello_World
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogWorld
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogFriends
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS OneLine
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS UseScript
+2021-06-10 16:47:57 WARN GenMod: Unable to find ID for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 WARN GenMod: Unable to find ID for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 WARN GenMod: Unable to find ID for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 WARN GenMod: Unable to find ID for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 WARN GenMod: Unable to find ID for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 WARN BioLockJUtil: Typically, a value is required for [input.dirPaths]; presumably the input data will be supplied by modules: biolockj.module.diy.GenMod, biolockj.module.diy.GenMod, biolockj.module.diy.GenMod, biolockj.module.diy.GenMod, biolockj.module.diy.GenMod
+2021-06-10 16:47:57 INFO BioLockJUtil: # Initial input files found: 0
+2021-06-10 16:47:57 INFO BioLockJUtil: # Initial input files after removing empty/ignored files: 0
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Step5 AS BasicSteps
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogBasicSteps
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Hello_World
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogWorld
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS LogFriends
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS OneLine
+2021-06-10 16:47:57 INFO Properties: Configured BioModule: biolockj.module.diy.GenMod AS UseScript
+2021-06-10 16:47:57 INFO BioLockJUtil: The module [GenMod] brings filetype(s): 
+2021-06-10 16:47:57 INFO BioLockJUtil: The module [GenMod] brings filetype(s): 
+2021-06-10 16:47:57 INFO BioLockJUtil: The module [GenMod] brings filetype(s): 
+2021-06-10 16:47:57 INFO BioLockJUtil: The module [GenMod] brings filetype(s): 
+2021-06-10 16:47:57 INFO BioLockJUtil: The module [GenMod] brings filetype(s): 
+2021-06-10 16:47:57 WARN BioLockJUtil: The property [pipeline.inputTypes] overrides automatic file type detection.
+2021-06-10 16:47:57 WARN BioLockJUtil: Without property [pipeline.inputTypes], the file types would be to: 
+2021-06-10 16:47:57 WARN BioLockJUtil: Instead, the value of [internal.pipelineInputTypes] will be set to: none
+2021-06-10 16:47:57 INFO Config: Set config property [ internal.pipelineInputTypes ] = none
+2021-06-10 16:47:57 INFO Config: Set config property [ internal.seqType ] = NA
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Initialize pipeline
+2021-06-10 16:47:57 INFO Step5: Construct module [ 00 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps
+2021-06-10 16:47:57 INFO GenMod: Construct module [ 01 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps
+2021-06-10 16:47:57 INFO Hello_World: Construct module [ 02 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World
+2021-06-10 16:47:57 INFO GenMod: Construct module [ 03 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld
+2021-06-10 16:47:57 INFO Hello_Friends: Construct module [ 04 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends
+2021-06-10 16:47:57 INFO GenMod: Construct module [ 05 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends
+2021-06-10 16:47:57 INFO GenMod: Construct module [ 06 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine
+2021-06-10 16:47:57 INFO GenMod: Construct module [ 07 ] for new /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript
+2021-06-10 16:47:57 INFO BioLockJUtil: Currently running BioLockJ version: v1.4.0
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.hello_world.Step5
+2021-06-10 16:47:57 INFO Config: Setting property [hello.myName] to [world], the default value supplied by my module: 00_BasicSteps.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.hello_world.Hello_World
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Check dependencies for: biolockj.module.diy.GenMod
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Config: Overwriting [UseScript.scriptPath=./helloScript.sh] to set config property [UseScript.scriptPath=/Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloScript.sh]
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: Not running in Docker.  No need to check Docker dependencies.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Config: Path to configFile: /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+2021-06-10 16:47:57 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:57 INFO ModuleUtil: STARTING [ 00_BasicSteps ] 
+2021-06-10 16:47:57 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:57 INFO Step5: # Input Files: 0
+2021-06-10 16:47:57 INFO Step5: Hello, world.
+2021-06-10 16:47:57 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script
+2021-06-10 16:47:57 INFO Step5: # Input Files: 0
+2021-06-10 16:47:57 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/log
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/temp
+2021-06-10 16:47:57 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/output
+2021-06-10 16:47:57 INFO Step5: # Input Files: 0
+2021-06-10 16:47:57 INFO Step5: # Input Files: 0
+2021-06-10 16:47:57 INFO Step5: # Input Files: 0
+2021-06-10 16:47:57 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script/00.0_Step5.sh
+2021-06-10 16:47:57 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:47:57 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.hello_world.Step5
+2021-06-10 16:47:57 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script/MAIN_00_BasicSteps.sh
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script 
+2021-06-10 16:47:57 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:47:57 INFO Processor: [ Step5 ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script/MAIN_00_BasicSteps.sh 
+2021-06-10 16:47:57 INFO Processor: [ Step5 ]: COMPLETE
+2021-06-10 16:47:57 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:47:57 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script
+2021-06-10 16:47:57 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:47:57 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:47:57 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:47:57 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:47:57 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:57 INFO Pipeline: Step5 Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2021-06-10 16:47:58 INFO Step5: Clean up: biolockj.module.hello_world.Step5
+2021-06-10 16:47:58 INFO ValidationUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/validation
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO Processor: [ Query Host ]: STARTING CMD --> hostname 
+2021-06-10 16:47:58 INFO Processor: [ Query Host ]: CCI0PHJGH5AWS
+2021-06-10 16:47:58 INFO Processor: [ Query Host ]: COMPLETE
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO SummaryUtil: Summary updated
+2021-06-10 16:47:58 INFO SummaryUtil: Update BioModule summary [ 00_BasicSteps ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:47:58 INFO SummaryUtil: Building module summary for: 00_BasicSteps
+2021-06-10 16:47:58 INFO SummaryUtil: Summary updated
+2021-06-10 16:47:58 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:58 INFO ModuleUtil: FINISHED [ 00_BasicSteps ] 
+2021-06-10 16:47:58 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:58 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:58 INFO ModuleUtil: STARTING [ 01_LogBasicSteps ] 
+2021-06-10 16:47:58 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:58 INFO GenMod: # Input Files: 0
+2021-06-10 16:47:58 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/resources
+2021-06-10 16:47:58 INFO GenMod: Core command: [[/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/resources/LogBasicSteps_executable]]
+2021-06-10 16:47:58 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script
+2021-06-10 16:47:58 INFO GenMod: # Input Files: 0
+2021-06-10 16:47:58 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/log
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/temp
+2021-06-10 16:47:58 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/output
+2021-06-10 16:47:58 INFO GenMod: # Input Files: 0
+2021-06-10 16:47:58 INFO GenMod: # Input Files: 0
+2021-06-10 16:47:58 INFO GenMod: # Input Files: 0
+2021-06-10 16:47:58 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script/01.0_GenMod.sh
+2021-06-10 16:47:58 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:47:58 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.diy.GenMod
+2021-06-10 16:47:58 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script/MAIN_01_LogBasicSteps.sh
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script 
+2021-06-10 16:47:58 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:47:58 INFO Processor: [ GenMod ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script/MAIN_01_LogBasicSteps.sh 
+2021-06-10 16:47:58 INFO Processor: [ GenMod ]: COMPLETE
+2021-06-10 16:47:58 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:47:58 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script
+2021-06-10 16:47:58 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:47:58 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:47:58 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:47:58 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:47:58 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:58 INFO Pipeline: GenMod Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2021-06-10 16:47:59 INFO GenMod: Clean up: biolockj.module.diy.GenMod
+2021-06-10 16:47:59 INFO SummaryUtil: Update BioModule summary [ 01_LogBasicSteps ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:47:59 INFO SummaryUtil: Building module summary for: 01_LogBasicSteps
+2021-06-10 16:47:59 INFO SummaryUtil: Summary updated
+2021-06-10 16:47:59 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:59 INFO ModuleUtil: FINISHED [ 01_LogBasicSteps ] 
+2021-06-10 16:47:59 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:59 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:59 INFO ModuleUtil: STARTING [ 02_Hello_World ] 
+2021-06-10 16:47:59 INFO ModuleUtil: ========================================================================
+2021-06-10 16:47:59 WARN SeqUtil: Skip empty file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/output/01.0_GenMod.log
+2021-06-10 16:47:59 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/output/00.0_Step5.log
+2021-06-10 16:47:59 INFO SeqUtil: header: Hello, world.
+2021-06-10 16:47:59 INFO SeqUtil: seq: Created Success flag.
+2021-06-10 16:47:59 INFO SeqUtil: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/output/00.0_Step5.log is not a sequence file! 
+Line 1: [ Hello, world. ]
+Line 2= [ Created Success flag. ]
+2021-06-10 16:47:59 INFO SeqUtil: File [00.0_Step5.log] is not a sequence file.
+2021-06-10 16:47:59 INFO Hello_World: # Input Files: 1
+2021-06-10 16:47:59 INFO Hello_World: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/output/00.0_Step5.log
+2021-06-10 16:47:59 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script
+2021-06-10 16:47:59 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/log
+2021-06-10 16:47:59 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:59 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/temp
+2021-06-10 16:47:59 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/output
+2021-06-10 16:47:59 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script/02.0_Hello_World.sh
+2021-06-10 16:47:59 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:47:59 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.hello_world.Hello_World
+2021-06-10 16:47:59 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:47:59 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:59 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:59 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:59 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script/MAIN_02_Hello_World.sh
+2021-06-10 16:47:59 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:59 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script 
+2021-06-10 16:47:59 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:47:59 INFO Processor: [ Hello_World ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script/MAIN_02_Hello_World.sh 
+2021-06-10 16:47:59 INFO Processor: [ Hello_World ]: COMPLETE
+2021-06-10 16:47:59 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:47:59 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script
+2021-06-10 16:47:59 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:47:59 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:47:59 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:47:59 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:47:59 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:47:59 INFO Pipeline: Hello_World Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2021-06-10 16:48:00 INFO Hello_World: Clean up: biolockj.module.hello_world.Hello_World
+2021-06-10 16:48:00 INFO SummaryUtil: Update BioModule summary [ 02_Hello_World ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:48:00 INFO SummaryUtil: Building module summary for: 02_Hello_World
+2021-06-10 16:48:00 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:00 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:00 INFO ModuleUtil: FINISHED [ 02_Hello_World ] 
+2021-06-10 16:48:00 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:00 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:00 INFO ModuleUtil: STARTING [ 03_LogWorld ] 
+2021-06-10 16:48:00 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:00 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/output/hello.txt
+2021-06-10 16:48:00 INFO SeqUtil: header: Hello World!
+2021-06-10 16:48:00 ERROR SeqUtil: Error occurred examining file to determine if it is a sequence file or not
+java.lang.NullPointerException
+	at biolockj.util.SeqUtil.isSeqFile(SeqUtil.java:460)
+	at biolockj.module.BioModuleImpl.cacheInputFiles(BioModuleImpl.java:294)
+	at biolockj.module.BioModuleImpl.getInputFiles(BioModuleImpl.java:154)
+	at biolockj.module.ScriptModuleImpl.executeTask(ScriptModuleImpl.java:88)
+	at biolockj.Pipeline.executeModule(Pipeline.java:47)
+	at biolockj.Pipeline.executeModules(Pipeline.java:197)
+	at biolockj.Pipeline.runPipeline(Pipeline.java:141)
+	at biolockj.BioLockJ.runPipeline(BioLockJ.java:359)
+	at biolockj.BioLockJ.main(BioLockJ.java:103)
+2021-06-10 16:48:00 INFO SeqUtil: File [hello.txt] is not a sequence file.
+2021-06-10 16:48:00 INFO GenMod: # Input Files: 1
+2021-06-10 16:48:00 INFO GenMod: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/output/hello.txt
+2021-06-10 16:48:00 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/resources
+2021-06-10 16:48:00 INFO GenMod: Core command: [[/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/resources/LogWorld_executable]]
+2021-06-10 16:48:00 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script
+2021-06-10 16:48:00 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/log
+2021-06-10 16:48:00 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:00 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/temp
+2021-06-10 16:48:00 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/output
+2021-06-10 16:48:00 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script/03.0_GenMod.sh
+2021-06-10 16:48:00 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:00 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.diy.GenMod
+2021-06-10 16:48:00 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:00 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:00 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:00 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:00 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script/MAIN_03_LogWorld.sh
+2021-06-10 16:48:00 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:00 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script 
+2021-06-10 16:48:01 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:48:01 INFO Processor: [ GenMod ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script/MAIN_03_LogWorld.sh 
+2021-06-10 16:48:01 INFO Processor: [ GenMod ]: COMPLETE
+2021-06-10 16:48:01 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:48:01 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script
+2021-06-10 16:48:01 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:48:01 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:48:01 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:48:01 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:48:01 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:01 INFO Pipeline: GenMod Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2021-06-10 16:48:02 INFO GenMod: Clean up: biolockj.module.diy.GenMod
+2021-06-10 16:48:02 INFO SummaryUtil: Update BioModule summary [ 03_LogWorld ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:48:02 INFO SummaryUtil: Building module summary for: 03_LogWorld
+2021-06-10 16:48:02 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:02 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:02 INFO ModuleUtil: FINISHED [ 03_LogWorld ] 
+2021-06-10 16:48:02 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:02 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:02 INFO ModuleUtil: STARTING [ 04_Hello_Friends ] 
+2021-06-10 16:48:02 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:02 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/output/02.0_Hello_World.log
+2021-06-10 16:48:02 INFO SeqUtil: header: The message is: Hello World!
+2021-06-10 16:48:02 INFO SeqUtil: seq: Created Success flag.
+2021-06-10 16:48:02 INFO SeqUtil: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/output/02.0_Hello_World.log is not a sequence file! 
+Line 1: [ The message is: Hello World! ]
+Line 2= [ Created Success flag. ]
+2021-06-10 16:48:02 INFO SeqUtil: File [02.0_Hello_World.log] is not a sequence file.
+2021-06-10 16:48:02 INFO Hello_Friends: # Input Files: 1
+2021-06-10 16:48:02 INFO Hello_Friends: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/output/02.0_Hello_World.log
+2021-06-10 16:48:02 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script
+2021-06-10 16:48:02 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/log
+2021-06-10 16:48:02 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:02 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/temp
+2021-06-10 16:48:02 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/output
+2021-06-10 16:48:02 INFO Hello_Friends: Hello, Jean-Luc!!!
+2021-06-10 16:48:02 INFO Hello_Friends: Hello, Jean-Luc!!!
+2021-06-10 16:48:02 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script/04.0_Hello_Friends.sh
+2021-06-10 16:48:02 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:02 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:48:02 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:02 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:02 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:02 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:02 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script/MAIN_04_Hello_Friends.sh
+2021-06-10 16:48:02 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:02 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script 
+2021-06-10 16:48:02 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:48:02 INFO Processor: [ Hello_Friends ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script/MAIN_04_Hello_Friends.sh 
+2021-06-10 16:48:02 INFO Processor: [ Hello_Friends ]: COMPLETE
+2021-06-10 16:48:02 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:48:02 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script
+2021-06-10 16:48:02 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:48:02 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:48:02 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:48:02 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:48:02 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:02 INFO Pipeline: Hello_Friends Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2021-06-10 16:48:03 INFO Hello_Friends: Clean up: biolockj.module.hello_world.Hello_Friends
+2021-06-10 16:48:03 INFO SummaryUtil: Update BioModule summary [ 04_Hello_Friends ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:48:03 INFO SummaryUtil: Building module summary for: 04_Hello_Friends
+2021-06-10 16:48:03 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:03 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:03 INFO ModuleUtil: FINISHED [ 04_Hello_Friends ] 
+2021-06-10 16:48:03 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:03 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:03 INFO ModuleUtil: STARTING [ 05_LogFriends ] 
+2021-06-10 16:48:03 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:03 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/output/hello.txt
+2021-06-10 16:48:03 INFO SeqUtil: File [hello.txt] is not a sequence file.
+2021-06-10 16:48:03 INFO GenMod: # Input Files: 1
+2021-06-10 16:48:03 INFO GenMod: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/output/hello.txt
+2021-06-10 16:48:03 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/resources
+2021-06-10 16:48:03 INFO GenMod: Core command: [[/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/resources/LogFriends_executable]]
+2021-06-10 16:48:03 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script
+2021-06-10 16:48:03 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/log
+2021-06-10 16:48:03 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:03 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/temp
+2021-06-10 16:48:03 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/output
+2021-06-10 16:48:03 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script/05.0_GenMod.sh
+2021-06-10 16:48:03 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:03 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.diy.GenMod
+2021-06-10 16:48:03 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:03 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:03 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:03 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:03 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script/MAIN_05_LogFriends.sh
+2021-06-10 16:48:03 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:03 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script 
+2021-06-10 16:48:03 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:48:03 INFO Processor: [ GenMod ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script/MAIN_05_LogFriends.sh 
+2021-06-10 16:48:03 INFO Processor: [ GenMod ]: COMPLETE
+2021-06-10 16:48:03 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:48:03 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script
+2021-06-10 16:48:03 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:48:03 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:48:03 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:48:03 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:48:03 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:03 INFO Pipeline: GenMod Status (Total=1): Success=1; Failed=0; Running=0; Queued=0
+2021-06-10 16:48:04 INFO GenMod: Clean up: biolockj.module.diy.GenMod
+2021-06-10 16:48:04 INFO SummaryUtil: Update BioModule summary [ 05_LogFriends ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:48:04 INFO SummaryUtil: Building module summary for: 05_LogFriends
+2021-06-10 16:48:04 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:04 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:04 INFO ModuleUtil: FINISHED [ 05_LogFriends ] 
+2021-06-10 16:48:04 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:04 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:04 INFO ModuleUtil: STARTING [ 06_OneLine ] 
+2021-06-10 16:48:04 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:04 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/output/02.0_Hello_World.log
+2021-06-10 16:48:04 INFO SeqUtil: File [02.0_Hello_World.log] is not a sequence file.
+2021-06-10 16:48:04 INFO GenMod: # Input Files: 2
+2021-06-10 16:48:04 INFO GenMod: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/output/02.0_Hello_World.log
+2021-06-10 16:48:04 INFO GenMod: Input File [1]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/output/04.0_Hello_Friends.log
+2021-06-10 16:48:04 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/resources
+2021-06-10 16:48:04 INFO GenMod: Core command: [[/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/resources/OneLine_executable]]
+2021-06-10 16:48:04 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script
+2021-06-10 16:48:04 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/log
+2021-06-10 16:48:04 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:04 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/temp
+2021-06-10 16:48:04 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/output
+2021-06-10 16:48:04 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script/06.0_GenMod.sh
+2021-06-10 16:48:04 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:04 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.diy.GenMod
+2021-06-10 16:48:04 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:04 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:04 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:04 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:04 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script/MAIN_06_OneLine.sh
+2021-06-10 16:48:04 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:04 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script 
+2021-06-10 16:48:04 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:48:04 INFO Processor: [ GenMod ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script/MAIN_06_OneLine.sh 
+2021-06-10 16:48:04 INFO Processor: [ GenMod ]: COMPLETE
+2021-06-10 16:48:04 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:48:04 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script
+2021-06-10 16:48:04 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:48:04 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:48:04 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:48:04 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:48:04 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO GenMod: Clean up: biolockj.module.diy.GenMod
+2021-06-10 16:48:05 INFO SummaryUtil: Update BioModule summary [ 06_OneLine ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:48:05 INFO SummaryUtil: Building module summary for: 06_OneLine
+2021-06-10 16:48:05 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:05 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:05 INFO ModuleUtil: FINISHED [ 06_OneLine ] 
+2021-06-10 16:48:05 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:05 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:05 INFO ModuleUtil: STARTING [ 07_UseScript ] 
+2021-06-10 16:48:05 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:05 INFO SeqUtil: Check if input file is a SEQ file: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/output/hello.txt
+2021-06-10 16:48:05 INFO SeqUtil: File [hello.txt] is not a sequence file.
+2021-06-10 16:48:05 INFO GenMod: # Input Files: 1
+2021-06-10 16:48:05 INFO GenMod: Input File [0]: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/output/hello.txt
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/resources
+2021-06-10 16:48:05 INFO GenMod: Core command: [[/Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/resources/helloScript.sh]]
+2021-06-10 16:48:05 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script
+2021-06-10 16:48:05 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/log
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/temp
+2021-06-10 16:48:05 INFO ModuleUtil: Create directory: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/output
+2021-06-10 16:48:05 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script/07.0_GenMod.sh
+2021-06-10 16:48:05 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:05 INFO BashScriptBuilder: 1 WORKER scripts created for: biolockj.module.diy.GenMod
+2021-06-10 16:48:05 INFO BashScriptBuilder: ========================================================================
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO BashScriptBuilder: Write new script: /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script/MAIN_07_UseScript.sh
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:05 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script 
+2021-06-10 16:48:05 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:48:05 INFO Processor: [ GenMod ]: STARTING CMD --> /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script/MAIN_07_UseScript.sh 
+2021-06-10 16:48:05 INFO Processor: [ GenMod ]: COMPLETE
+2021-06-10 16:48:05 INFO Pipeline: ------> Java program wakes every 60 seconds to check execution progress
+2021-06-10 16:48:05 INFO Pipeline: ------> Status determined by existance of indicator files in /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script
+2021-06-10 16:48:05 INFO Pipeline: ------> Indicator files end with: "_Started", "_Success", or "_Failures"
+2021-06-10 16:48:05 INFO Pipeline: ------> If any change to #Success/#Failed/#Running/#Queued changed, new values logged
+2021-06-10 16:48:05 INFO Pipeline: ------> Status message repeats every 10 minutes while scripts are executing (if status remains unchanged).
+2021-06-10 16:48:05 INFO Pipeline: ------> Running scripts will NEVER TIME OUT.
+2021-06-10 16:48:05 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:06 INFO GenMod: Clean up: biolockj.module.diy.GenMod
+2021-06-10 16:48:06 INFO SummaryUtil: Update BioModule summary [ 07_UseScript ] /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/summary.txt
+2021-06-10 16:48:06 INFO SummaryUtil: Building module summary for: 07_UseScript
+2021-06-10 16:48:06 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:06 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:06 INFO ModuleUtil: FINISHED [ 07_UseScript ] 
+2021-06-10 16:48:06 INFO ModuleUtil: ========================================================================
+2021-06-10 16:48:06 INFO DownloadUtil: DownloadUtil found there are no downloadable modules
+2021-06-10 16:48:06 INFO SummaryUtil: Summary updated
+2021-06-10 16:48:06 INFO DockerUtil: This instance is NOT in a docker container.
+2021-06-10 16:48:06 INFO Processor: [ Set File Privs ]: STARTING CMD --> chmod -R 770 /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10 
+2021-06-10 16:48:06 INFO Processor: [ Set File Privs ]: COMPLETE
+2021-06-10 16:48:06 INFO MasterConfigUtil: Distilling the MASTER Config into the FINAL Config file to show only properties accessed during pipeline execution.
+2021-06-10 16:48:06 INFO MasterConfigUtil: To view the list of removed Config properties before MASTER config is sanitized in future runs, enable: pipeline.logLevel=Y
+2021-06-10 16:48:06 INFO MasterConfigUtil: To add DEBUG statements for only this utility class, add the property (this is a list property so multiple class names could be provided - in this example, wee add a single class): pipeline.limitDebugClasses=biolockj.util.MasterConfigUtil
+2021-06-10 16:48:06 INFO MasterConfigUtil: The original version of project Config contained: 84 properties
+2021-06-10 16:48:06 INFO MasterConfigUtil: The final version of MASTER Config contains: 26 properties
+2021-06-10 16:48:06 INFO BioLockJ: Log Pipeline Summary...
+Pipeline Name:    helloWorld_withValidation_2021Jun10
+Pipeline Config:  /Users/ieclabau/git/sheepdog_testing_suite/test/module/helloWorld/helloWorld_withValidation.config
+Pipeline Metadata:  N/A
+BioLockJ version:  v1.4.0
+Runtime Env:         Localhost
+Pipeline Input:      null
+# Modules:        8
+# Attempts:       1
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  00_BasicSteps
+Module class:  biolockj.module.hello_world.Step5
+Module version:  in development
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  0
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/00_BasicSteps/script/MAIN_00_BasicSteps.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  01_LogBasicSteps
+Module class:  biolockj.module.diy.GenMod
+Module version:  1.1.0
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  18 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/01_LogBasicSteps/script/MAIN_01_LogBasicSteps.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  02_Hello_World
+Module class:  biolockj.module.hello_world.Hello_World
+Module version:  in development
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  13 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/02_Hello_World/script/MAIN_02_Hello_World.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  03_LogWorld
+Module class:  biolockj.module.diy.GenMod
+Module version:  1.1.0
+Runtime:  00 hours : 00 minutes : 02 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  51 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/03_LogWorld/script/MAIN_03_LogWorld.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  04_Hello_Friends
+Module class:  biolockj.module.hello_world.Hello_Friends
+Module version:  in development
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  19 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/04_Hello_Friends/script/MAIN_04_Hello_Friends.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  05_LogFriends
+Module class:  biolockj.module.diy.GenMod
+Module version:  1.1.0
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  2
+Mean Output File Size:  54 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/05_LogFriends/script/MAIN_05_LogFriends.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  06_OneLine
+Module class:  biolockj.module.diy.GenMod
+Module version:  1.1.0
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  13 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/06_OneLine/script/MAIN_06_OneLine.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Module:  07_UseScript
+Module class:  biolockj.module.diy.GenMod
+Module version:  1.1.0
+Runtime:  00 hours : 00 minutes : 01 seconds
+--------------------------------------------------
+# Files Output:  1
+Mean Output File Size:  13 bytes
+Main Script:  /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/07_UseScript/script/MAIN_07_UseScript.sh
+Executed 1/1 worker scripts [1 successful]
+Average worker script runtime: <1 minute
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Pipeline Status:     SUCCESS
+Pipeline Runtime:    00 hours : 00 minutes : 09 seconds
+Master Config:       /Users/ieclabau/git/sheepdog_testing_suite/MockMain/pipelines/helloWorld_withValidation_2021Jun10/MASTER_helloWorld_withValidation_2021Jun10.properties
+Final Metadata:      N/A
+  _______      ___      ________      ___           ________      ________      ___ ____            __
+|\   __  \    |\  \    |\   __  \    |\  \         |\   __  \    |\   ____\    |\  \|\  \         |\  \
+\ \  \|\ /_   \ \  \   \ \  \|\  \   \ \  \        \ \  \|\  \   \ \  \___|    \ \  \/  /|_       \ \  \
+ \ \   __  \   \ \  \   \ \  \\\  \   \ \  \        \ \  \\\  \   \ \  \        \ \   ___  \    __ \ \  \
+  \ \  \|\  \   \ \  \   \ \  \\\  \   \ \  \____    \ \  \\\  \   \ \  \____    \ \  \\ \  \  |\  \\_\  \
+   \ \_______\   \ \__\   \ \_______\   \ \_______\   \ \_______\   \ \_______\   \ \__\\ \__\ \ \________\
+    \|_______|    \|__|    \|_______|    \|_______|    \|_______|    \|_______|    \|__| \|__|  \|________|
+
+                C          O          M          P          L          E          T          E          
+
+

@@ -36,6 +36,7 @@ runTestSet ${DIR}/edgeR/docker_edger_testList.txt
 runTestSet ${DIR}/email/docker_eamil_testList.txt
 runTestSet ${DIR}/forEach/docker_testList_forEach.txt
 runTestSet ${DIR}/genMod/docker_genMod_testList.txt
+runTestSet ${DIR}/helloWorld/docker_testList_hello.txt
 runTestSet ${DIR}/kraken2/docker_k2_testList.txt 
 runTestSet ${DIR}/kraken2Parser/docker_Kraken2ParserTestList.txt
 runTestSet ${DIR}/normalizeTaxa/docker_normTaxa_testList.txt
