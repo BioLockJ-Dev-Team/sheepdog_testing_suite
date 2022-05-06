@@ -1,0 +1,304 @@
+Most recent sheepdog commit: v1.4.0
+Most recent BioLockJ commit: v1.4.2-rc
+Output from individual tests are stored in: /Users/ieclabau/git/sheepdog_testing_suite/test/bash/output
+-
+test_1.00 --> just as expected.
+-
+test_1.01_v --> just as expected.
+-
+test_1.01_version --> just as expected.
+-
+test_1.02_h --> just as expected.
+-
+test_1.02_help --> just as expected.
+-
+test_1.03_typo --> just as expected.
+-
+test_1.03_typos --> just as expected.
+-
+test_1.03_longTypo --> just as expected.
+-
+test_1.04_f --> just as expected.
+-
+test_1.04_foreground --> just as expected.
+-
+test_1.04_fd --> just as expected.
+-
+test_1.05_basic --> just as expected.
+-
+test_1.6_r --> just as expected.
+-
+test_1.6_restart --> just as expected.
+-
+test_1.6_restart_nonDir --> just as expected.
+-
+test_1.7_d --> just as expected.
+-
+test_1.7_docker --> just as expected.
+-
+test_1.7full_d --> just as expected.
+-
+test_1.7full_docker --> just as expected.
+-
+oh no! examine test_1.8_a !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.8_a_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.8_a_generic.out
+index 0bb3b83..ca0d7a5 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.8_a_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.8_a_generic.out
+@@ -1,7 +1,7 @@
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ 
+ ---------> Execute CMD [ launch_aws -a configFile/example.properties ]
+ aws = true
+-
+oh no! examine test_1.8_aws !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.8_aws_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.8_aws_generic.out
+index 6481d5b..2554163 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.8_aws_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.8_aws_generic.out
+@@ -1,7 +1,7 @@
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ 
+ ---------> Execute CMD [ launch_aws --aws configFile/example.properties ]
+ aws = true
+-
+oh no! examine test_1.9_aws_g !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.9_aws_g_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.9_aws_g_generic.out
+index 8d8addc..ea29cd3 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.9_aws_g_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.9_aws_g_generic.out
+@@ -1,7 +1,7 @@
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ 
+ ---------> Execute CMD [ launch_aws --aws -g configFile/example.properties ]
+ gui = true
+-
+oh no! examine test_1.9_aws_gui !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.9_aws_gui_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.9_aws_gui_generic.out
+index 1d90d93..7f7fad5 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.9_aws_gui_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.9_aws_gui_generic.out
+@@ -1,7 +1,7 @@
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ 
+ ---------> Execute CMD [ launch_aws --aws --gui configFile/example.properties ]
+ gui = true
+-
+test_1.10_pass --> just as expected.
+-
+test_1.10_pass_noArg1 --> just as expected.
+-
+test_1.10_pass_noArg2 --> just as expected.
+-
+test_1.11_b --> just as expected.
+-
+test_1.11_blj --> just as expected.
+-
+test_1.12_e --> just as expected.
+-
+test_1.12_es --> just as expected.
+-
+test_1.12_es_badForm --> just as expected.
+-
+test_1.12_env-var --> just as expected.
+-
+test_1.13_ext_mods --> just as expected.
+-
+test_1.13_ext_mods_docker --> just as expected.
+-
+test_1.14_g --> just as expected.
+-
+test_1.14_gui --> just as expected.
+-
+test_1.15_w --> just as expected.
+-
+test_1.15_wait --> just as expected.
+-
+test_1.20_precheck --> just as expected.
+-
+test_1.20_p --> just as expected.
+-
+test_1.20_rp --> just as expected.
+-
+oh no! examine test_1.20_ap !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.20_ap_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.20_ap_generic.out
+index 06d2c94..d88aa5c 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_1.20_ap_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_1.20_ap_generic.out
+@@ -1,7 +1,7 @@
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ Warning: The blj_functions library is deprecated.
+-Warning: It will be removed as of version <VERSION>.
++Warning: It will be removed as of version v1.4.0.
+ 
+ ---------> Execute CMD [ launch_aws -ap restartDir/examplePipeline_11_1969-07-16 ]
+ aws = true
+-
+test_1.24_u --> just as expected.
+-
+test_1.24_ud --> just as expected.
+-
+test_1.24_unused --> just as expected.
+-
+test_1.24_ur --> just as expected.
+-
+test_1.27_verbose --> just as expected.
+-
+test_1.28_mapper --> just as expected.
+-
+test_2.16full_fail --> just as expected.
+-
+test_2.16full_fail_docker --> just as expected.
+-
+test_2.17full_restart --> just as expected.
+-
+test_2.18_jar_help --> just as expected.
+-
+oh no! examine test_2.20_precheck_repeats !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_2.20_precheck_repeats_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_2.20_precheck_repeats_generic.out
+index daa04e3..0b8f380 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_2.20_precheck_repeats_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_2.20_precheck_repeats_generic.out
+@@ -1,9 +1,9 @@
+ <SHEP>/MockMain/pipelines/fastFail_<DATE>
+ <SHEP>/MockMain/pipelines/fastFail_<DATE>
+-<SHEP>/MockMain/pipelines/fastFail_<DATE>
+-<SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+ <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+ <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
++<SHEP>/MockMain/pipelines/fastFail_3_<DATE>
++<SHEP>/MockMain/pipelines/fastFail_4_<DATE>
+ <SHEP>/MockMain/pipelines/configToFail_<DATE>
+ <SHEP>/MockMain/pipelines/configToFail_<DATE>
+ <SHEP>/MockMain/pipelines/configToFail_<DATE>
+@@ -36,8 +36,7 @@ ERROR TYPE: BioLockJException
+ ERROR MESSAGE: Helpful message for the user.
+ 
+ # standard pipeline replaces precheck pipeline (_DATE, after failure)
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+ Done initializing BioLockJ.
+ Done checking module: 00_ImportMetadata
+ 
+@@ -50,7 +49,7 @@ ERROR TYPE: BioLockJException
+ ERROR MESSAGE: Helpful message for the user.
+ 
+ # new precheck cannot replace a standard pipeline, _2_DATE
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+ Done initializing BioLockJ.
+ Done checking module: 00_ImportMetadata
+ 
+@@ -63,8 +62,8 @@ ERROR TYPE: BioLockJException
+ ERROR MESSAGE: Helpful message for the user.
+ 
+ # standard pipeline replaces precheck pipeline, _2_DATE
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail_2_<DATE>
++Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
+ Done initializing BioLockJ.
+ Done checking module: 00_ImportMetadata
+ 
+@@ -77,7 +76,7 @@ ERROR TYPE: BioLockJException
+ ERROR MESSAGE: Helpful message for the user.
+ 
+ # new precheck cannot replace a standard pipeline, _3_DATE
+-Building pipeline: <SHEP>/MockMain/pipelines/fastFail_3_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/fastFail_4_<DATE>
+ Done initializing BioLockJ.
+ Done checking module: 00_ImportMetadata
+ 
+/Users/ieclabau/git/sheepdog_testing_suite/test/bash
+-
+oh no! examine test_2.21_cd-blj !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_2.21_cd-blj_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_2.21_cd-blj_generic.out
+index 1499c9e..bc33aa4 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_2.21_cd-blj_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_2.21_cd-blj_generic.out
+@@ -7,6 +7,7 @@ MASTER_myFirstPipeline_<DATE>.properties
+ biolockjComplete
+ myFirstPipeline.properties
+ myFirstPipeline_<DATE>.log
++sample_map.txt
+ summary.txt
+ systemInfo.txt
+ validation
+-
+test_2.25_unusedProps_repeats --> just as expected.
+-
+test_2.26_noneUnused --> just as expected.
+-
+oh no! examine test_2.26_showsUnused !
+diff --git a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_2.26_showsUnused_generic.out b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_2.26_showsUnused_generic.out
+index 995dd3f..768444f 100644
+--- a/Users/ieclabau/git/sheepdog_testing_suite/test/bash/expected/test_2.26_showsUnused_generic.out
++++ b/Users/ieclabau/git/sheepdog_testing_suite/test/bash/output/test_2.26_showsUnused_generic.out
+@@ -2,10 +2,10 @@
+ <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+ 
+ # With -u, the unused props are shown at the end of check dependencies, std out only shows file path
+-<SHEP>/MockMain/pipelines/hasUnused_<DATE>
++<SHEP>/MockMain/pipelines/hasUnused_2_<DATE>
+ 
+ # With no args, the unused props are shown at the end of check dependencies, std out only shows file path
+-<SHEP>/MockMain/pipelines/hasUnused_<DATE>
++<SHEP>/MockMain/pipelines/hasUnused_2_<DATE>
+ 
+ STANDARD_ERR:
+ # With -p, the unused props are shown at the end of check dependencies
+@@ -28,8 +28,7 @@ sequenceReadArchive.sraAccList=nonsense
+ 
+ Precheck is complete. No problems were found in this pipeline configuration.
+ # With -u, the unused props are shown at the end of check dependencies
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+-Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_2_<DATE>
+ Done initializing BioLockJ.
+ Done checking module: 00_AddPseudoCount
+ Done checking module: 01_LogTransformTaxaTables
+@@ -48,8 +47,8 @@ sequenceReadArchive.sraAccList=nonsense
+ 
+ Precheck is complete. No problems were found in this pipeline configuration.
+ # With no args, the unused props are shown at the end of check dependencies
+-Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
+-Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_<DATE>
++Discarding pre-existing precheck pipeline: <SHEP>/MockMain/pipelines/hasUnused_2_<DATE>
++Building pipeline: <SHEP>/MockMain/pipelines/hasUnused_2_<DATE>
+ Done initializing BioLockJ.
+ Done checking module: 00_AddPseudoCount
+ Done checking module: 01_LogTransformTaxaTables
+-
+test_2.26_showsUnusedWithFailure --> just as expected.
+-
+test_2.27_verbose --> just as expected.
+-
+test_2.28_mapper --> just as expected.
+-
+test_2.29_progressDemo --> just as expected.
+
+Ran 62 tests on bash command line args.
+There were 8 tests that FAILED !!!
