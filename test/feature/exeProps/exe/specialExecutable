@@ -5,4 +5,4 @@
 # I'm not really special,
 # I'm actually just simple shell script in disguise.
 
-cp ./0* ../output/.
+echo "I am the special executable." > ../output/special.txt

@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "Space: the final frontier."
-echo "These are the voyages of the starship Enterprise."
-echo "Its continuing mission: to explore strange new worlds,"
-echo "To seek out new life and new civilizations,"
-echo "To boldly go where no one has gone before!"
+echo "Space: the final frontier." >> ../output/finalFrontier.txt
+echo "These are the voyages of the starship Enterprise." >> ../output/finalFrontier.txt
+echo "Its continuing mission: to explore strange new worlds," >> ../output/finalFrontier.txt
+echo "To seek out new life and new civilizations," >> ../output/finalFrontier.txt
+echo "To boldly go where no one has gone before!" >> ../output/finalFrontier.txt
 
-cp ../log/01.0_GenMod.log ../output/finalFrontier.txt
+# save this text to log too
+cat ../output/finalFrontier.txt
