@@ -1,7 +1,6 @@
 ConfigFile	bash_biolockj_args	NumberShouldComplete	ExpectedOutcome	Notes
 ${SHEP}/test/feature/defaultProps/noDefaultProps.properties	 --external-modules ${SHEP}/MockMain/dist	1	BioLockJ_Complete	no defaults to read
 ${SHEP}/test/feature/defaultProps/checkCustomProp.properties		1	BioLockJ_Complete	
-${SHEP}/test/feature/defaultProps/checkCustomPropFail.properties		0	DirectModuleException	
 ${SHEP}/test/feature/defaultProps/checkBranching.properties		1	BioLockJ_Complete	
 ${SHEP}/test/feature/defaultProps/checkBranchingConflicts.properties		1	BioLockJ_Complete	
 ${SHEP}/test/feature/defaultProps/checkLayer3MakesIt.properties		1	BioLockJ_Complete	
